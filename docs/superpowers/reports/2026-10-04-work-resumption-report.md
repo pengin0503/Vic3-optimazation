@@ -249,7 +249,17 @@ Doing so would violate the approved design and make regressions difficult to att
 
 Before resumption, the latest repository Actions run for commit 09c7a54db5747178a7ae8ea18f5c318a2fe239c5 completed successfully.
 
-The newly added workflow tools were also tested locally before commit. Their remote GitHub Actions status must be checked after the last documentation commit and recorded in the issue/report if a failure appears.
+Local verification of the new benchmark workflow executed 4 tests and all passed.
+
+Remote GitHub Actions also completed successfully for:
+
+- f9a6f8dd9145eef210d8d1676c7f5e31c9398362 — benchmark matrix preparation tool
+- 831637d49da3be05df3ee28ffff6f15731f1740d — benchmark run finalization tool
+- c0ff6d1a8fcfdfa2a0c1498971541e96c5170079 — benchmark workflow tests
+- 77524c6956931ec905e2be816df5fb60866e2eef — runtime automation/profiler research
+- b53f6651254a502bab237b053c699784fe0312a6 — this detailed report
+
+At the end of this resumption, the repository-side work is green in CI. The remaining blocker is runtime evidence from the Windows Victoria 3 process, not a failing implementation or test.
 
 ## Recommended immediate next action
 
