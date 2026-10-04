@@ -74,7 +74,9 @@ The 1.14.5 executable contains the command help string:
 
 `Use Threading.TaskThreadCount [count].`
 
-The exact output location used by `dump_ticktask_timings` should be recorded the first time it is observed rather than assumed in advance.
+Static analysis of 1.14.5 confirms the default output filename is `ticktask_timings.csv`. The executable also contains `Could not write %s` and `Wrote %d rows to %s`, so the first real run should still record the actual resolved output path rather than assuming the working directory.
+
+The nearby command/help strings also suggest a file-name argument may exist, but its exact console syntax has not yet been runtime-verified; do not depend on it for the first benchmark.
 
 ## 5. TaskThreadCount matrix
 
