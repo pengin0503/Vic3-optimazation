@@ -20,9 +20,10 @@ Create/maintain:
 
 Rules:
 
-- no Paradox executables, DLLs, archives, assets, or saves in this repository
-- binary input remains in a separate private data repository/local storage
-- commit hashes, checksums, signatures, file inventories, and derived analysis are allowed
+- do not commit Paradox executables, DLLs, PDBs, saves, or the original combined `Vic3_data.zip`
+- this repository is private and may contain only the deliberately reduced research-input archives documented in `research/input-data-manifest.md` under `input-data/`
+- keep large/unrelated proprietary assets outside the repository
+- commit hashes, checksums, signatures, file inventories, and derived analysis freely
 
 Acceptance:
 
