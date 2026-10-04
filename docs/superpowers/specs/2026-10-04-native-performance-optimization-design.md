@@ -55,7 +55,7 @@ Built-in diagnostics include:
 5. **No fixed addresses.** Native hooks use build hash + signature scan + structural validation + fail-safe disable.
 6. **Unsupported builds fail closed.** A signature mismatch must leave the game unmodified.
 7. **Read-only instrumentation first.** The first native component only measures.
-8. **Official binaries remain outside the code repository.** Store hashes, signatures, maps, and derived research only.
+8. **Executable/native binaries remain outside the code repository.** The private repository may contain only the deliberately reduced script/data research archives documented under `input-data/`; keep `victoria3.exe`, DLLs, PDBs, saves, and the original combined archive out of Git.
 
 ## Architecture
 
