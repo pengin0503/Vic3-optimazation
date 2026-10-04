@@ -62,6 +62,7 @@ def manifest_template(
     save_sha256: str | None,
     country: str | None,
     cpu: str | None,
+    pop_consolidation: str = "moderate_consolidation",
 ) -> dict:
     return {
         "format_version": 1,
@@ -76,6 +77,9 @@ def manifest_template(
         "start_date": start_date,
         "end_date": end_date,
         "build": dict(BUILD),
+        "game_rules": {
+            "pop_consolidation": pop_consolidation,
+        },
         "save": {
             "filename": save_filename,
             "sha256": save_sha256,
@@ -112,6 +116,7 @@ def create_matrix(
     save_sha256: str | None,
     country: str | None,
     cpu: str | None,
+    pop_consolidation: str = "moderate_consolidation",
 ) -> dict:
     if not VARIANT_RE.fullmatch(variant):
         raise Error("variant may contain only letters, digits, dot, underscore, and hyphen")
@@ -150,6 +155,7 @@ def create_matrix(
                 save_sha256=save_sha256,
                 country=country,
                 cpu=cpu,
+                pop_consolidation=pop_consolidation,
             )
             (run_dir / "manifest.template.json").write_text(
                 json.dumps(template, indent=2, sort_keys=True) + "\n", encoding="utf-8"
@@ -194,6 +200,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--save-sha256")
     parser.add_argument("--country")
     parser.add_argument("--cpu", default="AMD Ryzen 7 9700X")
+    parser.add_argument(
+        "--pop-consolidation",
+        choices=[
+            "no_consolidation",
+            "minor_consolidation",
+            "moderate_consolidation",
+            "aggressive_consolidation",
+        ],
+        default="moderate_consolidation",
+    )
     args = parser.parse_args(argv)
     try:
         matrix = create_matrix(
@@ -208,6 +224,7 @@ def main(argv: list[str] | None = None) -> int:
             save_sha256=args.save_sha256,
             country=args.country,
             cpu=args.cpu,
+            pop_consolidation=args.pop_consolidation,
         )
     except (Error, OSError) as exc:
         print(f"error: {exc}", file=sys.stderr)
