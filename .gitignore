@@ -1,0 +1,37 @@
+# Proprietary / local Victoria 3 data
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.zip
+*.7z
+*.rar
+*.v3
+*.sav
+
+# Local binary-analysis projects
+*.gzf
+*.gpr
+*.rep/
+ghidra_projects/
+ida_projects/
+binaryninja_projects/
+
+# Raw profiler captures
+*.etl
+*.diagsession
+*.trace
+*.data
+*.uprof
+
+# Generated local input/output
+local-data/
+vendor-game-data/
+raw-captures/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
