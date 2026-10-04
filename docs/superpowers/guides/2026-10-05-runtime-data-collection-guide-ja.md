@@ -42,6 +42,47 @@ Speed 5で明確に重いlate-gameセーブを1つ選ぶ。
 
 主ベンチマークでは「実時間60秒」のような固定実時間方式は使わない。処理するゲーム量がrunごとに変わるため。
 
+## 2.5. consoleを使うためdebug modeで起動する
+
+通常起動ではVictoria 3の開発者consoleは使えない前提で進める。
+
+benchmarkで `Threading.TaskThreadCount`、`clear_ticktask_timings`、`dump_ticktask_timings` を使うrunは、起動前にdebug modeを有効化する。
+
+推奨方法:
+
+### Paradox Launcher
+
+LauncherのGame Settingsから **Open game in Debug Mode** を使う。
+
+### Steam launch option
+
+Steam:
+1. Victoria 3を右クリック
+2. Properties
+3. Launch Options
+4. 次を設定
+
+    -debug_mode
+
+その状態でゲームを起動する。
+
+consoleはdebug mode起動後にバッククォート/チルダ系キーで開く。キーボード配列によってキー位置が異なる場合がある。
+
+console-enabler MODはbaselineに使わない。MODが追加のscript/UI処理を持つ可能性があり、測定条件を増やすため。
+
+### debug mode自体のoverhead
+
+primary TickTask matrixは全runを同じdebug mode条件で実施する。
+
+ただしdebug modeは通常起動と完全に同一条件とは限らないため、最終的には同じheavy save・同じ固定期間で:
+
+- normal launch
+- debug mode launch
+
+のwall-clock controlを最低3回ずつ取り、debug mode overheadを確認する。
+
+TickTask CSVを取得する本計測はdebug modeで統一し、normal launch controlはprofilerなしの純粋なwall-clock比較用とする。
+
 ## 3. run matrixを作成
 
 完全セット:
