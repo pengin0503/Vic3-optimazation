@@ -73,7 +73,7 @@ At least 260 distinct `CTickTask_*` names are recoverable. Examples:
 
 ### TickTask debugger
 
-`game/gui/ticktask_debugger.gui` exposes task name/index, execution rate, priority, highest lock time, average execution time, execution count, dependency graph, and task details.
+`game/gui/ticktask_debugger.gui` exposes task name/index, execution rate, priority, highest lock time, average execution time, execution count, dependency graph, and task details. The GUI directly references accessors equivalent to highest-lock-time, average-time, and execution-count fields, reinforcing that the built-in TickTask data is intended for per-task timing and lock diagnosis rather than only aggregate frame timing.
 
 Console/UI paths include:
 
@@ -86,6 +86,16 @@ Console/UI paths include:
 The CSV header for dumped timings is:
 
 `frame,task,milliseconds,calls,longest_lock`
+
+Default output filename observed in the executable: `ticktask_timings.csv`.
+
+Neighboring strings confirm the semantics:
+
+- `dump_ticktask_timings`: writes the TickTask timings already recorded to a file
+- `clear_ticktask_timings`: discards timings recorded so far so the next dump covers only what follows
+- `log_ticktask_performance`: enables continuous TickTask performance output to `profiling.log`
+
+The executable also contains `Could not write %s` and `Wrote %d rows to %s`, which should make first-run path verification straightforward.
 
 ### Thread controls
 
