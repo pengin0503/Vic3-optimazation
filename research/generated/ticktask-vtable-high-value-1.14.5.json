@@ -1,0 +1,111 @@
+{
+  "format_version": 1,
+  "game_version": "1.14.5",
+  "victoria3_exe_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "summary": {
+    "all_ticktask_names": 260,
+    "mapped_rtti_classes": 258,
+    "vtable_length_7": 189,
+    "vtable_length_8": 69,
+    "unique_task_specific_tail_vfuncs": 258,
+    "unmapped_names": [
+      "CTickTask_CheckNonFulfillments",
+      "CTickTask_MoveFormations"
+    ]
+  },
+  "warning": "tail_vfunc is a class-specific static code anchor; its source-level method name is not proven by RTTI alone",
+  "tasks": [
+    {
+      "name": "CTickTask_UpdateEmployment",
+      "type_descriptor_rva": "0x556fbb8",
+      "complete_object_locator_rva": "0x4a930f8",
+      "vtable_rva": "0x4590800",
+      "vtable_slots_rva": ["0x13c2fe0","0x3bf7200","0x62d680","0x3bf7270","0x1808250","0x62d680","0x13b8310"],
+      "task_specific_tail_vfunc_rva": "0x13b8310",
+      "tail_function_end_rva": "0x13b853b",
+      "tail_function_size_bytes": 555
+    },
+    {
+      "name": "CTickTask_UpdateStatePopNeedCache",
+      "type_descriptor_rva": "0x556f8f0",
+      "complete_object_locator_rva": "0x4a92fe0",
+      "vtable_rva": "0x4590dd8",
+      "vtable_slots_rva": ["0x7e4410","0x3bf7200","0x62d680","0x3bf7270","0x1808250","0x62d680","0x7d76b0","0x13b7e70"],
+      "task_specific_tail_vfunc_rva": "0x13b7e70",
+      "tail_function_end_rva": "0x13b7ed8",
+      "tail_function_size_bytes": 104
+    },
+    {
+      "name": "CTickTask_ProcessPopPurchases",
+      "type_descriptor_rva": "0x5518af0",
+      "complete_object_locator_rva": "0x4a3ef68",
+      "vtable_rva": "0x4550fd8",
+      "task_specific_tail_vfunc_rva": "0xee74b0",
+      "tail_function_end_rva": "0xee75a7",
+      "tail_function_size_bytes": 247
+    },
+    {
+      "name": "CTickTask_RecalculateModifierNodes",
+      "type_descriptor_rva": "0x548be90",
+      "complete_object_locator_rva": "0x49a1f00",
+      "vtable_rva": "0x44d8f58",
+      "task_specific_tail_vfunc_rva": "0x7da740",
+      "tail_function_end_rva": "0x7da8de",
+      "tail_function_size_bytes": 414
+    },
+    {
+      "name": "CTickTask_UpdateWorldMarket",
+      "type_descriptor_rva": "0x5518878",
+      "complete_object_locator_rva": "0x4a3efe0",
+      "vtable_rva": "0x4551108",
+      "task_specific_tail_vfunc_rva": "0xedf260",
+      "tail_function_end_rva": "0xedf2a2",
+      "tail_function_size_bytes": 66
+    },
+    {
+      "name": "CTickTask_UpdateAI",
+      "type_descriptor_rva": "0x558ee00",
+      "complete_object_locator_rva": "0x4aaddf0",
+      "vtable_rva": "0x459f140",
+      "task_specific_tail_vfunc_rva": "0x1575530",
+      "tail_function_end_rva": "0x15756c7",
+      "tail_function_size_bytes": 407
+    },
+    {
+      "name": "CTickTask_UpdateStateTrades",
+      "type_descriptor_rva": "0x556ff90",
+      "complete_object_locator_rva": "0x4a93490",
+      "vtable_rva": "0x4590c80",
+      "task_specific_tail_vfunc_rva": "0x13b7bd0",
+      "tail_function_end_rva": null,
+      "tail_function_size_bytes": null
+    },
+    {
+      "name": "CTickTask_UpdatePopGrowth",
+      "type_descriptor_rva": "0x556ae30",
+      "complete_object_locator_rva": "0x4a8fa50",
+      "vtable_rva": "0x458efd0",
+      "task_specific_tail_vfunc_rva": "0x13a3020",
+      "tail_function_end_rva": null,
+      "tail_function_size_bytes": null
+    },
+    {
+      "name": "CTickTask_MergeSmallPops",
+      "type_descriptor_rva": "0x556a248",
+      "complete_object_locator_rva": "0x4a8f848",
+      "vtable_rva": "0x458ee90",
+      "task_specific_tail_vfunc_rva": "0x13aacd0",
+      "tail_function_end_rva": "0x13aaec7",
+      "tail_function_size_bytes": 503
+    },
+    {
+      "name": "CTickTask_RunScriptedTests",
+      "type_descriptor_rva": "0x5558d30",
+      "complete_object_locator_rva": "0x4a7f730",
+      "vtable_rva": "0x4583910",
+      "task_specific_tail_vfunc_rva": "0x1265990",
+      "tail_function_end_rva": "0x1265c4d",
+      "tail_function_size_bytes": 701
+    }
+  ]
+}
