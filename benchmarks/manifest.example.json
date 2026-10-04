@@ -1,0 +1,41 @@
+{
+  "format_version": 1,
+  "run_id": "vanilla-t08-r01",
+  "variant": "vanilla",
+  "repeat": 1,
+  "warmup": false,
+  "task_thread_count": 8,
+  "wall_clock_seconds": 120.0,
+  "ticktask_csv": "ticktask_timings.csv",
+  "game_speed": 5,
+  "start_date": "1900-01-01",
+  "end_date": "1901-01-01",
+  "build": {
+    "game_version": "1.14.5",
+    "caligula_branch": "release/1.14.5",
+    "caligula_rev": "9f8281a37e85639359b3b0c2c5df0196e975ca4b",
+    "clausewitz_branch": "caligula/release/1.14.x",
+    "clausewitz_rev": "fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef",
+    "victoria3_exe_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+  },
+  "save": {
+    "filename": "heavy-save.v3",
+    "sha256": "REPLACE_WITH_SAVE_SHA256",
+    "country": "REPLACE",
+    "in_game_date_at_load": "1900-01-01"
+  },
+  "environment": {
+    "cpu": "AMD Ryzen 7 9700X",
+    "os": "Windows 11",
+    "power_plan": "REPLACE",
+    "mods": [],
+    "dlc": "REPLACE",
+    "graphics": "REPLACE",
+    "resolution": "REPLACE",
+    "vsync_or_frame_cap": "REPLACE",
+    "camera_state": "REPLACE",
+    "ui_state": "REPLACE",
+    "process_launch_state": "warm process after one warm-up run"
+  },
+  "notes": ""
+}
