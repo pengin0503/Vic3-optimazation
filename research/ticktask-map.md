@@ -83,3 +83,29 @@ For each measured task, extend this document with:
 | patch candidate | no / safe / experimental |
 
 The first native target must be selected from measured data, not from task name or intuition.
+
+
+## Static native anchors from MSVC RTTI
+
+The RTTI/vtable pass maps **258 of 260** exposed TickTask names to concrete class vtables. See `research/ticktask-rtti-findings.md`.
+
+The final virtual slot is unique for all 258 mapped classes and is therefore recorded as a **task-specific tail virtual**. This is a code anchor only; its source-level method name is not yet proven.
+
+| TickTask | Vtable RVA | Task-specific tail virtual |
+| --- | ---: | ---: |
+| `CTickTask_UpdateEmployment` | `0x4590800` | `0x13b8310` |
+| `CTickTask_UpdateStatePopNeedCache` | `0x4590dd8` | `0x13b7e70` |
+| `CTickTask_ProcessPopPurchases` | `0x4550fd8` | `0xee74b0` |
+| `CTickTask_RecalculateModifierNodes` | `0x44d8f58` | `0x7da740` |
+| `CTickTask_UpdateWorldMarket` | `0x4551108` | `0xedf260` |
+| `CTickTask_UpdateAI` | `0x459f140` | `0x1575530` |
+| `CTickTask_UpdateStateTrades` | `0x4590c80` | `0x13b7bd0` |
+| `CTickTask_UpdatePopGrowth` | `0x458efd0` | `0x13a3020` |
+| `CTickTask_MergeSmallPops` | `0x458ee90` | `0x13aacd0` |
+
+The two exposed names without a matching concrete TickTask RTTI TypeDescriptor in this build are:
+
+- `CTickTask_CheckNonFulfillments`
+- `CTickTask_MoveFormations`
+
+When real runtime timings arrive, the profiler task name can now be mapped directly to a small native code region rather than starting a broad binary search.
