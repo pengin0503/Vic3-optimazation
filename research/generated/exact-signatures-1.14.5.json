@@ -1,0 +1,82 @@
+{
+  "format_version": 1,
+  "build": {
+    "game_version": "1.14.5",
+    "victoria3_exe_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+  },
+  "warning": "Exact byte windows for this exact executable hash only. These are secondary validators, not cross-version signatures.",
+  "targets": [
+    {
+      "name": "ticktask_csv_writer",
+      "function_rva": "0x118f690",
+      "signature_rva": "0x118f690",
+      "offset_from_function_start": 0,
+      "pattern_hex": "48 89 5c 24 18 48 89 54 24 10 48 89 4c 24 08 55 56 57 41 54 41 55 41 56 41 57 48 8d ac 24 b0 fc",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "task_thread_count_handler_anchor",
+      "function_rva": "0x3bcd320",
+      "signature_rva": "0x3bcd417",
+      "offset_from_function_start": 247,
+      "pattern_hex": "48 8d 15 92 b6 d3 00 48 8b cb e8 ea f6 6a 00 44",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "task_thread_count_thunk",
+      "function_rva": "0x5c1e10",
+      "signature_rva": "0x5c1e10",
+      "offset_from_function_start": 0,
+      "pattern_hex": "e9 0b b5 60 03 cc cc cc cc cc cc cc cc cc cc cc 48 83 ec 28",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "enable_task_threads_thunk",
+      "function_rva": "0x5c1df0",
+      "signature_rva": "0x5c1df0",
+      "offset_from_function_start": 0,
+      "pattern_hex": "48 8d 15 10 23 c3 04 48 8d 0d 52 6d 34 04 e9 ad 3a 5d 03 cc",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "parallel_range_heuristic",
+      "function_rva": "0x7db150",
+      "signature_rva": "0x7db150",
+      "offset_from_function_start": 0,
+      "pattern_hex": "48 8b c4 48 89 58 10 4c 89 48 20 48 89 48 08 55 56 57 41 54 41 55 41 56 41 57 48 8d 68 a9 48 81",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "gui_data_profiler_handler",
+      "function_rva": "0x4c97a0",
+      "signature_rva": "0x4c97a0",
+      "offset_from_function_start": 0,
+      "pattern_hex": "40 55 48 8d 6c 24 a9 48 81 ec c0 00 00 00 48 8d 05 d3 98 19",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "clausewitz_profiler_csv_handler",
+      "function_rva": "0x55f530",
+      "signature_rva": "0x55f530",
+      "offset_from_function_start": 0,
+      "pattern_hex": "48 89 5c 24 18 55 48 8d 6c 24 a9 48 81 ec d0 00 00 00 48 8d 45 c7 48 89 45 67 48 8d 15 97 c3 4c",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "game_timer_writer",
+      "function_rva": "0x3464410",
+      "signature_rva": "0x3464410",
+      "offset_from_function_start": 0,
+      "pattern_hex": "48 89 5c 24 08 4c 89 44 24 18 48 89 54 24 10 55 56 57 41 56 41 57 48 8d 6c 24 90 48",
+      "match_count_in_text": 1
+    },
+    {
+      "name": "scripted_tests_registration",
+      "function_rva": "0x1183240",
+      "signature_rva": "0x1183258",
+      "offset_from_function_start": 24,
+      "pattern_hex": "48 81 ec 40 02 00 00 c6 44 24 30 01 c5 f9 ef c0 c5 f8 11 44 24 38 48 c7 44 24 48 0e 00 00 00 48 c7 44 24 50 0f 00 00 00 c5 fb 10 05 38 a7 33 03",
+      "match_count_in_text": 1
+    }
+  ]
+}
