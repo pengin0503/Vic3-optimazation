@@ -47,6 +47,10 @@ class WorkflowTests(unittest.TestCase):
             )
             self.assertEqual(manifest["task_thread_count"], 8)
             self.assertIsNone(manifest["wall_clock_seconds"])
+            self.assertEqual(
+                manifest["game_rules"]["pop_consolidation"],
+                "moderate_consolidation",
+            )
 
     def test_nonempty_output_is_rejected(self):
         with tempfile.TemporaryDirectory() as td:
