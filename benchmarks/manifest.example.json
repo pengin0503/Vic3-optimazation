@@ -5,7 +5,7 @@
   "repeat": 1,
   "warmup": false,
   "task_thread_count": 8,
-  "wall_clock_seconds": 120.0,
+  "wall_clock_seconds": 120,
   "ticktask_csv": "ticktask_timings.csv",
   "game_speed": 5,
   "start_date": "1900-01-01",
@@ -37,5 +37,8 @@
     "ui_state": "REPLACE",
     "process_launch_state": "warm process after one warm-up run"
   },
-  "notes": ""
+  "notes": "",
+  "game_rules": {
+    "pop_consolidation": "moderate_consolidation"
+  }
 }
