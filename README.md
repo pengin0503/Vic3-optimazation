@@ -15,13 +15,23 @@ Do not start by patching Employment or forcing more worker threads. First establ
 
 ## Repository boundary
 
-This repository stores only original source code, scripts, signatures/hashes, plans, and research results. Paradox binaries/assets are kept out of this repository.
+This private repository stores original source code, scripts, signatures/hashes, plans, research results, and a deliberately reduced research-input snapshot under `input-data/`.
+
+The research-input snapshot is kept as separate small archives rather than the original ~122 MB combined `Vic3_data.zip`:
+
+- `input-data/jomini.zip`
+- `input-data/clausewitz.zip`
+- `input-data/game.zip`
+- build identifiers under `input-data/build-info/`
+
+Large or unrelated Victoria 3 binaries/assets remain excluded. Keep this repository private and review the applicable game/license terms before sharing any third-party game data.
 
 See:
 
 - `docs/superpowers/specs/2026-10-04-native-performance-optimization-design.md`
 - `docs/superpowers/plans/2026-10-04-native-performance-optimization-implementation.md`
 - `research/preliminary-static-analysis.md`
+- `research/input-data-manifest.md`
 
 ## Initial completion criterion
 
