@@ -12,21 +12,76 @@
     "ticktask_csv"
   ],
   "properties": {
-    "format_version": {"const": 1},
-    "run_id": {"type": "string", "minLength": 1},
-    "variant": {"type": "string", "minLength": 1},
-    "repeat": {"type": "integer", "minimum": 1},
-    "warmup": {"type": "boolean"},
-    "task_thread_count": {"type": "integer", "minimum": 1},
-    "wall_clock_seconds": {"type": "number", "exclusiveMinimum": 0},
-    "ticktask_csv": {"type": "string", "minLength": 1},
-    "game_speed": {"type": "integer", "minimum": 1, "maximum": 5},
-    "start_date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
-    "end_date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
-    "build": {"type": "object"},
-    "save": {"type": "object"},
-    "environment": {"type": "object"},
-    "notes": {"type": "string"}
+    "format_version": {
+      "const": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "variant": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repeat": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "warmup": {
+      "type": "boolean"
+    },
+    "task_thread_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "wall_clock_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "ticktask_csv": {
+      "type": "string",
+      "minLength": 1
+    },
+    "game_speed": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "start_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "end_date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "build": {
+      "type": "object"
+    },
+    "save": {
+      "type": "object"
+    },
+    "environment": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "game_rules": {
+      "type": "object",
+      "properties": {
+        "pop_consolidation": {
+          "type": "string",
+          "enum": [
+            "no_consolidation",
+            "minor_consolidation",
+            "moderate_consolidation",
+            "aggressive_consolidation"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
   },
   "additionalProperties": true
 }
