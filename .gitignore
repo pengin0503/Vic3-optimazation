@@ -1,4 +1,4 @@
-# Proprietary / local Victoria 3 data
+# Proprietary / local Victoria 3 binaries and bulk archives
 *.exe
 *.dll
 *.lib
@@ -10,6 +10,12 @@
 *.rar
 *.v3
 *.sav
+
+# Explicitly allow the deliberately selected research-input archives
+!input-data/
+!input-data/jomini.zip
+!input-data/clausewitz.zip
+!input-data/game.zip
 
 # Local binary-analysis projects
 *.gzf
