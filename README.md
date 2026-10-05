@@ -4,9 +4,9 @@ Private research project for improving Victoria 3 simulation performance beyond 
 
 ## Current state
 
-Start here: [latest handoff — 2026-10-05](docs/superpowers/reports/2026-10-05-offline-quality-profiler-continuation-ja.md).
+Start here: [latest handoff — 2026-10-05](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md).
 
-No native performance patch, DLL injection, scheduler override, or simulation-state modification has been implemented. Measurement/static-analysis tooling and the read-only profiler telemetry design are prepared; the remaining gate is repeatable runtime data plus synchronized OS-level profiling.
+No native performance patch, DLL injection, scheduler override, or simulation-state modification has been implemented. Measurement/static-analysis tooling and the offline profiler reference codec/parser are prepared; the remaining gate is repeatable runtime data plus synchronized OS-level profiling.
 
 Earlier checkpoints remain under `docs/superpowers/reports/` for provenance and should not be treated as the current status when they conflict with the latest handoff.
 
@@ -41,5 +41,5 @@ Measure first. Do not infer scheduler/lock causes from low aggregate CPU use alo
 
 - [design](docs/superpowers/specs/2026-10-04-native-performance-optimization-design.md)
 - [implementation plan](docs/superpowers/plans/2026-10-04-native-performance-optimization-implementation.md)
-- [latest handoff](docs/superpowers/reports/2026-10-05-offline-quality-profiler-continuation-ja.md)
+- [latest handoff](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md)
 - [input-data manifest](research/input-data-manifest.md)
