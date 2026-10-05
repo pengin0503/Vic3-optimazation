@@ -2,7 +2,7 @@
 
 Date: 2026-10-05  
 Target: Victoria 3 Windows 1.14.5  
-Status: design only; no game hook, DLL injection, scheduler override, or simulation-state write is implemented by this document.
+Status: offline wire contract and reference tooling; no game hook, DLL injection, scheduler override, or simulation-state write is implemented by this document.
 
 ## Goal
 
@@ -25,21 +25,53 @@ It must not change simulation behavior.
 
 A trace file starts with a fixed little-endian header followed by versioned metadata.
 
-Required fields:
+The v1 fixed prefix is **112 bytes**, without implicit compiler padding.
+All integer fields are unsigned little-endian. Packed reference format:
+`<4sHHB7xQQ32sI32sIQ` (the seven reserved bytes are zero).
 
-| Field | Type | Purpose |
-| --- | --- | --- |
-| magic | 4 bytes | ASCII `V3PF` |
-| format_version | uint16 | Starts at 1 |
-| header_bytes | uint16 | Allows forward-compatible extension |
-| pointer_size | uint8 | Must be 8 for current x64 target |
-| qpc_frequency | uint64 | Convert QPC ticks to seconds |
-| session_start_qpc | uint64 | Session reference point |
-| executable_sha256 | 32 bytes | Exact `victoria3.exe` gate |
-| signature_db_version | uint32 | Signature/target table revision |
-| target_table_hash | 32 bytes | Hash of resolved target metadata |
-| flags | uint32 | Address/token/privacy/feature flags |
-| total_dropped_events | uint64 | Final aggregate drop count |
+| Field | Offset | Bytes |
+| --- | ---: | ---: |
+| magic (`V3PF`) | 0 | 4 |
+| format_version (`1`) | 4 | 2 |
+| header_bytes | 6 | 2 |
+| pointer_size (`8`) | 8 | 1 |
+| reserved (all zero) | 9 | 7 |
+| qpc_frequency (positive) | 16 | 8 |
+| session_start_qpc | 24 | 8 |
+| executable_sha256 (raw digest) | 32 | 32 |
+| signature_db_version (`1` supported) | 64 | 4 |
+| target_table_hash (raw digest) | 68 | 32 |
+| flags | 100 | 4 |
+| total_dropped_events | 104 | 8 |
+
+`header_bytes >= 112`, at most 65528, and a multiple of 8. The extension
+`112:header_bytes` is UTF-8 JSON followed by **0..7 zero padding bytes** to the
+next 8-byte boundary. No JSON NUL terminator, BOM or duplicate keys. Metadata
+must be a JSON object; nonfinite JSON numbers are prohibited. Its required fields
+are `build_ids`, nonempty `profiler_build_id`, and a `targets` list.
+`build_ids` contains these exact strings for the only supported build:
+
+```json
+{
+  "caligula_branch": "release/1.14.5",
+  "caligula_rev": "9f8281a37e85639359b3b0c2c5df0196e975ca4b",
+  "clausewitz_branch": "caligula/release/1.14.x",
+  "clausewitz_rev": "fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef"
+}
+```
+
+A target entry requires unique nonzero uint32 `target_id`, nonempty `name`,
+`kind`, and a nonempty `ranges` list of half-open `begin_rva` / `end_rva` hex
+strings. Ranges in each target do not overlap. IDs are scoped to this table;
+no address is used as a stable identifier. Cross-target overlaps are legal
+metadata and must not be used to choose an arbitrary range winner.
+`target_id=0` is reserved for a target-independent Counter only.
+
+`target_table_hash` is SHA-256 of the exact UTF-8 canonical JSON encoding of the
+metadata `targets` value: sorted object keys, compact `,` / `:` separators,
+`ensure_ascii=False`, no NaN/Infinity, no trailing newline. Array order remains
+significant. Hash failure disables all target interpretation. Unsupported
+executable/build IDs/signature version likewise yield no interpreted events.
 
 Build metadata additionally records the known 1.14.5 branch/revision strings and the profiler build identifier.
 
@@ -65,6 +97,7 @@ Rules:
 - `target_id` indexes the validated target table in the file/session metadata.
 - `sequence` is monotonic per thread buffer. It does not require a global atomic counter.
 - unknown event types can be skipped using `record_bytes`.
+- every `record_bytes` is at least 24, at most 65528, and a multiple of 8; payload extension/padding is skipped according to that size.
 - a malformed record terminates parsing of that buffer segment; parsers must not guess the next boundary.
 
 ## Event types
@@ -142,6 +175,36 @@ Initial counters include:
 - signature validation failures
 - thread-buffer exhaustion
 - flush backlog high-water mark
+
+## Exact v1 payload layout
+
+Offsets below are relative to the 24-byte event header's end. Padding is
+explicit, zeroed by the reference encoder. A reader skips extension/padding
+bytes beyond each type's minimum record size; it does not infer new fields.
+
+| Type | Payload fields and byte offsets | Packed payload | Minimum record bytes |
+| --- | --- | --- | ---: |
+| FunctionBegin (1) | correlation_id 0 | `<Q` | 32 |
+| FunctionEnd (2) | correlation_id 0, status_flags 8, padding 12..15 | `<QI4x` | 40 |
+| SchedulerDecision (3) | correlation_id 0, range_begin 8, range_end 16, range_length 24, task_thread_count 32, decision 34, padding 35, reason_flags 36, chunk_or_work_count 40, padding 44..47 | `<QQQQHBxII4x` | 72 |
+| WaitBegin (4) | correlation_id 0, wait_kind 8, padding 10..15, object_token 16 | `<QH6xQ` | 48 |
+| WaitEnd (5) | correlation_id 0, result_flags 8, padding 12..15 | `<QI4x` | 40 |
+| Counter (6) | counter_id 0, padding 4..7, signed value 8 | `<I4xq` | 40 |
+
+Scheduler decision values: 0 unknown, 1 serial, 2 parallel. Range end must be
+>= begin, and range_length equals end-begin. Optional scheduler statistics can
+be carried in future extensions, which the v1 reference parser skips.
+Sequence is uint32, starts at any value per thread, and wraps modulo 2^32.
+Timestamps must be >= session start and nondecreasing per thread, never globally
+sorted. Begin/End keys include thread, function/wait family, correlation ID,
+and target ID. Duplicate begins invalidate the pair; broken or negative pairs
+remain diagnostic rather than repaired. Unknown types with a valid size are
+reported and skipped while their common headers still participate in sequence
+and per-thread timestamp checks. Total drops are a header count, not added to
+Counter values (which may describe overlapping drop observations).
+
+The future C++ writer must serialize fields at these exact offsets; an unpacked
+C++ struct or implicit ABI padding is not a compatible wire format.
 
 ## Ring-buffer architecture
 
