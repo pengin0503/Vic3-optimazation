@@ -1,0 +1,25 @@
+{
+  "run_id": "repeat-t16-r02",
+  "variant": "user-3month-repeat-batch",
+  "task_thread_count": 16,
+  "repeat": 2,
+  "warmup": false,
+  "wall_clock_seconds": 34.66,
+  "ticktask_csv": "ticktask_timings.csv",
+  "csv_sha256": "585918875be5b1f44803112befbfc9ff4134379622356db9454c141c76a1fe89",
+  "hwinfo_csv": "hwinfo.csv",
+  "hwinfo_sha256": "1bf9c29276cf325bfd0bd15afd2d8bfd97b2bb1b2fb66c49bea4c98cd6ca0602",
+  "measurement_date": "2026-10-05",
+  "source_archive": "bench_16_r2.zip",
+  "source_archive_sha256": "d6cff2e7741c8137fe98a6e674160b0af3f5e5501ac7c3fe1993bd98f17292fb",
+  "condition_provenance": {
+    "task_thread_count": "user filename label",
+    "wall_clock_seconds": "user message",
+    "build_save_rules_period": "user confirmed same save, 1911-03-01 to 1911-06-01, settings and mods as prior batch; no new binary/save hashes supplied",
+    "warmup": "user confirmed warm-up performed; separate warm-up CSV not supplied"
+  },
+  "start_date": "1911-03-01",
+  "end_date": "1911-06-01",
+  "warmup_performed": true,
+  "notes": "New nine-run batch only; historical one-run data kept separate. Build/save hash not remeasured."
+}
