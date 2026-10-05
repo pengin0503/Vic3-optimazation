@@ -1,0 +1,31 @@
+{
+  "all_game_counts_unit_unbatched": true,
+  "ambiguous_addresses": 0,
+  "critical_path_or_speedup_established": false,
+  "existing_correlator_summary": {
+    "ambiguous_rows": 0,
+    "invalid_address_rows": 0,
+    "matched_rows": 11324,
+    "unmatched_rows": 274305
+  },
+  "game_records_between_outer_markers": 398022,
+  "game_stack_timestamp_tid_mismatches": 0,
+  "independent_review_completed": true,
+  "invalid_addresses": 0,
+  "leaf_witness_regions": 25,
+  "local_tests": {
+    "count": 121,
+    "passed": true,
+    "scope": "Existing tool and exact-build integration tests; research assertions and WPR profile checks are separate; not runtime performance tests",
+    "skips": 0
+  },
+  "matched_game_leaf_rows": 11324,
+  "matching_ticktask_csv_available": false,
+  "module_extent_verified_against_real_image_export": true,
+  "normalization_and_existing_correlation_executed": true,
+  "repeated_parsing_aggregate_counts_identical": true,
+  "report_table_rows_verified_against_real_counts": 10,
+  "trace_lost_buffers": 0,
+  "trace_lost_events": 0,
+  "warmup_metadata_review_corrected": true
+}

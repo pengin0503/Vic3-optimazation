@@ -2,8 +2,8 @@
   "artifacts": {
     "README.md": {
       "hash_mode": "utf8_lf",
-      "hashed_size_bytes": 4880,
-      "sha256": "f6643c69399a43a93c4d0af50d1b1cf6881ffe91c7977d7bbbf96467be255b22"
+      "hashed_size_bytes": 5677,
+      "sha256": "f45f738cf32565f38d606cfbe3d79b1004d6e9e86f09a768efb13258e191e341"
     },
     "docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md": {
       "hash_mode": "utf8_lf",

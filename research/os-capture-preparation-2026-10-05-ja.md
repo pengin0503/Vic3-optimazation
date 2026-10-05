@@ -1,6 +1,6 @@
 # 12/16スレッドのOS計測：準備と実行手順
 
-2026-10-05。ユーザーは今回はゲームを操作できないため、計測準備までを依頼。実ゲームのOS計測は0回。CPU stackによる費用の切り分けを最初に行い、必要なら別のmicroarchitecture/allocation計測へ進む。
+2026-10-05の準備時点の記録。この時点ではユーザーはゲームを操作できず、実ゲームのOS計測は0回だった。その後の実計測は[最初の欠落あり記録](os-capture-attempt-2026-10-05-ja.md)と[欠落0件のsampled記録](os-sampled-capture-2026-10-05-ja.md)を参照。以下のpreflightと未測定templateは準備時点の証拠として残す。CPU stackによる費用の切り分けを最初に行い、必要なら別のmicroarchitecture/allocation計測へ進む。
 
 ## 今回確認した状態
 

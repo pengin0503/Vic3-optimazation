@@ -1,0 +1,1607 @@
+{
+  "common_frames": {
+    "count": 368,
+    "max": 60543990,
+    "min": 60541788
+  },
+  "current_frames": {
+    "count": 368,
+    "max": 60543990,
+    "min": 60541788
+  },
+  "current_rows": 23445,
+  "current_unique_tasks": 261,
+  "extra_frames": [
+    [],
+    [],
+    [
+      60543996,
+      60544002,
+      60544008
+    ],
+    []
+  ],
+  "format_version": 1,
+  "interpretation": "One instrumented attempt. Difference is observational and is not an estimate of profiler overhead or a speedup. Task cumulative times are not wall time or native CPU samples. Matching task/calls does not prove internal simulation equivalence.",
+  "observed_wall_change_fraction": 0.08730082085948832,
+  "prior_t12_mean_wall_seconds": 34.516666666666666,
+  "prior_t12_wall_seconds": [
+    34.71,
+    34.53,
+    34.31
+  ],
+  "same_common_frame_task_call_multiset_vs_t12": [
+    true,
+    true,
+    true
+  ],
+  "tasks_by_cumulative_ms": [
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 1708.0,
+      "prior_t12_mean_cumulative_ms": 1617.0,
+      "task": "HandleAutonomousInvestment"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 1319.0,
+      "prior_t12_mean_cumulative_ms": 1224.0,
+      "task": "UpdatePopGrowth"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 1013.0,
+      "prior_t12_mean_cumulative_ms": 966.3333333333334,
+      "task": "ProcessEconomicMigration"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 983.0,
+      "prior_t12_mean_cumulative_ms": 873.3333333333334,
+      "task": "RecalculateModifierNodes"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 896.0,
+      "prior_t12_mean_cumulative_ms": 841.0,
+      "task": "UpdateEmployment"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 600.0,
+      "prior_t12_mean_cumulative_ms": 563.0,
+      "task": "UpdateBuildingSpendingPriorities_Stage2"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 516.0,
+      "prior_t12_mean_cumulative_ms": 473.6666666666667,
+      "task": "UpdateStateTrades"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 437.0,
+      "prior_t12_mean_cumulative_ms": 414.0,
+      "task": "UpdateWorldMarket"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 340.0,
+      "prior_t12_mean_cumulative_ms": 308.0,
+      "task": "UpdateSpendingVariables"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 326.0,
+      "prior_t12_mean_cumulative_ms": 313.0,
+      "task": "UpdateAICountryGoalsAdjustments"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 285.0,
+      "prior_t12_mean_cumulative_ms": 253.66666666666666,
+      "task": "UpdateAI"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 271.0,
+      "prior_t12_mean_cumulative_ms": 260.0,
+      "task": "PrepareNavyAIData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 232.0,
+      "prior_t12_mean_cumulative_ms": 218.66666666666666,
+      "task": "UpdateStatePopNeedCache"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 224.0,
+      "prior_t12_mean_cumulative_ms": 217.33333333333334,
+      "task": "WeeklyBuildingBudgetUpdate"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 187.0,
+      "prior_t12_mean_cumulative_ms": 173.33333333333334,
+      "task": "AverageStandardOfLivingUpdate"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 183.0,
+      "prior_t12_mean_cumulative_ms": 167.66666666666666,
+      "task": "UpdatePopsInterestGroupsAndMovements"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 168.0,
+      "prior_t12_mean_cumulative_ms": 160.33333333333334,
+      "task": "RecalcStatePopStatistics"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 162.0,
+      "prior_t12_mean_cumulative_ms": 154.33333333333334,
+      "task": "CreateNewPoliticalMovements"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 150.0,
+      "prior_t12_mean_cumulative_ms": 142.33333333333334,
+      "task": "ProcessPopPurchases"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 139.0,
+      "prior_t12_mean_cumulative_ms": 129.33333333333334,
+      "task": "MonthlyPulseJournalEntries"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 129.0,
+      "prior_t12_mean_cumulative_ms": 118.33333333333333,
+      "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 115.0,
+      "prior_t12_mean_cumulative_ms": 97.66666666666667,
+      "task": "UpdateAIStrategies"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 114.0,
+      "prior_t12_mean_cumulative_ms": 105.66666666666667,
+      "task": "UpdateAutoPlacedBuildings"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 110.0,
+      "prior_t12_mean_cumulative_ms": 106.0,
+      "task": "MergeSmallPops"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 105.0,
+      "prior_t12_mean_cumulative_ms": 94.66666666666667,
+      "task": "UpdateJournalEntries"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 100.0,
+      "prior_t12_mean_cumulative_ms": 96.33333333333333,
+      "task": "UpdateColonizationProgress"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 93.0,
+      "prior_t12_mean_cumulative_ms": 93.0,
+      "task": "UpdateInputGoodsShortage"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 81.0,
+      "prior_t12_mean_cumulative_ms": 63.666666666666664,
+      "task": "UpdateActiveBattles"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 70.0,
+      "prior_t12_mean_cumulative_ms": 68.33333333333333,
+      "task": "UpdateBuildingThroughput"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 67.0,
+      "prior_t12_mean_cumulative_ms": 66.0,
+      "task": "ProcessWagesStage1"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 66.0,
+      "prior_t12_mean_cumulative_ms": 63.666666666666664,
+      "task": "SpawnCulturalCommunities"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 62.0,
+      "prior_t12_mean_cumulative_ms": 15.666666666666666,
+      "task": "UpdateJobSatisfaction"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 61.0,
+      "prior_t12_mean_cumulative_ms": 60.0,
+      "task": "MoveFleets"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 60.0,
+      "prior_t12_mean_cumulative_ms": 38.333333333333336,
+      "task": "ProcessInterestGroups"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 60.0,
+      "prior_t12_mean_cumulative_ms": 59.0,
+      "task": "UpdateInterestGroupSupportForPoliticalMovements"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 57.0,
+      "prior_t12_mean_cumulative_ms": 43.666666666666664,
+      "task": "ProgressConstructionQueues"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 53.0,
+      "prior_t12_mean_cumulative_ms": 52.0,
+      "task": "UpdateNationalAwakenings"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 49.0,
+      "prior_t12_mean_cumulative_ms": 48.333333333333336,
+      "task": "UpdateCachedPowerProjectionAndBlockadeStrength"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 46.0,
+      "prior_t12_mean_cumulative_ms": 41.666666666666664,
+      "task": "UpdateCachedStraitTradeData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 40.0,
+      "prior_t12_mean_cumulative_ms": 38.0,
+      "task": "UpdateSupplyData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 39.0,
+      "prior_t12_mean_cumulative_ms": 38.0,
+      "task": "AdjustWages"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 39.0,
+      "prior_t12_mean_cumulative_ms": 27.333333333333332,
+      "task": "UpdatePopLiteracy"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 31.0,
+      "prior_t12_mean_cumulative_ms": 30.333333333333332,
+      "task": "UpdateCivilWars"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 31.0,
+      "prior_t12_mean_cumulative_ms": 30.0,
+      "task": "UpdateTargetFervorAndCulturalEvents"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 29.0,
+      "prior_t12_mean_cumulative_ms": 20.0,
+      "task": "ValidateLobbies"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 27.0,
+      "prior_t12_mean_cumulative_ms": 26.0,
+      "task": "NewUpdateMaxOffenseDefense"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 27.0,
+      "prior_t12_mean_cumulative_ms": 24.0,
+      "task": "RadicalizePoliticalMovementSupporters"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 27.0,
+      "prior_t12_mean_cumulative_ms": 26.333333333333332,
+      "task": "UpdateMigrationData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 26.0,
+      "prior_t12_mean_cumulative_ms": 22.333333333333332,
+      "task": "UpdatePowerBlocsLeverage"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 26.0,
+      "prior_t12_mean_cumulative_ms": 26.0,
+      "task": "WeeklyStateBudgetUpdate"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 24.0,
+      "prior_t12_mean_cumulative_ms": 17.0,
+      "task": "UpdateBuildingSpendingPriorities_Stage1"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 23.0,
+      "prior_t12_mean_cumulative_ms": 18.0,
+      "task": "SyncedAIPostUpdate"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 18.0,
+      "prior_t12_mean_cumulative_ms": 17.666666666666668,
+      "task": "RemoveDeadObjects"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 18.0,
+      "prior_t12_mean_cumulative_ms": 10.0,
+      "task": "UpdateOrganization"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 17.0,
+      "prior_t12_mean_cumulative_ms": 17.666666666666668,
+      "task": "EnslaveDebtors"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 17.0,
+      "prior_t12_mean_cumulative_ms": 13.333333333333334,
+      "task": "MoveArmies"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 14.0,
+      "prior_t12_mean_cumulative_ms": 13.333333333333334,
+      "task": "FindCrewForShips"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 14.0,
+      "prior_t12_mean_cumulative_ms": 17.333333333333332,
+      "task": "UpdateAgitatorMovementSupport"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 13.0,
+      "prior_t12_mean_cumulative_ms": 10.0,
+      "task": "ProcessDependentWages"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 13.0,
+      "prior_t12_mean_cumulative_ms": 9.666666666666666,
+      "task": "RecomputeStandardProductionMethods"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 13.0,
+      "prior_t12_mean_cumulative_ms": 13.0,
+      "task": "UpdateCachedEconomicDependence"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 13.0,
+      "prior_t12_mean_cumulative_ms": 13.0,
+      "task": "UpdateCountryNormalWageCache"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 13.0,
+      "prior_t12_mean_cumulative_ms": 12.666666666666666,
+      "task": "UpdateFormationSupply"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 13.0,
+      "prior_t12_mean_cumulative_ms": 12.333333333333334,
+      "task": "WeeklyUpdateJournalEntries"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 12.0,
+      "prior_t12_mean_cumulative_ms": 9.0,
+      "task": "ProcessMassMigration"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 12.0,
+      "prior_t12_mean_cumulative_ms": 10.333333333333334,
+      "task": "RemoveExpiredCatalysts"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 11.0,
+      "prior_t12_mean_cumulative_ms": 11.333333333333334,
+      "task": "RemoveNonexistantCountries"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 8.0,
+      "prior_t12_mean_cumulative_ms": 8.0,
+      "task": "UpdateAuthoritySpendingPriorities"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 7.0,
+      "prior_t12_mean_cumulative_ms": 5.666666666666667,
+      "task": "UpdatePoliticalMovements"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 7.0,
+      "prior_t12_mean_cumulative_ms": 2.6666666666666665,
+      "task": "UpdateTechnologyProgress"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 6.0,
+      "prior_t12_mean_cumulative_ms": 4.666666666666667,
+      "task": "UpdateCivilWarProgress"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 5.0,
+      "prior_t12_mean_cumulative_ms": 4.0,
+      "task": "ProcessWagesStage2"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 4.0,
+      "prior_t12_mean_cumulative_ms": 1.3333333333333333,
+      "task": "UpdateCachedLiteracy"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 4.0,
+      "prior_t12_mean_cumulative_ms": 1.0,
+      "task": "UpdatePopPoliticalStrength"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 3.0,
+      "prior_t12_mean_cumulative_ms": 3.0,
+      "task": "ReevaluateLawGroups"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 3.0,
+      "prior_t12_mean_cumulative_ms": 3.0,
+      "task": "UpdateAICountryGoalsAddRemove"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 3.0,
+      "prior_t12_mean_cumulative_ms": 1.3333333333333333,
+      "task": "UpdateAdvanceProgress"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 3.0,
+      "prior_t12_mean_cumulative_ms": 2.0,
+      "task": "UpdateAutoDownsizing"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 2.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStateObstinanceCache"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DistributeSupplyShips"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 0.3333333333333333,
+      "task": "RecalcAIRegionScores"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 0.3333333333333333,
+      "task": "UpdateActiveNavalBattles"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 0.3333333333333333,
+      "task": "UpdateLawEnactmentProgress"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 1.0,
+      "task": "UpdateLibertyDesire"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePartySupport"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 1.0,
+      "task": "UpdateRegionalHQs"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 1.0,
+      "task": "UpdateSupplyShortageRatio"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 1.0,
+      "prior_t12_mean_cumulative_ms": 0.6666666666666666,
+      "task": "ValidateDiplomaticPacts"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ActivateLawsAtMaxPhases"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ApplyFleetMaintenancePenalty"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "AutoDeclinePendingDiploActions"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "CheckCareerEnds"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "CheckCharacterNewTrait"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "CheckCompanyChartersPossible"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "CheckForNewCivilWars"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "CheckTemporaryHostilityExpiry"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ClearCharacterInteractionCooldowns"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ClearExpiredMigrationBuckets"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ClearJournalEntryScriptedButtonCooldowns"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ClearLogisticsData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ClearOutlinerData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "CollectivizePrivateProperty"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "CreateElections"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DailyCountryBudgetUpdate"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DailyStateRegionUpdate"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DailyUpdateCharacters"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DailyUpdateDiplomaticPacts"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DailyUpdateWars"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DecayAcceptanceDeltas"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DecayFrontOccupationProgress"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "DownsizeMilitaryBuildingsToUnitCount"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "EffectuateTreatyObligations"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "FinishHarvestConditions"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "FlushNavyAIData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "GenerateCharacterConditions"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "GenerateLeaders"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "InvalidateCompanyExecutiveModifiers"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "LockInStraitSettings"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "MonthlyNonFulfillmentChecks"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "MonthlyUpdateDiplomaticPacts"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "PeriodicDebugLog"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "PostIGPowerStatusNotifications"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "PreUpdatePoliticalMovements"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessAttritionCasualties"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessAutoExpandingBuildings"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessInsurrectionaryIGsInGoverment"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessJournalEntryTimeout"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessMarginalizedIGsPartyMembership"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessPopDiplomaticIncome"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessProposalTimeout"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProcessSlaveTrade"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.3333333333333333,
+      "task": "ProcessWelfarePayments"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.3333333333333333,
+      "task": "ProgressShipConstructions"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ProgressSupplyShipConstructions"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "PurgeOldCulturalCommunities"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RecalcCountryPopStatistics"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RecalcInterestGroups"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RecalculateCredit"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RecordDiplomaticPlayCosts"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RecordElectionVotes"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RefreshCulturalCommunities"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RemoveTimedOutAmendments"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RemoveTimedOutInvalidSeaRegions"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ResetPopMoney"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "RunScriptedTests"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "SnapshotPiracyTracking"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.6666666666666666,
+      "task": "SpawnAgitators"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "SpawnCharactersInPool"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "SpawnInterceptBattles"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "SpawnRaidSupplyBattles"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "SplitShipsToRetrofit"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "StartHarvestConditions"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "StartTreatyBindingPeriods"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateAICountryGoalsStrategic"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateAIGoals"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateAIMemories"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateAIRegionalObjectives"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateAppeasement"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateAverageEmployeeEarnings"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateBasePopBureaucracy"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateBattlesCachedCombatData"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateBlockades"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCachedCarryingCapacity"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCachedCompanyProductivity"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCachedDataForWarSupportChange"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCachedRankingsAndGlobalGDP"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCharacterTraitGain"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCivilWarVictories"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCombatUnitCultures"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCommunityAcceptanceCache"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateConscriptionCenters"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.3333333333333333,
+      "task": "UpdateCountryAcceptanceCache"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCountryFormationCandidates"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCountryFormationData"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCountryLocalRegions"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCountryRankings"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCountryRegionLocality"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCountryScorePositions"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCulturalObsessions"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateCurrentFervor"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateDefeatedAdmirals"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateDiplomaticDemands"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateDiplomaticPlays"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateDynamicCountryNames"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.3333333333333333,
+      "task": "UpdateElections"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateFamines"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateFleetsReturnToPort"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateFleetsVeterancy"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateFormationTravelCosts"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateFormationTravelRegionAccess"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateGoodsLeaderboards"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateGovernments"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateHQs"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateHiringRates"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateIGLawApprovalCache"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateIncorporation"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateInfamy"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateInstitutions"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateInterestGroupPoliticalStrength"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateInterestInvolvement"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateInterests"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateInvasions"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateLastWeekEmployeeCount"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateMarketCachedPopNeedExpenses"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateMerchantMarineShortage"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateMigrationTargets"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateMobilization"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateMorale"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateNavalHostilityDamage"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateNavyAI"
+    },
+    {
+      "calls_current": 1,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateNavyAIShipTemplates"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateObjectives"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateObligations"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePoliticalMovementRadicalism"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePopAcceptanceCache"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePopLoyalistsAndRadicalsStatisticsForCurrentWeek"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePopSupportForPoliticalMovements"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePortBombardment"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePotentialMilitaryStrength"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePowerBlocMandates"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePowerStruggles"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePresence"
+    },
+    {
+      "calls_current": 3,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdatePriceReports"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateProducedSupply"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateProsperity"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateRecalledFleets"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateRelationsFromStraits"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateRelationsFromTreaties"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateSavedVariables"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateShipMaintenanceCaches"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateSlaveImportMarkers"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStandardBuildingModifiers"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStateDevastation"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStateInfrastructure"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStateMostAcceptedCulturesCache"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStatePollutionCache"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStateTurmoilAndLoyalistsCache"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStateWelfareMultiplier"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateStraitSettings"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateSways"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateTension"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateTerrainManipulation"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateTimedModifiers"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateTransportMissions"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateTreatyPorts"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateUnemploymentProfessionTransitions"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateUnitVeterancy"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpdateUpdatePrestigeGoodsProduction"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "UpgradeUnitTypes"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ValidateArticles"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ValidateDecreees"
+    },
+    {
+      "calls_current": 92,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ValidateDiplomaticDemands"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ValidateGoodsTaxesAndTariffs"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ValidateMigrationTargets"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ValidateProductionMethods"
+    },
+    {
+      "calls_current": 368,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "ValidateSways"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "WeeklyCountryCounterUpdate"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "WeeklyNonFulfillmentChecks"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "WeeklyUpdateDiplomaticPacts"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "WeeklyWarSupportAndEnforcement"
+    },
+    {
+      "calls_current": 13,
+      "current_cumulative_ms": 0.0,
+      "prior_t12_mean_cumulative_ms": 0.0,
+      "task": "cohesion_update"
+    }
+  ],
+  "wall_seconds": 37.53
+}

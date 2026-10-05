@@ -1,0 +1,105 @@
+from pathlib import Path
+import argparse, bisect, csv, collections, functools, hashlib, json
+
+parser=argparse.ArgumentParser(description='Single-run xperf sample/stack observations, not performance attribution')
+parser.add_argument('--repo',type=Path,required=True)
+parser.add_argument('--raw',type=Path,required=True)
+parser.add_argument('--output',type=Path,required=True)
+args=parser.parse_args()
+repo=args.repo.resolve()
+raw=args.raw.resolve()
+out=args.output.resolve()
+out.mkdir(exist_ok=False)
+base=0x7ff7f06c0000
+end=0x7ff7f6563000
+pid='victoria3.exe (18108)'
+lo,hi=356245,130724436
+# Confirm the ASLR extent against this run's real image export, not PE preferred base.
+image_extents=set()
+with (raw/'process-images.txt').open(encoding='utf-8-sig',newline='') as f:
+    for row in csv.reader(f,skipinitialspace=True):
+        row=[s.strip() for s in row]
+        if len(row)>=12 and row[2]=='Image' and row[4]==pid and row[10]=='victoria3.exe':
+            image_extents.add((int(row[5],16),int(row[6],16)))
+assert image_extents=={(base,end)},image_extents
+
+def write(name,d): (out/name).write_text(json.dumps(d,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+def ranked(counter,limit=None):
+    return sorted(counter.items(),key=lambda item:(-item[1],item[0]))[:limit]
+catalog_paths={'downstream':repo/'research/generated/os-capture-preparation-2026-10-05/native-region-catalog.json','ticktask':repo/'research/generated/native-target-catalog-1.14.5.json'}
+catalogs={k:json.loads(p.read_text(encoding='utf-8')) for k,p in catalog_paths.items()}
+spans={k:sorted((int(r['begin_rva'],16),int(r['end_rva'],16),t['name']) for t in c['targets'] for r in t['ranges']) for k,c in catalogs.items()}
+starts={k:[s[0] for s in v] for k,v in spans.items()}
+@functools.lru_cache(maxsize=200000)
+def names(va,k):
+    if not base<=va<end: return set()
+    rva=va-base
+    # Catalog spans may overlap for TickTasks; retain every matching range.
+    return {name for b,e,name in spans[k][:bisect.bisect_right(starts[k],rva)] if rva<e}
+
+counts=collections.Counter();modules=collections.Counter();threads=collections.Counter();bins=collections.defaultdict(collections.Counter)
+leaf={k:collections.Counter() for k in catalogs};inclusive={k:collections.Counter() for k in catalogs}
+caller_pairs=collections.Counter();addresses=collections.Counter();stack_quality=collections.Counter()
+pending=None
+csv_file=(out/'game-leaf-samples.csv').open('w',encoding='utf-8',newline='')
+writer=csv.writer(csv_file)
+writer.writerow(['timestamp_us','thread_id','process','module','instruction_va','module_base','stack'])
+
+def flush():
+    global pending
+    if pending is None:return
+    p=pending;pending=None
+    if p['process']!=pid or not lo<=p['time']<=hi:return
+    counts['game_samples_between_markers']+=p['count']
+    counts['sample_records_between_markers']+=1
+    modules[p['module']]+=p['count'];threads[p['tid']]+=p['count']
+    second=p['time']//1000000
+    bins[second]['game_samples']+=p['count']
+    if p['count']!=1: counts['non_unit_count_records']+=1
+    if p['type']!='Unbatched':counts['non_unbatched_records']+=1
+    if p['stack']:stack_quality['samples_with_stack']+=1
+    else:stack_quality['samples_without_stack']+=1
+    if p['module']=='victoria3.exe':
+        assert base<=p['va']<end
+        addresses[p['va']-base]+=p['count']
+        writer.writerow([p['time'],p['tid'],pid,p['module'],hex(p['va']),hex(base),';'.join(hex(x) for x in p['stack'])])
+    matched={}
+    for k in catalogs:
+        ln=names(p['va'],k) if p['module']=='victoria3.exe' else set()
+        inc=set().union(*(names(x,k) for x in p['stack'])) if p['stack'] else set()
+        inc.update(ln)
+        matched[k]=inc
+        leaf[k].update({x:p['count'] for x in ln});inclusive[k].update({x:p['count'] for x in inc})
+        bins[second][k+'_inclusive_samples']+=p['count'] if inc else 0
+    for a in matched['downstream']:
+        for b in matched['ticktask']:caller_pairs[(a,b)]+=p['count']
+
+header={};stack_mismatch=0
+with (raw/'samples-stacks.csv').open(encoding='utf-8-sig',newline='') as f:
+    for number,row in enumerate(csv.reader(f),1):
+        if not row:continue
+        row=[v.strip() for v in row];event=row[0]
+        if len(row)>1 and row[1]=='TimeStamp':
+            if event in ('SampledProfile','Stack'):header[event]=row
+            continue
+        if event=='SampledProfile':
+            flush()
+            assert len(row)==10,(number,len(row))
+            counts['all_sample_records']+=1
+            pending={'time':int(row[1]),'process':row[2],'tid':row[3],'va':int(row[4],16),'module':row[7].split('!',1)[0],'count':int(row[8]),'type':row[9],'stack':[]}
+            assert int(row[7].split('!',1)[1],16)==pending['va']
+        elif event=='Stack' and pending:
+            assert len(row)==6,(number,len(row))
+            if int(row[1])!=pending['time'] or row[2]!=pending['tid']:
+                stack_mismatch+=1;continue
+            va=int(row[4],16)
+            assert int(row[5].split('!',1)[1],16)==va
+            pending['stack'].append(va)
+flush();csv_file.close()
+assert counts['non_unit_count_records']==0,counts
+assert counts['non_unbatched_records']==0,counts
+assert stack_mismatch==0,stack_mismatch
+report={'format_version':1,'run_id':'os-sampled-t12-r01','scope':'User-action marker envelope only; not exact 48.46-second game window. Includes pause/UI/console time. No precise wait events were collected.','module_base':hex(base),'module_end':hex(end),'process':pid,'marker_start_us':lo,'marker_end_us':hi,'counts':dict(counts),'stack_quality':dict(stack_quality),'stack_timestamp_thread_mismatches':stack_mismatch,'xperf_observed_headers':header,'module_sample_counts':ranked(modules),'thread_sample_counts':ranked(threads),'catalogs':{k:{'path':str(p.relative_to(repo)).replace('\\','/'),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'leaf_counts':ranked(leaf[k]),'inclusive_sample_counts':ranked(inclusive[k])} for k,p in catalog_paths.items()},'downstream_ticktask_stack_cooccurrence':[{'region':a,'ticktask':b,'samples':n} for (a,b),n in ranked(caller_pairs)],'top_victoria_leaf_rvas':[{'rva':hex(a),'samples':n} for a,n in ranked(addresses,40)],'timeline_seconds':[{'trace_second':second,**dict(v)} for second,v in sorted(bins.items())],'warning':'Sample counts are observations, not calls, CPU nanoseconds, allocation counts or critical-path percentages. Inclusive counts overlap. Stack cooccurrence is neither a direct-call witness nor source-level semantic proof. Paused/UI samples and unverified game boundaries prevent whole-envelope shares from representing simulation shares.'}
+write('sample-observations.json',report)
+write('mapping.json',{'executable_sha256':catalogs['downstream']['executable_sha256'],'event_type':'cpu_sample','timestamp_column':'timestamp_us','timestamp_unit':'us','thread_id_column':'thread_id','process_column':'process','module_column':'module','instruction_va_column':'instruction_va','module_base_column':'module_base','stack_column':'stack'})
+print(json.dumps({'counts':report['counts'],'stack_quality':report['stack_quality'],'leaf_downstream':leaf['downstream'].most_common(12),'inclusive_downstream':inclusive['downstream'].most_common(12),'pairs':report['downstream_ticktask_stack_cooccurrence'][:12]},indent=2))

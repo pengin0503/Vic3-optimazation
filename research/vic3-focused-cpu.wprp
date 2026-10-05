@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WindowsPerformanceRecorder Version="1.0" Author="Vic3-optimazation research">
+  <Profiles>
+    <SystemCollector Id="Vic3System" Name="NT Kernel Logger">
+      <BufferSize Value="1024" />
+      <Buffers Value="64" />
+    </SystemCollector>
+    <EventCollector Id="Vic3Markers" Name="Vic3 marker collector">
+      <BufferSize Value="128" />
+      <Buffers Value="16" />
+    </EventCollector>
+    <SystemProvider Id="Vic3Samples">
+      <Keywords>
+        <Keyword Value="ProcessThread" />
+        <Keyword Value="Loader" />
+        <Keyword Value="SampledProfile" />
+      </Keywords>
+      <Stacks>
+        <Stack Value="SampledProfile" />
+      </Stacks>
+    </SystemProvider>
+    <SystemProvider Id="Vic3Scheduling">
+      <Keywords>
+        <Keyword Value="ProcessThread" />
+        <Keyword Value="Loader" />
+        <Keyword Value="CSwitch" />
+        <Keyword Value="ReadyThread" />
+      </Keywords>
+      <Stacks>
+        <Stack Value="CSwitch" />
+        <Stack Value="ReadyThread" />
+      </Stacks>
+    </SystemProvider>
+    <EventProvider Id="Vic3Control" Name="Microsoft-Windows-Performance-Recorder-Control">
+      <Keywords>
+        <Keyword Value="0x10000" />
+      </Keywords>
+    </EventProvider>
+    <Profile Id="Vic3Sampled.Verbose.File" Name="Vic3Sampled" Description="Sampled CPU stacks and module/process identity; no context-switch stacks" DetailLevel="Verbose" LoggingMode="File">
+      <Collectors>
+        <SystemCollectorId Value="Vic3System">
+          <SystemProviderId Value="Vic3Samples" />
+        </SystemCollectorId>
+        <EventCollectorId Value="Vic3Markers">
+          <EventProviders>
+            <EventProviderId Value="Vic3Control" />
+          </EventProviders>
+        </EventCollectorId>
+      </Collectors>
+    </Profile>
+    <Profile Id="Vic3Scheduling.Verbose.File" Name="Vic3Scheduling" Description="Separate scheduling diagnosis; potentially high volume; no sampled CPU stacks" DetailLevel="Verbose" LoggingMode="File">
+      <Collectors>
+        <SystemCollectorId Value="Vic3System">
+          <SystemProviderId Value="Vic3Scheduling" />
+        </SystemCollectorId>
+        <EventCollectorId Value="Vic3Markers">
+          <EventProviders>
+            <EventProviderId Value="Vic3Control" />
+          </EventProviders>
+        </EventCollectorId>
+      </Collectors>
+    </Profile>
+  </Profiles>
+</WindowsPerformanceRecorder>

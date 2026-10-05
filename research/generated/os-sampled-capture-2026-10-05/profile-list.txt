@@ -1,0 +1,6 @@
+
+Microsoft Windows Performance Recorder Version 10.0.26100 (CoreSystem)
+Copyright (c) 2024 Microsoft Corporation. All rights reserved.
+
+	Vic3Sampled                 Sampled CPU stacks and module/process identity; no context-switch stacks
+	Vic3Scheduling              Separate scheduling diagnosis; potentially high volume; no sampled CPU stacks

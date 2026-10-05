@@ -93,8 +93,8 @@
     },
     "research/os-capture-preparation-2026-10-05-ja.md": {
       "hash_mode": "utf8_lf",
-      "hashed_size_bytes": 11957,
-      "sha256": "4d3ebfc76852e95a8da34f9a5d9ecb7ce9bc62df5fc5fc5553ea74004b3b4d51"
+      "hashed_size_bytes": 12210,
+      "sha256": "3b425a55cdc0c553d4ba3e6f6e1b6fed3dd621ce650e2ae326b9e98fa5e8aeed"
     },
     "tests/test_os_capture_preparation.py": {
       "hash_mode": "utf8_lf",

@@ -1,0 +1,2876 @@
+{
+  "catalogs": {
+    "downstream": {
+      "inclusive_sample_counts": [
+        [
+          "native_region_0x7e20c0",
+          24816
+        ],
+        [
+          "native_region_0x13b8540",
+          4732
+        ],
+        [
+          "native_region_0x10bd490",
+          4731
+        ],
+        [
+          "native_region_0x7db150",
+          4054
+        ],
+        [
+          "native_region_0x13712b0",
+          3091
+        ],
+        [
+          "native_region_0x7ed5f0",
+          2864
+        ],
+        [
+          "native_region_0x12a4ee0",
+          2414
+        ],
+        [
+          "native_region_0xf771a0",
+          2407
+        ],
+        [
+          "native_region_0x427cb10",
+          2193
+        ],
+        [
+          "native_region_0x630340",
+          2102
+        ],
+        [
+          "native_region_0xf5df00",
+          1818
+        ],
+        [
+          "native_region_0xc46bc0",
+          1753
+        ],
+        [
+          "native_region_0x10befb0",
+          1092
+        ],
+        [
+          "native_region_0x13cad10",
+          1068
+        ],
+        [
+          "native_region_0x630380",
+          589
+        ],
+        [
+          "native_region_0xf5e3c0",
+          497
+        ],
+        [
+          "native_region_0x11aec40",
+          339
+        ],
+        [
+          "native_region_0x12addb0",
+          339
+        ],
+        [
+          "native_region_0x85d7c0",
+          165
+        ],
+        [
+          "native_region_0x7d66b0",
+          158
+        ],
+        [
+          "native_region_0x64b2f0",
+          109
+        ],
+        [
+          "native_region_0xcb4ba0",
+          84
+        ],
+        [
+          "native_region_0xc24140",
+          56
+        ],
+        [
+          "native_region_0xc2eaf0",
+          43
+        ],
+        [
+          "native_region_0x64d790",
+          41
+        ],
+        [
+          "native_region_0x7fbb50",
+          39
+        ],
+        [
+          "native_region_0xc2eb30",
+          9
+        ],
+        [
+          "native_region_0x10c2b70",
+          4
+        ],
+        [
+          "native_region_0x10c1150",
+          2
+        ],
+        [
+          "native_region_0x10bdb50",
+          1
+        ],
+        [
+          "native_region_0x10c1280",
+          1
+        ],
+        [
+          "native_region_0x10c1370",
+          1
+        ],
+        [
+          "native_region_0x10c1580",
+          1
+        ]
+      ],
+      "leaf_counts": [
+        [
+          "native_region_0x7ed5f0",
+          2863
+        ],
+        [
+          "native_region_0x13712b0",
+          2325
+        ],
+        [
+          "native_region_0x427cb10",
+          1901
+        ],
+        [
+          "native_region_0xc46bc0",
+          1750
+        ],
+        [
+          "native_region_0x630340",
+          1492
+        ],
+        [
+          "native_region_0x630380",
+          398
+        ],
+        [
+          "native_region_0x85d7c0",
+          164
+        ],
+        [
+          "native_region_0x7d66b0",
+          126
+        ],
+        [
+          "native_region_0xcb4ba0",
+          84
+        ],
+        [
+          "native_region_0x64b2f0",
+          54
+        ],
+        [
+          "native_region_0x7fbb50",
+          39
+        ],
+        [
+          "native_region_0x12a4ee0",
+          26
+        ],
+        [
+          "native_region_0x64d790",
+          26
+        ],
+        [
+          "native_region_0xc2eaf0",
+          24
+        ],
+        [
+          "native_region_0xc24140",
+          20
+        ],
+        [
+          "native_region_0x13b8540",
+          6
+        ],
+        [
+          "native_region_0x7db150",
+          6
+        ],
+        [
+          "native_region_0xc2eb30",
+          6
+        ],
+        [
+          "native_region_0x10bd490",
+          4
+        ],
+        [
+          "native_region_0x10c2b70",
+          3
+        ],
+        [
+          "native_region_0x12addb0",
+          2
+        ],
+        [
+          "native_region_0xf771a0",
+          2
+        ],
+        [
+          "native_region_0x10bdb50",
+          1
+        ],
+        [
+          "native_region_0x7e20c0",
+          1
+        ],
+        [
+          "native_region_0xf5df00",
+          1
+        ]
+      ],
+      "path": "research/generated/os-capture-preparation-2026-10-05/native-region-catalog.json",
+      "sha256": "5ade565fb6ad3692fbe029cb59231791b7f2679f01b6974170992ed609220593"
+    },
+    "ticktask": {
+      "inclusive_sample_counts": [
+        [
+          "dispatcher_candidate",
+          24802
+        ],
+        [
+          "range_runner_candidate",
+          10468
+        ],
+        [
+          "employment_prepare_callback",
+          4732
+        ],
+        [
+          "heuristic_candidate",
+          4054
+        ],
+        [
+          "migration_prepare_callback",
+          1167
+        ],
+        [
+          "investment_prepare_callback",
+          514
+        ],
+        [
+          "CTickTask_UpdateWorldMarket",
+          322
+        ],
+        [
+          "CTickTask_PrepareNavyAIData",
+          254
+        ],
+        [
+          "CTickTask_UpdateAIStrategies",
+          225
+        ],
+        [
+          "CTickTask_AverageStandardOfLivingUpdate",
+          199
+        ],
+        [
+          "CTickTask_UpdateAI",
+          177
+        ],
+        [
+          "CTickTask_UpdateAutoPlacedBuildings",
+          148
+        ],
+        [
+          "CTickTask_SyncedAIPostUpdate",
+          111
+        ],
+        [
+          "CTickTask_UpdateSavedVariables",
+          61
+        ],
+        [
+          "CTickTask_UpdateMigrationData",
+          44
+        ],
+        [
+          "CTickTask_MergeSmallPops",
+          35
+        ],
+        [
+          "CTickTask_UpdateCachedEconomicDependence",
+          29
+        ],
+        [
+          "CTickTask_UpdateAuthoritySpendingPriorities",
+          26
+        ],
+        [
+          "CTickTask_UpdateTimedModifiers",
+          20
+        ],
+        [
+          "CTickTask_SpawnCulturalCommunities",
+          13
+        ],
+        [
+          "CTickTask_ActivateLawsAtMaxPhases",
+          12
+        ],
+        [
+          "CTickTask_UpdateAdvanceProgress",
+          12
+        ],
+        [
+          "CTickTask_UpdateEmployment",
+          12
+        ],
+        [
+          "CTickTask_SpawnRaidSupplyBattles",
+          11
+        ],
+        [
+          "CTickTask_ProcessEconomicMigration",
+          9
+        ],
+        [
+          "CTickTask_DailyUpdateDiplomaticPacts",
+          7
+        ],
+        [
+          "CTickTask_FindCrewForShips",
+          7
+        ],
+        [
+          "CTickTask_RecordElectionVotes",
+          7
+        ],
+        [
+          "CTickTask_UpdateBuildingSpendingPriorities_Stage2",
+          7
+        ],
+        [
+          "CTickTask_UpdateStandardBuildingModifiers",
+          7
+        ],
+        [
+          "CTickTask_RecomputeStandardProductionMethods",
+          6
+        ],
+        [
+          "CTickTask_UpdateAIMemories",
+          6
+        ],
+        [
+          "CTickTask_UpdateConscriptionCenters",
+          5
+        ],
+        [
+          "CTickTask_ReevaluateLawGroups",
+          4
+        ],
+        [
+          "CTickTask_UpdateBuildingSpendingPriorities_Stage1",
+          4
+        ],
+        [
+          "CTickTask_ProgressConstructionQueues",
+          3
+        ],
+        [
+          "CTickTask_UpdateInterestGroupPoliticalStrength",
+          3
+        ],
+        [
+          "CTickTask_UpdatePotentialMilitaryStrength",
+          3
+        ],
+        [
+          "CTickTask_UpdateSlaveImportMarkers",
+          3
+        ],
+        [
+          "CTickTask_DownsizeMilitaryBuildingsToUnitCount",
+          2
+        ],
+        [
+          "CTickTask_EnslaveDebtors",
+          2
+        ],
+        [
+          "CTickTask_SpawnInterceptBattles",
+          2
+        ],
+        [
+          "CTickTask_UpdateAIGoals",
+          2
+        ],
+        [
+          "CTickTask_UpdateBattlesCachedCombatData",
+          2
+        ],
+        [
+          "CTickTask_UpdateCountryScorePositions",
+          2
+        ],
+        [
+          "CTickTask_UpdateNavyAI",
+          2
+        ],
+        [
+          "CTickTask_UpdateObligations",
+          2
+        ],
+        [
+          "CTickTask_CollectivizePrivateProperty",
+          1
+        ],
+        [
+          "CTickTask_CreateNewPoliticalMovements",
+          1
+        ],
+        [
+          "CTickTask_DailyCountryBudgetUpdate",
+          1
+        ],
+        [
+          "CTickTask_HandleAutonomousInvestment",
+          1
+        ],
+        [
+          "CTickTask_PreUpdatePoliticalMovements",
+          1
+        ],
+        [
+          "CTickTask_ProcessAutoExpandingBuildings",
+          1
+        ],
+        [
+          "CTickTask_ProcessSlaveTrade",
+          1
+        ],
+        [
+          "CTickTask_RecalcAIRegionScores",
+          1
+        ],
+        [
+          "CTickTask_StartHarvestConditions",
+          1
+        ],
+        [
+          "CTickTask_UpdateColonizationProgress",
+          1
+        ],
+        [
+          "CTickTask_UpdateFormationTravelRegionAccess",
+          1
+        ],
+        [
+          "CTickTask_UpdateMobilization",
+          1
+        ],
+        [
+          "CTickTask_UpdatePoliticalMovements",
+          1
+        ],
+        [
+          "CTickTask_UpdatePopPoliticalStrength",
+          1
+        ],
+        [
+          "CTickTask_UpdateRelationsFromStraits",
+          1
+        ],
+        [
+          "CTickTask_UpdateRelationsFromTreaties",
+          1
+        ],
+        [
+          "CTickTask_UpdateStraitSettings",
+          1
+        ],
+        [
+          "CTickTask_UpdateTerrainManipulation",
+          1
+        ],
+        [
+          "CTickTask_UpdateUnemploymentProfessionTransitions",
+          1
+        ]
+      ],
+      "leaf_counts": [
+        [
+          "CTickTask_UpdateTimedModifiers",
+          20
+        ],
+        [
+          "CTickTask_UpdateSavedVariables",
+          14
+        ],
+        [
+          "heuristic_candidate",
+          6
+        ],
+        [
+          "CTickTask_ActivateLawsAtMaxPhases",
+          5
+        ],
+        [
+          "dispatcher_candidate",
+          3
+        ],
+        [
+          "range_runner_candidate",
+          3
+        ],
+        [
+          "CTickTask_UpdateAI",
+          2
+        ],
+        [
+          "CTickTask_UpdateAuthoritySpendingPriorities",
+          2
+        ],
+        [
+          "CTickTask_UpdateBuildingSpendingPriorities_Stage1",
+          2
+        ],
+        [
+          "CTickTask_UpdatePotentialMilitaryStrength",
+          2
+        ],
+        [
+          "CTickTask_CreateNewPoliticalMovements",
+          1
+        ],
+        [
+          "CTickTask_DownsizeMilitaryBuildingsToUnitCount",
+          1
+        ],
+        [
+          "CTickTask_HandleAutonomousInvestment",
+          1
+        ],
+        [
+          "CTickTask_PreUpdatePoliticalMovements",
+          1
+        ],
+        [
+          "CTickTask_PrepareNavyAIData",
+          1
+        ],
+        [
+          "CTickTask_ProcessSlaveTrade",
+          1
+        ],
+        [
+          "CTickTask_UpdateColonizationProgress",
+          1
+        ],
+        [
+          "CTickTask_UpdateObligations",
+          1
+        ],
+        [
+          "CTickTask_UpdatePoliticalMovements",
+          1
+        ],
+        [
+          "CTickTask_UpdateSlaveImportMarkers",
+          1
+        ],
+        [
+          "CTickTask_UpdateStraitSettings",
+          1
+        ],
+        [
+          "investment_prepare_callback",
+          1
+        ]
+      ],
+      "path": "research/generated/native-target-catalog-1.14.5.json",
+      "sha256": "bdf7282895fc8cae5135710f2fa11cb2c29e32947f8a3344d1a81b4a3d3b8473"
+    }
+  },
+  "counts": {
+    "all_sample_records": 527670,
+    "game_samples_between_markers": 398022,
+    "sample_records_between_markers": 398022
+  },
+  "downstream_ticktask_stack_cooccurrence": [
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 24802,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 10468,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x13b8540",
+      "samples": 4732,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x10bd490",
+      "samples": 4718,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7db150",
+      "samples": 4054,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7db150",
+      "samples": 4054,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x7db150",
+      "samples": 4054,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 4054,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0xf771a0",
+      "samples": 2407,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x12a4ee0",
+      "samples": 2393,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0xf5df00",
+      "samples": 1818,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x10befb0",
+      "samples": 1071,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x13cad10",
+      "samples": 1068,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0xf5e3c0",
+      "samples": 497,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x10bd490",
+      "samples": 366,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x10bd490",
+      "samples": 353,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x10bd490",
+      "samples": 353,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x13b8540",
+      "samples": 353,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x13b8540",
+      "samples": 353,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x13b8540",
+      "samples": 353,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x7db150",
+      "samples": 353,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 353,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x11aec40",
+      "samples": 339,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x12addb0",
+      "samples": 339,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x13712b0",
+      "samples": 328,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 322,
+      "ticktask": "CTickTask_UpdateWorldMarket"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 292,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 254,
+      "ticktask": "CTickTask_PrepareNavyAIData"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 225,
+      "ticktask": "CTickTask_UpdateAIStrategies"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 199,
+      "ticktask": "CTickTask_AverageStandardOfLivingUpdate"
+    },
+    {
+      "region": "native_region_0x13712b0",
+      "samples": 198,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 177,
+      "ticktask": "CTickTask_UpdateAI"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 165,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 148,
+      "ticktask": "CTickTask_UpdateAutoPlacedBuildings"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 127,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 125,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 123,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 111,
+      "ticktask": "CTickTask_SyncedAIPostUpdate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 106,
+      "ticktask": "migration_prepare_callback"
+    },
+    {
+      "region": "native_region_0x13712b0",
+      "samples": 93,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 90,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 82,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 61,
+      "ticktask": "CTickTask_UpdateSavedVariables"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 56,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x13712b0",
+      "samples": 52,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 45,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 44,
+      "ticktask": "CTickTask_UpdateMigrationData"
+    },
+    {
+      "region": "native_region_0x7db150",
+      "samples": 41,
+      "ticktask": "investment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 41,
+      "ticktask": "investment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 35,
+      "ticktask": "CTickTask_MergeSmallPops"
+    },
+    {
+      "region": "native_region_0x85d7c0",
+      "samples": 35,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 31,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 29,
+      "ticktask": "CTickTask_UpdateCachedEconomicDependence"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 28,
+      "ticktask": "investment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 26,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 26,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 26,
+      "ticktask": "CTickTask_UpdateAuthoritySpendingPriorities"
+    },
+    {
+      "region": "native_region_0x13712b0",
+      "samples": 21,
+      "ticktask": "migration_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 21,
+      "ticktask": "migration_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 20,
+      "ticktask": "CTickTask_UpdateTimedModifiers"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 20,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 19,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x64b2f0",
+      "samples": 19,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 16,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 14,
+      "ticktask": "migration_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 14,
+      "ticktask": "investment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 13,
+      "ticktask": "CTickTask_SpawnCulturalCommunities"
+    },
+    {
+      "region": "native_region_0x7fbb50",
+      "samples": 13,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7d66b0",
+      "samples": 12,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 12,
+      "ticktask": "CTickTask_ActivateLawsAtMaxPhases"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 12,
+      "ticktask": "CTickTask_UpdateAdvanceProgress"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 12,
+      "ticktask": "CTickTask_UpdateEmployment"
+    },
+    {
+      "region": "native_region_0x7fbb50",
+      "samples": 12,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x85d7c0",
+      "samples": 12,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0xcb4ba0",
+      "samples": 12,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 11,
+      "ticktask": "CTickTask_SpawnRaidSupplyBattles"
+    },
+    {
+      "region": "native_region_0xc2eaf0",
+      "samples": 11,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 10,
+      "ticktask": "CTickTask_UpdateAIStrategies"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 9,
+      "ticktask": "CTickTask_ProcessEconomicMigration"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 8,
+      "ticktask": "investment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 8,
+      "ticktask": "CTickTask_SyncedAIPostUpdate"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 7,
+      "ticktask": "investment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 7,
+      "ticktask": "CTickTask_DailyUpdateDiplomaticPacts"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 7,
+      "ticktask": "CTickTask_FindCrewForShips"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 7,
+      "ticktask": "CTickTask_RecordElectionVotes"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 7,
+      "ticktask": "CTickTask_UpdateBuildingSpendingPriorities_Stage2"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 7,
+      "ticktask": "CTickTask_UpdateStandardBuildingModifiers"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 6,
+      "ticktask": "CTickTask_RecomputeStandardProductionMethods"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 6,
+      "ticktask": "CTickTask_UpdateAIMemories"
+    },
+    {
+      "region": "native_region_0x64b2f0",
+      "samples": 5,
+      "ticktask": "CTickTask_UpdateWorldMarket"
+    },
+    {
+      "region": "native_region_0x64d790",
+      "samples": 5,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 5,
+      "ticktask": "CTickTask_UpdateConscriptionCenters"
+    },
+    {
+      "region": "native_region_0x10c2b70",
+      "samples": 4,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 4,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 4,
+      "ticktask": "CTickTask_ReevaluateLawGroups"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 4,
+      "ticktask": "CTickTask_UpdateBuildingSpendingPriorities_Stage1"
+    },
+    {
+      "region": "native_region_0x13712b0",
+      "samples": 3,
+      "ticktask": "CTickTask_MergeSmallPops"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 3,
+      "ticktask": "CTickTask_UpdateWorldMarket"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 3,
+      "ticktask": "CTickTask_PrepareNavyAIData"
+    },
+    {
+      "region": "native_region_0x64b2f0",
+      "samples": 3,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x64b2f0",
+      "samples": 3,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x7d66b0",
+      "samples": 3,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 3,
+      "ticktask": "CTickTask_ProgressConstructionQueues"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 3,
+      "ticktask": "CTickTask_UpdateInterestGroupPoliticalStrength"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 3,
+      "ticktask": "CTickTask_UpdatePotentialMilitaryStrength"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 3,
+      "ticktask": "CTickTask_UpdateSlaveImportMarkers"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 3,
+      "ticktask": "CTickTask_MergeSmallPops"
+    },
+    {
+      "region": "native_region_0x7fbb50",
+      "samples": 3,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0x85d7c0",
+      "samples": 3,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0xc2eaf0",
+      "samples": 3,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0xc2eb30",
+      "samples": 3,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 3,
+      "ticktask": "CTickTask_UpdateWorldMarket"
+    },
+    {
+      "region": "native_region_0x10c1150",
+      "samples": 2,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 2,
+      "ticktask": "CTickTask_UpdateAutoPlacedBuildings"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 2,
+      "ticktask": "migration_prepare_callback"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_DownsizeMilitaryBuildingsToUnitCount"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_EnslaveDebtors"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_SpawnInterceptBattles"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_UpdateAIGoals"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_UpdateBattlesCachedCombatData"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_UpdateCountryScorePositions"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_UpdateNavyAI"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 2,
+      "ticktask": "CTickTask_UpdateObligations"
+    },
+    {
+      "region": "native_region_0x7fbb50",
+      "samples": 2,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0xc2eaf0",
+      "samples": 2,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0xc2eaf0",
+      "samples": 2,
+      "ticktask": "range_runner_candidate"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 2,
+      "ticktask": "CTickTask_UpdateAutoPlacedBuildings"
+    },
+    {
+      "region": "native_region_0x10bdb50",
+      "samples": 1,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x10c1370",
+      "samples": 1,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x10c1580",
+      "samples": 1,
+      "ticktask": "employment_prepare_callback"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 1,
+      "ticktask": "CTickTask_PrepareNavyAIData"
+    },
+    {
+      "region": "native_region_0x427cb10",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateCountryScorePositions"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 1,
+      "ticktask": "CTickTask_StartHarvestConditions"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 1,
+      "ticktask": "CTickTask_SyncedAIPostUpdate"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateAIStrategies"
+    },
+    {
+      "region": "native_region_0x630340",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateMigrationData"
+    },
+    {
+      "region": "native_region_0x630380",
+      "samples": 1,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0x64b2f0",
+      "samples": 1,
+      "ticktask": "CTickTask_DownsizeMilitaryBuildingsToUnitCount"
+    },
+    {
+      "region": "native_region_0x64d790",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateWorldMarket"
+    },
+    {
+      "region": "native_region_0x7d66b0",
+      "samples": 1,
+      "ticktask": "CTickTask_PrepareNavyAIData"
+    },
+    {
+      "region": "native_region_0x7d66b0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateAI"
+    },
+    {
+      "region": "native_region_0x7d66b0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateWorldMarket"
+    },
+    {
+      "region": "native_region_0x7d66b0",
+      "samples": 1,
+      "ticktask": "heuristic_candidate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_CollectivizePrivateProperty"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_CreateNewPoliticalMovements"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_DailyCountryBudgetUpdate"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_HandleAutonomousInvestment"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_PreUpdatePoliticalMovements"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_ProcessAutoExpandingBuildings"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_ProcessSlaveTrade"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_RecalcAIRegionScores"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_StartHarvestConditions"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateColonizationProgress"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateFormationTravelRegionAccess"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateMobilization"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdatePoliticalMovements"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdatePopPoliticalStrength"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateRelationsFromStraits"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateRelationsFromTreaties"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateStraitSettings"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateTerrainManipulation"
+    },
+    {
+      "region": "native_region_0x7e20c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateUnemploymentProfessionTransitions"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 1,
+      "ticktask": "CTickTask_PrepareNavyAIData"
+    },
+    {
+      "region": "native_region_0x7ed5f0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateCountryScorePositions"
+    },
+    {
+      "region": "native_region_0x85d7c0",
+      "samples": 1,
+      "ticktask": "CTickTask_FindCrewForShips"
+    },
+    {
+      "region": "native_region_0x85d7c0",
+      "samples": 1,
+      "ticktask": "CTickTask_ProcessAutoExpandingBuildings"
+    },
+    {
+      "region": "native_region_0x85d7c0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateAutoPlacedBuildings"
+    },
+    {
+      "region": "native_region_0xc24140",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateAutoPlacedBuildings"
+    },
+    {
+      "region": "native_region_0xc24140",
+      "samples": 1,
+      "ticktask": "dispatcher_candidate"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 1,
+      "ticktask": "CTickTask_AverageStandardOfLivingUpdate"
+    },
+    {
+      "region": "native_region_0xc46bc0",
+      "samples": 1,
+      "ticktask": "CTickTask_UpdateMigrationData"
+    }
+  ],
+  "format_version": 1,
+  "marker_end_us": 130724436,
+  "marker_start_us": 356245,
+  "module_base": "0x7ff7f06c0000",
+  "module_end": "0x7ff7f6563000",
+  "module_sample_counts": [
+    [
+      "victoria3.exe",
+      285629
+    ],
+    [
+      "ntdll.dll",
+      61193
+    ],
+    [
+      "ntoskrnl.exe",
+      25391
+    ],
+    [
+      "amdxx64.dll",
+      10496
+    ],
+    [
+      "fmod.dll",
+      4917
+    ],
+    [
+      "kernel32.dll",
+      3162
+    ],
+    [
+      "d3d11.dll",
+      1730
+    ],
+    [
+      "bink2w64.dll",
+      1606
+    ],
+    [
+      "fmodstudio.dll",
+      1442
+    ],
+    [
+      "amdkmdag.sys",
+      787
+    ],
+    [
+      "KernelBase.dll",
+      238
+    ],
+    [
+      "tier0_s64.dll",
+      225
+    ],
+    [
+      "dxgmms2.sys",
+      194
+    ],
+    [
+      "dxgkrnl.sys",
+      185
+    ],
+    [
+      "steamclient64.dll",
+      183
+    ],
+    [
+      "GameOverlayRenderer64.dll",
+      84
+    ],
+    [
+      "FLTMGR.SYS",
+      68
+    ],
+    [
+      "dxgi.dll",
+      47
+    ],
+    [
+      "Ntfs.sys",
+      40
+    ],
+    [
+      "\"Unknown\"",
+      38
+    ],
+    [
+      "win32kbase.sys",
+      35
+    ],
+    [
+      "win32kfull.sys",
+      35
+    ],
+    [
+      "AudioSes.dll",
+      24
+    ],
+    [
+      "Npfs.SYS",
+      24
+    ],
+    [
+      "USBXHCI.SYS",
+      24
+    ],
+    [
+      "user32.dll",
+      20
+    ],
+    [
+      "steam_api64.dll",
+      19
+    ],
+    [
+      "amdfendr.sys",
+      18
+    ],
+    [
+      "watchdog.sys",
+      18
+    ],
+    [
+      "Wdf01000.sys",
+      17
+    ],
+    [
+      "amdppm.sys",
+      17
+    ],
+    [
+      "win32k.sys",
+      15
+    ],
+    [
+      "ucrtbase.dll",
+      11
+    ],
+    [
+      "win32u.dll",
+      10
+    ],
+    [
+      "PDXSDK.dll",
+      9
+    ],
+    [
+      "WppRecorder.sys",
+      8
+    ],
+    [
+      "WdFilter.sys",
+      7
+    ],
+    [
+      "D3DCompiler_47.dll",
+      6
+    ],
+    [
+      "CLASSPNP.SYS",
+      4
+    ],
+    [
+      "HIDCLASS.SYS",
+      4
+    ],
+    [
+      "storport.sys",
+      4
+    ],
+    [
+      "gdi32.dll",
+      3
+    ],
+    [
+      "stornvme.sys",
+      3
+    ],
+    [
+      "tcpip.sys",
+      3
+    ],
+    [
+      "ExecutionContext.sys",
+      2
+    ],
+    [
+      "HDAudBus.sys",
+      2
+    ],
+    [
+      "HIDPARSE.SYS",
+      2
+    ],
+    [
+      "afd.sys",
+      2
+    ],
+    [
+      "bfs.sys",
+      2
+    ],
+    [
+      "mouhid.sys",
+      2
+    ],
+    [
+      "ucx01000.sys",
+      2
+    ],
+    [
+      "usbaudio.sys",
+      2
+    ],
+    [
+      "TextInputFramework.dll",
+      1
+    ],
+    [
+      "Wof.sys",
+      1
+    ],
+    [
+      "bindflt.sys",
+      1
+    ],
+    [
+      "combase.dll",
+      1
+    ],
+    [
+      "gameflt.sys",
+      1
+    ],
+    [
+      "iorate.sys",
+      1
+    ],
+    [
+      "ks.sys",
+      1
+    ],
+    [
+      "msvcp_win.dll",
+      1
+    ],
+    [
+      "rpcrt4.dll",
+      1
+    ],
+    [
+      "symcryptk.dll",
+      1
+    ],
+    [
+      "volmgr.sys",
+      1
+    ],
+    [
+      "winhttp.dll",
+      1
+    ],
+    [
+      "wininet.dll",
+      1
+    ]
+  ],
+  "process": "victoria3.exe (18108)",
+  "run_id": "os-sampled-t12-r01",
+  "scope": "User-action marker envelope only; not exact 48.46-second game window. Includes pause/UI/console time. No precise wait events were collected.",
+  "stack_quality": {
+    "samples_with_stack": 397489,
+    "samples_without_stack": 533
+  },
+  "stack_timestamp_thread_mismatches": 0,
+  "thread_sample_counts": [
+    [
+      "28036",
+      115629
+    ],
+    [
+      "26712",
+      33366
+    ],
+    [
+      "9920",
+      14040
+    ],
+    [
+      "15044",
+      13288
+    ],
+    [
+      "23936",
+      13231
+    ],
+    [
+      "2156",
+      12467
+    ],
+    [
+      "22092",
+      12083
+    ],
+    [
+      "7652",
+      11861
+    ],
+    [
+      "26828",
+      11520
+    ],
+    [
+      "3308",
+      11444
+    ],
+    [
+      "9604",
+      11421
+    ],
+    [
+      "13672",
+      11297
+    ],
+    [
+      "29464",
+      11171
+    ],
+    [
+      "13892",
+      11089
+    ],
+    [
+      "2124",
+      10980
+    ],
+    [
+      "21740",
+      10800
+    ],
+    [
+      "27256",
+      7518
+    ],
+    [
+      "1316",
+      7458
+    ],
+    [
+      "15880",
+      7070
+    ],
+    [
+      "12452",
+      6918
+    ],
+    [
+      "27552",
+      6475
+    ],
+    [
+      "23320",
+      6189
+    ],
+    [
+      "16448",
+      5416
+    ],
+    [
+      "22052",
+      4752
+    ],
+    [
+      "31228",
+      4737
+    ],
+    [
+      "420",
+      4326
+    ],
+    [
+      "29236",
+      4289
+    ],
+    [
+      "28348",
+      4214
+    ],
+    [
+      "31280",
+      4208
+    ],
+    [
+      "27384",
+      4138
+    ],
+    [
+      "11872",
+      2787
+    ],
+    [
+      "30204",
+      822
+    ],
+    [
+      "22672",
+      788
+    ],
+    [
+      "28508",
+      95
+    ],
+    [
+      "9868",
+      68
+    ],
+    [
+      "9064",
+      28
+    ],
+    [
+      "31532",
+      12
+    ],
+    [
+      "28148",
+      10
+    ],
+    [
+      "29528",
+      10
+    ],
+    [
+      "24760",
+      1
+    ],
+    [
+      "29360",
+      1
+    ],
+    [
+      "29508",
+      1
+    ],
+    [
+      "30040",
+      1
+    ],
+    [
+      "31560",
+      1
+    ],
+    [
+      "3376",
+      1
+    ],
+    [
+      "7236",
+      1
+    ]
+  ],
+  "timeline_seconds": [
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 953,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 0
+    },
+    {
+      "downstream_inclusive_samples": 4,
+      "game_samples": 1458,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 1
+    },
+    {
+      "downstream_inclusive_samples": 8,
+      "game_samples": 1468,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 2
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1472,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 3
+    },
+    {
+      "downstream_inclusive_samples": 13,
+      "game_samples": 1445,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 4
+    },
+    {
+      "downstream_inclusive_samples": 12,
+      "game_samples": 1423,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 5
+    },
+    {
+      "downstream_inclusive_samples": 12,
+      "game_samples": 1505,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 6
+    },
+    {
+      "downstream_inclusive_samples": 11,
+      "game_samples": 1524,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 7
+    },
+    {
+      "downstream_inclusive_samples": 11,
+      "game_samples": 1459,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 8
+    },
+    {
+      "downstream_inclusive_samples": 10,
+      "game_samples": 1446,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 9
+    },
+    {
+      "downstream_inclusive_samples": 7,
+      "game_samples": 1472,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 10
+    },
+    {
+      "downstream_inclusive_samples": 13,
+      "game_samples": 1486,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 11
+    },
+    {
+      "downstream_inclusive_samples": 9,
+      "game_samples": 1482,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 12
+    },
+    {
+      "downstream_inclusive_samples": 2,
+      "game_samples": 1395,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 13
+    },
+    {
+      "downstream_inclusive_samples": 320,
+      "game_samples": 2997,
+      "ticktask_inclusive_samples": 246,
+      "trace_second": 14
+    },
+    {
+      "downstream_inclusive_samples": 1160,
+      "game_samples": 6323,
+      "ticktask_inclusive_samples": 991,
+      "trace_second": 15
+    },
+    {
+      "downstream_inclusive_samples": 670,
+      "game_samples": 5097,
+      "ticktask_inclusive_samples": 532,
+      "trace_second": 16
+    },
+    {
+      "downstream_inclusive_samples": 716,
+      "game_samples": 4767,
+      "ticktask_inclusive_samples": 596,
+      "trace_second": 17
+    },
+    {
+      "downstream_inclusive_samples": 1096,
+      "game_samples": 6178,
+      "ticktask_inclusive_samples": 947,
+      "trace_second": 18
+    },
+    {
+      "downstream_inclusive_samples": 682,
+      "game_samples": 4885,
+      "ticktask_inclusive_samples": 530,
+      "trace_second": 19
+    },
+    {
+      "downstream_inclusive_samples": 815,
+      "game_samples": 5465,
+      "ticktask_inclusive_samples": 632,
+      "trace_second": 20
+    },
+    {
+      "downstream_inclusive_samples": 1147,
+      "game_samples": 5851,
+      "ticktask_inclusive_samples": 973,
+      "trace_second": 21
+    },
+    {
+      "downstream_inclusive_samples": 668,
+      "game_samples": 4835,
+      "ticktask_inclusive_samples": 529,
+      "trace_second": 22
+    },
+    {
+      "downstream_inclusive_samples": 775,
+      "game_samples": 5109,
+      "ticktask_inclusive_samples": 653,
+      "trace_second": 23
+    },
+    {
+      "downstream_inclusive_samples": 1289,
+      "game_samples": 6636,
+      "ticktask_inclusive_samples": 1054,
+      "trace_second": 24
+    },
+    {
+      "downstream_inclusive_samples": 576,
+      "game_samples": 4429,
+      "ticktask_inclusive_samples": 482,
+      "trace_second": 25
+    },
+    {
+      "downstream_inclusive_samples": 631,
+      "game_samples": 5009,
+      "ticktask_inclusive_samples": 455,
+      "trace_second": 26
+    },
+    {
+      "downstream_inclusive_samples": 794,
+      "game_samples": 7071,
+      "ticktask_inclusive_samples": 537,
+      "trace_second": 27
+    },
+    {
+      "downstream_inclusive_samples": 704,
+      "game_samples": 13802,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 28
+    },
+    {
+      "downstream_inclusive_samples": 1145,
+      "game_samples": 7020,
+      "ticktask_inclusive_samples": 845,
+      "trace_second": 29
+    },
+    {
+      "downstream_inclusive_samples": 763,
+      "game_samples": 5640,
+      "ticktask_inclusive_samples": 569,
+      "trace_second": 30
+    },
+    {
+      "downstream_inclusive_samples": 633,
+      "game_samples": 4801,
+      "ticktask_inclusive_samples": 467,
+      "trace_second": 31
+    },
+    {
+      "downstream_inclusive_samples": 685,
+      "game_samples": 4118,
+      "ticktask_inclusive_samples": 619,
+      "trace_second": 32
+    },
+    {
+      "downstream_inclusive_samples": 1312,
+      "game_samples": 6721,
+      "ticktask_inclusive_samples": 1102,
+      "trace_second": 33
+    },
+    {
+      "downstream_inclusive_samples": 703,
+      "game_samples": 5080,
+      "ticktask_inclusive_samples": 541,
+      "trace_second": 34
+    },
+    {
+      "downstream_inclusive_samples": 649,
+      "game_samples": 4593,
+      "ticktask_inclusive_samples": 521,
+      "trace_second": 35
+    },
+    {
+      "downstream_inclusive_samples": 1280,
+      "game_samples": 6487,
+      "ticktask_inclusive_samples": 1043,
+      "trace_second": 36
+    },
+    {
+      "downstream_inclusive_samples": 662,
+      "game_samples": 5265,
+      "ticktask_inclusive_samples": 524,
+      "trace_second": 37
+    },
+    {
+      "downstream_inclusive_samples": 696,
+      "game_samples": 4825,
+      "ticktask_inclusive_samples": 579,
+      "trace_second": 38
+    },
+    {
+      "downstream_inclusive_samples": 1229,
+      "game_samples": 5723,
+      "ticktask_inclusive_samples": 1054,
+      "trace_second": 39
+    },
+    {
+      "downstream_inclusive_samples": 712,
+      "game_samples": 5953,
+      "ticktask_inclusive_samples": 574,
+      "trace_second": 40
+    },
+    {
+      "downstream_inclusive_samples": 750,
+      "game_samples": 4988,
+      "ticktask_inclusive_samples": 577,
+      "trace_second": 41
+    },
+    {
+      "downstream_inclusive_samples": 1201,
+      "game_samples": 5860,
+      "ticktask_inclusive_samples": 1059,
+      "trace_second": 42
+    },
+    {
+      "downstream_inclusive_samples": 788,
+      "game_samples": 6074,
+      "ticktask_inclusive_samples": 624,
+      "trace_second": 43
+    },
+    {
+      "downstream_inclusive_samples": 799,
+      "game_samples": 5912,
+      "ticktask_inclusive_samples": 569,
+      "trace_second": 44
+    },
+    {
+      "downstream_inclusive_samples": 742,
+      "game_samples": 13938,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 45
+    },
+    {
+      "downstream_inclusive_samples": 586,
+      "game_samples": 6427,
+      "ticktask_inclusive_samples": 345,
+      "trace_second": 46
+    },
+    {
+      "downstream_inclusive_samples": 767,
+      "game_samples": 5018,
+      "ticktask_inclusive_samples": 637,
+      "trace_second": 47
+    },
+    {
+      "downstream_inclusive_samples": 1342,
+      "game_samples": 6978,
+      "ticktask_inclusive_samples": 1113,
+      "trace_second": 48
+    },
+    {
+      "downstream_inclusive_samples": 667,
+      "game_samples": 5323,
+      "ticktask_inclusive_samples": 558,
+      "trace_second": 49
+    },
+    {
+      "downstream_inclusive_samples": 680,
+      "game_samples": 4995,
+      "ticktask_inclusive_samples": 525,
+      "trace_second": 50
+    },
+    {
+      "downstream_inclusive_samples": 1097,
+      "game_samples": 5003,
+      "ticktask_inclusive_samples": 962,
+      "trace_second": 51
+    },
+    {
+      "downstream_inclusive_samples": 814,
+      "game_samples": 6450,
+      "ticktask_inclusive_samples": 643,
+      "trace_second": 52
+    },
+    {
+      "downstream_inclusive_samples": 602,
+      "game_samples": 4707,
+      "ticktask_inclusive_samples": 442,
+      "trace_second": 53
+    },
+    {
+      "downstream_inclusive_samples": 702,
+      "game_samples": 4708,
+      "ticktask_inclusive_samples": 579,
+      "trace_second": 54
+    },
+    {
+      "downstream_inclusive_samples": 1224,
+      "game_samples": 6026,
+      "ticktask_inclusive_samples": 1008,
+      "trace_second": 55
+    },
+    {
+      "downstream_inclusive_samples": 715,
+      "game_samples": 5939,
+      "ticktask_inclusive_samples": 557,
+      "trace_second": 56
+    },
+    {
+      "downstream_inclusive_samples": 520,
+      "game_samples": 4352,
+      "ticktask_inclusive_samples": 387,
+      "trace_second": 57
+    },
+    {
+      "downstream_inclusive_samples": 581,
+      "game_samples": 4791,
+      "ticktask_inclusive_samples": 478,
+      "trace_second": 58
+    },
+    {
+      "downstream_inclusive_samples": 1314,
+      "game_samples": 7285,
+      "ticktask_inclusive_samples": 1045,
+      "trace_second": 59
+    },
+    {
+      "downstream_inclusive_samples": 641,
+      "game_samples": 4490,
+      "ticktask_inclusive_samples": 536,
+      "trace_second": 60
+    },
+    {
+      "downstream_inclusive_samples": 817,
+      "game_samples": 7813,
+      "ticktask_inclusive_samples": 455,
+      "trace_second": 61
+    },
+    {
+      "downstream_inclusive_samples": 548,
+      "game_samples": 11120,
+      "ticktask_inclusive_samples": 21,
+      "trace_second": 62
+    },
+    {
+      "downstream_inclusive_samples": 10,
+      "game_samples": 1601,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 63
+    },
+    {
+      "downstream_inclusive_samples": 19,
+      "game_samples": 1483,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 64
+    },
+    {
+      "downstream_inclusive_samples": 16,
+      "game_samples": 1633,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 65
+    },
+    {
+      "downstream_inclusive_samples": 11,
+      "game_samples": 1601,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 66
+    },
+    {
+      "downstream_inclusive_samples": 14,
+      "game_samples": 1566,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 67
+    },
+    {
+      "downstream_inclusive_samples": 17,
+      "game_samples": 1602,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 68
+    },
+    {
+      "downstream_inclusive_samples": 9,
+      "game_samples": 1615,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 69
+    },
+    {
+      "downstream_inclusive_samples": 11,
+      "game_samples": 1572,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 70
+    },
+    {
+      "downstream_inclusive_samples": 10,
+      "game_samples": 1552,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 71
+    },
+    {
+      "downstream_inclusive_samples": 13,
+      "game_samples": 1494,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 72
+    },
+    {
+      "downstream_inclusive_samples": 12,
+      "game_samples": 1471,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 73
+    },
+    {
+      "downstream_inclusive_samples": 16,
+      "game_samples": 1490,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 74
+    },
+    {
+      "downstream_inclusive_samples": 12,
+      "game_samples": 1483,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 75
+    },
+    {
+      "downstream_inclusive_samples": 16,
+      "game_samples": 1453,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 76
+    },
+    {
+      "downstream_inclusive_samples": 12,
+      "game_samples": 1488,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 77
+    },
+    {
+      "downstream_inclusive_samples": 16,
+      "game_samples": 1462,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 78
+    },
+    {
+      "downstream_inclusive_samples": 15,
+      "game_samples": 1471,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 79
+    },
+    {
+      "downstream_inclusive_samples": 11,
+      "game_samples": 1453,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 80
+    },
+    {
+      "downstream_inclusive_samples": 13,
+      "game_samples": 1448,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 81
+    },
+    {
+      "downstream_inclusive_samples": 9,
+      "game_samples": 1519,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 82
+    },
+    {
+      "downstream_inclusive_samples": 22,
+      "game_samples": 1486,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 83
+    },
+    {
+      "downstream_inclusive_samples": 14,
+      "game_samples": 1345,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 84
+    },
+    {
+      "downstream_inclusive_samples": 9,
+      "game_samples": 2126,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 85
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 2111,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 86
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 1508,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 87
+    },
+    {
+      "downstream_inclusive_samples": 4,
+      "game_samples": 1218,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 88
+    },
+    {
+      "downstream_inclusive_samples": 4,
+      "game_samples": 1175,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 89
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 1198,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 90
+    },
+    {
+      "downstream_inclusive_samples": 2,
+      "game_samples": 1214,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 91
+    },
+    {
+      "downstream_inclusive_samples": 3,
+      "game_samples": 1188,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 92
+    },
+    {
+      "downstream_inclusive_samples": 2,
+      "game_samples": 1190,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 93
+    },
+    {
+      "downstream_inclusive_samples": 3,
+      "game_samples": 1216,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 94
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1210,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 95
+    },
+    {
+      "downstream_inclusive_samples": 3,
+      "game_samples": 1192,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 96
+    },
+    {
+      "downstream_inclusive_samples": 8,
+      "game_samples": 1200,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 97
+    },
+    {
+      "downstream_inclusive_samples": 2,
+      "game_samples": 1225,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 98
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1238,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 99
+    },
+    {
+      "downstream_inclusive_samples": 2,
+      "game_samples": 1184,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 100
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1207,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 101
+    },
+    {
+      "downstream_inclusive_samples": 3,
+      "game_samples": 1217,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 102
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1188,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 103
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1193,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 104
+    },
+    {
+      "downstream_inclusive_samples": 4,
+      "game_samples": 1207,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 105
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1190,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 106
+    },
+    {
+      "downstream_inclusive_samples": 7,
+      "game_samples": 1196,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 107
+    },
+    {
+      "downstream_inclusive_samples": 4,
+      "game_samples": 1184,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 108
+    },
+    {
+      "downstream_inclusive_samples": 4,
+      "game_samples": 1190,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 109
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 1185,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 110
+    },
+    {
+      "downstream_inclusive_samples": 3,
+      "game_samples": 1185,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 111
+    },
+    {
+      "downstream_inclusive_samples": 6,
+      "game_samples": 1209,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 112
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 1254,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 113
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 1327,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 114
+    },
+    {
+      "downstream_inclusive_samples": 9,
+      "game_samples": 1331,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 115
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 1293,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 116
+    },
+    {
+      "downstream_inclusive_samples": 7,
+      "game_samples": 1333,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 117
+    },
+    {
+      "downstream_inclusive_samples": 8,
+      "game_samples": 1312,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 118
+    },
+    {
+      "downstream_inclusive_samples": 3,
+      "game_samples": 1219,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 119
+    },
+    {
+      "downstream_inclusive_samples": 5,
+      "game_samples": 1238,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 120
+    },
+    {
+      "downstream_inclusive_samples": 8,
+      "game_samples": 1302,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 121
+    },
+    {
+      "downstream_inclusive_samples": 3,
+      "game_samples": 1551,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 122
+    },
+    {
+      "downstream_inclusive_samples": 7,
+      "game_samples": 1028,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 123
+    },
+    {
+      "downstream_inclusive_samples": 22,
+      "game_samples": 796,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 124
+    },
+    {
+      "downstream_inclusive_samples": 0,
+      "game_samples": 958,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 125
+    },
+    {
+      "downstream_inclusive_samples": 0,
+      "game_samples": 183,
+      "ticktask_inclusive_samples": 0,
+      "trace_second": 126
+    }
+  ],
+  "top_victoria_leaf_rvas": [
+    {
+      "rva": "0x3bf023d",
+      "samples": 24816
+    },
+    {
+      "rva": "0x356f2b5",
+      "samples": 8607
+    },
+    {
+      "rva": "0x3bcc50e",
+      "samples": 7591
+    },
+    {
+      "rva": "0x3bcc493",
+      "samples": 7122
+    },
+    {
+      "rva": "0x3bf6372",
+      "samples": 5445
+    },
+    {
+      "rva": "0x20d3ba4",
+      "samples": 4695
+    },
+    {
+      "rva": "0x3bf0200",
+      "samples": 3578
+    },
+    {
+      "rva": "0x356f2c1",
+      "samples": 3230
+    },
+    {
+      "rva": "0xdb40eb",
+      "samples": 2557
+    },
+    {
+      "rva": "0x8672ca",
+      "samples": 2371
+    },
+    {
+      "rva": "0x422ffc8",
+      "samples": 1917
+    },
+    {
+      "rva": "0x356f2b0",
+      "samples": 1907
+    },
+    {
+      "rva": "0x750038",
+      "samples": 1897
+    },
+    {
+      "rva": "0x7d3f32",
+      "samples": 1881
+    },
+    {
+      "rva": "0x422ffd4",
+      "samples": 1662
+    },
+    {
+      "rva": "0x6cc620",
+      "samples": 1606
+    },
+    {
+      "rva": "0x7d3f25",
+      "samples": 1429
+    },
+    {
+      "rva": "0x6cc624",
+      "samples": 1337
+    },
+    {
+      "rva": "0x356f289",
+      "samples": 1269
+    },
+    {
+      "rva": "0x86728e",
+      "samples": 1246
+    },
+    {
+      "rva": "0x356f284",
+      "samples": 1234
+    },
+    {
+      "rva": "0x3bf6325",
+      "samples": 1143
+    },
+    {
+      "rva": "0xc54f37",
+      "samples": 982
+    },
+    {
+      "rva": "0x7ed68a",
+      "samples": 964
+    },
+    {
+      "rva": "0x7d050b",
+      "samples": 947
+    },
+    {
+      "rva": "0xdb40fa",
+      "samples": 945
+    },
+    {
+      "rva": "0x7d0521",
+      "samples": 921
+    },
+    {
+      "rva": "0x136bd67",
+      "samples": 905
+    },
+    {
+      "rva": "0x3619906",
+      "samples": 858
+    },
+    {
+      "rva": "0xcf3d1b",
+      "samples": 827
+    },
+    {
+      "rva": "0x421fa70",
+      "samples": 805
+    },
+    {
+      "rva": "0x7d05d4",
+      "samples": 741
+    },
+    {
+      "rva": "0x13677ae",
+      "samples": 740
+    },
+    {
+      "rva": "0xc46c5a",
+      "samples": 734
+    },
+    {
+      "rva": "0x3341e07",
+      "samples": 720
+    },
+    {
+      "rva": "0x7ed682",
+      "samples": 647
+    },
+    {
+      "rva": "0x635c00",
+      "samples": 633
+    },
+    {
+      "rva": "0xcb3d5a",
+      "samples": 590
+    },
+    {
+      "rva": "0x356f2a4",
+      "samples": 567
+    },
+    {
+      "rva": "0x7d04c2",
+      "samples": 537
+    }
+  ],
+  "warning": "Sample counts are observations, not calls, CPU nanoseconds, allocation counts or critical-path percentages. Inclusive counts overlap. Stack cooccurrence is neither a direct-call witness nor source-level semantic proof. Paused/UI samples and unverified game boundaries prevent whole-envelope shares from representing simulation shares.",
+  "xperf_observed_headers": {
+    "SampledProfile": [
+      "SampledProfile",
+      "TimeStamp",
+      "Process Name ( PID)",
+      "ThreadID",
+      "PrgrmCtr",
+      "CPU",
+      "ThreadStartImage!Function",
+      "Image!Function",
+      "Count",
+      "SampledProfile type"
+    ],
+    "Stack": [
+      "Stack",
+      "TimeStamp",
+      "ThreadID",
+      "No.",
+      "Address",
+      "Image!Function"
+    ]
+  }
+}

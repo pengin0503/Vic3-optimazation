@@ -1,0 +1,41 @@
+{
+  "files": [
+    {
+      "git_content_preserved": false,
+      "local_path": "raw-captures/os-sampled-t12-r01/cpu.etl",
+      "sha256": "0e83528be74c8702a06b7178d7c6698f1f4a5a4841b74c54598da7af76adb936",
+      "size_bytes": 154140672
+    },
+    {
+      "git_content_preserved": false,
+      "local_path": "raw-captures/os-sampled-t12-r01/samples-stacks.csv",
+      "sha256": "eb76b108bb726355d19be3a1666c4a5f63e9896eddaa1db0bdfc3e77585f80dd",
+      "size_bytes": 1261504707
+    },
+    {
+      "git_content_preserved": false,
+      "local_path": "raw-captures/os-sampled-t12-r01/process-images.txt",
+      "sha256": "4b53525e1ab3761fd66bdc3341fc2157a08cb335f44c93782018f7e123af02c7",
+      "size_bytes": 5170061
+    },
+    {
+      "git_content_preserved": false,
+      "local_path": "raw-captures/os-sampled-t12-r01/analysis-final/game-leaf-samples.csv",
+      "sha256": "f6adf21653845699ba63e8bcc7f32cbff02caacf0ebf8ea840509c0aaf6c12c9",
+      "size_bytes": 104537398
+    },
+    {
+      "git_content_preserved": false,
+      "local_path": "raw-captures/os-sampled-t12-r01/analysis/normalized-cpu.json",
+      "sha256": "cccd66ff21e2dd7d13f299916dd8b02ec85576a4204bc8bc85ac51ff9d1cd7e3",
+      "size_bytes": 172977551
+    },
+    {
+      "git_content_preserved": false,
+      "local_path": "raw-captures/os-sampled-t12-r01/analysis/correlation.json",
+      "sha256": "6187251e0fddb9627cb579f7c0a073e46bd4640030ae75ee2f86d73c488ef03b",
+      "size_bytes": 36902077
+    }
+  ],
+  "reason": "Raw trace/system export and large filtered intermediate files remain local; repository preserves research source, game-filtered aggregate observations, image provenance and bounded witnesses. Full rerun requires these local inputs."
+}
