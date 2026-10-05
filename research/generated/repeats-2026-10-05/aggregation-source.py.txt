@@ -1,0 +1,110 @@
+import csv, io, json, hashlib, statistics, collections, datetime
+from pathlib import Path
+from zipfile import ZipFile
+
+ROOT = Path(__file__).resolve().parent.parent
+REPO = ROOT / 'work/repository-verified'
+DATA = REPO / 'benchmarks/measured-2026-10-05-3month-repeats'
+OUT = ROOT / 'outputs'
+TIMES = {8:[37.48,36.88,36.77],12:[34.71,34.53,34.31],16:[34.57,34.66,35.10]}
+def sha(b): return hashlib.sha256(b).hexdigest()
+def dump(p, d):
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+
+runs=[]; signatures={}; framesets={}; duplicates=[]
+for threads,times in TIMES.items():
+    for repeat,wall in enumerate(times,1):
+        label=f'{threads}_r{repeat}'
+        archive=Path(f'E:/bench_{label}.zip')
+        with ZipFile(archive) as z:
+            prefix=f'bench_{label}/'
+            tb=z.read(prefix+f'ticktask_timings_{label}.csv')
+            hb=z.read(prefix+f'{label}.CSV')
+        dest=DATA/f'repeat-t{threads:02d}-r{repeat:02d}'
+        dest.mkdir(parents=True,exist_ok=True)
+        (dest/'ticktask_timings.csv').write_bytes(tb)
+        (dest/'hwinfo.csv').write_bytes(hb)
+        manifest={'run_id':dest.name,'variant':'user-3month-repeat-batch','task_thread_count':threads,
+                  'repeat':repeat,'warmup':False,'wall_clock_seconds':wall,'ticktask_csv':'ticktask_timings.csv',
+                  'csv_sha256':sha(tb),'hwinfo_csv':'hwinfo.csv','hwinfo_sha256':sha(hb),
+                  'measurement_date':'2026-10-05','source_archive':archive.name,'source_archive_sha256':sha(archive.read_bytes()),
+                  'condition_provenance':{'task_thread_count':'user filename label','wall_clock_seconds':'user message',
+                   'build_save_rules_period':'user confirmed same save, 1911-03-01 to 1911-06-01, settings and mods as prior batch; no new binary/save hashes supplied',
+                   'warmup':'user confirmed warm-up performed; separate warm-up CSV not supplied'},
+                  'start_date':'1911-03-01','end_date':'1911-06-01','warmup_performed':True,
+                  'notes':'New nine-run batch only; historical one-run data kept separate. Build/save hash not remeasured.'}
+        dump(dest/'manifest.json',manifest)
+        rows=list(csv.DictReader(io.StringIO(tb.decode('utf-8-sig'))))
+        signature=collections.Counter((int(r['frame']),r['task'],int(r['calls'])) for r in rows)
+        signatures[label]=signature
+        fs=set(int(r['frame']) for r in rows); framesets[label]=fs
+        tasks={}
+        for r in rows:
+            a=tasks.setdefault(r['task'],{'total_ms':0,'calls':0,'longest_lock_ms':0,'max_record_ms':0})
+            a['total_ms']+=float(r['milliseconds']);a['calls']+=int(r['calls'])
+            a['longest_lock_ms']=max(a['longest_lock_ms'],float(r['longest_lock']))
+            a['max_record_ms']=max(a['max_record_ms'],float(r['milliseconds']))
+        # Position-based parsing preserves HWiNFO duplicate column labels.
+        rawlines=hb.splitlines()
+        header=rawlines[0].decode('utf-8-sig')
+        body='\n'.join(line.decode('cp932' if line[:1].isdigit() else 'utf-8-sig') for line in rawlines[1:])
+        hrows=list(csv.reader(io.StringIO(header+'\n'+body))); headers=hrows[0]
+        valid=[]; ignored=[]
+        for line,row in enumerate(hrows[1:],2):
+            try: dt=datetime.datetime.strptime(row[0]+' '+row[1],'%d.%m.%Y %H:%M:%S.%f')
+            except (ValueError,IndexError): ignored.append(line);continue
+            valid.append((dt,row))
+        sensor={}
+        for col,h in enumerate(headers):
+            if any(x in h for x in ['総 CPU 使用率','最大CPU/スレッド使用率','平均実効クロック','CPU (Tctl/Tdie)','CPU パッケージ電力','DRAM 読み取り','DRAM 書き込み','サーマル スロットリング','物理メモリ使用率','CPU PPT Limit','CPU EDC 制限','Thermal Limit']):
+                vals=[row[col] for _,row in valid if len(row)>col]
+                key=f'{col}:{h}'
+                try:
+                    numeric=[float(x) for x in vals]
+                    sensor[key]={'n':len(numeric),'mean':statistics.mean(numeric),'min':min(numeric),'max':max(numeric)}
+                except ValueError: sensor[key]={'n':len(vals),'values':dict(collections.Counter(vals))}
+        intervals=[(b[0]-a[0]).total_seconds() for a,b in zip(valid,valid[1:])]
+        runs.append({'label':label,'threads':threads,'repeat':repeat,'wall_seconds':wall,'csv_sha256':sha(tb),
+                     'rows':len(rows),'frames':len(fs),'frame_min':min(fs),'frame_max':max(fs),
+                     'calls':sum(int(r['calls']) for r in rows),'total_ticktask_ms':sum(float(r['milliseconds']) for r in rows),
+                     'tasks':tasks,'hwinfo':{'samples':len(valid),'ignored_lines':ignored,
+                       'start':str(valid[0][0]),'end':str(valid[-1][0]),'span_seconds':(valid[-1][0]-valid[0][0]).total_seconds(),
+                       'median_interval_seconds':statistics.median(intervals),'sensors':sensor}})
+
+# Verify the additional copies in the large 16_r3 archive, never count them as repeats.
+with ZipFile('E:/bench_16_r3.zip') as z:
+    for info in z.infolist():
+        if info.is_dir() or info.filename.startswith('bench_16_r3/'):continue
+        folder,name=info.filename.split('/')
+        with ZipFile(f'E:/{folder}.zip') as original:
+            assert z.read(info.filename)==original.read(info.filename)
+        duplicates.append({'entry':info.filename,'sha256':sha(z.read(info.filename)),'matches_standalone':True})
+
+baseline=signatures['8_r1'];common=set.intersection(*framesets.values())
+for run in runs:
+    label=run['label'];sig=signatures[label]
+    run['workload_vs_8_r1']={'equal':sig==baseline,'added_records':sum((sig-baseline).values()),
+                            'missing_records':sum((baseline-sig).values()),'extra_frames':sorted(framesets[label]-framesets['8_r1']),
+                            'missing_frames':sorted(framesets['8_r1']-framesets[label])}
+    with (DATA/f"repeat-t{run['threads']:02d}-r{run['repeat']:02d}"/'ticktask_timings.csv').open(encoding='utf-8-sig') as f:
+        common_rows=[r for r in csv.DictReader(f) if int(r['frame']) in common]
+    run['common_frame_total_ms']=sum(float(r['milliseconds']) for r in common_rows)
+    run['excluded_frame_total_ms']=run['total_ticktask_ms']-run['common_frame_total_ms']
+    run['common_workload_equal']=collections.Counter((int(r['frame']),r['task'],int(r['calls'])) for r in common_rows)==collections.Counter(x for x in baseline.elements() if x[0] in common)
+
+groups=[]
+for t,w in TIMES.items():
+    rs=[r for r in runs if r['threads']==t];m=statistics.mean(w);sd=statistics.stdev(w)
+    groups.append({'threads':t,'values':w,'mean':m,'median':statistics.median(w),'stdev':sd,'cv_percent':sd/m*100,
+                   'min':min(w),'max':max(w),'descriptive_95pct_t_interval':[m-4.3026527299*sd/(3**.5),m+4.3026527299*sd/(3**.5)],
+                   'mean_ticktask_ms':statistics.mean(r['total_ticktask_ms'] for r in rs),
+                   'mean_common_frame_ticktask_ms':statistics.mean(r['common_frame_total_ms'] for r in rs)})
+summary={'source':'user nine wall times and nine ZIPs; archive files treated as data','runs':runs,'groups':groups,
+         'common_frames':len(common),'all_common_workloads_equal':all(r['common_workload_equal'] for r in runs),
+         'duplicate_archive_entries':duplicates,'conditions':'user confirmed same save, period, settings and mods; warm-up performed',
+         'uncertainties':['build/save hashes not freshly supplied in these ZIPs','HWiNFO has no synchronized simulation-start/end markers','frame/task/call equality is not simulation-state checksum equality'],
+         'repository_base': '6caebed42aed1aa95988c921d89b14b09be4ebee'}
+dump(OUT/'vic3-repeat-analysis-2026-10-05.json',summary)
+print(json.dumps({'groups':groups,'runs':[{k:r[k] for k in ['label','rows','frames','total_ticktask_ms','excluded_frame_total_ms','workload_vs_8_r1']} for r in runs],
+ 'hwinfo':[{ 'label':r['label'],**r['hwinfo']} for r in runs], 'duplicate_entries':len(duplicates)},ensure_ascii=False,indent=2))

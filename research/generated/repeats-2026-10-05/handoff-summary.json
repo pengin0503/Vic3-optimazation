@@ -1,0 +1,53 @@
+{
+  "format_version": 1,
+  "date": "2026-10-05",
+  "batch": "measured-2026-10-05-3month-repeats",
+  "historical_batch": "measured-2026-10-05-3month",
+  "wall_seconds": {
+    "8": [
+      37.48,
+      36.88,
+      36.77
+    ],
+    "12": [
+      34.71,
+      34.53,
+      34.31
+    ],
+    "16": [
+      34.57,
+      34.66,
+      35.1
+    ]
+  },
+  "observations_per_condition": 3,
+  "diagnostic_baseline_threads": 12,
+  "comparison_threads": 16,
+  "optimal_threads_confirmed": false,
+  "conditions": "user confirmed same save, period, settings and mods; warm-up performed",
+  "build_save_hashes_freshly_verified": false,
+  "raw_frame_workloads_identical": false,
+  "common_frame_workloads_identical": true,
+  "common_frames": 368,
+  "boundary_exception": {
+    "run": "12_r2",
+    "extra_frames": 3,
+    "extra_records": 198,
+    "extra_cumulative_ticktask_ms": 57,
+    "wall_time_corrected": false
+  },
+  "strict_equal_boundary_run_counts": {
+    "8": 3,
+    "12": 2,
+    "16": 3
+  },
+  "still_missing": [
+    "synchronized OS CPU/wait profiles",
+    "12_r2 boundary confirmation"
+  ],
+  "quality_gate_limitations": [
+    "does not validate frame/task/call workload",
+    "missing build/save identity not rejected"
+  ],
+  "no_native_performance_patch_claimed": true
+}

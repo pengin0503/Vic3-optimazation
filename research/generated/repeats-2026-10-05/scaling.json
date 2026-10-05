@@ -1,0 +1,53 @@
+{
+  "format_version": 2,
+  "variants": [
+    {
+      "base_task_thread_count": 8,
+      "first_plateau_screen_thread_count": 16,
+      "plateau_threshold": 0.05,
+      "rows": [
+        {
+          "amdahl_effective_serial_fraction": null,
+          "base_task_thread_count": 8,
+          "incremental_improvement_fraction": null,
+          "median_wall_clock_seconds": 36.88,
+          "parallel_efficiency_vs_1_thread": null,
+          "plateau_screen": null,
+          "repeatability_assessed": true,
+          "speedup_vs_base": 1.0,
+          "speedup_vs_previous": null,
+          "task_thread_count": 8,
+          "wall_clock_noisy": false
+        },
+        {
+          "amdahl_effective_serial_fraction": null,
+          "base_task_thread_count": 8,
+          "incremental_improvement_fraction": 0.06372017353579179,
+          "median_wall_clock_seconds": 34.53,
+          "parallel_efficiency_vs_1_thread": null,
+          "plateau_screen": false,
+          "repeatability_assessed": true,
+          "speedup_vs_base": 1.068056762235737,
+          "speedup_vs_previous": 1.068056762235737,
+          "task_thread_count": 12,
+          "wall_clock_noisy": false
+        },
+        {
+          "amdahl_effective_serial_fraction": null,
+          "base_task_thread_count": 8,
+          "incremental_improvement_fraction": -0.00376484216623213,
+          "median_wall_clock_seconds": 34.66,
+          "parallel_efficiency_vs_1_thread": null,
+          "plateau_screen": true,
+          "repeatability_assessed": true,
+          "speedup_vs_base": 1.064050778995961,
+          "speedup_vs_previous": 0.9962492787074438,
+          "task_thread_count": 16,
+          "wall_clock_noisy": false
+        }
+      ],
+      "variant": "user-3month-repeat-batch"
+    }
+  ],
+  "warning": "Amdahl-style serial fraction is a diagnostic model only. TaskThreadCount does not represent every Victoria 3 thread, and scheduler, lock, memory, and dependency effects violate ideal Amdahl assumptions. Plateau flags are screening hints, not causes. Unknown/insufficient repeatability never establishes a plateau."
+}
