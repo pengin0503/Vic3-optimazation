@@ -123,3 +123,28 @@ Issue #2 is complete only when at least one real heavy-save benchmark has:
 4. a written classification of the dominant limitation with supporting evidence
 
 The documentation portion is complete now; runtime evidence requires the Windows game machine.
+
+## Offline import workflow (implemented 2026-10-05)
+
+1. Export the desired CPU sample / wait / context-switch table as CSV from WPA
+   or AMD uProf. Keep the raw trace outside Git and retain the run manifest.
+2. Inspect the real header, quoting/delimiter, units, module bases and thread
+   identities. Create a mapping using the template in
+   `os-profile-normalized-schema.md`, replacing every placeholder.
+   The template is **not a verified vendor schema**. Make a separate import for
+   each event type. Do not derive a module base from unrelated stack addresses.
+3. Supply the run manifest's executable hash and run ID. Normalize with
+   `python tools/normalize_os_profile.py EXPORT.csv --mapping mapping.json --run-id RUN --source WPA --output local-data/os-profile.json`.
+4. Reproduce the exact-build catalog:
+   `python tools/build_native_target_catalog.py --rtti research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json --overrides research/native-target-overrides-1.14.5.json --executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54 --output local-data/native-catalog.json`.
+5. Correlate:
+   `python tools/correlate_os_profile.py local-data/os-profile.json --catalog local-data/native-catalog.json --expected-run-id RUN --output local-data/os-correlation.json --markdown local-data/os-correlation.md`.
+6. Inspect unmatched/invalid/ambiguous rows and metric coverage before comparing
+   with TickTask rankings. Correct a mapping only against the real export.
+   Range hits alone do not classify a bottleneck or establish wait causality.
+
+The committed catalog has 230 targets (224 resolved TickTask tail groups and
+6 documented scheduler/callback candidates); 34 classes remain unresolved.
+Non-TickTask overrides cite the existing dispatch-region artifact. No speculative
+ranges, ETL parser or uProf database parser have been added. Numeric units cannot
+be inferred safely from a column name alone.

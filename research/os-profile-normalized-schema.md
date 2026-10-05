@@ -24,3 +24,36 @@ All selected columns must exist, including optional mapped columns. Extra column
 are explicitly unmapped by omission from mapping and listed in `unmapped_columns`.
 `include_raw_source_row` defaults false. Build and run identity are supplied by the
 operator from the run manifest, never inferred from a stack or filename.
+
+## Mapping template — examples only, not verified WPA/uProf column names
+
+Replace placeholders with exact columns from the real export; remove optional
+mappings when those columns are absent. All mapped columns must exist.
+
+```json
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "event_type": "cpu_sample",
+  "timestamp_column": "REPLACE_WITH_TIMESTAMP_COLUMN",
+  "timestamp_unit": "s",
+  "thread_id_column": "REPLACE_WITH_THREAD_COLUMN",
+  "module_column": "REPLACE_WITH_MODULE_COLUMN",
+  "module_base_column": "REPLACE_WITH_MODULE_BASE_COLUMN",
+  "instruction_va_column": "REPLACE_WITH_INSTRUCTION_VA_COLUMN",
+  "stack_column": "REPLACE_WITH_RAW_STACK_COLUMN",
+  "delimiter": ",",
+  "decimal_separator": "."
+}
+```
+
+`timestamp_unit=s` above is illustrative, not a vendor default. For waits use
+`event_type=wait`, `wait_time_column=REPLACE_WITH_WAIT_COLUMN`, and explicit
+`wait_time_unit`. For context switches use `event_type=context_switch` with
+`context_switches_column=REPLACE_WITH_COUNT_COLUMN`. CPU time and duration may
+likewise be mapped only when their units and meanings are known. Aggregated
+counts must not be confused with individual context-switch event rows.
+
+Use the normalize -> catalog -> correlate commands in `os-profiling-plan.md`.
+A normalized row requires both a Victoria 3 module and valid VA/base to match.
+The correlator separates processes when process identity was mapped and reports
+metric observation counts so missing metric cells do not look like zero time.

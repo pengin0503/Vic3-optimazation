@@ -310,3 +310,7 @@ Ranges are half-open. Missing bases, invalid addresses, wrong modules, no hits,
 and ambiguous overlaps remain reported. An ambiguous row contributes to no target.
 Only observed metrics are summed; `metric_observations` gives each metric's coverage.
 The result describes static address correlation, not lock or critical-path causality.
+
+The complete real-export workflow is in `research/os-profiling-plan.md`; the
+mapping template has replacement placeholders and is not vendor-verified.
+Retain the run manifest and inspect unmatched/invalid/ambiguous rows.
