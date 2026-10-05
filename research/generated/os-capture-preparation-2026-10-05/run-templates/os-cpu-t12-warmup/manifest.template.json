@@ -1,0 +1,58 @@
+{
+  "build": {
+    "caligula_branch": "release/1.14.5",
+    "caligula_rev": "9f8281a37e85639359b3b0c2c5df0196e975ca4b",
+    "clausewitz_branch": "caligula/release/1.14.x",
+    "clausewitz_rev": "fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef",
+    "game_version": "1.14.5",
+    "victoria3_exe_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+  },
+  "end_date": "1911-06-01",
+  "environment": {
+    "camera_state": null,
+    "cpu": null,
+    "dlc": null,
+    "graphics": null,
+    "mods": null,
+    "os": "Windows 11",
+    "power_plan": null,
+    "process_launch_state": null,
+    "resolution": null,
+    "ui_state": null,
+    "vsync_or_frame_cap": null
+  },
+  "format_version": 1,
+  "game_rules": {
+    "pop_consolidation": null
+  },
+  "game_speed": null,
+  "notes": "PREPARED, UNMEASURED. Confirm same camera/UI/speed/rules/mods and loaded executable/save hashes before recording. Marker interval brackets manual input and is not exact game wall time.",
+  "os_capture": {
+    "after_pause_marker_ns": null,
+    "before_resume_marker_ns": null,
+    "dropped_events": null,
+    "exact_game_boundary": "unverified",
+    "game_pid": null,
+    "game_process_path": null,
+    "module_base": null,
+    "observer_overhead": "unmeasured",
+    "profile": "CPU.Verbose.File",
+    "status": "not_started",
+    "trace_path": null,
+    "trace_sha256": null
+  },
+  "repeat": null,
+  "run_id": "os-cpu-t12-warmup",
+  "save": {
+    "country": null,
+    "filename": "\u30a2\u30e1\u30ea\u30ab\u5408\u8846\u56fd_1911_03_01.v3",
+    "in_game_date_at_load": "1911-03-01",
+    "sha256": "08d22b19929a5ec480e3e45f4e1eb8ff581b91e1de1b4bdb16512e3d0ea5e949"
+  },
+  "start_date": "1911-03-01",
+  "task_thread_count": 12,
+  "ticktask_csv": "ticktask_timings.csv",
+  "variant": "os-cpu",
+  "wall_clock_seconds": null,
+  "warmup": true
+}

@@ -1,0 +1,36 @@
+from pathlib import Path
+import argparse,json,hashlib,sys,csv,tempfile
+ap=argparse.ArgumentParser();ap.add_argument('--repo',type=Path,required=True);ap.add_argument('--output',type=Path);args=ap.parse_args()
+ROOT=args.repo.resolve();sys.path.insert(0,str(ROOT/'tools'))
+from normalize_os_profile import normalize_csv
+from correlate_os_profile import correlate
+from build_native_target_catalog import build_catalog
+OUT=args.output.resolve() if args.output else ROOT/'research/generated/os-capture-preparation-2026-10-05'
+catalog=json.loads((OUT/'native-region-catalog.json').read_text(encoding='utf8'))
+overrides=json.loads((OUT/'native-region-overrides.json').read_text(encoding='utf8'));sha=catalog['executable_sha256']
+rebuilt=build_catalog({'executable_sha256':sha,'classes':[]},overrides,executable_sha256=sha)
+assert rebuilt['targets']==catalog['targets'] and not rebuilt['range_conflicts']
+for t in catalog['targets']:
+    src=t['source_evidence'];assert hashlib.sha256((ROOT/src['artifact']).read_bytes()).hexdigest()==src['artifact_sha256']
+mapping={'executable_sha256':sha,'event_type':'cpu_sample','timestamp_column':'time_s','timestamp_unit':'s','thread_id_column':'tid','module_column':'module','instruction_va_column':'ip','module_base_column':'base'}
+rows=[];expected=[];base=0x7ff600000000
+for t in catalog['targets']:
+    for r in t['ranges']:
+        for address in (int(r['begin_rva'],16),int(r['end_rva'],16)-1):
+            rows.append(['1','7','victoria3.exe',hex(base+address),hex(base)]);expected.append(t['target_id'])
+rows.append(['1','7','other.exe',hex(base),hex(base)])
+with tempfile.TemporaryDirectory() as temp:
+    p=Path(temp)/'synthetic.csv'
+    with p.open('w',newline='',encoding='utf8') as f:
+        w=csv.writer(f);w.writerow(['time_s','tid','module','ip','base']);w.writerows(rows)
+    normalized=normalize_csv(p,mapping,run_id='SYNTHETIC-CATALOG-CHECK',source='synthetic-test')
+    result=correlate(normalized,catalog,expected_run_id='SYNTHETIC-CATALOG-CHECK')
+assert result['matched_rows']==len(expected) and result['unmatched_rows']==1 and result['ambiguous_rows']==0
+for t in catalog['targets']:
+    assert sum(g['count'] for g in result['aggregates'] if g['target_id']==t['target_id'])==expected.count(t['target_id'])
+for p in (OUT/'run-templates').rglob('manifest.template.json'):
+    d=json.loads(p.read_text(encoding='utf8'));assert d['wall_clock_seconds'] is None and d['os_capture']['status']=='not_started'
+    assert d['environment']['mods'] is None and d['game_rules']['pop_consolidation'] is None and d['game_speed'] is None
+verification={'format_version':1,'validation_kind':'synthetic input and static catalog consistency only','target_count':len(catalog['targets']),'range_count':sum(len(t['ranges']) for t in catalog['targets']),'range_conflicts':0,'source_hashes_verified':True,'source_range_start_and_last_byte_samples_matched':len(expected),'wrong_module_rows_unmatched':1,'actual_game_runs':0,'capture_and_export_verified':False,'unmeasured_templates':8}
+(OUT/'verification.json').write_text(json.dumps(verification,indent=2)+'\n',encoding='utf8',newline='\n')
+print(json.dumps(verification,indent=2))

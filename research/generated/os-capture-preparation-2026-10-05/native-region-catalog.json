@@ -1,0 +1,893 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "module": "victoria3.exe",
+  "purpose": "Dedicated downstream region catalog; do not concatenate with TickTask catalog, whose regions may overlap. One hit is not complete Task cost or critical-path evidence.",
+  "range_conflicts": [],
+  "targets": [
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10bd490",
+      "ranges": [
+        {
+          "begin_rva": "0x10bd490",
+          "end_rva": "0x10bd7bd"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0x10bd490",
+        "range_sha256": [
+          "6a99c0cd81fcd3fcc8f32891b4c8d03f6aa147f81ea65a7642c2e19c858d6536"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 1
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10bdb50",
+      "ranges": [
+        {
+          "begin_rva": "0x10bdb50",
+          "end_rva": "0x10befaf"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0x10bdb50",
+        "range_sha256": [
+          "71bd0bff76216d40b76b64b2706db32a9cb350e47c12340636f636d558f1c982"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 2
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10befb0",
+      "ranges": [
+        {
+          "begin_rva": "0x10befb0",
+          "end_rva": "0x10bf094"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/first-pass.json",
+        "artifact_sha256": "766aae1ef611102a100bfa61a8c279385fa8ccc3ff5ff26ad4a15a39eed3668b",
+        "entry_rva": "0x10befb0",
+        "range_sha256": [
+          "f54b15286d113ee8e9512d3d763fb60af83eadefc044e39ff90fc3f269bee2ad"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 3
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10c1150",
+      "ranges": [
+        {
+          "begin_rva": "0x10c1150",
+          "end_rva": "0x10c1223"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/employment-buffer-init.json",
+        "artifact_sha256": "05ab644854855bb5274e756a8d93d1eb3b6977f354d84a0c7f5270a882495908",
+        "entry_rva": "0x10c1150",
+        "range_sha256": [
+          "eb4237e9469a4cc94f2e0bc1f353a27cceb595e7976bd376fbfc5313ac44b59d"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 4
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10c1280",
+      "ranges": [
+        {
+          "begin_rva": "0x10c1280",
+          "end_rva": "0x10c1370"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/employment-buffer-init.json",
+        "artifact_sha256": "05ab644854855bb5274e756a8d93d1eb3b6977f354d84a0c7f5270a882495908",
+        "entry_rva": "0x10c1280",
+        "range_sha256": [
+          "6c25d57ba55a5cea796e100c59f7430dd1971f0897a8f3a799749ae0c4dc686e"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 5
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10c1370",
+      "ranges": [
+        {
+          "begin_rva": "0x10c1370",
+          "end_rva": "0x10c145a"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/employment-buffer-init.json",
+        "artifact_sha256": "05ab644854855bb5274e756a8d93d1eb3b6977f354d84a0c7f5270a882495908",
+        "entry_rva": "0x10c1370",
+        "range_sha256": [
+          "a1c8ceb01666a17df94a89d3bd9ddfb57c9849f65ceaf389f754bb2f48129c0e"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 6
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10c1460",
+      "ranges": [
+        {
+          "begin_rva": "0x10c1460",
+          "end_rva": "0x10c1550"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/employment-buffer-init.json",
+        "artifact_sha256": "05ab644854855bb5274e756a8d93d1eb3b6977f354d84a0c7f5270a882495908",
+        "entry_rva": "0x10c1460",
+        "range_sha256": [
+          "1f6170cd6f2b9d32da4b3d433eae2e404db2e5893282379661159d725aa6909b"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 7
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10c1580",
+      "ranges": [
+        {
+          "begin_rva": "0x10c1580",
+          "end_rva": "0x10c16e3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/employment-buffer-init.json",
+        "artifact_sha256": "05ab644854855bb5274e756a8d93d1eb3b6977f354d84a0c7f5270a882495908",
+        "entry_rva": "0x10c1580",
+        "range_sha256": [
+          "1008d6c98a594fd1e8e340f8e2cddbe1d2893a82d40a214ade54f57e303fc448"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 8
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x10c2b70",
+      "ranges": [
+        {
+          "begin_rva": "0x10c2b70",
+          "end_rva": "0x10c2c03"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/allocator-continuations.json",
+        "artifact_sha256": "1399a06cf15d037b8726a0999d23b18f81fe41a5e2932a153572efb34bdce29d",
+        "entry_rva": "0x10c2b70",
+        "range_sha256": [
+          "92ae7e08916092d8913317f0338f3e8a2890b5dfe859ac1fd446d2dc33a179cd"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 9
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x11aec40",
+      "ranges": [
+        {
+          "begin_rva": "0x11aec40",
+          "end_rva": "0x11aed95"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/first-pass.json",
+        "artifact_sha256": "766aae1ef611102a100bfa61a8c279385fa8ccc3ff5ff26ad4a15a39eed3668b",
+        "entry_rva": "0x11aec40",
+        "range_sha256": [
+          "f297b8d44d74af17a1e413a5f6e3a6493eee9238ed883f55c41230af5bb02ef9"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 10
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x12a4ee0",
+      "ranges": [
+        {
+          "begin_rva": "0x12a4ee0",
+          "end_rva": "0x12a5846"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0x12a4ee0",
+        "range_sha256": [
+          "a6a69bfe64746084265bef73ba24d5359a27486bea1d8f475ccf1b48671999b4"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 11
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x12addb0",
+      "ranges": [
+        {
+          "begin_rva": "0x12addb0",
+          "end_rva": "0x12ae5d2"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0x12addb0",
+        "range_sha256": [
+          "5d388d29bbae632925e37f3e16900a9049ee8d6e7653bafceb7e0fc8e1678540"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 12
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x13712b0",
+      "ranges": [
+        {
+          "begin_rva": "0x13712b0",
+          "end_rva": "0x1371346"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0x13712b0",
+        "range_sha256": [
+          "c93c2d532bde3a55d4adf0f9a610760e07e5cc361b3c905a7842c0d491f5af68"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 13
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x13b8540",
+      "ranges": [
+        {
+          "begin_rva": "0x13b8540",
+          "end_rva": "0x13b8765"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/first-pass.json",
+        "artifact_sha256": "766aae1ef611102a100bfa61a8c279385fa8ccc3ff5ff26ad4a15a39eed3668b",
+        "entry_rva": "0x13b8540",
+        "range_sha256": [
+          "36df4eca33464dcebabd878e03a7b168e02741a8a732c16f412084181db48eda"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 14
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x13c54c0",
+      "ranges": [
+        {
+          "begin_rva": "0x13c54c0",
+          "end_rva": "0x13c5848"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0x13c54c0",
+        "range_sha256": [
+          "6ff7145939dca68bede66079931d21e666cff0f4815527b30b15d666b785d81f"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 15
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x13cad10",
+      "ranges": [
+        {
+          "begin_rva": "0x13cad10",
+          "end_rva": "0x13cad62"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/first-pass.json",
+        "artifact_sha256": "766aae1ef611102a100bfa61a8c279385fa8ccc3ff5ff26ad4a15a39eed3668b",
+        "entry_rva": "0x13cad10",
+        "range_sha256": [
+          "db6f9b6f10d08302a3a419d3ebfd62a3c91a6b484ec507e18d11eb0e1de7a4a3"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 16
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x13cada0",
+      "ranges": [
+        {
+          "begin_rva": "0x13cada0",
+          "end_rva": "0x13cae91"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/first-pass.json",
+        "artifact_sha256": "766aae1ef611102a100bfa61a8c279385fa8ccc3ff5ff26ad4a15a39eed3668b",
+        "entry_rva": "0x13cada0",
+        "range_sha256": [
+          "e3d1593e99f38082b63becad39471dfa70a40c2d5c4e95c04c2c3fb00b527bef"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 17
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x13cb1d0",
+      "ranges": [
+        {
+          "begin_rva": "0x13cb1d0",
+          "end_rva": "0x13cb313"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0x13cb1d0",
+        "range_sha256": [
+          "b45caa19cd6884983368331a578fa7a1ab970f164f6becdc23d35d8176d1495c"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 18
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_or_diagnostic",
+      "name": "native_region_0x423439c",
+      "ranges": [
+        {
+          "begin_rva": "0x423439c",
+          "end_rva": "0x4234405"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+        "artifact_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+        "entry_rva": "0x423439c",
+        "range_sha256": [
+          "f1802f17034c36ba9dd98b0f1be4b22afdba43eec3f37c3d3a651554eeaa7c47"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 19
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_or_diagnostic",
+      "name": "native_region_0x4234408",
+      "ranges": [
+        {
+          "begin_rva": "0x4234408",
+          "end_rva": "0x4234483"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+        "artifact_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+        "entry_rva": "0x4234408",
+        "range_sha256": [
+          "c33977b7f80cdb06dce1e1d463a6f5b42a725025bba192cb270c75b85ea7bf0e"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 20
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x427cb10",
+      "ranges": [
+        {
+          "begin_rva": "0x427cb10",
+          "end_rva": "0x427d17d"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0x427cb10",
+        "range_sha256": [
+          "e3fe2435dcd9fe38705c05ad9f33f538f4ee71d601ae64e6a1ae41a043eaf89d"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 21
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x630340",
+      "ranges": [
+        {
+          "begin_rva": "0x630340",
+          "end_rva": "0x630373"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/allocator-continuations.json",
+        "artifact_sha256": "1399a06cf15d037b8726a0999d23b18f81fe41a5e2932a153572efb34bdce29d",
+        "entry_rva": "0x630340",
+        "range_sha256": [
+          "cb469c7197098609d140f73d9618d34d89c846c672f65a9e3ca6dc2f81bc6722"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 22
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x630380",
+      "ranges": [
+        {
+          "begin_rva": "0x630380",
+          "end_rva": "0x6303b3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/allocator-continuations.json",
+        "artifact_sha256": "1399a06cf15d037b8726a0999d23b18f81fe41a5e2932a153572efb34bdce29d",
+        "entry_rva": "0x630380",
+        "range_sha256": [
+          "7ddc874c925b5dffe37cb20066a054d02713df4f41104cdf91f5b2ea16b64d58"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 23
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x64b2f0",
+      "ranges": [
+        {
+          "begin_rva": "0x64b2f0",
+          "end_rva": "0x64b34f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0x64b2f0",
+        "range_sha256": [
+          "cb5bbbe4db134a3cda6fc7e390825fe23ca40fde114e66acc56aa9bafe9b0919"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 24
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x64d790",
+      "ranges": [
+        {
+          "begin_rva": "0x64d790",
+          "end_rva": "0x64d80e"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0x64d790",
+        "range_sha256": [
+          "ef8209bd941710fb3441babd08a20d52166b10ab3243b4ab63b38b5c190b3b83"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 25
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x7d66b0",
+      "ranges": [
+        {
+          "begin_rva": "0x7d66b0",
+          "end_rva": "0x7d6794"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0x7d66b0",
+        "range_sha256": [
+          "cc76d0b57d8c5b0e0e25c7c4f7b04b5233868a4ba4466296aa26d1b2d0ec26ad"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 26
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_or_diagnostic",
+      "name": "native_region_0x7db150",
+      "ranges": [
+        {
+          "begin_rva": "0x7db150",
+          "end_rva": "0x7dba91"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+        "artifact_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+        "entry_rva": "0x7db150",
+        "range_sha256": [
+          "5088b961fdbbab8661d072cb379c4af60326e9f208b2d4db59c35341022286c1"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 27
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_or_diagnostic",
+      "name": "native_region_0x7e1910",
+      "ranges": [
+        {
+          "begin_rva": "0x7e1910",
+          "end_rva": "0x7e20b9"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+        "artifact_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+        "entry_rva": "0x7e1910",
+        "range_sha256": [
+          "75036e85b8dd0f7f11d684dd785daf193fc5a06bb57989786936e963cc8f30e2"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 28
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_or_diagnostic",
+      "name": "native_region_0x7e20c0",
+      "ranges": [
+        {
+          "begin_rva": "0x7e20c0",
+          "end_rva": "0x7e2d4f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+        "artifact_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+        "entry_rva": "0x7e20c0",
+        "range_sha256": [
+          "a291ae28ff27f17bbc179afd3fdcbfece49dffae70237c0292c0b1c62c6ca23b"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 29
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_or_diagnostic",
+      "name": "native_region_0x7e56b0",
+      "ranges": [
+        {
+          "begin_rva": "0x7e56b0",
+          "end_rva": "0x7e594d"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+        "artifact_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+        "entry_rva": "0x7e56b0",
+        "range_sha256": [
+          "eac1e60a5bf1526963a5638022cd30e2fd30c94a44fd314e11c7643be245fbc8"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 30
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_or_diagnostic",
+      "name": "native_region_0x7e5950",
+      "ranges": [
+        {
+          "begin_rva": "0x7e5950",
+          "end_rva": "0x7e5beb"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+        "artifact_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+        "entry_rva": "0x7e5950",
+        "range_sha256": [
+          "5474e6dc51b1a4f7a034a729d4fdf1205c04e6f0861338de27100a196d8458c5"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 31
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x7ed5f0",
+      "ranges": [
+        {
+          "begin_rva": "0x7ed5f0",
+          "end_rva": "0x7ed698"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0x7ed5f0",
+        "range_sha256": [
+          "9c0337de8e3ea1c807d3dd053b9a0e6a7bc2814d1a31526605c0e5f835b7618c"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 32
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x7fbb50",
+      "ranges": [
+        {
+          "begin_rva": "0x7fbb50",
+          "end_rva": "0x7fbb88"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0x7fbb50",
+        "range_sha256": [
+          "39e67a59d0a618059a6ffadfe7b8bdc93af49bbe6e4dbd2da207c59e87af4175"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 33
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0x85d7c0",
+      "ranges": [
+        {
+          "begin_rva": "0x85d7c0",
+          "end_rva": "0x85d868"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0x85d7c0",
+        "range_sha256": [
+          "796cfbe2476624a7e97916855e6272478fb24fd86431d2771605a4ef50535ffa"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 34
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xc24140",
+      "ranges": [
+        {
+          "begin_rva": "0xc24140",
+          "end_rva": "0xc242ac"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0xc24140",
+        "range_sha256": [
+          "70a3966d165cc0f1bf2bacf9af3c1a0a24ee7b4753309f19104fe02d102183fb"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 35
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xc2eaf0",
+      "ranges": [
+        {
+          "begin_rva": "0xc2eaf0",
+          "end_rva": "0xc2eb23"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/allocator-continuations.json",
+        "artifact_sha256": "1399a06cf15d037b8726a0999d23b18f81fe41a5e2932a153572efb34bdce29d",
+        "entry_rva": "0xc2eaf0",
+        "range_sha256": [
+          "cb469c7197098609d140f73d9618d34d89c846c672f65a9e3ca6dc2f81bc6722"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 36
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xc2eb30",
+      "ranges": [
+        {
+          "begin_rva": "0xc2eb30",
+          "end_rva": "0xc2eb63"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/allocator-continuations.json",
+        "artifact_sha256": "1399a06cf15d037b8726a0999d23b18f81fe41a5e2932a153572efb34bdce29d",
+        "entry_rva": "0xc2eb30",
+        "range_sha256": [
+          "7ddc874c925b5dffe37cb20066a054d02713df4f41104cdf91f5b2ea16b64d58"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 37
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xc46bc0",
+      "ranges": [
+        {
+          "begin_rva": "0xc46bc0",
+          "end_rva": "0xc46c68"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0xc46bc0",
+        "range_sha256": [
+          "c2eee084f13c9188590ad413691f65221ec75b1f53139199a8af2011d0d71f60"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 38
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xcb4ba0",
+      "ranges": [
+        {
+          "begin_rva": "0xcb4ba0",
+          "end_rva": "0xcb4c48"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/shared-helpers.json",
+        "artifact_sha256": "8bd2ba250eb8ca5663dea8931c83f422510a07f29351396945bbd52901ef4f51",
+        "entry_rva": "0xcb4ba0",
+        "range_sha256": [
+          "8da1de830e6d9c83e9ba409209cd5c0f34fc32dcc4c58f96087d2e08cb2f59f8"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 39
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xf5df00",
+      "ranges": [
+        {
+          "begin_rva": "0xf5df00",
+          "end_rva": "0xf5e3bb"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0xf5df00",
+        "range_sha256": [
+          "d7d8be5e559a6a0b108adcf88dd136a6b15ffb201c90129bec713a2d7d6f8774"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 40
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xf5e3c0",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e3c0",
+          "end_rva": "0xf5e41e"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/economics-inner.json",
+        "artifact_sha256": "c08bb631371f405e0131f070492ad5c8921f00018c7e785c427424c47c3cb9a2",
+        "entry_rva": "0xf5e3c0",
+        "range_sha256": [
+          "6350ff679f2d85aa0934f2671661049c7722c9a73d0256c069e0e28dd3ac92bf"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 41
+    },
+    {
+      "confidence": "candidate",
+      "kind": "economics",
+      "name": "native_region_0xf771a0",
+      "ranges": [
+        {
+          "begin_rva": "0xf771a0",
+          "end_rva": "0xf775af"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/deep-native-2026-10-05/economics/first-pass.json",
+        "artifact_sha256": "766aae1ef611102a100bfa61a8c279385fa8ccc3ff5ff26ad4a15a39eed3668b",
+        "entry_rva": "0xf771a0",
+        "range_sha256": [
+          "d11d82d271b17214b5831db3440cfda35a9235a6b6bc8e514144f826f0e5145b"
+        ],
+        "scope": "confirmed static region; semantic name/hotness/caller task not inferred"
+      },
+      "target_id": 42
+    }
+  ],
+  "unresolved": [],
+  "warning": "Static instruction/reference evidence only; no runtime reachability, dependency semantics, critical path, lock causality or performance benefit is proven."
+}
