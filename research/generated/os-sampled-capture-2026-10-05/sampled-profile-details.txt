@@ -1,0 +1,23 @@
+
+Microsoft Windows Performance Recorder Version 10.0.26100 (CoreSystem)
+Copyright (c) 2024 Microsoft Corporation. All rights reserved.
+
+Profile			: Vic3Sampled.Verbose.File
+
+
+Collector Name		: WPR_initiated_WprApp_WPR System Collector
+Buffer Size (KB)	: 1024
+Number of Buffers	: 64
+Providers
+System Keywords
+	Loader
+	ProcessThread
+	SampledProfile
+System Stacks
+	SampledProfile
+
+Collector Name		: WPR_initiated_WprApp_Vic3 marker collector
+Buffer Size (KB)	: 128
+Number of Buffers	: 16
+Providers
+	Microsoft-Windows-Performance-Recorder-Control: 0x10000: 0xff     

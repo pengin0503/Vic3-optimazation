@@ -1,0 +1,49 @@
+{
+  "first-pass": [
+    "0xf771a0",
+    "0x11aec40",
+    "0x13b8540",
+    "0x13cada0",
+    "0x13cad10",
+    "0x10befb0"
+  ],
+  "economics-inner": [
+    "0xf5df00",
+    "0xf5e3c0",
+    "0x12addb0",
+    "0x10bd490",
+    "0x10bdb50",
+    "0x12a4ee0",
+    "0xc24140",
+    "0x13c54c0",
+    "0x7d66b0",
+    "0x64b2f0"
+  ],
+  "shared-helpers": [
+    "0x13712b0",
+    "0x7ed5f0",
+    "0x85d7c0",
+    "0xcb4ba0",
+    "0xc46bc0",
+    "0x427cb10",
+    "0x64d790",
+    "0x13cb1d0",
+    "0x7fbb50",
+    "0xc29dc0"
+  ],
+  "employment-buffer-init": [
+    "0x10c1580",
+    "0x10c1460",
+    "0x10c1370",
+    "0x10c1280",
+    "0x10c1150",
+    "0x422fc70"
+  ],
+  "allocator-continuations": [
+    "0xc2eb30",
+    "0xc2eaf0",
+    "0x630380",
+    "0x630340",
+    "0x10c2b70"
+  ]
+}

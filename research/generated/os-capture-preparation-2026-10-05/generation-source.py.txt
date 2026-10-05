@@ -1,0 +1,48 @@
+"""Research preparation only; no game launch, capture or state modification."""
+import argparse,hashlib,json,sys
+from pathlib import Path
+ap=argparse.ArgumentParser();ap.add_argument('--repo',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);args=ap.parse_args()
+repo=args.repo.resolve();out=args.output.resolve()
+if out.exists() and any(out.iterdir()):
+    raise ValueError('output directory must be empty; existing preparation remains unchanged')
+out.mkdir(parents=True,exist_ok=True)
+sys.path.insert(0,str(repo/'tools'))
+from build_native_target_catalog import build_catalog
+from prepare_benchmark_matrix import create_matrix
+EXPECTED='9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54'
+SAVE='08d22b19929a5ec480e3e45f4e1eb8ff581b91e1de1b4bdb16512e3d0ea5e949'
+def save(name,d):
+    p=out/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(d,indent=2,sort_keys=True)+'\n',encoding='utf8',newline='\n')
+nodes={};sources=[]
+base=repo/'research/generated/deep-native-2026-10-05'
+for p in sorted((base/'economics').glob('*.json')):
+    d=json.loads(p.read_text(encoding='utf8'))
+    if 'selected_groups' not in d:continue
+    assert d['executable_sha256']==EXPECTED
+    digest=hashlib.sha256(p.read_bytes()).hexdigest()
+    for n in d['selected_groups']:
+        assert n['fully_decoded']
+        nodes.setdefault(n['entry_rva'],(n,p.relative_to(repo).as_posix(),digest,'economics'))
+p=base/'scheduler/scheduler-classified-evidence.json';d=json.loads(p.read_text(encoding='utf8'));assert d['executable_sha256']==EXPECTED
+for r,n in d['selected_regions'].items():
+    assert n['region']['fully_decoded']
+    nodes.setdefault(r,(n['region'],p.relative_to(repo).as_posix(),hashlib.sha256(p.read_bytes()).hexdigest(),'scheduler_or_diagnostic'))
+overrides={'format_version':1,'executable_sha256':EXPECTED,'targets':[]}
+for r,(n,path,digest,kind) in sorted(nodes.items(),key=lambda pair:int(pair[0],16)):
+    overrides['targets'].append({'name':'native_region_'+r,'kind':kind,'ranges':[{'begin_rva':s['begin_rva'],'end_rva':s['end_rva']} for s in n['ranges']],
+     'source_evidence':{'artifact':path,'artifact_sha256':digest,'entry_rva':r,'range_sha256':[s['sha256'] for s in n['ranges']],'scope':'confirmed static region; semantic name/hotness/caller task not inferred'}})
+catalog=build_catalog({'executable_sha256':EXPECTED,'classes':[]},overrides,executable_sha256=EXPECTED)
+assert len(catalog['targets'])==42 and not catalog['range_conflicts']
+catalog['purpose']='Dedicated downstream region catalog; do not concatenate with TickTask catalog, whose regions may overlap. One hit is not complete Task cost or critical-path evidence.'
+save('native-region-overrides.json',overrides);save('native-region-catalog.json',catalog)
+matrix=create_matrix(out/'run-templates',variant='os-cpu',threads=[12,16],repeats=3,include_warmup=True,start_date='1911-03-01',end_date='1911-06-01',save_filename='アメリカ合衆国_1911_03_01.v3',save_sha256=SAVE,country=None,cpu=None)
+for p in (out/'run-templates').rglob('manifest.template.json'):
+    doc=json.loads(p.read_text(encoding='utf8'));doc['game_rules']['pop_consolidation']=None;doc['environment']['mods']=None;doc['game_speed']=None
+    doc['notes']='PREPARED, UNMEASURED. Confirm same camera/UI/speed/rules/mods and loaded executable/save hashes before recording. Marker interval brackets manual input and is not exact game wall time.'
+    doc['os_capture']={'status':'not_started','profile':'CPU.Verbose.File','trace_sha256':None,'trace_path':None,'dropped_events':None,'game_pid':None,'game_process_path':None,'module_base':None,'before_resume_marker_ns':None,'after_pause_marker_ns':None,'exact_game_boundary':'unverified','observer_overhead':'unmeasured'}
+    p.write_text(json.dumps(doc,indent=2,sort_keys=True)+'\n',encoding='utf8',newline='\n')
+runs=matrix['runs'];by={(r['task_thread_count'],r['repeat'],r['warmup']):r['run_id'] for r in runs}
+order=[by[(12,None,True)],by[(16,None,True)]]
+for repeat,threads in [(1,[12,16]),(2,[16,12]),(3,[12,16])]:order += [by[(t,repeat,False)] for t in threads]
+save('capture-plan.json',{'format_version':1,'status':'prepared_unmeasured','profile':'CPU.Verbose.File','expected_executable_sha256':EXPECTED,'candidate_save_sha256':SAVE,'start_date':'1911-03-01','end_date':'1911-06-01','planned_execution_order':order,'actual_execution_order':None,'measured_game_runs':0,'admin_required':True,'warmup_traces_included':False,'notes':['Reload same save before every measured run.','Warm-up run is excluded from CPU capture and wall comparison.','Marker pair is an outer envelope, never assumed exact game start/end.','No IBS/heap allocation event capture configured; CPU stacks alone do not measure cache stalls or allocation counts.','All traces/exports local; commit only filtered evidence with hashes/provenance.']})
+print('Prepared',len(catalog['targets']),'regions;',len(runs),'unmeasured run templates; order',order)

@@ -1,0 +1,119 @@
+
+ENTRY c2eb30 (51 bytes)
+00c2eb30 48895c2408               mov      qword ptr [rsp + 8], rbx
+00c2eb35 57                       push     rdi
+00c2eb36 4883ec20                 sub      rsp, 0x20
+00c2eb3a 488b01                   mov      rax, qword ptr [rcx]
+00c2eb3d 418bd8                   mov      ebx, r8d
+00c2eb40 488bfa                   mov      rdi, rdx
+00c2eb43 ff5038                   call     qword ptr [rax + 0x38]
+00c2eb46 448bc3                   mov      r8d, ebx
+00c2eb49 488bd7                   mov      rdx, rdi
+00c2eb4c 488b08                   mov      rcx, qword ptr [rax]
+00c2eb4f 4c8b4908                 mov      r9, qword ptr [rcx + 8]
+00c2eb53 488bc8                   mov      rcx, rax
+00c2eb56 488b5c2430               mov      rbx, qword ptr [rsp + 0x30]
+00c2eb5b 4883c420                 add      rsp, 0x20
+00c2eb5f 5f                       pop      rdi
+00c2eb60 49ffe1                   jmp      r9
+
+ENTRY c2eaf0 (51 bytes)
+00c2eaf0 4053                     push     rbx
+00c2eaf2 4883ec20                 sub      rsp, 0x20
+00c2eaf6 488d4108                 lea      rax, [rcx + 8]
+00c2eafa 488bda                   mov      rbx, rdx
+00c2eafd 483bd0                   cmp      rdx, rax
+00c2eb00 741b                     je       0xc2eb1d
+00c2eb02 488b01                   mov      rax, qword ptr [rcx]
+00c2eb05 ff5038                   call     qword ptr [rax + 0x38]
+00c2eb08 488bd3                   mov      rdx, rbx
+00c2eb0b 488b08                   mov      rcx, qword ptr [rax]
+00c2eb0e 4c8b4110                 mov      r8, qword ptr [rcx + 0x10]
+00c2eb12 488bc8                   mov      rcx, rax
+00c2eb15 4883c420                 add      rsp, 0x20
+00c2eb19 5b                       pop      rbx
+00c2eb1a 49ffe0                   jmp      r8
+00c2eb1d 4883c420                 add      rsp, 0x20
+00c2eb21 5b                       pop      rbx
+00c2eb22 c3                       ret      
+
+ENTRY 630380 (51 bytes)
+00630380 48895c2408               mov      qword ptr [rsp + 8], rbx
+00630385 57                       push     rdi
+00630386 4883ec20                 sub      rsp, 0x20
+0063038a 488b01                   mov      rax, qword ptr [rcx]
+0063038d 418bd8                   mov      ebx, r8d
+00630390 488bfa                   mov      rdi, rdx
+00630393 ff5038                   call     qword ptr [rax + 0x38]
+00630396 448bc3                   mov      r8d, ebx
+00630399 488bd7                   mov      rdx, rdi
+0063039c 488b08                   mov      rcx, qword ptr [rax]
+0063039f 4c8b4908                 mov      r9, qword ptr [rcx + 8]
+006303a3 488bc8                   mov      rcx, rax
+006303a6 488b5c2430               mov      rbx, qword ptr [rsp + 0x30]
+006303ab 4883c420                 add      rsp, 0x20
+006303af 5f                       pop      rdi
+006303b0 49ffe1                   jmp      r9
+
+ENTRY 630340 (51 bytes)
+00630340 4053                     push     rbx
+00630342 4883ec20                 sub      rsp, 0x20
+00630346 488d4108                 lea      rax, [rcx + 8]
+0063034a 488bda                   mov      rbx, rdx
+0063034d 483bd0                   cmp      rdx, rax
+00630350 741b                     je       0x63036d
+00630352 488b01                   mov      rax, qword ptr [rcx]
+00630355 ff5038                   call     qword ptr [rax + 0x38]
+00630358 488bd3                   mov      rdx, rbx
+0063035b 488b08                   mov      rcx, qword ptr [rax]
+0063035e 4c8b4110                 mov      r8, qword ptr [rcx + 0x10]
+00630362 488bc8                   mov      rcx, rax
+00630365 4883c420                 add      rsp, 0x20
+00630369 5b                       pop      rbx
+0063036a 49ffe0                   jmp      r8
+0063036d 4883c420                 add      rsp, 0x20
+00630371 5b                       pop      rbx
+00630372 c3                       ret      
+
+ENTRY 10c2b70 (147 bytes)
+010c2b70 48896c2418               mov      qword ptr [rsp + 0x18], rbp
+010c2b75 4889742420               mov      qword ptr [rsp + 0x20], rsi
+010c2b7a 4156                     push     r14
+010c2b7c 4883ec20                 sub      rsp, 0x20
+010c2b80 4863690c                 movsxd   rbp, dword ptr [rcx + 0xc]
+010c2b84 33f6                     xor      esi, esi
+010c2b86 4c8bf1                   mov      r14, rcx
+010c2b89 4885ed                   test     rbp, rbp
+010c2b8c 7e61                     jle      0x10c2bef
+010c2b8e 48895c2430               mov      qword ptr [rsp + 0x30], rbx
+010c2b93 8bde                     mov      ebx, esi
+010c2b95 48897c2438               mov      qword ptr [rsp + 0x38], rdi
+010c2b9a 660f1f440000             nop      word ptr [rax + rax]
+010c2ba0 498b3e                   mov      rdi, qword ptr [r14]
+010c2ba3 4803fb                   add      rdi, rbx
+010c2ba6 488b5758                 mov      rdx, qword ptr [rdi + 0x58]
+010c2baa 4885d2                   test     rdx, rdx
+010c2bad 7414                     je       0x10c2bc3
+010c2baf 488b4f68                 mov      rcx, qword ptr [rdi + 0x68]
+010c2bb3 897764                   mov      dword ptr [rdi + 0x64], esi
+010c2bb6 488b01                   mov      rax, qword ptr [rcx]
+010c2bb9 ff5010                   call     qword ptr [rax + 0x10]
+010c2bbc 48897758                 mov      qword ptr [rdi + 0x58], rsi
+010c2bc0 897760                   mov      dword ptr [rdi + 0x60], esi
+010c2bc3 4881c380010000           add      rbx, 0x180
+010c2bca 4883ed01                 sub      rbp, 1
+010c2bce 75d0                     jne      0x10c2ba0
+010c2bd0 488b7c2438               mov      rdi, qword ptr [rsp + 0x38]
+010c2bd5 488b5c2430               mov      rbx, qword ptr [rsp + 0x30]
+010c2bda 4189760c                 mov      dword ptr [r14 + 0xc], esi
+010c2bde 488b6c2440               mov      rbp, qword ptr [rsp + 0x40]
+010c2be3 488b742448               mov      rsi, qword ptr [rsp + 0x48]
+010c2be8 4883c420                 add      rsp, 0x20
+010c2bec 415e                     pop      r14
+010c2bee c3                       ret      
+010c2bef 488b6c2440               mov      rbp, qword ptr [rsp + 0x40]
+010c2bf4 89710c                   mov      dword ptr [rcx + 0xc], esi
+010c2bf7 488b742448               mov      rsi, qword ptr [rsp + 0x48]
+010c2bfc 4883c420                 add      rsp, 0x20
+010c2c00 415e                     pop      r14
+010c2c02 c3                       ret      

@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "0f2abb1b58bc263fd81530f5500245c90cb0bdcdb1e5d8701e6a99292226ede1",
+      "size_bytes": 149
+    },
+    {
+      "path": "analysis-source.py.txt",
+      "sha256": "bbe0e3641add90b2dc0f4d17eb1302279633db9e07d34fa284f07531c0ef186e",
+      "size_bytes": 7276
+    },
+    {
+      "path": "capture-manifest.json",
+      "sha256": "6f6f35448d8a29ff07f0ba8fa5102bdc968b3a54aaab5a6308ae61231b551cdd",
+      "size_bytes": 3245
+    },
+    {
+      "path": "game-image-provenance.json",
+      "sha256": "72754374c2e204474349b793488e91761f8a9612fbddf55f672a79720314ed55",
+      "size_bytes": 1134
+    },
+    {
+      "path": "leaf-witnesses.json",
+      "sha256": "25ae7b9c08b5ebfcaa2670e3e1f7e57dc391abbbc5137f3e5cedd065c6b383ca",
+      "size_bytes": 17621
+    },
+    {
+      "path": "mapping.json",
+      "sha256": "b468f562e94bd0760068a0fb8004c68606d62c44b59fdb271744b6c86d1494c2",
+      "size_bytes": 406
+    },
+    {
+      "path": "profile-list.txt",
+      "sha256": "e313f489930f024fdcb0600de3beca3009ae238296c349f8e0417d6b8e779759",
+      "size_bytes": 351
+    },
+    {
+      "path": "raw-input-inventory.json",
+      "sha256": "458f05fc28ae7efbe96b996aa4e2f7e37527544e1f59755a115c56411fc0f996",
+      "size_bytes": 1764
+    },
+    {
+      "path": "sample-observations.json",
+      "sha256": "91a45b9c3cf8bae07b21c641d030fed5b9681a6182b4905ebfce64b9020bb80e",
+      "size_bytes": 63337
+    },
+    {
+      "path": "sampled-profile-details.txt",
+      "sha256": "39693a3e779f39a66e7f497d131c9181a8f85ac502d07383ecdb2e94217e07b7",
+      "size_bytes": 586
+    },
+    {
+      "path": "scheduling-profile-details.txt",
+      "sha256": "0bb587928fe1b1fa2332291ffaec94bd6f4c9f9f9cfea422544d8ead589711fc",
+      "size_bytes": 603
+    },
+    {
+      "path": "smoke-statistics.txt",
+      "sha256": "8bd5fc51769757e9d81af421d7a0811c5f6d7aaa4588674c93504ebb1cf13fd6",
+      "size_bytes": 928
+    },
+    {
+      "path": "trace-marks.txt",
+      "sha256": "9abde24f66343b235ae82652681742c6b1426c554d6ce2ba9a21eec95b4636de",
+      "size_bytes": 412
+    },
+    {
+      "path": "trace-statistics.txt",
+      "sha256": "56830da1980dfb8e2afd20b9434541003b124e9928d4d5856c71c8699c24b632",
+      "size_bytes": 923
+    },
+    {
+      "path": "verification.json",
+      "sha256": "5ae43ad655cc2aa3addfd4526352e3e18366bee6cceb9e84a0c62395b55e9be7",
+      "size_bytes": 1128
+    }
+  ]
+}

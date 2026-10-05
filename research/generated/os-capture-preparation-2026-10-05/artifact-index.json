@@ -1,0 +1,108 @@
+{
+  "actual_game_captures": 0,
+  "artifacts": {
+    "research/generated/os-capture-preparation-2026-10-05/.gitattributes": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 102,
+      "sha256": "05b113b9726de886c0f1af6a2b22ff75d06653fe3285b354e52e4fbd2233a7a7"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/capture-plan.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1110,
+      "sha256": "91ca367c0083f54d8cc2ab53845f5c46d68a5437182057d04b0b173478d75b3b"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/cpu-profile-details.txt": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1470,
+      "sha256": "cc09ed0f3cce93d2ecdf301cce7440e5bc7bbca91d20dda84ab0b9000d7e73dc"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/generation-source.py.txt": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 4967,
+      "sha256": "6e7e8d966196a50ddc2e87d5a9a8db80d8c56876882313d5d0ebf1fe688a4656"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/native-region-catalog.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 30859,
+      "sha256": "5ade565fb6ad3692fbe029cb59231791b7f2679f01b6974170992ed609220593"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/native-region-overrides.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 28088,
+      "sha256": "826a76a663dc94dc36b231bcebf8cc79ea3c678de6d4363b616f3628ea07d6be"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/preflight.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1826,
+      "sha256": "2ea89c72d71683b6a453c1ed7298c56863bf09c99c8665e41bd75f401838ef89"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/matrix.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1576,
+      "sha256": "a92ccb8a80d2441dea65f879a057134d9bd194c8792f3b1378940a9569409ab6"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t12-r01/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1824,
+      "sha256": "2bed7dc9939615c061d6e76c180f53c3fb2d199ebce277972d996251e20fdee1"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t12-r02/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1824,
+      "sha256": "515bb3fda52cabecc3f872270f624e0e4150aeea133d9bd50d0354b6264e55e8"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t12-r03/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1824,
+      "sha256": "92348fe7c9866227a92fa93dac06993df8180f008d31dd318e77e87ff3722153"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t12-warmup/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1829,
+      "sha256": "c9e5d89927bbd27c1700d8bf2b46ca3daadc4edcdfcd1f61657406e2b9a0dfcc"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t16-r01/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1824,
+      "sha256": "68f8e80eb61e8e72b56613cc8ea0cac89932d78164d2f3d42d563b68b201b86b"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t16-r02/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1824,
+      "sha256": "0fa00f0d50dc871b04901eab96594c96097aa964ecdcb0f2ac46f4c976763f6c"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t16-r03/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1824,
+      "sha256": "accabbfc8624b3b7f2da927b6f40fac59b936f707837ef74652e2a326223aa09"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/run-templates/os-cpu-t16-warmup/manifest.template.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1829,
+      "sha256": "e6d0dc722045a0c36110bb5e2e06c4c259bd0c33acb4caae4fe57e064d3ccb1c"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/validation-source.py.txt": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 3164,
+      "sha256": "b4cbf36577f3359e8d4e48cfdb79874b7e543978e49a93791d3867eaccef6b6e"
+    },
+    "research/generated/os-capture-preparation-2026-10-05/verification.json": {
+      "hash_mode": "exact_bytes",
+      "hashed_size_bytes": 1091,
+      "sha256": "c768cbbd80f19818b28bde218ac80067c94c2425f2ffce19cb6e9e2a581ec7da"
+    },
+    "research/os-capture-preparation-2026-10-05-ja.md": {
+      "hash_mode": "utf8_lf",
+      "hashed_size_bytes": 12210,
+      "sha256": "3b425a55cdc0c553d4ba3e6f6e1b6fed3dd621ce650e2ae326b9e98fa5e8aeed"
+    },
+    "tests/test_os_capture_preparation.py": {
+      "hash_mode": "utf8_lf",
+      "hashed_size_bytes": 1300,
+      "sha256": "5acafa72bb1611dc3f7ecec476568303b1f1aec14d80ec781070c10ee8ff171c"
+    }
+  },
+  "base_commit": "2df009ccba3921da24baa735415bb6fca967d98a",
+  "format_version": 1,
+  "status": "preparation_only"
+}

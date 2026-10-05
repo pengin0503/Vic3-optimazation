@@ -1,0 +1,78 @@
+{
+  "build": {
+    "caligula_branch": "release/1.14.5",
+    "caligula_rev": "9f8281a37e85639359b3b0c2c5df0196e975ca4b",
+    "clausewitz_branch": "caligula/release/1.14.x",
+    "clausewitz_rev": "fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef",
+    "game_version": "1.14.5",
+    "victoria3_exe_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+  },
+  "capture": {
+    "os_trace_available": true,
+    "ticktask_csv_sha256": null,
+    "ticktask_csv_status": "missing; live file remains from preceding37.53s attempt"
+  },
+  "condition_provenance": {
+    "game_exit_reason": "unknown; user clarification pending",
+    "last_observed_ticktask_file_write_jst": "2026-10-05T21:24:12+09:00; preceding run, not imported",
+    "wall_seconds": "user reply stopped48.46sec",
+    "warmup_and_same_conditions": "user replied ready to explicit request for same save/warmup/settings and TaskThreadCount12 paused1911-03-01"
+  },
+  "end_date": "1911-06-01",
+  "environment": {
+    "camera_state": null,
+    "cpu": null,
+    "dlc": null,
+    "graphics": null,
+    "mods": null,
+    "os": "Windows 11",
+    "power_plan": null,
+    "process_launch_state": null,
+    "resolution": null,
+    "ui_state": null,
+    "vsync_or_frame_cap": null
+  },
+  "format_version": 1,
+  "game_rules": {
+    "pop_consolidation": null
+  },
+  "game_speed": null,
+  "notes": "Standalone CPU observation; not a finalized matched TickTask benchmark. User prepared same save/warmup/settings on request and reported48.46s then paused. Detailed camera/UI/speed and game exit reason not yet supplied; pending operator clarification. Trace markers include paused/manual/console time; exact gameplay boundaries unverified. Game process absent after capture; trace process exit precedes after-pause marker.",
+  "os_capture": {
+    "accepted_for_quantitative_gameplay_attribution": false,
+    "after_pause_marker_ns": 130724436000,
+    "before_resume_marker_ns": 356245000,
+    "dropped_events": 0,
+    "exact_game_boundary": "unverified; markers are outer envelope",
+    "game_pid": 18108,
+    "game_process_path": "D:/SteamLibrary/steamapps/common/Victoria 3/binaries/victoria3.exe",
+    "lost_buffers": 0,
+    "module_base": "0x7ff7f06c0000",
+    "module_end": "0x7ff7f6563000",
+    "observer_overhead": "unmeasured",
+    "profile": "Vic3Sampled.Verbose.File",
+    "profile_definition": "research/vic3-focused-cpu.wprp",
+    "profile_sha256": "1c26a413b6741771075f2551a3beb0a40dc26c7de36af3cee2800bf3f0b0e409",
+    "session_stopped": true,
+    "status": "stopped",
+    "stop_exit_code": 0,
+    "trace_path": "cpu.etl",
+    "trace_sha256": "0e83528be74c8702a06b7178d7c6698f1f4a5a4841b74c54598da7af76adb936",
+    "trace_size_bytes": 154140672
+  },
+  "repeat": 1,
+  "run_id": "os-sampled-t12-r01",
+  "save": {
+    "country": null,
+    "filename": "アメリカ合衆国_1911_03_01.v3",
+    "in_game_date_at_load": "1911-03-01",
+    "sha256": "08d22b19929a5ec480e3e45f4e1eb8ff581b91e1de1b4bdb16512e3d0ea5e949"
+  },
+  "start_date": "1911-03-01",
+  "task_thread_count": 12,
+  "ticktask_csv": null,
+  "variant": "os-sampled",
+  "wall_clock_seconds": 48.46,
+  "warmup": false,
+  "warmup_performed": true
+}

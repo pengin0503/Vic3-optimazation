@@ -1,0 +1,38 @@
+{
+  "format_version": 1,
+  "date": "2026-10-05",
+  "archive_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "economics_verification": {
+    "groups": 35,
+    "total_decoded_bytes": 20495,
+    "all_ranges_equal_saved_instruction_bytes": true,
+    "independently_checked_e8_e9_edges": 341
+  },
+  "economics_reproduction": "All five selected-group sets, excluded metadata entries and findings equal preserved data",
+  "scheduler_reproduction": "Classified evidence and summary byte-identical after full scan with portable recipes",
+  "capstone_version": "5.0.7",
+  "runtime_validation": false,
+  "performance_patch_count": 0,
+  "repository_tests": {
+    "command": "python -m unittest discover -s tests -q",
+    "VIC3_DATA": "exact-hash Vic3_data.zip",
+    "test_count": 120,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "result": "OK",
+    "note": "Existing golden JSON committed bytes restored after Windows checkout CRLF conversion; no fixture regeneration or fixture change committed."
+  },
+  "independent_review": {
+    "p1": 0,
+    "p2_found": 1,
+    "p3_found": 2,
+    "resolutions": [
+      "Mixed candidate graph clearly separated from four decoded direct-call path witnesses",
+      "Full decode field scoped to confirmed sites; 77 unresolved sites explicitly recorded",
+      "Economics memo links correct portable recipe filenames"
+    ],
+    "post_fix_reproduction": "completed"
+  }
+}

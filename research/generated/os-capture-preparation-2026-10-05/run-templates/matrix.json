@@ -1,0 +1,71 @@
+{
+  "end_date": "1911-06-01",
+  "format_version": 1,
+  "measured_repeats_per_thread": 3,
+  "run_count": 8,
+  "runs": [
+    {
+      "directory": "os-cpu-t12-warmup",
+      "repeat": null,
+      "run_id": "os-cpu-t12-warmup",
+      "task_thread_count": 12,
+      "warmup": true
+    },
+    {
+      "directory": "os-cpu-t12-r01",
+      "repeat": 1,
+      "run_id": "os-cpu-t12-r01",
+      "task_thread_count": 12,
+      "warmup": false
+    },
+    {
+      "directory": "os-cpu-t12-r02",
+      "repeat": 2,
+      "run_id": "os-cpu-t12-r02",
+      "task_thread_count": 12,
+      "warmup": false
+    },
+    {
+      "directory": "os-cpu-t12-r03",
+      "repeat": 3,
+      "run_id": "os-cpu-t12-r03",
+      "task_thread_count": 12,
+      "warmup": false
+    },
+    {
+      "directory": "os-cpu-t16-warmup",
+      "repeat": null,
+      "run_id": "os-cpu-t16-warmup",
+      "task_thread_count": 16,
+      "warmup": true
+    },
+    {
+      "directory": "os-cpu-t16-r01",
+      "repeat": 1,
+      "run_id": "os-cpu-t16-r01",
+      "task_thread_count": 16,
+      "warmup": false
+    },
+    {
+      "directory": "os-cpu-t16-r02",
+      "repeat": 2,
+      "run_id": "os-cpu-t16-r02",
+      "task_thread_count": 16,
+      "warmup": false
+    },
+    {
+      "directory": "os-cpu-t16-r03",
+      "repeat": 3,
+      "run_id": "os-cpu-t16-r03",
+      "task_thread_count": 16,
+      "warmup": false
+    }
+  ],
+  "start_date": "1911-03-01",
+  "threads": [
+    12,
+    16
+  ],
+  "variant": "os-cpu",
+  "warmup_per_thread": true
+}

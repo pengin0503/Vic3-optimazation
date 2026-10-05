@@ -1,0 +1,233 @@
+{
+  "dropped_events": 43082,
+  "loss_interval": "unknown",
+  "processing": "xperf -tle -a tracestats -detail storage; diagnostic only, processing despite loss",
+  "providers": [
+    {
+      "count": 22402408,
+      "extended_bytes": 0,
+      "guid": "def2fe46-7bd6-4b80-bd94-f57fe20d0ce3",
+      "header_bytes": 358438528,
+      "name": "StackWalk",
+      "payload_bytes": 2822520696,
+      "storage_bytes": 3180959224
+    },
+    {
+      "count": 16350062,
+      "extended_bytes": 0,
+      "guid": "3d6fa8d1-fe05-11d0-9dda-00c04fd7ba7c",
+      "header_bytes": 263452272,
+      "name": "Thread",
+      "payload_bytes": 342275582,
+      "storage_bytes": 647848480
+    },
+    {
+      "count": 230475,
+      "extended_bytes": 77994624,
+      "guid": "8c416c79-d49b-4f01-a467-e56d3aa8234c",
+      "header_bytes": 16594200,
+      "name": "Microsoft-Windows-Win32k",
+      "payload_bytes": 9137413,
+      "storage_bytes": 104846680
+    },
+    {
+      "count": 245618,
+      "extended_bytes": 0,
+      "guid": "e13c0d23-ccbc-4e12-931b-d9cc2eee27e4",
+      "header_bytes": 19649440,
+      "name": "Microsoft-Windows-DotNETRuntime",
+      "payload_bytes": 70614110,
+      "storage_bytes": 90995448
+    },
+    {
+      "count": 230000,
+      "extended_bytes": 0,
+      "guid": "a669021c-c450-4609-a035-5af59af4df18",
+      "header_bytes": 18400000,
+      "name": "Microsoft-Windows-DotNETRuntimeRundown",
+      "payload_bytes": 49264491,
+      "storage_bytes": 68358816
+    },
+    {
+      "count": 886326,
+      "extended_bytes": 0,
+      "guid": "ce1dbfb4-137e-4da6-87b0-3f59aa102cbc",
+      "header_bytes": 14181408,
+      "name": "Perfinfo",
+      "payload_bytes": 14181264,
+      "storage_bytes": 28362688
+    },
+    {
+      "count": 218476,
+      "extended_bytes": 4956704,
+      "guid": "83ed54f0-4d48-4e45-b16e-726ffd1fa4af",
+      "header_bytes": 16238904,
+      "name": "Microsoft-Windows-Networking-Correlation",
+      "payload_bytes": 4369520,
+      "storage_bytes": 26439032
+    },
+    {
+      "count": 67385,
+      "extended_bytes": 12073992,
+      "guid": "6ad52b32-d609-4be9-ae07-ce8dae937e39",
+      "header_bytes": 4851720,
+      "name": "Microsoft-Windows-RPC",
+      "payload_bytes": 3050163,
+      "storage_bytes": 20172736
+    },
+    {
+      "count": 190074,
+      "extended_bytes": 0,
+      "guid": "b3e675d7-2554-4f18-830b-2762732560de",
+      "header_bytes": 9123552,
+      "name": "ImageId",
+      "payload_bytes": 7702264,
+      "storage_bytes": 17521392
+    },
+    {
+      "count": 47552,
+      "extended_bytes": 0,
+      "guid": "2cb15d1d-5fc1-11d2-abe1-00a0c911f518",
+      "header_bytes": 873456,
+      "name": "Image",
+      "payload_bytes": 8674208,
+      "storage_bytes": 9691760
+    },
+    {
+      "count": 173201,
+      "extended_bytes": 0,
+      "guid": "e43445e0-0903-48c3-b878-ff0fccebdd04",
+      "header_bytes": 2771216,
+      "name": "Power",
+      "payload_bytes": 2783760,
+      "storage_bytes": 5554976
+    },
+    {
+      "count": 18154,
+      "extended_bytes": 0,
+      "guid": "57277741-3638-4a4b-bdba-0ac6e45da56c",
+      "header_bytes": 1452320,
+      "name": "Microsoft-JScript",
+      "payload_bytes": 1398564,
+      "storage_bytes": 2905680
+    },
+    {
+      "count": 1058,
+      "extended_bytes": 0,
+      "guid": "3d6fa8d0-fe05-11d0-9dda-00c04fd7ba7c",
+      "header_bytes": 21216,
+      "name": "Process",
+      "payload_bytes": 515042,
+      "storage_bytes": 539688
+    },
+    {
+      "count": 618,
+      "extended_bytes": 0,
+      "guid": "01853a65-418f-4f36-aefc-dc0f1d2fd235",
+      "header_bytes": 19728,
+      "name": "SysConfig",
+      "payload_bytes": 124950,
+      "storage_bytes": 146496
+    },
+    {
+      "count": 532,
+      "extended_bytes": 0,
+      "guid": "3d6fa8d3-fe05-11d0-9dda-00c04fd7ba7c",
+      "header_bytes": 8512,
+      "name": "PageFault",
+      "payload_bytes": 110480,
+      "storage_bytes": 118992
+    },
+    {
+      "count": 98,
+      "extended_bytes": 0,
+      "guid": "bbccf6c1-6cd1-48c4-80ff-839482e37671",
+      "header_bytes": 4704,
+      "name": "EventMetadata",
+      "payload_bytes": 111002,
+      "storage_bytes": 115976
+    },
+    {
+      "count": 208,
+      "extended_bytes": 28016,
+      "guid": "b675ec37-bdb6-4648-bc92-f3fdc74d3ca2",
+      "header_bytes": 14992,
+      "name": "Microsoft-Windows-Kernel-EventTracing",
+      "payload_bytes": 260,
+      "storage_bytes": 43280
+    },
+    {
+      "count": 44,
+      "extended_bytes": 0,
+      "guid": "9b79ee91-b5fd-41c0-a243-4248e266e9d0",
+      "header_bytes": 2112,
+      "name": "SysConfigEx",
+      "payload_bytes": 34840,
+      "storage_bytes": 37024
+    },
+    {
+      "count": 41,
+      "extended_bytes": 7256,
+      "guid": "57277741-3638-4a4b-bdba-0ac6e45da56c",
+      "header_bytes": 2624,
+      "name": "V8.js",
+      "payload_bytes": 3272,
+      "storage_bytes": 13304
+    },
+    {
+      "count": 96,
+      "extended_bytes": 0,
+      "guid": "36b6f488-aad7-48c2-afe3-d4ec2c8b46fa",
+      "header_bytes": 7680,
+      "name": "Microsoft-Windows-Performance-Recorder-Control",
+      "payload_bytes": 736,
+      "storage_bytes": 8416
+    },
+    {
+      "count": 3,
+      "extended_bytes": 0,
+      "guid": "ed54dff8-c409-4cf6-bf83-05e1e61a09c4",
+      "header_bytes": 144,
+      "name": "WinSATAssessment",
+      "payload_bytes": 5767,
+      "storage_bytes": 5920
+    },
+    {
+      "count": 6,
+      "extended_bytes": 0,
+      "guid": "d49918cf-9489-4bf1-9d7b-014d864cf71f",
+      "header_bytes": 480,
+      "name": "Microsoft-Windows-ProcessStateManager",
+      "payload_bytes": 1272,
+      "storage_bytes": 1776
+    },
+    {
+      "count": 16,
+      "extended_bytes": 0,
+      "guid": "68fdd900-4a3e-11d1-84f4-0000f80464e3",
+      "header_bytes": 352,
+      "name": "EventTrace",
+      "payload_bytes": 970,
+      "storage_bytes": 1360
+    },
+    {
+      "count": 2,
+      "extended_bytes": 384,
+      "guid": "d8975f88-7ddb-4ed0-91bf-3adf48c48e0c",
+      "header_bytes": 144,
+      "name": "Microsoft-Windows-RPCSS",
+      "payload_bytes": 128,
+      "storage_bytes": 656
+    },
+    {
+      "count": 2,
+      "extended_bytes": 0,
+      "guid": "b7a19fcd-15ba-41ba-a3d7-dc352d5f79ba",
+      "header_bytes": 160,
+      "name": "Microsoft-Windows-Performance-Recorder-Context",
+      "payload_bytes": 184,
+      "storage_bytes": 352
+    }
+  ],
+  "warning": "Observed volume by provider does not identify the source/time of lost events, disk bandwidth bottleneck or game bottleneck."
+}

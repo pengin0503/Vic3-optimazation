@@ -1,0 +1,12 @@
+{
+  "event_type": "cpu_sample",
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "instruction_va_column": "instruction_va",
+  "module_base_column": "module_base",
+  "module_column": "module",
+  "process_column": "process",
+  "stack_column": "stack",
+  "thread_id_column": "thread_id",
+  "timestamp_column": "timestamp_us",
+  "timestamp_unit": "us"
+}

@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "validation_kind": "synthetic input and static catalog consistency only",
+  "target_count": 42,
+  "range_count": 42,
+  "range_conflicts": 0,
+  "source_hashes_verified": true,
+  "source_range_start_and_last_byte_samples_matched": 84,
+  "wrong_module_rows_unmatched": 1,
+  "actual_game_runs": 0,
+  "capture_and_export_verified": false,
+  "unmeasured_templates": 8,
+  "related_unit_tests": {
+    "normalization_correlation": 14,
+    "catalog": 6,
+    "failures": 0,
+    "errors": 0
+  },
+  "powershell_blocks_syntax_checked": 5,
+  "reproduced_json_artifacts": 12,
+  "reproduction_scope": "Catalog, overrides, capture plan and all run templates; verification annotations excluded",
+  "nonempty_output_regression": {
+    "observed_failure_before_fix": true,
+    "passed_after_guard": true
+  },
+  "independent_review": {
+    "p1": 0,
+    "p2": 0,
+    "p3_found": 1,
+    "p3_resolved": true,
+    "remaining_actionable": 0
+  },
+  "full_repository_tests": {
+    "test_count": 121,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "includes_exact_build": true
+  }
+}

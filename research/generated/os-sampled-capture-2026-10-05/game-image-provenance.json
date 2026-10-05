@@ -1,0 +1,55 @@
+{
+  "image_header": [
+    "Start Time",
+    "End Time",
+    "Image",
+    "DataPtr",
+    "Process Name ( PID)",
+    "BaseAddr",
+    "EndAddr",
+    "Checksum",
+    "TimeDateStamp",
+    "DefaultBase",
+    "FileName",
+    "FileVersion"
+  ],
+  "interpretation": "Process end is observed at125957974us; no exit reason is supplied by this table.",
+  "process_header": [
+    "Start Time",
+    "End Time",
+    "Process",
+    "DataPtr",
+    "Process Name ( PID)",
+    "ParentPID",
+    "SessionID",
+    "UniqueKey"
+  ],
+  "rows": [
+    [
+      "MIN",
+      "125957974",
+      "Process",
+      "0X000001F526F274A8",
+      "victoria3.exe (18108)",
+      "10936",
+      "1",
+      "0x0000af800692e080"
+    ],
+    [
+      "MIN",
+      "125956970",
+      "Image",
+      "0X000001F526F4A8A0",
+      "victoria3.exe (18108)",
+      "0x00007ff7f06c0000",
+      "0x00007ff7f6563000",
+      "0x05d40aad",
+      "0x6abb6d99",
+      "0x00007ff7f06c0000",
+      "victoria3.exe",
+      "1.14.5"
+    ]
+  ],
+  "source": "xperf -a process -image",
+  "time_unit": "us; MIN/MAX are trace lifetime sentinels"
+}

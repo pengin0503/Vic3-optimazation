@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "0f2abb1b58bc263fd81530f5500245c90cb0bdcdb1e5d8701e6a99292226ede1",
+      "size_bytes": 149
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "645374b1d426232060d80c151a7861db48c4836b721c6c2ab4c534c52c4c261a",
+      "size_bytes": 3501
+    },
+    {
+      "path": "provider-diagnostics.json",
+      "sha256": "f367003feea2be29d234cfece5fadd52ddedba9bb3ce238c2e4def86d78e68ad",
+      "size_bytes": 6663
+    },
+    {
+      "path": "ticktask-comparison.json",
+      "sha256": "85c2da28c61a678fd31fa2ee09c8d6ff17b6c591b0d48a56082662f8158d4a07",
+      "size_bytes": 45135
+    },
+    {
+      "path": "ticktask_timings.csv",
+      "sha256": "bc9416e12c11a73c8db37235c097a7c3c981f6e52512d7c6ecb4f51e73c90700",
+      "size_bytes": 909805
+    },
+    {
+      "path": "trace-marks.txt",
+      "sha256": "77617ae1f5f30cdf54b6b10e1056b2bd1a2d5c48ecbaf8ec7b3b500af15e3127",
+      "size_bytes": 396
+    },
+    {
+      "path": "trace-statistics.txt",
+      "sha256": "27c3af1878b9d815840d13d8436369c1add99e7d995ff0aaa699ce7aa00ac105",
+      "size_bytes": 927
+    }
+  ]
+}

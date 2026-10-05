@@ -1,0 +1,83 @@
+{
+  "build": {
+    "caligula_branch": "release/1.14.5",
+    "caligula_rev": "9f8281a37e85639359b3b0c2c5df0196e975ca4b",
+    "clausewitz_branch": "caligula/release/1.14.x",
+    "clausewitz_rev": "fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef",
+    "game_version": "1.14.5",
+    "victoria3_exe_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+  },
+  "capture": {
+    "ticktask_csv_rows": 23445,
+    "ticktask_csv_sha256": "bc9416e12c11a73c8db37235c097a7c3c981f6e52512d7c6ecb4f51e73c90700",
+    "ticktask_csv_size_bytes": 909805
+  },
+  "end_date": "1911-06-01",
+  "environment": {
+    "camera_state": null,
+    "cpu": null,
+    "dlc": null,
+    "graphics": null,
+    "mods": null,
+    "os": "Windows 11",
+    "power_plan": null,
+    "process_launch_state": null,
+    "resolution": null,
+    "ui_state": null,
+    "vsync_or_frame_cap": null
+  },
+  "format_version": 1,
+  "game_rules": {
+    "pop_consolidation": null
+  },
+  "game_speed": null,
+  "notes": "Measured OS-instrumented attempt. User reported paused at start with TaskThreadCount=12, measured 37.53 seconds to 1911-06-01, then paused and dumped TickTask CSV on request. Prior user confirmation: same save/period/settings, with warmup; run-specific warmup was requested but not explicitly re-confirmed. Settings not independently verified remain null. Trace has 43082 lost events and is not accepted for quantitative native/wait attribution.",
+  "operator_provenance": {
+    "same_conditions_prior_series": "user confirmed same save, period, settings and warmup for prior nine runs",
+    "ticktask_dump": "user reply: output completed",
+    "wall_time": "user reply: stopped; 37.53sec",
+    "warmup_for_this_attempt": "not explicitly re-confirmed; warmup:false identifies a measured observation, while preceding warmup_performed remains unknown"
+  },
+  "os_capture": {
+    "accepted_for_quantitative_attribution": false,
+    "after_pause_marker_log_utc": "2026-10-05T12:23:35.9622375Z",
+    "after_pause_marker_ns": null,
+    "before_resume_marker_log": "before-resume-marker.txt",
+    "before_resume_marker_ns": null,
+    "before_resume_marker_utc": "2026-10-05T12:21:34.3861324Z",
+    "dropped_events": 43082,
+    "elevated_status_log": "elevated-status.txt",
+    "exact_game_boundary": "unverified",
+    "game_pid": 18108,
+    "game_process_path": "D:\\SteamLibrary\\steamapps\\common\\Victoria 3\\binaries\\victoria3.exe",
+    "loss_interval": "unknown",
+    "lost_buffers": 0,
+    "module_base": null,
+    "observer_overhead": "unmeasured",
+    "profile": "CPU.Verbose.File",
+    "session_stopped": true,
+    "status": "stopped_with_event_loss",
+    "stop_exit_code": 0,
+    "stop_log": "elevated-stop.txt",
+    "trace_end_utc": "2026-10-05T12:23:56.8912439Z",
+    "trace_path": "cpu.etl",
+    "trace_sha256": "8f0c4f7b28c0026960ad44cb985e77a049fd940220bfa34db8acc85e127ab96d",
+    "trace_size_bytes": 4213178368,
+    "trace_start_utc": "2026-10-05T12:19:25.9342229Z"
+  },
+  "repeat": 1,
+  "run_id": "os-cpu-t12-r01",
+  "save": {
+    "country": null,
+    "filename": "アメリカ合衆国_1911_03_01.v3",
+    "in_game_date_at_load": "1911-03-01",
+    "sha256": "08d22b19929a5ec480e3e45f4e1eb8ff581b91e1de1b4bdb16512e3d0ea5e949"
+  },
+  "start_date": "1911-03-01",
+  "task_thread_count": 12,
+  "ticktask_csv": "ticktask_timings.csv",
+  "variant": "os-cpu",
+  "wall_clock_seconds": 37.53,
+  "warmup": false,
+  "warmup_performed": null
+}
