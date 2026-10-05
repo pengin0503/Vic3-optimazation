@@ -1,0 +1,88 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "partial_decode_nodes_not_selected": [
+    {
+      "depth": 1,
+      "entry_rva": "0x3c014f0",
+      "ranges": [
+        {
+          "begin_rva": "0x3c014f0",
+          "decoded_bytes": 569,
+          "end_rva": "0x3c0172c",
+          "fully_decoded": false,
+          "sha256": "87a8f99d5c406c88af57ba201be7e1c9cf76368edfd9050765815253d30a584e",
+          "size_bytes": 572
+        }
+      ],
+      "status": "partial_decode_not_selected"
+    },
+    {
+      "depth": 2,
+      "entry_rva": "0x4209900",
+      "ranges": [
+        {
+          "begin_rva": "0x4209900",
+          "decoded_bytes": 1453,
+          "end_rva": "0x4209ecc",
+          "fully_decoded": false,
+          "sha256": "52470ca41793044c60595b0b4db1353e0176a9ef468a7d7ec860805347a46fd8",
+          "size_bytes": 1484
+        }
+      ],
+      "status": "partial_decode_not_selected"
+    }
+  ],
+  "selected_regions": [
+    {
+      "depth": 0,
+      "entry_rva": "0x7da740",
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de",
+            "size_bytes": 414,
+            "unwind_rva": "0x4e9f9bc"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x7da740",
+          "end_rva": "0x7da8de",
+          "size_bytes": 414,
+          "unwind_rva": "0x4e9f9bc"
+        },
+        "size_bytes": 414,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x7da740",
+          "decoded_bytes": 414,
+          "end_rva": "0x7da8de",
+          "fully_decoded": true,
+          "sha256": "3c712d6affbb50f81e0d6424a06ff40cb58eb1dbce930c7d43ba84f4a445092f",
+          "size_bytes": 414
+        }
+      ]
+    }
+  ],
+  "selection_rule": "RTTI-resolved seed plus known shared helpers only when expanded by the bounded graph; partial decodes fail closed.",
+  "target": {
+    "class_name": "CTickTask_RecalculateModifierNodes",
+    "confidence": "confirmed_static",
+    "resolution": "unique_msvc_rtti_vtable",
+    "runtime_unverified": true,
+    "task_specific_tail_vfunc_rva": "0x7da740",
+    "type_descriptor_rva": "0x548be90",
+    "vtable_rva": "0x44d8f58"
+  },
+  "warning": "Exact-build static instruction/reference evidence only. Runtime reachability, critical-path cost, wait causality, dirty-propagation semantics, and optimization benefit are not proven."
+}
