@@ -1,0 +1,21 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "profiler_command_count": 17,
+  "rtti_mapped_ticktask_count": 258,
+  "rtti_unmapped_ticktask_names": [
+    "CTickTask_CheckNonFulfillments",
+    "CTickTask_MoveFormations"
+  ],
+  "signature_validation": {
+    "all_targets_ok": true,
+    "hash_ok": true,
+    "target_count": 18
+  },
+  "size_bytes": 97774200,
+  "source_path_count": 920,
+  "ticktask_name_count": 260,
+  "unique_task_specific_tail_vfunc_count": 258,
+  "xref_anchor_count": 32,
+  "xref_anchors_with_candidates": 20
+}

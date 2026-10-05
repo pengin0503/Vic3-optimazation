@@ -1,0 +1,1862 @@
+[
+  {
+    "root": "user-data",
+    "path": "crashes/victoria3_01260905_094009/logs/debug.log",
+    "lines": 3025,
+    "bytes": 361941,
+    "pattern_counts": {
+      "missing_dlc": 324,
+      "invalid_gui_type": 0,
+      "kates_reference": 3562,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "770453584e6eda925e23d3383b66059a06d0ccd5c0c7453bd7c2c03ade2ac2f4"
+  },
+  {
+    "root": "user-data",
+    "path": "crashes/victoria3_01260905_094009/logs/error.log",
+    "lines": 1197,
+    "bytes": 144747,
+    "pattern_counts": {
+      "missing_dlc": 119,
+      "invalid_gui_type": 0,
+      "kates_reference": 1456,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "5660bbb08e73cf4b43d2c59e384f832df41484190b9222eaca51c91710cdda89"
+  },
+  {
+    "root": "user-data",
+    "path": "crashes/victoria3_01260905_094009/logs/game.log",
+    "lines": 851,
+    "bytes": 56713,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "3260ad6066fb20f21fe2507061cced80b60bb4fcdd56b3a67d9c76c7bbd4b06d"
+  },
+  {
+    "root": "user-data",
+    "path": "crashes/victoria3_01260905_094009/logs/system.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "15f8f972b3b15f693bd7f7ca139a3cd121a8bfc062da288a10e6e8435800fcbc"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/ai.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/checksum.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/code_revisions.1.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "9c5515d2151d489708f693a569a42092c336c29887d0e7ab34fa45b429b3b0d4"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/code_revisions.2.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "17dc26afb319061cb0f7e9665884f3ce2a243132c60e93f941cd60e933322d06"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/code_revisions.3.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "4108b24c22139b10167484d2b1200f9d7e78d854d68c90c5d6a4b2ea3ec2a19b"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/code_revisions.4.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "5dfdb8e635db15a0cbfc66028d07fd7610206d31081fe68d7548ff2f14145d6c"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/code_revisions.5.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "91d0544d408ea67afd011ce477071ede304c39e0365e8b86e96c32a5e7bcedfe"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/code_revisions.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "cd3fc1ca41b4e8cfb2cedaed5bb4bc7b8c8a231bcd8556e3c8c5a658df5e6268"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/custom_automated_stats.1.log",
+    "lines": 12,
+    "bytes": 582,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "68dc6e78ba49380356b7b6561af782371895b155a27c90c208a4cc9cd02dd154"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/custom_automated_stats.2.log",
+    "lines": 10,
+    "bytes": 483,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "54eb43d1aed6542a9135fd5294d080d17b32e09f9d8d6c59a460b0b2b6783107"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/custom_automated_stats.3.log",
+    "lines": 2,
+    "bytes": 93,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "c5585b3b0524e056b4b8d75c325fab03543b3a387db03cd87d0ada96cb9fa476"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/custom_automated_stats.4.log",
+    "lines": 4,
+    "bytes": 188,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "99b8e052de239a0df1f4948254f035077d3546f7936199465e467a4c96f8ffa0"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/custom_automated_stats.5.log",
+    "lines": 18,
+    "bytes": 869,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "fc97017209d358cf1db353d154d165db03aebbdca470daebab2fc447b3f786bc"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/custom_automated_stats.log",
+    "lines": 42,
+    "bytes": 2025,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "b95c22f61c357efbfab9ee1a01fe1ef7690e0a8d654ccd20ab100781d13f049e"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/database_conflicts.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/debug.1.log",
+    "lines": 4230,
+    "bytes": 522950,
+    "pattern_counts": {
+      "missing_dlc": 376,
+      "invalid_gui_type": 0,
+      "kates_reference": 5486,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "2181a5356b9c387dd25c4445a5cec9e291796d0234cef42fef8bf090e2402981"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/debug.2.log",
+    "lines": 4840,
+    "bytes": 524174,
+    "pattern_counts": {
+      "missing_dlc": 385,
+      "invalid_gui_type": 0,
+      "kates_reference": 3068,
+      "ticktask": 2,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "374effc2083679a9674262b0bdd7b0334e0ee60dcad2c42eadb72191547b0c64"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/debug.3.log",
+    "lines": 4361,
+    "bytes": 523607,
+    "pattern_counts": {
+      "missing_dlc": 455,
+      "invalid_gui_type": 0,
+      "kates_reference": 5200,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "94fb55737ef3f92779939359b721e72afa37e357f39c56d71578d99313332889"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/debug.4.log",
+    "lines": 4607,
+    "bytes": 522652,
+    "pattern_counts": {
+      "missing_dlc": 335,
+      "invalid_gui_type": 0,
+      "kates_reference": 3796,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "903e6ce62107bcc03029ef010b394f2e5c3dd609e6071e27343d8a6603387ce9"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/debug.5.log",
+    "lines": 4496,
+    "bytes": 524063,
+    "pattern_counts": {
+      "missing_dlc": 457,
+      "invalid_gui_type": 0,
+      "kates_reference": 4706,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "0238a70de37e3e2fea9310535a9d802f4a95e3700b0748e61738b8f2660402ae"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/debug.log",
+    "lines": 3025,
+    "bytes": 361941,
+    "pattern_counts": {
+      "missing_dlc": 324,
+      "invalid_gui_type": 0,
+      "kates_reference": 3562,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "770453584e6eda925e23d3383b66059a06d0ccd5c0c7453bd7c2c03ade2ac2f4"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/dedicated_server.1.log",
+    "lines": 186,
+    "bytes": 12801,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "14d364f1e71d009139dc48b35cf5aee024dfdd10688a6eff2e1f85c3ab2b204f"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/dedicated_server.2.log",
+    "lines": 7376,
+    "bytes": 511429,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "34b01ed0cc3990a400a7831f4216e8b537cff750d54c89f457bb892051750fa5"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/dedicated_server.3.log",
+    "lines": 7557,
+    "bytes": 524266,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "bab742b54f97fb35a42f7cd18353ef16681a6c706e18f62f1eee8916349916e8"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/dedicated_server.4.log",
+    "lines": 7553,
+    "bytes": 524243,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "6c7de88dd9f476447be6243f658ea64ffe023da2f50968da71ad51f9bf661aa5"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/dedicated_server.5.log",
+    "lines": 7562,
+    "bytes": 524209,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "027e59389f233d4d30c97ae1d9b720abeaf48f8d1254e3a1860ba25d14dc2629"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/dedicated_server.log",
+    "lines": 3356,
+    "bytes": 231114,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "38709a328d79cc71aa5da1ef40d4c9fa2fd438b77be4df7a337aa287c6f66b0c"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/ecs.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/error.1.log",
+    "lines": 4351,
+    "bytes": 522821,
+    "pattern_counts": {
+      "missing_dlc": 453,
+      "invalid_gui_type": 0,
+      "kates_reference": 5200,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "8e68576cedf9b9d483ad325f5d28842856b36be5eac7b11d21561ec1f9887a7a"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/error.2.log",
+    "lines": 4708,
+    "bytes": 523898,
+    "pattern_counts": {
+      "missing_dlc": 337,
+      "invalid_gui_type": 0,
+      "kates_reference": 3432,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "057ebcb82edf6ebb29a0d3af84be4a16896947025ac25ccfd778c7000b8c7ce0"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/error.3.log",
+    "lines": 4410,
+    "bytes": 522479,
+    "pattern_counts": {
+      "missing_dlc": 451,
+      "invalid_gui_type": 0,
+      "kates_reference": 4992,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "d8e9ef848d9e264d777307353c55ff2cf84a5898cee5a98de108da82708a0199"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/error.4.log",
+    "lines": 4208,
+    "bytes": 522916,
+    "pattern_counts": {
+      "missing_dlc": 364,
+      "invalid_gui_type": 0,
+      "kates_reference": 5538,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "302a8839d8caa8583d3517771d34e438c6b70b0adcf3445c51a8a88f89fe767d"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/error.5.log",
+    "lines": 4852,
+    "bytes": 522678,
+    "pattern_counts": {
+      "missing_dlc": 399,
+      "invalid_gui_type": 0,
+      "kates_reference": 3042,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "512f7234ab25fa377b227846759d5317667695ad985e72cbcb8d79c2f799e360"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/error.log",
+    "lines": 1197,
+    "bytes": 144747,
+    "pattern_counts": {
+      "missing_dlc": 119,
+      "invalid_gui_type": 0,
+      "kates_reference": 1456,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "5660bbb08e73cf4b43d2c59e384f832df41484190b9222eaca51c91710cdda89"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/game.1.log",
+    "lines": 634,
+    "bytes": 61301,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "c5e357a836d0cbb57179ccdffeaf1fdd96cd0a0a72f6886a380966f57ef371a5"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/game.2.log",
+    "lines": 8051,
+    "bytes": 462897,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e51bd514289f6d028093e754fa5077300f3c1561f1a2e1ea6f069b299d45d08e"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/game.3.log",
+    "lines": 9851,
+    "bytes": 524072,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "61cfbbb1dbbafa962ac88761b95a7add06d576c453d205cf5d3be497d3c14785"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/game.4.log",
+    "lines": 9840,
+    "bytes": 524149,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "5c07cdc9ac7f6e3887651597b260d10f3a177426bb111b5e3e8678a9c7566616"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/game.5.log",
+    "lines": 9913,
+    "bytes": 524225,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "1fe82d40e96f761ded420267bddf5ea656dfd99705e264643d8604cddb3d16d7"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/game.log",
+    "lines": 851,
+    "bytes": 56713,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "3260ad6066fb20f21fe2507061cced80b60bb4fcdd56b3a67d9c76c7bbd4b06d"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/graphics.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/gui.log",
+    "lines": 58,
+    "bytes": 5179,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "465691dc287a811458308fb0ebbea8e03a8ffd70535f4471e1de7d967345233e"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/memory.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/message.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/multiplayer.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/pdxsdk.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/setup.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/system.1.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "bbfbbbfc463a5e34e3c6118d323ea13912af70cf0b86f922720647db448bf301"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/system.2.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "4423f749c234bbf6f6a71e241c909e0ae4e19e0102c61e7de96b160884600633"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/system.3.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "af0bafde98e35b5b3dc8db2f623b48d5d07b8163e6826f73a2c8f4b6f16b7100"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/system.4.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "14b9891ee57a574ad2dbe0b5a84c62cc9cbc32934e2d1e1343178e20eba23c34"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/system.5.log",
+    "lines": 12,
+    "bytes": 820,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "2487d024e4165918a6bf93fe49ee5ad9a290f69558009c68de099acd010e551f"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/system.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "15f8f972b3b15f693bd7f7ca139a3cd121a8bfc062da288a10e6e8435800fcbc"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/ui_animation_stats.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/warning.1.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "4e95d8c57bf304e2617e3f497f09d9067577696a85981c44eed42dc80c7e3f6c"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/warning.2.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "ff631cb87ac003255e003082f2da4baf69cf1c48ca4f924bebe6da581a562e6a"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/warning.3.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "42ef7e87035f34921f8f49ad59fc661db1e6802248c38648c9a221d46ac4194a"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/warning.4.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "adbaaebae94f1f539658c9bcd3d8c9017241e9f9e47177771d78df4ba04e4083"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/warning.5.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "d12897b4d1655117ebd23739a229e869c28066e8dc78d4ac625459e056b5d42d"
+  },
+  {
+    "root": "user-data",
+    "path": "logs/warning.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "a3458050c2842aa1df8671113c534f9e678249730c5377994f583e1430593e17"
+  },
+  {
+    "root": "logs2",
+    "path": "ai.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "checksum.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "code_revisions.1.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "9c5515d2151d489708f693a569a42092c336c29887d0e7ab34fa45b429b3b0d4"
+  },
+  {
+    "root": "logs2",
+    "path": "code_revisions.2.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "17dc26afb319061cb0f7e9665884f3ce2a243132c60e93f941cd60e933322d06"
+  },
+  {
+    "root": "logs2",
+    "path": "code_revisions.3.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "4108b24c22139b10167484d2b1200f9d7e78d854d68c90c5d6a4b2ea3ec2a19b"
+  },
+  {
+    "root": "logs2",
+    "path": "code_revisions.4.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "5dfdb8e635db15a0cbfc66028d07fd7610206d31081fe68d7548ff2f14145d6c"
+  },
+  {
+    "root": "logs2",
+    "path": "code_revisions.5.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "91d0544d408ea67afd011ce477071ede304c39e0365e8b86e96c32a5e7bcedfe"
+  },
+  {
+    "root": "logs2",
+    "path": "code_revisions.log",
+    "lines": 18,
+    "bytes": 1135,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "cd3fc1ca41b4e8cfb2cedaed5bb4bc7b8c8a231bcd8556e3c8c5a658df5e6268"
+  },
+  {
+    "root": "logs2",
+    "path": "custom_automated_stats.1.log",
+    "lines": 12,
+    "bytes": 582,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "68dc6e78ba49380356b7b6561af782371895b155a27c90c208a4cc9cd02dd154"
+  },
+  {
+    "root": "logs2",
+    "path": "custom_automated_stats.2.log",
+    "lines": 10,
+    "bytes": 483,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "54eb43d1aed6542a9135fd5294d080d17b32e09f9d8d6c59a460b0b2b6783107"
+  },
+  {
+    "root": "logs2",
+    "path": "custom_automated_stats.3.log",
+    "lines": 2,
+    "bytes": 93,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "c5585b3b0524e056b4b8d75c325fab03543b3a387db03cd87d0ada96cb9fa476"
+  },
+  {
+    "root": "logs2",
+    "path": "custom_automated_stats.4.log",
+    "lines": 4,
+    "bytes": 188,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "99b8e052de239a0df1f4948254f035077d3546f7936199465e467a4c96f8ffa0"
+  },
+  {
+    "root": "logs2",
+    "path": "custom_automated_stats.5.log",
+    "lines": 18,
+    "bytes": 869,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "fc97017209d358cf1db353d154d165db03aebbdca470daebab2fc447b3f786bc"
+  },
+  {
+    "root": "logs2",
+    "path": "custom_automated_stats.log",
+    "lines": 42,
+    "bytes": 2025,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "b95c22f61c357efbfab9ee1a01fe1ef7690e0a8d654ccd20ab100781d13f049e"
+  },
+  {
+    "root": "logs2",
+    "path": "database_conflicts.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "debug.1.log",
+    "lines": 4361,
+    "bytes": 523607,
+    "pattern_counts": {
+      "missing_dlc": 455,
+      "invalid_gui_type": 0,
+      "kates_reference": 5200,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "94fb55737ef3f92779939359b721e72afa37e357f39c56d71578d99313332889"
+  },
+  {
+    "root": "logs2",
+    "path": "debug.2.log",
+    "lines": 4607,
+    "bytes": 522652,
+    "pattern_counts": {
+      "missing_dlc": 335,
+      "invalid_gui_type": 0,
+      "kates_reference": 3796,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "903e6ce62107bcc03029ef010b394f2e5c3dd609e6071e27343d8a6603387ce9"
+  },
+  {
+    "root": "logs2",
+    "path": "debug.3.log",
+    "lines": 4496,
+    "bytes": 524063,
+    "pattern_counts": {
+      "missing_dlc": 457,
+      "invalid_gui_type": 0,
+      "kates_reference": 4706,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "0238a70de37e3e2fea9310535a9d802f4a95e3700b0748e61738b8f2660402ae"
+  },
+  {
+    "root": "logs2",
+    "path": "debug.4.log",
+    "lines": 4289,
+    "bytes": 524243,
+    "pattern_counts": {
+      "missing_dlc": 404,
+      "invalid_gui_type": 0,
+      "kates_reference": 5382,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "276ba6bac46ee2d07e8bbb8e5a9f03fe99b5dbe755b022d28e4a520244758ebd"
+  },
+  {
+    "root": "logs2",
+    "path": "debug.5.log",
+    "lines": 4797,
+    "bytes": 524238,
+    "pattern_counts": {
+      "missing_dlc": 362,
+      "invalid_gui_type": 0,
+      "kates_reference": 3172,
+      "ticktask": 3,
+      "task_thread_setting": 1,
+      "assert_or_exception": 0
+    },
+    "sha256": "30f8e3ee80ccb55e5aec8aad1a5543595ede79a7d8ce4f472e43ac4a653e35e1"
+  },
+  {
+    "root": "logs2",
+    "path": "debug.log",
+    "lines": 640,
+    "bytes": 77795,
+    "pattern_counts": {
+      "missing_dlc": 61,
+      "invalid_gui_type": 0,
+      "kates_reference": 754,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "7cbd30b1f0170c74ce36ac3819870ffec5e1b46c70c21ea0dc75bd32951a4b88"
+  },
+  {
+    "root": "logs2",
+    "path": "dedicated_server.1.log",
+    "lines": 186,
+    "bytes": 12801,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "14d364f1e71d009139dc48b35cf5aee024dfdd10688a6eff2e1f85c3ab2b204f"
+  },
+  {
+    "root": "logs2",
+    "path": "dedicated_server.2.log",
+    "lines": 7376,
+    "bytes": 511429,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "34b01ed0cc3990a400a7831f4216e8b537cff750d54c89f457bb892051750fa5"
+  },
+  {
+    "root": "logs2",
+    "path": "dedicated_server.3.log",
+    "lines": 7557,
+    "bytes": 524266,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "bab742b54f97fb35a42f7cd18353ef16681a6c706e18f62f1eee8916349916e8"
+  },
+  {
+    "root": "logs2",
+    "path": "dedicated_server.4.log",
+    "lines": 7553,
+    "bytes": 524243,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "6c7de88dd9f476447be6243f658ea64ffe023da2f50968da71ad51f9bf661aa5"
+  },
+  {
+    "root": "logs2",
+    "path": "dedicated_server.5.log",
+    "lines": 7562,
+    "bytes": 524209,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "027e59389f233d4d30c97ae1d9b720abeaf48f8d1254e3a1860ba25d14dc2629"
+  },
+  {
+    "root": "logs2",
+    "path": "dedicated_server.log",
+    "lines": 3356,
+    "bytes": 231114,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "38709a328d79cc71aa5da1ef40d4c9fa2fd438b77be4df7a337aa287c6f66b0c"
+  },
+  {
+    "root": "logs2",
+    "path": "ecs.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "error.1.log",
+    "lines": 4208,
+    "bytes": 522916,
+    "pattern_counts": {
+      "missing_dlc": 364,
+      "invalid_gui_type": 0,
+      "kates_reference": 5538,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "302a8839d8caa8583d3517771d34e438c6b70b0adcf3445c51a8a88f89fe767d"
+  },
+  {
+    "root": "logs2",
+    "path": "error.2.log",
+    "lines": 4852,
+    "bytes": 522678,
+    "pattern_counts": {
+      "missing_dlc": 399,
+      "invalid_gui_type": 0,
+      "kates_reference": 3042,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "512f7234ab25fa377b227846759d5317667695ad985e72cbcb8d79c2f799e360"
+  },
+  {
+    "root": "logs2",
+    "path": "error.3.log",
+    "lines": 4368,
+    "bytes": 524210,
+    "pattern_counts": {
+      "missing_dlc": 458,
+      "invalid_gui_type": 0,
+      "kates_reference": 5200,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "33bad3558f7328590e7600bb5ba8c57229a853ac72c80d82800d47f77c04ef53"
+  },
+  {
+    "root": "logs2",
+    "path": "error.4.log",
+    "lines": 4648,
+    "bytes": 522492,
+    "pattern_counts": {
+      "missing_dlc": 333,
+      "invalid_gui_type": 0,
+      "kates_reference": 3614,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "be32576a2a40ebad7dabef77033acfe0d67a557be76edc4c7cca94fb85e7d78c"
+  },
+  {
+    "root": "logs2",
+    "path": "error.5.log",
+    "lines": 4455,
+    "bytes": 522640,
+    "pattern_counts": {
+      "missing_dlc": 450,
+      "invalid_gui_type": 0,
+      "kates_reference": 4810,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "d515e5cb6fc639f35f7f6595f4d264074c3e6c7f7a32863c97226992948ce129"
+  },
+  {
+    "root": "logs2",
+    "path": "error.log",
+    "lines": 3220,
+    "bytes": 383835,
+    "pattern_counts": {
+      "missing_dlc": 336,
+      "invalid_gui_type": 0,
+      "kates_reference": 3718,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "76d93b9d06a4e542edae9eed7e43fdd629ddf8a2cdab479c02e9c8680e92ab46"
+  },
+  {
+    "root": "logs2",
+    "path": "game.1.log",
+    "lines": 634,
+    "bytes": 61301,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "c5e357a836d0cbb57179ccdffeaf1fdd96cd0a0a72f6886a380966f57ef371a5"
+  },
+  {
+    "root": "logs2",
+    "path": "game.2.log",
+    "lines": 8051,
+    "bytes": 462897,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e51bd514289f6d028093e754fa5077300f3c1561f1a2e1ea6f069b299d45d08e"
+  },
+  {
+    "root": "logs2",
+    "path": "game.3.log",
+    "lines": 9851,
+    "bytes": 524072,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "61cfbbb1dbbafa962ac88761b95a7add06d576c453d205cf5d3be497d3c14785"
+  },
+  {
+    "root": "logs2",
+    "path": "game.4.log",
+    "lines": 9840,
+    "bytes": 524149,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "5c07cdc9ac7f6e3887651597b260d10f3a177426bb111b5e3e8678a9c7566616"
+  },
+  {
+    "root": "logs2",
+    "path": "game.5.log",
+    "lines": 9913,
+    "bytes": 524225,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "1fe82d40e96f761ded420267bddf5ea656dfd99705e264643d8604cddb3d16d7"
+  },
+  {
+    "root": "logs2",
+    "path": "game.log",
+    "lines": 851,
+    "bytes": 56713,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "3260ad6066fb20f21fe2507061cced80b60bb4fcdd56b3a67d9c76c7bbd4b06d"
+  },
+  {
+    "root": "logs2",
+    "path": "graphics.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "gui.log",
+    "lines": 58,
+    "bytes": 5179,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "465691dc287a811458308fb0ebbea8e03a8ffd70535f4471e1de7d967345233e"
+  },
+  {
+    "root": "logs2",
+    "path": "memory.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "message.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "multiplayer.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "pdxsdk.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "setup.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "system.1.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "bbfbbbfc463a5e34e3c6118d323ea13912af70cf0b86f922720647db448bf301"
+  },
+  {
+    "root": "logs2",
+    "path": "system.2.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "4423f749c234bbf6f6a71e241c909e0ae4e19e0102c61e7de96b160884600633"
+  },
+  {
+    "root": "logs2",
+    "path": "system.3.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "af0bafde98e35b5b3dc8db2f623b48d5d07b8163e6826f73a2c8f4b6f16b7100"
+  },
+  {
+    "root": "logs2",
+    "path": "system.4.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "14b9891ee57a574ad2dbe0b5a84c62cc9cbc32934e2d1e1343178e20eba23c34"
+  },
+  {
+    "root": "logs2",
+    "path": "system.5.log",
+    "lines": 12,
+    "bytes": 820,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "2487d024e4165918a6bf93fe49ee5ad9a290f69558009c68de099acd010e551f"
+  },
+  {
+    "root": "logs2",
+    "path": "system.log",
+    "lines": 17,
+    "bytes": 1108,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "15f8f972b3b15f693bd7f7ca139a3cd121a8bfc062da288a10e6e8435800fcbc"
+  },
+  {
+    "root": "logs2",
+    "path": "ui_animation_stats.log",
+    "lines": 0,
+    "bytes": 0,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "root": "logs2",
+    "path": "warning.1.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "4e95d8c57bf304e2617e3f497f09d9067577696a85981c44eed42dc80c7e3f6c"
+  },
+  {
+    "root": "logs2",
+    "path": "warning.2.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "ff631cb87ac003255e003082f2da4baf69cf1c48ca4f924bebe6da581a562e6a"
+  },
+  {
+    "root": "logs2",
+    "path": "warning.3.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "42ef7e87035f34921f8f49ad59fc661db1e6802248c38648c9a221d46ac4194a"
+  },
+  {
+    "root": "logs2",
+    "path": "warning.4.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "adbaaebae94f1f539658c9bcd3d8c9017241e9f9e47177771d78df4ba04e4083"
+  },
+  {
+    "root": "logs2",
+    "path": "warning.5.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "d12897b4d1655117ebd23739a229e869c28066e8dc78d4ac625459e056b5d42d"
+  },
+  {
+    "root": "logs2",
+    "path": "warning.log",
+    "lines": 34,
+    "bytes": 5212,
+    "pattern_counts": {
+      "missing_dlc": 0,
+      "invalid_gui_type": 0,
+      "kates_reference": 0,
+      "ticktask": 0,
+      "task_thread_setting": 0,
+      "assert_or_exception": 0
+    },
+    "sha256": "a3458050c2842aa1df8671113c534f9e678249730c5377994f583e1430593e17"
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "format": "Concatenate ordered parts as gzip bytes, decompress to .v3, verify restored hash.",
+  "gzip_sha256": "f50946abb8091726740917dac791667cd3bbbc88a36112cdc1d6a2eaa8992125",
+  "parts": [
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part001",
+      "bytes": 5242880,
+      "sha256": "0a49126dbbde269f7c0532777e01b0bb092342d6f7f6b8314f6eedac893f535c"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part002",
+      "bytes": 5242880,
+      "sha256": "c18d9b76b43089d618c2fa285390fa4d974d31ae02b6140bd02bcc513b07333f"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part003",
+      "bytes": 5242880,
+      "sha256": "327c29c0024a0d58839263e3c94b96ae8c95ada1c4e5948103cc9e3f1231968a"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part004",
+      "bytes": 5242880,
+      "sha256": "428f32b4329cdb402bcba1a1695a739cfceac31b555e25583a197a179fd5cca8"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part005",
+      "bytes": 5242880,
+      "sha256": "16efea6673c45cdd3e4fbead2f6be0608769f41ec3232746dab974d99c2bdd24"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part006",
+      "bytes": 5242880,
+      "sha256": "364735d0940f387ab1e336a1b6b52fd1dd8ad04b3d1fb58b4b5aca0cd1821bb6"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part007",
+      "bytes": 5242880,
+      "sha256": "58ab4ee14f906e4e8e4965a453970198148f009549c93b7d59b0ca0b6235751a"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part008",
+      "bytes": 5242880,
+      "sha256": "4b1957d7bfa9b8d7394e9b118b66920e9dedc822c009562c9efd2d2467b00285"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part009",
+      "bytes": 495849,
+      "sha256": "d90c7991ad7c53447444c5cc86c2752dcb360360e33e229ec4e9713da394d752"
+    }
+  ]
+}

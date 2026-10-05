@@ -1,0 +1,445 @@
+{
+  "fixtures": [
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+      "path": "game/tools/scripted_tests/germany.txt",
+      "bytes": 218
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+      "path": "game/tools/scripted_tests/ip3.txt",
+      "bytes": 1874
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+      "path": "game/tools/scripted_tests/italy.txt",
+      "bytes": 164
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+      "path": "game/tools/scripted_tests/scripted_tests.md",
+      "bytes": 2676
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+      "path": "game/tools/scripted_tests/springtime.txt",
+      "bytes": 215
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+      "path": "game/tools/scripted_tests/test.txt",
+      "bytes": 565
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-jomini.zip",
+      "path": "jomini/gui/gui_data_profiler/gui_data_profiler.gui",
+      "bytes": 11040
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-jomini.zip",
+      "path": "jomini/gui/script_profiler/script_profiler.gui",
+      "bytes": 19365
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/installed-clausewitz.zip",
+      "path": "clausewitz/gui/profiler.gui",
+      "bytes": 8165
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "clausewitz/gui/profiler.gui",
+      "bytes": 8165
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "game/tools/scripted_tests/germany.txt",
+      "bytes": 218
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "game/tools/scripted_tests/ip3.txt",
+      "bytes": 1874
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "game/tools/scripted_tests/italy.txt",
+      "bytes": 164
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "game/tools/scripted_tests/scripted_tests.md",
+      "bytes": 2676
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "game/tools/scripted_tests/springtime.txt",
+      "bytes": 215
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "game/tools/scripted_tests/test.txt",
+      "bytes": 565
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "jomini/gui/gui_data_profiler/gui_data_profiler.gui",
+      "bytes": 11040
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "path": "jomini/gui/script_profiler/script_profiler.gui",
+      "bytes": 19365
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "20261005_taskthread_1.CSV",
+      "bytes": 74948
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "20261005_taskthread_12.CSV",
+      "bytes": 56162
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "20261005_taskthread_16.CSV",
+      "bytes": 68754
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "20261005_taskthread_2.CSV",
+      "bytes": 62394
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "20261005_taskthread_4.CSV",
+      "bytes": 62297
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "20261005_taskthread_6.CSV",
+      "bytes": 77120
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "20261005_taskthread_8.CSV",
+      "bytes": 137751
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "ticktask_timings_taskthread_1.csv",
+      "bytes": 346414
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "ticktask_timings_taskthread_12.csv",
+      "bytes": 297764
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "ticktask_timings_taskthread_16.csv",
+      "bytes": 305872
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "ticktask_timings_taskthread_2.csv",
+      "bytes": 290544
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "ticktask_timings_taskthread_4.csv",
+      "bytes": 303232
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "ticktask_timings_taskthread_6.csv",
+      "bytes": 304737
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "path": "ticktask_timings_taskthread_8.csv",
+      "bytes": 247363
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/workshop-script-controls.zip",
+      "path": "3724865565/common/on_actions/gora_performance_migration_on_actions.txt",
+      "bytes": 692
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/workshop-script-controls.zip",
+      "path": "3724865565/common/scripted_effects/gora_performance_migration_effects.txt",
+      "bytes": 6294
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/pdx_106319/Common/ai_strategies/victoria3_performance_ai_strategies.txt",
+      "bytes": 177
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/pdx_106319/Common/defines/victoria3_performance_defines.txt",
+      "bytes": 534
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/pdx_106319/localisation/victoria3_performance_l_english.yml",
+      "bytes": 229
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/vic3_performance.mod",
+      "bytes": 170
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/.metadata/metadata.json",
+      "bytes": 6808
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/ai_strategies/00_ai_strategy_overhaul.txt",
+      "bytes": 7059
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/ai_strategies/disable_strategies.txt",
+      "bytes": 6905
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/ai_strategy_plans/slow_down_ai_plans.txt",
+      "bytes": 7104
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/decisions/00_country_decisions.txt",
+      "bytes": 6674
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/decisions/disable_decisions.txt",
+      "bytes": 7655
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/defines/00_optimization_defines.txt",
+      "bytes": 7564
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/defines/00_performance_optimizations.txt",
+      "bytes": 7182
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/defines/ai/00_ai_law_logic.txt",
+      "bytes": 6726
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/events/disasters.txt",
+      "bytes": 6829
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/graphics_settings/override_settings.txt",
+      "bytes": 6769
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/journal_entries/00_journal_entries.txt",
+      "bytes": 7346
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/journal_entries/disable_flavor_entries.txt",
+      "bytes": 7160
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/map_icon_instance_types/disable_construction_instances.txt",
+      "bytes": 6996
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/map_icon_instance_types/remove_construction_instances.txt",
+      "bytes": 6996
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/map_icon_types/00_construction_icon_types.txt",
+      "bytes": 6746
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/map_icon_types/disable_construction_icons.txt",
+      "bytes": 6746
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/map_modes/00_trade_map_mode.txt",
+      "bytes": 6880
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/on_actions/disable_flavor_on_actions.txt",
+      "bytes": 6760
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/scripted_effects/00_optimized_effects.txt",
+      "bytes": 6775
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/scripted_triggers/00_optimized_triggers.txt",
+      "bytes": 6840
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/common/scripted_triggers/disable_unused_triggers.txt",
+      "bytes": 7020
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/events/ai_flavor_cleanup.txt",
+      "bytes": 6908
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/events/z_opt_events.txt",
+      "bytes": 6969
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/FX/lava.shader",
+      "bytes": 6726
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/FX/null_clouds.asset",
+      "bytes": 6739
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/map/map_objects/caravan.asset",
+      "bytes": 6733
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/map/map_objects/dock_worker.asset",
+      "bytes": 6737
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/map/map_objects/harbor_ship.asset",
+      "bytes": 6737
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/map/map_objects/trade_cart.asset",
+      "bytes": 6736
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/mapobject/map_objects_birds.asset",
+      "bytes": 7179
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/mapobject/map_objects_buildings.asset",
+      "bytes": 7196
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/mapobject/map_objects_optimization.asset",
+      "bytes": 8563
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/particles/building_smoke.asset",
+      "bytes": 6820
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/particles/clouds.asset",
+      "bytes": 6794
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/particles/lava_fx.asset",
+      "bytes": 6813
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gfx/particles/rain.asset",
+      "bytes": 6810
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/gui/map_modes.gui",
+      "bytes": 6897
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/journal_entries/z_trimmed_journal_entries.txt",
+      "bytes": 6839
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/localization/english/mod_map_modes_l_english.yml",
+      "bytes": 6722
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map/map_object_data/map_objects_birds.asset",
+      "bytes": 6867
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map/no_clouds_lighting.asset",
+      "bytes": 6798
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map/skybox.asset",
+      "bytes": 6850
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map_data/climate/arid.txt",
+      "bytes": 6779
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map_data/climate/continental.txt",
+      "bytes": 6786
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map_data/climate/mediterranean.txt",
+      "bytes": 6788
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map_data/climate/polar.txt",
+      "bytes": 6780
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map_data/climate/temperate.txt",
+      "bytes": 6784
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map_data/climate/tropical.txt",
+      "bytes": 6783
+    },
+    {
+      "archive": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "path": "mod/Victoria 3 Performance/map_data/graphics_settings.gui",
+      "bytes": 6870
+    }
+  ],
+  "claim_limit": "Shipped examples and profiler controls, not proof that a particular retail-build invocation works."
+}

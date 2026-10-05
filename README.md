@@ -4,6 +4,10 @@ Private research project for improving Victoria 3 simulation performance beyond 
 
 ## 最新の引き継ぎ / Resume on another device
 
+[2026-10-05 PC資料の追加保存・主要9処理の解析](docs/superpowers/reports/2026-10-05-pc-evidence-preservation-ja.md)
+
+154,570件のファイル索引、5,647件の設定・ログ・スクリプト、旧CSVとセンサー記録、復元可能な計測セーブを追加しました。現在のゲーム本体で静的対応を再検証し、主要9処理を起点に80個の関数グループを保存しています。最新の資料保存状態はこちらを優先してください。
+
 [2026-10-05 並列実行経路・雇用callbackの追加調査](docs/superpowers/reports/2026-10-05-dispatch-continuation-ja.md)
 
 共通dispatcher候補からrange runner・heuristicへの接続、雇用のCollect/Sort callbackを追加しました。再現recipeと命令境界を照合するcaller検索toolを保存しています。最新の再開状態はこちらを優先してください。
@@ -37,6 +41,8 @@ The research-input snapshot is kept as separate small archives rather than the o
 - `input-data/clausewitz.zip`
 - `input-data/game.zip`
 - build identifiers under `input-data/build-info/`
+
+The 2026-10-05 PC evidence expansion adds source/control archives, raw benchmark/log/sensor data and a split compressed benchmark save under `input-data/pc-evidence-2026-10-05/`. Its file inventory, hashes, coverage and restoration instructions are recorded in the latest report.
 
 Large or unrelated Victoria 3 binaries/assets remain excluded. Keep this repository private and review the applicable game/license terms before sharing any third-party game data.
 

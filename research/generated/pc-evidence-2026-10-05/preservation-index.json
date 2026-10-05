@@ -1,0 +1,410 @@
+{
+  "files": [
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/additional-analysis-validation.json",
+      "bytes": 177,
+      "sha256": "6106c6f4f86ba406d0bb4df0a587a046eab41e2739391a32eddbbe048d92a7a8",
+      "git_blob_sha": "4c61d2e5b4f264354940b331fa6ecd05c3dbc238"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/archive-index.json",
+      "bytes": 5365,
+      "sha256": "13eade305ac99b07abab4b7f090e28bce335569a6406d5474c54bda55d4123e8",
+      "git_blob_sha": "7ac8bd817abd48c861f86daa0167ad8d71ede8ac"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/benchmark-save-header.txt",
+      "bytes": 109909,
+      "sha256": "e766ab0f53d38f6a2b190a2273a0a2a7123d0dd2155bb68a76e99e338dfce9ee",
+      "git_blob_sha": "a460c3a294c05340a65a9172cf0af43784eef0b6"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/binary-dependency-index.json",
+      "bytes": 2547916,
+      "sha256": "de3f0ae7b0643696fa55cadbe6f9771d51a17e0b09aa743372a17162508658f0",
+      "git_blob_sha": "0faed61c114ec82e47de35d26015f946151ef743"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/collection-methods.zip",
+      "bytes": 9402,
+      "sha256": "d71eb2ce5c83b0c456680364bbaec148d1a41f1c3b04e342f65b349c27654fdf",
+      "git_blob_sha": "1c5202e8d0e3c8b307d6c4145aeab197e335bb69"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/collection-validation.json",
+      "bytes": 196,
+      "sha256": "d9ce3ce6f1d95e3eaa3c6e917ebbbd4e4e6d0a8f0e0fe941e990d26c085c7f45",
+      "git_blob_sha": "b8489c7962fd332594315816fe498af62a7c5c28"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/diagnostic-source-catalog.json",
+      "bytes": 16364,
+      "sha256": "e624af1498b45cbb3fecbdd0d017c4a711f19f88951ffeee19e7ff522beebefe",
+      "git_blob_sha": "17cc36d8c91a2f080f21da91c9da359fa04c7b50"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/dispatch-live/artifact-index.json",
+      "bytes": 341,
+      "sha256": "46ef06841f0afc53c3cf3f354589877733efa77d8ac90d8060ede849fe02cef5",
+      "git_blob_sha": "62290ae5e9dde6f25ef42c1f5f7acc08b7aa5d87"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/dispatch-live/dispatch-regions.json",
+      "bytes": 104806,
+      "sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+      "git_blob_sha": "6019da255dbb824e374b0b499ae12a251898059c"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/dispatch-live/scheduler-callers.json",
+      "bytes": 22686,
+      "sha256": "09a531cb867bc11913d5c696bcc081c13bc0d090885c0bba9a1975b895976d30",
+      "git_blob_sha": "91944dcf4b7f1acef83d743bf99826202cfce86d"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/file-inventory.csv.gz",
+      "bytes": 2140447,
+      "sha256": "b5508fb4f559451071cac26078fbeee23aba50e467276d835ea7135d4170baf3",
+      "git_blob_sha": "4def762ddb68bdaa4116ab87121076b991d88324"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/historical-current-controls-comparison.json",
+      "bytes": 113253,
+      "sha256": "642d50686875bd28150d63e57c45554934efc600afb15d72c33f77c469e2de6d",
+      "git_blob_sha": "f6ef93bcd439080f82db8c507ad690db94a6d387"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/historical-ticktask-comparison.json",
+      "bytes": 118560,
+      "sha256": "0e77beab95afd33b8a1afc70968d1237317c86924de35b6987aacb52f65335c3",
+      "git_blob_sha": "7241800ed4362c0059e49b61438950ae22127c47"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/hotspot-nine-tasks.json",
+      "bytes": 246143,
+      "sha256": "70f841ec6939b2881275973f402522ef790f56601d05d8febc26a3af198b21ea",
+      "git_blob_sha": "de336df82c51df0225c7792822a3a886292dd7f8"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/launcher-mod-playsets.json",
+      "bytes": 52119,
+      "sha256": "1eaec9eb868bae31283e0f013db6871b4d72ae0047d6714368bc4c18b3919c54",
+      "git_blob_sha": "58ff5ddc9eac0a387cb304ece6e257e79b7de2d4"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/log-index.json",
+      "bytes": 49117,
+      "sha256": "5ca6018e6e9e13c93224ecd20c5781560fa34c1ba524cef3a0da2c54dc3dd58f",
+      "git_blob_sha": "05d83da8757dff2b17cad4dcbe5d0a29d9905e71"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/native/signature-validation.json",
+      "bytes": 4864,
+      "sha256": "5bb2566d4076b8ee9ad1d42a267bde1d8ba7e1710dab7712506dc340fa7bcd61",
+      "git_blob_sha": "cf0bea9c2c764f6c3c5d1e790a15e3480297285a"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/native/static-analysis.json",
+      "bytes": 895216,
+      "sha256": "6e0288a6d9f65710e19f5ffecca34cab4571d6348cb4cfe0decf9746215bc8d1",
+      "git_blob_sha": "e3d9fd07086d50f7cbe498347f8b8b7c3a69cf38"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/native/static-xrefs.json",
+      "bytes": 12551,
+      "sha256": "9743bd40eae072029c940955181fd7c4985d13a4d8be998a2e1e6d1543ba3c23",
+      "git_blob_sha": "5e06c1abf808426487637deb7a3daba0ea6bc098"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/native/summary.json",
+      "bytes": 619,
+      "sha256": "9574c92041874e4c05ec9cc76286a95f54d8d2ba584fdc8d6b8524bf70617c1a",
+      "git_blob_sha": "e170458c1679b81040402fa54aea711c30736115"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+      "bytes": 378932,
+      "sha256": "1c1d2f749863e79e4da9c7ad2023e18ac8679e85dfb9cad180bfb3262b5554dc",
+      "git_blob_sha": "300de82e224f30ae151cc58a0fde7eb9ff0eb27e"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/original-archive-index.json",
+      "bytes": 44991,
+      "sha256": "059153b0faa655d25c337daf1c6e519554eb7fa4adc7d847241f4f8f562f7a1a",
+      "git_blob_sha": "6b421a4191b0d39c41a3273d3a8c80402c24318f"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/performance-controls.json",
+      "bytes": 8570,
+      "sha256": "81875ca78bdf73432e42e915ebfc61e08c282c33370465e5485aec016730c83a",
+      "git_blob_sha": "8c52d3db388b6217bdd7dc455c3d61a615fa7389"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/repository-test-results.txt",
+      "bytes": 10301,
+      "sha256": "1f418909a19245feeb88170b8f0f26d75ef76d7405d055d01f02f5602a028f08",
+      "git_blob_sha": "7e0eec009cf50a8ce202ae4f9b13e4a76c9a1541"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/save-index.json",
+      "bytes": 281067,
+      "sha256": "6f78e8b55c63489a1313b1814d9dc5baa8278a16e20f69facb2d5d0a8a6460ea",
+      "git_blob_sha": "b557d8bb982c2186e7c71bfd4afea1ef346b3b10"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/save-parts.json",
+      "bytes": 2001,
+      "sha256": "0096613099dd1679af4ce844a68bf6a77b8dceb778cff33a6ac5af21a83c2c65",
+      "git_blob_sha": "7b7909f27bf1b7d700f0ffee0023c9563bc1595b"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/save-validation.json",
+      "bytes": 968,
+      "sha256": "1815030173163e559bdbc8e0f32ddca2ff9c4d550a8e1408db6ad25a24edf888",
+      "git_blob_sha": "f25f4238843758b3725fb18e2cf454d76fb0f928"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/scope.json",
+      "bytes": 1695,
+      "sha256": "00eb23d0fcfa5794187aa3baf56288425a99ae34616b60802a75d0ec2f49e8ea",
+      "git_blob_sha": "99ab4ac9dea3a69ad4f07b63eb1adbb7d72ea9bc"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/sensor-capture-summary.json",
+      "bytes": 248294,
+      "sha256": "3f53a911e8053ab1491c5c1e4659245fc00890318c17ac05051dac8aece4b938",
+      "git_blob_sha": "ffaf8ce98bb71c620a12a74343312f7d11354349"
+    },
+    {
+      "path": "research/generated/pc-evidence-2026-10-05/source-files.json",
+      "bytes": 2024355,
+      "sha256": "d430f56584fe78e3ce2a347011272b0dc9a4204eb0585fb809070a08fbc5e9fc",
+      "git_blob_sha": "e5e1572ff5cdfd77549beaf0ec6f5650919dab30"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/bench1.zip",
+      "bytes": 355473,
+      "sha256": "2a460a11fe7de2aa4228aa4bac50e97974927f4f068b67edbc75f01a254050c8",
+      "git_blob_sha": "665ed713fadf6de68c54a36a5581a829bfa669b9"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/bench2.zip",
+      "bytes": 135304,
+      "sha256": "ca168d5ce2662c2aca09ee85eb19a6c03468a1525e25805d7fec4414d2aea12b",
+      "git_blob_sha": "ea7e4027a00b5920cdc70d7a85fb9771809c3c1b"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/bench3.zip",
+      "bytes": 310416,
+      "sha256": "9324bc4a22efcb70f17f2129ceaa1667d9afad494baaacbbaebbd2d5675d3ce4",
+      "git_blob_sha": "665ef67ac70f425487094c5f731ed60c0a822ad7"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part001",
+      "bytes": 5242880,
+      "sha256": "0a49126dbbde269f7c0532777e01b0bb092342d6f7f6b8314f6eedac893f535c",
+      "git_blob_sha": "6c3f52f39e7869e1f2ea06dc788d73f59c5d95c2"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part002",
+      "bytes": 5242880,
+      "sha256": "c18d9b76b43089d618c2fa285390fa4d974d31ae02b6140bd02bcc513b07333f",
+      "git_blob_sha": "9b868e379b778e756d1611e1e88635756849b494"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part003",
+      "bytes": 5242880,
+      "sha256": "327c29c0024a0d58839263e3c94b96ae8c95ada1c4e5948103cc9e3f1231968a",
+      "git_blob_sha": "b59d7f6b6135b95e61359d79731987a7ef629581"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part004",
+      "bytes": 5242880,
+      "sha256": "428f32b4329cdb402bcba1a1695a739cfceac31b555e25583a197a179fd5cca8",
+      "git_blob_sha": "31b2575ae382097cafea736e4dcdc98604e407ea"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part005",
+      "bytes": 5242880,
+      "sha256": "16efea6673c45cdd3e4fbead2f6be0608769f41ec3232746dab974d99c2bdd24",
+      "git_blob_sha": "497eb04ca311ca29b4b074ae40622b1731bc7f5a"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part006",
+      "bytes": 5242880,
+      "sha256": "364735d0940f387ab1e336a1b6b52fd1dd8ad04b3d1fb58b4b5aca0cd1821bb6",
+      "git_blob_sha": "6bf7b30d6a1b4faa2c9b6b3477562884ddee7db4"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part007",
+      "bytes": 5242880,
+      "sha256": "58ab4ee14f906e4e8e4965a453970198148f009549c93b7d59b0ca0b6235751a",
+      "git_blob_sha": "64a0dfe4e254afea9e38509f4322d99a54065261"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part008",
+      "bytes": 5242880,
+      "sha256": "4b1957d7bfa9b8d7394e9b118b66920e9dedc822c009562c9efd2d2467b00285",
+      "git_blob_sha": "a3fe9239856190e3574b41ca53a7d7e6ece04434"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/benchmark-save.v3.gz.part009",
+      "bytes": 495849,
+      "sha256": "d90c7991ad7c53447444c5cc86c2752dcb360360e33e229ec4e9713da394d752",
+      "git_blob_sha": "9152fbd78905b2ac6ca13192f729e47471298e62"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+      "bytes": 613212,
+      "sha256": "60c33aca7a5637bcb4d364b70464c1e0024dfdb7c4f34a71d0d564cbd4b73ca4",
+      "git_blob_sha": "385489edaac5ac79e9e04c275e40a56a754764e1"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+      "bytes": 1259797,
+      "sha256": "07c299e500cdf3f40aa7d828340a7f5a1e68997b8377e2e33af13a0ec8c20c1d",
+      "git_blob_sha": "64ab9d77d338d877e2cc8a856d0c613d724cb9ed"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-clausewitz.zip",
+      "bytes": 311873,
+      "sha256": "21b8169f2ccd1c587b13fb0b7ee71b344c0db9f4dcb3f57c775b2c3c750f22ae",
+      "git_blob_sha": "2faa9d54ead1d38c276c80305e3ab7a85358273c"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-common.zip",
+      "bytes": 4867687,
+      "sha256": "2da7620e9698e9363a334f41057c9c56d3c49530f22024a77e381704cf684f72",
+      "git_blob_sha": "7cefb4f15ad2096b25b1bc4fa44e94cee6a233f3"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-data_binding.zip",
+      "bytes": 662,
+      "sha256": "8f31d243c161a0691396307c123363ec37c5b35beb1f3bf5232a3cbcc0ea759b",
+      "git_blob_sha": "e4213bf31413521e6a6ca616373789d4b7b6d4c4"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-dlc_metadata.zip",
+      "bytes": 1246,
+      "sha256": "981674ca31f8dce07c08eaf102c7feb3ebccbaf6578208051f18ac0a7f96bb47",
+      "git_blob_sha": "f1087c58ec103beb84c5e7ba843f655450d1c4cd"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-events.zip",
+      "bytes": 781735,
+      "sha256": "35cf9422307af4c841dd4fea4fa6998e8ab4d377e7dd59d919f70c601011144b",
+      "git_blob_sha": "98652c74b69b5edc9ad198a10531975862beb346"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-gui.zip",
+      "bytes": 901540,
+      "sha256": "fd35171eb1c04ad2ee8da73882915849128f590bbcd9140c25b454f8e3723551",
+      "git_blob_sha": "bf9f004120594b779bd624e8dfe15fcf88d3c8bb"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-input_profile.zip",
+      "bytes": 2522,
+      "sha256": "1f17b41d0b7b00cb811551292bd389d84f149470ae3c1fe36f0036fdbe901949",
+      "git_blob_sha": "b3d2c1178d5eef6356dad8c0640abe1c5b29f37f"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-interface.zip",
+      "bytes": 2293,
+      "sha256": "91441bd12659004623703b1f9d027b11c80144cdbbf22e79f5ad8db915a8bfb0",
+      "git_blob_sha": "742ede67ae9d659cf2c6da30cf635020efad8fc9"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-notifications.zip",
+      "bytes": 572,
+      "sha256": "9ee9deeee3ad10edace7b51544a645e2aff0532f63fd28c914e42574a1b96f10",
+      "git_blob_sha": "25d6b57c434f0ef5fd310c7e9cba1a1f65471153"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+      "bytes": 552607,
+      "sha256": "90144ccb7bc570c631c5473bd49e98936289590fa2e8c12c14c4f2ff65968d9d",
+      "git_blob_sha": "5ba04e1606cc7d20f4f1fa0ebfc6c3acbfbad73b"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-jomini.zip",
+      "bytes": 454834,
+      "sha256": "de207cb3490f6ce67a889a6de61ea23461778a92c197f9f25d9dd9f4f19503b4",
+      "git_blob_sha": "b3cc797d1df2d7d3776555a173074c9da07752fa"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-platform_specific_game_data.zip",
+      "bytes": 1552,
+      "sha256": "bb7e4640651feb689bdf633fc96b46eb3d66c8e96934c4100b00d8846c37f277",
+      "git_blob_sha": "4ee7beeb4947877dd9f57f523d0ac5b43d548fbc"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/installed-root-controls.zip",
+      "bytes": 16433,
+      "sha256": "91776995e1967d21abde4457d72055a4152bc3ec4b40f8c06e91cc28f5ae062b",
+      "git_blob_sha": "6d8e6022b2f622f71e6385499a00f164c53d105f"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/logs2.zip",
+      "bytes": 189222,
+      "sha256": "1f11fc54a3873181b8a10bfd219f1cea9fd7ca64d0c2540df29efc2ba8b49da0",
+      "git_blob_sha": "3883532dbb5ea7763d5cae82f4d38b8375983fda"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/old-batch-mod.zip",
+      "bytes": 22948,
+      "sha256": "27ddd2562b36f57dd99adb2a29f723a5a61fc0f8aaef6f76d12e388b473264be",
+      "git_blob_sha": "7e96a6e48c3eadf5a011680df42e238a354f5f79"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/original-bench3.zip",
+      "bytes": 318012,
+      "sha256": "5885d92f21c90994f4966676004f0b31fb7982fd02914572e76e50d9b2e913c9",
+      "git_blob_sha": "29bd6deb90ceb0c112d878c1c0d854e7338483db"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/original-benchmark_result.zip",
+      "bytes": 363024,
+      "sha256": "9da73a9b6b3d136b8329daefd7858a9d0ac05c65121ff35c5e434d2d9f4bb01a",
+      "git_blob_sha": "59cb1f808bafc88c2422ba8d3188fc9f64763d06"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/original-logs2.zip",
+      "bytes": 205267,
+      "sha256": "48556e1a4b519fbcdd46079e34f11890307937f601cc52f18c6b7091939c096a",
+      "git_blob_sha": "21662f17daee29eaffeb2c7e58a1ce945a1a10f8"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/original-vic3_gui.zip",
+      "bytes": 175847,
+      "sha256": "1c11c2ff99f2158f1c5039fafa6a96083562055d8f07297ccbda46abc3286969",
+      "git_blob_sha": "f825abc90bb21de7b3428071416dd30df62a3d8e"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/original-vic3_logs.zip",
+      "bytes": 194220,
+      "sha256": "e1e90de4ffba037984a3146cc36156cb81559ffece147be67171b1b1a40909ff",
+      "git_blob_sha": "88615fbe68cbbf364910b9e7e1f0fa6c87c98212"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/original-Victoria 3 Performance-32-1-00-0-1745087611.zip",
+      "bytes": 374043,
+      "sha256": "04057beb0fd57db47092bbde0cc1d0b2c17f86f2a56668db05d311063b4a00a9",
+      "git_blob_sha": "fba18cd0e3f6ca1a5bbb6015381b3b0519526a4f"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/recovery-gui.zip",
+      "bytes": 173051,
+      "sha256": "9bdc9b1087fb99de471cd1f4edbacb55796f80c2dc7102c15cc00da586c8eb5b",
+      "git_blob_sha": "23b801b8fa5643e41d6813ceec2b27795f86888c"
+    },
+    {
+      "path": "input-data/pc-evidence-2026-10-05/workshop-script-controls.zip",
+      "bytes": 1252978,
+      "sha256": "acaaa0bc6505dfeea72f3fa06b652e7219dd7e5a4cb141f5dca6feba6f4b287f",
+      "git_blob_sha": "4cfda6b8c5f0e212bc85e8e6b006df962d0703a2"
+    }
+  ],
+  "file_count": 67,
+  "bytes": 65728484,
+  "full_gzip_not_uploaded": "The complete gzip remains local; the ordered parts reproduce it exactly.",
+  "original_game_binaries_uploaded": false
+}

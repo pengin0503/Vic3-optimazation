@@ -1,0 +1,156 @@
+[
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-common.zip",
+    "bytes": 4867687,
+    "sha256": "2da7620e9698e9363a334f41057c9c56d3c49530f22024a77e381704cf684f72",
+    "members": 3107,
+    "uncompressed_bytes": 25815304
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-events.zip",
+    "bytes": 781735,
+    "sha256": "35cf9422307af4c841dd4fea4fa6998e8ab4d377e7dd59d919f70c601011144b",
+    "members": 328,
+    "uncompressed_bytes": 5171911
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-gui.zip",
+    "bytes": 901540,
+    "sha256": "fd35171eb1c04ad2ee8da73882915849128f590bbcd9140c25b454f8e3723551",
+    "members": 205,
+    "uncompressed_bytes": 6056849
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-data_binding.zip",
+    "bytes": 662,
+    "sha256": "8f31d243c161a0691396307c123363ec37c5b35beb1f3bf5232a3cbcc0ea759b",
+    "members": 1,
+    "uncompressed_bytes": 2649
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-input_profile.zip",
+    "bytes": 2522,
+    "sha256": "1f17b41d0b7b00cb811551292bd389d84f149470ae3c1fe36f0036fdbe901949",
+    "members": 1,
+    "uncompressed_bytes": 5832
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-interface.zip",
+    "bytes": 2293,
+    "sha256": "91441bd12659004623703b1f9d027b11c80144cdbbf22e79f5ad8db915a8bfb0",
+    "members": 1,
+    "uncompressed_bytes": 56049
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-notifications.zip",
+    "bytes": 572,
+    "sha256": "9ee9deeee3ad10edace7b51544a645e2aff0532f63fd28c914e42574a1b96f10",
+    "members": 1,
+    "uncompressed_bytes": 1758
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-tools.zip",
+    "bytes": 552607,
+    "sha256": "90144ccb7bc570c631c5473bd49e98936289590fa2e8c12c14c4f2ff65968d9d",
+    "members": 13,
+    "uncompressed_bytes": 2089610
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-game-dlc_metadata.zip",
+    "bytes": 1246,
+    "sha256": "981674ca31f8dce07c08eaf102c7feb3ebccbaf6578208051f18ac0a7f96bb47",
+    "members": 2,
+    "uncompressed_bytes": 2375
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-jomini.zip",
+    "bytes": 454834,
+    "sha256": "de207cb3490f6ce67a889a6de61ea23461778a92c197f9f25d9dd9f4f19503b4",
+    "members": 423,
+    "uncompressed_bytes": 1488027
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-clausewitz.zip",
+    "bytes": 311873,
+    "sha256": "21b8169f2ccd1c587b13fb0b7ee71b344c0db9f4dcb3f57c775b2c3c750f22ae",
+    "members": 227,
+    "uncompressed_bytes": 1104824
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-platform_specific_game_data.zip",
+    "bytes": 1552,
+    "sha256": "bb7e4640651feb689bdf633fc96b46eb3d66c8e96934c4100b00d8846c37f277",
+    "members": 2,
+    "uncompressed_bytes": 18495
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/installed-root-controls.zip",
+    "bytes": 16433,
+    "sha256": "91776995e1967d21abde4457d72055a4152bc3ec4b40f8c06e91cc28f5ae062b",
+    "members": 12,
+    "uncompressed_bytes": 43192
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/historical-controls.zip",
+    "bytes": 1259797,
+    "sha256": "07c299e500cdf3f40aa7d828340a7f5a1e68997b8377e2e33af13a0ec8c20c1d",
+    "members": 399,
+    "uncompressed_bytes": 7570450
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/bench1.zip",
+    "bytes": 355473,
+    "sha256": "2a460a11fe7de2aa4228aa4bac50e97974927f4f068b67edbc75f01a254050c8",
+    "members": 14,
+    "uncompressed_bytes": 2635352
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/bench2.zip",
+    "bytes": 135304,
+    "sha256": "ca168d5ce2662c2aca09ee85eb19a6c03468a1525e25805d7fec4414d2aea12b",
+    "members": 6,
+    "uncompressed_bytes": 1090106
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/bench3.zip",
+    "bytes": 310416,
+    "sha256": "9324bc4a22efcb70f17f2129ceaa1667d9afad494baaacbbaebbd2d5675d3ce4",
+    "members": 3,
+    "uncompressed_bytes": 2729292
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/logs2.zip",
+    "bytes": 189222,
+    "sha256": "1f11fc54a3873181b8a10bfd219f1cea9fd7ca64d0c2540df29efc2ba8b49da0",
+    "members": 60,
+    "uncompressed_bytes": 10230649
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/recovery-gui.zip",
+    "bytes": 173051,
+    "sha256": "9bdc9b1087fb99de471cd1f4edbacb55796f80c2dc7102c15cc00da586c8eb5b",
+    "members": 14,
+    "uncompressed_bytes": 770966
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/old-batch-mod.zip",
+    "bytes": 22948,
+    "sha256": "27ddd2562b36f57dd99adb2a29f723a5a61fc0f8aaef6f76d12e388b473264be",
+    "members": 13,
+    "uncompressed_bytes": 61352
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/workshop-script-controls.zip",
+    "bytes": 1252978,
+    "sha256": "acaaa0bc6505dfeea72f3fa06b652e7219dd7e5a4cb141f5dca6feba6f4b287f",
+    "members": 639,
+    "uncompressed_bytes": 9274794
+  },
+  {
+    "path": "input-data/pc-evidence-2026-10-05/current-user-data.zip",
+    "bytes": 613212,
+    "sha256": "60c33aca7a5637bcb4d364b70464c1e0024dfdb7c4f34a71d0d564cbd4b73ca4",
+    "members": 176,
+    "uncompressed_bytes": 13178430
+  }
+]

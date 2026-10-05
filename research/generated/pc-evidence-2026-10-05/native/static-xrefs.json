@@ -1,0 +1,464 @@
+{
+  "format_version": 1,
+  "image_base": "0x140000000",
+  "items": [
+    {
+      "anchor": "clear_ticktask_timings",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x118fca6",
+          "function_end_rva": "0x118ff01",
+          "function_start_rva": "0x118fc40",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4575570",
+          "unwind_rva": "0x4f0ac34"
+        }
+      ],
+      "occurrences": [
+        "0x4575570"
+      ]
+    },
+    {
+      "anchor": "dump_ticktask_timings",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x118f406",
+          "function_end_rva": "0x118f687",
+          "function_start_rva": "0x118f3a0",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x45757a8",
+          "unwind_rva": "0x4f0ab70"
+        }
+      ],
+      "occurrences": [
+        "0x45757a8"
+      ]
+    },
+    {
+      "anchor": "log_ticktask_performance",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x7e2daf",
+          "function_end_rva": "0x7e2ffa",
+          "function_start_rva": "0x7e2d50",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x44da218",
+          "unwind_rva": "0x4ea02ec"
+        }
+      ],
+      "occurrences": [
+        "0x44da218"
+      ]
+    },
+    {
+      "anchor": "ticktask_timings.csv",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x118f961",
+          "function_end_rva": "0x118fc3b",
+          "function_start_rva": "0x118f690",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4575758",
+          "unwind_rva": "0x4f0abac"
+        }
+      ],
+      "occurrences": [
+        "0x4575758"
+      ]
+    },
+    {
+      "anchor": "Threading.TaskThreadCount",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x3bcd41a",
+          "function_end_rva": "0x3bcd7ea",
+          "function_start_rva": "0x3bcd320",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4908ab0",
+          "unwind_rva": "0x514f7f0"
+        },
+        {
+          "displacement_rva": "0x3bcd473",
+          "function_end_rva": "0x3bcd7ea",
+          "function_start_rva": "0x3bcd320",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4908ab0",
+          "unwind_rva": "0x514f7f0"
+        }
+      ],
+      "occurrences": [
+        "0x4908ab0",
+        "0x4908b2c"
+      ]
+    },
+    {
+      "anchor": "Threading.EnableTaskThreads",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x5c1dfa",
+          "function_end_rva": null,
+          "function_start_rva": null,
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4908b50",
+          "unwind_rva": null
+        }
+      ],
+      "occurrences": [
+        "0x4908b50"
+      ]
+    },
+    {
+      "anchor": "TickTask.List",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x28cf5f3",
+          "function_end_rva": "0x28cf81b",
+          "function_start_rva": "0x28cf5b0",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4753a10",
+          "unwind_rva": "0x501a900"
+        }
+      ],
+      "occurrences": [
+        "0x4753a10"
+      ]
+    },
+    {
+      "anchor": "TickTask.Graph",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x28cf863",
+          "function_end_rva": "0x28cfa8b",
+          "function_start_rva": "0x28cf820",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x47539c0",
+          "unwind_rva": "0x501a900"
+        }
+      ],
+      "occurrences": [
+        "0x47539c0"
+      ]
+    },
+    {
+      "anchor": "Script.Profiling.Start",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x2fcacca",
+          "function_end_rva": "0x2fcafca",
+          "function_start_rva": "0x2fca9a0",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x487f590",
+          "unwind_rva": "0x508c95c"
+        },
+        {
+          "displacement_rva": "0x3357566",
+          "function_end_rva": "0x3357773",
+          "function_start_rva": "0x3357500",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x487f590",
+          "unwind_rva": "0x50bc5dc"
+        }
+      ],
+      "occurrences": [
+        "0x487f590"
+      ]
+    },
+    {
+      "anchor": "Script.Profiling.Stop",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x3357896",
+          "function_end_rva": "0x3357a97",
+          "function_start_rva": "0x3357830",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x487f528",
+          "unwind_rva": "0x50bc618"
+        }
+      ],
+      "occurrences": [
+        "0x487f528"
+      ]
+    },
+    {
+      "anchor": "Script.Profiling.Restart",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x3357c46",
+          "function_end_rva": "0x3357e61",
+          "function_start_rva": "0x3357be0",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x487f488",
+          "unwind_rva": "0x50bc668"
+        }
+      ],
+      "occurrences": [
+        "0x487f488"
+      ]
+    },
+    {
+      "anchor": "Script.Profiling.Gui",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x4d9b81",
+          "function_end_rva": "0x4d9c40",
+          "function_start_rva": "0x4d9ac0",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4817a78",
+          "unwind_rva": "0x5073d40"
+        }
+      ],
+      "occurrences": [
+        "0x4817a78"
+      ]
+    },
+    {
+      "anchor": "ScriptProfiling.Dump",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x276a1a6",
+          "function_end_rva": "0x276a371",
+          "function_start_rva": "0x276a140",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4709420",
+          "unwind_rva": "0x500b8dc"
+        }
+      ],
+      "occurrences": [
+        "0x4709420"
+      ]
+    },
+    {
+      "anchor": "Tools.GuiDataProfiler",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x4c9801",
+          "function_end_rva": "0x4c992b",
+          "function_start_rva": "0x4c97a0",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x4815730",
+          "unwind_rva": "0x506aaf0"
+        }
+      ],
+      "occurrences": [
+        "0x4815730"
+      ]
+    },
+    {
+      "anchor": "PdxProfilerGuiWriteFrameCSV",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x55f5d3",
+          "function_end_rva": "0x55f6c2",
+          "function_start_rva": "0x55f530",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x48a48f0",
+          "unwind_rva": "0x50e74d8"
+        }
+      ],
+      "occurrences": [
+        "0x48a48f0"
+      ]
+    },
+    {
+      "anchor": "MaybeRunRangeExecutionParallelWithHeuristic",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x7db6be",
+          "function_end_rva": "0x7dba91",
+          "function_start_rva": "0x7db150",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x44d94a0",
+          "unwind_rva": "0x4e9fb18"
+        },
+        {
+          "displacement_rva": "0x7db7e3",
+          "function_end_rva": "0x7dba91",
+          "function_start_rva": "0x7db150",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x44d94a0",
+          "unwind_rva": "0x4e9fb18"
+        }
+      ],
+      "occurrences": [
+        "0x44d94a0",
+        "0x524438b",
+        "0x524465b",
+        "0x548af92",
+        "0x548b262",
+        "0x548bb26",
+        "0x548bc76"
+      ]
+    },
+    {
+      "anchor": "pdx_task_scheduler.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x4908dfb"
+      ]
+    },
+    {
+      "anchor": "pdx_graphjob.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x4908d5b"
+      ]
+    },
+    {
+      "anchor": "pdx_task.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x4908d0b"
+      ]
+    },
+    {
+      "anchor": "gamestatetick.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x44d91c2",
+        "0x44d939a",
+        "0x44d95ba",
+        "0x44d961a",
+        "0x44d96ba",
+        "0x44d970a"
+      ]
+    },
+    {
+      "anchor": "employment_helper.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x45673ea",
+        "0x456754a"
+      ]
+    },
+    {
+      "anchor": "employment_utils.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x4579d0a"
+      ]
+    },
+    {
+      "anchor": "pop.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x458cc82"
+      ]
+    },
+    {
+      "anchor": "popmanager.cpp",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x43839aa",
+          "function_end_rva": "0x43839c8",
+          "function_start_rva": "0x43839a0",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x458f4aa",
+          "unwind_rva": "0x4e8c6fc"
+        }
+      ],
+      "occurrences": [
+        "0x458f23a",
+        "0x458f4aa"
+      ]
+    },
+    {
+      "anchor": "market.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x454594a",
+        "0x45959a8"
+      ]
+    },
+    {
+      "anchor": "world_market.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x45959a2"
+      ]
+    },
+    {
+      "anchor": "modifier.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x453a512",
+        "0x4826d13"
+      ]
+    },
+    {
+      "anchor": "ai_manager.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x459de87"
+      ]
+    },
+    {
+      "anchor": "country_ai.cpp",
+      "candidate_references": [],
+      "occurrences": [
+        "0x4599bf7"
+      ]
+    },
+    {
+      "anchor": "scripted_tests",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x633b3c",
+          "function_end_rva": "0x633e0d",
+          "function_start_rva": "0x633970",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x44bd9c0",
+          "unwind_rva": "0x4e8d230"
+        },
+        {
+          "displacement_rva": "0x1183284",
+          "function_end_rva": "0x11834dc",
+          "function_start_rva": "0x1183240",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x44bd9c0",
+          "unwind_rva": "0x4f09b5c"
+        }
+      ],
+      "occurrences": [
+        "0x44bd9c0",
+        "0x44d6986",
+        "0x4574590"
+      ]
+    },
+    {
+      "anchor": "Game Date",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x346462f",
+          "function_end_rva": "0x3464858",
+          "function_start_rva": "0x3464410",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x488b448",
+          "unwind_rva": "0x50cdee4"
+        }
+      ],
+      "occurrences": [
+        "0x488b448"
+      ]
+    },
+    {
+      "anchor": "gametimer_%04d%02d%02d_%02d%02d%02d",
+      "candidate_references": [
+        {
+          "displacement_rva": "0x34644a9",
+          "function_end_rva": "0x3464858",
+          "function_start_rva": "0x3464410",
+          "status": "candidate-until-disassembly-validated",
+          "target_rva": "0x488b468",
+          "unwind_rva": "0x50cdee4"
+        }
+      ],
+      "occurrences": [
+        "0x488b468"
+      ]
+    }
+  ],
+  "logical_path": "D:\\SteamLibrary\\steamapps\\common\\Victoria 3\\binaries\\victoria3.exe",
+  "runtime_function_count": 252752,
+  "text_rva": "0x1000",
+  "warning": "Raw disp32 matches are candidates only. Validate each surrounding instruction in a disassembler before treating it as a code xref."
+}

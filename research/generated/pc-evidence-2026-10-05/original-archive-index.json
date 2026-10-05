@@ -1,0 +1,1660 @@
+[
+  {
+    "source": "E:\\benchmark_result.zip",
+    "bytes": 363024,
+    "sha256": "9da73a9b6b3d136b8329daefd7858a9d0ac05c65121ff35c5e434d2d9f4bb01a",
+    "members": [
+      {
+        "path": "benchmark_result/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "benchmark_result/20261005_taskthread_1.CSV",
+        "bytes": 74948,
+        "compressed_bytes": 14774,
+        "crc32": "8cc63689"
+      },
+      {
+        "path": "benchmark_result/20261005_taskthread_12.CSV",
+        "bytes": 56162,
+        "compressed_bytes": 8217,
+        "crc32": "ea327f3d"
+      },
+      {
+        "path": "benchmark_result/20261005_taskthread_16.CSV",
+        "bytes": 68754,
+        "compressed_bytes": 13857,
+        "crc32": "6eff5e66"
+      },
+      {
+        "path": "benchmark_result/20261005_taskthread_2.CSV",
+        "bytes": 62394,
+        "compressed_bytes": 12057,
+        "crc32": "d0195543"
+      },
+      {
+        "path": "benchmark_result/20261005_taskthread_4.CSV",
+        "bytes": 62297,
+        "compressed_bytes": 11864,
+        "crc32": "6355ebae"
+      },
+      {
+        "path": "benchmark_result/20261005_taskthread_6.CSV",
+        "bytes": 77120,
+        "compressed_bytes": 16328,
+        "crc32": "076694f8"
+      },
+      {
+        "path": "benchmark_result/20261005_taskthread_8.CSV",
+        "bytes": 137751,
+        "compressed_bytes": 32417,
+        "crc32": "4bc4c496"
+      },
+      {
+        "path": "benchmark_result/ticktask_timings_taskthread_1.csv",
+        "bytes": 346414,
+        "compressed_bytes": 41108,
+        "crc32": "c0d82e6e"
+      },
+      {
+        "path": "benchmark_result/ticktask_timings_taskthread_12.csv",
+        "bytes": 297764,
+        "compressed_bytes": 34879,
+        "crc32": "76c9908b"
+      },
+      {
+        "path": "benchmark_result/ticktask_timings_taskthread_16.csv",
+        "bytes": 305872,
+        "compressed_bytes": 37076,
+        "crc32": "024be8d0"
+      },
+      {
+        "path": "benchmark_result/ticktask_timings_taskthread_2.csv",
+        "bytes": 290544,
+        "compressed_bytes": 35332,
+        "crc32": "025f0761"
+      },
+      {
+        "path": "benchmark_result/ticktask_timings_taskthread_4.csv",
+        "bytes": 303232,
+        "compressed_bytes": 35796,
+        "crc32": "687a5c84"
+      },
+      {
+        "path": "benchmark_result/ticktask_timings_taskthread_6.csv",
+        "bytes": 304737,
+        "compressed_bytes": 35878,
+        "crc32": "3de22731"
+      },
+      {
+        "path": "benchmark_result/ticktask_timings_taskthread_8.csv",
+        "bytes": 247363,
+        "compressed_bytes": 29885,
+        "crc32": "f46b798a"
+      }
+    ],
+    "stored_path": "input-data/pc-evidence-2026-10-05/original-benchmark_result.zip"
+  },
+  {
+    "source": "E:\\bench2.zip",
+    "bytes": 44033939,
+    "sha256": "fe00d97065bfdcffc22e036be914d98982c901da089fa116f609caaf5cf3fe9a",
+    "members": [
+      {
+        "path": "bench2/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "bench2/12.CSV",
+        "bytes": 58249,
+        "compressed_bytes": 8832,
+        "crc32": "14521864"
+      },
+      {
+        "path": "bench2/16.CSV",
+        "bytes": 64636,
+        "compressed_bytes": 12579,
+        "crc32": "fcf3ac6d"
+      },
+      {
+        "path": "bench2/8.CSV",
+        "bytes": 56083,
+        "compressed_bytes": 8327,
+        "crc32": "8917b46d"
+      },
+      {
+        "path": "bench2/ticktask_timings_12.csv",
+        "bytes": 303208,
+        "compressed_bytes": 35703,
+        "crc32": "d033849a"
+      },
+      {
+        "path": "bench2/ticktask_timings_16.csv",
+        "bytes": 303197,
+        "compressed_bytes": 35752,
+        "crc32": "6276a02f"
+      },
+      {
+        "path": "bench2/ticktask_timings_8.csv",
+        "bytes": 304733,
+        "compressed_bytes": 35869,
+        "crc32": "fc8a39c9"
+      },
+      {
+        "path": "bench2/アメリカ合衆国_1911_03_01.v3",
+        "bytes": 266677017,
+        "compressed_bytes": 43895335,
+        "crc32": "23a2e20f"
+      }
+    ],
+    "stored_path": null
+  },
+  {
+    "source": "E:\\bench3.zip",
+    "bytes": 318012,
+    "sha256": "5885d92f21c90994f4966676004f0b31fb7982fd02914572e76e50d9b2e913c9",
+    "members": [
+      {
+        "path": "bench3/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "bench3/ticktask_timings_12_3month.csv",
+        "bytes": 909754,
+        "compressed_bytes": 105754,
+        "crc32": "dc4196da"
+      },
+      {
+        "path": "bench3/ticktask_timings_16_3month.csv",
+        "bytes": 909756,
+        "compressed_bytes": 105643,
+        "crc32": "dd1d46df"
+      },
+      {
+        "path": "bench3/ticktask_timings_8_3month.csv",
+        "bytes": 909782,
+        "compressed_bytes": 105783,
+        "crc32": "5529b7f6"
+      }
+    ],
+    "stored_path": "input-data/pc-evidence-2026-10-05/original-bench3.zip"
+  },
+  {
+    "source": "E:\\logs2.zip",
+    "bytes": 205267,
+    "sha256": "48556e1a4b519fbcdd46079e34f11890307937f601cc52f18c6b7091939c096a",
+    "members": [
+      {
+        "path": "logs2/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/ai.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/checksum.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/code_revisions.1.log",
+        "bytes": 1135,
+        "compressed_bytes": 322,
+        "crc32": "52e8e6ce"
+      },
+      {
+        "path": "logs2/code_revisions.2.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "f8db6eba"
+      },
+      {
+        "path": "logs2/code_revisions.3.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "b6bf86d2"
+      },
+      {
+        "path": "logs2/code_revisions.4.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "cef3819c"
+      },
+      {
+        "path": "logs2/code_revisions.5.log",
+        "bytes": 1135,
+        "compressed_bytes": 322,
+        "crc32": "dff5596f"
+      },
+      {
+        "path": "logs2/code_revisions.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "c1750c0f"
+      },
+      {
+        "path": "logs2/custom_automated_stats.1.log",
+        "bytes": 582,
+        "compressed_bytes": 208,
+        "crc32": "9740b1f9"
+      },
+      {
+        "path": "logs2/custom_automated_stats.2.log",
+        "bytes": 483,
+        "compressed_bytes": 192,
+        "crc32": "5d18c651"
+      },
+      {
+        "path": "logs2/custom_automated_stats.3.log",
+        "bytes": 93,
+        "compressed_bytes": 95,
+        "crc32": "a7a9fbca"
+      },
+      {
+        "path": "logs2/custom_automated_stats.4.log",
+        "bytes": 188,
+        "compressed_bytes": 122,
+        "crc32": "c661c924"
+      },
+      {
+        "path": "logs2/custom_automated_stats.5.log",
+        "bytes": 869,
+        "compressed_bytes": 220,
+        "crc32": "1424e476"
+      },
+      {
+        "path": "logs2/custom_automated_stats.log",
+        "bytes": 2025,
+        "compressed_bytes": 334,
+        "crc32": "543c60f7"
+      },
+      {
+        "path": "logs2/database_conflicts.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/debug.1.log",
+        "bytes": 523607,
+        "compressed_bytes": 4058,
+        "crc32": "53705481"
+      },
+      {
+        "path": "logs2/debug.2.log",
+        "bytes": 522652,
+        "compressed_bytes": 4534,
+        "crc32": "366b1253"
+      },
+      {
+        "path": "logs2/debug.3.log",
+        "bytes": 524063,
+        "compressed_bytes": 4646,
+        "crc32": "5fa88ede"
+      },
+      {
+        "path": "logs2/debug.4.log",
+        "bytes": 524243,
+        "compressed_bytes": 4129,
+        "crc32": "2d92623c"
+      },
+      {
+        "path": "logs2/debug.5.log",
+        "bytes": 524238,
+        "compressed_bytes": 6098,
+        "crc32": "6da2f99d"
+      },
+      {
+        "path": "logs2/debug.log",
+        "bytes": 77795,
+        "compressed_bytes": 1742,
+        "crc32": "2090f0cc"
+      },
+      {
+        "path": "logs2/dedicated_server.1.log",
+        "bytes": 12801,
+        "compressed_bytes": 727,
+        "crc32": "64590019"
+      },
+      {
+        "path": "logs2/dedicated_server.2.log",
+        "bytes": 511429,
+        "compressed_bytes": 21119,
+        "crc32": "0e2bbc29"
+      },
+      {
+        "path": "logs2/dedicated_server.3.log",
+        "bytes": 524266,
+        "compressed_bytes": 24022,
+        "crc32": "fd9dc3db"
+      },
+      {
+        "path": "logs2/dedicated_server.4.log",
+        "bytes": 524243,
+        "compressed_bytes": 22873,
+        "crc32": "f74f5d42"
+      },
+      {
+        "path": "logs2/dedicated_server.5.log",
+        "bytes": 524209,
+        "compressed_bytes": 22548,
+        "crc32": "0c79843f"
+      },
+      {
+        "path": "logs2/dedicated_server.log",
+        "bytes": 231114,
+        "compressed_bytes": 10020,
+        "crc32": "6fab7bb4"
+      },
+      {
+        "path": "logs2/ecs.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/error.1.log",
+        "bytes": 522916,
+        "compressed_bytes": 4080,
+        "crc32": "cf8aee18"
+      },
+      {
+        "path": "logs2/error.2.log",
+        "bytes": 522678,
+        "compressed_bytes": 4837,
+        "crc32": "11dfade8"
+      },
+      {
+        "path": "logs2/error.3.log",
+        "bytes": 524210,
+        "compressed_bytes": 4089,
+        "crc32": "d5f34c07"
+      },
+      {
+        "path": "logs2/error.4.log",
+        "bytes": 522492,
+        "compressed_bytes": 4515,
+        "crc32": "6cca68c9"
+      },
+      {
+        "path": "logs2/error.5.log",
+        "bytes": 522640,
+        "compressed_bytes": 5331,
+        "crc32": "eece6301"
+      },
+      {
+        "path": "logs2/error.log",
+        "bytes": 383835,
+        "compressed_bytes": 3884,
+        "crc32": "3ce183db"
+      },
+      {
+        "path": "logs2/game.1.log",
+        "bytes": 61301,
+        "compressed_bytes": 5957,
+        "crc32": "49d861af"
+      },
+      {
+        "path": "logs2/game.2.log",
+        "bytes": 462897,
+        "compressed_bytes": 6244,
+        "crc32": "1fcd396e"
+      },
+      {
+        "path": "logs2/game.3.log",
+        "bytes": 524072,
+        "compressed_bytes": 6071,
+        "crc32": "fe55ac92"
+      },
+      {
+        "path": "logs2/game.4.log",
+        "bytes": 524149,
+        "compressed_bytes": 5060,
+        "crc32": "19719705"
+      },
+      {
+        "path": "logs2/game.5.log",
+        "bytes": 524225,
+        "compressed_bytes": 4667,
+        "crc32": "d682fb59"
+      },
+      {
+        "path": "logs2/game.log",
+        "bytes": 56713,
+        "compressed_bytes": 2849,
+        "crc32": "0998ed84"
+      },
+      {
+        "path": "logs2/graphics.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/gui.log",
+        "bytes": 5179,
+        "compressed_bytes": 635,
+        "crc32": "0b9c1daa"
+      },
+      {
+        "path": "logs2/memory.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/message.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/multiplayer.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/pdxsdk.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/setup.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/system.1.log",
+        "bytes": 1108,
+        "compressed_bytes": 459,
+        "crc32": "d402b15a"
+      },
+      {
+        "path": "logs2/system.2.log",
+        "bytes": 1108,
+        "compressed_bytes": 458,
+        "crc32": "048c2d5d"
+      },
+      {
+        "path": "logs2/system.3.log",
+        "bytes": 1108,
+        "compressed_bytes": 459,
+        "crc32": "d237a5e3"
+      },
+      {
+        "path": "logs2/system.4.log",
+        "bytes": 1108,
+        "compressed_bytes": 459,
+        "crc32": "7bfcc8af"
+      },
+      {
+        "path": "logs2/system.5.log",
+        "bytes": 820,
+        "compressed_bytes": 345,
+        "crc32": "d06762b0"
+      },
+      {
+        "path": "logs2/system.log",
+        "bytes": 1108,
+        "compressed_bytes": 458,
+        "crc32": "987d0a81"
+      },
+      {
+        "path": "logs2/ui_animation_stats.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs2/warning.1.log",
+        "bytes": 5212,
+        "compressed_bytes": 539,
+        "crc32": "3bc79e9c"
+      },
+      {
+        "path": "logs2/warning.2.log",
+        "bytes": 5212,
+        "compressed_bytes": 539,
+        "crc32": "f2c18d62"
+      },
+      {
+        "path": "logs2/warning.3.log",
+        "bytes": 5212,
+        "compressed_bytes": 540,
+        "crc32": "9aecd3b5"
+      },
+      {
+        "path": "logs2/warning.4.log",
+        "bytes": 5212,
+        "compressed_bytes": 539,
+        "crc32": "bd209d84"
+      },
+      {
+        "path": "logs2/warning.5.log",
+        "bytes": 5212,
+        "compressed_bytes": 535,
+        "crc32": "a70598d1"
+      },
+      {
+        "path": "logs2/warning.log",
+        "bytes": 5212,
+        "compressed_bytes": 537,
+        "crc32": "0300b52f"
+      }
+    ],
+    "stored_path": "input-data/pc-evidence-2026-10-05/original-logs2.zip"
+  },
+  {
+    "source": "E:\\vic3_logs.zip",
+    "bytes": 194220,
+    "sha256": "e1e90de4ffba037984a3146cc36156cb81559ffece147be67171b1b1a40909ff",
+    "members": [
+      {
+        "path": "logs/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/ai.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/checksum.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/code_revisions.1.log",
+        "bytes": 1135,
+        "compressed_bytes": 322,
+        "crc32": "52e8e6ce"
+      },
+      {
+        "path": "logs/code_revisions.2.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "f8db6eba"
+      },
+      {
+        "path": "logs/code_revisions.3.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "b6bf86d2"
+      },
+      {
+        "path": "logs/code_revisions.4.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "cef3819c"
+      },
+      {
+        "path": "logs/code_revisions.5.log",
+        "bytes": 1135,
+        "compressed_bytes": 322,
+        "crc32": "dff5596f"
+      },
+      {
+        "path": "logs/code_revisions.log",
+        "bytes": 1135,
+        "compressed_bytes": 321,
+        "crc32": "c1750c0f"
+      },
+      {
+        "path": "logs/custom_automated_stats.1.log",
+        "bytes": 582,
+        "compressed_bytes": 208,
+        "crc32": "9740b1f9"
+      },
+      {
+        "path": "logs/custom_automated_stats.2.log",
+        "bytes": 483,
+        "compressed_bytes": 192,
+        "crc32": "5d18c651"
+      },
+      {
+        "path": "logs/custom_automated_stats.3.log",
+        "bytes": 93,
+        "compressed_bytes": 95,
+        "crc32": "a7a9fbca"
+      },
+      {
+        "path": "logs/custom_automated_stats.4.log",
+        "bytes": 188,
+        "compressed_bytes": 122,
+        "crc32": "c661c924"
+      },
+      {
+        "path": "logs/custom_automated_stats.5.log",
+        "bytes": 869,
+        "compressed_bytes": 220,
+        "crc32": "1424e476"
+      },
+      {
+        "path": "logs/custom_automated_stats.log",
+        "bytes": 765,
+        "compressed_bytes": 196,
+        "crc32": "9248a524"
+      },
+      {
+        "path": "logs/database_conflicts.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/debug.1.log",
+        "bytes": 523161,
+        "compressed_bytes": 4030,
+        "crc32": "5435d85a"
+      },
+      {
+        "path": "logs/debug.2.log",
+        "bytes": 524207,
+        "compressed_bytes": 4544,
+        "crc32": "27223e54"
+      },
+      {
+        "path": "logs/debug.3.log",
+        "bytes": 521668,
+        "compressed_bytes": 4683,
+        "crc32": "0a270215"
+      },
+      {
+        "path": "logs/debug.4.log",
+        "bytes": 524278,
+        "compressed_bytes": 4131,
+        "crc32": "265ac955"
+      },
+      {
+        "path": "logs/debug.5.log",
+        "bytes": 524284,
+        "compressed_bytes": 4657,
+        "crc32": "1073ec64"
+      },
+      {
+        "path": "logs/debug.log",
+        "bytes": 18374,
+        "compressed_bytes": 1568,
+        "crc32": "2a1d97a1"
+      },
+      {
+        "path": "logs/dedicated_server.1.log",
+        "bytes": 12801,
+        "compressed_bytes": 727,
+        "crc32": "64590019"
+      },
+      {
+        "path": "logs/dedicated_server.2.log",
+        "bytes": 511429,
+        "compressed_bytes": 21119,
+        "crc32": "0e2bbc29"
+      },
+      {
+        "path": "logs/dedicated_server.3.log",
+        "bytes": 524266,
+        "compressed_bytes": 24022,
+        "crc32": "fd9dc3db"
+      },
+      {
+        "path": "logs/dedicated_server.4.log",
+        "bytes": 524243,
+        "compressed_bytes": 22873,
+        "crc32": "f74f5d42"
+      },
+      {
+        "path": "logs/dedicated_server.5.log",
+        "bytes": 524209,
+        "compressed_bytes": 22548,
+        "crc32": "0c79843f"
+      },
+      {
+        "path": "logs/dedicated_server.log",
+        "bytes": 49518,
+        "compressed_bytes": 2331,
+        "crc32": "551d784c"
+      },
+      {
+        "path": "logs/ecs.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/error.1.log",
+        "bytes": 523301,
+        "compressed_bytes": 4121,
+        "crc32": "01024295"
+      },
+      {
+        "path": "logs/error.2.log",
+        "bytes": 522438,
+        "compressed_bytes": 5031,
+        "crc32": "f41774b2"
+      },
+      {
+        "path": "logs/error.3.log",
+        "bytes": 522755,
+        "compressed_bytes": 4050,
+        "crc32": "8eb9e8be"
+      },
+      {
+        "path": "logs/error.4.log",
+        "bytes": 523504,
+        "compressed_bytes": 4537,
+        "crc32": "e19cefdd"
+      },
+      {
+        "path": "logs/error.5.log",
+        "bytes": 521678,
+        "compressed_bytes": 4988,
+        "crc32": "794d1b5d"
+      },
+      {
+        "path": "logs/error.log",
+        "bytes": 300044,
+        "compressed_bytes": 3319,
+        "crc32": "dff4e7ed"
+      },
+      {
+        "path": "logs/game.1.log",
+        "bytes": 61301,
+        "compressed_bytes": 5957,
+        "crc32": "49d861af"
+      },
+      {
+        "path": "logs/game.2.log",
+        "bytes": 462897,
+        "compressed_bytes": 6244,
+        "crc32": "1fcd396e"
+      },
+      {
+        "path": "logs/game.3.log",
+        "bytes": 524072,
+        "compressed_bytes": 6071,
+        "crc32": "fe55ac92"
+      },
+      {
+        "path": "logs/game.4.log",
+        "bytes": 524149,
+        "compressed_bytes": 5060,
+        "crc32": "19719705"
+      },
+      {
+        "path": "logs/game.5.log",
+        "bytes": 524225,
+        "compressed_bytes": 4667,
+        "crc32": "d682fb59"
+      },
+      {
+        "path": "logs/game.log",
+        "bytes": 21555,
+        "compressed_bytes": 2035,
+        "crc32": "a7f7918a"
+      },
+      {
+        "path": "logs/graphics.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/gui.log",
+        "bytes": 5179,
+        "compressed_bytes": 635,
+        "crc32": "0b9c1daa"
+      },
+      {
+        "path": "logs/memory.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/message.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/multiplayer.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/pdxsdk.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/setup.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/system.1.log",
+        "bytes": 1108,
+        "compressed_bytes": 459,
+        "crc32": "d402b15a"
+      },
+      {
+        "path": "logs/system.2.log",
+        "bytes": 1108,
+        "compressed_bytes": 458,
+        "crc32": "048c2d5d"
+      },
+      {
+        "path": "logs/system.3.log",
+        "bytes": 1108,
+        "compressed_bytes": 459,
+        "crc32": "d237a5e3"
+      },
+      {
+        "path": "logs/system.4.log",
+        "bytes": 1108,
+        "compressed_bytes": 459,
+        "crc32": "7bfcc8af"
+      },
+      {
+        "path": "logs/system.5.log",
+        "bytes": 820,
+        "compressed_bytes": 345,
+        "crc32": "d06762b0"
+      },
+      {
+        "path": "logs/system.log",
+        "bytes": 1108,
+        "compressed_bytes": 458,
+        "crc32": "987d0a81"
+      },
+      {
+        "path": "logs/ui_animation_stats.log",
+        "bytes": 0,
+        "compressed_bytes": 2,
+        "crc32": "00000000"
+      },
+      {
+        "path": "logs/warning.1.log",
+        "bytes": 5212,
+        "compressed_bytes": 539,
+        "crc32": "3bc79e9c"
+      },
+      {
+        "path": "logs/warning.2.log",
+        "bytes": 5212,
+        "compressed_bytes": 539,
+        "crc32": "f2c18d62"
+      },
+      {
+        "path": "logs/warning.3.log",
+        "bytes": 5212,
+        "compressed_bytes": 540,
+        "crc32": "9aecd3b5"
+      },
+      {
+        "path": "logs/warning.4.log",
+        "bytes": 5212,
+        "compressed_bytes": 539,
+        "crc32": "bd209d84"
+      },
+      {
+        "path": "logs/warning.5.log",
+        "bytes": 5212,
+        "compressed_bytes": 535,
+        "crc32": "a70598d1"
+      },
+      {
+        "path": "logs/warning.log",
+        "bytes": 5212,
+        "compressed_bytes": 537,
+        "crc32": "0300b52f"
+      }
+    ],
+    "stored_path": "input-data/pc-evidence-2026-10-05/original-vic3_logs.zip"
+  },
+  {
+    "source": "D:\\vic3_gui.zip",
+    "bytes": 175847,
+    "sha256": "1c11c2ff99f2158f1c5039fafa6a96083562055d8f07297ccbda46abc3286969",
+    "members": [
+      {
+        "path": "vic3_gui/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "vic3_gui/building_browser_panel.gui",
+        "bytes": 120209,
+        "compressed_bytes": 13390,
+        "crc32": "26972c72"
+      },
+      {
+        "path": "vic3_gui/building_details_panel.gui",
+        "bytes": 126107,
+        "compressed_bytes": 19612,
+        "crc32": "593185c3"
+      },
+      {
+        "path": "vic3_gui/construction_panel.gui",
+        "bytes": 37267,
+        "compressed_bytes": 6018,
+        "crc32": "7717db82"
+      },
+      {
+        "path": "vic3_gui/construction_queue.gui",
+        "bytes": 19503,
+        "compressed_bytes": 3815,
+        "crc32": "7fefd035"
+      },
+      {
+        "path": "vic3_gui/defines/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "vic3_gui/defines/00_ai.txt",
+        "bytes": 148865,
+        "compressed_bytes": 37415,
+        "crc32": "1992688e"
+      },
+      {
+        "path": "vic3_gui/defines/00_audio.txt",
+        "bytes": 1544,
+        "compressed_bytes": 504,
+        "crc32": "fcf095ea"
+      },
+      {
+        "path": "vic3_gui/defines/00_defines.txt",
+        "bytes": 224860,
+        "compressed_bytes": 63662,
+        "crc32": "e533fb4c"
+      },
+      {
+        "path": "vic3_gui/defines/00_graphics.txt",
+        "bytes": 46712,
+        "compressed_bytes": 14620,
+        "crc32": "2bdda0f2"
+      },
+      {
+        "path": "vic3_gui/defines/00_interfaces.txt",
+        "bytes": 16947,
+        "compressed_bytes": 6222,
+        "crc32": "840ee990"
+      },
+      {
+        "path": "vic3_gui/defines/00_shaders.txt",
+        "bytes": 2049,
+        "compressed_bytes": 994,
+        "crc32": "76c705e2"
+      },
+      {
+        "path": "vic3_gui/defines/jomini/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "vic3_gui/defines/jomini/00_tooltips.txt",
+        "bytes": 768,
+        "compressed_bytes": 443,
+        "crc32": "92385791"
+      },
+      {
+        "path": "vic3_gui/defines/jomini/fog_of_war.txt",
+        "bytes": 1903,
+        "compressed_bytes": 1024,
+        "crc32": "e943a317"
+      },
+      {
+        "path": "vic3_gui/defines/jomini/rivers.txt",
+        "bytes": 366,
+        "compressed_bytes": 227,
+        "crc32": "0d8f0db8"
+      },
+      {
+        "path": "vic3_gui/states_panel_buildings.gui",
+        "bytes": 23866,
+        "compressed_bytes": 4389,
+        "crc32": "aa8a4628"
+      }
+    ],
+    "stored_path": "input-data/pc-evidence-2026-10-05/original-vic3_gui.zip"
+  },
+  {
+    "source": "D:\\downloads\\Victoria 3 Performance-32-1-00-0-1745087611.zip",
+    "bytes": 374043,
+    "sha256": "04057beb0fd57db47092bbde0cc1d0b2c17f86f2a56668db05d311063b4a00a9",
+    "members": [
+      {
+        "path": "Victoria 3 Performance/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/.metadata/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/.metadata/metadata.json",
+        "bytes": 6808,
+        "compressed_bytes": 2847,
+        "crc32": "d83a7780"
+      },
+      {
+        "path": "Victoria 3 Performance/common/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/ai_strategies/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/ai_strategies/00_ai_strategy_overhaul.txt",
+        "bytes": 7059,
+        "compressed_bytes": 2895,
+        "crc32": "b3d807b3"
+      },
+      {
+        "path": "Victoria 3 Performance/common/ai_strategies/disable_strategies.txt",
+        "bytes": 6905,
+        "compressed_bytes": 2837,
+        "crc32": "2cc55ddf"
+      },
+      {
+        "path": "Victoria 3 Performance/common/ai_strategy_plans/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/ai_strategy_plans/slow_down_ai_plans.txt",
+        "bytes": 7104,
+        "compressed_bytes": 2899,
+        "crc32": "f5c47ebd"
+      },
+      {
+        "path": "Victoria 3 Performance/common/decisions/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/decisions/00_country_decisions.txt",
+        "bytes": 6674,
+        "compressed_bytes": 2788,
+        "crc32": "f56d5ca8"
+      },
+      {
+        "path": "Victoria 3 Performance/common/decisions/disable_decisions.txt",
+        "bytes": 7655,
+        "compressed_bytes": 2957,
+        "crc32": "6ef9a327"
+      },
+      {
+        "path": "Victoria 3 Performance/common/defines/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/defines/00_optimization_defines.txt",
+        "bytes": 7564,
+        "compressed_bytes": 3176,
+        "crc32": "089e7cfc"
+      },
+      {
+        "path": "Victoria 3 Performance/common/defines/00_performance_optimizations.txt",
+        "bytes": 7182,
+        "compressed_bytes": 2991,
+        "crc32": "fac6296c"
+      },
+      {
+        "path": "Victoria 3 Performance/common/defines/ai/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/defines/ai/00_ai_law_logic.txt",
+        "bytes": 6726,
+        "compressed_bytes": 2837,
+        "crc32": "e3c76a68"
+      },
+      {
+        "path": "Victoria 3 Performance/common/events/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/events/disasters.txt",
+        "bytes": 6829,
+        "compressed_bytes": 2868,
+        "crc32": "a4ca4f39"
+      },
+      {
+        "path": "Victoria 3 Performance/common/graphics_settings/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/graphics_settings/override_settings.txt",
+        "bytes": 6769,
+        "compressed_bytes": 2837,
+        "crc32": "b2ab805b"
+      },
+      {
+        "path": "Victoria 3 Performance/common/journal_entries/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/journal_entries/00_journal_entries.txt",
+        "bytes": 7346,
+        "compressed_bytes": 2866,
+        "crc32": "5c97b1a5"
+      },
+      {
+        "path": "Victoria 3 Performance/common/journal_entries/disable_flavor_entries.txt",
+        "bytes": 7160,
+        "compressed_bytes": 2881,
+        "crc32": "e9ba6764"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_icon_instance_types/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_icon_instance_types/disable_construction_instances.txt",
+        "bytes": 6996,
+        "compressed_bytes": 2861,
+        "crc32": "ee58a33a"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_icon_instance_types/remove_construction_instances.txt",
+        "bytes": 6996,
+        "compressed_bytes": 2861,
+        "crc32": "ee58a33a"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_icon_types/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_icon_types/00_construction_icon_types.txt",
+        "bytes": 6746,
+        "compressed_bytes": 2825,
+        "crc32": "32cc9100"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_icon_types/disable_construction_icons.txt",
+        "bytes": 6746,
+        "compressed_bytes": 2825,
+        "crc32": "32cc9100"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_modes/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_modes/00_trade_map_mode.txt",
+        "bytes": 6880,
+        "compressed_bytes": 2868,
+        "crc32": "0d0e6867"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_object_data/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/map_object_data/disable_construction_visuals.map_object_data",
+        "bytes": 7303,
+        "compressed_bytes": 2894,
+        "crc32": "6af48b3f"
+      },
+      {
+        "path": "Victoria 3 Performance/common/on_actions/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/on_actions/disable_flavor_on_actions.txt",
+        "bytes": 6760,
+        "compressed_bytes": 2840,
+        "crc32": "15d4d3d0"
+      },
+      {
+        "path": "Victoria 3 Performance/common/scripted_effects/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/scripted_effects/00_optimized_effects.txt",
+        "bytes": 6775,
+        "compressed_bytes": 2831,
+        "crc32": "a0620132"
+      },
+      {
+        "path": "Victoria 3 Performance/common/scripted_triggers/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/common/scripted_triggers/00_optimized_triggers.txt",
+        "bytes": 6840,
+        "compressed_bytes": 2850,
+        "crc32": "c4f808cd"
+      },
+      {
+        "path": "Victoria 3 Performance/common/scripted_triggers/disable_unused_triggers.txt",
+        "bytes": 7020,
+        "compressed_bytes": 2867,
+        "crc32": "3c299469"
+      },
+      {
+        "path": "Victoria 3 Performance/events/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/events/ai_flavor_cleanup.txt",
+        "bytes": 6908,
+        "compressed_bytes": 2870,
+        "crc32": "0a97308c"
+      },
+      {
+        "path": "Victoria 3 Performance/events/z_opt_events.txt",
+        "bytes": 6969,
+        "compressed_bytes": 2879,
+        "crc32": "82ac4d91"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/FX/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/FX/lava.shader",
+        "bytes": 6726,
+        "compressed_bytes": 2823,
+        "crc32": "773a06f3"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/FX/null_clouds.asset",
+        "bytes": 6739,
+        "compressed_bytes": 2825,
+        "crc32": "e86894d2"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/interface/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/interface/map_modes/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/interface/map_modes/map_mode_trade.dds",
+        "bytes": 8722,
+        "compressed_bytes": 2883,
+        "crc32": "68bb8dc1"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/map/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/map/hipping_lanes/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/map/map_objects/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/map/map_objects/caravan.asset",
+        "bytes": 6733,
+        "compressed_bytes": 2821,
+        "crc32": "4ce1bc5b"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/map/map_objects/dock_worker.asset",
+        "bytes": 6737,
+        "compressed_bytes": 2824,
+        "crc32": "815b0386"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/map/map_objects/harbor_ship.asset",
+        "bytes": 6737,
+        "compressed_bytes": 2824,
+        "crc32": "2ac8f8f3"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/map/map_objects/trade_cart.asset",
+        "bytes": 6736,
+        "compressed_bytes": 2821,
+        "crc32": "6869db1a"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/mapobject/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/mapobject/map_objects_birds.asset",
+        "bytes": 7179,
+        "compressed_bytes": 2891,
+        "crc32": "a0b3c9db"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/mapobject/map_objects_buildings.asset",
+        "bytes": 7196,
+        "compressed_bytes": 2893,
+        "crc32": "1c43799d"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/mapobject/map_objects_optimization.asset",
+        "bytes": 8563,
+        "compressed_bytes": 3105,
+        "crc32": "d9bd69c4"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/building_smoke.asset",
+        "bytes": 6820,
+        "compressed_bytes": 2854,
+        "crc32": "e5016466"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/clouds.asset",
+        "bytes": 6794,
+        "compressed_bytes": 2843,
+        "crc32": "58fde0fd"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/lava_fx.asset",
+        "bytes": 6813,
+        "compressed_bytes": 2851,
+        "crc32": "4d5ec006"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/lightning.particle",
+        "bytes": 6788,
+        "compressed_bytes": 2839,
+        "crc32": "8b90d0fd"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/rain.asset",
+        "bytes": 6810,
+        "compressed_bytes": 2847,
+        "crc32": "0db4b36c"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/rain.particle",
+        "bytes": 6834,
+        "compressed_bytes": 2870,
+        "crc32": "4c9e0939"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/snow.particle",
+        "bytes": 6834,
+        "compressed_bytes": 2870,
+        "crc32": "4c9e0939"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/storm_clouds.particle",
+        "bytes": 6791,
+        "compressed_bytes": 2842,
+        "crc32": "ad79d590"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/particles/weather_fog.particle",
+        "bytes": 6790,
+        "compressed_bytes": 2841,
+        "crc32": "244ddadb"
+      },
+      {
+        "path": "Victoria 3 Performance/gfx/sky/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gui/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/gui/map_modes.gui",
+        "bytes": 6897,
+        "compressed_bytes": 2876,
+        "crc32": "671d5580"
+      },
+      {
+        "path": "Victoria 3 Performance/journal_entries/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/journal_entries/z_trimmed_journal_entries.txt",
+        "bytes": 6839,
+        "compressed_bytes": 2861,
+        "crc32": "415b97f6"
+      },
+      {
+        "path": "Victoria 3 Performance/localization/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/localization/english/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/localization/english/mod_map_modes_l_english.yml",
+        "bytes": 6722,
+        "compressed_bytes": 2814,
+        "crc32": "eb0632bc"
+      },
+      {
+        "path": "Victoria 3 Performance/map/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/disable_construction_visuals.map_object_data",
+        "bytes": 7303,
+        "compressed_bytes": 2894,
+        "crc32": "6af48b3f"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/disable_visual_noise.map_object_data",
+        "bytes": 7730,
+        "compressed_bytes": 2925,
+        "crc32": "f63dc061"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/map_objects_birds.asset",
+        "bytes": 6867,
+        "compressed_bytes": 2886,
+        "crc32": "e63eeb3e"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/remove_birds.map_object_data",
+        "bytes": 7130,
+        "compressed_bytes": 2868,
+        "crc32": "e21d69b5"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/remove_ships.map_object_data",
+        "bytes": 7364,
+        "compressed_bytes": 2884,
+        "crc32": "b21d9366"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/shipping_lanes.map_object_data",
+        "bytes": 6856,
+        "compressed_bytes": 2866,
+        "crc32": "d4ab3e58"
+      },
+      {
+        "path": "Victoria 3 Performance/map/map_object_data/trade_routes.map_object_data",
+        "bytes": 7041,
+        "compressed_bytes": 2861,
+        "crc32": "8ca250dc"
+      },
+      {
+        "path": "Victoria 3 Performance/map/no_clouds_lighting.asset",
+        "bytes": 6798,
+        "compressed_bytes": 2856,
+        "crc32": "5d8ccf11"
+      },
+      {
+        "path": "Victoria 3 Performance/map/skybox.asset",
+        "bytes": 6850,
+        "compressed_bytes": 2864,
+        "crc32": "77b2adea"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/climate/",
+        "bytes": 0,
+        "compressed_bytes": 0,
+        "crc32": "00000000"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/climate/arid.txt",
+        "bytes": 6779,
+        "compressed_bytes": 2836,
+        "crc32": "4651c046"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/climate/continental.txt",
+        "bytes": 6786,
+        "compressed_bytes": 2840,
+        "crc32": "1a326f12"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/climate/mediterranean.txt",
+        "bytes": 6788,
+        "compressed_bytes": 2842,
+        "crc32": "c8155e1c"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/climate/polar.txt",
+        "bytes": 6780,
+        "compressed_bytes": 2837,
+        "crc32": "2e101a0d"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/climate/temperate.txt",
+        "bytes": 6784,
+        "compressed_bytes": 2839,
+        "crc32": "36cc7415"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/climate/tropical.txt",
+        "bytes": 6783,
+        "compressed_bytes": 2838,
+        "crc32": "7c6c832d"
+      },
+      {
+        "path": "Victoria 3 Performance/map_data/graphics_settings.gui",
+        "bytes": 6870,
+        "compressed_bytes": 2880,
+        "crc32": "9255aed8"
+      },
+      {
+        "path": "Victoria 3 Performance/thumbnail.png",
+        "bytes": 171527,
+        "compressed_bytes": 171289,
+        "crc32": "3fd5c8b6"
+      }
+    ],
+    "stored_path": "input-data/pc-evidence-2026-10-05/original-Victoria 3 Performance-32-1-00-0-1745087611.zip"
+  }
+]

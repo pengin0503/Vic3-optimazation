@@ -1,0 +1,214 @@
+{
+  "format_version": 1,
+  "found_key_count": 21,
+  "missing_keys": [
+    "POP_MERGE_MAX_WORKFORCE_1",
+    "POP_MERGE_MAX_WORKFORCE_2",
+    "POP_MERGE_MAX_WORKFORCE_3",
+    "POP_MERGE_MAX_WORKFORCE_4",
+    "POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_1",
+    "POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_2",
+    "POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_3",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_1",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_2",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_3",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_4"
+  ],
+  "occurrences": [
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "ALERTS_FRAMES_BETWEEN_UPDATES",
+      "line": 341,
+      "preceding_comments": [],
+      "value": "5"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_ai.txt",
+      "key": "AUTONOMOUS_INVESTMENT_UPDATE_COUNT_DIVISOR",
+      "line": 930,
+      "preceding_comments": [
+        "For each this amount of money going into the investment pool, we execute one autonomous investment update per tick (minimum of 1)",
+        "This is to ensure that even very large investment pools can be properly utilized",
+        "Be careful with this value as setting it too low can badly impact performance"
+      ],
+      "value": "500000"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_ai.txt",
+      "key": "AUTONOMOUS_TRADE_WEEKLY_TRADES_FRACTION_USED_FOR_FAILED_TRADE",
+      "line": 1150,
+      "preceding_comments": [
+        "Whenever a Trade Center successfully excecutes a trade, it uses up one of its weekly trades",
+        "Whenever it *fails* to execute a trade, it uses up this fraction of its total amount of weekly trades",
+        "This is so that Trade Centers with hundreds of weekly trades do not try and trade over and over again, using up tons of performance for no gain"
+      ],
+      "value": "0.2"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_defines.txt",
+      "key": "BATTLE_CONDITION_MIN_TICKS_BETWEEN_UPDATE_DEFAULT",
+      "line": 803,
+      "preceding_comments": [],
+      "value": "40"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "COA_FLAGS_FRAMES_BETWEEN_UPDATES",
+      "line": 339,
+      "preceding_comments": [],
+      "value": "30"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_ai.txt",
+      "key": "COUNTRY_GOAL_ADJUSTMENT_UPDATE_COUNT",
+      "line": 50,
+      "preceding_comments": [],
+      "value": "50"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_ai.txt",
+      "key": "COUNTRY_GOAL_STRATEGIC_UPDATE_COUNT",
+      "line": 49,
+      "preceding_comments": [],
+      "value": "5"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "DYNAMIC_TERRAIN_LAZY_UPDATE_MAX_TIME_PER_FRAME",
+      "line": 323,
+      "preceding_comments": [],
+      "value": "0.0012"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "DYNAMIC_TERRAIN_LAZY_UPDATE_PROVINCES_PER_FRAME",
+      "line": 322,
+      "preceding_comments": [],
+      "value": "16"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_defines.txt",
+      "key": "JOURNAL_ENTRY_UPDATE_ACTIVE",
+      "line": 59,
+      "preceding_comments": [],
+      "value": "4"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_defines.txt",
+      "key": "JOURNAL_ENTRY_UPDATE_INACTIVE",
+      "line": 60,
+      "preceding_comments": [],
+      "value": "14"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "MAP_MARKER_FULL_UPDATE_FREQUENCY",
+      "line": 263,
+      "preceding_comments": [],
+      "value": "1.0"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_ai.txt",
+      "key": "MAX_CANDIDATES_TO_COMBINE_FOR_GOVERNMENT_ALTERNATIVES",
+      "line": 164,
+      "preceding_comments": [],
+      "value": "8"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_defines.txt",
+      "key": "NON_TRADE_CENTER_STATE_TRADE_POTENTIAL_UPDATE_FREQUENCY",
+      "line": 445,
+      "preceding_comments": [
+        "How many days must pass between updating trade potential in states that do not have a Trade Center",
+        "The lower this is the more recent data the AI will have for evaluating new Trade Center construction, but performance will be impacted"
+      ],
+      "value": "30"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_defines.txt",
+      "key": "POP_MERGE_MAX_TARGET_POPS",
+      "line": 1749,
+      "preceding_comments": [],
+      "value": "100000"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_defines.txt",
+      "key": "POP_MERGE_START_POPS",
+      "line": 1748,
+      "preceding_comments": [],
+      "value": "50000"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "POWER_BLOC_COLOR_UPDATE_NUM_FRAMES_BETWEEN",
+      "line": 394,
+      "preceding_comments": [],
+      "value": "30"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "REVOLUTION_MAP_OBJECT_UPDATE_MAX_TIME_PER_FRAME",
+      "line": 310,
+      "preceding_comments": [],
+      "value": "0.002"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_graphics.txt",
+      "key": "REVOLUTION_MAP_OBJECT_UPDATE_PROVINCES_PER_FRAME",
+      "line": 309,
+      "preceding_comments": [],
+      "value": "16"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_ai.txt",
+      "key": "TRADE_CENTER_MINIMUM_GDP_MARKET_CAPITAL",
+      "line": 821,
+      "preceding_comments": [
+        "GDP limiters on where the AI will construct Trade Centers - note that decreasing these can adversely affect performance!"
+      ],
+      "value": "100000"
+    },
+    {
+      "file": "D:/SteamLibrary/steamapps/common/Victoria 3/game/common/defines/00_ai.txt",
+      "key": "TRADE_CENTER_MINIMUM_GDP_NON_MARKET_CAPITAL",
+      "line": 822,
+      "preceding_comments": [],
+      "value": "500000"
+    }
+  ],
+  "requested_keys": [
+    "ALERTS_FRAMES_BETWEEN_UPDATES",
+    "AUTONOMOUS_INVESTMENT_UPDATE_COUNT_DIVISOR",
+    "AUTONOMOUS_TRADE_WEEKLY_TRADES_FRACTION_USED_FOR_FAILED_TRADE",
+    "BATTLE_CONDITION_MIN_TICKS_BETWEEN_UPDATE_DEFAULT",
+    "COA_FLAGS_FRAMES_BETWEEN_UPDATES",
+    "COUNTRY_GOAL_ADJUSTMENT_UPDATE_COUNT",
+    "COUNTRY_GOAL_STRATEGIC_UPDATE_COUNT",
+    "DYNAMIC_TERRAIN_LAZY_UPDATE_MAX_TIME_PER_FRAME",
+    "DYNAMIC_TERRAIN_LAZY_UPDATE_PROVINCES_PER_FRAME",
+    "JOURNAL_ENTRY_UPDATE_ACTIVE",
+    "JOURNAL_ENTRY_UPDATE_INACTIVE",
+    "MAP_MARKER_FULL_UPDATE_FREQUENCY",
+    "MAX_CANDIDATES_TO_COMBINE_FOR_GOVERNMENT_ALTERNATIVES",
+    "NON_TRADE_CENTER_STATE_TRADE_POTENTIAL_UPDATE_FREQUENCY",
+    "POP_MERGE_MAX_TARGET_POPS",
+    "POP_MERGE_MAX_WORKFORCE_1",
+    "POP_MERGE_MAX_WORKFORCE_2",
+    "POP_MERGE_MAX_WORKFORCE_3",
+    "POP_MERGE_MAX_WORKFORCE_4",
+    "POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_1",
+    "POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_2",
+    "POP_MERGE_MIN_NUM_POPS_SAME_PROFESSION_3",
+    "POP_MERGE_START_POPS",
+    "POWER_BLOC_COLOR_UPDATE_NUM_FRAMES_BETWEEN",
+    "REVOLUTION_MAP_OBJECT_UPDATE_MAX_TIME_PER_FRAME",
+    "REVOLUTION_MAP_OBJECT_UPDATE_PROVINCES_PER_FRAME",
+    "TRADE_CENTER_MINIMUM_GDP_MARKET_CAPITAL",
+    "TRADE_CENTER_MINIMUM_GDP_NON_MARKET_CAPITAL",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_1",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_2",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_3",
+    "WORKFORCE_RATIO_MAX_UNEMPLOYMENT_FACTOR_4"
+  ],
+  "warning": "These values are performance controls or causal-test knobs, not automatic optimization recommendations. Changing cadence, search breadth, or Pop consolidation may change simulation semantics."
+}

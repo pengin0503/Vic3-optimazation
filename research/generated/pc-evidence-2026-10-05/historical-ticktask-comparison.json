@@ -1,0 +1,4334 @@
+{
+  "series": [
+    {
+      "source": "E:\\benchmark_result\\ticktask_timings_taskthread_1.csv",
+      "sha256": "f466ac829f21b8cdcda8cdcfa18d8fa2ef5c0ec2fd4edd603b78d159044e5f65",
+      "rows": 8924,
+      "frames": 140,
+      "tasks": 261,
+      "sum_recorded_task_ms": 6995.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 737.0,
+          "calls": 35,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 14.0,
+          "records": 35
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 734.0,
+          "calls": 140,
+          "max_record_ms": 44.0,
+          "longest_lock_ms": 30.0,
+          "records": 140
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 660.0,
+          "calls": 140,
+          "max_record_ms": 47.0,
+          "longest_lock_ms": 14.0,
+          "records": 140
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 348.0,
+          "calls": 140,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 24.0,
+          "records": 140
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 318.0,
+          "calls": 5,
+          "max_record_ms": 65.0,
+          "longest_lock_ms": 65.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 300.0,
+          "calls": 5,
+          "max_record_ms": 62.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 292.0,
+          "calls": 5,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 21.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 282.0,
+          "calls": 140,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 140
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 264.0,
+          "calls": 140,
+          "max_record_ms": 26.0,
+          "longest_lock_ms": 26.0,
+          "records": 140
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 225.0,
+          "calls": 5,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 46.0,
+          "records": 5
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 207.0,
+          "calls": 5,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 39.0,
+          "records": 5
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 184.0,
+          "calls": 5,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 38.0,
+          "records": 5
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 183.0,
+          "calls": 5,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 38.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 170.0,
+          "calls": 35,
+          "max_record_ms": 8.0,
+          "longest_lock_ms": 8.0,
+          "records": 35
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 153.0,
+          "calls": 5,
+          "max_record_ms": 32.0,
+          "longest_lock_ms": 32.0,
+          "records": 5
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 149.0,
+          "calls": 5,
+          "max_record_ms": 31.0,
+          "longest_lock_ms": 31.0,
+          "records": 5
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 136.0,
+          "calls": 35,
+          "max_record_ms": 5.0,
+          "longest_lock_ms": 5.0,
+          "records": 35
+        },
+        {
+          "task": "UpdateInputGoodsShortage",
+          "total_ms": 111.0,
+          "calls": 35,
+          "max_record_ms": 6.0,
+          "longest_lock_ms": 6.0,
+          "records": 35
+        },
+        {
+          "task": "UpdateAIStrategies",
+          "total_ms": 100.0,
+          "calls": 35,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 35
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 98.0,
+          "calls": 140,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 21.0,
+          "records": 140
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 318.0,
+          "calls": 5,
+          "max_record_ms": 65.0,
+          "longest_lock_ms": 65.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 54.0,
+          "calls": 1,
+          "max_record_ms": 54.0,
+          "longest_lock_ms": 54.0,
+          "records": 1
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 225.0,
+          "calls": 5,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 46.0,
+          "records": 5
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 207.0,
+          "calls": 5,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 39.0,
+          "records": 5
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 184.0,
+          "calls": 5,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 38.0,
+          "records": 5
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 183.0,
+          "calls": 5,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 38.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 81.0,
+          "calls": 140,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 140
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 153.0,
+          "calls": 5,
+          "max_record_ms": 32.0,
+          "longest_lock_ms": 32.0,
+          "records": 5
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 149.0,
+          "calls": 5,
+          "max_record_ms": 31.0,
+          "longest_lock_ms": 31.0,
+          "records": 5
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 734.0,
+          "calls": 140,
+          "max_record_ms": 44.0,
+          "longest_lock_ms": 30.0,
+          "records": 140
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 264.0,
+          "calls": 140,
+          "max_record_ms": 26.0,
+          "longest_lock_ms": 26.0,
+          "records": 140
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 348.0,
+          "calls": 140,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 24.0,
+          "records": 140
+        },
+        {
+          "task": "UpdateTargetFervorAndCulturalEvents",
+          "total_ms": 23.0,
+          "calls": 1,
+          "max_record_ms": 23.0,
+          "longest_lock_ms": 23.0,
+          "records": 1
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 98.0,
+          "calls": 140,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 21.0,
+          "records": 140
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 292.0,
+          "calls": 5,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 21.0,
+          "records": 5
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 50.0,
+          "calls": 35,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 18.0,
+          "records": 35
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 20.0,
+          "calls": 140,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 140
+        },
+        {
+          "task": "RadicalizePoliticalMovementSupporters",
+          "total_ms": 16.0,
+          "calls": 1,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 1
+        },
+        {
+          "task": "ProcessWagesStage1",
+          "total_ms": 77.0,
+          "calls": 5,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateNationalAwakenings",
+          "total_ms": 15.0,
+          "calls": 1,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 1
+        }
+      ]
+    },
+    {
+      "source": "E:\\benchmark_result\\ticktask_timings_taskthread_12.csv",
+      "sha256": "5acfa9c0dee741d6c31c9f794650ebd4c6e2cbc796e7f24fa38e0f6ba98ea818",
+      "rows": 7676,
+      "frames": 122,
+      "tasks": 242,
+      "sum_recorded_task_ms": 3567.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 611.0,
+          "calls": 122,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 22.0,
+          "records": 122
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 385.0,
+          "calls": 30,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 12.0,
+          "records": 30
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 327.0,
+          "calls": 122,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 23.0,
+          "records": 122
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 285.0,
+          "calls": 122,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 12.0,
+          "records": 122
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 269.0,
+          "calls": 4,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 165.0,
+          "calls": 4,
+          "max_record_ms": 45.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 146.0,
+          "calls": 122,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 9.0,
+          "records": 122
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 138.0,
+          "calls": 4,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 48.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 101.0,
+          "calls": 30,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 30
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 90.0,
+          "calls": 122,
+          "max_record_ms": 5.0,
+          "longest_lock_ms": 5.0,
+          "records": 122
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 82.0,
+          "calls": 122,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 122
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 74.0,
+          "calls": 122,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 3.0,
+          "records": 122
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 66.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 66.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 55.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 54.0,
+          "calls": 30,
+          "max_record_ms": 2.0,
+          "longest_lock_ms": 2.0,
+          "records": 30
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 48.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 43.0,
+          "calls": 4,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 37.0,
+          "calls": 4,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 10.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateActiveBattles",
+          "total_ms": 35.0,
+          "calls": 122,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 122
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 138.0,
+          "calls": 4,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 48.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 82.0,
+          "calls": 122,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 122
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 327.0,
+          "calls": 122,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 23.0,
+          "records": 122
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 611.0,
+          "calls": 122,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 22.0,
+          "records": 122
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 66.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 21.0,
+          "calls": 122,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 122
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 55.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 165.0,
+          "calls": 4,
+          "max_record_ms": 45.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 269.0,
+          "calls": 4,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 66.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 285.0,
+          "calls": 122,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 12.0,
+          "records": 122
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 385.0,
+          "calls": 30,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 12.0,
+          "records": 30
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 48.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 30.0,
+          "calls": 30,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 30
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 43.0,
+          "calls": 4,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 37.0,
+          "calls": 4,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 10.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 146.0,
+          "calls": 122,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 9.0,
+          "records": 122
+        },
+        {
+          "task": "UpdateAutoPlacedBuildings",
+          "total_ms": 31.0,
+          "calls": 4,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateColonizationProgress",
+          "total_ms": 33.0,
+          "calls": 30,
+          "max_record_ms": 8.0,
+          "longest_lock_ms": 8.0,
+          "records": 30
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 101.0,
+          "calls": 30,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 30
+        }
+      ]
+    },
+    {
+      "source": "E:\\benchmark_result\\ticktask_timings_taskthread_16.csv",
+      "sha256": "1c926cf3ad8124fd50432037d207b0b2f8dc1ccfae9d34c86771c631b0e65f20",
+      "rows": 7877,
+      "frames": 121,
+      "tasks": 261,
+      "sum_recorded_task_ms": 4148.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 567.0,
+          "calls": 121,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 19.0,
+          "records": 121
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 408.0,
+          "calls": 31,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 332.0,
+          "calls": 121,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 28.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 314.0,
+          "calls": 5,
+          "max_record_ms": 66.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 281.0,
+          "calls": 121,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 11.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 212.0,
+          "calls": 121,
+          "max_record_ms": 52.0,
+          "longest_lock_ms": 51.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 165.0,
+          "calls": 5,
+          "max_record_ms": 40.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 151.0,
+          "calls": 5,
+          "max_record_ms": 31.0,
+          "longest_lock_ms": 31.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 121.0,
+          "calls": 121,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 35.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 107.0,
+          "calls": 121,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 106.0,
+          "calls": 31,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 31
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 85.0,
+          "calls": 2,
+          "max_record_ms": 43.0,
+          "longest_lock_ms": 13.0,
+          "records": 2
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 83.0,
+          "calls": 121,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 80.0,
+          "calls": 121,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 79.0,
+          "calls": 5,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 5
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 75.0,
+          "calls": 5,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 13.0,
+          "records": 5
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 61.0,
+          "calls": 31,
+          "max_record_ms": 2.0,
+          "longest_lock_ms": 2.0,
+          "records": 31
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 59.0,
+          "calls": 5,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 5
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 56.0,
+          "calls": 5,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateNationalAwakenings",
+          "total_ms": 55.0,
+          "calls": 2,
+          "max_record_ms": 55.0,
+          "longest_lock_ms": 55.0,
+          "records": 2
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateNationalAwakenings",
+          "total_ms": 55.0,
+          "calls": 2,
+          "max_record_ms": 55.0,
+          "longest_lock_ms": 55.0,
+          "records": 2
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 212.0,
+          "calls": 121,
+          "max_record_ms": 52.0,
+          "longest_lock_ms": 51.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 121.0,
+          "calls": 121,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 35.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 151.0,
+          "calls": 5,
+          "max_record_ms": 31.0,
+          "longest_lock_ms": 31.0,
+          "records": 5
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 332.0,
+          "calls": 121,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 28.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 107.0,
+          "calls": 121,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 121
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 567.0,
+          "calls": 121,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 19.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 38.0,
+          "calls": 2,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 2
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 44.0,
+          "calls": 31,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 18.0,
+          "records": 31
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 79.0,
+          "calls": 5,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 5
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 21.0,
+          "calls": 121,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 121
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 165.0,
+          "calls": 5,
+          "max_record_ms": 40.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 314.0,
+          "calls": 5,
+          "max_record_ms": 66.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 85.0,
+          "calls": 2,
+          "max_record_ms": 43.0,
+          "longest_lock_ms": 13.0,
+          "records": 2
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 408.0,
+          "calls": 31,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 59.0,
+          "calls": 5,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 5
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 75.0,
+          "calls": 5,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 13.0,
+          "records": 5
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 56.0,
+          "calls": 5,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 5
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 281.0,
+          "calls": 121,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 11.0,
+          "records": 121
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 55.0,
+          "calls": 5,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 5
+        }
+      ]
+    },
+    {
+      "source": "E:\\benchmark_result\\ticktask_timings_taskthread_2.csv",
+      "sha256": "b75add0f15e87e73737ce814141dce72201a857c5e812ba4fffb182a265915cd",
+      "rows": 7483,
+      "frames": 116,
+      "tasks": 242,
+      "sum_recorded_task_ms": 6198.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 622.0,
+          "calls": 29,
+          "max_record_ms": 26.0,
+          "longest_lock_ms": 14.0,
+          "records": 29
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 592.0,
+          "calls": 116,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 14.0,
+          "records": 116
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 588.0,
+          "calls": 116,
+          "max_record_ms": 30.0,
+          "longest_lock_ms": 30.0,
+          "records": 116
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 334.0,
+          "calls": 5,
+          "max_record_ms": 79.0,
+          "longest_lock_ms": 79.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 329.0,
+          "calls": 5,
+          "max_record_ms": 77.0,
+          "longest_lock_ms": 22.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 329.0,
+          "calls": 5,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 284.0,
+          "calls": 116,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 24.0,
+          "records": 116
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 232.0,
+          "calls": 116,
+          "max_record_ms": 2.0,
+          "longest_lock_ms": 2.0,
+          "records": 116
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 226.0,
+          "calls": 5,
+          "max_record_ms": 47.0,
+          "longest_lock_ms": 47.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 220.0,
+          "calls": 116,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 25.0,
+          "records": 116
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 213.0,
+          "calls": 5,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 44.0,
+          "records": 5
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 186.0,
+          "calls": 5,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 39.0,
+          "records": 5
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 179.0,
+          "calls": 5,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 37.0,
+          "records": 5
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 149.0,
+          "calls": 5,
+          "max_record_ms": 33.0,
+          "longest_lock_ms": 33.0,
+          "records": 5
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 147.0,
+          "calls": 5,
+          "max_record_ms": 32.0,
+          "longest_lock_ms": 32.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 144.0,
+          "calls": 29,
+          "max_record_ms": 8.0,
+          "longest_lock_ms": 8.0,
+          "records": 29
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 113.0,
+          "calls": 29,
+          "max_record_ms": 5.0,
+          "longest_lock_ms": 5.0,
+          "records": 29
+        },
+        {
+          "task": "UpdateInputGoodsShortage",
+          "total_ms": 93.0,
+          "calls": 29,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 29
+        },
+        {
+          "task": "ProcessWagesStage1",
+          "total_ms": 85.0,
+          "calls": 5,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateAIStrategies",
+          "total_ms": 84.0,
+          "calls": 29,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 29
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 334.0,
+          "calls": 5,
+          "max_record_ms": 79.0,
+          "longest_lock_ms": 79.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 226.0,
+          "calls": 5,
+          "max_record_ms": 47.0,
+          "longest_lock_ms": 47.0,
+          "records": 5
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 213.0,
+          "calls": 5,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 44.0,
+          "records": 5
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 186.0,
+          "calls": 5,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 39.0,
+          "records": 5
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 179.0,
+          "calls": 5,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 37.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 77.0,
+          "calls": 116,
+          "max_record_ms": 33.0,
+          "longest_lock_ms": 33.0,
+          "records": 116
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 149.0,
+          "calls": 5,
+          "max_record_ms": 33.0,
+          "longest_lock_ms": 33.0,
+          "records": 5
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 147.0,
+          "calls": 5,
+          "max_record_ms": 32.0,
+          "longest_lock_ms": 32.0,
+          "records": 5
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 588.0,
+          "calls": 116,
+          "max_record_ms": 30.0,
+          "longest_lock_ms": 30.0,
+          "records": 116
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 220.0,
+          "calls": 116,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 25.0,
+          "records": 116
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 284.0,
+          "calls": 116,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 24.0,
+          "records": 116
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 69.0,
+          "calls": 116,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 22.0,
+          "records": 116
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 329.0,
+          "calls": 5,
+          "max_record_ms": 77.0,
+          "longest_lock_ms": 22.0,
+          "records": 5
+        },
+        {
+          "task": "ProcessWagesStage1",
+          "total_ms": 85.0,
+          "calls": 5,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 5
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 20.0,
+          "calls": 116,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 116
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 592.0,
+          "calls": 116,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 14.0,
+          "records": 116
+        },
+        {
+          "task": "UpdateSupplyData",
+          "total_ms": 36.0,
+          "calls": 5,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 329.0,
+          "calls": 5,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 5
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 622.0,
+          "calls": 29,
+          "max_record_ms": 26.0,
+          "longest_lock_ms": 14.0,
+          "records": 29
+        },
+        {
+          "task": "UpdateColonizationProgress",
+          "total_ms": 28.0,
+          "calls": 29,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 29
+        }
+      ]
+    },
+    {
+      "source": "E:\\benchmark_result\\ticktask_timings_taskthread_4.csv",
+      "sha256": "45f5c1698ed23f4751feab4691bdbd3bea2847f7c4cbd848fb3c8daf1c0500f6",
+      "rows": 7815,
+      "frames": 123,
+      "tasks": 261,
+      "sum_recorded_task_ms": 4709.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 689.0,
+          "calls": 123,
+          "max_record_ms": 40.0,
+          "longest_lock_ms": 25.0,
+          "records": 123
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 504.0,
+          "calls": 31,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 423.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 13.0,
+          "records": 123
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 322.0,
+          "calls": 123,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 23.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 263.0,
+          "calls": 4,
+          "max_record_ms": 70.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 202.0,
+          "calls": 4,
+          "max_record_ms": 55.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 188.0,
+          "calls": 4,
+          "max_record_ms": 64.0,
+          "longest_lock_ms": 64.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 184.0,
+          "calls": 123,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 123.0,
+          "calls": 123,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 123
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 112.0,
+          "calls": 4,
+          "max_record_ms": 31.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 111.0,
+          "calls": 31,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 31
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 106.0,
+          "calls": 4,
+          "max_record_ms": 27.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 96.0,
+          "calls": 4,
+          "max_record_ms": 27.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 94.0,
+          "calls": 4,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 86.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 123
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 78.0,
+          "calls": 123,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 123
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 74.0,
+          "calls": 31,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 31
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 72.0,
+          "calls": 123,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 123
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 72.0,
+          "calls": 4,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 70.0,
+          "calls": 4,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 188.0,
+          "calls": 4,
+          "max_record_ms": 64.0,
+          "longest_lock_ms": 64.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 35.0,
+          "calls": 1,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 35.0,
+          "records": 1
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 86.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 106.0,
+          "calls": 4,
+          "max_record_ms": 27.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 96.0,
+          "calls": 4,
+          "max_record_ms": 27.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 112.0,
+          "calls": 4,
+          "max_record_ms": 31.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 689.0,
+          "calls": 123,
+          "max_record_ms": 40.0,
+          "longest_lock_ms": 25.0,
+          "records": 123
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 94.0,
+          "calls": 4,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 322.0,
+          "calls": 123,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 23.0,
+          "records": 123
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 59.0,
+          "calls": 31,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 22.0,
+          "records": 31
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 72.0,
+          "calls": 4,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 70.0,
+          "calls": 4,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 202.0,
+          "calls": 4,
+          "max_record_ms": 55.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 20.0,
+          "calls": 123,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 263.0,
+          "calls": 4,
+          "max_record_ms": 70.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateTargetFervorAndCulturalEvents",
+          "total_ms": 14.0,
+          "calls": 1,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 1
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 423.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 13.0,
+          "records": 123
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 504.0,
+          "calls": 31,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 41.0,
+          "calls": 1,
+          "max_record_ms": 41.0,
+          "longest_lock_ms": 13.0,
+          "records": 1
+        },
+        {
+          "task": "RadicalizePoliticalMovementSupporters",
+          "total_ms": 13.0,
+          "calls": 1,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 1
+        }
+      ]
+    },
+    {
+      "source": "E:\\benchmark_result\\ticktask_timings_taskthread_6.csv",
+      "sha256": "6fbd817c900b3cfad8efe7ffae1615ed5298189c99fe6d0a593be05d26e06387",
+      "rows": 7854,
+      "frames": 124,
+      "tasks": 261,
+      "sum_recorded_task_ms": 4298.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 661.0,
+          "calls": 124,
+          "max_record_ms": 41.0,
+          "longest_lock_ms": 22.0,
+          "records": 124
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 479.0,
+          "calls": 31,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 12.0,
+          "records": 31
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 367.0,
+          "calls": 124,
+          "max_record_ms": 29.0,
+          "longest_lock_ms": 13.0,
+          "records": 124
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 317.0,
+          "calls": 124,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 24.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 268.0,
+          "calls": 4,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 181.0,
+          "calls": 4,
+          "max_record_ms": 50.0,
+          "longest_lock_ms": 16.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 163.0,
+          "calls": 124,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 153.0,
+          "calls": 4,
+          "max_record_ms": 53.0,
+          "longest_lock_ms": 53.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 121.0,
+          "calls": 124,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 112.0,
+          "calls": 31,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 31
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 94.0,
+          "calls": 4,
+          "max_record_ms": 27.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 89.0,
+          "calls": 124,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 36.0,
+          "records": 124
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 83.0,
+          "calls": 124,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 124
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 82.0,
+          "calls": 4,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 79.0,
+          "calls": 124,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 3.0,
+          "records": 124
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 78.0,
+          "calls": 4,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 72.0,
+          "calls": 4,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 69.0,
+          "calls": 31,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 31
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 55.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 153.0,
+          "calls": 4,
+          "max_record_ms": 53.0,
+          "longest_lock_ms": 53.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 89.0,
+          "calls": 124,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 36.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 36.0,
+          "calls": 1,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 36.0,
+          "records": 1
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 94.0,
+          "calls": 4,
+          "max_record_ms": 27.0,
+          "longest_lock_ms": 27.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 317.0,
+          "calls": 124,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 24.0,
+          "records": 124
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 661.0,
+          "calls": 124,
+          "max_record_ms": 41.0,
+          "longest_lock_ms": 22.0,
+          "records": 124
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 78.0,
+          "calls": 4,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 72.0,
+          "calls": 4,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 82.0,
+          "calls": 4,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 21.0,
+          "calls": 124,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 181.0,
+          "calls": 4,
+          "max_record_ms": 50.0,
+          "longest_lock_ms": 16.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 55.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 268.0,
+          "calls": 4,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 41.0,
+          "calls": 1,
+          "max_record_ms": 41.0,
+          "longest_lock_ms": 14.0,
+          "records": 1
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 367.0,
+          "calls": 124,
+          "max_record_ms": 29.0,
+          "longest_lock_ms": 13.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 163.0,
+          "calls": 124,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 124
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 479.0,
+          "calls": 31,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 12.0,
+          "records": 31
+        },
+        {
+          "task": "UpdateTargetFervorAndCulturalEvents",
+          "total_ms": 12.0,
+          "calls": 1,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 1
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 31.0,
+          "calls": 31,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 31
+        }
+      ]
+    },
+    {
+      "source": "E:\\benchmark_result\\ticktask_timings_taskthread_8.csv",
+      "sha256": "09e5a1bc29a5c7c671732312b0ad4765c88515d902cd818c17aa6219604bb1ac",
+      "rows": 6374,
+      "frames": 99,
+      "tasks": 242,
+      "sum_recorded_task_ms": 3523.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 501.0,
+          "calls": 99,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 17.0,
+          "records": 99
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 371.0,
+          "calls": 25,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 13.0,
+          "records": 25
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 281.0,
+          "calls": 99,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 12.0,
+          "records": 99
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 264.0,
+          "calls": 4,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 256.0,
+          "calls": 99,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 24.0,
+          "records": 99
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 163.0,
+          "calls": 4,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 145.0,
+          "calls": 4,
+          "max_record_ms": 50.0,
+          "longest_lock_ms": 50.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 122.0,
+          "calls": 99,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 99
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 107.0,
+          "calls": 99,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 99
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 96.0,
+          "calls": 99,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 99
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 81.0,
+          "calls": 4,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 80.0,
+          "calls": 25,
+          "max_record_ms": 6.0,
+          "longest_lock_ms": 6.0,
+          "records": 25
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 79.0,
+          "calls": 99,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 35.0,
+          "records": 99
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 76.0,
+          "calls": 4,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 21.0,
+          "records": 4
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 73.0,
+          "calls": 99,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 99
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 68.0,
+          "calls": 4,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 54.0,
+          "calls": 4,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 53.0,
+          "calls": 25,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 25
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 52.0,
+          "calls": 4,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 4
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 145.0,
+          "calls": 4,
+          "max_record_ms": 50.0,
+          "longest_lock_ms": 50.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 79.0,
+          "calls": 99,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 35.0,
+          "records": 99
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 256.0,
+          "calls": 99,
+          "max_record_ms": 35.0,
+          "longest_lock_ms": 24.0,
+          "records": 99
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 42.0,
+          "calls": 25,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 22.0,
+          "records": 25
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 76.0,
+          "calls": 4,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 21.0,
+          "records": 4
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 68.0,
+          "calls": 4,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 81.0,
+          "calls": 4,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 501.0,
+          "calls": 99,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 17.0,
+          "records": 99
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 21.0,
+          "calls": 99,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 99
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 54.0,
+          "calls": 4,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 163.0,
+          "calls": 4,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 264.0,
+          "calls": 4,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 371.0,
+          "calls": 25,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 13.0,
+          "records": 25
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 52.0,
+          "calls": 4,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 107.0,
+          "calls": 99,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 99
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 281.0,
+          "calls": 99,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 12.0,
+          "records": 99
+        },
+        {
+          "task": "ProgressConstructionQueues",
+          "total_ms": 22.0,
+          "calls": 4,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 122.0,
+          "calls": 99,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 99
+        },
+        {
+          "task": "UpdateActiveBattles",
+          "total_ms": 43.0,
+          "calls": 99,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 99
+        }
+      ]
+    },
+    {
+      "source": "E:\\bench2\\ticktask_timings_12.csv",
+      "sha256": "d1061c1073dc13758afa78cda6e729ce53f4df9af8c4579e04130c0399b416e8",
+      "rows": 7815,
+      "frames": 123,
+      "tasks": 261,
+      "sum_recorded_task_ms": 3686.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 612.0,
+          "calls": 123,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 19.0,
+          "records": 123
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 402.0,
+          "calls": 31,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 336.0,
+          "calls": 123,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 32.0,
+          "records": 123
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 285.0,
+          "calls": 123,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 13.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 266.0,
+          "calls": 4,
+          "max_record_ms": 70.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 160.0,
+          "calls": 4,
+          "max_record_ms": 45.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 151.0,
+          "calls": 123,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 10.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 137.0,
+          "calls": 4,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 48.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 104.0,
+          "calls": 31,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 31
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 92.0,
+          "calls": 123,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 87.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 78.0,
+          "calls": 123,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 123
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 68.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 67.0,
+          "calls": 4,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 56.0,
+          "calls": 31,
+          "max_record_ms": 2.0,
+          "longest_lock_ms": 2.0,
+          "records": 31
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 51.0,
+          "calls": 4,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 48.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 43.0,
+          "calls": 4,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 4
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 42.0,
+          "calls": 1,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 13.0,
+          "records": 1
+        },
+        {
+          "task": "UpdateActiveBattles",
+          "total_ms": 36.0,
+          "calls": 123,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 123
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 137.0,
+          "calls": 4,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 48.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 87.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 123
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 336.0,
+          "calls": 123,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 32.0,
+          "records": 123
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 612.0,
+          "calls": 123,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 19.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 19.0,
+          "calls": 1,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 1
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 67.0,
+          "calls": 4,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 18.0,
+          "records": 4
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 21.0,
+          "calls": 123,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 160.0,
+          "calls": 4,
+          "max_record_ms": 45.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 51.0,
+          "calls": 4,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 266.0,
+          "calls": 4,
+          "max_record_ms": 70.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 68.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 285.0,
+          "calls": 123,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 13.0,
+          "records": 123
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 402.0,
+          "calls": 31,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 42.0,
+          "calls": 1,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 13.0,
+          "records": 1
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 48.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 31.0,
+          "calls": 31,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 31
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 43.0,
+          "calls": 4,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 151.0,
+          "calls": 123,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 10.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateTargetFervorAndCulturalEvents",
+          "total_ms": 10.0,
+          "calls": 1,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 10.0,
+          "records": 1
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 36.0,
+          "calls": 4,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 4
+        }
+      ]
+    },
+    {
+      "source": "E:\\bench2\\ticktask_timings_16.csv",
+      "sha256": "fa12a2c09ba64128aba51665e34faff6f42578906f26bce78bc24df06b3f1d97",
+      "rows": 7815,
+      "frames": 123,
+      "tasks": 261,
+      "sum_recorded_task_ms": 3755.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 610.0,
+          "calls": 123,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 20.0,
+          "records": 123
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 405.0,
+          "calls": 31,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 336.0,
+          "calls": 123,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 27.0,
+          "records": 123
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 283.0,
+          "calls": 123,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 12.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 267.0,
+          "calls": 4,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 158.0,
+          "calls": 4,
+          "max_record_ms": 44.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 152.0,
+          "calls": 123,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 133.0,
+          "calls": 4,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 46.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 101.0,
+          "calls": 31,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 31
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 91.0,
+          "calls": 123,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 89.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 81.0,
+          "calls": 123,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 81.0,
+          "calls": 123,
+          "max_record_ms": 5.0,
+          "longest_lock_ms": 4.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 64.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 62.0,
+          "calls": 31,
+          "max_record_ms": 2.0,
+          "longest_lock_ms": 2.0,
+          "records": 31
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 46.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 45.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 42.0,
+          "calls": 1,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 13.0,
+          "records": 1
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 41.0,
+          "calls": 4,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 4
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 133.0,
+          "calls": 4,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 46.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 89.0,
+          "calls": 123,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 123
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 336.0,
+          "calls": 123,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 27.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 23.0,
+          "calls": 1,
+          "max_record_ms": 23.0,
+          "longest_lock_ms": 23.0,
+          "records": 1
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 610.0,
+          "calls": 123,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 20.0,
+          "records": 123
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 64.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 21.0,
+          "calls": 123,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 123
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 158.0,
+          "calls": 4,
+          "max_record_ms": 44.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 267.0,
+          "calls": 4,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 405.0,
+          "calls": 31,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 42.0,
+          "calls": 1,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 13.0,
+          "records": 1
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 283.0,
+          "calls": 123,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 12.0,
+          "records": 123
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 31.0,
+          "calls": 31,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 31
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 45.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 46.0,
+          "calls": 4,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 41.0,
+          "calls": 4,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateTargetFervorAndCulturalEvents",
+          "total_ms": 10.0,
+          "calls": 1,
+          "max_record_ms": 10.0,
+          "longest_lock_ms": 10.0,
+          "records": 1
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 152.0,
+          "calls": 123,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 123
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 36.0,
+          "calls": 4,
+          "max_record_ms": 9.0,
+          "longest_lock_ms": 9.0,
+          "records": 4
+        }
+      ]
+    },
+    {
+      "source": "E:\\bench2\\ticktask_timings_8.csv",
+      "sha256": "fe7b2f3466824f154b66438f2066d755987ccd25b87285bda863d6ba8affacd7",
+      "rows": 7854,
+      "frames": 124,
+      "tasks": 261,
+      "sum_recorded_task_ms": 4089.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 622.0,
+          "calls": 124,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 22.0,
+          "records": 124
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 456.0,
+          "calls": 31,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 337.0,
+          "calls": 124,
+          "max_record_ms": 47.0,
+          "longest_lock_ms": 36.0,
+          "records": 124
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 330.0,
+          "calls": 124,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 12.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 262.0,
+          "calls": 4,
+          "max_record_ms": 67.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 173.0,
+          "calls": 4,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 169.0,
+          "calls": 124,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 149.0,
+          "calls": 4,
+          "max_record_ms": 51.0,
+          "longest_lock_ms": 51.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 123.0,
+          "calls": 124,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 103.0,
+          "calls": 31,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 31
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 86.0,
+          "calls": 124,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 124
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 86.0,
+          "calls": 124,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 124
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 84.0,
+          "calls": 4,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 77.0,
+          "calls": 124,
+          "max_record_ms": 5.0,
+          "longest_lock_ms": 4.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 77.0,
+          "calls": 4,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 4
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 67.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 64.0,
+          "calls": 31,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 31
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 52.0,
+          "calls": 4,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 52.0,
+          "calls": 4,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 4
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 149.0,
+          "calls": 4,
+          "max_record_ms": 51.0,
+          "longest_lock_ms": 51.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 337.0,
+          "calls": 124,
+          "max_record_ms": 47.0,
+          "longest_lock_ms": 36.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 86.0,
+          "calls": 124,
+          "max_record_ms": 34.0,
+          "longest_lock_ms": 34.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 25.0,
+          "calls": 1,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 25.0,
+          "records": 1
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 622.0,
+          "calls": 124,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 22.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 77.0,
+          "calls": 4,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 4
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 84.0,
+          "calls": 4,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 19.0,
+          "records": 4
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 67.0,
+          "calls": 4,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 17.0,
+          "records": 4
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 21.0,
+          "calls": 124,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 124
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 60.0,
+          "calls": 4,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 173.0,
+          "calls": 4,
+          "max_record_ms": 48.0,
+          "longest_lock_ms": 15.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 262.0,
+          "calls": 4,
+          "max_record_ms": 67.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 52.0,
+          "calls": 4,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 4
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 42.0,
+          "calls": 1,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 14.0,
+          "records": 1
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 456.0,
+          "calls": 31,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 13.0,
+          "records": 31
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 52.0,
+          "calls": 4,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 4
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 169.0,
+          "calls": 124,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 124
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 330.0,
+          "calls": 124,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 12.0,
+          "records": 124
+        },
+        {
+          "task": "UpdateTargetFervorAndCulturalEvents",
+          "total_ms": 12.0,
+          "calls": 1,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 1
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 30.0,
+          "calls": 31,
+          "max_record_ms": 11.0,
+          "longest_lock_ms": 11.0,
+          "records": 31
+        }
+      ]
+    },
+    {
+      "source": "E:\\bench3\\ticktask_timings_12_3month.csv",
+      "sha256": "0eaf4fbabdfacf773d3cbc7d3a0e968817af49553ef794711223459370933d59",
+      "rows": 23445,
+      "frames": 368,
+      "tasks": 261,
+      "sum_recorded_task_ms": 11265.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 1579.0,
+          "calls": 368,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 20.0,
+          "records": 368
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 1211.0,
+          "calls": 92,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 13.0,
+          "records": 92
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 958.0,
+          "calls": 368,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 36.0,
+          "records": 368
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 888.0,
+          "calls": 368,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 13.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 820.0,
+          "calls": 13,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 562.0,
+          "calls": 368,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 68.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 473.0,
+          "calls": 13,
+          "max_record_ms": 50.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 415.0,
+          "calls": 13,
+          "max_record_ms": 49.0,
+          "longest_lock_ms": 49.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 318.0,
+          "calls": 92,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 92
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 295.0,
+          "calls": 368,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 36.0,
+          "records": 368
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 259.0,
+          "calls": 368,
+          "max_record_ms": 4.0,
+          "longest_lock_ms": 4.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 251.0,
+          "calls": 368,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 221.0,
+          "calls": 13,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 13
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 216.0,
+          "calls": 13,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 15.0,
+          "records": 13
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 173.0,
+          "calls": 13,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 168.0,
+          "calls": 92,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 92
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 158.0,
+          "calls": 13,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 13
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 150.0,
+          "calls": 92,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 92
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 143.0,
+          "calls": 13,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 13
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 126.0,
+          "calls": 3,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 14.0,
+          "records": 3
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 562.0,
+          "calls": 368,
+          "max_record_ms": 69.0,
+          "longest_lock_ms": 68.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateNationalAwakenings",
+          "total_ms": 51.0,
+          "calls": 3,
+          "max_record_ms": 51.0,
+          "longest_lock_ms": 51.0,
+          "records": 3
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 415.0,
+          "calls": 13,
+          "max_record_ms": 49.0,
+          "longest_lock_ms": 49.0,
+          "records": 13
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 958.0,
+          "calls": 368,
+          "max_record_ms": 46.0,
+          "longest_lock_ms": 36.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 295.0,
+          "calls": 368,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 36.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateCivilWars",
+          "total_ms": 31.0,
+          "calls": 13,
+          "max_record_ms": 31.0,
+          "longest_lock_ms": 31.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 251.0,
+          "calls": 368,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 368
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 150.0,
+          "calls": 92,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 92
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 63.0,
+          "calls": 3,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 21.0,
+          "records": 3
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 1579.0,
+          "calls": 368,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 20.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 221.0,
+          "calls": 13,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 13
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 61.0,
+          "calls": 368,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 473.0,
+          "calls": 13,
+          "max_record_ms": 50.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 216.0,
+          "calls": 13,
+          "max_record_ms": 18.0,
+          "longest_lock_ms": 15.0,
+          "records": 13
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 173.0,
+          "calls": 13,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 820.0,
+          "calls": 13,
+          "max_record_ms": 71.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 126.0,
+          "calls": 3,
+          "max_record_ms": 42.0,
+          "longest_lock_ms": 14.0,
+          "records": 3
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 888.0,
+          "calls": 368,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 13.0,
+          "records": 368
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 1211.0,
+          "calls": 92,
+          "max_record_ms": 15.0,
+          "longest_lock_ms": 13.0,
+          "records": 92
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 158.0,
+          "calls": 13,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 13
+        }
+      ]
+    },
+    {
+      "source": "E:\\bench3\\ticktask_timings_16_3month.csv",
+      "sha256": "4d545eef88495cbb392d4dac2d6a4679e639c12f6476e58dd33264d07f83f8cf",
+      "rows": 23445,
+      "frames": 368,
+      "tasks": 261,
+      "sum_recorded_task_ms": 11411.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 1593.0,
+          "calls": 368,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 19.0,
+          "records": 368
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 1200.0,
+          "calls": 92,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 13.0,
+          "records": 92
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 956.0,
+          "calls": 368,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 29.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 846.0,
+          "calls": 13,
+          "max_record_ms": 83.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 845.0,
+          "calls": 368,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 13.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 546.0,
+          "calls": 368,
+          "max_record_ms": 54.0,
+          "longest_lock_ms": 54.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 462.0,
+          "calls": 13,
+          "max_record_ms": 45.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 403.0,
+          "calls": 13,
+          "max_record_ms": 47.0,
+          "longest_lock_ms": 47.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 312.0,
+          "calls": 92,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 92
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 311.0,
+          "calls": 368,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 37.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 258.0,
+          "calls": 368,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 368
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 258.0,
+          "calls": 368,
+          "max_record_ms": 5.0,
+          "longest_lock_ms": 5.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 247.0,
+          "calls": 368,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 22.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 219.0,
+          "calls": 13,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 13
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 196.0,
+          "calls": 13,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 12.0,
+          "records": 13
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 181.0,
+          "calls": 92,
+          "max_record_ms": 2.0,
+          "longest_lock_ms": 2.0,
+          "records": 92
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 152.0,
+          "calls": 92,
+          "max_record_ms": 23.0,
+          "longest_lock_ms": 23.0,
+          "records": 92
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 152.0,
+          "calls": 13,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 143.0,
+          "calls": 13,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 13
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 142.0,
+          "calls": 13,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 13
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateNationalAwakenings",
+          "total_ms": 57.0,
+          "calls": 3,
+          "max_record_ms": 57.0,
+          "longest_lock_ms": 57.0,
+          "records": 3
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 546.0,
+          "calls": 368,
+          "max_record_ms": 54.0,
+          "longest_lock_ms": 54.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 403.0,
+          "calls": 13,
+          "max_record_ms": 47.0,
+          "longest_lock_ms": 47.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 311.0,
+          "calls": 368,
+          "max_record_ms": 37.0,
+          "longest_lock_ms": 37.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateCivilWars",
+          "total_ms": 30.0,
+          "calls": 13,
+          "max_record_ms": 30.0,
+          "longest_lock_ms": 30.0,
+          "records": 13
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 956.0,
+          "calls": 368,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 29.0,
+          "records": 368
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 152.0,
+          "calls": 92,
+          "max_record_ms": 23.0,
+          "longest_lock_ms": 23.0,
+          "records": 92
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 247.0,
+          "calls": 368,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 22.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 219.0,
+          "calls": 13,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 13
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 1593.0,
+          "calls": 368,
+          "max_record_ms": 39.0,
+          "longest_lock_ms": 19.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 56.0,
+          "calls": 3,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 19.0,
+          "records": 3
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 62.0,
+          "calls": 368,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 462.0,
+          "calls": 13,
+          "max_record_ms": 45.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 152.0,
+          "calls": 13,
+          "max_record_ms": 14.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 846.0,
+          "calls": 13,
+          "max_record_ms": 83.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 129.0,
+          "calls": 3,
+          "max_record_ms": 44.0,
+          "longest_lock_ms": 14.0,
+          "records": 3
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 845.0,
+          "calls": 368,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 13.0,
+          "records": 368
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 1200.0,
+          "calls": 92,
+          "max_record_ms": 17.0,
+          "longest_lock_ms": 13.0,
+          "records": 92
+        },
+        {
+          "task": "UpdateColonizationProgress",
+          "total_ms": 97.0,
+          "calls": 92,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 92
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 142.0,
+          "calls": 13,
+          "max_record_ms": 12.0,
+          "longest_lock_ms": 12.0,
+          "records": 13
+        }
+      ]
+    },
+    {
+      "source": "E:\\bench3\\ticktask_timings_8_3month.csv",
+      "sha256": "0a2f723b07ddad74573d36b94992c30f3918ee3224a85119038836df8575a67b",
+      "rows": 23445,
+      "frames": 368,
+      "tasks": 261,
+      "sum_recorded_task_ms": 12619.0,
+      "wall_clock_seconds": null,
+      "top_cost": [
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 1657.0,
+          "calls": 368,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 26.0,
+          "records": 368
+        },
+        {
+          "task": "UpdatePopGrowth",
+          "total_ms": 1371.0,
+          "calls": 92,
+          "max_record_ms": 19.0,
+          "longest_lock_ms": 13.0,
+          "records": 92
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 1004.0,
+          "calls": 368,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 13.0,
+          "records": 368
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 948.0,
+          "calls": 368,
+          "max_record_ms": 40.0,
+          "longest_lock_ms": 30.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 844.0,
+          "calls": 13,
+          "max_record_ms": 68.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 603.0,
+          "calls": 368,
+          "max_record_ms": 68.0,
+          "longest_lock_ms": 68.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 512.0,
+          "calls": 13,
+          "max_record_ms": 49.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 443.0,
+          "calls": 13,
+          "max_record_ms": 51.0,
+          "longest_lock_ms": 51.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateJobSatisfaction",
+          "total_ms": 368.0,
+          "calls": 368,
+          "max_record_ms": 1.0,
+          "longest_lock_ms": 1.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateAICountryGoalsAdjustments",
+          "total_ms": 308.0,
+          "calls": 92,
+          "max_record_ms": 7.0,
+          "longest_lock_ms": 7.0,
+          "records": 92
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 303.0,
+          "calls": 368,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 36.0,
+          "records": 368
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 269.0,
+          "calls": 13,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 19.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 257.0,
+          "calls": 13,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 21.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 256.0,
+          "calls": 368,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 21.0,
+          "records": 368
+        },
+        {
+          "task": "PrepareNavyAIData",
+          "total_ms": 249.0,
+          "calls": 368,
+          "max_record_ms": 5.0,
+          "longest_lock_ms": 5.0,
+          "records": 368
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 230.0,
+          "calls": 13,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 13
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 194.0,
+          "calls": 13,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "UpdatePopsInterestGroupsAndMovements",
+          "total_ms": 189.0,
+          "calls": 92,
+          "max_record_ms": 3.0,
+          "longest_lock_ms": 3.0,
+          "records": 92
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 180.0,
+          "calls": 13,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "UpdatePopLoyaltiesFromStandardOfLivingChanges",
+          "total_ms": 168.0,
+          "calls": 13,
+          "max_record_ms": 13.0,
+          "longest_lock_ms": 13.0,
+          "records": 13
+        }
+      ],
+      "top_lock": [
+        {
+          "task": "UpdateBuildingSpendingPriorities_Stage2",
+          "total_ms": 603.0,
+          "calls": 368,
+          "max_record_ms": 68.0,
+          "longest_lock_ms": 68.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateNationalAwakenings",
+          "total_ms": 62.0,
+          "calls": 3,
+          "max_record_ms": 62.0,
+          "longest_lock_ms": 62.0,
+          "records": 3
+        },
+        {
+          "task": "UpdateWorldMarket",
+          "total_ms": 443.0,
+          "calls": 13,
+          "max_record_ms": 51.0,
+          "longest_lock_ms": 51.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateSpendingVariables",
+          "total_ms": 303.0,
+          "calls": 368,
+          "max_record_ms": 36.0,
+          "longest_lock_ms": 36.0,
+          "records": 368
+        },
+        {
+          "task": "ProcessEconomicMigration",
+          "total_ms": 948.0,
+          "calls": 368,
+          "max_record_ms": 40.0,
+          "longest_lock_ms": 30.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateCivilWars",
+          "total_ms": 29.0,
+          "calls": 13,
+          "max_record_ms": 29.0,
+          "longest_lock_ms": 29.0,
+          "records": 13
+        },
+        {
+          "task": "HandleAutonomousInvestment",
+          "total_ms": 1657.0,
+          "calls": 368,
+          "max_record_ms": 38.0,
+          "longest_lock_ms": 26.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateInterestGroupSupportForPoliticalMovements",
+          "total_ms": 73.0,
+          "calls": 3,
+          "max_record_ms": 26.0,
+          "longest_lock_ms": 26.0,
+          "records": 3
+        },
+        {
+          "task": "CreateNewPoliticalMovements",
+          "total_ms": 155.0,
+          "calls": 92,
+          "max_record_ms": 24.0,
+          "longest_lock_ms": 24.0,
+          "records": 92
+        },
+        {
+          "task": "UpdateAI",
+          "total_ms": 256.0,
+          "calls": 368,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 21.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStatePopNeedCache",
+          "total_ms": 257.0,
+          "calls": 13,
+          "max_record_ms": 21.0,
+          "longest_lock_ms": 21.0,
+          "records": 13
+        },
+        {
+          "task": "AverageStandardOfLivingUpdate",
+          "total_ms": 230.0,
+          "calls": 13,
+          "max_record_ms": 20.0,
+          "longest_lock_ms": 20.0,
+          "records": 13
+        },
+        {
+          "task": "WeeklyBuildingBudgetUpdate",
+          "total_ms": 269.0,
+          "calls": 13,
+          "max_record_ms": 22.0,
+          "longest_lock_ms": 19.0,
+          "records": 13
+        },
+        {
+          "task": "SpawnCulturalCommunities",
+          "total_ms": 62.0,
+          "calls": 368,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 368
+        },
+        {
+          "task": "UpdateStateTrades",
+          "total_ms": 512.0,
+          "calls": 13,
+          "max_record_ms": 49.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "ProcessPopPurchases",
+          "total_ms": 180.0,
+          "calls": 13,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "RecalcStatePopStatistics",
+          "total_ms": 194.0,
+          "calls": 13,
+          "max_record_ms": 16.0,
+          "longest_lock_ms": 16.0,
+          "records": 13
+        },
+        {
+          "task": "UpdateEmployment",
+          "total_ms": 844.0,
+          "calls": 13,
+          "max_record_ms": 68.0,
+          "longest_lock_ms": 14.0,
+          "records": 13
+        },
+        {
+          "task": "MonthlyPulseJournalEntries",
+          "total_ms": 129.0,
+          "calls": 3,
+          "max_record_ms": 44.0,
+          "longest_lock_ms": 14.0,
+          "records": 3
+        },
+        {
+          "task": "RecalculateModifierNodes",
+          "total_ms": 1004.0,
+          "calls": 368,
+          "max_record_ms": 25.0,
+          "longest_lock_ms": 13.0,
+          "records": 368
+        }
+      ]
+    }
+  ],
+  "warning": "Stored task durations can overlap and are not simulation elapsed time. These are separate captures, not repeats or causal A/B measurements."
+}

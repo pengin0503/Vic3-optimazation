@@ -1,0 +1,172 @@
+{
+  "actual_executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "all_targets_ok": true,
+  "expected_executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "hash_ok": true,
+  "target_count": 18,
+  "targets": [
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "clausewitz_profiler_csv_handler",
+      "ok": true,
+      "pattern_length": 32,
+      "signature_rva": "0x55f530"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "enable_task_threads_thunk",
+      "ok": true,
+      "pattern_length": 20,
+      "signature_rva": "0x5c1df0"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "game_timer_writer",
+      "ok": true,
+      "pattern_length": 28,
+      "signature_rva": "0x3464410"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "gui_data_profiler_handler",
+      "ok": true,
+      "pattern_length": 20,
+      "signature_rva": "0x4c97a0"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "parallel_range_heuristic",
+      "ok": true,
+      "pattern_length": 32,
+      "signature_rva": "0x7db150"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "scripted_tests_registration",
+      "ok": true,
+      "pattern_length": 48,
+      "signature_rva": "0x1183258"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "task_thread_count_handler_anchor",
+      "ok": true,
+      "pattern_length": 16,
+      "signature_rva": "0x3bcd417"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "task_thread_count_thunk",
+      "ok": true,
+      "pattern_length": 20,
+      "signature_rva": "0x5c1e10"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_csv_writer",
+      "ok": true,
+      "pattern_length": 32,
+      "signature_rva": "0x118f690"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_merge_small_pops_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0x13aaced"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_process_pop_purchases_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0xee74e6"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_recalculate_modifier_nodes_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0x7da74c"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_update_ai_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0x157553f"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_update_employment_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0x13b8324"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_update_pop_growth_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0x13a3020"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_update_state_pop_need_cache_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0x13b7e70"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_update_state_trades_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0x13b7bd7"
+    },
+    {
+      "actual_match_count": 1,
+      "expected_match_count": 1,
+      "matches_at_expected_rva": true,
+      "name": "ticktask_update_world_market_tail",
+      "ok": true,
+      "pattern_length": 12,
+      "signature_rva": "0xedf260"
+    }
+  ]
+}

@@ -1,0 +1,2400 @@
+{
+  "files": [
+    {
+      "path": "clausewitz/gui/applicationutils/console.gui",
+      "historical_sha256": "ae92c4054e1e3a2285b1bc8b0481e91b8896992a748ecbe628abf81a63a68e03",
+      "installed_sha256": "ae92c4054e1e3a2285b1bc8b0481e91b8896992a748ecbe628abf81a63a68e03",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/curve_editor.gui",
+      "historical_sha256": "bc30d15b219811a64f64bcf54fc57c2011c628d29c3e6b30b4de272e416bd9ff",
+      "installed_sha256": "bc30d15b219811a64f64bcf54fc57c2011c628d29c3e6b30b4de272e416bd9ff",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/datatypes_explorer.gui",
+      "historical_sha256": "49ce5f2e66890f55fe5b0dcdfe88baa30020a9f0596fa5e494a07cd8db13c66d",
+      "installed_sha256": "49ce5f2e66890f55fe5b0dcdfe88baa30020a9f0596fa5e494a07cd8db13c66d",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/drawcmds_viewer.gui",
+      "historical_sha256": "5e3852248dd5caccb4cecdce612ce9e011e1f895fbb5557707dd252c286c7b42",
+      "installed_sha256": "5e3852248dd5caccb4cecdce612ce9e011e1f895fbb5557707dd252c286c7b42",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/settings.gui",
+      "historical_sha256": "367988e4bf416cb41d5a3b3a0c3a0c9efcbb4882c278c7ef87e82689ab78d972",
+      "installed_sha256": "367988e4bf416cb41d5a3b3a0c3a0c9efcbb4882c278c7ef87e82689ab78d972",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/texture_importer.gui",
+      "historical_sha256": "7af69fd35a56c5ac0faac0790e79a64f8664be54e04c557ae975b62ff025c2f7",
+      "installed_sha256": "7af69fd35a56c5ac0faac0790e79a64f8664be54e04c557ae975b62ff025c2f7",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/texture_list.gui",
+      "historical_sha256": "5ec3381dbee852770f28ae74b4b1fe24f5372084baed1b908b7470187bf4c384",
+      "installed_sha256": "5ec3381dbee852770f28ae74b4b1fe24f5372084baed1b908b7470187bf4c384",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/texture_viewer.gui",
+      "historical_sha256": "e3b352a40624c27369e94628e24aa6f84c57826376a79b468bf9f43d91ca7add",
+      "installed_sha256": "e3b352a40624c27369e94628e24aa6f84c57826376a79b468bf9f43d91ca7add",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/tools_gui_bundle_properties.gui",
+      "historical_sha256": "9e7af8d8b6f6353a2c98fc5fd3340ebe1fdcb8489d557959a61e91d95e4e086b",
+      "installed_sha256": "9e7af8d8b6f6353a2c98fc5fd3340ebe1fdcb8489d557959a61e91d95e4e086b",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/tools_gui_common_properties.gui",
+      "historical_sha256": "9d6a255c6a02386111283f1a76ac7a3223c21c09d701c1eeb00f7b6543cc311f",
+      "installed_sha256": "9d6a255c6a02386111283f1a76ac7a3223c21c09d701c1eeb00f7b6543cc311f",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/tools_gui_custom_properties.gui",
+      "historical_sha256": "24cc3ce6f4ded6a6f2e3d1dcd8b05a71a2e21a8d0f00ef7688766da26eddc009",
+      "installed_sha256": "24cc3ce6f4ded6a6f2e3d1dcd8b05a71a2e21a8d0f00ef7688766da26eddc009",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/tools_gui_dialogs.gui",
+      "historical_sha256": "f3e9fcf5acfed0c71d8e92cea434cd00b0ed5648aa3036b83b9a12b9c04ea4ce",
+      "installed_sha256": "f3e9fcf5acfed0c71d8e92cea434cd00b0ed5648aa3036b83b9a12b9c04ea4ce",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/tools_gui_dialogs_grid_properties.gui",
+      "historical_sha256": "a457945624ca84dfb428041c87b886a40781c49ede3edf93f52a5107c1c64569",
+      "installed_sha256": "a457945624ca84dfb428041c87b886a40781c49ede3edf93f52a5107c1c64569",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/tools_gui_dialogs_properties.gui",
+      "historical_sha256": "1e6aa9679b5acb2b9b27c9498f85ee8ac15fdd3d708e83c9bae81a2fb603553f",
+      "installed_sha256": "1e6aa9679b5acb2b9b27c9498f85ee8ac15fdd3d708e83c9bae81a2fb603553f",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/applicationutils/tools_gui_search.gui",
+      "historical_sha256": "81e28a195a48480fb1f216a2b444c5b8285bbb80e1b292b66850172171e6e819",
+      "installed_sha256": "81e28a195a48480fb1f216a2b444c5b8285bbb80e1b292b66850172171e6e819",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/cursor.gui",
+      "historical_sha256": "5c5aea3a728b643296f10695a154d74a23d1cc4fc87cad96ad3c978ce20549c3",
+      "installed_sha256": "5c5aea3a728b643296f10695a154d74a23d1cc4fc87cad96ad3c978ce20549c3",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/gui_editor/gui_editor.gui",
+      "historical_sha256": "97a23be321dcc7480dd0a10f094d7261b6be16dbadfb64cf8046e882ad774620",
+      "installed_sha256": "97a23be321dcc7480dd0a10f094d7261b6be16dbadfb64cf8046e882ad774620",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/gui_editor/gui_editor_outliner.gui",
+      "historical_sha256": "44a8c565767da62a8156cdc864d2b43055d2bd8deb94d5c2564e12d5ca2ef076",
+      "installed_sha256": "44a8c565767da62a8156cdc864d2b43055d2bd8deb94d5c2564e12d5ca2ef076",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/gui_editor/gui_editor_properties.gui",
+      "historical_sha256": "88ae0d8df38dff1b0913c8ebb55b54923fbbe853e99fb07d80331583ff3cf379",
+      "installed_sha256": "88ae0d8df38dff1b0913c8ebb55b54923fbbe853e99fb07d80331583ff3cf379",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/gui_editor/gui_editor_toolbar.gui",
+      "historical_sha256": "e04d83062d0b98af78fd9a2d5b3b3f4d42796afc01e52bc85ce1b010570a02a8",
+      "installed_sha256": "e04d83062d0b98af78fd9a2d5b3b3f4d42796afc01e52bc85ce1b010570a02a8",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/gui_editor/icon_editor_mapping.txt",
+      "historical_sha256": "754ff68b50f06c4ab30e1c3891a6cd300c144692239f326d56e80367b76debc2",
+      "installed_sha256": "754ff68b50f06c4ab30e1c3891a6cd300c144692239f326d56e80367b76debc2",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/define_proxy_node_window.gui",
+      "historical_sha256": "fa04d94168b93aba9e640f46814a32aa436790f5462ce977b8b283bb65b76f72",
+      "installed_sha256": "fa04d94168b93aba9e640f46814a32aa436790f5462ce977b8b283bb65b76f72",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/graph_panel.gui",
+      "historical_sha256": "0d310c5f28652963a4649ebc69d89c9db1ddec3d69d2cc2855933061def4ae88",
+      "installed_sha256": "0d310c5f28652963a4649ebc69d89c9db1ddec3d69d2cc2855933061def4ae88",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/infobox_node_window.gui",
+      "historical_sha256": "6a28f79378dfc8671ddcff87800a733f0fab8aeb61c7189582451d1a23502293",
+      "installed_sha256": "6a28f79378dfc8671ddcff87800a733f0fab8aeb61c7189582451d1a23502293",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/metadata_window.gui",
+      "historical_sha256": "d07bb43aa964c8e1783467e7d099d200d425e87758bf2093279fe0b501f199d6",
+      "installed_sha256": "d07bb43aa964c8e1783467e7d099d200d425e87758bf2093279fe0b501f199d6",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/node_editor.gui",
+      "historical_sha256": "22d1ad57c015a931b3670405ef8769c44997dedea25c4c96d1a5710a964263bb",
+      "installed_sha256": "22d1ad57c015a931b3670405ef8769c44997dedea25c4c96d1a5710a964263bb",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/node_tools_properties.gui",
+      "historical_sha256": "248c75ce8881def0ffcef059bbaf936fac2b7a8191f08101a8b987d8e7ed73a2",
+      "installed_sha256": "248c75ce8881def0ffcef059bbaf936fac2b7a8191f08101a8b987d8e7ed73a2",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/reroute_node_window.gui",
+      "historical_sha256": "2d46bd87310fa0e38143701ee8ec7f3cc58613da1ac71fa61ca9990031d8feb0",
+      "installed_sha256": "2d46bd87310fa0e38143701ee8ec7f3cc58613da1ac71fa61ca9990031d8feb0",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/search_list_window.gui",
+      "historical_sha256": "411a49a4f959254197867fddbed569547a929ee4e0435d1b8853fbd365257188",
+      "installed_sha256": "411a49a4f959254197867fddbed569547a929ee4e0435d1b8853fbd365257188",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/select_from_int_node_window.gui",
+      "historical_sha256": "f87c7d970491534970c36e2b86bf17cf7849d10943c39bb2ac42df966d71eb64",
+      "installed_sha256": "f87c7d970491534970c36e2b86bf17cf7849d10943c39bb2ac42df966d71eb64",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/texture_node_window.gui",
+      "historical_sha256": "fe67b14802cb436d7bebb87d0a14923a96fd37a1bc17647a9120c8de97228ba5",
+      "installed_sha256": "fe67b14802cb436d7bebb87d0a14923a96fd37a1bc17647a9120c8de97228ba5",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/use_proxy_node_window.gui",
+      "historical_sha256": "ab8b3469caabcd0a00ad6db89b7ffcbdb3e5bee8cf0d8a120e6b09e7010c5635",
+      "installed_sha256": "ab8b3469caabcd0a00ad6db89b7ffcbdb3e5bee8cf0d8a120e6b09e7010c5635",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/node_editor/viewport.gui",
+      "historical_sha256": "ef06eec92fdfd5a0a1790fdd97e84ac12a06408dcaa60109db6094362e2eb8b9",
+      "installed_sha256": "ef06eec92fdfd5a0a1790fdd97e84ac12a06408dcaa60109db6094362e2eb8b9",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/object_explorer/common.gui",
+      "historical_sha256": "87f92cf1de149d12fff747471d1412fac49af7e844183637e8c87ec04f46a9fe",
+      "installed_sha256": "87f92cf1de149d12fff747471d1412fac49af7e844183637e8c87ec04f46a9fe",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/object_explorer/object_browser.gui",
+      "historical_sha256": "66af51191110f26deba30aabb5a9ba48cf9733b83a9993f85df65f04f2bb8264",
+      "installed_sha256": "66af51191110f26deba30aabb5a9ba48cf9733b83a9993f85df65f04f2bb8264",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/object_explorer/object_inspector.gui",
+      "historical_sha256": "923652ece46680f4e5682acbe54a900d0fa7080347985baf1385dcac8932ccf6",
+      "installed_sha256": "923652ece46680f4e5682acbe54a900d0fa7080347985baf1385dcac8932ccf6",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/particle_editor/particle_editor_userdata_dialog.gui",
+      "historical_sha256": "ed73352157d97834be4e1f96baf32e7e21a15e030edb0c65d7bea739b2912b37",
+      "installed_sha256": "ed73352157d97834be4e1f96baf32e7e21a15e030edb0c65d7bea739b2912b37",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/particle_editor/particle_nodes.gui",
+      "historical_sha256": "1ea2d002707ed2d7d6f68264c2e6c23101a04ff93ea395821ccc7afdeacaa21e",
+      "installed_sha256": "1ea2d002707ed2d7d6f68264c2e6c23101a04ff93ea395821ccc7afdeacaa21e",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/profiler.gui",
+      "historical_sha256": "3dfff9527b43d17b99ad5898ec2a903924a434d621f11865a5ace53636134adf",
+      "installed_sha256": "3dfff9527b43d17b99ad5898ec2a903924a434d621f11865a5ace53636134adf",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tool_property_draggable_types.gui",
+      "historical_sha256": "97725f610e8995107fa0202bdff92dfbb3bc7859659bcb29504eea5ca7eb63bb",
+      "installed_sha256": "97725f610e8995107fa0202bdff92dfbb3bc7859659bcb29504eea5ca7eb63bb",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tool_property_randomizable_types.gui",
+      "historical_sha256": "a49f4b429518b64260de0dbcfb4ea07447a1e673da7972565be66359830d24d6",
+      "installed_sha256": "a49f4b429518b64260de0dbcfb4ea07447a1e673da7972565be66359830d24d6",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tool_property_ranged_types.gui",
+      "historical_sha256": "fde7a2baf51ddbf451c42b81bba0e559b9549d4fd75c6e3d5fe905ca4eec56bb",
+      "installed_sha256": "fde7a2baf51ddbf451c42b81bba0e559b9549d4fd75c6e3d5fe905ca4eec56bb",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/backgrounds.gui",
+      "historical_sha256": "616d205131c0d3bf0c63249351e19035f6f7a138cb2be3eb7b18a4937ea27fc2",
+      "installed_sha256": "616d205131c0d3bf0c63249351e19035f6f7a138cb2be3eb7b18a4937ea27fc2",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/dockable_layout_manager.gui",
+      "historical_sha256": "25024c4b3a02fe09f1066c803accac0b966d1c99986b67ba0d6b28e88b7ce9b3",
+      "installed_sha256": "25024c4b3a02fe09f1066c803accac0b966d1c99986b67ba0d6b28e88b7ce9b3",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/dropdown.gui",
+      "historical_sha256": "068e0ae2bf1dd0ac3873f5151953c9c667a34986158338e62888a853cf49f837",
+      "installed_sha256": "068e0ae2bf1dd0ac3873f5151953c9c667a34986158338e62888a853cf49f837",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/foldouts.gui",
+      "historical_sha256": "2ca265588bf8647edf4cab5fb227bf70079004ac3bbd57f2208c2e85a3f6c8ea",
+      "installed_sha256": "2ca265588bf8647edf4cab5fb227bf70079004ac3bbd57f2208c2e85a3f6c8ea",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/gfx_skin_editor.gui",
+      "historical_sha256": "d1f81ad0f67d18248b4d5c47eb79b8c2cf273bcb6c8457d9896aed8732c1c433",
+      "installed_sha256": "d1f81ad0f67d18248b4d5c47eb79b8c2cf273bcb6c8457d9896aed8732c1c433",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/gruvbox_colors.gui",
+      "historical_sha256": "a9d1d94ed72265ec64afb4652c98dcd4c3b0ca158cbea3f1da784f642aa6f604",
+      "installed_sha256": "a9d1d94ed72265ec64afb4652c98dcd4c3b0ca158cbea3f1da784f642aa6f604",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/helper.gui",
+      "historical_sha256": "4e466b68b7e47f6d5953e845f67417db2aa1f27c474222863632232f4d9c1d18",
+      "installed_sha256": "4e466b68b7e47f6d5953e845f67417db2aa1f27c474222863632232f4d9c1d18",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/indents.gui",
+      "historical_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/notifications.gui",
+      "historical_sha256": "727ba118f7e60db5130cf5c3ad6598a900f15ba2d46ae0ecd43d059301d66df0",
+      "installed_sha256": "727ba118f7e60db5130cf5c3ad6598a900f15ba2d46ae0ecd43d059301d66df0",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/save_dialog.gui",
+      "historical_sha256": "da4ebd4b592c7f5131fe0b9da990572269d8f32c9c27faddaacb142e396ce5f2",
+      "installed_sha256": "da4ebd4b592c7f5131fe0b9da990572269d8f32c9c27faddaacb142e396ce5f2",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/slider.gui",
+      "historical_sha256": "21f692911f8edc7150ce4392d9045115de438f1d88b49ff0ab0c9c44a791f722",
+      "installed_sha256": "21f692911f8edc7150ce4392d9045115de438f1d88b49ff0ab0c9c44a791f722",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/table.gui",
+      "historical_sha256": "69e9a2e194072dea83ebf3e5b6181face0634f457b17dc5832fb0da32e3214d9",
+      "installed_sha256": "69e9a2e194072dea83ebf3e5b6181face0634f457b17dc5832fb0da32e3214d9",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/tool_options.gui",
+      "historical_sha256": "b7d096c225aff472a2b17b95f9beb5900297dbc83028ec9a5f7f7d1d67e7fd68",
+      "installed_sha256": "b7d096c225aff472a2b17b95f9beb5900297dbc83028ec9a5f7f7d1d67e7fd68",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/toolbox.gui",
+      "historical_sha256": "d58244b451b7d3702d629bdb822f2660795b7a07e28730ae8aacbc82181afbd1",
+      "installed_sha256": "d58244b451b7d3702d629bdb822f2660795b7a07e28730ae8aacbc82181afbd1",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools/tools_style.gui",
+      "historical_sha256": "9fe84669b43c4b1895f75f4b02593496281efe98186cf37628e8c1cf40f11aec",
+      "installed_sha256": "9fe84669b43c4b1895f75f4b02593496281efe98186cf37628e8c1cf40f11aec",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools_property_path.gui",
+      "historical_sha256": "108c20bd229e3eddf6cc05858b57970e552bcea6facfa6a2ea935732f4c0c80f",
+      "installed_sha256": "108c20bd229e3eddf6cc05858b57970e552bcea6facfa6a2ea935732f4c0c80f",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/tools_property_value_list.gui",
+      "historical_sha256": "f2d91d5f1039e968fded09a98e71c8a52f938c5ea08525f78963c260af80c3cb",
+      "installed_sha256": "f2d91d5f1039e968fded09a98e71c8a52f938c5ea08525f78963c260af80c3cb",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/toolslayout.gui",
+      "historical_sha256": "e37303d61669a587a67d47cff57c925c25aadbd41a012e83e9abf7aa45191480",
+      "installed_sha256": "e37303d61669a587a67d47cff57c925c25aadbd41a012e83e9abf7aa45191480",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/toolspropertytypes.gui",
+      "historical_sha256": "a9b119d4fdec6d5b80256261cd2dc765dd2512e1d39a66b1afc7f5359f6be669",
+      "installed_sha256": "a9b119d4fdec6d5b80256261cd2dc765dd2512e1d39a66b1afc7f5359f6be669",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/toolstypes.gui",
+      "historical_sha256": "49396b171ba6e3ef46a09fe381e0ed808f8d6e5226de520bda02cd8544d7f74c",
+      "installed_sha256": "49396b171ba6e3ef46a09fe381e0ed808f8d6e5226de520bda02cd8544d7f74c",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/undo_history_viewer/undo_history_viewer.gui",
+      "historical_sha256": "0c57e706d4065169c038e95f31665ca9a90602f23751e28530fdd2d215aefd55",
+      "installed_sha256": "0c57e706d4065169c038e95f31665ca9a90602f23751e28530fdd2d215aefd55",
+      "equal": true
+    },
+    {
+      "path": "clausewitz/gui/vfs_mount_path_browser.gui",
+      "historical_sha256": "0facf8b832ae2142224f2e6a3b3661d597e1c9bf88f3e00ec0bb9610b3ea1d82",
+      "installed_sha256": "0facf8b832ae2142224f2e6a3b3661d597e1c9bf88f3e00ec0bb9610b3ea1d82",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/00_ai.txt",
+      "historical_sha256": "1f63ecef20095aa8e576ef672b64ea2cf91355d132d449d768d601e93fb597a1",
+      "installed_sha256": "1f63ecef20095aa8e576ef672b64ea2cf91355d132d449d768d601e93fb597a1",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/00_audio.txt",
+      "historical_sha256": "bc862ef181e1dfcd557593acca96d44f021b85707ae84b294bf939b9b391f4da",
+      "installed_sha256": "bc862ef181e1dfcd557593acca96d44f021b85707ae84b294bf939b9b391f4da",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/00_defines.txt",
+      "historical_sha256": "ee29ffa788c7984b8c344b6d661d084a94d2423a6b8942aeafb83592ae381cc4",
+      "installed_sha256": "ee29ffa788c7984b8c344b6d661d084a94d2423a6b8942aeafb83592ae381cc4",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/00_graphics.txt",
+      "historical_sha256": "7d6e184fc3c23811c829cc5192075138def3d09c5419b1829bfc509e6b23e37b",
+      "installed_sha256": "7d6e184fc3c23811c829cc5192075138def3d09c5419b1829bfc509e6b23e37b",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/00_interfaces.txt",
+      "historical_sha256": "64fd4f0dd94be760e108162e811486b3e62a8893031d68524b5a8c7c425cd435",
+      "installed_sha256": "64fd4f0dd94be760e108162e811486b3e62a8893031d68524b5a8c7c425cd435",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/00_shaders.txt",
+      "historical_sha256": "cba79da527e6b536f226a249a510547f235df7ed89a12981d6e36ff7f592b509",
+      "installed_sha256": "cba79da527e6b536f226a249a510547f235df7ed89a12981d6e36ff7f592b509",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/jomini/00_tooltips.txt",
+      "historical_sha256": "0ba5c20ffd675bbac121e523e7a331471917d2b1fedbf114340bfeef3dfd9f65",
+      "installed_sha256": "0ba5c20ffd675bbac121e523e7a331471917d2b1fedbf114340bfeef3dfd9f65",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/jomini/fog_of_war.txt",
+      "historical_sha256": "826a7b72365ca156576c28cede9eda2f658650f11d71775054b2252c0c88ba96",
+      "installed_sha256": "826a7b72365ca156576c28cede9eda2f658650f11d71775054b2252c0c88ba96",
+      "equal": true
+    },
+    {
+      "path": "game/common/defines/jomini/rivers.txt",
+      "historical_sha256": "3f32f8f08695325dc47fb8fbb914fcd055fd4604aa4c20211afcfa490eef1c01",
+      "installed_sha256": "3f32f8f08695325dc47fb8fbb914fcd055fd4604aa4c20211afcfa490eef1c01",
+      "equal": true
+    },
+    {
+      "path": "game/common/game_rules/00_game_rules.txt",
+      "historical_sha256": "cb064c997fd7f9110e5975d4a8dfb8eed18d308f2144ff55eb245804e9871b76",
+      "installed_sha256": "cb064c997fd7f9110e5975d4a8dfb8eed18d308f2144ff55eb245804e9871b76",
+      "equal": true
+    },
+    {
+      "path": "game/common/game_rules/game_rules.md",
+      "historical_sha256": "a1cab6290594d0a3ec4e77d47c6ac13b17015bf2c4398c7c41b28f5d63b9f10d",
+      "installed_sha256": "a1cab6290594d0a3ec4e77d47c6ac13b17015bf2c4398c7c41b28f5d63b9f10d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/achievements/jomini_achievements_types.gui",
+      "historical_sha256": "cc7312204f5414cfa1e0db49f382e7df6e804f142caa0e94135abdee1afeacfe",
+      "installed_sha256": "cc7312204f5414cfa1e0db49f382e7df6e804f142caa0e94135abdee1afeacfe",
+      "equal": true
+    },
+    {
+      "path": "game/gui/achievements/jomini_achievements_window.gui",
+      "historical_sha256": "678abaeb0e9aa07c2c9561a3442c1e6908b00dc50fa37090e1ac9bada1440be3",
+      "installed_sha256": "678abaeb0e9aa07c2c9561a3442c1e6908b00dc50fa37090e1ac9bada1440be3",
+      "equal": true
+    },
+    {
+      "path": "game/gui/achievements/popup.gui",
+      "historical_sha256": "232cc4447faf7e506216e1165a43663228d981aa0112477d6f08a0857c57e675",
+      "installed_sha256": "232cc4447faf7e506216e1165a43663228d981aa0112477d6f08a0857c57e675",
+      "equal": true
+    },
+    {
+      "path": "game/gui/add_consumption_tax_menu.gui",
+      "historical_sha256": "7ad762e80765b4b42c1fe286c361122f5d349c342afabf97abdeda5e4e460404",
+      "installed_sha256": "7ad762e80765b4b42c1fe286c361122f5d349c342afabf97abdeda5e4e460404",
+      "equal": true
+    },
+    {
+      "path": "game/gui/add_wargoal_panel.gui",
+      "historical_sha256": "a8832320a8fd02a756a3aa251270d9b7830dea1a146171963c80159f08b5b419",
+      "installed_sha256": "a8832320a8fd02a756a3aa251270d9b7830dea1a146171963c80159f08b5b419",
+      "equal": true
+    },
+    {
+      "path": "game/gui/battle.gui",
+      "historical_sha256": "fb5b7b86cc715182d09076f3568e0d6b23826489b8b0b1d0ae76e6bc310e272a",
+      "installed_sha256": "fb5b7b86cc715182d09076f3568e0d6b23826489b8b0b1d0ae76e6bc310e272a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/block_windows.gui",
+      "historical_sha256": "1c11dff61ca186f06be070dfc47b0e9cf5d0515780f999835b02713b21af7ecc",
+      "installed_sha256": "1c11dff61ca186f06be070dfc47b0e9cf5d0515780f999835b02713b21af7ecc",
+      "equal": true
+    },
+    {
+      "path": "game/gui/budget_panel.gui",
+      "historical_sha256": "a21dbd8f14ffbfd6fdcf942d36771ee42fb7bd5c55dea21aca3dbb549b38af90",
+      "installed_sha256": "a21dbd8f14ffbfd6fdcf942d36771ee42fb7bd5c55dea21aca3dbb549b38af90",
+      "equal": true
+    },
+    {
+      "path": "game/gui/build_urban_buildings_menu.gui",
+      "historical_sha256": "553aa5bdd52825094e4d66440f984a5042d2f83bb6183d60c261c9afe216a226",
+      "installed_sha256": "553aa5bdd52825094e4d66440f984a5042d2f83bb6183d60c261c9afe216a226",
+      "equal": true
+    },
+    {
+      "path": "game/gui/building_browser_panel.gui",
+      "historical_sha256": "5995f756aa65dd2faf4b0ebbda6acbab6bc3df2e43f7996f7ab7200aa6580d25",
+      "installed_sha256": "5995f756aa65dd2faf4b0ebbda6acbab6bc3df2e43f7996f7ab7200aa6580d25",
+      "equal": true
+    },
+    {
+      "path": "game/gui/building_details_panel.gui",
+      "historical_sha256": "d97206aacfaf74127f385d5b714ad3e47037d2b05133cd4f1b3754bbd37ba4b4",
+      "installed_sha256": "d97206aacfaf74127f385d5b714ad3e47037d2b05133cd4f1b3754bbd37ba4b4",
+      "equal": true
+    },
+    {
+      "path": "game/gui/building_workforce_panel.gui",
+      "historical_sha256": "7e64681dc9c9a480c9d79fd3383ada4c6a5d10ade1364e25740300bc6a7fc2c4",
+      "installed_sha256": "7e64681dc9c9a480c9d79fd3383ada4c6a5d10ade1364e25740300bc6a7fc2c4",
+      "equal": true
+    },
+    {
+      "path": "game/gui/character_panel.gui",
+      "historical_sha256": "5119dc7b9420f371fa433e35e58b7d89c980becdcdfa65736a99c058ca25ceee",
+      "installed_sha256": "5119dc7b9420f371fa433e35e58b7d89c980becdcdfa65736a99c058ca25ceee",
+      "equal": true
+    },
+    {
+      "path": "game/gui/color_blind_modes.gui",
+      "historical_sha256": "06a1740a323f94118bad2c3753c1d19efaf3782e7cc712ddc0d98dc80d1df124",
+      "installed_sha256": "06a1740a323f94118bad2c3753c1d19efaf3782e7cc712ddc0d98dc80d1df124",
+      "equal": true
+    },
+    {
+      "path": "game/gui/color_picker.gui",
+      "historical_sha256": "d910030c76a67eff3e825683f9ec5f85b66bb1a8d34605c084880c6edd8eed89",
+      "installed_sha256": "d910030c76a67eff3e825683f9ec5f85b66bb1a8d34605c084880c6edd8eed89",
+      "equal": true
+    },
+    {
+      "path": "game/gui/combat_unit_types.gui",
+      "historical_sha256": "98200edd3af1519e98a16891b067207a7c5cff22bd3259a24c5f778a9b2ddb70",
+      "installed_sha256": "98200edd3af1519e98a16891b067207a7c5cff22bd3259a24c5f778a9b2ddb70",
+      "equal": true
+    },
+    {
+      "path": "game/gui/companies_panel.gui",
+      "historical_sha256": "918c58bea0173c0c0ecb6dbeffcb5b4a930835d58044aba38c5c48b8c68ab5fd",
+      "installed_sha256": "918c58bea0173c0c0ecb6dbeffcb5b4a930835d58044aba38c5c48b8c68ab5fd",
+      "equal": true
+    },
+    {
+      "path": "game/gui/company_panel.gui",
+      "historical_sha256": "b46a3edce0564f7dc36176d5e2d1ca7efa376a0e7bcf305f1d4dfab8e1362dfb",
+      "installed_sha256": "b46a3edce0564f7dc36176d5e2d1ca7efa376a0e7bcf305f1d4dfab8e1362dfb",
+      "equal": true
+    },
+    {
+      "path": "game/gui/console.gui",
+      "historical_sha256": "1b44309b72ad443258a987243b46abb744af14c8b714eebcec4b30f472cfa701",
+      "installed_sha256": "1b44309b72ad443258a987243b46abb744af14c8b714eebcec4b30f472cfa701",
+      "equal": true
+    },
+    {
+      "path": "game/gui/construction_panel.gui",
+      "historical_sha256": "f566c6138d2b47681ced428dea294a6a03aeb2cad09afc66041e58890ad4dff9",
+      "installed_sha256": "f566c6138d2b47681ced428dea294a6a03aeb2cad09afc66041e58890ad4dff9",
+      "equal": true
+    },
+    {
+      "path": "game/gui/construction_queue.gui",
+      "historical_sha256": "2f5af084614f350238865e46fbdebf6d48e4aabc46bb23a9ae61bc397e6ab8bf",
+      "installed_sha256": "2f5af084614f350238865e46fbdebf6d48e4aabc46bb23a9ae61bc397e6ab8bf",
+      "equal": true
+    },
+    {
+      "path": "game/gui/cooltip.gui",
+      "historical_sha256": "cf91f909520481d979b9bbcc6a0117778180f681ea25f2d9888c6da49d9ab84c",
+      "installed_sha256": "cf91f909520481d979b9bbcc6a0117778180f681ea25f2d9888c6da49d9ab84c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/core.gui",
+      "historical_sha256": "ddcd43a26c3e57d0bd506688af4312a547f47b6f1e4736235f0d39c82ebce452",
+      "installed_sha256": "ddcd43a26c3e57d0bd506688af4312a547f47b6f1e4736235f0d39c82ebce452",
+      "equal": true
+    },
+    {
+      "path": "game/gui/countries_panel.gui",
+      "historical_sha256": "2d242a423fae83913eaa289142c683830087be88717d540ddbbfe988986f1b88",
+      "installed_sha256": "2d242a423fae83913eaa289142c683830087be88717d540ddbbfe988986f1b88",
+      "equal": true
+    },
+    {
+      "path": "game/gui/country_diplomacy_panel.gui",
+      "historical_sha256": "120238d65c4f25fa82f793a29e4a99ac8e0793884686cc5c66e1532a0b0cdec1",
+      "installed_sha256": "120238d65c4f25fa82f793a29e4a99ac8e0793884686cc5c66e1532a0b0cdec1",
+      "equal": true
+    },
+    {
+      "path": "game/gui/country_formation_panel.gui",
+      "historical_sha256": "583d04d4dad2209cac04523c913ed8f09711cd5d63efec2dbc5cd9d266be34f6",
+      "installed_sha256": "583d04d4dad2209cac04523c913ed8f09711cd5d63efec2dbc5cd9d266be34f6",
+      "equal": true
+    },
+    {
+      "path": "game/gui/country_interactions_panel.gui",
+      "historical_sha256": "13b30cb6e10d7b0aa82e98c33e5c696d49d85db8ee77bdd5d0cdf4e63d652264",
+      "installed_sha256": "13b30cb6e10d7b0aa82e98c33e5c696d49d85db8ee77bdd5d0cdf4e63d652264",
+      "equal": true
+    },
+    {
+      "path": "game/gui/country_panel.gui",
+      "historical_sha256": "6f5e063f91152880ad54cdaf4de3cbdb57a8961de265eb3bc58dc59712d6d1a4",
+      "installed_sha256": "6f5e063f91152880ad54cdaf4de3cbdb57a8961de265eb3bc58dc59712d6d1a4",
+      "equal": true
+    },
+    {
+      "path": "game/gui/country_politics_panel.gui",
+      "historical_sha256": "768d9c9e93e7a43a03e774d90e39950d99bc1e9ca523408ad7964be168be4faa",
+      "installed_sha256": "768d9c9e93e7a43a03e774d90e39950d99bc1e9ca523408ad7964be168be4faa",
+      "equal": true
+    },
+    {
+      "path": "game/gui/credits_window.gui",
+      "historical_sha256": "7fa89baea7aa2cd709e4baf93e7c3d5e78af32132d0d34ff4ee4e2ea5818f339",
+      "installed_sha256": "7fa89baea7aa2cd709e4baf93e7c3d5e78af32132d0d34ff4ee4e2ea5818f339",
+      "equal": true
+    },
+    {
+      "path": "game/gui/culture_info_panel.gui",
+      "historical_sha256": "e3f615a5a6cff5a454f63bbe1813f31fba78352d237b6996ce8795b578267b53",
+      "installed_sha256": "e3f615a5a6cff5a454f63bbe1813f31fba78352d237b6996ce8795b578267b53",
+      "equal": true
+    },
+    {
+      "path": "game/gui/culture_panel.gui",
+      "historical_sha256": "17f02494fe2e797d75750493d368441a446128f891bb149947c759fd1959f295",
+      "installed_sha256": "17f02494fe2e797d75750493d368441a446128f891bb149947c759fd1959f295",
+      "equal": true
+    },
+    {
+      "path": "game/gui/custom_tooltip.gui",
+      "historical_sha256": "8bad795f0ede25bb9c4032071ec6cac3142006f1192f58407dcc9f6afa2d3096",
+      "installed_sha256": "8bad795f0ede25bb9c4032071ec6cac3142006f1192f58407dcc9f6afa2d3096",
+      "equal": true
+    },
+    {
+      "path": "game/gui/debug_menues.gui",
+      "historical_sha256": "7c2622aedac1edaf3f6f7aef59b4fa1a3aac2d2c273507b8b31f1b37584f68a1",
+      "installed_sha256": "7c2622aedac1edaf3f6f7aef59b4fa1a3aac2d2c273507b8b31f1b37584f68a1",
+      "equal": true
+    },
+    {
+      "path": "game/gui/decisions_panel.gui",
+      "historical_sha256": "80458e64093a7bf9773d1a47c5f0714c1fde02ab010fce38dbf4fb1467f1c33d",
+      "installed_sha256": "80458e64093a7bf9773d1a47c5f0714c1fde02ab010fce38dbf4fb1467f1c33d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/diplomatic_overview.gui",
+      "historical_sha256": "26d31d5db876ca0599b14fd61d041f7eb511ece0af6be95a26d5f3c0fea7eea9",
+      "installed_sha256": "26d31d5db876ca0599b14fd61d041f7eb511ece0af6be95a26d5f3c0fea7eea9",
+      "equal": true
+    },
+    {
+      "path": "game/gui/diplomatic_play_panel.gui",
+      "historical_sha256": "67ce6dad48a09077121ddb5b0b5344b98277e9f46fca6722f06b600dcb53f478",
+      "installed_sha256": "67ce6dad48a09077121ddb5b0b5344b98277e9f46fca6722f06b600dcb53f478",
+      "equal": true
+    },
+    {
+      "path": "game/gui/election_panel.gui",
+      "historical_sha256": "51b3a07b5f37991bf5ded3002baccb812c990f7a4ddb5af14a93894c5530bff8",
+      "installed_sha256": "51b3a07b5f37991bf5ded3002baccb812c990f7a4ddb5af14a93894c5530bff8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/empty_state.gui",
+      "historical_sha256": "78010dc3ab0f184e94758e39556d9f2c2c2c518b5048ea157fd3fed91ff18502",
+      "installed_sha256": "78010dc3ab0f184e94758e39556d9f2c2c2c518b5048ea157fd3fed91ff18502",
+      "equal": true
+    },
+    {
+      "path": "game/gui/error_deer.gui",
+      "historical_sha256": "be0ba69439d960e5d904a6a9cd81d76eee681c4b114d494f31c8156906bbe06f",
+      "installed_sha256": "be0ba69439d960e5d904a6a9cd81d76eee681c4b114d494f31c8156906bbe06f",
+      "equal": true
+    },
+    {
+      "path": "game/gui/eventwindow.gui",
+      "historical_sha256": "5132e3a7d178d55c952951440de8181a0c37e22355b8c78a21a7e7a92f18136c",
+      "installed_sha256": "5132e3a7d178d55c952951440de8181a0c37e22355b8c78a21a7e7a92f18136c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/front_panel.gui",
+      "historical_sha256": "14d66bc43f203231386cc62134580db00eb3f892466938dc7cba9451934de46e",
+      "installed_sha256": "14d66bc43f203231386cc62134580db00eb3f892466938dc7cba9451934de46e",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/frontend_bookmarks.gui",
+      "historical_sha256": "0103c88e6f615980f31876a889380211a63b86da16e6ba78da8b0a070f965a96",
+      "installed_sha256": "0103c88e6f615980f31876a889380211a63b86da16e6ba78da8b0a070f965a96",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/frontend_dlc.gui",
+      "historical_sha256": "0d1449521967638447f8f2c70a5ec70e6fcd1ce35bdac4ab1b71fd8843f9273c",
+      "installed_sha256": "0d1449521967638447f8f2c70a5ec70e6fcd1ce35bdac4ab1b71fd8843f9273c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/frontend_ingame_menu.gui",
+      "historical_sha256": "00be5e6711b26a015e497a69560f5c4a0dad7deec4c39d01d9355ecf1c6d8776",
+      "installed_sha256": "00be5e6711b26a015e497a69560f5c4a0dad7deec4c39d01d9355ecf1c6d8776",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/frontend_load.gui",
+      "historical_sha256": "9b226a059b5f6e17a17912e8b3182665f8e0d73aeed4089572e4e45a2791e5c8",
+      "installed_sha256": "9b226a059b5f6e17a17912e8b3182665f8e0d73aeed4089572e4e45a2791e5c8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/frontend_loadingscreen.gui",
+      "historical_sha256": "278770a265931d22ab6511b7eb4b56caf50aff1ef3ceafeaab8568c4f2a936c8",
+      "installed_sha256": "278770a265931d22ab6511b7eb4b56caf50aff1ef3ceafeaab8568c4f2a936c8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/frontend_main.gui",
+      "historical_sha256": "10a8957378ce40f08357ab1f14547816d2d7ef4e5bdbedba91111879442de37f",
+      "installed_sha256": "10a8957378ce40f08357ab1f14547816d2d7ef4e5bdbedba91111879442de37f",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/frontend_mp_game_setup.gui",
+      "historical_sha256": "18b4cbeb582fd773b08463538e0a89adfa0c2dddf3ffbde64f6c8ef6437a5c16",
+      "installed_sha256": "18b4cbeb582fd773b08463538e0a89adfa0c2dddf3ffbde64f6c8ef6437a5c16",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/animation.gui",
+      "historical_sha256": "5044826797085a8e560bc9eec1dab6684e19d6afecda5fec24c64852ced21618",
+      "installed_sha256": "5044826797085a8e560bc9eec1dab6684e19d6afecda5fec24c64852ced21618",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/backgrounds.gui",
+      "historical_sha256": "49cfdb157cc4fc8de0385ccf954315186fe166c1c3e39b5737359de514b48c03",
+      "installed_sha256": "49cfdb157cc4fc8de0385ccf954315186fe166c1c3e39b5737359de514b48c03",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/buttons.gui",
+      "historical_sha256": "7638da726befdd2700a5bf90f86f4b7f5d48c98c56d85d561625c3557bba6859",
+      "installed_sha256": "7638da726befdd2700a5bf90f86f4b7f5d48c98c56d85d561625c3557bba6859",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/buttons_icons.gui",
+      "historical_sha256": "86d849a93cb477a9eee0a760bbd927c41607a1cea2a195d50087611588b8f29f",
+      "installed_sha256": "86d849a93cb477a9eee0a760bbd927c41607a1cea2a195d50087611588b8f29f",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/colors.gui",
+      "historical_sha256": "fbeb11fe168b59f8ef310bdc7b79059b4fc7e0c2b1d14c42f25bd8cf33b9ae1d",
+      "installed_sha256": "fbeb11fe168b59f8ef310bdc7b79059b4fc7e0c2b1d14c42f25bd8cf33b9ae1d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/defaults.gui",
+      "historical_sha256": "e1b64664b28a6da03301905980d6c60721806a00be97b5a492e847c017649c04",
+      "installed_sha256": "e1b64664b28a6da03301905980d6c60721806a00be97b5a492e847c017649c04",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/edit_boxes.gui",
+      "historical_sha256": "e793a42af9c9e427e5bec3519ab5fdb291d88827ff2652294a64f7b306bc676b",
+      "installed_sha256": "e793a42af9c9e427e5bec3519ab5fdb291d88827ff2652294a64f7b306bc676b",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/fonts.gui",
+      "historical_sha256": "d3503798f48d5f9f078a72b513dcbace081a24676240ceb389204f4f6f7a26ac",
+      "installed_sha256": "d3503798f48d5f9f078a72b513dcbace081a24676240ceb389204f4f6f7a26ac",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/hud.gui",
+      "historical_sha256": "8becfa1e8e01065120e3d835c6b0112c014dd652e7a387ce17e897f0a05cfb08",
+      "installed_sha256": "8becfa1e8e01065120e3d835c6b0112c014dd652e7a387ce17e897f0a05cfb08",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/icons.gui",
+      "historical_sha256": "269866f272919700cc315244370cd090d0b20ce035e161e362b406f5827c192e",
+      "installed_sha256": "269866f272919700cc315244370cd090d0b20ce035e161e362b406f5827c192e",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/labels.gui",
+      "historical_sha256": "ecfb4b245e39877cdc727a47e6130c66a3ccd01a6d0a004c2404fd6caecaf7ab",
+      "installed_sha256": "ecfb4b245e39877cdc727a47e6130c66a3ccd01a6d0a004c2404fd6caecaf7ab",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/lists.gui",
+      "historical_sha256": "56c72fae63afce0f5276f60497983097166f08659f4ef3bb512212bcee67de36",
+      "installed_sha256": "56c72fae63afce0f5276f60497983097166f08659f4ef3bb512212bcee67de36",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/sounds.gui",
+      "historical_sha256": "d4565db492521b01d6b3579e3b9ea2089df4286d5faf8cea7c65638562c9ffd2",
+      "installed_sha256": "d4565db492521b01d6b3579e3b9ea2089df4286d5faf8cea7c65638562c9ffd2",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/textformatting.gui",
+      "historical_sha256": "af96bc33d990bc9c98882fd5847e29e39f26381ae64d9dd0db6a2036d62700e5",
+      "installed_sha256": "af96bc33d990bc9c98882fd5847e29e39f26381ae64d9dd0db6a2036d62700e5",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/shared/windows.gui",
+      "historical_sha256": "5a8bad7b2664610c44d74148659a71b395124dd2831dba8aaac931a711039f88",
+      "installed_sha256": "5a8bad7b2664610c44d74148659a71b395124dd2831dba8aaac931a711039f88",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/window_resign_confirmation.gui",
+      "historical_sha256": "f282c54a82e8428fb2f4ea41cb962aac26790dd79ab20be32ec3dbac7249c729",
+      "installed_sha256": "f282c54a82e8428fb2f4ea41cb962aac26790dd79ab20be32ec3dbac7249c729",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend/window_save_game.gui",
+      "historical_sha256": "4b4080177c52c9f50baf7087737b33f56814c10cbf3fad2a536578c29dd117fb",
+      "installed_sha256": "4b4080177c52c9f50baf7087737b33f56814c10cbf3fad2a536578c29dd117fb",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend_credits.gui",
+      "historical_sha256": "f99e8c8c876f9c1550fa3da2aecba818a80f47df434f2a4f4e57e1834f771b93",
+      "installed_sha256": "f99e8c8c876f9c1550fa3da2aecba818a80f47df434f2a4f4e57e1834f771b93",
+      "equal": true
+    },
+    {
+      "path": "game/gui/frontend_ingame_loadingscreen.gui",
+      "historical_sha256": "ed1d9a56a50428bf2fb623140ebfa84edeec48454c060c2b40714edd40a44d62",
+      "installed_sha256": "ed1d9a56a50428bf2fb623140ebfa84edeec48454c060c2b40714edd40a44d62",
+      "equal": true
+    },
+    {
+      "path": "game/gui/game_rules.gui",
+      "historical_sha256": "5a624bc677d4692364ce3bd02ff830e041c2bb5a4715e735a80a492b3125862a",
+      "installed_sha256": "5a624bc677d4692364ce3bd02ff830e041c2bb5a4715e735a80a492b3125862a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/gameover_screen.gui",
+      "historical_sha256": "29b4c5ad0fc174336536d0429394ba2200f596d12a1fc1e7003cf49d557bce34",
+      "installed_sha256": "29b4c5ad0fc174336536d0429394ba2200f596d12a1fc1e7003cf49d557bce34",
+      "equal": true
+    },
+    {
+      "path": "game/gui/generate_character.gui",
+      "historical_sha256": "757779f1550df0eecf98aedad934d4d5c163f4552a194a656f785873e4f85422",
+      "installed_sha256": "757779f1550df0eecf98aedad934d4d5c163f4552a194a656f785873e4f85422",
+      "equal": true
+    },
+    {
+      "path": "game/gui/goods_local_prices_panel.gui",
+      "historical_sha256": "e1386e802e6040d3bd0ad145b757cb097326088e78babb531908f5ce82cabaf1",
+      "installed_sha256": "e1386e802e6040d3bd0ad145b757cb097326088e78babb531908f5ce82cabaf1",
+      "equal": true
+    },
+    {
+      "path": "game/gui/goods_panel.gui",
+      "historical_sha256": "3b44e416743e2527757141131744a1a2c91eefbe8fc58b00928bcfbfe5c04f99",
+      "installed_sha256": "3b44e416743e2527757141131744a1a2c91eefbe8fc58b00928bcfbfe5c04f99",
+      "equal": true
+    },
+    {
+      "path": "game/gui/goods_state_panel.gui",
+      "historical_sha256": "c5d35928ff1e164b067f83f8bd6051a2adf7f702da4d8e86e08746291cc64df7",
+      "installed_sha256": "c5d35928ff1e164b067f83f8bd6051a2adf7f702da4d8e86e08746291cc64df7",
+      "equal": true
+    },
+    {
+      "path": "game/gui/goods_texticons.gui",
+      "historical_sha256": "4b30b226c91e51c86e5a079def2316f9cb712fafc3d33d58c5b65de1cdcef6fe",
+      "installed_sha256": "4b30b226c91e51c86e5a079def2316f9cb712fafc3d33d58c5b65de1cdcef6fe",
+      "equal": true
+    },
+    {
+      "path": "game/gui/goods_usage_panel.gui",
+      "historical_sha256": "2d4baa3671ad4e3501778768c6cd95df77c7908798c56f53d01fa9933eff4a7d",
+      "installed_sha256": "2d4baa3671ad4e3501778768c6cd95df77c7908798c56f53d01fa9933eff4a7d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/goods_world_market_panel.gui",
+      "historical_sha256": "e71b99a62c4ebc8b55bb98caa8f5a742512d6239f5104b964f1158a3cd6df945",
+      "installed_sha256": "e71b99a62c4ebc8b55bb98caa8f5a742512d6239f5104b964f1158a3cd6df945",
+      "equal": true
+    },
+    {
+      "path": "game/gui/graph_tooltips.gui",
+      "historical_sha256": "d3579f4635290defc8621faded9a955cdfe1559484c87a5077e629480157a2aa",
+      "installed_sha256": "d3579f4635290defc8621faded9a955cdfe1559484c87a5077e629480157a2aa",
+      "equal": true
+    },
+    {
+      "path": "game/gui/hq_panel.gui",
+      "historical_sha256": "24def2a77a40fb935b8228a789b864835141d2fc64d43f9494cba5840d4bf759",
+      "installed_sha256": "24def2a77a40fb935b8228a789b864835141d2fc64d43f9494cba5840d4bf759",
+      "equal": true
+    },
+    {
+      "path": "game/gui/important_actions_list.gui",
+      "historical_sha256": "a97f1790e92d158cff00d4a68c8b43d9c0f84db56bb705d4423c4033247282ed",
+      "installed_sha256": "a97f1790e92d158cff00d4a68c8b43d9c0f84db56bb705d4423c4033247282ed",
+      "equal": true
+    },
+    {
+      "path": "game/gui/in_game_menu_logo.gui",
+      "historical_sha256": "2e443d54c90a2e8b55470a198189e07257103c19834829d1b5467ad03eb40de8",
+      "installed_sha256": "2e443d54c90a2e8b55470a198189e07257103c19834829d1b5467ad03eb40de8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/information_panel_bar.gui",
+      "historical_sha256": "16d1b0188fcc62e0a6236add9c4b13a5bfa0204df41a0b093b7f9feee3b6a1a8",
+      "installed_sha256": "16d1b0188fcc62e0a6236add9c4b13a5bfa0204df41a0b093b7f9feee3b6a1a8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/information_panels_types.gui",
+      "historical_sha256": "5971ce21a56b454c99b0919e9868310ab927079eb7ec176077d4ba1996c54a93",
+      "installed_sha256": "5971ce21a56b454c99b0919e9868310ab927079eb7ec176077d4ba1996c54a93",
+      "equal": true
+    },
+    {
+      "path": "game/gui/ingame_hud.gui",
+      "historical_sha256": "ab9e0bc5c42b633afdbd4221cf2f082d49f0ddbd43c3c58a3f3dc1ee872ca0cd",
+      "installed_sha256": "ab9e0bc5c42b633afdbd4221cf2f082d49f0ddbd43c3c58a3f3dc1ee872ca0cd",
+      "equal": true
+    },
+    {
+      "path": "game/gui/interest_group_panel.gui",
+      "historical_sha256": "dac5e7b619896fa261e4e5ea23bf26f2c5de83be445ed6f34e4c7415a0f0ef42",
+      "installed_sha256": "dac5e7b619896fa261e4e5ea23bf26f2c5de83be445ed6f34e4c7415a0f0ef42",
+      "equal": true
+    },
+    {
+      "path": "game/gui/invasion_panel.gui",
+      "historical_sha256": "e2f06f86d7ce90129d348b7a1d981e1b48e925422f30c34d5cf4e8f54e5f401a",
+      "installed_sha256": "e2f06f86d7ce90129d348b7a1d981e1b48e925422f30c34d5cf4e8f54e5f401a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/invasion_planner.gui",
+      "historical_sha256": "5183616e790a05fe41a2c601b046d8d506f0e9ffb84bd4f36507ab6dece20c08",
+      "installed_sha256": "5183616e790a05fe41a2c601b046d8d506f0e9ffb84bd4f36507ab6dece20c08",
+      "equal": true
+    },
+    {
+      "path": "game/gui/jomini/credits/credits_base.gui",
+      "historical_sha256": "403adb4e1b5aaa6f807d93174c5b9c785c65f60691a49f49ea4156b0cda78e46",
+      "installed_sha256": "403adb4e1b5aaa6f807d93174c5b9c785c65f60691a49f49ea4156b0cda78e46",
+      "equal": true
+    },
+    {
+      "path": "game/gui/jomini/encyclopedia/jomini_encyclopedia.gui",
+      "historical_sha256": "b2d473bab71777ef518ed7341ea8a32bb754e4a9ea9587284895f6e09d2df941",
+      "installed_sha256": "b2d473bab71777ef518ed7341ea8a32bb754e4a9ea9587284895f6e09d2df941",
+      "equal": true
+    },
+    {
+      "path": "game/gui/jomini/music_player/music_player_mini_controller.gui",
+      "historical_sha256": "7984dba3bf1a054442ca4b42274d63e90393b7baae39f2a093d817624bb0783e",
+      "installed_sha256": "7984dba3bf1a054442ca4b42274d63e90393b7baae39f2a093d817624bb0783e",
+      "equal": true
+    },
+    {
+      "path": "game/gui/jomini/music_player/music_player_view.gui",
+      "historical_sha256": "d6752d3575c5392b70ce4bfd069af97d3acbd1178b24165e7138e7460f20b7e8",
+      "installed_sha256": "d6752d3575c5392b70ce4bfd069af97d3acbd1178b24165e7138e7460f20b7e8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/journal.gui",
+      "historical_sha256": "48bbf01647e9f2323545489dcae12244e47fe0d6fc6d2f52daba1bce7489685d",
+      "installed_sha256": "48bbf01647e9f2323545489dcae12244e47fe0d6fc6d2f52daba1bce7489685d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/journal_entry.gui",
+      "historical_sha256": "003e16b9032099e5880c8a21c8efde2e2475fcf741c4d0d43868db85cb7ff33c",
+      "installed_sha256": "003e16b9032099e5880c8a21c8efde2e2475fcf741c4d0d43868db85cb7ff33c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/journal_entry_widgets/custom_widgets.gui",
+      "historical_sha256": "695d304c8adf01de887a721fd676ad075346b74ee7498e97bc461b28cf0e29ef",
+      "installed_sha256": "695d304c8adf01de887a721fd676ad075346b74ee7498e97bc461b28cf0e29ef",
+      "equal": true
+    },
+    {
+      "path": "game/gui/journal_entry_widgets/ep2_japan_widgets.gui",
+      "historical_sha256": "a7cb66df0f7b8fb9fddd457ef3fdf855883f75bbe6ac96c51492a11f4a857102",
+      "installed_sha256": "a7cb66df0f7b8fb9fddd457ef3fdf855883f75bbe6ac96c51492a11f4a857102",
+      "equal": true
+    },
+    {
+      "path": "game/gui/laws_panel.gui",
+      "historical_sha256": "962d4482f2f3a2d5513905c7987ffc28ed819087932b98f785fc080e9b62fa20",
+      "installed_sha256": "962d4482f2f3a2d5513905c7987ffc28ed819087932b98f785fc080e9b62fa20",
+      "equal": true
+    },
+    {
+      "path": "game/gui/layers.gui",
+      "historical_sha256": "8e5bfd296fdefe7f0c715ead8c3c24249bed4e5e347c56de6969821321b7d6ad",
+      "installed_sha256": "8e5bfd296fdefe7f0c715ead8c3c24249bed4e5e347c56de6969821321b7d6ad",
+      "equal": true
+    },
+    {
+      "path": "game/gui/lens_toolbar.gui",
+      "historical_sha256": "c3c1898b7055629fab2dd0256ffc0aa3cfe9669f99c82e33fd8376fc419694f4",
+      "installed_sha256": "c3c1898b7055629fab2dd0256ffc0aa3cfe9669f99c82e33fd8376fc419694f4",
+      "equal": true
+    },
+    {
+      "path": "game/gui/location_finder.gui",
+      "historical_sha256": "2559e17726a02cd03485ea4d5ad4c1bfd152b29338425516917ea63344115271",
+      "installed_sha256": "2559e17726a02cd03485ea4d5ad4c1bfd152b29338425516917ea63344115271",
+      "equal": true
+    },
+    {
+      "path": "game/gui/map_interaction.gui",
+      "historical_sha256": "a461177f9391a6eb1aca95d4ab48dbb991f49b5dfc38ae2b08868af4f1cf63cd",
+      "installed_sha256": "a461177f9391a6eb1aca95d4ab48dbb991f49b5dfc38ae2b08868af4f1cf63cd",
+      "equal": true
+    },
+    {
+      "path": "game/gui/map_list_panel.gui",
+      "historical_sha256": "312da39c25c4e42e5756195837d573c1103c23b6c61a87af3ac2d847089eb9d6",
+      "installed_sha256": "312da39c25c4e42e5756195837d573c1103c23b6c61a87af3ac2d847089eb9d6",
+      "equal": true
+    },
+    {
+      "path": "game/gui/map_markers.gui",
+      "historical_sha256": "43983caafada712300dab8b3f768d90817165556a6bc6262f16d6a2ca937e7f9",
+      "installed_sha256": "43983caafada712300dab8b3f768d90817165556a6bc6262f16d6a2ca937e7f9",
+      "equal": true
+    },
+    {
+      "path": "game/gui/map_notifications.gui",
+      "historical_sha256": "79309ffb2707130343b6699cbcb542431e735a9ecad469c45996f2ee65fd4c1a",
+      "installed_sha256": "79309ffb2707130343b6699cbcb542431e735a9ecad469c45996f2ee65fd4c1a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/mapeditor_customizations.gui",
+      "historical_sha256": "d2a8470ce1d4a77fce5c41ea2ac42256aff9c542da4cff58f210dbba3cb8a2cf",
+      "installed_sha256": "d2a8470ce1d4a77fce5c41ea2ac42256aff9c542da4cff58f210dbba3cb8a2cf",
+      "equal": true
+    },
+    {
+      "path": "game/gui/mapeditor_spline_strip_tool.gui",
+      "historical_sha256": "35c44d76e47f64de343b6ffca0bb78ee5ecde413da8513f8cb68275472626105",
+      "installed_sha256": "35c44d76e47f64de343b6ffca0bb78ee5ecde413da8513f8cb68275472626105",
+      "equal": true
+    },
+    {
+      "path": "game/gui/market_food_security_panel.gui",
+      "historical_sha256": "76c37f535409b076f7d4787dffa268d38b7d02daa0af67dd140abf75b5b509bf",
+      "installed_sha256": "76c37f535409b076f7d4787dffa268d38b7d02daa0af67dd140abf75b5b509bf",
+      "equal": true
+    },
+    {
+      "path": "game/gui/market_panel.gui",
+      "historical_sha256": "1f682222b689666731e755bc52b412b3126f4afff40cde05b13a0757b027ec3e",
+      "installed_sha256": "1f682222b689666731e755bc52b412b3126f4afff40cde05b13a0757b027ec3e",
+      "equal": true
+    },
+    {
+      "path": "game/gui/market_states_panel.gui",
+      "historical_sha256": "e54a59dec0fe2633cb79c01f8fc0771a6b4ed04229811ebb75e0be1d2058df19",
+      "installed_sha256": "e54a59dec0fe2633cb79c01f8fc0771a6b4ed04229811ebb75e0be1d2058df19",
+      "equal": true
+    },
+    {
+      "path": "game/gui/message_settings.gui",
+      "historical_sha256": "b8bb11b5aac4e578277207c76e87f2b764b3832bc183a1e68152261419133c9b",
+      "installed_sha256": "b8bb11b5aac4e578277207c76e87f2b764b3832bc183a1e68152261419133c9b",
+      "equal": true
+    },
+    {
+      "path": "game/gui/military_formation_panel.gui",
+      "historical_sha256": "78175453675b89fdc8f1bac486ceac886d8b22117e07ce9b1f59cfdf58d9294f",
+      "installed_sha256": "78175453675b89fdc8f1bac486ceac886d8b22117e07ce9b1f59cfdf58d9294f",
+      "equal": true
+    },
+    {
+      "path": "game/gui/military_panel_formations.gui",
+      "historical_sha256": "4557f660a00611c759dcd976893e753fdca4ad4e88c31647bfb86e63b9819e7d",
+      "installed_sha256": "4557f660a00611c759dcd976893e753fdca4ad4e88c31647bfb86e63b9819e7d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/military_panel_hqs.gui",
+      "historical_sha256": "e964520008440b606428fc22cf31cbbb0d29c5c5b605901fe308b8d642672844",
+      "installed_sha256": "e964520008440b606428fc22cf31cbbb0d29c5c5b605901fe308b8d642672844",
+      "equal": true
+    },
+    {
+      "path": "game/gui/minimap.gui",
+      "historical_sha256": "3ccfa1040cd5fa042253dc8bf214f96df7a25535a5002b390b77140101723037",
+      "installed_sha256": "3ccfa1040cd5fa042253dc8bf214f96df7a25535a5002b390b77140101723037",
+      "equal": true
+    },
+    {
+      "path": "game/gui/modifier_debugger.gui",
+      "historical_sha256": "c36621544af0fdba3cae600e657624cc5425c91519d2dc42d699a678204c1eae",
+      "installed_sha256": "c36621544af0fdba3cae600e657624cc5425c91519d2dc42d699a678204c1eae",
+      "equal": true
+    },
+    {
+      "path": "game/gui/modifiers_panel.gui",
+      "historical_sha256": "62c910460e0005a2cfdea330e1c74cacb2a5c8c4e58e95d444d4a1deb2797975",
+      "installed_sha256": "62c910460e0005a2cfdea330e1c74cacb2a5c8c4e58e95d444d4a1deb2797975",
+      "equal": true
+    },
+    {
+      "path": "game/gui/multiplayer_frontend.gui",
+      "historical_sha256": "b71cc31d9225143f5a7993fbee7ce0b3892323007775f80145b6c759e5356116",
+      "installed_sha256": "b71cc31d9225143f5a7993fbee7ce0b3892323007775f80145b6c759e5356116",
+      "equal": true
+    },
+    {
+      "path": "game/gui/multiplayer_lobby.gui",
+      "historical_sha256": "a0f6ead782c1429aea3c95f517f8a12c10931b7efc595179b325009abd85fa18",
+      "installed_sha256": "a0f6ead782c1429aea3c95f517f8a12c10931b7efc595179b325009abd85fa18",
+      "equal": true
+    },
+    {
+      "path": "game/gui/multiplayer_lobby_types.gui",
+      "historical_sha256": "87532678021af2db1d751dbe86e7e1ce12ab297af3ec015b0b9ab86f6b2819f4",
+      "installed_sha256": "87532678021af2db1d751dbe86e7e1ce12ab297af3ec015b0b9ab86f6b2819f4",
+      "equal": true
+    },
+    {
+      "path": "game/gui/multiplayer_types.gui",
+      "historical_sha256": "03419afaad7ab530af27f3fad50b87bdc3399ff3e59c6671789224dccf6b7b4e",
+      "installed_sha256": "03419afaad7ab530af27f3fad50b87bdc3399ff3e59c6671789224dccf6b7b4e",
+      "equal": true
+    },
+    {
+      "path": "game/gui/naval_battle.gui",
+      "historical_sha256": "bf9bea89fab5357233192d440b9d1a5d921b3fb4b66977a5b0389fd260362e11",
+      "installed_sha256": "bf9bea89fab5357233192d440b9d1a5d921b3fb4b66977a5b0389fd260362e11",
+      "equal": true
+    },
+    {
+      "path": "game/gui/notifications.gui",
+      "historical_sha256": "90955758c02b6352534ffaaf4e5635e7c2ea663ba87a5f22143c8fa2cfe45b4b",
+      "installed_sha256": "90955758c02b6352534ffaaf4e5635e7c2ea663ba87a5f22143c8fa2cfe45b4b",
+      "equal": true
+    },
+    {
+      "path": "game/gui/notifications/jomini_message.gui",
+      "historical_sha256": "a836d25fb40e435f7b6461805539d358a0928bda5bd3cd186a28f28720b300c3",
+      "installed_sha256": "a836d25fb40e435f7b6461805539d358a0928bda5bd3cd186a28f28720b300c3",
+      "equal": true
+    },
+    {
+      "path": "game/gui/objective_types.gui",
+      "historical_sha256": "55f1c6debac91476a62d780d88fb6e4d3704a8f821adb2703c991c81848ee5fd",
+      "installed_sha256": "55f1c6debac91476a62d780d88fb6e4d3704a8f821adb2703c991c81848ee5fd",
+      "equal": true
+    },
+    {
+      "path": "game/gui/outliner.gui",
+      "historical_sha256": "b4fa7cdc9fa8976870ac7f63bb39a0f473f5657b9690863d81a2398bc8057e14",
+      "installed_sha256": "b4fa7cdc9fa8976870ac7f63bb39a0f473f5657b9690863d81a2398bc8057e14",
+      "equal": true
+    },
+    {
+      "path": "game/gui/outliner_framework.gui",
+      "historical_sha256": "aaa4a87adefdec735b12618b1397baf744003dcde64ef548b7347a54c8cc04e6",
+      "installed_sha256": "aaa4a87adefdec735b12618b1397baf744003dcde64ef548b7347a54c8cc04e6",
+      "equal": true
+    },
+    {
+      "path": "game/gui/outliner_ongoing_types.gui",
+      "historical_sha256": "34e845b69e9bd17d875c41c0defa78f16501d932fc8f87afbfdcba26625d7403",
+      "installed_sha256": "34e845b69e9bd17d875c41c0defa78f16501d932fc8f87afbfdcba26625d7403",
+      "equal": true
+    },
+    {
+      "path": "game/gui/outliner_pinnable_types.gui",
+      "historical_sha256": "e3e3ca4704662e61314f511f458bebbc0941c801f562b3fb8dd69374f700f5ae",
+      "installed_sha256": "e3e3ca4704662e61314f511f458bebbc0941c801f562b3fb8dd69374f700f5ae",
+      "equal": true
+    },
+    {
+      "path": "game/gui/panel_military.gui",
+      "historical_sha256": "804c52a3cd19fe8dc270e0decaf5882c1edfd85ede76e95f08a78b2e410038db",
+      "installed_sha256": "804c52a3cd19fe8dc270e0decaf5882c1edfd85ede76e95f08a78b2e410038db",
+      "equal": true
+    },
+    {
+      "path": "game/gui/party_panel.gui",
+      "historical_sha256": "61a3e6aef18b79eab35c5e50b45f9faf4cd5843659019a6afd85cc16a50dbb52",
+      "installed_sha256": "61a3e6aef18b79eab35c5e50b45f9faf4cd5843659019a6afd85cc16a50dbb52",
+      "equal": true
+    },
+    {
+      "path": "game/gui/pdx_account/base_types.gui",
+      "historical_sha256": "208a3360c06be5c4196f9ca8038029af332d4d03841c0ac46456c25c00311f6c",
+      "installed_sha256": "208a3360c06be5c4196f9ca8038029af332d4d03841c0ac46456c25c00311f6c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/pdx_account/create_account_window.gui",
+      "historical_sha256": "4f2d93f89106c1fa98c11a49ee4eaa39b8843aeca32d741c01060031e3691b6d",
+      "installed_sha256": "4f2d93f89106c1fa98c11a49ee4eaa39b8843aeca32d741c01060031e3691b6d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/pdx_account/login_window.gui",
+      "historical_sha256": "5b0267823b820c56336c9b59c49a9e8b61ede4e9fe9424edd4588d07fcd20e56",
+      "installed_sha256": "5b0267823b820c56336c9b59c49a9e8b61ede4e9fe9424edd4588d07fcd20e56",
+      "equal": true
+    },
+    {
+      "path": "game/gui/pdx_account/login_window_instanced.gui",
+      "historical_sha256": "3441ed846763d710c4aa8c7781758ed956711c708363e0183ad76536929c0c61",
+      "installed_sha256": "3441ed846763d710c4aa8c7781758ed956711c708363e0183ad76536929c0c61",
+      "equal": true
+    },
+    {
+      "path": "game/gui/political_lobby_panel.gui",
+      "historical_sha256": "facd5192ab523488cfd5ea5f2b4d3aeeffe41273f9658502a30c091547de86a9",
+      "installed_sha256": "facd5192ab523488cfd5ea5f2b4d3aeeffe41273f9658502a30c091547de86a9",
+      "equal": true
+    },
+    {
+      "path": "game/gui/political_movement_panel.gui",
+      "historical_sha256": "a5dc2bfd692259d4b2b941642be53c49a3726b33aa44395e61deb5cbcdb976b1",
+      "installed_sha256": "a5dc2bfd692259d4b2b941642be53c49a3726b33aa44395e61deb5cbcdb976b1",
+      "equal": true
+    },
+    {
+      "path": "game/gui/politics_panel.gui",
+      "historical_sha256": "fe323d6ef26cd874fbbeb2bb972bc0f1b6b07cdaf0d52a2bfcdbf4063a290e26",
+      "installed_sha256": "fe323d6ef26cd874fbbeb2bb972bc0f1b6b07cdaf0d52a2bfcdbf4063a290e26",
+      "equal": true
+    },
+    {
+      "path": "game/gui/politics_panel_change_law.gui",
+      "historical_sha256": "7aeaa4a6c531ae0b7f3249420317207387283ab2303f0a02ec153a679129e470",
+      "installed_sha256": "7aeaa4a6c531ae0b7f3249420317207387283ab2303f0a02ec153a679129e470",
+      "equal": true
+    },
+    {
+      "path": "game/gui/politics_panel_constitution.gui",
+      "historical_sha256": "2432432a4d9a63cc52f8dcd392767fa48495f123920e7e77f5f999a3e894b457",
+      "installed_sha256": "2432432a4d9a63cc52f8dcd392767fa48495f123920e7e77f5f999a3e894b457",
+      "equal": true
+    },
+    {
+      "path": "game/gui/politics_panel_institutions.gui",
+      "historical_sha256": "0f6c6de93df77ba0f621ae41b5d13b802fbbf4a7d957a78008005fc56c265e99",
+      "installed_sha256": "0f6c6de93df77ba0f621ae41b5d13b802fbbf4a7d957a78008005fc56c265e99",
+      "equal": true
+    },
+    {
+      "path": "game/gui/politics_panel_overview.gui",
+      "historical_sha256": "966c1ff79f4a260b1eafd5cc6f7bfe3507ac26a81985073ac59f9637aa92f27d",
+      "installed_sha256": "966c1ff79f4a260b1eafd5cc6f7bfe3507ac26a81985073ac59f9637aa92f27d",
+      "equal": true
+    },
+    {
+      "path": "game/gui/politics_panel_reform_government.gui",
+      "historical_sha256": "e1b65a6208ee78eafa0c4db0e46fb07e1e1c9e2580acbad6a2608319b08cdff5",
+      "installed_sha256": "e1b65a6208ee78eafa0c4db0e46fb07e1e1c9e2580acbad6a2608319b08cdff5",
+      "equal": true
+    },
+    {
+      "path": "game/gui/politics_panel_types.gui",
+      "historical_sha256": "840b3ea8734c3d946cd8a2fa6cafcf4bd0ee32c24b0943197f7c5ec07e75abf7",
+      "installed_sha256": "840b3ea8734c3d946cd8a2fa6cafcf4bd0ee32c24b0943197f7c5ec07e75abf7",
+      "equal": true
+    },
+    {
+      "path": "game/gui/pop_browser_panel.gui",
+      "historical_sha256": "46df2cb407adc0559f773c0e17463ada5cd47788df0156d9c44ebfb756d4213e",
+      "installed_sha256": "46df2cb407adc0559f773c0e17463ada5cd47788df0156d9c44ebfb756d4213e",
+      "equal": true
+    },
+    {
+      "path": "game/gui/pop_details_panel.gui",
+      "historical_sha256": "5a2e03b8ce0ec3b08e28b3d1a7fd75bd1ea339cd565e8fa0efc929cb69fdd5f8",
+      "installed_sha256": "5a2e03b8ce0ec3b08e28b3d1a7fd75bd1ea339cd565e8fa0efc929cb69fdd5f8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/pops_overview.gui",
+      "historical_sha256": "75ddf2db6ca6511d12a7779cecd6a5a87d7a1b7e54d80fc38026b6b4dbfdb02f",
+      "installed_sha256": "75ddf2db6ca6511d12a7779cecd6a5a87d7a1b7e54d80fc38026b6b4dbfdb02f",
+      "equal": true
+    },
+    {
+      "path": "game/gui/popups.gui",
+      "historical_sha256": "d357bccf5d15a5148f78a691a154edd91e438e8608a34fcf745d3907795492a5",
+      "installed_sha256": "d357bccf5d15a5148f78a691a154edd91e438e8608a34fcf745d3907795492a5",
+      "equal": true
+    },
+    {
+      "path": "game/gui/power_bloc_formation_panel.gui",
+      "historical_sha256": "f2f21570a909a0ae8831bad88e4f84694afe049e8b0fa439c43f3c3cfe508901",
+      "installed_sha256": "f2f21570a909a0ae8831bad88e4f84694afe049e8b0fa439c43f3c3cfe508901",
+      "equal": true
+    },
+    {
+      "path": "game/gui/power_bloc_panel.gui",
+      "historical_sha256": "c2d81cf87a4859e792aa51e2fb89d527f09bf81b3e389fd5a26f7892a1c1bab5",
+      "installed_sha256": "c2d81cf87a4859e792aa51e2fb89d527f09bf81b3e389fd5a26f7892a1c1bab5",
+      "equal": true
+    },
+    {
+      "path": "game/gui/principle_selection_window.gui",
+      "historical_sha256": "400c217082a2896596a2dec5e2cfb488df97678a63f4132b853c2d461045dd7a",
+      "installed_sha256": "400c217082a2896596a2dec5e2cfb488df97678a63f4132b853c2d461045dd7a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/production_methods.gui",
+      "historical_sha256": "325a28c8ce79c2f5895d1da8d570849d744987d4b661b56d8cf6aec988cabe4b",
+      "installed_sha256": "325a28c8ce79c2f5895d1da8d570849d744987d4b661b56d8cf6aec988cabe4b",
+      "equal": true
+    },
+    {
+      "path": "game/gui/religion_info_panel.gui",
+      "historical_sha256": "7d39fe28153bc2ba6c2f36cc38498d2148a17b90008228b2a45c5ba44a1dc5ae",
+      "installed_sha256": "7d39fe28153bc2ba6c2f36cc38498d2148a17b90008228b2a45c5ba44a1dc5ae",
+      "equal": true
+    },
+    {
+      "path": "game/gui/right_click_menu.gui",
+      "historical_sha256": "e8ea055a05253e631c75b0ec1cb99e3eff9f771b6781b0bcbe3af951b5a36086",
+      "installed_sha256": "e8ea055a05253e631c75b0ec1cb99e3eff9f771b6781b0bcbe3af951b5a36086",
+      "equal": true
+    },
+    {
+      "path": "game/gui/scripted_widgets/scripted_widgets.md",
+      "historical_sha256": "a25c0706115c71ecab5b29d80ca4bbe28a1c98f563e5dc34ca471b0b5496d0c1",
+      "installed_sha256": "a25c0706115c71ecab5b29d80ca4bbe28a1c98f563e5dc34ca471b0b5496d0c1",
+      "equal": true
+    },
+    {
+      "path": "game/gui/sea_region_panel.gui",
+      "historical_sha256": "009d4472ddec7f388f55ea8387a86f9a4cd635d645d1382e3472af31228c0057",
+      "installed_sha256": "009d4472ddec7f388f55ea8387a86f9a4cd635d645d1382e3472af31228c0057",
+      "equal": true
+    },
+    {
+      "path": "game/gui/settings/setting_types.gui",
+      "historical_sha256": "69033ea7d90e668e51070c41d68c417c24481fecf4373f12f3c556fb2b627642",
+      "installed_sha256": "69033ea7d90e668e51070c41d68c417c24481fecf4373f12f3c556fb2b627642",
+      "equal": true
+    },
+    {
+      "path": "game/gui/settings/settings.gui",
+      "historical_sha256": "cd69b9f961b11b305fba84f98e4f0ea29f915ca50580cf2d6b2027c75af671d7",
+      "installed_sha256": "cd69b9f961b11b305fba84f98e4f0ea29f915ca50580cf2d6b2027c75af671d7",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/animation_curves.gui",
+      "historical_sha256": "893c0d2e4c15ab070b67a9b178000e4ba1781f60fc8fd71f0b6534899ceaa98a",
+      "installed_sha256": "893c0d2e4c15ab070b67a9b178000e4ba1781f60fc8fd71f0b6534899ceaa98a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/animations.gui",
+      "historical_sha256": "f9e65fdfb4080c30683804522921737aa730fdb26b022c3f430b5fd439bc8663",
+      "installed_sha256": "f9e65fdfb4080c30683804522921737aa730fdb26b022c3f430b5fd439bc8663",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/animations_frame_by_frame.gui",
+      "historical_sha256": "331889901e48b1196ea06f0d81460c86f8a2503f52082d566622f7244930f8fe",
+      "installed_sha256": "331889901e48b1196ea06f0d81460c86f8a2503f52082d566622f7244930f8fe",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/animations_special.gui",
+      "historical_sha256": "d2e4b68b766540f00e3e4c69de0ec4464d17ff34ee76fed255380c0967bbb88a",
+      "installed_sha256": "d2e4b68b766540f00e3e4c69de0ec4464d17ff34ee76fed255380c0967bbb88a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/backgrounds.gui",
+      "historical_sha256": "e764ca5901d4810a680de285c2f8dbd98f838fcdbf10835fe044e19ced561d95",
+      "installed_sha256": "e764ca5901d4810a680de285c2f8dbd98f838fcdbf10835fe044e19ced561d95",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/button_icons.gui",
+      "historical_sha256": "d0b4ed3a12294728fbe741961e52d1dd951274b88b95815d2a673a767ff37077",
+      "installed_sha256": "d0b4ed3a12294728fbe741961e52d1dd951274b88b95815d2a673a767ff37077",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/buttons.gui",
+      "historical_sha256": "eec32398b54b8ba3e1902cb6451aa09c3ae0a3729cbb049bbd1ac9b362c693a3",
+      "installed_sha256": "eec32398b54b8ba3e1902cb6451aa09c3ae0a3729cbb049bbd1ac9b362c693a3",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/character.gui",
+      "historical_sha256": "f1a49d6e5d224e84cf3a6514df845d40770af36e55a58d91128cf3bedf081101",
+      "installed_sha256": "f1a49d6e5d224e84cf3a6514df845d40770af36e55a58d91128cf3bedf081101",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/defaults.gui",
+      "historical_sha256": "227be956767dd9fab9b6ce441f5089e7f9b25d55dbe2ff375f45dabb794b1561",
+      "installed_sha256": "227be956767dd9fab9b6ce441f5089e7f9b25d55dbe2ff375f45dabb794b1561",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/dividers.gui",
+      "historical_sha256": "0526ea649c266092f47e725d1bb7b98b4304106cc20ebcc226498ceca890848c",
+      "installed_sha256": "0526ea649c266092f47e725d1bb7b98b4304106cc20ebcc226498ceca890848c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/dropdown.gui",
+      "historical_sha256": "9f253577cb2eecd04ac57f2a3a87ec4e0f6a0d8ca8ab53798f0b7798ab815f34",
+      "installed_sha256": "9f253577cb2eecd04ac57f2a3a87ec4e0f6a0d8ca8ab53798f0b7798ab815f34",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/flags.gui",
+      "historical_sha256": "bca0d2d964c9582b9d95605fcd9d4dae3e7752d8be2a112d70998ac39f67670c",
+      "installed_sha256": "bca0d2d964c9582b9d95605fcd9d4dae3e7752d8be2a112d70998ac39f67670c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/layout.gui",
+      "historical_sha256": "6fd26d3458dbffed141d4e7daef1ded2ae1256ec775fe5a6bcd40e06782f8b86",
+      "installed_sha256": "6fd26d3458dbffed141d4e7daef1ded2ae1256ec775fe5a6bcd40e06782f8b86",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/progressbars.gui",
+      "historical_sha256": "e7c551d5b7c96e8314ac1b9611ea9090f269abebe8688c2f0d9856d95c1d17f4",
+      "installed_sha256": "e7c551d5b7c96e8314ac1b9611ea9090f269abebe8688c2f0d9856d95c1d17f4",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/search_bar.gui",
+      "historical_sha256": "f2b5178353452e70ed6adbf123e14280dc98f77745902635db02c6a0f0b3dc5f",
+      "installed_sha256": "f2b5178353452e70ed6adbf123e14280dc98f77745902635db02c6a0f0b3dc5f",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/selections.gui",
+      "historical_sha256": "043fecc019f3e434c8ded6eba26e91c0c9057bc5f751fcee174d880540d8be25",
+      "installed_sha256": "043fecc019f3e434c8ded6eba26e91c0c9057bc5f751fcee174d880540d8be25",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/sounds.gui",
+      "historical_sha256": "76530e885cc9a22efa459dd6cb5cee1cd6b4d78a0e3523912a91662ef860fb1a",
+      "installed_sha256": "76530e885cc9a22efa459dd6cb5cee1cd6b4d78a0e3523912a91662ef860fb1a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/special_buttons.gui",
+      "historical_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/tab_bars.gui",
+      "historical_sha256": "f4f8a5e530b6489047f8456c243f8ede0c77f44449ea7a176ca505370a1fc930",
+      "installed_sha256": "f4f8a5e530b6489047f8456c243f8ede0c77f44449ea7a176ca505370a1fc930",
+      "equal": true
+    },
+    {
+      "path": "game/gui/shared/textures.gui",
+      "historical_sha256": "448075e34e077d01ddc875882ba5880a63df197afadc965d9e1d0d210e265ebf",
+      "installed_sha256": "448075e34e077d01ddc875882ba5880a63df197afadc965d9e1d0d210e265ebf",
+      "equal": true
+    },
+    {
+      "path": "game/gui/ship_designer_popup.gui",
+      "historical_sha256": "45aac6b3b1d1c0969b5e3f235481809524c6d67e4c20c580aedc928b7aaf16da",
+      "installed_sha256": "45aac6b3b1d1c0969b5e3f235481809524c6d67e4c20c580aedc928b7aaf16da",
+      "equal": true
+    },
+    {
+      "path": "game/gui/ship_panel.gui",
+      "historical_sha256": "0d18a7fdcd5be5b127656e2d2b8a0a28834033294df643cd3af065eba84cac9b",
+      "installed_sha256": "0d18a7fdcd5be5b127656e2d2b8a0a28834033294df643cd3af065eba84cac9b",
+      "equal": true
+    },
+    {
+      "path": "game/gui/state_population_panel.gui",
+      "historical_sha256": "943d014d42ca0845ca5f68a058171949ca7167421dc85755be75b4309f1702fe",
+      "installed_sha256": "943d014d42ca0845ca5f68a058171949ca7167421dc85755be75b4309f1702fe",
+      "equal": true
+    },
+    {
+      "path": "game/gui/states_panel.gui",
+      "historical_sha256": "7f540287cfd08f3007958aec2757543279e9f0b3fb614b1ea0fb18001efef2c8",
+      "installed_sha256": "7f540287cfd08f3007958aec2757543279e9f0b3fb614b1ea0fb18001efef2c8",
+      "equal": true
+    },
+    {
+      "path": "game/gui/states_panel_buildings.gui",
+      "historical_sha256": "ef5adf76747845e3f10740db4ec34d2cf8513331efcc9f02b398d11b4f3cf72c",
+      "installed_sha256": "ef5adf76747845e3f10740db4ec34d2cf8513331efcc9f02b398d11b4f3cf72c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/states_panel_modifiers.gui",
+      "historical_sha256": "3a14ab7febf01213966e4163305ac883978fc558385022951e7c144c6dfa14f5",
+      "installed_sha256": "3a14ab7febf01213966e4163305ac883978fc558385022951e7c144c6dfa14f5",
+      "equal": true
+    },
+    {
+      "path": "game/gui/strait_panel.gui",
+      "historical_sha256": "796dedfd1ba27082d9f9ba5c0f0d173b8c305ff6fe5e018ba17d44aa26fb607a",
+      "installed_sha256": "796dedfd1ba27082d9f9ba5c0f0d173b8c305ff6fe5e018ba17d44aa26fb607a",
+      "equal": true
+    },
+    {
+      "path": "game/gui/strategic_region_panel.gui",
+      "historical_sha256": "42f2a3965f83dc464f49a27ebcb7f5393ac77f8a67fa49c806ce859b6abe351b",
+      "installed_sha256": "42f2a3965f83dc464f49a27ebcb7f5393ac77f8a67fa49c806ce859b6abe351b",
+      "equal": true
+    },
+    {
+      "path": "game/gui/sway_country_panel.gui",
+      "historical_sha256": "74e97eac6ad369965cb0633ce79bd4dc45aede5900f5700ad014596265b33182",
+      "installed_sha256": "74e97eac6ad369965cb0633ce79bd4dc45aede5900f5700ad014596265b33182",
+      "equal": true
+    },
+    {
+      "path": "game/gui/switch_production_method_menu.gui",
+      "historical_sha256": "d42fc33f795ad038f88b02bd023812527a4ad783ffeab98715172ef4dbdc14b5",
+      "installed_sha256": "d42fc33f795ad038f88b02bd023812527a4ad783ffeab98715172ef4dbdc14b5",
+      "equal": true
+    },
+    {
+      "path": "game/gui/table_tooltips.gui",
+      "historical_sha256": "1fb1185f1c8b4b486d5700843a8243b009d2e6dacb27dad7f578e7d0fd780bf4",
+      "installed_sha256": "1fb1185f1c8b4b486d5700843a8243b009d2e6dacb27dad7f578e7d0fd780bf4",
+      "equal": true
+    },
+    {
+      "path": "game/gui/tech_tree.gui",
+      "historical_sha256": "26869f95f54f336aff70cd9e7e0785dfc162550bf1e4b61615b395997f9eccfa",
+      "installed_sha256": "26869f95f54f336aff70cd9e7e0785dfc162550bf1e4b61615b395997f9eccfa",
+      "equal": true
+    },
+    {
+      "path": "game/gui/textformatting.gui",
+      "historical_sha256": "3bbc307dfae5bf2b2acbdef6b66345ed975af1ea3b142330f83bb9ed39ec6884",
+      "installed_sha256": "3bbc307dfae5bf2b2acbdef6b66345ed975af1ea3b142330f83bb9ed39ec6884",
+      "equal": true
+    },
+    {
+      "path": "game/gui/texticons.gui",
+      "historical_sha256": "3854be443d9902c0b9ab17d7b766d65a9a813dd8c9d81c461e57bcd1d30254fc",
+      "installed_sha256": "3854be443d9902c0b9ab17d7b766d65a9a813dd8c9d81c461e57bcd1d30254fc",
+      "equal": true
+    },
+    {
+      "path": "game/gui/theme_selector_window.gui",
+      "historical_sha256": "5632815ea2363fa2e6992830e921011c10ab645ffceb07ce18a4523f12ebd11c",
+      "installed_sha256": "5632815ea2363fa2e6992830e921011c10ab645ffceb07ce18a4523f12ebd11c",
+      "equal": true
+    },
+    {
+      "path": "game/gui/ticktask_debugger.gui",
+      "historical_sha256": "35a6d1366ebedadac585e0a7410a7b23e0e6bcc6ecb0912287e4d9f45e98190f",
+      "installed_sha256": "35a6d1366ebedadac585e0a7410a7b23e0e6bcc6ecb0912287e4d9f45e98190f",
+      "equal": true
+    },
+    {
+      "path": "game/gui/timemanip.gui",
+      "historical_sha256": "6c3cfdb0146b6d64202e53b0c319d0e14e7ad65a7fc39d113ba49a337e706540",
+      "installed_sha256": "6c3cfdb0146b6d64202e53b0c319d0e14e7ad65a7fc39d113ba49a337e706540",
+      "equal": true
+    },
+    {
+      "path": "game/gui/tooltip.gui",
+      "historical_sha256": "faefcaa91aaa862a108f535f2b97a959120d6dcf8940a44d505f6e006b27b7b7",
+      "installed_sha256": "faefcaa91aaa862a108f535f2b97a959120d6dcf8940a44d505f6e006b27b7b7",
+      "equal": true
+    },
+    {
+      "path": "game/gui/topbar.gui",
+      "historical_sha256": "bd668515596d03dc2eef273460e703ee6b931f7dca4dd7831afabbd6bbee0995",
+      "installed_sha256": "bd668515596d03dc2eef273460e703ee6b931f7dca4dd7831afabbd6bbee0995",
+      "equal": true
+    },
+    {
+      "path": "game/gui/topfrontend.gui",
+      "historical_sha256": "c629621ea48148aad43530e8b83a5ec320f092ae17890dd131f8f68e03d91c22",
+      "installed_sha256": "c629621ea48148aad43530e8b83a5ec320f092ae17890dd131f8f68e03d91c22",
+      "equal": true
+    },
+    {
+      "path": "game/gui/transfer_formation.gui",
+      "historical_sha256": "a1d3f5b412573c15cf5ea6539c0318569b2c253647ec196cd76c0dc9dd4e8220",
+      "installed_sha256": "a1d3f5b412573c15cf5ea6539c0318569b2c253647ec196cd76c0dc9dd4e8220",
+      "equal": true
+    },
+    {
+      "path": "game/gui/transport_planner.gui",
+      "historical_sha256": "ebb948a778e4d973ba90ea8314eaa82fd701b4e507387aa92e443448608da768",
+      "installed_sha256": "ebb948a778e4d973ba90ea8314eaa82fd701b4e507387aa92e443448608da768",
+      "equal": true
+    },
+    {
+      "path": "game/gui/treaty_draft_panel.gui",
+      "historical_sha256": "d758a9bd62a6a3110efbcaeacb43cacbd1080041162fac5a1ddfce49ea070148",
+      "installed_sha256": "d758a9bd62a6a3110efbcaeacb43cacbd1080041162fac5a1ddfce49ea070148",
+      "equal": true
+    },
+    {
+      "path": "game/gui/treaty_panel.gui",
+      "historical_sha256": "28a02480bc8c7f7519601546aab1f0640c348f1cbbe1e1726e9ecab0679fcbda",
+      "installed_sha256": "28a02480bc8c7f7519601546aab1f0640c348f1cbbe1e1726e9ecab0679fcbda",
+      "equal": true
+    },
+    {
+      "path": "game/gui/tutorial_highlight.gui",
+      "historical_sha256": "a49fd74d406ffe7c843f6a0d955a59f840ba4ddf67278637945e248a3e48b8c9",
+      "installed_sha256": "a49fd74d406ffe7c843f6a0d955a59f840ba4ddf67278637945e248a3e48b8c9",
+      "equal": true
+    },
+    {
+      "path": "game/gui/tutorial_popup.gui",
+      "historical_sha256": "c6280ffb7c601acece8b6a87357a69cd36a6b0bf9ab8678adb7b5bd4de4b7ee0",
+      "installed_sha256": "c6280ffb7c601acece8b6a87357a69cd36a6b0bf9ab8678adb7b5bd4de4b7ee0",
+      "equal": true
+    },
+    {
+      "path": "game/gui/war_panel.gui",
+      "historical_sha256": "d5bbd794fb5e68d14e97d9968a0729e1729bc5225b0ec4a3928b54c6c05f14c1",
+      "installed_sha256": "d5bbd794fb5e68d14e97d9968a0729e1729bc5225b0ec4a3928b54c6c05f14c1",
+      "equal": true
+    },
+    {
+      "path": "game/gui/window_component_library.gui",
+      "historical_sha256": "a78614e23205f2ff441e11b9da9a175d95479b62d15d8f737a813812450261e1",
+      "installed_sha256": "a78614e23205f2ff441e11b9da9a175d95479b62d15d8f737a813812450261e1",
+      "equal": true
+    },
+    {
+      "path": "game/gui/world_market_panel.gui",
+      "historical_sha256": "730a26894111696719f85adc70646c0328c1418cd82a0c4347dfc16a16e9c1ae",
+      "installed_sha256": "730a26894111696719f85adc70646c0328c1418cd82a0c4347dfc16a16e9c1ae",
+      "equal": true
+    },
+    {
+      "path": "game/tools/scripted_tests/germany.txt",
+      "historical_sha256": "d438d39d9203e4def093248a24a57858ce26849ec78af400535f83e442b13612",
+      "installed_sha256": "d438d39d9203e4def093248a24a57858ce26849ec78af400535f83e442b13612",
+      "equal": true
+    },
+    {
+      "path": "game/tools/scripted_tests/ip3.txt",
+      "historical_sha256": "4fd683ca9d717b3d6e98bd7319cdcd87f53b6c24f489f50fe556505da0a11bd0",
+      "installed_sha256": "4fd683ca9d717b3d6e98bd7319cdcd87f53b6c24f489f50fe556505da0a11bd0",
+      "equal": true
+    },
+    {
+      "path": "game/tools/scripted_tests/italy.txt",
+      "historical_sha256": "ae7e7ef74c6c1c8534fdf2054169519835fa55dabee43071e922ad115897d187",
+      "installed_sha256": "ae7e7ef74c6c1c8534fdf2054169519835fa55dabee43071e922ad115897d187",
+      "equal": true
+    },
+    {
+      "path": "game/tools/scripted_tests/scripted_tests.md",
+      "historical_sha256": "b6f73a1af508cddb292497ace982bd3f09c14c247ffb884661be49834f6f5157",
+      "installed_sha256": "b6f73a1af508cddb292497ace982bd3f09c14c247ffb884661be49834f6f5157",
+      "equal": true
+    },
+    {
+      "path": "game/tools/scripted_tests/springtime.txt",
+      "historical_sha256": "fb59703a5a089385ad033a815519a947069cbc91fea7e594d2e37e6d95a02af6",
+      "installed_sha256": "fb59703a5a089385ad033a815519a947069cbc91fea7e594d2e37e6d95a02af6",
+      "equal": true
+    },
+    {
+      "path": "game/tools/scripted_tests/test.txt",
+      "historical_sha256": "e694311563bcaa84485b1857550a2619094d738f1c888699e744bd8122853677",
+      "installed_sha256": "e694311563bcaa84485b1857550a2619094d738f1c888699e744bd8122853677",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/00_adaptive_music.txt",
+      "historical_sha256": "c9baf282d17c88660c273da2a0b58f32c6544df20a23ce20564b8418d5e1c480",
+      "installed_sha256": "c9baf282d17c88660c273da2a0b58f32c6544df20a23ce20564b8418d5e1c480",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/00_audio_persistent_objects.txt",
+      "historical_sha256": "b888ffdb262d643e5b8ad68203799378cc4d256ee14e815a1f4b13d8890a19f0",
+      "installed_sha256": "b888ffdb262d643e5b8ad68203799378cc4d256ee14e815a1f4b13d8890a19f0",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/graphic/00_coa.txt",
+      "historical_sha256": "bccc01d3079059b110240439722361b33354760b0018b52eaa121d10f85c6d9c",
+      "installed_sha256": "bccc01d3079059b110240439722361b33354760b0018b52eaa121d10f85c6d9c",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/00_tooltips.txt",
+      "historical_sha256": "47bca0e29f119c97bbd1401123a294e196e6d01c0a63c262dc6f7dfa6f19e17d",
+      "installed_sha256": "47bca0e29f119c97bbd1401123a294e196e6d01c0a63c262dc6f7dfa6f19e17d",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/adjacencies.txt",
+      "historical_sha256": "967e4b568d310cc565e51da1e4521964716fd288caf0863b9613960f3cc0fc49",
+      "installed_sha256": "967e4b568d310cc565e51da1e4521964716fd288caf0863b9613960f3cc0fc49",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/camera.txt",
+      "historical_sha256": "6523141dd10705d343af87f0650a216fbce4d934c9ef3e2838fc5b2ca68469c6",
+      "installed_sha256": "6523141dd10705d343af87f0650a216fbce4d934c9ef3e2838fc5b2ca68469c6",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/fog_of_war.txt",
+      "historical_sha256": "56bf66d7086868de056b26054a50fe50aaf8d04835e9751d71bc101f73994f55",
+      "installed_sha256": "56bf66d7086868de056b26054a50fe50aaf8d04835e9751d71bc101f73994f55",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/icons.txt",
+      "historical_sha256": "5b722f7182a516d968e29fc0c53e7e5a0325752d9cff0629852bac449ea313fa",
+      "installed_sha256": "5b722f7182a516d968e29fc0c53e7e5a0325752d9cff0629852bac449ea313fa",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/mapeditor.txt",
+      "historical_sha256": "b9d1bde3355e9378314f6be6d14ed836659ef320e6c29e12a5c0e38e83eea275",
+      "installed_sha256": "b9d1bde3355e9378314f6be6d14ed836659ef320e6c29e12a5c0e38e83eea275",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/modifiers.txt",
+      "historical_sha256": "ea598e6b5542f64d1495e0e307b50b86908a3d5eefa7871e5659586941779f23",
+      "installed_sha256": "ea598e6b5542f64d1495e0e307b50b86908a3d5eefa7871e5659586941779f23",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/multiplayer.txt",
+      "historical_sha256": "c6881341c20706fdb8f77b72a3621f13c1bf7473e07917d14ef7235f7aed5d12",
+      "installed_sha256": "c6881341c20706fdb8f77b72a3621f13c1bf7473e07917d14ef7235f7aed5d12",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/portraits.txt",
+      "historical_sha256": "f6ed5e41b675993eb75180110bffdcdf8d40e6c3d68133a939bcfc5f09e04d28",
+      "installed_sha256": "f6ed5e41b675993eb75180110bffdcdf8d40e6c3d68133a939bcfc5f09e04d28",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/rivers.txt",
+      "historical_sha256": "48fc83794b72cddb09bae6cdfad9887c0446de1ca442be12fd5d11718829ce27",
+      "installed_sha256": "48fc83794b72cddb09bae6cdfad9887c0446de1ca442be12fd5d11718829ce27",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/settings.txt",
+      "historical_sha256": "83877d4059697fdd956964427181e11e24dc0d51fda976754608bdc62af98c9d",
+      "installed_sha256": "83877d4059697fdd956964427181e11e24dc0d51fda976754608bdc62af98c9d",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/social.txt",
+      "historical_sha256": "9df4a8e49c900951dc7f428073fc402d7f7309f4bbc825418aff749ae40b6d69",
+      "installed_sha256": "9df4a8e49c900951dc7f428073fc402d7f7309f4bbc825418aff749ae40b6d69",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/text_coloring.txt",
+      "historical_sha256": "e3f26c223068312b810d62c9e74c70267617dea364a7e9c170113af6fc21a9bb",
+      "installed_sha256": "e3f26c223068312b810d62c9e74c70267617dea364a7e9c170113af6fc21a9bb",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/jomini/text_formatting.txt",
+      "historical_sha256": "a4d35b9ee9f7848c330332f51ade6929f21f5a08dd429c26eacd865319f6b244",
+      "installed_sha256": "a4d35b9ee9f7848c330332f51ade6929f21f5a08dd429c26eacd865319f6b244",
+      "equal": true
+    },
+    {
+      "path": "jomini/common/defines/music_player_defines.txt",
+      "historical_sha256": "edeb9831a7b14116193596327e3e55827a1bcef833d6ea81d2c5292dcb8e8c95",
+      "installed_sha256": "edeb9831a7b14116193596327e3e55827a1bcef833d6ea81d2c5292dcb8e8c95",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/achievements/jomini_achievements_types.gui",
+      "historical_sha256": "cc3360c744448853e8820b6582e9393e28afa0c80fc68f37a2055e306668abf5",
+      "installed_sha256": "cc3360c744448853e8820b6582e9393e28afa0c80fc68f37a2055e306668abf5",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/achievements/jomini_achievements_window.gui",
+      "historical_sha256": "55a3dba2c89bec02704523a41266505f2705abf11c60764d159973a0a9280d60",
+      "installed_sha256": "55a3dba2c89bec02704523a41266505f2705abf11c60764d159973a0a9280d60",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/achievements/popup.gui",
+      "historical_sha256": "f4b5f87e1b935bbaea62494f6c9458bea6897d052fa9911f47aa47e11b3bdbaa",
+      "installed_sha256": "f4b5f87e1b935bbaea62494f6c9458bea6897d052fa9911f47aa47e11b3bdbaa",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/credits_window.gui",
+      "historical_sha256": "55b49c4c02798e073862ca71c79411e17879defd17a67e776e499dee6441cb03",
+      "installed_sha256": "55b49c4c02798e073862ca71c79411e17879defd17a67e776e499dee6441cb03",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/default_jomini_loading_screen.gui",
+      "historical_sha256": "f61d12772b61033a67766b759523c8c260c5ec2d3702a479a9a3f0ff4c15f00c",
+      "installed_sha256": "f61d12772b61033a67766b759523c8c260c5ec2d3702a479a9a3f0ff4c15f00c",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/entity_editor/entity_editor.gui",
+      "historical_sha256": "64d49a8e84ba3b2cf323c719facf97cc800b0a9e8a273a8409b90ab108b776e9",
+      "installed_sha256": "64d49a8e84ba3b2cf323c719facf97cc800b0a9e8a273a8409b90ab108b776e9",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/entity_editor/entity_editor_player.gui",
+      "historical_sha256": "c4c371f3b57fe0299b5d06b819ebd88066b67c11d68ffbc8d430cde237a88b31",
+      "installed_sha256": "c4c371f3b57fe0299b5d06b819ebd88066b67c11d68ffbc8d430cde237a88b31",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/entity_editor/entity_editor_properties_tab.gui",
+      "historical_sha256": "b0a3a2aa63164ae7c23477a50b8f4141c0ef6a1fd2311bba354b40f718a153e1",
+      "installed_sha256": "b0a3a2aa63164ae7c23477a50b8f4141c0ef6a1fd2311bba354b40f718a153e1",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/entity_editor/entity_event_editor.gui",
+      "historical_sha256": "b5e4679dec0f871fac60f789607ac6c323542254bf08a4f566e6c46d77908ca7",
+      "installed_sha256": "b5e4679dec0f871fac60f789607ac6c323542254bf08a4f566e6c46d77908ca7",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/frontend_credits.gui",
+      "historical_sha256": "71b87fd81b56312d6e281f11d61034aeeb602e9435a50b625a8fe14d519ca2b9",
+      "installed_sha256": "71b87fd81b56312d6e281f11d61034aeeb602e9435a50b625a8fe14d519ca2b9",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/gui_animation_editor/gui_animation_curve_editor_dockable.gui",
+      "historical_sha256": "34f488b7fe7b3d978450eb428fbda53a6bfbcbb010b08090cfa69eac84c4c000",
+      "installed_sha256": "34f488b7fe7b3d978450eb428fbda53a6bfbcbb010b08090cfa69eac84c4c000",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/gui_animation_editor/gui_animation_editor_dockable.gui",
+      "historical_sha256": "c51a7a166ddb3d7c7f796df42ad3b76d7fd9428e08ee9a5d5f7c9ebf2bf356bd",
+      "installed_sha256": "c51a7a166ddb3d7c7f796df42ad3b76d7fd9428e08ee9a5d5f7c9ebf2bf356bd",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/gui_animation_editor/gui_animation_editor_properties.gui",
+      "historical_sha256": "ae8b20b31f5a4a3e9b4d45b27a06e26b7ec71403af2577c9ac4846d6c98725ea",
+      "installed_sha256": "ae8b20b31f5a4a3e9b4d45b27a06e26b7ec71403af2577c9ac4846d6c98725ea",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/gui_data_profiler/gui_data_profiler.gui",
+      "historical_sha256": "5c2ea2c0cb17b65862cbcf2013e1871f47ecff8c0f0b5eb9c4eecef10fa9e094",
+      "installed_sha256": "5c2ea2c0cb17b65862cbcf2013e1871f47ecff8c0f0b5eb9c4eecef10fa9e094",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/jomini/basetextformatting.gui",
+      "historical_sha256": "d001fec1c34cab2ef7c3ddf64bfdc88c099058f33e936a91f118adf91ff57bb5",
+      "installed_sha256": "d001fec1c34cab2ef7c3ddf64bfdc88c099058f33e936a91f118adf91ff57bb5",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/jomini/credits/credits_base.gui",
+      "historical_sha256": "8db86ca358ff1037ce4cd444060c1d7f81d124e8042e4c0c579624fbe709edd4",
+      "installed_sha256": "8db86ca358ff1037ce4cd444060c1d7f81d124e8042e4c0c579624fbe709edd4",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/jomini/music_player/music_player_mini_controller.gui",
+      "historical_sha256": "ee45dcbdd376ac222c12445e342c8fd4ab9832605ea4063388e60b29ec5c1efc",
+      "installed_sha256": "ee45dcbdd376ac222c12445e342c8fd4ab9832605ea4063388e60b29ec5c1efc",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/jomini/music_player/music_player_view.gui",
+      "historical_sha256": "4926334b3d929c859d55092d7496a3d4119153b25249a2e901aacb6df6f730c9",
+      "installed_sha256": "4926334b3d929c859d55092d7496a3d4119153b25249a2e901aacb6df6f730c9",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/log_viewer/log_viewer.gui",
+      "historical_sha256": "e17511e98bb01f2b5b3f2f6b3ddaf594d1598768606baab6f1cd11a5e7c0e557",
+      "installed_sha256": "e17511e98bb01f2b5b3f2f6b3ddaf594d1598768606baab6f1cd11a5e7c0e557",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/brush_settings_widget.gui",
+      "historical_sha256": "ea4ae0981b310fd20ea1478c53d21da0a18b2f4676de57dc452303d4c8da4a09",
+      "installed_sha256": "ea4ae0981b310fd20ea1478c53d21da0a18b2f4676de57dc452303d4c8da4a09",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/custom_brushes.gui",
+      "historical_sha256": "8ebeef30a4afe50f09a7b06a3b3a717cfae724d1a4fb304d0329071ba3101c91",
+      "installed_sha256": "8ebeef30a4afe50f09a7b06a3b3a717cfae724d1a4fb304d0329071ba3101c91",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/detail_data_dockable.gui",
+      "historical_sha256": "35fa7b2c446f4d8e3a31daec9c438c86efe34f16e55947e68c8e33c2bf0c41ca",
+      "installed_sha256": "35fa7b2c446f4d8e3a31daec9c438c86efe34f16e55947e68c8e33c2bf0c41ca",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/export_tool.gui",
+      "historical_sha256": "80d1faa3cdb8a5f5a474227f2fac94ab3c78b1f7656ba461a87db18d7cb89349",
+      "installed_sha256": "80d1faa3cdb8a5f5a474227f2fac94ab3c78b1f7656ba461a87db18d7cb89349",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/eyedropper.gui",
+      "historical_sha256": "deabf3f98b20a25d9cc559050b8a47969ece9e2237ffef5b3305691d216906a8",
+      "installed_sha256": "deabf3f98b20a25d9cc559050b8a47969ece9e2237ffef5b3305691d216906a8",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/heightmap_painter.gui",
+      "historical_sha256": "b6a9b1912a9fe004983d0235ce5f7378711ef011808ad09fa14a716c95a9d7fe",
+      "installed_sha256": "b6a9b1912a9fe004983d0235ce5f7378711ef011808ad09fa14a716c95a9d7fe",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/heightmap_resolution.gui",
+      "historical_sha256": "78d3e343e4e7b1ac52cf658798e89fa08b82495cea6e6da37a13e6251a781732",
+      "installed_sha256": "78d3e343e4e7b1ac52cf658798e89fa08b82495cea6e6da37a13e6251a781732",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/import_tool.gui",
+      "historical_sha256": "1b6d5bba04c02e1594d951b42e0e938c7ed04a758b8b7251bce23a7763881019",
+      "installed_sha256": "1b6d5bba04c02e1594d951b42e0e938c7ed04a758b8b7251bce23a7763881019",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/map_content.gui",
+      "historical_sha256": "c4a6129c4fa852db0691f2d4803cb7bcf1e4ea11be26bdd5a52a03c1eaf86fd2",
+      "installed_sha256": "c4a6129c4fa852db0691f2d4803cb7bcf1e4ea11be26bdd5a52a03c1eaf86fd2",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/map_editor_defaults.gui",
+      "historical_sha256": "f9fb365387efc563c747c3a424e9033ad21ae2086c5fcfd15e6a41c7ad669e7f",
+      "installed_sha256": "f9fb365387efc563c747c3a424e9033ad21ae2086c5fcfd15e6a41c7ad669e7f",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/map_object_painter.gui",
+      "historical_sha256": "daf0e8df0a7fd9be13afca81c1952d053993ade99c6dd41e393b88e2e27bd4cb",
+      "installed_sha256": "daf0e8df0a7fd9be13afca81c1952d053993ade99c6dd41e393b88e2e27bd4cb",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/mapcontent_editor.gui",
+      "historical_sha256": "bdf5f3db3dae5492cb29ed5d6f9e51016453367ea7d707bef2c28fe9e51f7527",
+      "installed_sha256": "bdf5f3db3dae5492cb29ed5d6f9e51016453367ea7d707bef2c28fe9e51f7527",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/mapeditor.gui",
+      "historical_sha256": "cfd5f04d0bdf75c576f968db3fc9a08929b84e0c30545f9ff8548bc2e0149c63",
+      "installed_sha256": "cfd5f04d0bdf75c576f968db3fc9a08929b84e0c30545f9ff8548bc2e0149c63",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/mapobjects.gui",
+      "historical_sha256": "cbfa737b054e232e1ae9751e80f784cc47592b87be19f224a93ea5d303128806",
+      "installed_sha256": "cbfa737b054e232e1ae9751e80f784cc47592b87be19f224a93ea5d303128806",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/mapobjects_mapcontent.gui",
+      "historical_sha256": "525ead7553ebba1cabfe1c50fa3e0a0d50cddf9ef1aefbd0c58dc4f0eed286e5",
+      "installed_sha256": "525ead7553ebba1cabfe1c50fa3e0a0d50cddf9ef1aefbd0c58dc4f0eed286e5",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/mask_painter.gui",
+      "historical_sha256": "44a2a2ac3774b5062c706fe8fbca0f32b1c8b1a092c982ffa35424f82e4b946b",
+      "installed_sha256": "44a2a2ac3774b5062c706fe8fbca0f32b1c8b1a092c982ffa35424f82e4b946b",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/mask_painter_map_content.gui",
+      "historical_sha256": "bc79a8fb74e4e740827446c6f56233801e07ad574e531714739bacd66d4d0a71",
+      "installed_sha256": "bc79a8fb74e4e740827446c6f56233801e07ad574e531714739bacd66d4d0a71",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/material_browser.gui",
+      "historical_sha256": "5f0a0601311f0bd330db0389ae9090db7151f0171776799e66cb434bb7a62f4b",
+      "installed_sha256": "5f0a0601311f0bd330db0389ae9090db7151f0171776799e66cb434bb7a62f4b",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/material_brush.gui",
+      "historical_sha256": "820c8a91865e020b9ab842522fcaff52e73ac20da9444596ae07dca653fb4ce6",
+      "installed_sha256": "820c8a91865e020b9ab842522fcaff52e73ac20da9444596ae07dca653fb4ce6",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/materials_list.gui",
+      "historical_sha256": "775144fd50a1556befe290ab7239c9b695ff6cf49b6a547db1cdf0af19d7df15",
+      "installed_sha256": "775144fd50a1556befe290ab7239c9b695ff6cf49b6a547db1cdf0af19d7df15",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/materialsetter.gui",
+      "historical_sha256": "fef52c8c992c512cf9d9fa7be1d110fbabeccd17e0baa25c06cb1e95ffd816b4",
+      "installed_sha256": "fef52c8c992c512cf9d9fa7be1d110fbabeccd17e0baa25c06cb1e95ffd816b4",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/preview_mask.gui",
+      "historical_sha256": "4d5f6fff63037b7e543dd94399fb1b4d838e3c32331b1753ec236f47283da68a",
+      "installed_sha256": "4d5f6fff63037b7e543dd94399fb1b4d838e3c32331b1753ec236f47283da68a",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/smart_brush.gui",
+      "historical_sha256": "bb04fbf0f55717286e28ce7d1c48ebf9116ff7920705fc4a31348b1f5906c0d6",
+      "installed_sha256": "bb04fbf0f55717286e28ce7d1c48ebf9116ff7920705fc4a31348b1f5906c0d6",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/spline_adjustment_tool.gui",
+      "historical_sha256": "1d9f801d28d5b0b809ee4493fc68b142e1413795450c869146649d0a54754f63",
+      "installed_sha256": "1d9f801d28d5b0b809ee4493fc68b142e1413795450c869146649d0a54754f63",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/spline_inspector_dockable.gui",
+      "historical_sha256": "4bbbd011070ebbe7b41fe39e3ed1d7ec6c16d589bf26ffee69fa7e35fc611dd3",
+      "installed_sha256": "4bbbd011070ebbe7b41fe39e3ed1d7ec6c16d589bf26ffee69fa7e35fc611dd3",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/spline_river_tool.gui",
+      "historical_sha256": "c31b78c7ff2f5fe31f2e4c683cc1a8265eb5c0fe4683e8b6ecd5d3f1c7cbd4bb",
+      "installed_sha256": "c31b78c7ff2f5fe31f2e4c683cc1a8265eb5c0fe4683e8b6ecd5d3f1c7cbd4bb",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/spline_strip_tool.gui",
+      "historical_sha256": "08f684527a9f418f1bd82aeb22d9c21f51e5cc1d5ee516a4fc1d7a19b627caf7",
+      "installed_sha256": "08f684527a9f418f1bd82aeb22d9c21f51e5cc1d5ee516a4fc1d7a19b627caf7",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/spline_tools_map_content.gui",
+      "historical_sha256": "6e4267149d63f0ba24ce7c66bdecfe898dbd39272283d8847c25a94307523eb2",
+      "installed_sha256": "6e4267149d63f0ba24ce7c66bdecfe898dbd39272283d8847c25a94307523eb2",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/spline_viewport.gui",
+      "historical_sha256": "ee202d34737d618706c55f2c1342751fbc494e12db3b1b2e73242034540bfabd",
+      "installed_sha256": "ee202d34737d618706c55f2c1342751fbc494e12db3b1b2e73242034540bfabd",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/map_editor/spline_visibility_widget.gui",
+      "historical_sha256": "73f0bb3a51c747443083ea353a44d3e9f66e84126dfc117fc3066d695214f2de",
+      "installed_sha256": "73f0bb3a51c747443083ea353a44d3e9f66e84126dfc117fc3066d695214f2de",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/mesh_importer.gui",
+      "historical_sha256": "54547b6e33a9711860d796563ea19a111a6bcff5b6ddfdbec5961e09805fda32",
+      "installed_sha256": "54547b6e33a9711860d796563ea19a111a6bcff5b6ddfdbec5961e09805fda32",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/multiplayer_frontend.gui",
+      "historical_sha256": "b10d8ff72868378ee61231230e61001b51773c02c5cd5b80bda1ed94c9c6a00d",
+      "installed_sha256": "b10d8ff72868378ee61231230e61001b51773c02c5cd5b80bda1ed94c9c6a00d",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/multiplayer_frontend_types.gui",
+      "historical_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "installed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/multiplayer_lobby.gui",
+      "historical_sha256": "3241e16f9c5594d0e02ab099d0b672421da4417cb5a1dfd4df2f8900f8e0f2dd",
+      "installed_sha256": "3241e16f9c5594d0e02ab099d0b672421da4417cb5a1dfd4df2f8900f8e0f2dd",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/multiplayer_serverbrowser.gui",
+      "historical_sha256": "3001872ff7f4db15ca43eca608d1e8863a847df409523d943f48e94bfed7dfcd",
+      "installed_sha256": "3001872ff7f4db15ca43eca608d1e8863a847df409523d943f48e94bfed7dfcd",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/multiplayer_setup.gui",
+      "historical_sha256": "8177e4be13b37f2dde35d377a2bc695cc509f3db1c917017c0293e80650102b2",
+      "installed_sha256": "8177e4be13b37f2dde35d377a2bc695cc509f3db1c917017c0293e80650102b2",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/multiplayer_types.gui",
+      "historical_sha256": "8498f1ac7b7e7b678f7482d79e85b5dfc6f009e5d1da9b648b50e4e48a53c535",
+      "installed_sha256": "8498f1ac7b7e7b678f7482d79e85b5dfc6f009e5d1da9b648b50e4e48a53c535",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/notifications/jomini_message.gui",
+      "historical_sha256": "4888e11a2f3288b0abef151fa18aba3d48f0f2ba44ba0feb4e309e223f71e377",
+      "installed_sha256": "4888e11a2f3288b0abef151fa18aba3d48f0f2ba44ba0feb4e309e223f71e377",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/notifications/notification_overlay.gui",
+      "historical_sha256": "d38e6d3f678eca5d239f896c0afdd5b2d6fed8b7cb1b2a8d179b5aabfd25a4e5",
+      "installed_sha256": "d38e6d3f678eca5d239f896c0afdd5b2d6fed8b7cb1b2a8d179b5aabfd25a4e5",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/object_explorer/common_inspector.gui",
+      "historical_sha256": "5f21d61eb5106eebe620b34178f5b414f2b0ccd94d17e501746a203cf8ad11e9",
+      "installed_sha256": "5f21d61eb5106eebe620b34178f5b414f2b0ccd94d17e501746a203cf8ad11e9",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/object_explorer/scope_debug_inspector.gui",
+      "historical_sha256": "c81c03abc221ad6e40c1fe7615011ba112b133ea694b6d74b6223b631c6cb950",
+      "installed_sha256": "c81c03abc221ad6e40c1fe7615011ba112b133ea694b6d74b6223b631c6cb950",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/object_explorer/scope_object_provider.gui",
+      "historical_sha256": "193629b7db95f6ca60faafae2297d7f7d2fc769e54c32f951369ce1f95c87662",
+      "installed_sha256": "193629b7db95f6ca60faafae2297d7f7d2fc769e54c32f951369ce1f95c87662",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/object_explorer/script_runner_inspector.gui",
+      "historical_sha256": "e0720e38f32e6f6025d9c853143d52771178eb6e6df9e6722a92bc5d46df4e6e",
+      "installed_sha256": "e0720e38f32e6f6025d9c853143d52771178eb6e6df9e6722a92bc5d46df4e6e",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/object_explorer/variable_inspector.gui",
+      "historical_sha256": "a43cc2a4644be868b3e9c2f2f0c48238647cdc8a3c45578ea0b47ccd0fd2a9a2",
+      "installed_sha256": "a43cc2a4644be868b3e9c2f2f0c48238647cdc8a3c45578ea0b47ccd0fd2a9a2",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/object_explorer/variable_list_inspector.gui",
+      "historical_sha256": "8b25c35d42f8b449e24cd7f013214dac28bc6224ff8944959bbf8cf35f87e7c0",
+      "installed_sha256": "8b25c35d42f8b449e24cd7f013214dac28bc6224ff8944959bbf8cf35f87e7c0",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/base_types.gui",
+      "historical_sha256": "1919b9078e99c8e482c4815a8e18f7905b59e0bbb115c5c0a75428166f2dcabf",
+      "installed_sha256": "1919b9078e99c8e482c4815a8e18f7905b59e0bbb115c5c0a75428166f2dcabf",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/create_account_window.gui",
+      "historical_sha256": "85eda5fa46b07ea577b9d3d29c8e6adf9fc2bd350b49973887f0afb28af79dd8",
+      "installed_sha256": "85eda5fa46b07ea577b9d3d29c8e6adf9fc2bd350b49973887f0afb28af79dd8",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/create_account_window_instanced.gui",
+      "historical_sha256": "eed37b8380b893f2ba1f6fd30bb3eada61534d1427e5a55a5b1eb6712c4565c3",
+      "installed_sha256": "eed37b8380b893f2ba1f6fd30bb3eada61534d1427e5a55a5b1eb6712c4565c3",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/create_social_profile_window.gui",
+      "historical_sha256": "74322d33d8b897bf5fa916d6db664ca62bcfb07c416db15720e6371db919730c",
+      "installed_sha256": "74322d33d8b897bf5fa916d6db664ca62bcfb07c416db15720e6371db919730c",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/create_social_profile_window_base.gui",
+      "historical_sha256": "9369e2ddee46b804d54d5340d976c8156a7d031e34a58bb55e3a096871456f75",
+      "installed_sha256": "9369e2ddee46b804d54d5340d976c8156a7d031e34a58bb55e3a096871456f75",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/legal_docs_viewer.gui",
+      "historical_sha256": "5b8814a7327c9ed796055debd1cabfaedc64fe02eaf4a8a2661a54b65d7ce604",
+      "installed_sha256": "5b8814a7327c9ed796055debd1cabfaedc64fe02eaf4a8a2661a54b65d7ce604",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/legal_docs_viewer_instanced.gui",
+      "historical_sha256": "c85f1e3250a43ffc96fbbcc506b2834fd7e661df954d961ea0eb9c4c6ae70c4e",
+      "installed_sha256": "c85f1e3250a43ffc96fbbcc506b2834fd7e661df954d961ea0eb9c4c6ae70c4e",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/login_window.gui",
+      "historical_sha256": "e7efdcf1d462a341b49821afab149c955cde04476392d7115e2d155c60fa078f",
+      "installed_sha256": "e7efdcf1d462a341b49821afab149c955cde04476392d7115e2d155c60fa078f",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/login_window_instanced.gui",
+      "historical_sha256": "01631ee09259958e819d653d70f7db9ee5aed3380875f92a98bf39c6227fb25e",
+      "installed_sha256": "01631ee09259958e819d653d70f7db9ee5aed3380875f92a98bf39c6227fb25e",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/pdx_account/status_widget.gui",
+      "historical_sha256": "5c0a1c7c95a11caf265af0a9506517ab728bf0dc0d76519507bbe409b7e60d4f",
+      "installed_sha256": "5c0a1c7c95a11caf265af0a9506517ab728bf0dc0d76519507bbe409b7e60d4f",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/portrait_editor_window.gui",
+      "historical_sha256": "46f177c3001545e27f4b6fb18d0f5ad6755828cc8c7cf7a063e0170b8816ac6d",
+      "installed_sha256": "46f177c3001545e27f4b6fb18d0f5ad6755828cc8c7cf7a063e0170b8816ac6d",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/save_game_analyzer.gui",
+      "historical_sha256": "4fa25505dace58952b4afe3cf7612ef4a6bb205ba8f87f65a482abe2e2ffdefa",
+      "installed_sha256": "4fa25505dace58952b4afe3cf7612ef4a6bb205ba8f87f65a482abe2e2ffdefa",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/script_profiler/script_profiler.gui",
+      "historical_sha256": "8d1ada139bb3321746710a9de768741cbd2123179c1c24d0c95a272e03dbbdd8",
+      "installed_sha256": "8d1ada139bb3321746710a9de768741cbd2123179c1c24d0c95a272e03dbbdd8",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/settings/editor_setting_types.gui",
+      "historical_sha256": "94087f077efb1c99cb25174b789b00ea5da3e981953669883878070d35e281f0",
+      "installed_sha256": "94087f077efb1c99cb25174b789b00ea5da3e981953669883878070d35e281f0",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/settings/editor_settings.gui",
+      "historical_sha256": "039fde5ad2877d471bc5794be8bd1c5590d5c7e45c5ea65710c29a0d97e93b98",
+      "installed_sha256": "039fde5ad2877d471bc5794be8bd1c5590d5c7e45c5ea65710c29a0d97e93b98",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/settings/setting_types.gui",
+      "historical_sha256": "6b19402cccc13d9a9a03c14e8c6d01f9760959229aa8e943bbed78e7a21d865d",
+      "installed_sha256": "6b19402cccc13d9a9a03c14e8c6d01f9760959229aa8e943bbed78e7a21d865d",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/settings/settings.gui",
+      "historical_sha256": "42150397fbf8450e0c47430df10a63bf92e2783a61438490a4e565fdac394658",
+      "installed_sha256": "42150397fbf8450e0c47430df10a63bf92e2783a61438490a4e565fdac394658",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/add_friend_window.gui",
+      "historical_sha256": "d8994c6c808d58117c2b32a73f9fe8db6b76901db7583a702dcd17e7e7938e95",
+      "installed_sha256": "d8994c6c808d58117c2b32a73f9fe8db6b76901db7583a702dcd17e7e7938e95",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/add_friend_window_base.gui",
+      "historical_sha256": "c1f466c2915eaf9fc476553a8acc7151a4ab0bd2089b37be9093f9abdd377d3d",
+      "installed_sha256": "c1f466c2915eaf9fc476553a8acc7151a4ab0bd2089b37be9093f9abdd377d3d",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/chat_window.gui",
+      "historical_sha256": "89c90352adbf4d1bd81f0f4a39c8db0878b87bfe220d07523ba92b4d4af7ba66",
+      "installed_sha256": "89c90352adbf4d1bd81f0f4a39c8db0878b87bfe220d07523ba92b4d4af7ba66",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/chat_window_base.gui",
+      "historical_sha256": "56e6072c660d4da4e231da7a14be7979b6e5191829de9a130767b6f541d26d11",
+      "installed_sha256": "56e6072c660d4da4e231da7a14be7979b6e5191829de9a130767b6f541d26d11",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/friend_list_window.gui",
+      "historical_sha256": "622685fdcc14d84bb830c7e009eb161538003d8af3e0b3dae897933d619c82a9",
+      "installed_sha256": "622685fdcc14d84bb830c7e009eb161538003d8af3e0b3dae897933d619c82a9",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/friend_list_window_base.gui",
+      "historical_sha256": "1133861873698ea9bdfe00c3fbc4815a3815cdff56d31cb94da7f7eb5fb608d8",
+      "installed_sha256": "1133861873698ea9bdfe00c3fbc4815a3815cdff56d31cb94da7f7eb5fb608d8",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/remove_friend_confirm_window.gui",
+      "historical_sha256": "ba654709cfb50747086b1eb0efe7a13ddee589dbb920a2b2f4e8db925f54e492",
+      "installed_sha256": "ba654709cfb50747086b1eb0efe7a13ddee589dbb920a2b2f4e8db925f54e492",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/remove_friend_confirm_window_base.gui",
+      "historical_sha256": "57afec109bdc95d736bb36d8b06209659ab12bdd4b76ee9b8ad17be1ddfc71af",
+      "installed_sha256": "57afec109bdc95d736bb36d8b06209659ab12bdd4b76ee9b8ad17be1ddfc71af",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/social_base_types.gui",
+      "historical_sha256": "5212661d0afe3e5fdb028266b07203c62ec43fe8f89c737e0b68c30056609c33",
+      "installed_sha256": "5212661d0afe3e5fdb028266b07203c62ec43fe8f89c737e0b68c30056609c33",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/social_chat_notification_window.gui",
+      "historical_sha256": "597ef989bf034381ede769e18e6a1290ee8edc346f4395303abb42b83a8b53ed",
+      "installed_sha256": "597ef989bf034381ede769e18e6a1290ee8edc346f4395303abb42b83a8b53ed",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/social_chat_notification_window_base.gui",
+      "historical_sha256": "36a239ae7976c199d765e4946b75b9f23767cac0b0f7b327bb6c062a0a2ec533",
+      "installed_sha256": "36a239ae7976c199d765e4946b75b9f23767cac0b0f7b327bb6c062a0a2ec533",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/social/social_widget.gui",
+      "historical_sha256": "0608a3f44691a5e9c9cdf2204482156736f0bf62e9aa07269ec64f35fa7be13b",
+      "installed_sha256": "0608a3f44691a5e9c9cdf2204482156736f0bf62e9aa07269ec64f35fa7be13b",
+      "equal": true
+    },
+    {
+      "path": "jomini/gui/tweaker/tweaker.gui",
+      "historical_sha256": "b69cfee5e388ca44901edc2c2facff64702fe4b2df1ca4724396bf6abae5a62c",
+      "installed_sha256": "b69cfee5e388ca44901edc2c2facff64702fe4b2df1ca4724396bf6abae5a62c",
+      "equal": true
+    },
+    {
+      "path": "jomini/jomini/gui/encyclopedia/jomini_encyclopedia.gui",
+      "historical_sha256": "c4fc1e395a316906086a9998a6d67f85066ad01a2991820634811fb71c6046a1",
+      "installed_sha256": "c4fc1e395a316906086a9998a6d67f85066ad01a2991820634811fb71c6046a1",
+      "equal": true
+    }
+  ],
+  "compared": 399,
+  "different": 0
+}
