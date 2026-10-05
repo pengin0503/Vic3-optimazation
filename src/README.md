@@ -11,4 +11,9 @@ The evidence gate for starting Task 9 was reached after the repeated benchmark b
 
 The first native components are limited to an exact-build attach loader and observation-only profiler DLL. Unsupported builds must fail closed.
 
+## Layout
+
+- `native/CMakeLists.txt` — Windows x64 only (configuration fails with a clear message elsewhere). C++20, static CRT. MinHook is fetched by CMake `FetchContent` at exact commit `c3fcafdc10146beb5919319d0683e44e3c30d537` and compiled from source; no third-party binary is vendored. License: `third_party/licenses/MinHook.txt`.
+- `native/generated/targets_1_14_5.inc` — generated, never hand-edited. Regenerate with `python tools/render_native_profiler_targets.py`; `--check` fails if the committed include is stale. The single maintained source is `research/native-profiler-runtime-targets-1.14.5.json`; the renderer rejects anything other than the three pinned tail anchors, a slot other than 6, a non-unique declared match count, malformed hex ranges, or an inconsistent signature offset.
+
 Do **not** add game-state-changing optimization patches, scheduler overrides, lock removal, cadence changes, or speculative parallelization here. Task 11/12 remain evidence-gated until Task 9 runtime overhead/correlation and the remaining CPU/wait/critical-path questions are resolved.

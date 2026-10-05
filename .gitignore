@@ -37,6 +37,16 @@ local-data/
 vendor-game-data/
 raw-captures/
 
+# Native build output (src/native via CMake); produced exe/dll/lib/pdb are ignored above
+build/
+out/
+CMakeUserPresets.json
+*.obj
+*.o
+*.a
+*.idb
+*.v3pf
+
 # Python
 __pycache__/
 *.pyc
