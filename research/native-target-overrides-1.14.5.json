@@ -1,0 +1,102 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "targets": [
+    {
+      "kind": "scheduler_range",
+      "name": "dispatcher_candidate",
+      "ranges": [
+        {
+          "begin_rva": "0x7dc160",
+          "end_rva": "0x7dc606"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "dispatcher_candidate",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      }
+    },
+    {
+      "kind": "callback_candidate",
+      "name": "employment_prepare_callback",
+      "ranges": [
+        {
+          "begin_rva": "0x13caed0",
+          "end_rva": "0x13caeef"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "employment_prepare_callback",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      }
+    },
+    {
+      "kind": "scheduler_range",
+      "name": "heuristic_candidate",
+      "ranges": [
+        {
+          "begin_rva": "0x7db150",
+          "end_rva": "0x7dba91"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "heuristic_candidate",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      }
+    },
+    {
+      "kind": "callback_candidate",
+      "name": "investment_prepare_callback",
+      "ranges": [
+        {
+          "begin_rva": "0xf7ec40",
+          "end_rva": "0xf7ed29"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "investment_prepare_callback",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      }
+    },
+    {
+      "kind": "callback_candidate",
+      "name": "migration_prepare_callback",
+      "ranges": [
+        {
+          "begin_rva": "0x11baee0",
+          "end_rva": "0x11bb01f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "migration_prepare_callback",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      }
+    },
+    {
+      "kind": "scheduler_range",
+      "name": "range_runner_candidate",
+      "ranges": [
+        {
+          "begin_rva": "0x7dbaa0",
+          "end_rva": "0x7dc13e"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "range_runner_candidate",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      }
+    }
+  ]
+}

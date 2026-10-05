@@ -1,0 +1,4063 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "module": "victoria3.exe",
+  "range_conflicts": [],
+  "targets": [
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ActivateLawsAtMaxPhases",
+      "ranges": [
+        {
+          "begin_rva": "0xf01710",
+          "end_rva": "0xf0182b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ActivateLawsAtMaxPhases",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 1
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_AdjustWages",
+      "ranges": [
+        {
+          "begin_rva": "0xf3d760",
+          "end_rva": "0xf3d7d7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_AdjustWages",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 2
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ApplyFleetMaintenancePenalty",
+      "ranges": [
+        {
+          "begin_rva": "0x1334680",
+          "end_rva": "0x13346f3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ApplyFleetMaintenancePenalty",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 3
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_AverageStandardOfLivingUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e490",
+          "end_rva": "0xf5e4ba"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_AverageStandardOfLivingUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 4
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_CheckCareerEnds",
+      "ranges": [
+        {
+          "begin_rva": "0xfa5900",
+          "end_rva": "0xfa5b00"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_CheckCareerEnds",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 5
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_CheckCharacterNewTrait",
+      "ranges": [
+        {
+          "begin_rva": "0xfa5020",
+          "end_rva": "0xfa5117"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_CheckCharacterNewTrait",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 6
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_CheckForNewCivilWars",
+      "ranges": [
+        {
+          "begin_rva": "0xf95a20",
+          "end_rva": "0xf95cf5"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_CheckForNewCivilWars",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 7
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ClearCharacterInteractionCooldowns",
+      "ranges": [
+        {
+          "begin_rva": "0x17ddfa0",
+          "end_rva": "0x17de097"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ClearCharacterInteractionCooldowns",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 8
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ClearExpiredMigrationBuckets",
+      "ranges": [
+        {
+          "begin_rva": "0x13c1690",
+          "end_rva": "0x13c1787"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ClearExpiredMigrationBuckets",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 9
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ClearJournalEntryScriptedButtonCooldowns",
+      "ranges": [
+        {
+          "begin_rva": "0x1006650",
+          "end_rva": "0x1006747"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ClearJournalEntryScriptedButtonCooldowns",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 10
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ClearLogisticsData",
+      "ranges": [
+        {
+          "begin_rva": "0xf476e0",
+          "end_rva": "0xf477d7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ClearLogisticsData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 11
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ClearOutlinerData",
+      "ranges": [
+        {
+          "begin_rva": "0x147d530",
+          "end_rva": "0x147d5aa"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ClearOutlinerData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 12
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_CohesionUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0x1409bd0",
+          "end_rva": "0x1409cc7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_CohesionUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 13
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_CollectivizePrivateProperty",
+      "ranges": [
+        {
+          "begin_rva": "0xf6d1b0",
+          "end_rva": "0xf6d3ac"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_CollectivizePrivateProperty",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 14
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_CreateElectionData",
+      "ranges": [
+        {
+          "begin_rva": "0xec6200",
+          "end_rva": "0xec63d8"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_CreateElectionData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 15
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_CreateNewPoliticalMovements",
+      "ranges": [
+        {
+          "begin_rva": "0x13f54e0",
+          "end_rva": "0x13f56a1"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_CreateNewPoliticalMovements",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 16
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DailyCountryBudgetUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0x109ca30",
+          "end_rva": "0x109ca95"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DailyCountryBudgetUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 17
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DailyStateRegionUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0x14153e0",
+          "end_rva": "0x14154d3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DailyStateRegionUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 18
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DailyUpdateDiplomaticPacts",
+      "ranges": [
+        {
+          "begin_rva": "0xf19920",
+          "end_rva": "0xf19989"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DailyUpdateDiplomaticPacts",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 19
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DailyUpdateWars",
+      "ranges": [
+        {
+          "begin_rva": "0x13ec2b0",
+          "end_rva": "0x13ec48c"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DailyUpdateWars",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 20
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DecayAcceptanceDeltas",
+      "ranges": [
+        {
+          "begin_rva": "0xf13170",
+          "end_rva": "0xf1325f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DecayAcceptanceDeltas",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 21
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DecayFrontOccupationProgress",
+      "ranges": [
+        {
+          "begin_rva": "0xfeb2d0",
+          "end_rva": "0xfeb3c7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DecayFrontOccupationProgress",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 22
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DistributeSupplyShips",
+      "ranges": [
+        {
+          "begin_rva": "0xf6c460",
+          "end_rva": "0xf6c60f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DistributeSupplyShips",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 23
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_DownsizeMilitaryBuildingsToUnitCount",
+      "ranges": [
+        {
+          "begin_rva": "0xf48220",
+          "end_rva": "0xf4846b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_DownsizeMilitaryBuildingsToUnitCount",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 24
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ElasticLoggingWorld",
+      "ranges": [
+        {
+          "begin_rva": "0xd21500",
+          "end_rva": "0xd21586"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ElasticLoggingWorld",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 25
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_EnslaveDebtors",
+      "ranges": [
+        {
+          "begin_rva": "0x13a30d0",
+          "end_rva": "0x13a33a1"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_EnslaveDebtors",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 26
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_FindCrewForShips",
+      "ranges": [
+        {
+          "begin_rva": "0x13d8de0",
+          "end_rva": "0x13d9086"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_FindCrewForShips",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 27
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_FinishHarvestConditions",
+      "ranges": [
+        {
+          "begin_rva": "0xed4400",
+          "end_rva": "0xed4448"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_FinishHarvestConditions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 28
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_FlushNavyAIData",
+      "ranges": [
+        {
+          "begin_rva": "0x157d470",
+          "end_rva": "0x157d567"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_FlushNavyAIData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 29
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_GenerateCharacterConditions",
+      "ranges": [
+        {
+          "begin_rva": "0xfa5360",
+          "end_rva": "0xfa54cb"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_GenerateCharacterConditions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 30
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_HandleAutonomousInvestment",
+      "ranges": [
+        {
+          "begin_rva": "0xf6e590",
+          "end_rva": "0xf6e7a3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_HandleAutonomousInvestment",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 31
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_InvalidateCompanyExecutiveModifiers",
+      "ranges": [
+        {
+          "begin_rva": "0xf09d70",
+          "end_rva": "0xf09e67"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_InvalidateCompanyExecutiveModifiers",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 32
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_LockInStraitSettings",
+      "ranges": [
+        {
+          "begin_rva": "0xc29fe0",
+          "end_rva": "0xc2a14b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_LockInStraitSettings",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 33
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_MergeSmallPops",
+      "ranges": [
+        {
+          "begin_rva": "0x13aacd0",
+          "end_rva": "0x13aaec7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_MergeSmallPops",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 34
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_MonthlyUpdateDiplomaticPacts",
+      "ranges": [
+        {
+          "begin_rva": "0xf19a00",
+          "end_rva": "0xf19a61"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_MonthlyUpdateDiplomaticPacts",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 35
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_NewUpdateMaxOffenseDefense",
+      "ranges": [
+        {
+          "begin_rva": "0xfb2610",
+          "end_rva": "0xfb2765"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_NewUpdateMaxOffenseDefense",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 36
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_PeriodicDebugLog",
+      "ranges": [
+        {
+          "begin_rva": "0x7da8e0",
+          "end_rva": "0x7dae1a"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_PeriodicDebugLog",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 37
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_PostIGPowerStatusNotifications",
+      "ranges": [
+        {
+          "begin_rva": "0xef7f20",
+          "end_rva": "0xef7f93"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_PostIGPowerStatusNotifications",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 38
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_PreUpdatePoliticalMovements",
+      "ranges": [
+        {
+          "begin_rva": "0x13f4990",
+          "end_rva": "0x13f4be6"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_PreUpdatePoliticalMovements",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 39
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_PrepareNavyAIData",
+      "ranges": [
+        {
+          "begin_rva": "0x157d990",
+          "end_rva": "0x157db31"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_PrepareNavyAIData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 40
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessAutoExpandingBuildings",
+      "ranges": [
+        {
+          "begin_rva": "0xf3da40",
+          "end_rva": "0xf3de7b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessAutoExpandingBuildings",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 41
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessDependentWages",
+      "ranges": [
+        {
+          "begin_rva": "0x13ab8e0",
+          "end_rva": "0x13ab9d7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessDependentWages",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 42
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessEconomicMigration",
+      "ranges": [
+        {
+          "begin_rva": "0x11b0c00",
+          "end_rva": "0x11b0dde"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessEconomicMigration",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 43
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessInsurrectionaryIGsInGoverment",
+      "ranges": [
+        {
+          "begin_rva": "0xef8120",
+          "end_rva": "0xef8193"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessInsurrectionaryIGsInGoverment",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 44
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessInterestGroups",
+      "ranges": [
+        {
+          "begin_rva": "0xef8220",
+          "end_rva": "0xef8317"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessInterestGroups",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 45
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessJournalEntryTimeout",
+      "ranges": [
+        {
+          "begin_rva": "0x1003240",
+          "end_rva": "0x1003288"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessJournalEntryTimeout",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 46
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessMarginalizedIGsPartyMembership",
+      "ranges": [
+        {
+          "begin_rva": "0xef8020",
+          "end_rva": "0xef8093"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessMarginalizedIGsPartyMembership",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 47
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessMassMigration",
+      "ranges": [
+        {
+          "begin_rva": "0x11b0e80",
+          "end_rva": "0x11b105f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessMassMigration",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 48
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessPopDiplomaticIncome",
+      "ranges": [
+        {
+          "begin_rva": "0x13ab3e0",
+          "end_rva": "0x13ab4d7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessPopDiplomaticIncome",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 49
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessPopPurchases",
+      "ranges": [
+        {
+          "begin_rva": "0xee74b0",
+          "end_rva": "0xee75a7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessPopPurchases",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 50
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessProposalTimeout",
+      "ranges": [
+        {
+          "begin_rva": "0x1423f00",
+          "end_rva": "0x1424010"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessProposalTimeout",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 51
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessSlaveTrade",
+      "ranges": [
+        {
+          "begin_rva": "0x11a6860",
+          "end_rva": "0x11a699c"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessSlaveTrade",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 52
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessWagesStage1",
+      "ranges": [
+        {
+          "begin_rva": "0xf3b990",
+          "end_rva": "0xf3b9fb"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessWagesStage1",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 53
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessWagesStage2",
+      "ranges": [
+        {
+          "begin_rva": "0xf3ba60",
+          "end_rva": "0xf3bacb"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessWagesStage2",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 54
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProcessWelfarePayments",
+      "ranges": [
+        {
+          "begin_rva": "0x13ab760",
+          "end_rva": "0x13ab857"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProcessWelfarePayments",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 55
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProgressConstructionQueues",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e730",
+          "end_rva": "0xf5e89b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProgressConstructionQueues",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 56
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProgressShipConstructions",
+      "ranges": [
+        {
+          "begin_rva": "0x1334450",
+          "end_rva": "0x13345fc"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProgressShipConstructions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 57
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ProgressSupplyShipConstructions",
+      "ranges": [
+        {
+          "begin_rva": "0xdf3b40",
+          "end_rva": "0xdf3da4"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ProgressSupplyShipConstructions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 58
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_PurgeOldCulturalCommunities",
+      "ranges": [
+        {
+          "begin_rva": "0xf13590",
+          "end_rva": "0xf13611"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_PurgeOldCulturalCommunities",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 59
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RadicalizePoliticalMovementSupporters",
+      "ranges": [
+        {
+          "begin_rva": "0x13f40b0",
+          "end_rva": "0x13f41a7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RadicalizePoliticalMovementSupporters",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 60
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecalcAIRegionScores",
+      "ranges": [
+        {
+          "begin_rva": "0x157e070",
+          "end_rva": "0x157e2be"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecalcAIRegionScores",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 61
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecalcCountryPopStatistics",
+      "ranges": [
+        {
+          "begin_rva": "0xf6de00",
+          "end_rva": "0xf6def1"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecalcCountryPopStatistics",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 62
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecalcStatePopStatistics",
+      "ranges": [
+        {
+          "begin_rva": "0x13c1510",
+          "end_rva": "0x13c1607"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecalcStatePopStatistics",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 63
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecalculateCredit",
+      "ranges": [
+        {
+          "begin_rva": "0x10b0440",
+          "end_rva": "0x10b0604"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecalculateCredit",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 64
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecalculateModifierNodes",
+      "ranges": [
+        {
+          "begin_rva": "0x7da740",
+          "end_rva": "0x7da8de"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecalculateModifierNodes",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 65
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecomputeStandardProductionMethods",
+      "ranges": [
+        {
+          "begin_rva": "0xf3bcf0",
+          "end_rva": "0xf3bd58"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecomputeStandardProductionMethods",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 66
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecordDiplomaticPlayCosts",
+      "ranges": [
+        {
+          "begin_rva": "0xf374a0",
+          "end_rva": "0xf376fe"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecordDiplomaticPlayCosts",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 67
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RecordElectionVotes",
+      "ranges": [
+        {
+          "begin_rva": "0xec5eb0",
+          "end_rva": "0xec6110"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RecordElectionVotes",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 68
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ReevaluateLawGroups",
+      "ranges": [
+        {
+          "begin_rva": "0xefaef0",
+          "end_rva": "0xefaf54"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ReevaluateLawGroups",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 69
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RefreshCulturalCommunities",
+      "ranges": [
+        {
+          "begin_rva": "0xf13410",
+          "end_rva": "0xf13483"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RefreshCulturalCommunities",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 70
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RemoveTimedOutInvalidSeaRegions",
+      "ranges": [
+        {
+          "begin_rva": "0xf5c1e0",
+          "end_rva": "0xf5c44b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RemoveTimedOutInvalidSeaRegions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 71
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ResetPopMoney",
+      "ranges": [
+        {
+          "begin_rva": "0x13a3060",
+          "end_rva": "0x13a30cb"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ResetPopMoney",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 72
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_RunScriptedTests",
+      "ranges": [
+        {
+          "begin_rva": "0x1265990",
+          "end_rva": "0x1265c4d"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_RunScriptedTests",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 73
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_SnapshotPiracyTracking",
+      "ranges": [
+        {
+          "begin_rva": "0xf2b3b0",
+          "end_rva": "0xf2b51b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_SnapshotPiracyTracking",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 74
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_SpawnAgitators",
+      "ranges": [
+        {
+          "begin_rva": "0xfa4920",
+          "end_rva": "0xfa4aa3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_SpawnAgitators",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 75
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_SpawnCharactersInPool",
+      "ranges": [
+        {
+          "begin_rva": "0xfa4ba0",
+          "end_rva": "0xfa4d2a"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_SpawnCharactersInPool",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 76
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_SpawnCulturalCommunities",
+      "ranges": [
+        {
+          "begin_rva": "0xf13300",
+          "end_rva": "0xf1338b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_SpawnCulturalCommunities",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 77
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_SpawnInterceptBattles",
+      "ranges": [
+        {
+          "begin_rva": "0x11c97f0",
+          "end_rva": "0x11c9b37"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_SpawnInterceptBattles",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 78
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_SpawnRaidSupplyBattles",
+      "ranges": [
+        {
+          "begin_rva": "0x11c9430",
+          "end_rva": "0x11c9738"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_SpawnRaidSupplyBattles",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 79
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_StartHarvestConditions",
+      "ranges": [
+        {
+          "begin_rva": "0xeda2c0",
+          "end_rva": "0xeda4aa"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_StartHarvestConditions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 80
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_SyncedAIPostUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0x1576010",
+          "end_rva": "0x15760be"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_SyncedAIPostUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 81
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAI",
+      "ranges": [
+        {
+          "begin_rva": "0x1575530",
+          "end_rva": "0x15756c7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAI",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 82
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAICountryGoalsAddRemove",
+      "ranges": [
+        {
+          "begin_rva": "0x15760c0",
+          "end_rva": "0x1576246"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAICountryGoalsAddRemove",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 83
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAICountryGoalsAdjustments",
+      "ranges": [
+        {
+          "begin_rva": "0x1576300",
+          "end_rva": "0x15763af"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAICountryGoalsAdjustments",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 84
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAICountryGoalsStrategic",
+      "ranges": [
+        {
+          "begin_rva": "0x1576250",
+          "end_rva": "0x15762ff"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAICountryGoalsStrategic",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 85
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAIGoals",
+      "ranges": [
+        {
+          "begin_rva": "0x15758b0",
+          "end_rva": "0x15759c1"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAIGoals",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 86
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAIMemories",
+      "ranges": [
+        {
+          "begin_rva": "0x15765a0",
+          "end_rva": "0x15766b1"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAIMemories",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 87
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAIRegionalObjectives",
+      "ranges": [
+        {
+          "begin_rva": "0x10132a0",
+          "end_rva": "0x1013480"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAIRegionalObjectives",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 88
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAIStrategies",
+      "ranges": [
+        {
+          "begin_rva": "0x15759d0",
+          "end_rva": "0x1575ae1"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAIStrategies",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 89
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateActiveBattles",
+      "ranges": [
+        {
+          "begin_rva": "0x1080580",
+          "end_rva": "0x108067d"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateActiveBattles",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 90
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateActiveNavalBattles",
+      "ranges": [
+        {
+          "begin_rva": "0x11c9eb0",
+          "end_rva": "0x11ca061"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateActiveNavalBattles",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 91
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAdvanceProgress",
+      "ranges": [
+        {
+          "begin_rva": "0xfa55d0",
+          "end_rva": "0xfa5807"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAdvanceProgress",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 92
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAgitatorMovementSupport",
+      "ranges": [
+        {
+          "begin_rva": "0xfa47b0",
+          "end_rva": "0xfa4823"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAgitatorMovementSupport",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 93
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAppeasement",
+      "ranges": [
+        {
+          "begin_rva": "0x13fca70",
+          "end_rva": "0x13fcae3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAppeasement",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 94
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAuthoritySpendingPriorities",
+      "ranges": [
+        {
+          "begin_rva": "0x1575cf0",
+          "end_rva": "0x1575dce"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAuthoritySpendingPriorities",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 95
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAutoDownsizing",
+      "ranges": [
+        {
+          "begin_rva": "0xf48510",
+          "end_rva": "0xf4867b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAutoDownsizing",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 96
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAutoPlacedBuildings",
+      "ranges": [
+        {
+          "begin_rva": "0xf3c750",
+          "end_rva": "0xf3c79c"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAutoPlacedBuildings",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 97
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateAverageEmployeeEarnings",
+      "ranges": [
+        {
+          "begin_rva": "0x7d8d20",
+          "end_rva": "0x7d8f5c"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateAverageEmployeeEarnings",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 98
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateBasePopBureaucracy",
+      "ranges": [
+        {
+          "begin_rva": "0x13c1810",
+          "end_rva": "0x13c1907"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateBasePopBureaucracy",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 99
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateBattlesCachedCombatData",
+      "ranges": [
+        {
+          "begin_rva": "0x1084cf0",
+          "end_rva": "0x1084ddf"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateBattlesCachedCombatData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 100
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateBlockades",
+      "ranges": [
+        {
+          "begin_rva": "0x1415250",
+          "end_rva": "0x141535c"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateBlockades",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 101
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateBuildingSpendingPriorities_Stage1",
+      "ranges": [
+        {
+          "begin_rva": "0x157ce80",
+          "end_rva": "0x157d0ec"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateBuildingSpendingPriorities_Stage1",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 102
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateBuildingSpendingPriorities_Stage2",
+      "ranges": [
+        {
+          "begin_rva": "0x157cbd0",
+          "end_rva": "0x157cd69"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateBuildingSpendingPriorities_Stage2",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 103
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateBuildingThroughput",
+      "ranges": [
+        {
+          "begin_rva": "0x13c1b30",
+          "end_rva": "0x13c1cc5"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateBuildingThroughput",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 104
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedCarryingCapacity",
+      "ranges": [
+        {
+          "begin_rva": "0xf6ca40",
+          "end_rva": "0xf6cbef"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedCarryingCapacity",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 105
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedCompanyProductivity",
+      "ranges": [
+        {
+          "begin_rva": "0xf0a6d0",
+          "end_rva": "0xf0a7c7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedCompanyProductivity",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 106
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedDataForWarSupportChange",
+      "ranges": [
+        {
+          "begin_rva": "0xf37300",
+          "end_rva": "0xf373f7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedDataForWarSupportChange",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 107
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedEconomicDependence",
+      "ranges": [
+        {
+          "begin_rva": "0xf5dcb0",
+          "end_rva": "0xf5def4"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedEconomicDependence",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 108
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedLiteracy",
+      "ranges": [
+        {
+          "begin_rva": "0xf6c8c0",
+          "end_rva": "0xf6c9b7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedLiteracy",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 109
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedPowerProjectionAndBlockadeStrength",
+      "ranges": [
+        {
+          "begin_rva": "0xfc69d0",
+          "end_rva": "0xfc6ac7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedPowerProjectionAndBlockadeStrength",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 110
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedRankingsAndGlobalGDP",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e610",
+          "end_rva": "0xf5e65e"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedRankingsAndGlobalGDP",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 111
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCachedStraitTradeData",
+      "ranges": [
+        {
+          "begin_rva": "0xc2a4c0",
+          "end_rva": "0xc2a677"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCachedStraitTradeData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 112
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCharactersTraitGain",
+      "ranges": [
+        {
+          "begin_rva": "0xfa4ea0",
+          "end_rva": "0xfa4f97"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCharactersTraitGain",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 113
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCivilWarProgress",
+      "ranges": [
+        {
+          "begin_rva": "0xf95e40",
+          "end_rva": "0xf96034"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCivilWarProgress",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 114
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateColonizationProgress",
+      "ranges": [
+        {
+          "begin_rva": "0xf6d540",
+          "end_rva": "0xf6d6d2"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateColonizationProgress",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 115
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCombatUnitCulture",
+      "ranges": [
+        {
+          "begin_rva": "0x120bf20",
+          "end_rva": "0x120bfd9"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCombatUnitCulture",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 116
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCommunityAcceptanceCache",
+      "ranges": [
+        {
+          "begin_rva": "0xf12fd0",
+          "end_rva": "0xf130c7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCommunityAcceptanceCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 117
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateConscriptionCenters",
+      "ranges": [
+        {
+          "begin_rva": "0xf47f10",
+          "end_rva": "0xf4812f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateConscriptionCenters",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 118
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCountryAcceptanceCache",
+      "ranges": [
+        {
+          "begin_rva": "0xf6e890",
+          "end_rva": "0xf6e987"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCountryAcceptanceCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 119
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCountryFormationCandidates",
+      "ranges": [
+        {
+          "begin_rva": "0xebf020",
+          "end_rva": "0xebf216"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCountryFormationCandidates",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 120
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCountryLocalRegions",
+      "ranges": [
+        {
+          "begin_rva": "0xfd8570",
+          "end_rva": "0xfd8663"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCountryLocalRegions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 121
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCountryNormalWageCache",
+      "ranges": [
+        {
+          "begin_rva": "0xf6daa0",
+          "end_rva": "0xf6dcde"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCountryNormalWageCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 122
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCountryRegionLocality",
+      "ranges": [
+        {
+          "begin_rva": "0xfd86f0",
+          "end_rva": "0xfd87e3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCountryRegionLocality",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 123
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCountryScorePositions",
+      "ranges": [
+        {
+          "begin_rva": "0x10d41c0",
+          "end_rva": "0x10d4253"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCountryScorePositions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 124
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCulturalObsessions",
+      "ranges": [
+        {
+          "begin_rva": "0xf17ac0",
+          "end_rva": "0xf17c5a"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCulturalObsessions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 125
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateCurrentFervor",
+      "ranges": [
+        {
+          "begin_rva": "0xf17730",
+          "end_rva": "0xf1785f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateCurrentFervor",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 126
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateDefeatedAdmirals",
+      "ranges": [
+        {
+          "begin_rva": "0xfc6cf0",
+          "end_rva": "0xfc6e88"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateDefeatedAdmirals",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 127
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateDiplomaticDemands",
+      "ranges": [
+        {
+          "begin_rva": "0x1135570",
+          "end_rva": "0x113562d"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateDiplomaticDemands",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 128
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateDynamicCountryNames",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e4c0",
+          "end_rva": "0xf5e528"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateDynamicCountryNames",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 129
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateElections",
+      "ranges": [
+        {
+          "begin_rva": "0xec2690",
+          "end_rva": "0xec26d8"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateElections",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 130
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateEmployment",
+      "ranges": [
+        {
+          "begin_rva": "0x13b8310",
+          "end_rva": "0x13b853b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateEmployment",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 131
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateFamines",
+      "ranges": [
+        {
+          "begin_rva": "0xed0c90",
+          "end_rva": "0xed0cd8"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateFamines",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 132
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateFleetsReturnToPort",
+      "ranges": [
+        {
+          "begin_rva": "0xfc6740",
+          "end_rva": "0xfc68ab"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateFleetsReturnToPort",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 133
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateFleetsVeterancy",
+      "ranges": [
+        {
+          "begin_rva": "0xfc6120",
+          "end_rva": "0xfc6217"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateFleetsVeterancy",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 134
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateFormationSupply",
+      "ranges": [
+        {
+          "begin_rva": "0xf6c2e0",
+          "end_rva": "0xf6c3d7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateFormationSupply",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 135
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateFormationTravelRegionAccess",
+      "ranges": [
+        {
+          "begin_rva": "0xfba420",
+          "end_rva": "0xfba546"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateFormationTravelRegionAccess",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 136
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateGoodsLeaderboards",
+      "ranges": [
+        {
+          "begin_rva": "0x10da4b0",
+          "end_rva": "0x10da5ee"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateGoodsLeaderboards",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 137
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateGovernments",
+      "ranges": [
+        {
+          "begin_rva": "0xf6e040",
+          "end_rva": "0xf6e1d2"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateGovernments",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 138
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateHQs",
+      "ranges": [
+        {
+          "begin_rva": "0x1125240",
+          "end_rva": "0x1125293"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateHQs",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 139
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateHiringRates",
+      "ranges": [
+        {
+          "begin_rva": "0xf48770",
+          "end_rva": "0xf488e3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateHiringRates",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 140
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateIGLawApprovalCache",
+      "ranges": [
+        {
+          "begin_rva": "0xe87620",
+          "end_rva": "0xe87717"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateIGLawApprovalCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 141
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateIncorporation",
+      "ranges": [
+        {
+          "begin_rva": "0x13c1d70",
+          "end_rva": "0x13c1ede"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateIncorporation",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 142
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInfamy",
+      "ranges": [
+        {
+          "begin_rva": "0xf6ea10",
+          "end_rva": "0xf6eb07"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInfamy",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 143
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInputGoodsShortage",
+      "ranges": [
+        {
+          "begin_rva": "0xf489c0",
+          "end_rva": "0xf48ab7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInputGoodsShortage",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 144
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInstitutions",
+      "ranges": [
+        {
+          "begin_rva": "0xf0e120",
+          "end_rva": "0xf0e194"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInstitutions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 145
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInterestGroupPoliticalStrength",
+      "ranges": [
+        {
+          "begin_rva": "0xef4c30",
+          "end_rva": "0xef4df8"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInterestGroupPoliticalStrength",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 146
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInterestGroupSupportForPoliticalMovements",
+      "ranges": [
+        {
+          "begin_rva": "0x13f4e80",
+          "end_rva": "0x13f502f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInterestGroupSupportForPoliticalMovements",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 147
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInterestInvolvement",
+      "ranges": [
+        {
+          "begin_rva": "0xfd7e40",
+          "end_rva": "0xfd7fd5"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInterestInvolvement",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 148
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInterests",
+      "ranges": [
+        {
+          "begin_rva": "0xfd82f0",
+          "end_rva": "0xfd84e6"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInterests",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 149
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateInvasions",
+      "ranges": [
+        {
+          "begin_rva": "0xffdc20",
+          "end_rva": "0xffde0b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateInvasions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 150
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateJobSatisfaction",
+      "ranges": [
+        {
+          "begin_rva": "0x13a6bc0",
+          "end_rva": "0x13a6c08"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateJobSatisfaction",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 151
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateLastWeekEmployeeCount",
+      "ranges": [
+        {
+          "begin_rva": "0xf3c6e0",
+          "end_rva": "0xf3c74b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateLastWeekEmployeeCount",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 152
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateLawEnactmentProgress",
+      "ranges": [
+        {
+          "begin_rva": "0xefae70",
+          "end_rva": "0xefaee4"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateLawEnactmentProgress",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 153
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateLibertyDesire",
+      "ranges": [
+        {
+          "begin_rva": "0xf203b0",
+          "end_rva": "0xf20650"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateLibertyDesire",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 154
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateMarketCachedPopNeedExpenses",
+      "ranges": [
+        {
+          "begin_rva": "0xee7630",
+          "end_rva": "0xee77dd"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateMarketCachedPopNeedExpenses",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 155
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateMerchantMarineShortage",
+      "ranges": [
+        {
+          "begin_rva": "0x1425340",
+          "end_rva": "0x142545b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateMerchantMarineShortage",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 156
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateMigrationData",
+      "ranges": [
+        {
+          "begin_rva": "0x11a6540",
+          "end_rva": "0x11a66ba"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateMigrationData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 157
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateMigrationTargets",
+      "ranges": [
+        {
+          "begin_rva": "0x11b1490",
+          "end_rva": "0x11b1603"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateMigrationTargets",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 158
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateMobilization",
+      "ranges": [
+        {
+          "begin_rva": "0xf6d7b0",
+          "end_rva": "0xf6da1b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateMobilization",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 159
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateMorale",
+      "ranges": [
+        {
+          "begin_rva": "0xfc6f10",
+          "end_rva": "0xfc7007"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateMorale",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 160
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateNationalAwakenings",
+      "ranges": [
+        {
+          "begin_rva": "0xf17500",
+          "end_rva": "0xf176a6"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateNationalAwakenings",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 161
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateNavalHostilityDamage",
+      "ranges": [
+        {
+          "begin_rva": "0xf2b610",
+          "end_rva": "0xf2b783"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateNavalHostilityDamage",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 162
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateNavyAI",
+      "ranges": [
+        {
+          "begin_rva": "0x157dbe0",
+          "end_rva": "0x157dd92"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateNavyAI",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 163
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateNavyAIShipTemplates",
+      "ranges": [
+        {
+          "begin_rva": "0x157de20",
+          "end_rva": "0x157dfcf"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateNavyAIShipTemplates",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 164
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateObligations",
+      "ranges": [
+        {
+          "begin_rva": "0xf23590",
+          "end_rva": "0xf235dc"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateObligations",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 165
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateOrganization",
+      "ranges": [
+        {
+          "begin_rva": "0xfc7090",
+          "end_rva": "0xfc7187"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateOrganization",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 166
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePartySupport",
+      "ranges": [
+        {
+          "begin_rva": "0x14025c0",
+          "end_rva": "0x14027b5"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePartySupport",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 167
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePoliticalMovementRadicalism",
+      "ranges": [
+        {
+          "begin_rva": "0x13f4230",
+          "end_rva": "0x13f4327"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePoliticalMovementRadicalism",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 168
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePoliticalMovements",
+      "ranges": [
+        {
+          "begin_rva": "0x13f43d0",
+          "end_rva": "0x13f46f9"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePoliticalMovements",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 169
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePopLiteracy",
+      "ranges": [
+        {
+          "begin_rva": "0x13ab260",
+          "end_rva": "0x13ab357"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePopLiteracy",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 170
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePopLoyalistsAndRadicalsStatisticsForCurrentWeek",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e530",
+          "end_rva": "0xf5e598"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePopLoyalistsAndRadicalsStatisticsForCurrentWeek",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 171
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePopLoyaltiesFromStandardOfLivingChanges",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e5a0",
+          "end_rva": "0xf5e60b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePopLoyaltiesFromStandardOfLivingChanges",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 172
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePopPoliticalStrength",
+      "ranges": [
+        {
+          "begin_rva": "0x13abd90",
+          "end_rva": "0x13abf22"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePopPoliticalStrength",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 173
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePopSupportForPoliticalMovements",
+      "ranges": [
+        {
+          "begin_rva": "0x13f5120",
+          "end_rva": "0x13f53e2"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePopSupportForPoliticalMovements",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 174
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePortBombardment",
+      "ranges": [
+        {
+          "begin_rva": "0x1414fe0",
+          "end_rva": "0x14151ba"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePortBombardment",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 175
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePotentialMilitaryStrength",
+      "ranges": [
+        {
+          "begin_rva": "0xf6cc70",
+          "end_rva": "0xf6ceae"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePotentialMilitaryStrength",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 176
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePowerBlocMandates",
+      "ranges": [
+        {
+          "begin_rva": "0x1409dc0",
+          "end_rva": "0x1409f9b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePowerBlocMandates",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 177
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePowerBlocsLeverage",
+      "ranges": [
+        {
+          "begin_rva": "0x140a020",
+          "end_rva": "0x140a117"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePowerBlocsLeverage",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 178
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePowerStruggles",
+      "ranges": [
+        {
+          "begin_rva": "0x14099c0",
+          "end_rva": "0x1409b50"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePowerStruggles",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 179
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePrestigeGoodsProduction",
+      "ranges": [
+        {
+          "begin_rva": "0xf0a1e0",
+          "end_rva": "0xf0a403"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePrestigeGoodsProduction",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 180
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdatePriceReports",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e6d0",
+          "end_rva": "0xf5e723"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdatePriceReports",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 181
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateProducedSupply",
+      "ranges": [
+        {
+          "begin_rva": "0xf47a60",
+          "end_rva": "0xf47b57"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateProducedSupply",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 182
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateProsperity",
+      "ranges": [
+        {
+          "begin_rva": "0xf0a4b0",
+          "end_rva": "0xf0a645"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateProsperity",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 183
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateRecalledFleets",
+      "ranges": [
+        {
+          "begin_rva": "0xfc6510",
+          "end_rva": "0xfc66a0"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateRecalledFleets",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 184
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateRegionalHQs",
+      "ranges": [
+        {
+          "begin_rva": "0xf09f60",
+          "end_rva": "0xf0a13b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateRegionalHQs",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 185
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateRelationsFromStraits",
+      "ranges": [
+        {
+          "begin_rva": "0xc2a240",
+          "end_rva": "0xc2a41b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateRelationsFromStraits",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 186
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateRelationsFromTreaties",
+      "ranges": [
+        {
+          "begin_rva": "0x100b9d0",
+          "end_rva": "0x100bb62"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateRelationsFromTreaties",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 187
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateSavedVariables",
+      "ranges": [
+        {
+          "begin_rva": "0x7da2f0",
+          "end_rva": "0x7da73c"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateSavedVariables",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 188
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateSeaPresence",
+      "ranges": [
+        {
+          "begin_rva": "0xfc6b50",
+          "end_rva": "0xfc6c47"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateSeaPresence",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 189
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateShipMaintenanceCaches",
+      "ranges": [
+        {
+          "begin_rva": "0xf49020",
+          "end_rva": "0xf49117"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateShipMaintenanceCaches",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 190
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateSlaveImportMarkers",
+      "ranges": [
+        {
+          "begin_rva": "0x11a66c0",
+          "end_rva": "0x11a6855"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateSlaveImportMarkers",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 191
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStandardBuildingModifiers",
+      "ranges": [
+        {
+          "begin_rva": "0xf48bc0",
+          "end_rva": "0xf48caf"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStandardBuildingModifiers",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 192
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStateDevastation",
+      "ranges": [
+        {
+          "begin_rva": "0x13c0ff0",
+          "end_rva": "0x13c1281"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStateDevastation",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 193
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStateInfrastructure",
+      "ranges": [
+        {
+          "begin_rva": "0x13b7bf0",
+          "end_rva": "0x13b7c5b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStateInfrastructure",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 194
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStateMostAcceptedCulturesCache",
+      "ranges": [
+        {
+          "begin_rva": "0x13c2100",
+          "end_rva": "0x13c21f7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStateMostAcceptedCulturesCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 195
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStateObstinanceCache",
+      "ranges": [
+        {
+          "begin_rva": "0x13c0e50",
+          "end_rva": "0x13c0f47"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStateObstinanceCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 196
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStatePollutionCache",
+      "ranges": [
+        {
+          "begin_rva": "0x13c0c30",
+          "end_rva": "0x13c0dc2"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStatePollutionCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 197
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStatePopNeedCache",
+      "ranges": [
+        {
+          "begin_rva": "0x13b7e70",
+          "end_rva": "0x13b7ed8"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStatePopNeedCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 198
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStateTurmoilAndLoyalistsCache",
+      "ranges": [
+        {
+          "begin_rva": "0x13c0980",
+          "end_rva": "0x13c0b88"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStateTurmoilAndLoyalistsCache",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 199
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStateWelfareMultiplier",
+      "ranges": [
+        {
+          "begin_rva": "0x13c25d0",
+          "end_rva": "0x13c26c7"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStateWelfareMultiplier",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 200
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateStraitSettings",
+      "ranges": [
+        {
+          "begin_rva": "0xc43df0",
+          "end_rva": "0xc43f5b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateStraitSettings",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 201
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateSupplyData",
+      "ranges": [
+        {
+          "begin_rva": "0xf6c690",
+          "end_rva": "0xf6c83f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateSupplyData",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 202
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateSupplyShortageRatio",
+      "ranges": [
+        {
+          "begin_rva": "0xfc7210",
+          "end_rva": "0xfc7307"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateSupplyShortageRatio",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 203
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateSways",
+      "ranges": [
+        {
+          "begin_rva": "0x147a510",
+          "end_rva": "0x147a59f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateSways",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 204
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateTargetFervorAndCulturalEvents",
+      "ranges": [
+        {
+          "begin_rva": "0xf178e0",
+          "end_rva": "0xf17a0f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateTargetFervorAndCulturalEvents",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 205
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateTechnologyProgress",
+      "ranges": [
+        {
+          "begin_rva": "0x13563a0",
+          "end_rva": "0x1356408"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateTechnologyProgress",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 206
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateTension",
+      "ranges": [
+        {
+          "begin_rva": "0xf23510",
+          "end_rva": "0xf23588"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateTension",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 207
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateTerrainManipulation",
+      "ranges": [
+        {
+          "begin_rva": "0x13b7ee0",
+          "end_rva": "0x13b7f48"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateTerrainManipulation",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 208
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateTimedModifiers",
+      "ranges": [
+        {
+          "begin_rva": "0x7d9640",
+          "end_rva": "0x7da02a"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateTimedModifiers",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 209
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateTransportMissions",
+      "ranges": [
+        {
+          "begin_rva": "0x1406bc0",
+          "end_rva": "0x1406d99"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateTransportMissions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 210
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateTreatyPorts",
+      "ranges": [
+        {
+          "begin_rva": "0x13c2390",
+          "end_rva": "0x13c24fb"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateTreatyPorts",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 211
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateUnemploymentProfessionTransitions",
+      "ranges": [
+        {
+          "begin_rva": "0x13aaf80",
+          "end_rva": "0x13ab10f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateUnemploymentProfessionTransitions",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 212
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateUnitVeterancy",
+      "ranges": [
+        {
+          "begin_rva": "0xfb5b30",
+          "end_rva": "0xfb5c27"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateUnitVeterancy",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 213
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpdateWorldMarket",
+      "ranges": [
+        {
+          "begin_rva": "0xedf260",
+          "end_rva": "0xedf2a2"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpdateWorldMarket",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 214
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_UpgradeUnitTypes",
+      "ranges": [
+        {
+          "begin_rva": "0xfb5a30",
+          "end_rva": "0xfb5aa3"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_UpgradeUnitTypes",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 215
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ValidateArticles",
+      "ranges": [
+        {
+          "begin_rva": "0x100e9a0",
+          "end_rva": "0x100eb0b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ValidateArticles",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 216
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ValidateGoodsTaxesAndTariffs",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e660",
+          "end_rva": "0xf5e6c8"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ValidateGoodsTaxesAndTariffs",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 217
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ValidateMigrationTargets",
+      "ranges": [
+        {
+          "begin_rva": "0x11b1690",
+          "end_rva": "0x11b1703"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ValidateMigrationTargets",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 218
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_ValidateProductionMethods",
+      "ranges": [
+        {
+          "begin_rva": "0xf47c00",
+          "end_rva": "0xf47d6b"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_ValidateProductionMethods",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 219
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_WeeklyBuildingBudgetUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0xf48e20",
+          "end_rva": "0xf48f96"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_WeeklyBuildingBudgetUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 220
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_WeeklyCountryCounterUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0xf5e420",
+          "end_rva": "0xf5e485"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_WeeklyCountryCounterUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 221
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_WeeklyStateBudgetUpdate",
+      "ranges": [
+        {
+          "begin_rva": "0x13c1990",
+          "end_rva": "0x13c1a87"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_WeeklyStateBudgetUpdate",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 222
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_WeeklyUpdateDiplomaticPacts",
+      "ranges": [
+        {
+          "begin_rva": "0xf19990",
+          "end_rva": "0xf199f1"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_WeeklyUpdateDiplomaticPacts",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 223
+    },
+    {
+      "confidence": "confirmed-static",
+      "kind": "ticktask_tail",
+      "name": "CTickTask_WeeklyWarSupportAndEnforcement",
+      "ranges": [
+        {
+          "begin_rva": "0x13ec110",
+          "end_rva": "0x13ec207"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/pc-evidence-2026-10-05/native/ticktask-rtti.json",
+        "class": "CTickTask_WeeklyWarSupportAndEnforcement",
+        "rtti_identity_sorted_sha256": "01aa9e150a4013ede94e02da3778680d73bea27c4cbe52b915c3f8d55807c9fd"
+      },
+      "target_id": 224
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_range",
+      "name": "dispatcher_candidate",
+      "ranges": [
+        {
+          "begin_rva": "0x7dc160",
+          "end_rva": "0x7dc606"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "dispatcher_candidate",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      },
+      "target_id": 225
+    },
+    {
+      "confidence": "candidate",
+      "kind": "callback_candidate",
+      "name": "employment_prepare_callback",
+      "ranges": [
+        {
+          "begin_rva": "0x13caed0",
+          "end_rva": "0x13caeef"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "employment_prepare_callback",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      },
+      "target_id": 226
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_range",
+      "name": "heuristic_candidate",
+      "ranges": [
+        {
+          "begin_rva": "0x7db150",
+          "end_rva": "0x7dba91"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "heuristic_candidate",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      },
+      "target_id": 227
+    },
+    {
+      "confidence": "candidate",
+      "kind": "callback_candidate",
+      "name": "investment_prepare_callback",
+      "ranges": [
+        {
+          "begin_rva": "0xf7ec40",
+          "end_rva": "0xf7ed29"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "investment_prepare_callback",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      },
+      "target_id": 228
+    },
+    {
+      "confidence": "candidate",
+      "kind": "callback_candidate",
+      "name": "migration_prepare_callback",
+      "ranges": [
+        {
+          "begin_rva": "0x11baee0",
+          "end_rva": "0x11bb01f"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "migration_prepare_callback",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      },
+      "target_id": 229
+    },
+    {
+      "confidence": "candidate",
+      "kind": "scheduler_range",
+      "name": "range_runner_candidate",
+      "ranges": [
+        {
+          "begin_rva": "0x7dbaa0",
+          "end_rva": "0x7dc13e"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+        "artifact_sha256": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+        "region": "range_runner_candidate",
+        "research_note": "research/ticktask-dispatch-static-map.md"
+      },
+      "target_id": 230
+    }
+  ],
+  "unresolved": [
+    {
+      "name": "CTickTask_AutoDeclinePendingDiploActions",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_CheckTemporaryHostilityExpiry",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_DailyUpdateCharacters",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_GenerateLeaders",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_MonthlyPulseJournalEntries",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_ProcessAttritionCasualties",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_RecalcInterestGroups",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_RefreshRecruitableCharacters",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_RemoveDeadObjects",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_RemoveExpiredCatalysts",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_RemoveNonexistantCountries",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_RemoveTimedOutAmendments",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_SplitShipsToRetrofit",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateCivilWarVictories",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateCivilWars",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateCountryFormationData",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateCountryRankings",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateDiplomaticPlays",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateFormationTravelCosts",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateJournalEntries",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateObjectives",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdatePopAcceptanceCache",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdatePopGrowth",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdatePopsInterestGroupsAndMovements",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateRichPresence",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateSpendingVariables",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_UpdateStateTrades",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_ValidateDecrees",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_ValidateDiplomaticDemands",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_ValidateDiplomaticPacts",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_ValidateLobbies",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_ValidateSways",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_WeeklyPulseJournalEntries",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    },
+    {
+      "name": "CTickTask_YearlyPulseJournalEntries",
+      "reason": "ambiguous_identity_or_unresolved_function_group"
+    }
+  ],
+  "warning": "Static instruction/reference evidence only; no runtime reachability, dependency semantics, critical path, lock causality or performance benefit is proven."
+}
