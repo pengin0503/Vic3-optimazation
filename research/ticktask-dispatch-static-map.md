@@ -100,4 +100,17 @@ python research/recipes/reproduce_dispatch_evidence.py <Vic3_data.zip> local-dat
 
 再現recipeはexe hashを最初に照合し、選定範囲が部分decodeになる場合は停止する。
 命令抜粋もunwind range先頭からのdecode結果を抽出し、途中の任意byteからdecodeし直さない。
-18関数群は今回の選定範囲であり、完全なcall graphではない。
+18関数群は今回の選定範囲であり、完全なcall graphではない。\n
+
+## Employment stage correlation map
+
+Future OS/native-profiler correlation should use the machine-readable exact-build map at
+`research/generated/employment-stage-map-1.14.5.json`. It keeps Employment Prepare,
+CollectEmployment continuation, SortEmployment callback, item-processing candidate,
+common dispatcher, range runner, and scheduler heuristic as separate targets with
+evidence provenance and `runtime_unverified=true`.
+
+The map is a set of static correlation anchors. In particular, the
+`0x13b8310–0x13b853b` Prepare-associated region is **not** labeled as the inclusive
+duration or total cost of `UpdateEmployment`; aggregate TickTask timing remains a
+separate runtime measurement.
