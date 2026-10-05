@@ -20,10 +20,11 @@ Create/maintain:
 
 Rules:
 
-- do not commit Paradox executables, DLLs, PDBs, saves, or the original combined `Vic3_data.zip`
-- this repository is private and may contain only the deliberately reduced research-input archives documented in `research/input-data-manifest.md` under `input-data/`
-- keep large/unrelated proprietary assets outside the repository
-- commit hashes, checksums, signatures, file inventories, and derived analysis freely
+- keep the repository private
+- `input-data/Vic3_data.zip` is an explicitly approved Git LFS research input because retaining the exact combined archive improves offline analysis efficiency and reproducibility
+- document all retained research inputs in `research/input-data-manifest.md` with hashes/provenance
+- keep unrelated or low-value large proprietary assets outside the repository
+- prefer small extracted inputs, hashes, checksums, signatures, inventories, and derived analysis when the full raw artifact is not needed
 
 Acceptance:
 
@@ -296,4 +297,4 @@ Before declaring any phase complete:
 - verify benchmark reproducibility
 - verify unsupported-build fail-safe where native code exists
 - document limitations and unresolved assumptions
-- commit generated research outputs only when they are derived data, not proprietary binaries
+- commit generated research outputs and only the explicitly approved, documented raw research inputs allowed by the repository data policy; keep unrelated proprietary binaries/assets outside
