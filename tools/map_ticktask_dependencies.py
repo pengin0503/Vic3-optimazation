@@ -101,3 +101,47 @@ def analyze_dependency_evidence(binary: bytes, logical_path: str, rtti: dict, *,
             'functions':sorted(nodes,key=lambda x:int(x['entry_rva'],16)),
             'ticktask_references':sorted(references,key=lambda x:(int(x['instruction_rva'],16),x['task'],x['identity_kind'])),
             'candidate_dependency_edges':[], 'unresolved':[unique[k] for k in sorted(unique)],'warning':WARNING}
+
+
+def classify_relationship(evidence: dict, identities: set[str]) -> dict:
+    """Classify reviewed structural evidence, never synthesize it from calls.
+
+    `structural_relation` is an explicit analyst attestation of object dataflow;
+    the current extractor emits none. This classifier does not validate that
+    attestation against machine code. Its provenance must be reviewed separately.
+    """
+    result = {k:evidence.get(k) for k in ('source_task','target_task','evidence_kind','evidence_rvas')}
+    result['structural_relation'] = evidence.get('structural_relation')
+    resolved = result['source_task'] in identities and result['target_task'] in identities
+    sites = result['evidence_rvas']
+    valid_sites = isinstance(sites,list) and bool(sites)
+    if valid_sites:
+        try:
+            valid_sites = all(isinstance(r,str) and r.startswith('0x') and int(r,16) >= 0 for r in sites)
+        except ValueError:
+            valid_sites = False
+    relation = result['structural_relation'] or {}
+    if not resolved or not valid_sites:
+        confidence = 'unresolved'
+    elif (result['evidence_kind'] == 'direct_structural_traversal'
+          and relation.get('operation') == 'parent_child' and relation.get('verified') is True):
+        confidence = 'confirmed-static'
+    else:
+        confidence = 'candidate'
+    result['confidence'] = confidence
+    return result
+
+
+def render_markdown(document: dict) -> str:
+    import json
+    edges = document['candidate_dependency_edges']
+    confirmed = [e for e in edges if e.get('confidence') == 'confirmed-static']
+    lines = ['# TickTask dependency static evidence', '',
+             'Executable SHA-256: `' + document['executable_sha256'] + '`', '',
+             f"Decoded function groups: {len(document['functions'])}; relationships: {len(edges)}.", '',
+             ('No confirmed-static parent/child relationship recovered.' if not confirmed
+              else f'{len(confirmed)} confirmed-static relationships; runtime behavior remains unproven.'), '',
+             WARNING, '', '## Evidence threshold', '',
+             'Only reviewed direct structural object traversal with both resolved TickTask identities and explicit instruction evidence can be confirmed-static. The bounded extractor does not reconstruct object dataflow; calls, shared helpers and co-references never meet this threshold.', '',
+             '## Unresolved', '', '```json', json.dumps(document['unresolved'],indent=2,sort_keys=True), '```', '']
+    return '\n'.join(lines)

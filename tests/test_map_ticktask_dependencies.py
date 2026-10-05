@@ -67,3 +67,24 @@ class DependencyTests(unittest.TestCase):
     def test_invalid_budget(self):
         with self.assertRaises(Error):
             self.analyze(max_functions=0)
+
+
+class ClassificationTests(unittest.TestCase):
+    def test_only_attested_structural_traversal_can_be_confirmed(self):
+        identities = {'CTickTask_A', 'CTickTask_B'}
+        base = {'source_task':'CTickTask_A','target_task':'CTickTask_B',
+                'evidence_kind':'direct_structural_traversal','evidence_rvas':['0x1000'],
+                'structural_relation':{'operation':'parent_child','verified':True}}
+        result = mod.classify_relationship(base, identities)
+        self.assertEqual(result['confidence'], 'confirmed-static')
+        for kind in ('indirect_call', 'shared_helper', 'direct_call'):
+            self.assertEqual(mod.classify_relationship(dict(base,evidence_kind=kind),identities)['confidence'],'candidate')
+        self.assertEqual(mod.classify_relationship(dict(base,target_task=None),identities)['confidence'],'unresolved')
+        self.assertEqual(mod.classify_relationship(dict(base,evidence_rvas=[]),identities)['confidence'],'unresolved')
+        self.assertEqual(mod.classify_relationship(dict(base,structural_relation={}),identities)['confidence'],'candidate')
+
+    def test_markdown_reports_zero_confirmed_and_unresolved(self):
+        text = mod.render_markdown({'executable_sha256':'x','functions':[], 'candidate_dependency_edges':[], 'unresolved':[{'reason':'unmapped'}]})
+        self.assertIn('No confirmed-static parent/child', text)
+        self.assertIn('unmapped', text)
+        self.assertIn('runtime', text)
