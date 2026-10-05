@@ -9,7 +9,8 @@ Native / executing-plansで実装し、最後だけ別コンテキストの全�
 ゲーム挙動を変更する実装はない。次のOS export到着後はmappingの確認から分析へ進める。
 
 - 開始時にGitHubで確認したmain: `464d37bdf36df1662ac739833dfa09d6bbcd9e23`。
-- 作業ブランチ: `feat/offline-analysis-2026-10-05`。全検証後にmainへfast-forward統合する。
+- 作業ブランチ: `feat/offline-analysis-2026-10-05`。全検証後にmainへfast-forward統合済み。
+  初回統合commit: `006f251da9ecb279604bc0522ae35dfa1c1381d8`（この統合確認追記より前）。
 - 親設計: [native optimization design](../specs/2026-10-04-native-performance-optimization-design.md)。
 - 実装・レビュー修正済みremote HEAD（handoff追加前）: `7df65d39181aacef860628904a0fa573a8614f01`。
 - clone認証が使えない環境だったため、GitHub APIから固定commitのtext blobsを取得。
@@ -69,6 +70,8 @@ primary goldenは修正後もbyte/JSONとも変更なし。独立レビューは
 - synthetic CSVでnormalize→catalog correlationのCLIを通し、decimal comma・quoted stack・
   Decimal時刻・decimal VA・target hit・CPU合算を検証。normalizer出力も2回byte一致。
 - native parser CLIの出力 → committed golden JSONとbyte一致。
+- main統合後のローカル実入力suiteも120/120成功。初回統合commitの
+  [GitHub Actions](https://github.com/pengin0503/Vic3-optimazation/actions/runs/37273985844)もsuccess。
 - GitHub feature treeの全local blobsが一致し、省略して取得しなかった**43個のraw/large blobs**は
   元mainのSHAのまま保持。handoff前のremote treeは211 blobs、差異0。
 - 既存親設計・3計画・wire contractとの整合性をレビュー。広範なsimulation decompileなし。
