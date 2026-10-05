@@ -1,5 +1,8 @@
 # 実測上位TickTaskの準備処理とcallback候補
 
+後続調査: [実行側の共通dispatchと雇用Collect/Sortの対応](ticktask-dispatch-static-map.md)。
+callableを構築・移動するhelperと、callbackを実際に呼ぶ静的命令位置を分けて記録した。
+
 対象: Victoria 3 Windows 1.14.5。実行ファイルSHA-256:
 `9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54`。
 解析基準: main `aba95bf96678a3b2d9514ff8e4f2498e35ce53fd` と今回の添付。

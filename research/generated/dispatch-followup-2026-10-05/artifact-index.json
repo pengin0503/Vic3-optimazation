@@ -1,0 +1,8 @@
+{
+  "artifacts": {
+    "dispatch-regions.json": "393611dfe9b5fb6e3d3aa7474a4c87b69dfa7bb072c8a55f1ed978f92b80c617",
+    "scheduler-callers.json": "09a531cb867bc11913d5c696bcc081c13bc0d090885c0bba9a1975b895976d30"
+  },
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1
+}

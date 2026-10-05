@@ -4,9 +4,13 @@ Private research project for improving Victoria 3 simulation performance beyond 
 
 ## 最新の引き継ぎ / Resume on another device
 
+[2026-10-05 並列実行経路・雇用callbackの追加調査](docs/superpowers/reports/2026-10-05-dispatch-continuation-ja.md)
+
+共通dispatcher候補からrange runner・heuristicへの接続、雇用のCollect/Sort callbackを追加しました。再現recipeと命令境界を照合するcaller検索toolを保存しています。最新の再開状態はこちらを優先してください。
+
 [2026-10-05 添付ビルドによる追加解析・ツール修正](docs/superpowers/reports/2026-10-05-source-backed-continuation-ja.md)
 
-実測上位3処理のcallbackと処理本体候補を追加照合しました。分割関数の復元・測定不足の表示を修正し、旧形式の解析結果にも対応しています。最新の再開状態はこちらを優先してください。
+実測上位3処理のcallbackと処理本体候補を追加照合しました。分割関数の復元・測定不足の表示を修正し、旧形式の解析結果にも対応しています。
 
 [2026-10-05 実測・内部処理調査の引き継ぎ](docs/superpowers/reports/2026-10-05-runtime-benchmark-handoff-ja.md)
 

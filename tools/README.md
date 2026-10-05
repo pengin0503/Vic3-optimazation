@@ -1,5 +1,19 @@
 # Tools
 
+### `map_native_callers.py`
+
+Requires the optional Capstone dependency in `requirements-callgraph.txt`. Searches E8 rel32
+calls to 1..32 specified executable RVAs and validates each match against a decode starting
+at its unwind range boundary. Keeps undecodable/budget-limited candidates unresolved and
+rejects opcode bytes inside other instructions. Indirect callers and tail jumps are outside scope.
+
+```text
+python tools/map_native_callers.py <Vic3_data.zip> --target range=0x7dbaa0 --target heuristic=0x7db150 --expected-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54 --output local-data/callers.json
+```
+
+The [dispatch recipe](../research/recipes/reproduce_dispatch_evidence.py) reproduces the
+selected callback/dispatcher evidence for this build; see [the results](../research/ticktask-dispatch-static-map.md).
+
 All repository-side research tools are dependency-free Python 3 unless noted otherwise. They operate on a local Victoria 3 install or the supplied research ZIP; proprietary binaries are not committed to the repository.
 
 ## Offline static pipeline
