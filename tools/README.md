@@ -289,3 +289,10 @@ vtable slot and unresolved indirect sites are separate. This is linear metadata
 range decoding, not runtime reachability or task-dependency reconstruction.
 
 Commands and verification: [continuation report](../docs/superpowers/reports/2026-10-05-source-backed-continuation-ja.md).
+
+## TickTask dependency evidence
+
+`map_ticktask_dependencies.analyze_dependency_evidence` uses the exact 1.14.5
+hash and validated unwind groups from Graph/List. Depth <=3, <=256 functions,
+<=64 KiB per group; direct calls, tail jumps, indirect sites and RIP-relative
+references stay distinct. Calls/shared helpers are never task-dependency proof.
