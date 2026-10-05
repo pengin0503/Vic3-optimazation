@@ -2,23 +2,27 @@
 
 Private research project for improving Victoria 3 simulation performance beyond ordinary script/define tuning.
 
-## 最新の引き継ぎ / Resume on another device
+## Current status / resume
 
-[2026-10-05 PC資料の追加保存・主要9処理の解析](docs/superpowers/reports/2026-10-05-pc-evidence-preservation-ja.md)
+Latest handoff:
 
-154,570件のファイル索引、5,647件の設定・ログ・スクリプト、旧CSVとセンサー記録、復元可能な計測セーブを追加しました。現在のゲーム本体で静的対応を再検証し、主要9処理を起点に80個の関数グループを保存しています。最新の資料保存状態はこちらを優先してください。
+- [2026-10-05 Offline benchmark quality gate and profiler telemetry design](docs/superpowers/reports/2026-10-05-offline-quality-profiler-continuation-ja.md)
 
-[2026-10-05 並列実行経路・雇用callbackの追加調査](docs/superpowers/reports/2026-10-05-dispatch-continuation-ja.md)
+Current state:
 
-共通dispatcher候補からrange runner・heuristicへの接続、雇用のCollect/Sort callbackを追加しました。再現recipeと命令境界を照合するcaller検索toolを保存しています。最新の再開状態はこちらを優先してください。
+- no native performance patch, DLL injection, scheduler override, or simulation-state modification has been implemented
+- benchmark/static-analysis tooling is established
+- the Phase 4 read-only profiler telemetry format is designed but not implemented
+- the immediate evidence gate is repeatability plus one synchronized OS-level profile
 
-[2026-10-05 添付ビルドによる追加解析・ツール修正](docs/superpowers/reports/2026-10-05-source-backed-continuation-ja.md)
+Useful earlier checkpoints:
 
-実測上位3処理のcallbackと処理本体候補を追加照合しました。分割関数の復元・測定不足の表示を修正し、旧形式の解析結果にも対応しています。
+- [PC evidence preservation and nine-task analysis](docs/superpowers/reports/2026-10-05-pc-evidence-preservation-ja.md)
+- [Dispatcher and Employment callback follow-up](docs/superpowers/reports/2026-10-05-dispatch-continuation-ja.md)
+- [Source-backed native mapping continuation](docs/superpowers/reports/2026-10-05-source-backed-continuation-ja.md)
+- [Runtime benchmark handoff](docs/superpowers/reports/2026-10-05-runtime-benchmark-handoff-ja.md)
 
-[2026-10-05 実測・内部処理調査の引き継ぎ](docs/superpowers/reports/2026-10-05-runtime-benchmark-handoff-ja.md)
-
-3か月の実測CSV、解析結果、内部処理の対応表、iPad・別端末からの再開手順を保存しました。診断基準は暫定16スレッド。OSのCPU/待ち記録は未取得で、性能変更は未実施です。
+Historical reports remain in the repository for provenance; use the latest handoff above for current decisions.
 
 ## Current target
 
@@ -27,40 +31,54 @@ Private research project for improving Victoria 3 simulation performance beyond 
 - Clausewitz: `caligula/release/1.14.x` / `fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef`
 - `victoria3.exe` SHA-256: `9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54`
 
-## Project rule
+## Research rules
 
-Do not start by patching Employment or forcing more worker threads. First establish reproducible measurements, use Victoria 3's built-in TickTask/Script/GUI profilers, and identify the actual serial, locking, scheduling, or task-cost bottleneck.
+- measure first; do not start by forcing more worker threads or patching Employment
+- correlate built-in TickTask data with repeatable wall-clock measurements and OS-level CPU/wait evidence
+- do not infer a scheduler or lock bottleneck from low aggregate CPU utilization alone
+- fail closed on unsupported executable builds
+- do not introduce a native optimization until its expected benefit is larger than benchmark noise and its semantics/risk are understood
 
-## Repository boundary
+## Repository inputs
 
-This private repository stores original source code, scripts, signatures/hashes, plans, research results, and a deliberately reduced research-input snapshot under `input-data/`.
+This repository is private.
 
-The research-input snapshot is kept as separate small archives rather than the original ~122 MB combined `Vic3_data.zip`:
+The combined research archive is intentionally retained at `input-data/Vic3_data.zip` through Git LFS because direct access to the exact research input makes repeated offline analysis and cross-device continuation more efficient.
+
+- LFS object SHA-256: `79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34`
+- LFS object size: 124,462,636 bytes
+
+Smaller extracted inputs remain available for lightweight work:
 
 - `input-data/jomini.zip`
 - `input-data/clausewitz.zip`
 - `input-data/game.zip`
-- build identifiers under `input-data/build-info/`
+- `input-data/build-info/`
 
-The 2026-10-05 PC evidence expansion adds source/control archives, raw benchmark/log/sensor data and a split compressed benchmark save under `input-data/pc-evidence-2026-10-05/`. Its file inventory, hashes, coverage and restoration instructions are recorded in the latest report.
+Additional logs, benchmark material, inventories, sensor data, and a recoverable benchmark save are under `input-data/pc-evidence-2026-10-05/` with provenance documented in the PC-evidence report.
 
-Large or unrelated Victoria 3 binaries/assets remain excluded. Keep this repository private and review the applicable game/license terms before sharing any third-party game data.
+Keep unrelated/low-value large game assets out of the repository. Treat third-party game data as private research material and review the applicable license/copyright terms before any redistribution.
 
-See:
+See [research/input-data-manifest.md](research/input-data-manifest.md) for the authoritative input inventory and storage policy.
 
-- `docs/superpowers/specs/2026-10-04-native-performance-optimization-design.md`
-- `docs/superpowers/plans/2026-10-04-native-performance-optimization-implementation.md`
-- `research/preliminary-static-analysis.md`
-- `research/input-data-manifest.md`
+## Source of truth
 
-## Initial completion criterion
+For current work, read in this order:
 
-Phase 1 is complete only when the same heavy save can be benchmarked repeatedly and produces comparable:
+1. [approved design](docs/superpowers/specs/2026-10-04-native-performance-optimization-design.md)
+2. [implementation plan](docs/superpowers/plans/2026-10-04-native-performance-optimization-implementation.md)
+3. [latest handoff](docs/superpowers/reports/2026-10-05-offline-quality-profiler-continuation-ja.md)
+4. [input-data manifest](research/input-data-manifest.md)
 
-- simulation wall-clock throughput
-- TickTask timing CSV
-- longest-lock data
-- TaskThreadCount scaling results
-- script/UI profiler results where relevant
+## Immediate evidence gate
 
-No native performance patch is considered justified until that baseline exists.
+Use the same benchmark save and three-month interval:
+
+1. add two measured runs each for TaskThreadCount 8, 12, and 16 so each condition has three observations
+2. run `tools/check_benchmark_quality.py`
+3. rerun benchmark/scaling analysis
+4. synchronize one 16-thread run with WPR/WPA or AMD uProf
+5. classify the dominant limitation as compute, dependency/barrier, lock, scheduler/granularity, or memory/cache
+6. only then select the first 1-3 Phase 4 read-only instrumentation targets
+
+The full 1/2/4/6/8/12/16 matrix remains useful, but it is not required before this shorter evidence gate.
