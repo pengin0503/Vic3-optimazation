@@ -17,3 +17,12 @@ The first native components are limited to an exact-build attach loader and obse
 - `native/generated/targets_1_14_5.inc` — generated, never hand-edited. Regenerate with `python tools/render_native_profiler_targets.py`; `--check` fails if the committed include is stale. The single maintained source is `research/native-profiler-runtime-targets-1.14.5.json`; the renderer rejects anything other than the three pinned tail anchors, a slot other than 6, a non-unique declared match count, malformed hex ranges, or an inconsistent signature offset.
 
 Do **not** add game-state-changing optimization patches, scheduler overrides, lock removal, cadence changes, or speculative parallelization here. Task 11/12 remain evidence-gated until Task 9 runtime overhead/correlation and the remaining CPU/wait/critical-path questions are resolved.
+
+`native/` に exact Victoria 3 1.14.5 用の read-only prototype を実装しています。
+Visual Studio 2022 / x64 / Release で configure・build・CTest を実施してください。
+shared CRT のため Visual C++ 2022 x64 runtime が必要です。
+loader は `--pid` 必須で、未知 build を injection 前に拒否します。
+DLL は independent validation 後のみ 3 つの tail anchors を観測し、`--disabled` では 0 hooks。
+終了は `--stop --pid`。DLL/trampoline はプロセス終了まで保持し、再計測はゲーム再起動から行います。
+[operator guide](../docs/superpowers/guides/2026-10-05-native-profiler-runtime-validation-ja.md)
+と [handoff](../docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md) を参照。

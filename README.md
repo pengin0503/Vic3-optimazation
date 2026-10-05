@@ -51,3 +51,12 @@ Measure first. Do not infer scheduler/lock causes from low aggregate CPU use alo
 - [latest sampled CPU observations and remaining evidence](research/os-sampled-capture-2026-10-05-ja.md)
 - [offline tooling handoff](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md)
 - [input-data manifest](research/input-data-manifest.md)
+
+## Read-only native profiler prototype
+
+Windows 1.14.5 の exact build 限定で、3 つの TickTask tail anchors を観測する DLL と
+explicit PID loader を追加しました。実ゲームの overhead・安定性はまだ未検証です。
+ビルド・attach・disabled mode・stop・測定手順は
+[Windows 実ゲーム検証ガイド](docs/superpowers/guides/2026-10-05-native-profiler-runtime-validation-ja.md)、
+実装範囲と検証記録は
+[handoff](docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md) を参照してください。
