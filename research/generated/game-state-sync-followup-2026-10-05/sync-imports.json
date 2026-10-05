@@ -1,0 +1,56 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "imports": [
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 0,
+      "iat_rva": "0x4386778",
+      "name": "AcquireSRWLockExclusive"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 1,
+      "iat_rva": "0x4386228",
+      "name": "AcquireSRWLockShared"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 329,
+      "iat_rva": "0x43865f0",
+      "name": "EnterCriticalSection"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 992,
+      "iat_rva": "0x43865e8",
+      "name": "LeaveCriticalSection"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 1240,
+      "iat_rva": "0x4386760",
+      "name": "ReleaseSRWLockExclusive"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 1241,
+      "iat_rva": "0x4386230",
+      "name": "ReleaseSRWLockShared"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 1462,
+      "iat_rva": "0x4386220",
+      "name": "SleepConditionVariableSRW"
+    },
+    {
+      "dll": "KERNEL32.dll",
+      "hint": 1552,
+      "iat_rva": "0x4386738",
+      "name": "WaitForSingleObject"
+    }
+  ],
+  "runtime_unverified": true,
+  "warning": "Imported synchronization caller candidates are static evidence only. OS tracing is required to establish wait duration/causality and whether any candidate corresponds to a GameState release region. No CScopedGameStateRelease identity is asserted."
+}
