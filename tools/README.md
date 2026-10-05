@@ -176,6 +176,24 @@ Before creating `manifest.json`, it verifies the required columns:
 
 It also records the CSV SHA-256, byte size and row count.
 
+## Benchmark quality gate
+
+### `check_benchmark_quality.py`
+
+Validate a run set before interpreting performance differences:
+
+```text
+python tools/check_benchmark_quality.py benchmarks/runs \
+  --matrix benchmarks/runs/matrix.json \
+  --json benchmarks/quality.json \
+  --markdown benchmarks/quality.md \
+  --require-performance-ready
+```
+
+Checks include duplicate/missing run IDs, matrix thread/repeat/warm-up mismatches, build/save/Pop Consolidation consistency, TickTask CSV presence and SHA-256, minimum repeat count, wall-clock CV, and wall-clock outliers.
+
+`valid` means the run set has no integrity error. `valid_for_performance_claim` is stricter: it is false when repeatability is still unassessed or timing noise/outliers exceed the configured thresholds. A single observation is therefore never treated as proof of stability.
+
 ## Benchmark analysis
 
 ### `analyze_benchmarks.py`
