@@ -122,6 +122,16 @@ class QualityTests(unittest.TestCase):
             self.assertIn("wall_clock_outlier", codes)
             self.assertFalse(report["valid_for_performance_claim"])
 
+    def test_measured_run_without_wall_clock_is_not_performance_ready(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "runs"
+            write_run(root, "r1", threads=8, repeat=1, wall=None)
+            report = self.mod.check(root)
+            codes = {x["code"] for x in report["errors"]}
+            self.assertIn("missing_wall_clock", codes)
+            self.assertFalse(report["valid"])
+            self.assertFalse(report["valid_for_performance_claim"])
+
     def test_single_observation_is_repeatability_warning_not_error(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td) / "runs"
