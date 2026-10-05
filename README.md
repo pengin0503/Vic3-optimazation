@@ -5,6 +5,7 @@ Private research project for improving Victoria 3 simulation performance beyond 
 ## Current state
 
 Start here: [latest repeated benchmark analysis — 2026-10-05](docs/superpowers/reports/2026-10-05-repeated-benchmark-analysis-ja.md).
+For the next native optimization investigation, read the [deep native findings and handoff](docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md). It adds six exact-build economics candidates, classified synchronization witnesses, eight primary sources, and reproducible research recipes; none establishes a runtime bottleneck or speedup yet.
 The [offline implementation handoff](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md) remains the entry point for the prepared static/OS/profiler tools.
 
 No native performance patch, DLL injection, scheduler override, or simulation-state modification has been implemented. Measurement/static-analysis tooling and the offline profiler reference codec/parser are prepared; the new nine-run batch has low observed timing variation. Mean wall times are 37.043 / 34.517 / 34.777 seconds for 8 / 12 / 16 task threads. Use 12 as the diagnostic baseline and 16 as the comparison; this does not establish an optimum. One 12-thread CSV has three extra trailing frames, so strict equal-boundary repeatability still needs that boundary checked. Synchronized OS-level profiling remains required before selecting a native optimization.
@@ -37,11 +38,13 @@ Measure first. Do not infer scheduler/lock causes from low aggregate CPU use alo
 2. check the 12_r2 end boundary: common-frame task/call workload matches, but the raw CSV has three extra frames; the current quality gate does not check this
 3. synchronize matched 12- and 16-thread runs with WPR/WPA or AMD uProf, using automatic boundary timestamps and alternating execution order
 4. classify CPU work, scheduling and waiting; prioritize HandleAutonomousInvestment, ProcessEconomicMigration and UpdateEmployment for read-only investigation
+5. attribute the [six downstream native candidates](research/generated/deep-native-2026-10-05/economics/findings.json) with caller stacks, allocation and memory-access evidence; distinguish initialization guards and tick-statistics updates from worker/state synchronization
 
 ## Source of truth
 
 - [design](docs/superpowers/specs/2026-10-04-native-performance-optimization-design.md)
 - [implementation plan](docs/superpowers/plans/2026-10-04-native-performance-optimization-implementation.md)
 - [latest measurements and development decision](docs/superpowers/reports/2026-10-05-repeated-benchmark-analysis-ja.md)
+- [deep native investigation and development gates](docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md)
 - [offline tooling handoff](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md)
 - [input-data manifest](research/input-data-manifest.md)

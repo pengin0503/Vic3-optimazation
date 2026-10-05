@@ -1,0 +1,102 @@
+{
+  "format_version": 1,
+  "date": "2026-10-05",
+  "archive": "E:\\Vic3_data.zip",
+  "archive_size_bytes": 124462636,
+  "archive_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+  "executable_member": "Vic3_data/binaries/victoria3.exe",
+  "executable_size_bytes": 97774200,
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "repository_base": "2bde7dc",
+  "verification": {
+    "groups": 35,
+    "total_decoded_bytes": 20495,
+    "all_ranges_equal_saved_instruction_bytes": true,
+    "independently_checked_e8_e9_edges": 341
+  },
+  "findings": [
+    {
+      "id": "investment_nested_work",
+      "task": "HandleAutonomousInvestment",
+      "observed": [
+        "0xf771bf-0xf771cd derives count by (end-begin)>>3",
+        "0xf77544 increments r13 by8; 0xf7755b returns to0xf77210",
+        "0xf77309-0xf77361 scans 24byte slots, skips entries with byte+4 zero and sums qword+0x10",
+        "0xf7739e,0xf773de,0xf77406,0xf77418,0xf77427 are idiv sites on separate conditional paths",
+        "0xf77489 calls0xf5df00; ebx decremented at0xf77494; 0xf77504 loops while ebx>0"
+      ],
+      "interpretation": "A paired pointer-array outer pass contains a sparse-slot reduction and a data-dependent repeated investment operation; single Prepare cost is not sufficient attribution. Source identities of fields remain unknown.",
+      "runtime_probe": "Attribute CPU samples to0xf77309-0xf77437 versus0xf77480-0xf77518 and0xf5df00; count operation calls per outer item only using an explicitly authorized future probe; identify actual loop trip counts and branch mix before any arithmetic/reuse proposal."
+    },
+    {
+      "id": "migration_validation_and_nested_scan",
+      "task": "ProcessEconomicMigration",
+      "observed": [
+        "0x11aec4a/0x11aec4e derives end using count<<5; stride0x20 at0x11aed6f",
+        "three slot+8 validity calls at0x11aec92,0x11aecaf,0x11aeccc; false branches target epilogue0x11aed7c",
+        "0x11aed6a calls0x12addb0 with r8d4 and r9=-1",
+        "0x12adf10-0x12adf44 uses xor0x811c9dc5 and repeated multiply0x1000193 on four key bytes",
+        "0x12ae0c0-0x12ae1dd scans24byte slots with occupancy byte+4",
+        "0x12ae067 allocator slot+8 path reserves count*16 bytes;0x12ae091 copies and0x12ae0a1 release slot+16",
+        "0x12adfe4 references RTTI CPdxHybridInlineBufferAllocator<pair<TPdxRef<CPop>,long long>,8,int> and inline capacity8 at0x12ae02f"
+      ],
+      "interpretation": "Migration enters keyed container processing and a temporary list with an eight-entry inline branch. CPU work, sparse traversal and overflow allocation are separate runtime questions. A failed validation exits the whole selected loop, not merely the current record.",
+      "runtime_probe": "CPU/call-stack attribution at0x12addb0; measure allocator overflow path and24byte-slot scan occupancy, branch failures and record counts; use uProf memory-access evidence to distinguish pointer latency from arithmetic."
+    },
+    {
+      "id": "employment_repeated_reference_pass",
+      "task": "UpdateEmployment",
+      "observed": [
+        "0x13b8632 gets ID array from0xf3e040 and0x13b8650-0x13b8677 resolves each4byte ID through0x85d7c0 and writes object+0x204=0",
+        "0x13b8693 calls0x10bd490 on the same r15 item pointer",
+        "0x10bd565 obtains array through0xf3e040 using r13(item)+8;0x10bd580-0x10bd5da resolves4byte IDs through0x85d7c0",
+        "0x10bd66b obtains array again and0x10bd680-0x10bd6aa resolves IDs through0xc46bc0"
+      ],
+      "interpretation": "Three nearby passes read an ID-list candidate; first two use the same resolver and item-origin. This is a reuse/locality lead, not proven redundant work: intervening callees may mutate state/list or depend on reset order.",
+      "runtime_probe": "Attribute samples and cache-miss/latency to0x85d7c0,0xc46bc0 and both passes with caller stacks; confirm list identity and mutation/order constraints before considering reuse or fusion."
+    },
+    {
+      "id": "employment_hybrid_buffer_lifetime",
+      "task": "UpdateEmployment",
+      "observed": [
+        "0x10bd4a8 loads0x220f0 (139504) and0x10bd4b2 subtracts rax from rsp after helper0x42350c0",
+        "0x10c15d0,0x10c14a4,0x10c13b4,0x10c12c4 reference validated RTTI CPdxHybridInlineBufferAllocator for SEmployee,SEmployment and pointer variants",
+        "initializer fast paths assign capacity0x100 for value buffers and0x400 for pointer buffers",
+        "shared allocator allocate candidates0xc2eb30 and0x630380 use slot+0x38 then returned object slot+8",
+        "release candidates0xc2eaf0 and0x630340 skip release if pointer==this+8, otherwise slot+0x38 then returned object slot+0x10",
+        "0x10c2ba0-0x10c2bce walks0x180byte elements, releases each nested+0x58 array through allocator+0x68 slot+0x10"
+      ],
+      "interpretation": "Large stack/inline storage intentionally avoids some dynamic allocation; actual fallback allocation is indirect and has shared native dispatch. Do not count every allocator reference or release site as heap traffic.",
+      "runtime_probe": "Separate stack-page/sample cost, inline hits, overflow bytes and delegated allocate/release identity per task; confirm lifetime correctness before any pool or retained-buffer design."
+    },
+    {
+      "id": "employment_collect_copy_and_numeric_sort",
+      "task": "UpdateEmployment",
+      "observed": [
+        "Collect lambda0x13cadd0-0x13cadea follows node+0x20 and calls0xc24140 with source pointer,count and insertion position",
+        "0xc24160 checks old_count+incoming_count>capacity; grow path has allocate then three conditional copies; no-grow path copies new items then tail-jumps0x64d790",
+        "0x64d790 makes three calls to0x422fc70; target has no unwind metadata, so reverse/rotate source identity remains unproven",
+        "0x13c54ef compares byte span0x80 and0x13c566e/0x13c567e are recursive sort-candidate calls",
+        "0x13cb1d0 compares and swaps raw32bit values without object resolution or indirect comparator;0x13c56b7 also compares raw32bit values",
+        "0x13cad37 loads sorted32bit index and0x13cad43 selects40byte record before0x10befb0"
+      ],
+      "interpretation": "Collect merges four-byte indices, then numeric-index sort precedes the SortEmployment callback whose per-record work is deeper. Merge copies, numeric ordering and employment recalculation must be attributed independently.",
+      "runtime_probe": "Sample0xc24140/0x427cb10/0x64d790 versus0x13c54c0 and0x10bdb50; measure merged batch sizes and spare capacity. Preserve index order/determinism until its invariants are known."
+    },
+    {
+      "id": "cross_task_helpers",
+      "task": "shared economics",
+      "observed": [
+        "migration0x12ae4e6 andemployment0x10bf01b directly call0x12a4ee0",
+        "migration0x12adf8c andemployment0x12a4f31 (withinshared helper) call0x13712b0",
+        "investment0xf5e082 andmigration0x12adfa6 call0xcb4ba0",
+        "investment0xf5df49 andemployment0x10bd68f call0xc46bc0",
+        "0x7ed669-0x7ed693,0x85d839-0x85d863,0xcb4c19-0xcb4c43,0xc46c39-0xc46c63 maskID to24bits, bounds-check, read16byte table entry pointer, compare fullID, return fallback if mismatched",
+        "0x13712d0-0x1371340 masksID24bits, tests live bit, computes page(ID>>10) and16byte element(ID&0x3ff)"
+      ],
+      "interpretation": "The shared graph now reaches concrete ID resolution, page-table access and the2406byte0x12a4ee0 work helper, beyond scheduler machinery. Shared RVA samples require caller-stack attribution to distinguish tasks.",
+      "runtime_probe": "Use sampled caller stacks across both tasks and uProf data/latency metrics at these resolvers; confirm invalid-reference rate and cache locality. No helper source name or causal bottleneck asserted."
+    }
+  ],
+  "scope_limit": "Selected unwind groups only; no runtime execution, injection, binary patch, installed-game writes, performance causality or improvement proven."
+}

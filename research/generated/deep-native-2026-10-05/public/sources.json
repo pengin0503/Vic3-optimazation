@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "checked_date": "2026-10-05",
+  "target": {
+    "game": "Victoria 3",
+    "build": "Windows 1.14.5",
+    "sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+  },
+  "scope": "Primary-source historical architecture and supported profiling methods; not current runtime proof or a patch.",
+  "source_document_count": 8,
+  "sources": [
+    {
+      "id": "S01",
+      "title": "What makes a game tick? Part 7 - Data Driven Multi-Threading",
+      "url": "https://mropert.github.io/2025/10/06/making_games_tick_part7/",
+      "publisher": "Mathieu Ropert (first-person former Paradox developer account; not a current Paradox statement)",
+      "publication_date": "2025-10-06",
+      "checked_date": "2026-10-05",
+      "applicability": "historical_victoria3_architecture_and_general_design",
+      "claims": [
+        "在籍時のVictoria 3はTickTask間の論理依存だけではデータ競合を保証できず、異なるTickTaskの同時実行をしていなかったと著者は説明。Task内部のparallel_forは存在。退職後の変更は知らないとの明示的留保。",
+        "読取り・書込み対象を宣言し、データを細分化する設計は、論理依存だけのTaskグラフより安全性を判定しやすい。これは記事の設計案であり現行実装の記述ではない。"
+      ],
+      "verify_locally": [
+        "現行1.14.5のTask開始終了イベント、Session/worker TID、callbackに親Task IDを付け、異なるTaskの実時間重複を観測。CPU samplingだけでは瞬間的重複の不在を証明できない。",
+        "候補Taskの読取り集合・書込み集合と副作用（Pop生成/破棄、script、RNG、shared cache、UI reader）を明示し、既知の論理依存と別に保存。"
+      ],
+      "do_not_infer": [
+        "TickTask.GraphがあるだけでTask間並列実行可能と推論しない。",
+        "1.14.5が現在も全Task間直列であると確定しない。",
+        "依存を削るpatch、schedulerの強制parallel化が安全または速いと推論しない。"
+      ],
+      "access_note": "本人ブログ本文を確認。冒頭のVictoria3体験談と後半の設計例を分離。"
+    },
+    {
+      "id": "S02",
+      "title": "What makes a game tick? Part 5 - Rendering Script Performance",
+      "url": "https://mropert.github.io/2025/06/17/making_games_tick_part5/",
+      "publisher": "Mathieu Ropert (first-person historical account)",
+      "publication_date": "2025-06-17",
+      "checked_date": "2026-10-05",
+      "applicability": "historical_victoria3_case_with_explicit_memory_uncertainty",
+      "claims": [
+        "初期Victoria3で停止中のFPS低下を追い、描画bindingのGetPollutionが可視StateのBuilding・ProductionMethod・雇用比率を繰返し再計算する問題を発見した体験談。",
+        "定期Taskでcacheを明示更新する方針を採用。正確な当時の更新頻度は著者自身が記憶不確かと明記。lazy getterで再計算すると暗黙書込み・同期が必要になると説明。"
+      ],
+      "verify_locally": [
+        "1.14.5でpause状態/進行状態、zoom、可視都市数を統制し、UI/graphics CPUとSessionのWaiting時間を比較。",
+        "現行の文字列・binding xrefを起点にgetter、cache update Task、invalidationの到達を確認。名前一致を同一実装の証拠にしない。"
+      ],
+      "do_not_infer": [
+        "掲載コードは記憶による再構成。1.14.5のコード、field layout、まだ未修正の不具合と扱わない。",
+        "simulationにも使う値を描画専用cacheとみなし、任意に更新頻度を変えない。"
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "Dev Diary #105 - Migration in 1.6",
+      "url": "https://forum.paradoxplaza.com/forum/developer-diary/victoria-3-dev-diary-105-migration-in-1-6.1624226/",
+      "verified_text_url": "https://store.steampowered.com/news/posts/?enddate=1708009914&feed=steam_community_announcements",
+      "publisher": "Paradox Interactive, Alex and programmer Konrad; official Steam announcement text",
+      "publication_date": "2024-02-15",
+      "checked_date": "2026-10-05",
+      "applicability": "historical_1.6_mechanics_not_exact_1.14.5",
+      "claims": [
+        "1.6では小さなPop全体を優先し移住先で既存Popと統合することで分割を抑制。Cultural Communityで移住先を絞る設計。",
+        "当時のcommunity出現条件は月次でmarket内のStateとcultureの組合せに対して評価されると説明。候補集合の大きさは人口数だけでは表せない。"
+      ],
+      "verify_locally": [
+        "保存済みsaveからPop object数、tiny Pop分布、State/culture/community/building数を数え、ProcessEconomicMigration・Employment・PopNeedCacheの同じ期間の時間と対応。",
+        "現行Task/callbackとscript側条件を読取りのみで追い、候補ペア数、成功移住数、split/merge、allocation数を限定計測する設計を作る。"
+      ],
+      "do_not_infer": [
+        "候補ペアを全世界のState×cultureと固定したり、1.14.5が同一ループであると確定しない。",
+        "Pop数の減少率を現在のtickspeed改善率に変換しない。",
+        "文化同化・community制限をsimulation等価な最適化と扱わない。"
+      ],
+      "access_note": "forumはClient Challenge。本文は公式Steamの同日Victoria3 announcement区画で確認。Reddit転載は採用根拠から除外。"
+    },
+    {
+      "id": "S04",
+      "title": "Update 1.6 \"Blackcurrant\" patch notes",
+      "url": "https://steamcommunity.com/games/529340/announcements/detail/4149575664247489723",
+      "verified_text_url": "https://store.steampowered.com/news/posts/?enddate=1709737629&feed=steam_community_announcements",
+      "publisher": "Paradox Interactive official Steam announcement",
+      "publication_date": "2024-03-06",
+      "checked_date": "2026-10-05",
+      "applicability": "historical_shipped_native_optimization_patterns",
+      "claims": [
+        "Pop objectのmemory footprint縮小でiteration時のcache利用を改善したと公式記録。object数削減以外にもデータ配置を改善した前例。",
+        "Diplomatic Play中立化判断を毎tickからplayごとへ変更、不必要なbattle modifier再計算抑制、battle condition確認の並列化も記録。"
+      ],
+      "verify_locally": [
+        "現行の測定上位callbackのload instruction、stride、hot field、cache miss latency、copy/allocationを調べる。",
+        "既存cacheとdirty条件を先に確認し、同じ歴史的修正を新規patchとして繰返さない。"
+      ],
+      "do_not_infer": [
+        "Pop型の現行サイズ、SoA利用、特定containerの採用はpatch noteから分からない。",
+        "1.6既存修正を再適用すれば高速化すると推論しない。"
+      ],
+      "access_note": "Steam個別記事は取得本文が不足。公式Steam news feedのVictoria3区画とPerformance節で確認。SteamDBは原文リンク発見にのみ使用。"
+    },
+    {
+      "id": "S05",
+      "title": "Dev Diary #76 - Performance",
+      "url": "https://www.paradoxinteractive.com/games/victoria-3/news/dev-diary-76-performance",
+      "publisher": "Paradox Interactive, Emil (Tech Lead)",
+      "publication_date": "2023-02-23",
+      "publication_date_note": "公式webページ表記は22-02-23、Steam announcementは2023-02-23。1日差を保持しSteam投稿日を主日付とした。",
+      "checked_date": "2026-10-05",
+      "applicability": "historical_official_architecture_existing_repository_baseline",
+      "claims": [
+        "Task cadence/依存、Task内並列処理、UI/GameState release、Employmentの並列準備→deterministic sort→serial処理、ModifierNodeのdirty依存batchを説明。",
+        "国ごとの仕事量偏りをheuristicで扱う。建設queueの非表示widget size計算も当時のUI負荷例。"
+      ],
+      "verify_locally": [
+        "既存public-performance-architecture-evidence.mdと照合済み。PR9のModifierNode静的作業は別扱いで重複しない。",
+        "現行測定でUI release、Employment stage、taskのchunkとworker tailを関連づける。"
+      ],
+      "do_not_infer": [
+        "2023年の図の時間、ranking、dirty batch構造を1.14.5にそのまま適用しない。",
+        "sortの変更でmultiplayer determinismを保証できると推論しない。"
+      ]
+    },
+    {
+      "id": "S06",
+      "title": "CPU Analysis",
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/test/wpt/cpu-analysis",
+      "publisher": "Microsoft Learn",
+      "publication_date": null,
+      "publication_date_note": "取得本文に更新日なし。",
+      "checked_date": "2026-10-05",
+      "applicability": "general_windows_trace_method_applicable_after_local_tool_validation",
+      "claims": [
+        "WPA CPU Usage Preciseはcontext switchとreadyingを基にRunning・Ready・Waitingを区別。Readying thread/stackを辿りcritical pathの待ち連鎖を調べられる。",
+        "Sampled CPUは統計的にCPU実行箇所を示すが、sample間の短い処理を完全には記録しない。"
+      ],
+      "verify_locally": [
+        "同save/同tick期間でTaskThreadCount12基準・16比較のETWを採取し、SessionのRunning/Ready/Waiting、worker tail、readier TID、DPC/ISRを同一時間軸で確認。",
+        "Task時刻とETW時刻、module load base、image SHA256を保存。Session待ちの解放元がworkerかUIかを分離。"
+      ],
+      "do_not_infer": [
+        "Waitingが多いだけでlock contentionと断定しない。",
+        "Readyを演算やメモリ待ちと扱わない。hardware cache stallは通常Running内に含まれる。",
+        "Sampled CPU合計を経過wall timeとして加算しない。"
+      ]
+    },
+    {
+      "id": "S07",
+      "title": "AMD uProf User Guide 5.3 (57368), IBS ASCII samples and cache sharing metrics",
+      "url": "https://docs.amd.com/r/en-US/57368-uProf-user-guide/7.9.3.2.3.-ASCII-Dump-of-IBS-Samples?contentId=hlXghfKOxlVSVvgBWDtgNg",
+      "supporting_section_urls": [
+        "https://docs.amd.com/r/en-US/57368-uProf-user-guide/7.9.3.3.1.-Supported-Metrics?contentId=jaBE5A_fpYU3aMOys3mItg"
+      ],
+      "publisher": "AMD",
+      "publication_date": "2026-06-17",
+      "checked_date": "2026-10-05",
+      "applicability": "general_supported_AMD_CPU_and_Windows_method_requires_capability_probe",
+      "claims": [
+        "IBS raw dataをtranslateしてIbsOpDump.csv/IbsFetchDump.csvへ出力できる。Windowsにはloadstore限定設定がある。",
+        "同ガイドのcache分析はload latency累積、L2 hit、local/remote cacheのModified/Owned、DRAM等のderived metricsを列挙。false-sharing検査に使う機能がある。"
+      ],
+      "verify_locally": [
+        "インストール済uProf版、CPU modelとavailable metrics、Windows driver/権限、対象プロセスに対するIBS可否を確認。掲載設定を無検証で流用しない。",
+        "CPU hot regionをmodule+RVAで既存callback mapへ結合し、latencyとload/store/modified-cache傾向を比べる。missing recordsとobserver overheadを保存。"
+      ],
+      "do_not_infer": [
+        "guides上のmetric一覧が全CPU・全uProf版で使用可能とは限らない。",
+        "modified-cache hitだけでfalse sharingと断定しない。同じcache lineの異なるデータを複数coreが書く証拠が必要。",
+        "IBS sample count/累積latencyをTask wall timeやtickspeedと同一視しない。"
+      ]
+    },
+    {
+      "id": "S08",
+      "title": "AMD Ryzen Processor Software Optimization (GDC24)",
+      "url": "https://gpuopen.com/download/GDC2024_AMD_Ryzen_Processor_Software_Optimization.pdf",
+      "publisher": "AMD, Ken Mitchell",
+      "publication_date": "2024-03",
+      "publication_date_precision": "month",
+      "checked_date": "2026-10-05",
+      "applicability": "general_Ryzen_hardware_design_examples_not_game_measurements",
+      "claims": [
+        "SMTではcore resourcesを共有する。linked dataのsoftware prefetchは改善候補だが、過剰prefetchでもう一方のthreadのworking setをcacheから追い出す可能性。",
+        "異なるcoreが同cache line内の別データを書き換えるfalse sharingと、cache line単位のalignmentの例を説明。"
+      ],
+      "verify_locally": [
+        "実CPU topologyとSMT sibling/CCDを記録し、12/16で同時間帯のcore割当、cache miss、coherencyとtailを比較。",
+        "候補worker local counter/scratchが同cache lineを共有するか調べる。runtime layoutの証拠なしにpadding patchを選ばない。"
+      ],
+      "do_not_infer": [
+        "論理threadを増やせば比例高速化、またはSMT無効化が必ず有利とは推論しない。",
+        "資料のmicrobenchmark改善率をVictoria3に転用しない。",
+        "実行fileのglobal layoutをバイナリpaddingで安全に変更できると推論しない。"
+      ],
+      "relevant_pages_1based": [
+        16,
+        17,
+        18,
+        21,
+        63,
+        64,
+        69
+      ]
+    }
+  ]
+}
