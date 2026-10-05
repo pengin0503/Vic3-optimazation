@@ -55,7 +55,7 @@ Built-in diagnostics include:
 5. **No fixed addresses.** Native hooks use build hash + signature scan + structural validation + fail-safe disable.
 6. **Unsupported builds fail closed.** A signature mismatch must leave the game unmodified.
 7. **Read-only instrumentation first.** The first native component only measures.
-8. **Executable/native binaries remain outside the code repository.** The private repository may contain only the deliberately reduced script/data research archives documented under `input-data/`; keep `victoria3.exe`, DLLs, PDBs, saves, and the original combined archive out of Git.
+8. **Research inputs are explicit and fail-closed.** Keep the repository private. The approved combined research archive `input-data/Vic3_data.zip` is retained through Git LFS because exact-input availability improves reproducibility and offline analysis; unrelated/low-value large game assets remain outside the repository. Every retained raw input must be documented with provenance/hash, and executable-derived conclusions still require exact build/hash validation.
 
 ## Architecture
 
