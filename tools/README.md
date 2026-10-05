@@ -194,6 +194,8 @@ Checks include duplicate/missing run IDs, matrix thread/repeat/warm-up mismatche
 
 `valid` means the run set has no integrity error. `valid_for_performance_claim` is stricter: it is false when repeatability is still unassessed or timing noise/outliers exceed the configured thresholds. A single observation is therefore never treated as proof of stability.
 
+Workload boundaries: every TickTask CSV gets a deterministic fingerprint built only from its `frame`, `task`, and `calls` columns (frame count, min/max frame, and a SHA-256 over the sorted `(frame, task, calls)` multiset). `milliseconds` and `longest_lock` are measurements and are deliberately excluded. All measured runs in one report are compared against the most common fingerprint (ties go to the first run ID), across thread counts and variants, because thread-scaling and profiler enabled/disabled comparisons require the same simulated workload. A differing run produces a `workload_boundary_mismatch` warning naming the run and both boundary summaries, and `valid_for_performance_claim` becomes false. Per-run fingerprints are listed under `workload_boundaries`; an unreadable CSV is an `invalid_ticktask_csv` error. On the preserved nine-run 3-month repeat set this flags `repeat-t12-r02`, whose capture extends three frames past the other eight runs.
+
 ## Benchmark analysis
 
 ### `analyze_benchmarks.py`
