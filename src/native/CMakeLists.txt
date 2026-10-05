@@ -63,3 +63,16 @@ function(vic3_test name file)
   add_test(NAME ${name} COMMAND ${name})
 endfunction()
 vic3_test(NativeResolverTests TargetResolverTests.cpp)
+
+target_sources(vic3_common PRIVATE common/V3pfFormat.cpp common/EventBuffer.cpp common/TraceWriter.cpp)
+add_executable(NativeFormatTests tests/V3pfFormatTests.cpp)
+target_link_libraries(NativeFormatTests PRIVATE vic3_common)
+vic3_set_warnings(NativeFormatTests)
+add_test(NAME NativeFormatTests COMMAND NativeFormatTests
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../research/generated/native-profiler-v1-golden/trace-v1.bin
+  ${CMAKE_CURRENT_BINARY_DIR}/runtime-format.v3pf)
+vic3_test(NativeBufferTests EventBufferTests.cpp)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+add_test(NAME NativePythonCompatibility COMMAND ${Python3_EXECUTABLE}
+  ${CMAKE_CURRENT_SOURCE_DIR}/tests/CheckTrace.py ${CMAKE_CURRENT_BINARY_DIR}/runtime-format.v3pf)
+set_tests_properties(NativePythonCompatibility PROPERTIES DEPENDS NativeFormatTests)
