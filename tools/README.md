@@ -314,3 +314,14 @@ The result describes static address correlation, not lock or critical-path causa
 The complete real-export workflow is in `research/os-profiling-plan.md`; the
 mapping template has replacement placeholders and is not vendor-verified.
 Retain the run manifest and inspect unmatched/invalid/ambiguous rows.
+
+## Native profiler reference parser (offline only)
+
+`python tools/parse_native_profiler_trace.py TRACE.bin --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54 --output PARSED.json`
+
+Header/build/target metadata fails closed, unknown types are skipped and reported,
+and malformed record boundaries stop the segment. Thread-local pair diagnostics,
+sequence gaps and dropped-event counts must be inspected even if CLI exit is zero
+(which means a valid header and complete segment). `duration_ns_floor` is integer
+QPC conversion rounded down; `duration_qpc` remains authoritative. The Python
+codec is a fixture generator, not a hot-path writer or C++ ring-buffer proof.
