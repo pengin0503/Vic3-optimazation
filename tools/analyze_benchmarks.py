@@ -58,6 +58,17 @@ def cv(v):
     m=statistics.mean(v)
     return statistics.stdev(v)/m if m else None
 
+def noise(c, threshold):
+    return None if c is None else c > threshold
+
+def noise_label(value):
+    return "unknown" if value is None else ("yes" if value else "no")
+
+def combined_noise(*values):
+    if any(x is True for x in values):return True
+    if any(x is None for x in values):return None
+    return False
+
 def group(runs,threshold):
     walls=[r["wall"] for r in runs]; names=sorted({n for r in runs for n in r["tasks"]})
     tasks=[]
@@ -68,11 +79,12 @@ def group(runs,threshold):
                       "max_total_ms":max(totals),"mean_calls":statistics.mean(x["calls"] for x in rows),
                       "max_record_ms":max(x["max_record_ms"] for x in rows),
                       "longest_lock_ms":max(x["longest_lock_ms"] for x in rows),
-                      "total_ms_cv":c,"noisy":c is not None and c>threshold,"runs_present":len(rows)})
+                      "total_ms_cv":c,"noisy":noise(c,threshold),"runs_present":len(rows),
+                      "repeatability_assessed":len(rows)>=3 and c is not None})
     wc=cv(walls)
     return {"runs":len(runs),"wall_clock_seconds":{"mean":statistics.mean(walls),"median":statistics.median(walls),
             "min":min(walls),"max":max(walls),"stdev":statistics.stdev(walls) if len(walls)>1 else None,
-            "cv":wc,"noisy":wc is not None and wc>threshold},
+            "cv":wc,"noisy":noise(wc,threshold),"repeatability_assessed":len(walls)>=3 and wc is not None},
             "tasks_by_cost":sorted(tasks,key=lambda x:(-x["mean_total_ms"],x["task"])),
             "tasks_by_lock":sorted(tasks,key=lambda x:(-x["longest_lock_ms"],x["task"]))}
 
@@ -91,7 +103,8 @@ def report(runs,threshold=.03):
         for g in gs:
             w=g["wall_clock_seconds"]["median"];scaling.append({"variant":variant,"task_thread_count":g["task_thread_count"],
                 "median_wall_clock_seconds":w,"speedup_vs_1_thread":base/w if base else None,
-                "relative_to_best":w/best,"noisy":g["wall_clock_seconds"]["noisy"]})
+                "relative_to_best":w/best,"noisy":g["wall_clock_seconds"]["noisy"],
+                "repeatability_assessed":g["wall_clock_seconds"]["repeatability_assessed"]})
     variants=sorted({g["variant"] for g in groups}); comparisons=[]
     if len(variants)>1:
         b="vanilla" if "vanilla" in variants else variants[0]
@@ -104,29 +117,31 @@ def report(runs,threshold=.03):
                 w=g["wall_clock_seconds"]["median"];comparisons.append({"baseline_variant":b,"variant":g["variant"],
                     "task_thread_count":t,"baseline_median_wall_clock_seconds":bw,"variant_median_wall_clock_seconds":w,
                     "wall_clock_change_fraction":(w-bw)/bw,"speedup":bw/w,
-                    "noisy":bg["wall_clock_seconds"]["noisy"] or g["wall_clock_seconds"]["noisy"]})
-    return {"format_version":1,"run_count":len(runs),"noisy_cv_threshold":threshold,"variants":variants,
+                    "noisy":combined_noise(bg["wall_clock_seconds"]["noisy"],g["wall_clock_seconds"]["noisy"]),
+                    "repeatability_assessed":bg["wall_clock_seconds"]["repeatability_assessed"] and g["wall_clock_seconds"]["repeatability_assessed"]})
+    return {"format_version":2,"run_count":len(runs),"noisy_cv_threshold":threshold,"variants":variants,
             "groups":groups,"scaling":scaling,"comparisons":comparisons,
-            "warning":"Timing/lock metrics identify hotspots and correlation only; do not infer causality from one metric."}
+            "warning":"Timing/lock metrics identify hotspots and correlation only; do not infer causality from one metric. Unknown variance is not zero noise; at least three matched runs per condition are required to assess repeatability. A low CV is not a significance test."}
 
 def f(x,d=3):return "n/a" if x is None else f"{x:.{d}f}"
 
 def markdown(d,top):
     L=["# Victoria 3 benchmark analysis","",f"Measured runs: **{d['run_count']}**","","> "+d["warning"],"",
-       "## Scaling","","| Variant | Threads | Median wall-clock (s) | Speedup vs 1 thread | CV | Noise |",
-       "| --- | ---: | ---: | ---: | ---: | --- |"]
+       "## Scaling","","| Variant | Threads | Runs | Median wall-clock (s) | Speedup vs 1 thread | CV | Noise | Repeatability assessed |",
+       "| --- | ---: | ---: | ---: | ---: | ---: | --- | --- |"]
     lookup={(g["variant"],g["task_thread_count"]):g for g in d["groups"]}
     for s in d["scaling"]:
         c=lookup[(s["variant"],s["task_thread_count"])]["wall_clock_seconds"]["cv"]
-        L.append(f"| {s['variant']} | {s['task_thread_count']} | {f(s['median_wall_clock_seconds'])} | {f(s['speedup_vs_1_thread'])}× | {f(c*100 if c is not None else None,2)}% | {'yes' if s['noisy'] else 'no'} |")
+        g=lookup[(s["variant"],s["task_thread_count"])]
+        L.append(f"| {s['variant']} | {s['task_thread_count']} | {g['runs']} | {f(s['median_wall_clock_seconds'])} | {f(s['speedup_vs_1_thread'])}× | {f(c*100 if c is not None else None,2)}% | {noise_label(s['noisy'])} | {'yes' if g['wall_clock_seconds']['repeatability_assessed'] else 'no'} |")
     for g in d["groups"]:
         L+=["",f"## {g['variant']} — {g['task_thread_count']} task threads","",
-            f"Runs: {g['runs']}; wall-clock median: {g['wall_clock_seconds']['median']:.3f}s; CV: {f((g['wall_clock_seconds']['cv'] or 0)*100,2)}%","",
+            f"Runs: {g['runs']}; wall-clock median: {g['wall_clock_seconds']['median']:.3f}s; CV: {f(g['wall_clock_seconds']['cv']*100 if g['wall_clock_seconds']['cv'] is not None else None,2)}%; noise: {noise_label(g['wall_clock_seconds']['noisy'])}; repeatability assessed: {'yes' if g['wall_clock_seconds']['repeatability_assessed'] else 'no'}","",
             f"### Top {top} TickTasks by cumulative cost","",
             "| Task | Mean total ms | Mean calls | Max record ms | Longest lock ms | CV | Noise |",
             "| --- | ---: | ---: | ---: | ---: | ---: | --- |"]
         for x in g["tasks_by_cost"][:top]:
-            L.append(f"| {x['task']} | {x['mean_total_ms']:.3f} | {x['mean_calls']:.1f} | {x['max_record_ms']:.3f} | {x['longest_lock_ms']:.3f} | {f(x['total_ms_cv']*100 if x['total_ms_cv'] is not None else None,2)}% | {'yes' if x['noisy'] else 'no'} |")
+            L.append(f"| {x['task']} | {x['mean_total_ms']:.3f} | {x['mean_calls']:.1f} | {x['max_record_ms']:.3f} | {x['longest_lock_ms']:.3f} | {f(x['total_ms_cv']*100 if x['total_ms_cv'] is not None else None,2)}% | {noise_label(x['noisy'])} |")
         L+=["",f"### Top {top} TickTasks by longest lock","","| Task | Longest lock ms | Mean total ms | Mean calls |","| --- | ---: | ---: | ---: |"]
         for x in g["tasks_by_lock"][:top]:L.append(f"| {x['task']} | {x['longest_lock_ms']:.3f} | {x['mean_total_ms']:.3f} | {x['mean_calls']:.1f} |")
     L+=["","## Interpretation guardrails","","- Treat `longest_lock` as a lead for OS-level wait profiling, not proof of root cause.","- A high-cost task may still scale well internally.","- Do not optimize differences smaller than benchmark noise.","- Simulation wall-clock throughput is the primary outcome; CPU utilization is diagnostic.",""]

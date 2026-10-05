@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 
 from analyze_vic3 import Error, PE, read_input
+from runtime_function_groups import RuntimeFunctionIndex, group_metadata
 
 RTTI_TICKTASK = re.compile(
     rb"\.\?AV(CTickTask_[A-Za-z0-9_]+)@(?:\?A0x[0-9A-Fa-f]+@)?@\x00"
@@ -197,6 +198,7 @@ def analyze_rtti(binary: bytes, logical_path: str) -> dict:
     all_cols = {col for values in col_by_type.values() for col in values}
     vtable_by_col = find_vtable_locator_slots(binary, pe, all_cols)
     functions = runtime_functions(binary, pe)
+    function_index = RuntimeFunctionIndex(binary, pe, functions)
 
     classes: list[dict] = []
     for type_rva, name in sorted(type_descriptors.items(), key=lambda item: item[1]):
@@ -223,6 +225,7 @@ def analyze_rtti(binary: bytes, logical_path: str) -> dict:
                         "size_bytes": finish - begin,
                         "unwind_rva": unwind,
                     }
+                    candidate["tail_function_group"] = group_metadata(function_index.group_for(tail))
                 candidates.append(candidate)
 
         # The target 1.14.5 build maps each concrete class to exactly one vtable.
@@ -269,6 +272,8 @@ def analyze_rtti(binary: bytes, logical_path: str) -> dict:
         "all_ticktask_name_count": len(all_names),
         "rtti_type_descriptor_count": len(type_descriptors),
         "mapped_class_count": len(classes),
+        "runtime_function_fragment_count": len(functions),
+        "invalid_unwind_fragment_count": len(function_index.errors),
         "unmapped_ticktask_names": sorted(set(all_names) - mapped_names),
         "vtable_length_distribution": {
             str(length): count for length, count in sorted(lengths.items())
@@ -278,7 +283,9 @@ def analyze_rtti(binary: bytes, logical_path: str) -> dict:
         "slot_frequency": slot_frequency(classes),
         "warning": (
             "The final virtual slot is a high-value class-specific code anchor, "
-            "but its source-level method name is not proven by RTTI alone."
+            "but its source-level method name is not proven by RTTI alone. "
+            "tail_runtime_function is the containing first fragment only; "
+            "tail_function_group records chained fragments without filling gaps."
         ),
         "classes": converted_classes,
     }

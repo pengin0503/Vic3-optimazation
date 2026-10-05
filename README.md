@@ -4,6 +4,10 @@ Private research project for improving Victoria 3 simulation performance beyond 
 
 ## 最新の引き継ぎ / Resume on another device
 
+[2026-10-05 添付ビルドによる追加解析・ツール修正](docs/superpowers/reports/2026-10-05-source-backed-continuation-ja.md)
+
+実測上位3処理のcallbackと処理本体候補を追加照合しました。分割関数の復元・測定不足の表示を修正し、旧形式の解析結果にも対応しています。最新の再開状態はこちらを優先してください。
+
 [2026-10-05 実測・内部処理調査の引き継ぎ](docs/superpowers/reports/2026-10-05-runtime-benchmark-handoff-ja.md)
 
 3か月の実測CSV、解析結果、内部処理の対応表、iPad・別端末からの再開手順を保存しました。診断基準は暫定16スレッド。OSのCPU/待ち記録は未取得で、性能変更は未実施です。

@@ -69,7 +69,8 @@ def mapped_row(row: dict, index: dict[str, dict]) -> dict:
         "mean_calls": row.get("mean_calls"),
         "longest_lock_ms": row.get("longest_lock_ms"),
         "total_ms_cv": row.get("total_ms_cv"),
-        "noisy": row.get("noisy"),
+        "noisy": row.get("noisy") if row.get("total_ms_cv") is not None else None,
+        "repeatability_assessed": bool(row.get("repeatability_assessed")) if row.get("total_ms_cv") is not None else False,
         "native_mapping_available": mapping is not None,
     }
     if mapping:
@@ -87,6 +88,8 @@ def mapped_row(row: dict, index: dict[str, dict]) -> dict:
         }
         if "tail_runtime_function" in mapping:
             out["native"]["tail_runtime_function"] = mapping["tail_runtime_function"]
+        if "tail_function_group" in mapping:
+            out["native"]["tail_function_group"] = mapping["tail_function_group"]
     return out
 
 

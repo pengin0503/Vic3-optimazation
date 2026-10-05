@@ -1,0 +1,3478 @@
+{
+  "budgets": {
+    "max_depth": 2,
+    "max_function_bytes": 65536,
+    "max_functions": 80
+  },
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "nodes": [
+    {
+      "code_address_references": [
+        {
+          "destination": "rcx",
+          "instruction_rva": "0x62d717",
+          "kind": "code_address_candidate",
+          "target_rva": "0x4331bb0"
+        }
+      ],
+      "decoded_bytes": 113,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x62d709",
+          "kind": "call",
+          "target_rva": "0x4234408"
+        },
+        {
+          "instruction_rva": "0x62d71e",
+          "kind": "call",
+          "target_rva": "0x4234774"
+        },
+        {
+          "instruction_rva": "0x62d72a",
+          "kind": "call",
+          "target_rva": "0x423439c"
+        }
+      ],
+      "entry_rva": "0x62d6c0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x62d6c0",
+            "end_rva": "0x62d731",
+            "size_bytes": 113,
+            "unwind_rva": "0x4e8c5a8"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x62d6c0",
+            "end_rva": "0x62d731"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x62d6c0",
+          "end_rva": "0x62d731",
+          "size_bytes": 113,
+          "unwind_rva": "0x4e8c5a8"
+        },
+        "size_bytes": 113,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x62d6c0",
+          "decoded_bytes": 113,
+          "end_rva": "0x62d731",
+          "fully_decoded": true,
+          "sha256": "8c657e9d5add27f88b240c22b04926b37a3f1de197b3b9df4889eabf0d9bb8a6",
+          "size_bytes": 113
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 95,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x632b37",
+          "kind": "call",
+          "target_rva": "0x427cb10"
+        }
+      ],
+      "entry_rva": "0x632b00",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x632b46",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x632b00",
+            "end_rva": "0x632b5f",
+            "size_bytes": 95,
+            "unwind_rva": "0x4e8c8ac"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x632b00",
+            "end_rva": "0x632b5f"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x632b00",
+          "end_rva": "0x632b5f",
+          "size_bytes": 95,
+          "unwind_rva": "0x4e8c8ac"
+        },
+        "size_bytes": 95,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x632b00",
+          "decoded_bytes": 95,
+          "end_rva": "0x632b5f",
+          "fully_decoded": true,
+          "sha256": "5825c597ed153db16ea952376912051fefbc6dcdb837b7adf2e395981661459c",
+          "size_bytes": 95
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 95,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x64b327",
+          "kind": "call",
+          "target_rva": "0x427cb10"
+        }
+      ],
+      "entry_rva": "0x64b2f0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x64b336",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x64b2f0",
+            "end_rva": "0x64b34f",
+            "size_bytes": 95,
+            "unwind_rva": "0x4e8c8ac"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x64b2f0",
+            "end_rva": "0x64b34f"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x64b2f0",
+          "end_rva": "0x64b34f",
+          "size_bytes": 95,
+          "unwind_rva": "0x4e8c8ac"
+        },
+        "size_bytes": 95,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x64b2f0",
+          "decoded_bytes": 95,
+          "end_rva": "0x64b34f",
+          "fully_decoded": true,
+          "sha256": "cb5bbbe4db134a3cda6fc7e390825fe23ca40fde114e66acc56aa9bafe9b0919",
+          "size_bytes": 95
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 336,
+      "depth": 1,
+      "direct_edges": [],
+      "entry_rva": "0x74f7b0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x74f821",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x74f83d",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        },
+        {
+          "instruction_rva": "0x74f875",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x74f88d",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        },
+        {
+          "instruction_rva": "0x74f8b9",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x74f8d7",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x74f7b0",
+            "end_rva": "0x74f900",
+            "size_bytes": 336,
+            "unwind_rva": "0x4e9aa38"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x74f7b0",
+            "end_rva": "0x74f900"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x74f7b0",
+          "end_rva": "0x74f900",
+          "size_bytes": 336,
+          "unwind_rva": "0x4e9aa38"
+        },
+        "size_bytes": 336,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x74f7b0",
+          "decoded_bytes": 336,
+          "end_rva": "0x74f900",
+          "fully_decoded": true,
+          "sha256": "bb0aaccb2d2814923264e48278f35cf1caaad5260b081f33d0fe15e0f952ce76",
+          "size_bytes": 336
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 134,
+      "depth": 1,
+      "direct_edges": [],
+      "entry_rva": "0x7a8980",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x7a89d8",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 3,
+        "fragments": [
+          {
+            "begin_rva": "0x7a8980",
+            "end_rva": "0x7a8999",
+            "size_bytes": 25,
+            "unwind_rva": "0x4e8cc58"
+          },
+          {
+            "begin_rva": "0x7a8999",
+            "end_rva": "0x7a89fa",
+            "size_bytes": 97,
+            "unwind_rva": "0x4e9e4d0"
+          },
+          {
+            "begin_rva": "0x7a89fa",
+            "end_rva": "0x7a8a06",
+            "size_bytes": 12,
+            "unwind_rva": "0x4e9e4ec"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x7a8980",
+            "end_rva": "0x7a8a06"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x7a8980",
+          "end_rva": "0x7a8999",
+          "size_bytes": 25,
+          "unwind_rva": "0x4e8cc58"
+        },
+        "size_bytes": 134,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x7a8980",
+          "decoded_bytes": 134,
+          "end_rva": "0x7a8a06",
+          "fully_decoded": true,
+          "sha256": "be2e13e17eb9565ddd8e123680d76a901bc4e73fb83f90b99bb0715d18992780",
+          "size_bytes": 134
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 240,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x7c5269",
+          "kind": "call",
+          "target_rva": "0x4208e80"
+        },
+        {
+          "instruction_rva": "0x7c52c2",
+          "kind": "call",
+          "target_rva": "0x3ba1ce0"
+        }
+      ],
+      "entry_rva": "0x7c51e0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x7c51e0",
+            "end_rva": "0x7c52d0",
+            "size_bytes": 240,
+            "unwind_rva": "0x4e9eb90"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x7c51e0",
+            "end_rva": "0x7c52d0"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x7c51e0",
+          "end_rva": "0x7c52d0",
+          "size_bytes": 240,
+          "unwind_rva": "0x4e9eb90"
+        },
+        "size_bytes": 240,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x7c51e0",
+          "decoded_bytes": 240,
+          "end_rva": "0x7c52d0",
+          "fully_decoded": true,
+          "sha256": "732f7c41955471b05bb2107553e6d4f3d5c160a2553b67bc6356484bb41b352e",
+          "size_bytes": 240
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x49606f8",
+          "instruction_rva": "0x7c521a",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x635e10"
+            }
+          ],
+          "type_descriptor_rva": "0x54501c0",
+          "type_name": ".?AV?$iterator_buffer@PEADDVfixed_buffer_traits@detail@v10@fmt@@@detail@v10@fmt@@",
+          "vtable_rva": "0x44bd288"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 286,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0xc8687a",
+          "kind": "call",
+          "target_rva": "0xc86a90"
+        },
+        {
+          "instruction_rva": "0xc8688b",
+          "kind": "call",
+          "target_rva": "0xc442f0"
+        },
+        {
+          "instruction_rva": "0xc868be",
+          "kind": "call",
+          "target_rva": "0x1514c50"
+        },
+        {
+          "instruction_rva": "0xc868dc",
+          "kind": "call",
+          "target_rva": "0x15c7e70"
+        },
+        {
+          "instruction_rva": "0xc868ef",
+          "kind": "call",
+          "target_rva": "0x7d49c0"
+        },
+        {
+          "instruction_rva": "0xc868ff",
+          "kind": "call",
+          "target_rva": "0x7ed5f0"
+        },
+        {
+          "instruction_rva": "0xc8691f",
+          "kind": "call",
+          "target_rva": "0x14870a0"
+        },
+        {
+          "instruction_rva": "0xc86938",
+          "kind": "call",
+          "target_rva": "0x15152a0"
+        },
+        {
+          "instruction_rva": "0xc86954",
+          "kind": "call",
+          "target_rva": "0xc86990"
+        }
+      ],
+      "entry_rva": "0xc86860",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0xc86860",
+            "end_rva": "0xc8697e",
+            "size_bytes": 286,
+            "unwind_rva": "0x4eb12cc"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0xc86860",
+            "end_rva": "0xc8697e"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0xc86860",
+          "end_rva": "0xc8697e",
+          "size_bytes": 286,
+          "unwind_rva": "0x4eb12cc"
+        },
+        "size_bytes": 286,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0xc86860",
+          "decoded_bytes": 286,
+          "end_rva": "0xc8697e",
+          "fully_decoded": true,
+          "sha256": "92f4b60943fe9d83825c2512f61a90ddcc79d2019e5d9bdc504351c52d8dc87a",
+          "size_bytes": 286
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 160,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0xcc4578",
+          "kind": "call",
+          "target_rva": "0x421f0f0"
+        },
+        {
+          "instruction_rva": "0xcc4595",
+          "kind": "call",
+          "target_rva": "0x421f980"
+        }
+      ],
+      "entry_rva": "0xcc4520",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0xcc4520",
+            "end_rva": "0xcc45c0",
+            "size_bytes": 160,
+            "unwind_rva": "0x4e8c5b0"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0xcc4520",
+            "end_rva": "0xcc45c0"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0xcc4520",
+          "end_rva": "0xcc45c0",
+          "size_bytes": 160,
+          "unwind_rva": "0x4e8c5b0"
+        },
+        "size_bytes": 160,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0xcc4520",
+          "decoded_bytes": 160,
+          "end_rva": "0xcc45c0",
+          "fully_decoded": true,
+          "sha256": "798597c88cb07e4b8e4abd8c0806e0967c8175c3709c894ee388769ab329d112",
+          "size_bytes": 160
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 121,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0xf2cd91",
+          "kind": "call",
+          "target_rva": "0x427cb10"
+        }
+      ],
+      "entry_rva": "0xf2cd40",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0xf2cd6c",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0xf2cda0",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 3,
+        "fragments": [
+          {
+            "begin_rva": "0xf2cd40",
+            "end_rva": "0xf2cd64",
+            "size_bytes": 36,
+            "unwind_rva": "0x4e8d420"
+          },
+          {
+            "begin_rva": "0xf2cd64",
+            "end_rva": "0xf2cdae",
+            "size_bytes": 74,
+            "unwind_rva": "0x4ee0174"
+          },
+          {
+            "begin_rva": "0xf2cdae",
+            "end_rva": "0xf2cdb9",
+            "size_bytes": 11,
+            "unwind_rva": "0x4ee0188"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0xf2cd40",
+            "end_rva": "0xf2cdb9"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0xf2cd40",
+          "end_rva": "0xf2cd64",
+          "size_bytes": 36,
+          "unwind_rva": "0x4e8d420"
+        },
+        "size_bytes": 121,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0xf2cd40",
+          "decoded_bytes": 121,
+          "end_rva": "0xf2cdb9",
+          "fully_decoded": true,
+          "sha256": "42a1df1f5f5fa73215b11f6758127290f004f6ef81466c8a8eb0081986944877",
+          "size_bytes": 121
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 531,
+      "depth": 0,
+      "direct_edges": [
+        {
+          "instruction_rva": "0xf6e607",
+          "kind": "call",
+          "target_rva": "0x64b2f0"
+        },
+        {
+          "instruction_rva": "0xf6e677",
+          "kind": "call",
+          "target_rva": "0x7c51e0"
+        },
+        {
+          "instruction_rva": "0xf6e688",
+          "kind": "call",
+          "target_rva": "0xf2cd40"
+        },
+        {
+          "instruction_rva": "0xf6e6aa",
+          "kind": "call",
+          "target_rva": "0x427d1b0"
+        },
+        {
+          "instruction_rva": "0xf6e6e0",
+          "kind": "call",
+          "target_rva": "0x355be70"
+        },
+        {
+          "instruction_rva": "0xf6e75f",
+          "kind": "call",
+          "target_rva": "0x74f7b0"
+        }
+      ],
+      "entry_rva": "0xf6e590",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0xf6e5fa",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0xf6e77f",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0xf6e590",
+            "end_rva": "0xf6e7a3",
+            "size_bytes": 531,
+            "unwind_rva": "0x4ee4f54"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0xf6e590",
+            "end_rva": "0xf6e7a3"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0xf6e590",
+          "end_rva": "0xf6e7a3",
+          "size_bytes": 531,
+          "unwind_rva": "0x4ee4f54"
+        },
+        "size_bytes": 531,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0xf6e590",
+          "decoded_bytes": 531,
+          "end_rva": "0xf6e7a3",
+          "fully_decoded": true,
+          "sha256": "0d125210554e08c5f373c2ad0699ccd70025e8576bb64250ac55858531d9d661",
+          "size_bytes": 531
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a4ee60",
+          "instruction_rva": "0xf6e726",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0xf7ed30"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0xf7ed30"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0xf7ec40"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0xf7ec30"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x652220"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x652230"
+            }
+          ],
+          "type_descriptor_rva": "0x5527820",
+          "type_name": ".?AV?$_Func_impl_no_alloc@V<lambda_1>@?BA@??Prepare@?$CSimplifiedTickTask@VCTickTask_HandleAutonomousInvestment@?A0xcf3a0af0@@PEBUSPotentialBuildingConstruction@@$00@@UEAAXAEAUCJominiTickTaskExecutionContext@@@Z@XAEAU4@AEBV?$CPdxRange@VCPdxCountingIterator@@V1@Urandom_access_iterator_tag@std@@@@_N@std@@",
+          "vtable_rva": "0x4557a88"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 233,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0xf7ec90",
+          "kind": "call",
+          "target_rva": "0xc86860"
+        },
+        {
+          "instruction_rva": "0xf7ecff",
+          "kind": "call",
+          "target_rva": "0x74f7b0"
+        }
+      ],
+      "entry_rva": "0xf7ec40",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0xf7ed1c",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 5,
+        "fragments": [
+          {
+            "begin_rva": "0xf7ec40",
+            "end_rva": "0xf7ec58",
+            "size_bytes": 24,
+            "unwind_rva": "0x4eaca28"
+          },
+          {
+            "begin_rva": "0xf7ec58",
+            "end_rva": "0xf7ec7d",
+            "size_bytes": 37,
+            "unwind_rva": "0x4ee5944"
+          },
+          {
+            "begin_rva": "0xf7ec7d",
+            "end_rva": "0xf7ecab",
+            "size_bytes": 46,
+            "unwind_rva": "0x4ee5960"
+          },
+          {
+            "begin_rva": "0xf7ecab",
+            "end_rva": "0xf7ecc8",
+            "size_bytes": 29,
+            "unwind_rva": "0x4ee5974"
+          },
+          {
+            "begin_rva": "0xf7ecc8",
+            "end_rva": "0xf7ed29",
+            "size_bytes": 97,
+            "unwind_rva": "0x4ee5984"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0xf7ec40",
+            "end_rva": "0xf7ed29"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0xf7ec40",
+          "end_rva": "0xf7ec58",
+          "size_bytes": 24,
+          "unwind_rva": "0x4eaca28"
+        },
+        "size_bytes": 233,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0xf7ec40",
+          "decoded_bytes": 233,
+          "end_rva": "0xf7ed29",
+          "fully_decoded": true,
+          "sha256": "715293c50d9ebda5e7571c8c533a8ba247c90cb3eb9ae821918341f4d46e561b",
+          "size_bytes": 233
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a4ecf8",
+          "instruction_rva": "0xf7eccc",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0xf8a2c0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0xf8a2c0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0xf8a290"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0xf8a280"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x652220"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x652230"
+            }
+          ],
+          "type_descriptor_rva": "0x5528380",
+          "type_name": ".?AV?$_Func_impl_no_alloc@V<lambda_1>@?M@???$RangeExecuteHelper@V?$CPdxSpan@QEAVCCountry@@@@@?$CSimplifiedTickTask@VCTickTask_HandleAutonomousInvestment@?A0xcf3a0af0@@PEBUSPotentialBuildingConstruction@@$00@@CAXAEAVCTickTask_HandleAutonomousInvestment@?A0xcf3a0af0@@V?$CPdxSpan@QEAVCCountry@@@@HAEAUCJominiTickTaskExecutionContext@@AEBV?$CPdxRange@VCPdxCountingIterator@@V1@Urandom_access_iterator_tag@std@@@@_N@Z@XAEAU6@@std@@",
+          "vtable_rva": "0x4557918"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 34,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0xf8a2a8",
+          "kind": "call",
+          "target_rva": "0xf771a0"
+        }
+      ],
+      "entry_rva": "0xf8a290",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0xf8a290",
+            "end_rva": "0xf8a2b2",
+            "size_bytes": 34,
+            "unwind_rva": "0x4e8c5e8"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0xf8a290",
+            "end_rva": "0xf8a2b2"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0xf8a290",
+          "end_rva": "0xf8a2b2",
+          "size_bytes": 34,
+          "unwind_rva": "0x4e8c5e8"
+        },
+        "size_bytes": 34,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0xf8a290",
+          "decoded_bytes": 34,
+          "end_rva": "0xf8a2b2",
+          "fully_decoded": true,
+          "sha256": "0fdd9926d11b57b9372661f252b03691f743702baf4a3f7354b745ad74c23221",
+          "size_bytes": 34
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 293,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x105c9fc",
+          "kind": "call",
+          "target_rva": "0x62d6c0"
+        },
+        {
+          "instruction_rva": "0x105ca09",
+          "kind": "call",
+          "target_rva": "0x10683d0"
+        },
+        {
+          "instruction_rva": "0x105ca29",
+          "kind": "call",
+          "target_rva": "0x1068cc0"
+        },
+        {
+          "instruction_rva": "0x105ca31",
+          "kind": "call",
+          "target_rva": "0x421f980"
+        }
+      ],
+      "entry_rva": "0x105c970",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x105c9ab",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x105ca49",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x105ca6d",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x105c970",
+            "end_rva": "0x105ca95",
+            "size_bytes": 293,
+            "unwind_rva": "0x4ef4a70"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x105c970",
+            "end_rva": "0x105ca95"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x105c970",
+          "end_rva": "0x105ca95",
+          "size_bytes": 293,
+          "unwind_rva": "0x4ef4a70"
+        },
+        "size_bytes": 293,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x105c970",
+          "decoded_bytes": 293,
+          "end_rva": "0x105ca95",
+          "fully_decoded": true,
+          "sha256": "ba4c7e15dda02665d1c66b5b81276f068a623f50d66d9102fd9a60bdb3060098",
+          "size_bytes": 293
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 167,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x105caf0",
+          "kind": "call",
+          "target_rva": "0x1068cc0"
+        },
+        {
+          "instruction_rva": "0x105caf8",
+          "kind": "call",
+          "target_rva": "0x421f980"
+        }
+      ],
+      "entry_rva": "0x105caa0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x105cb14",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 3,
+        "fragments": [
+          {
+            "begin_rva": "0x105caa0",
+            "end_rva": "0x105caba",
+            "size_bytes": 26,
+            "unwind_rva": "0x4eb64b8"
+          },
+          {
+            "begin_rva": "0x105caba",
+            "end_rva": "0x105cb3f",
+            "size_bytes": 133,
+            "unwind_rva": "0x4ef4aa4"
+          },
+          {
+            "begin_rva": "0x105cb3f",
+            "end_rva": "0x105cb47",
+            "size_bytes": 8,
+            "unwind_rva": "0x4ef4ac4"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x105caa0",
+            "end_rva": "0x105cb47"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x105caa0",
+          "end_rva": "0x105caba",
+          "size_bytes": 26,
+          "unwind_rva": "0x4eb64b8"
+        },
+        "size_bytes": 167,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x105caa0",
+          "decoded_bytes": 167,
+          "end_rva": "0x105cb47",
+          "fully_decoded": true,
+          "sha256": "c58ed42f2aee47ae5dbf97beb795d2e72a7192cf66d7f731ca0f94abed10b4c4",
+          "size_bytes": 167
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [
+        {
+          "destination": "r8",
+          "instruction_rva": "0x10684e7",
+          "kind": "code_address_candidate",
+          "target_rva": "0x630340"
+        },
+        {
+          "destination": "rcx",
+          "instruction_rva": "0x1068563",
+          "kind": "code_address_candidate",
+          "target_rva": "0x4331bb0"
+        }
+      ],
+      "decoded_bytes": 432,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x106840b",
+          "kind": "call",
+          "target_rva": "0x1068ae0"
+        },
+        {
+          "instruction_rva": "0x10684ae",
+          "kind": "call",
+          "target_rva": "0x10683d0"
+        },
+        {
+          "instruction_rva": "0x10684ba",
+          "kind": "call",
+          "target_rva": "0x10683d0"
+        },
+        {
+          "instruction_rva": "0x10684c7",
+          "kind": "call",
+          "target_rva": "0x10683d0"
+        },
+        {
+          "instruction_rva": "0x106851f",
+          "kind": "call",
+          "target_rva": "0x1068b70"
+        },
+        {
+          "instruction_rva": "0x1068551",
+          "kind": "call",
+          "target_rva": "0x4234408"
+        },
+        {
+          "instruction_rva": "0x106856a",
+          "kind": "call",
+          "target_rva": "0x4234774"
+        },
+        {
+          "instruction_rva": "0x1068576",
+          "kind": "call",
+          "target_rva": "0x423439c"
+        }
+      ],
+      "entry_rva": "0x10683d0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x10684fc",
+          "kind": "call",
+          "operand": "qword ptr [rdx + 0x38]"
+        },
+        {
+          "instruction_rva": "0x106850c",
+          "kind": "call",
+          "operand": "r8"
+        },
+        {
+          "instruction_rva": "0x1068514",
+          "kind": "call",
+          "operand": "rax"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x10683d0",
+            "end_rva": "0x1068580",
+            "size_bytes": 432,
+            "unwind_rva": "0x4ef4ad4"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x10683d0",
+            "end_rva": "0x1068580"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x10683d0",
+          "end_rva": "0x1068580",
+          "size_bytes": 432,
+          "unwind_rva": "0x4ef4ad4"
+        },
+        "size_bytes": 432,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x10683d0",
+          "decoded_bytes": 432,
+          "end_rva": "0x1068580",
+          "fully_decoded": true,
+          "sha256": "980f5c982b52bc00cadc7ccfd5fc3e5f547dafb0aa529d4ab0f349612883d760",
+          "size_bytes": 432
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a620f8",
+          "instruction_rva": "0x1068477",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x62d3e0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0x630380"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0x630340"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0x630320"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x7d4d80"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x7d4d80"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 6,
+              "target_rva": "0xcb2de0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 7,
+              "target_rva": "0xcb2de0"
+            }
+          ],
+          "type_descriptor_rva": "0x553efb0",
+          "type_name": ".?AV?$CPdxHybridInlineBufferAllocator@USModifyPopContext@@$09H@@",
+          "vtable_rva": "0x45623c8"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 117,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x1068cd1",
+          "kind": "call",
+          "target_rva": "0x1068dd0"
+        },
+        {
+          "instruction_rva": "0x1068cf6",
+          "kind": "call",
+          "target_rva": "0x106a610"
+        }
+      ],
+      "entry_rva": "0x1068cc0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x1068d0a",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x1068d22",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 3,
+        "fragments": [
+          {
+            "begin_rva": "0x1068cc0",
+            "end_rva": "0x1068cdb",
+            "size_bytes": 27,
+            "unwind_rva": "0x4e8ca24"
+          },
+          {
+            "begin_rva": "0x1068cdb",
+            "end_rva": "0x1068d2a",
+            "size_bytes": 79,
+            "unwind_rva": "0x4ef4b40"
+          },
+          {
+            "begin_rva": "0x1068d2a",
+            "end_rva": "0x1068d35",
+            "size_bytes": 11,
+            "unwind_rva": "0x4ef4b54"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x1068cc0",
+            "end_rva": "0x1068d35"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x1068cc0",
+          "end_rva": "0x1068cdb",
+          "size_bytes": 27,
+          "unwind_rva": "0x4e8ca24"
+        },
+        "size_bytes": 117,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x1068cc0",
+          "decoded_bytes": 117,
+          "end_rva": "0x1068d35",
+          "fully_decoded": true,
+          "sha256": "7c9796555daff5d294e70761103675b226751f20383f2382bb6a5e70672e4bd0",
+          "size_bytes": 117
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 144,
+      "depth": 2,
+      "direct_edges": [],
+      "entry_rva": "0x10921f0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x10921f0",
+            "end_rva": "0x1092280",
+            "size_bytes": 144,
+            "unwind_rva": "0x4e9ce8c"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x10921f0",
+            "end_rva": "0x1092280"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x10921f0",
+          "end_rva": "0x1092280",
+          "size_bytes": 144,
+          "unwind_rva": "0x4e9ce8c"
+        },
+        "size_bytes": 144,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x10921f0",
+          "decoded_bytes": 144,
+          "end_rva": "0x1092280",
+          "fully_decoded": true,
+          "sha256": "dcda10b187bb9bad1c497bea5dc3916b8c0632f3567f669f08a48f29f7385f0c",
+          "size_bytes": 144
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 208,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x1092b4a",
+          "kind": "call",
+          "target_rva": "0x427cb10"
+        }
+      ],
+      "entry_rva": "0x1092af0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 5,
+        "fragments": [
+          {
+            "begin_rva": "0x1092af0",
+            "end_rva": "0x1092b07",
+            "size_bytes": 23,
+            "unwind_rva": "0x4eb64b8"
+          },
+          {
+            "begin_rva": "0x1092b07",
+            "end_rva": "0x1092b21",
+            "size_bytes": 26,
+            "unwind_rva": "0x4ef6f78"
+          },
+          {
+            "begin_rva": "0x1092b21",
+            "end_rva": "0x1092ba0",
+            "size_bytes": 127,
+            "unwind_rva": "0x4ef6f90"
+          },
+          {
+            "begin_rva": "0x1092ba0",
+            "end_rva": "0x1092bb5",
+            "size_bytes": 21,
+            "unwind_rva": "0x4ef6fa8"
+          },
+          {
+            "begin_rva": "0x1092bb5",
+            "end_rva": "0x1092bc0",
+            "size_bytes": 11,
+            "unwind_rva": "0x4ef6fb8"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x1092af0",
+            "end_rva": "0x1092bc0"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x1092af0",
+          "end_rva": "0x1092b07",
+          "size_bytes": 23,
+          "unwind_rva": "0x4eb64b8"
+        },
+        "size_bytes": 208,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x1092af0",
+          "decoded_bytes": 208,
+          "end_rva": "0x1092bc0",
+          "fully_decoded": true,
+          "sha256": "5633130d3db61c780c6b10842adf55dcbb2125f964e10a0db22e219b408c3839",
+          "size_bytes": 208
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 249,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x1092be7",
+          "kind": "tail_jump_candidate",
+          "target_rva": "0x1092af0"
+        },
+        {
+          "instruction_rva": "0x1092c2f",
+          "kind": "call",
+          "target_rva": "0x10936d0"
+        },
+        {
+          "instruction_rva": "0x1092c44",
+          "kind": "call",
+          "target_rva": "0x10936d0"
+        },
+        {
+          "instruction_rva": "0x1092c54",
+          "kind": "call",
+          "target_rva": "0x1092bc0"
+        },
+        {
+          "instruction_rva": "0x1092c6e",
+          "kind": "call",
+          "target_rva": "0x1092bc0"
+        },
+        {
+          "instruction_rva": "0x1092c92",
+          "kind": "call",
+          "target_rva": "0x1093920"
+        }
+      ],
+      "entry_rva": "0x1092bc0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x1092bc0",
+            "end_rva": "0x1092cb9",
+            "size_bytes": 249,
+            "unwind_rva": "0x4ead718"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x1092bc0",
+            "end_rva": "0x1092cb9"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x1092bc0",
+          "end_rva": "0x1092cb9",
+          "size_bytes": 249,
+          "unwind_rva": "0x4ead718"
+        },
+        "size_bytes": 249,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x1092bc0",
+          "decoded_bytes": 249,
+          "end_rva": "0x1092cb9",
+          "fully_decoded": true,
+          "sha256": "d1e39a491f2e99e7027b747aa458f6da77e3ca06c91a17e1e009c226e3a106c9",
+          "size_bytes": 249
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [
+        {
+          "destination": "rcx",
+          "instruction_rva": "0x11a97ee",
+          "kind": "code_address_candidate",
+          "target_rva": "0x4331bb0"
+        }
+      ],
+      "decoded_bytes": 972,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11a9461",
+          "kind": "call",
+          "target_rva": "0x42350c0"
+        },
+        {
+          "instruction_rva": "0x11a950a",
+          "kind": "call",
+          "target_rva": "0x11a9100"
+        },
+        {
+          "instruction_rva": "0x11a9517",
+          "kind": "call",
+          "target_rva": "0xde8770"
+        },
+        {
+          "instruction_rva": "0x11a9549",
+          "kind": "call",
+          "target_rva": "0x11b1900"
+        },
+        {
+          "instruction_rva": "0x11a9588",
+          "kind": "call",
+          "target_rva": "0x11b20f0"
+        },
+        {
+          "instruction_rva": "0x11a95a5",
+          "kind": "call",
+          "target_rva": "0x11afcb0"
+        },
+        {
+          "instruction_rva": "0x11a95cc",
+          "kind": "call",
+          "target_rva": "0x11b2470"
+        },
+        {
+          "instruction_rva": "0x11a95d6",
+          "kind": "call",
+          "target_rva": "0x11aafd0"
+        },
+        {
+          "instruction_rva": "0x11a9603",
+          "kind": "call",
+          "target_rva": "0x11b3310"
+        },
+        {
+          "instruction_rva": "0x11a9622",
+          "kind": "call",
+          "target_rva": "0xcc4520"
+        },
+        {
+          "instruction_rva": "0x11a964f",
+          "kind": "call",
+          "target_rva": "0x11b3410"
+        },
+        {
+          "instruction_rva": "0x11a966e",
+          "kind": "call",
+          "target_rva": "0x421f980"
+        },
+        {
+          "instruction_rva": "0x11a96d3",
+          "kind": "call",
+          "target_rva": "0x11b1c80"
+        },
+        {
+          "instruction_rva": "0x11a96e9",
+          "kind": "call",
+          "target_rva": "0x62d6c0"
+        },
+        {
+          "instruction_rva": "0x11a96f7",
+          "kind": "call",
+          "target_rva": "0x11b27f0"
+        },
+        {
+          "instruction_rva": "0x11a9756",
+          "kind": "call",
+          "target_rva": "0x11b0680"
+        },
+        {
+          "instruction_rva": "0x11a9782",
+          "kind": "call",
+          "target_rva": "0x11b0600"
+        },
+        {
+          "instruction_rva": "0x11a978b",
+          "kind": "call",
+          "target_rva": "0x11b0570"
+        },
+        {
+          "instruction_rva": "0x11a97bb",
+          "kind": "call",
+          "target_rva": "0x62d6c0"
+        },
+        {
+          "instruction_rva": "0x11a97dc",
+          "kind": "call",
+          "target_rva": "0x4234408"
+        },
+        {
+          "instruction_rva": "0x11a97f5",
+          "kind": "call",
+          "target_rva": "0x4234774"
+        },
+        {
+          "instruction_rva": "0x11a9801",
+          "kind": "call",
+          "target_rva": "0x423439c"
+        }
+      ],
+      "entry_rva": "0x11a9440",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x11a947c",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x11a9714",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x11a973e",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x11a9778",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x11a97a5",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x11a9440",
+            "end_rva": "0x11a980c",
+            "size_bytes": 972,
+            "unwind_rva": "0x4f0c540"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11a9440",
+            "end_rva": "0x11a980c"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11a9440",
+          "end_rva": "0x11a980c",
+          "size_bytes": 972,
+          "unwind_rva": "0x4f0c540"
+        },
+        "size_bytes": 972,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11a9440",
+          "decoded_bytes": 972,
+          "end_rva": "0x11a980c",
+          "fully_decoded": true,
+          "sha256": "3072acace91f32c26f1c8643010f9d81b50c1dc563af7dfdad19a4e771f7b39f",
+          "size_bytes": 972
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 371,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11afa95",
+          "kind": "call",
+          "target_rva": "0x42350c0"
+        },
+        {
+          "instruction_rva": "0x11afac3",
+          "kind": "call",
+          "target_rva": "0x3ba1ce0"
+        },
+        {
+          "instruction_rva": "0x11afb0c",
+          "kind": "call",
+          "target_rva": "0x632b00"
+        },
+        {
+          "instruction_rva": "0x11afb50",
+          "kind": "call",
+          "target_rva": "0x11b0310"
+        },
+        {
+          "instruction_rva": "0x11afb6c",
+          "kind": "call",
+          "target_rva": "0x1092af0"
+        },
+        {
+          "instruction_rva": "0x11afb89",
+          "kind": "call",
+          "target_rva": "0xcc4520"
+        },
+        {
+          "instruction_rva": "0x11afbb3",
+          "kind": "call",
+          "target_rva": "0x1092bc0"
+        },
+        {
+          "instruction_rva": "0x11afbce",
+          "kind": "call",
+          "target_rva": "0x421f980"
+        },
+        {
+          "instruction_rva": "0x11afbee",
+          "kind": "tail_jump_candidate",
+          "target_rva": "0x10921f0"
+        }
+      ],
+      "entry_rva": "0x11afa80",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x11afb00",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x11afa80",
+            "end_rva": "0x11afbf3",
+            "size_bytes": 371,
+            "unwind_rva": "0x4f0cae4"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11afa80",
+            "end_rva": "0x11afbf3"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11afa80",
+          "end_rva": "0x11afbf3",
+          "size_bytes": 371,
+          "unwind_rva": "0x4f0cae4"
+        },
+        "size_bytes": 371,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11afa80",
+          "decoded_bytes": 371,
+          "end_rva": "0x11afbf3",
+          "fully_decoded": true,
+          "sha256": "4fecaf99c7c9776e61f7c5aa068c7c5f7d86a91cf5660ca0e778bfc32f0ec387",
+          "size_bytes": 371
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 451,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11b03c2",
+          "kind": "call",
+          "target_rva": "0x11b4700"
+        },
+        {
+          "instruction_rva": "0x11b03dd",
+          "kind": "call",
+          "target_rva": "0x650d70"
+        },
+        {
+          "instruction_rva": "0x11b040a",
+          "kind": "call",
+          "target_rva": "0x653b30"
+        },
+        {
+          "instruction_rva": "0x11b044e",
+          "kind": "call",
+          "target_rva": "0x11b4460"
+        },
+        {
+          "instruction_rva": "0x11b04ae",
+          "kind": "call",
+          "target_rva": "0x653ad0"
+        },
+        {
+          "instruction_rva": "0x11b04b9",
+          "kind": "call",
+          "target_rva": "0x3bcb120"
+        }
+      ],
+      "entry_rva": "0x11b0310",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x11b03fc",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x11b047a",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x11b049d",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x11b0310",
+            "end_rva": "0x11b04d3",
+            "size_bytes": 451,
+            "unwind_rva": "0x4ee1fdc"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11b0310",
+            "end_rva": "0x11b04d3"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11b0310",
+          "end_rva": "0x11b04d3",
+          "size_bytes": 451,
+          "unwind_rva": "0x4ee1fdc"
+        },
+        "size_bytes": 451,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11b0310",
+          "decoded_bytes": 451,
+          "end_rva": "0x11b04d3",
+          "fully_decoded": true,
+          "sha256": "56d2d94dd7cf219051656589bad9eba64cafc47353c294716d385625ce91280c",
+          "size_bytes": 451
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4adaeb0",
+          "instruction_rva": "0x11b03cc",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x64fa90"
+            }
+          ],
+          "type_descriptor_rva": "0x54504f0",
+          "type_name": ".?AVCJob@@",
+          "vtable_rva": "0x45c51d8"
+        },
+        {
+          "complete_object_locator_rva": "0x4a714f0",
+          "instruction_rva": "0x11b040f",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x7e73b0"
+            }
+          ],
+          "type_descriptor_rva": "0x554e9a0",
+          "type_name": ".?AV?$CNonBlockingJob@U?$SPdxParallelForOverArrayOperatorFromCallTraits@$$CBV?$CPdxArray@PEAVCCountry@@H@@V<lambda_1>@?1??CalcAllMigrationAreaLeaders@NMigration@@YAXAEAV?$CPdxArray@PEBVCCountry@@H@@@Z@USParallelForOverArrayWithIndexCallTraits@@@@@NParallelForImpl@@",
+          "vtable_rva": "0x4576a88"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 478,
+      "depth": 0,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11b0c30",
+          "kind": "call",
+          "target_rva": "0x11afa80"
+        },
+        {
+          "instruction_rva": "0x11b0c7a",
+          "kind": "call",
+          "target_rva": "0x7c51e0"
+        },
+        {
+          "instruction_rva": "0x11b0c9a",
+          "kind": "call",
+          "target_rva": "0x11b4610"
+        },
+        {
+          "instruction_rva": "0x11b0cd1",
+          "kind": "call",
+          "target_rva": "0x62d6c0"
+        },
+        {
+          "instruction_rva": "0x11b0ce2",
+          "kind": "call",
+          "target_rva": "0x7a8980"
+        },
+        {
+          "instruction_rva": "0x11b0d17",
+          "kind": "call",
+          "target_rva": "0x355be70"
+        },
+        {
+          "instruction_rva": "0x11b0d73",
+          "kind": "call",
+          "target_rva": "0x74f7b0"
+        }
+      ],
+      "entry_rva": "0x11b0c00",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x11b0dd3",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 3,
+        "fragments": [
+          {
+            "begin_rva": "0x11b0c00",
+            "end_rva": "0x11b0c0a",
+            "size_bytes": 10,
+            "unwind_rva": "0x4eaa664"
+          },
+          {
+            "begin_rva": "0x11b0c0a",
+            "end_rva": "0x11b0dc5",
+            "size_bytes": 443,
+            "unwind_rva": "0x4f0cd68"
+          },
+          {
+            "begin_rva": "0x11b0dc5",
+            "end_rva": "0x11b0dde",
+            "size_bytes": 25,
+            "unwind_rva": "0x4f0cd98"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11b0c00",
+            "end_rva": "0x11b0dde"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11b0c00",
+          "end_rva": "0x11b0c0a",
+          "size_bytes": 10,
+          "unwind_rva": "0x4eaa664"
+        },
+        "size_bytes": 478,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11b0c00",
+          "decoded_bytes": 478,
+          "end_rva": "0x11b0dde",
+          "fully_decoded": true,
+          "sha256": "b078405c1172c13fb99624df88adb033ce74b8a70019b45efa720d1344acce0e",
+          "size_bytes": 478
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a711d0",
+          "instruction_rva": "0x11b0d20",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x11bb020"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0x11bb020"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0x11baee0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0x11baed0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x652220"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x652230"
+            }
+          ],
+          "type_descriptor_rva": "0x554db20",
+          "type_name": ".?AV?$_Func_impl_no_alloc@V<lambda_1>@?O@??Prepare@?$CSimplifiedTickTask@VCTickTask_ProcessEconomicMigration@?A0x0ba1329b@@V?$CPdxArray@USPopMigration@@H@@$0A@@@UEAAXAEAUCJominiTickTaskExecutionContext@@@Z@XAEAU4@AEBV?$CPdxRange@VCPdxCountingIterator@@V1@Urandom_access_iterator_tag@std@@@@_N@std@@",
+          "vtable_rva": "0x4576830"
+        }
+      ]
+    },
+    {
+      "code_address_references": [
+        {
+          "destination": "r8",
+          "instruction_rva": "0x11b2909",
+          "kind": "code_address_candidate",
+          "target_rva": "0x630340"
+        },
+        {
+          "destination": "rcx",
+          "instruction_rva": "0x11b2988",
+          "kind": "code_address_candidate",
+          "target_rva": "0x4331bb0"
+        }
+      ],
+      "decoded_bytes": 437,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11b28d0",
+          "kind": "call",
+          "target_rva": "0x11b27f0"
+        },
+        {
+          "instruction_rva": "0x11b28dc",
+          "kind": "call",
+          "target_rva": "0x11b27f0"
+        },
+        {
+          "instruction_rva": "0x11b28e9",
+          "kind": "call",
+          "target_rva": "0x11b27f0"
+        },
+        {
+          "instruction_rva": "0x11b2944",
+          "kind": "call",
+          "target_rva": "0x7eb8e0"
+        },
+        {
+          "instruction_rva": "0x11b2976",
+          "kind": "call",
+          "target_rva": "0x4234408"
+        },
+        {
+          "instruction_rva": "0x11b298f",
+          "kind": "call",
+          "target_rva": "0x4234774"
+        },
+        {
+          "instruction_rva": "0x11b299b",
+          "kind": "call",
+          "target_rva": "0x423439c"
+        }
+      ],
+      "entry_rva": "0x11b27f0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x11b282c",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x11b291e",
+          "kind": "call",
+          "operand": "qword ptr [rdx + 0x38]"
+        },
+        {
+          "instruction_rva": "0x11b292e",
+          "kind": "call",
+          "operand": "r8"
+        },
+        {
+          "instruction_rva": "0x11b2936",
+          "kind": "call",
+          "operand": "rax"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x11b27f0",
+            "end_rva": "0x11b29a5",
+            "size_bytes": 437,
+            "unwind_rva": "0x4e8cec0"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11b27f0",
+            "end_rva": "0x11b29a5"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11b27f0",
+          "end_rva": "0x11b29a5",
+          "size_bytes": 437,
+          "unwind_rva": "0x4e8cec0"
+        },
+        "size_bytes": 437,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11b27f0",
+          "decoded_bytes": 437,
+          "end_rva": "0x11b29a5",
+          "fully_decoded": true,
+          "sha256": "b18dd3e071cfe7680b796e8130c2bcacbe94bc075c3e0b98eadece59e639dc73",
+          "size_bytes": 437
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a71798",
+          "instruction_rva": "0x11b2899",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x62d3e0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0x630380"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0x630340"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0x630320"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x6377b0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x6377b0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 6,
+              "target_rva": "0x632f70"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 7,
+              "target_rva": "0x632f70"
+            }
+          ],
+          "type_descriptor_rva": "0x554f800",
+          "type_name": ".?AV?$CPdxHybridInlineBufferAllocator@USPopMigration@@$0CA@H@@",
+          "vtable_rva": "0x45769f8"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 230,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11b468d",
+          "kind": "call",
+          "target_rva": "0x62d6c0"
+        },
+        {
+          "instruction_rva": "0x11b4699",
+          "kind": "call",
+          "target_rva": "0x11b27f0"
+        }
+      ],
+      "entry_rva": "0x11b4610",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x11b4650",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x11b46b2",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x11b46cf",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x11b4610",
+            "end_rva": "0x11b46f6",
+            "size_bytes": 230,
+            "unwind_rva": "0x4edc218"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11b4610",
+            "end_rva": "0x11b46f6"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11b4610",
+          "end_rva": "0x11b46f6",
+          "size_bytes": 230,
+          "unwind_rva": "0x4edc218"
+        },
+        "size_bytes": 230,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11b4610",
+          "decoded_bytes": 230,
+          "end_rva": "0x11b46f6",
+          "fully_decoded": true,
+          "sha256": "bd609495716d856438b6bca47b853da81dca3aa3350ef7ec3dd2d35e00efb54c",
+          "size_bytes": 230
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 319,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11baf5e",
+          "kind": "call",
+          "target_rva": "0x11a9440"
+        },
+        {
+          "instruction_rva": "0x11baf73",
+          "kind": "call",
+          "target_rva": "0x11b27f0"
+        },
+        {
+          "instruction_rva": "0x11bafdb",
+          "kind": "call",
+          "target_rva": "0x74f7b0"
+        }
+      ],
+      "entry_rva": "0x11baee0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x11baf93",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x10]"
+        },
+        {
+          "instruction_rva": "0x11baffb",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x11baee0",
+            "end_rva": "0x11bb01f",
+            "size_bytes": 319,
+            "unwind_rva": "0x4f0da68"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11baee0",
+            "end_rva": "0x11bb01f"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11baee0",
+          "end_rva": "0x11bb01f",
+          "size_bytes": 319,
+          "unwind_rva": "0x4f0da68"
+        },
+        "size_bytes": 319,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11baee0",
+          "decoded_bytes": 319,
+          "end_rva": "0x11bb01f",
+          "fully_decoded": true,
+          "sha256": "d2204d1408a5014ab49b4206f1a112512d3f53447179c43e6518ebfa4734a2c0",
+          "size_bytes": 319
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a712c0",
+          "instruction_rva": "0x11bafa5",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x11bedf0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0x11bedf0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0x11bed40"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0x11bede0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x652220"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x652230"
+            }
+          ],
+          "type_descriptor_rva": "0x554dc60",
+          "type_name": ".?AV?$_Func_impl_no_alloc@V<lambda_1>@?M@???$RangeExecuteHelper@V?$CPdxSpan@QEBVCCountry@@@@@?$CSimplifiedTickTask@VCTickTask_ProcessEconomicMigration@?A0x0ba1329b@@V?$CPdxArray@USPopMigration@@H@@$0A@@@CAXAEAVCTickTask_ProcessEconomicMigration@?A0x0ba1329b@@V?$CPdxSpan@QEBVCCountry@@@@HAEAUCJominiTickTaskExecutionContext@@AEBV?$CPdxRange@VCPdxCountingIterator@@V1@Urandom_access_iterator_tag@std@@@@_N@Z@XAEAU6@@std@@",
+          "vtable_rva": "0x4576698"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 108,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x11bed77",
+          "kind": "call",
+          "target_rva": "0x11aec40"
+        },
+        {
+          "instruction_rva": "0x11bed9a",
+          "kind": "call",
+          "target_rva": "0x7a8980"
+        }
+      ],
+      "entry_rva": "0x11bed40",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 3,
+        "fragments": [
+          {
+            "begin_rva": "0x11bed40",
+            "end_rva": "0x11bed5a",
+            "size_bytes": 26,
+            "unwind_rva": "0x4e8cb44"
+          },
+          {
+            "begin_rva": "0x11bed5a",
+            "end_rva": "0x11bed90",
+            "size_bytes": 54,
+            "unwind_rva": "0x4f0dd34"
+          },
+          {
+            "begin_rva": "0x11bed90",
+            "end_rva": "0x11bedac",
+            "size_bytes": 28,
+            "unwind_rva": "0x4f0dd4c"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x11bed40",
+            "end_rva": "0x11bedac"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x11bed40",
+          "end_rva": "0x11bed5a",
+          "size_bytes": 26,
+          "unwind_rva": "0x4e8cb44"
+        },
+        "size_bytes": 108,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x11bed40",
+          "decoded_bytes": 108,
+          "end_rva": "0x11bedac",
+          "fully_decoded": true,
+          "sha256": "97540dcdbc6291915339115289e2c071bc66755606ee42a71efb6b8ce55f6b79",
+          "size_bytes": 108
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 555,
+      "depth": 0,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x13b834e",
+          "kind": "call",
+          "target_rva": "0x105caa0"
+        },
+        {
+          "instruction_rva": "0x13b8369",
+          "kind": "call",
+          "target_rva": "0x105c970"
+        },
+        {
+          "instruction_rva": "0x13b839e",
+          "kind": "call",
+          "target_rva": "0x62d6c0"
+        },
+        {
+          "instruction_rva": "0x13b83b6",
+          "kind": "call",
+          "target_rva": "0x105caa0"
+        },
+        {
+          "instruction_rva": "0x13b840a",
+          "kind": "call",
+          "target_rva": "0x64b2f0"
+        },
+        {
+          "instruction_rva": "0x13b843f",
+          "kind": "call",
+          "target_rva": "0x64b2f0"
+        },
+        {
+          "instruction_rva": "0x13b847c",
+          "kind": "call",
+          "target_rva": "0xf3e040"
+        },
+        {
+          "instruction_rva": "0x13b84fd",
+          "kind": "call",
+          "target_rva": "0x74f7b0"
+        }
+      ],
+      "entry_rva": "0x13b8310",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x13b83fd",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x13b8432",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x13b851a",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b",
+            "size_bytes": 555,
+            "unwind_rva": "0x4e90d44"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x13b8310",
+          "end_rva": "0x13b853b",
+          "size_bytes": 555,
+          "unwind_rva": "0x4e90d44"
+        },
+        "size_bytes": 555,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x13b8310",
+          "decoded_bytes": 555,
+          "end_rva": "0x13b853b",
+          "fully_decoded": true,
+          "sha256": "4d91126d047305424abd5c3584c70af06b9e950033853c7f1a164d34a2061fdc",
+          "size_bytes": 555
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a92ab8",
+          "instruction_rva": "0x13b84dd",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x13caef0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0x13caef0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0x13caed0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0x13caec0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x652220"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x652230"
+            }
+          ],
+          "type_descriptor_rva": "0x556e510",
+          "type_name": ".?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??Prepare@CTickTask_UpdateEmployment@?A0x0778c8c9@@UEAAXAEAUCJominiTickTaskExecutionContext@@@Z@XAEAU5@AEBV?$CPdxRange@VCPdxCountingIterator@@V1@Urandom_access_iterator_tag@std@@@@_N@std@@",
+          "vtable_rva": "0x45901f8"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 549,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x13b8576",
+          "kind": "call",
+          "target_rva": "0x13c7bc0"
+        },
+        {
+          "instruction_rva": "0x13b85aa",
+          "kind": "call",
+          "target_rva": "0x64b2f0"
+        },
+        {
+          "instruction_rva": "0x13b860d",
+          "kind": "call",
+          "target_rva": "0x3ba1ce0"
+        },
+        {
+          "instruction_rva": "0x13b8632",
+          "kind": "call",
+          "target_rva": "0xf3e040"
+        },
+        {
+          "instruction_rva": "0x13b8661",
+          "kind": "call",
+          "target_rva": "0x85d7c0"
+        },
+        {
+          "instruction_rva": "0x13b8693",
+          "kind": "call",
+          "target_rva": "0x10bd490"
+        },
+        {
+          "instruction_rva": "0x13b86ba",
+          "kind": "call",
+          "target_rva": "0x7d66b0"
+        },
+        {
+          "instruction_rva": "0x13b873a",
+          "kind": "call",
+          "target_rva": "0x74f7b0"
+        }
+      ],
+      "entry_rva": "0x13b8540",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x13b859e",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x13b86a3",
+          "kind": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x13b8757",
+          "kind": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 5,
+        "fragments": [
+          {
+            "begin_rva": "0x13b8540",
+            "end_rva": "0x13b8559",
+            "size_bytes": 25,
+            "unwind_rva": "0x4f2dff0"
+          },
+          {
+            "begin_rva": "0x13b8559",
+            "end_rva": "0x13b85bc",
+            "size_bytes": 99,
+            "unwind_rva": "0x4f2dffc"
+          },
+          {
+            "begin_rva": "0x13b85bc",
+            "end_rva": "0x13b86e8",
+            "size_bytes": 300,
+            "unwind_rva": "0x4f2e01c"
+          },
+          {
+            "begin_rva": "0x13b86e8",
+            "end_rva": "0x13b8712",
+            "size_bytes": 42,
+            "unwind_rva": "0x4f2e034"
+          },
+          {
+            "begin_rva": "0x13b8712",
+            "end_rva": "0x13b8765",
+            "size_bytes": 83,
+            "unwind_rva": "0x4f2e044"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x13b8540",
+            "end_rva": "0x13b8765"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x13b8540",
+          "end_rva": "0x13b8559",
+          "size_bytes": 25,
+          "unwind_rva": "0x4f2dff0"
+        },
+        "size_bytes": 549,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x13b8540",
+          "decoded_bytes": 549,
+          "end_rva": "0x13b8765",
+          "fully_decoded": true,
+          "sha256": "36df4eca33464dcebabd878e03a7b168e02741a8a732c16f412084181db48eda",
+          "size_bytes": 549
+        }
+      ],
+      "vtable_address_references": [
+        {
+          "complete_object_locator_rva": "0x4a92ae0",
+          "instruction_rva": "0x13b8716",
+          "slots": [
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 0,
+              "target_rva": "0x13caea0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 1,
+              "target_rva": "0x13caea0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 2,
+              "target_rva": "0x13cada0"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 3,
+              "target_rva": "0x13cad90"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 4,
+              "target_rva": "0x652220"
+            },
+            {
+              "kind": "vtable_slot_candidate",
+              "slot": 5,
+              "target_rva": "0x652230"
+            }
+          ],
+          "type_descriptor_rva": "0x556e610",
+          "type_name": ".?AV?$_Func_impl_no_alloc@V<lambda_1>@?O@??CollectEmployment@CTickTask_UpdateEmployment@?A0x0778c8c9@@QEAAXAEAUCJominiTickTaskExecutionContext@@AEBV?$CPdxRange@VCPdxCountingIterator@@V1@Urandom_access_iterator_tag@std@@@@_NAEBV?$CPdxArray@PEAVCState@@H@@@Z@XAEAU5@@std@@",
+          "vtable_rva": "0x4590230"
+        }
+      ]
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 31,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x13caee5",
+          "kind": "call",
+          "target_rva": "0x13b8540"
+        }
+      ],
+      "entry_rva": "0x13caed0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x13caed0",
+            "end_rva": "0x13caeef",
+            "size_bytes": 31,
+            "unwind_rva": "0x4e8c5e8"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x13caed0",
+            "end_rva": "0x13caeef"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x13caed0",
+          "end_rva": "0x13caeef",
+          "size_bytes": 31,
+          "unwind_rva": "0x4e8c5e8"
+        },
+        "size_bytes": 31,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x13caed0",
+          "decoded_bytes": 31,
+          "end_rva": "0x13caeef",
+          "fully_decoded": true,
+          "sha256": "0c0b0c1b9583d1aef8e2e3d968560f3e61ca55f79b3df14344f32679aeb69be0",
+          "size_bytes": 31
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 214,
+      "depth": 1,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x355be8f",
+          "kind": "call",
+          "target_rva": "0x422ff3c"
+        },
+        {
+          "instruction_rva": "0x355becb",
+          "kind": "call",
+          "target_rva": "0x7c51e0"
+        }
+      ],
+      "entry_rva": "0x355be70",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x355bf31",
+          "kind": "call",
+          "operand": "r10"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x355be70",
+            "end_rva": "0x355bf46",
+            "size_bytes": 214,
+            "unwind_rva": "0x4e8fc84"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x355be70",
+            "end_rva": "0x355bf46"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x355be70",
+          "end_rva": "0x355bf46",
+          "size_bytes": 214,
+          "unwind_rva": "0x4e8fc84"
+        },
+        "size_bytes": 214,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x355be70",
+          "decoded_bytes": 214,
+          "end_rva": "0x355bf46",
+          "fully_decoded": true,
+          "sha256": "d2d00e2d96cf4848e0e0890d437ce9b5fbf5b0e2ae180b1b931a77aecae49cd4",
+          "size_bytes": 214
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 235,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x3ba1d3e",
+          "kind": "call",
+          "target_rva": "0x420f5c0"
+        },
+        {
+          "instruction_rva": "0x3ba1d66",
+          "kind": "call",
+          "target_rva": "0x3c01730"
+        },
+        {
+          "instruction_rva": "0x3ba1da3",
+          "kind": "call",
+          "target_rva": "0x421f980"
+        },
+        {
+          "instruction_rva": "0x3ba1dc5",
+          "kind": "call",
+          "target_rva": "0x42447ac"
+        }
+      ],
+      "entry_rva": "0x3ba1ce0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x3ba1ce0",
+            "end_rva": "0x3ba1dcb",
+            "size_bytes": 235,
+            "unwind_rva": "0x514c580"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x3ba1ce0",
+            "end_rva": "0x3ba1dcb"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x3ba1ce0",
+          "end_rva": "0x3ba1dcb",
+          "size_bytes": 235,
+          "unwind_rva": "0x514c580"
+        },
+        "size_bytes": 235,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x3ba1ce0",
+          "decoded_bytes": 235,
+          "end_rva": "0x3ba1dcb",
+          "fully_decoded": true,
+          "sha256": "2b52574eb9b4acc62360a1d7fa127c76a1f6bfaf2468d2c273a5a9ccb903a680",
+          "size_bytes": 235
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 261,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x4208f06",
+          "kind": "call",
+          "target_rva": "0x420f550"
+        },
+        {
+          "instruction_rva": "0x4208f2f",
+          "kind": "call",
+          "target_rva": "0x4209900"
+        },
+        {
+          "instruction_rva": "0x4208f6b",
+          "kind": "call",
+          "target_rva": "0x4208040"
+        }
+      ],
+      "entry_rva": "0x4208e80",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x4208e80",
+            "end_rva": "0x4208f85",
+            "size_bytes": 261,
+            "unwind_rva": "0x4ff2f7c"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x4208e80",
+            "end_rva": "0x4208f85"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x4208e80",
+          "end_rva": "0x4208f85",
+          "size_bytes": 261,
+          "unwind_rva": "0x4ff2f7c"
+        },
+        "size_bytes": 261,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x4208e80",
+          "decoded_bytes": 261,
+          "end_rva": "0x4208f85",
+          "fully_decoded": true,
+          "sha256": "4228ab40aeb0d69fc56a3594723e7b50812b1572f8a7d71beed079262493824a",
+          "size_bytes": 261
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 105,
+      "depth": 2,
+      "direct_edges": [],
+      "entry_rva": "0x423439c",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x42343ac",
+          "kind": "call",
+          "operand": "qword ptr [rip + 0x1523c6]",
+          "pointer_slot_rva": "0x4386778"
+        },
+        {
+          "instruction_rva": "0x42343ec",
+          "kind": "call",
+          "operand": "qword ptr [rip + 0x15236e]",
+          "pointer_slot_rva": "0x4386760"
+        },
+        {
+          "instruction_rva": "0x42343fe",
+          "kind": "jmp",
+          "operand": "qword ptr [rip + 0x151e03]",
+          "pointer_slot_rva": "0x4386208"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x423439c",
+            "end_rva": "0x4234405",
+            "size_bytes": 105,
+            "unwind_rva": "0x4e8c5a8"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x423439c",
+            "end_rva": "0x4234405"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x423439c",
+          "end_rva": "0x4234405",
+          "size_bytes": 105,
+          "unwind_rva": "0x4e8c5a8"
+        },
+        "size_bytes": 105,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x423439c",
+          "decoded_bytes": 105,
+          "end_rva": "0x4234405",
+          "fully_decoded": true,
+          "sha256": "f1802f17034c36ba9dd98b0f1be4b22afdba43eec3f37c3d3a651554eeaa7c47",
+          "size_bytes": 105
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 123,
+      "depth": 2,
+      "direct_edges": [],
+      "entry_rva": "0x4234408",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x4234418",
+          "kind": "call",
+          "operand": "qword ptr [rip + 0x15235a]",
+          "pointer_slot_rva": "0x4386778"
+        },
+        {
+          "instruction_rva": "0x4234440",
+          "kind": "call",
+          "operand": "qword ptr [rip + 0x151dda]",
+          "pointer_slot_rva": "0x4386220"
+        },
+        {
+          "instruction_rva": "0x423447c",
+          "kind": "jmp",
+          "operand": "qword ptr [rip + 0x1522dd]",
+          "pointer_slot_rva": "0x4386760"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x4234408",
+            "end_rva": "0x4234483",
+            "size_bytes": 123,
+            "unwind_rva": "0x4e8c5a8"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x4234408",
+            "end_rva": "0x4234483"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x4234408",
+          "end_rva": "0x4234483",
+          "size_bytes": 123,
+          "unwind_rva": "0x4e8c5a8"
+        },
+        "size_bytes": 123,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x4234408",
+          "decoded_bytes": 123,
+          "end_rva": "0x4234483",
+          "fully_decoded": true,
+          "sha256": "c33977b7f80cdb06dce1e1d463a6f5b42a725025bba192cb270c75b85ea7bf0e",
+          "size_bytes": 123
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 23,
+      "depth": 2,
+      "direct_edges": [
+        {
+          "instruction_rva": "0x4234778",
+          "kind": "call",
+          "target_rva": "0x4234738"
+        }
+      ],
+      "entry_rva": "0x4234774",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x4234774",
+            "end_rva": "0x423478b",
+            "size_bytes": 23,
+            "unwind_rva": "0x4e8c5e0"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x4234774",
+            "end_rva": "0x423478b"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x4234774",
+          "end_rva": "0x423478b",
+          "size_bytes": 23,
+          "unwind_rva": "0x4e8c5e0"
+        },
+        "size_bytes": 23,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x4234774",
+          "decoded_bytes": 23,
+          "end_rva": "0x423478b",
+          "fully_decoded": true,
+          "sha256": "5f6cc60cffa0d65bf26b38ba33118b937cb50452fa2562be76f41b421fcbe20d",
+          "size_bytes": 23
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 78,
+      "depth": 2,
+      "direct_edges": [],
+      "entry_rva": "0x42350c0",
+      "fully_decoded": true,
+      "indirect_sites": [],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x42350c0",
+            "end_rva": "0x423510e",
+            "size_bytes": 78,
+            "unwind_rva": "0x51bcb60"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x42350c0",
+            "end_rva": "0x423510e"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x42350c0",
+          "end_rva": "0x423510e",
+          "size_bytes": 78,
+          "unwind_rva": "0x51bcb60"
+        },
+        "size_bytes": 78,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x42350c0",
+          "decoded_bytes": 78,
+          "end_rva": "0x423510e",
+          "fully_decoded": true,
+          "sha256": "24ba2f8e6f97e3f8dec9771f775f11294b7da43ba09efabbb1bd3c079ac25b6e",
+          "size_bytes": 78
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 1645,
+      "depth": 2,
+      "direct_edges": [],
+      "entry_rva": "0x427cb10",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x427cb3b",
+          "kind": "jmp",
+          "operand": "r9"
+        },
+        {
+          "instruction_rva": "0x427cd82",
+          "kind": "jmp",
+          "operand": "r11"
+        },
+        {
+          "instruction_rva": "0x427ceb2",
+          "kind": "jmp",
+          "operand": "r11"
+        },
+        {
+          "instruction_rva": "0x427d026",
+          "kind": "jmp",
+          "operand": "r11"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x427cb10",
+            "end_rva": "0x427d17d",
+            "size_bytes": 1645,
+            "unwind_rva": "0x51bccf0"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x427cb10",
+            "end_rva": "0x427d17d"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x427cb10",
+          "end_rva": "0x427d17d",
+          "size_bytes": 1645,
+          "unwind_rva": "0x51bccf0"
+        },
+        "size_bytes": 1645,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x427cb10",
+          "decoded_bytes": 1645,
+          "end_rva": "0x427d17d",
+          "fully_decoded": true,
+          "sha256": "e3fe2435dcd9fe38705c05ad9f33f538f4ee71d601ae64e6a1ae41a043eaf89d",
+          "size_bytes": 1645
+        }
+      ],
+      "vtable_address_references": []
+    },
+    {
+      "code_address_references": [],
+      "decoded_bytes": 904,
+      "depth": 1,
+      "direct_edges": [],
+      "entry_rva": "0x427d1b0",
+      "fully_decoded": true,
+      "indirect_sites": [
+        {
+          "instruction_rva": "0x427d1ee",
+          "kind": "jmp",
+          "operand": "r9"
+        },
+        {
+          "instruction_rva": "0x427d344",
+          "kind": "jmp",
+          "operand": "r11"
+        },
+        {
+          "instruction_rva": "0x427d404",
+          "kind": "jmp",
+          "operand": "r11"
+        },
+        {
+          "instruction_rva": "0x427d4f8",
+          "kind": "jmp",
+          "operand": "r11"
+        }
+      ],
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x427d1b0",
+            "end_rva": "0x427d538",
+            "size_bytes": 904,
+            "unwind_rva": "0x51bccf0"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x427d1b0",
+            "end_rva": "0x427d538"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x427d1b0",
+          "end_rva": "0x427d538",
+          "size_bytes": 904,
+          "unwind_rva": "0x51bccf0"
+        },
+        "size_bytes": 904,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x427d1b0",
+          "decoded_bytes": 904,
+          "end_rva": "0x427d538",
+          "fully_decoded": true,
+          "sha256": "3cf9ad537db8f9c416acd488f3b6bc6267091888ce7aab2cbfd86fec6d27cea0",
+          "size_bytes": 904
+        }
+      ],
+      "vtable_address_references": []
+    }
+  ],
+  "not_expanded": {
+    "0x1068ae0": "depth_budget",
+    "0x1068b70": "depth_budget",
+    "0x1068dd0": "depth_budget",
+    "0x106a610": "depth_budget",
+    "0x10936d0": "depth_budget",
+    "0x1093920": "depth_budget",
+    "0x10bd490": "depth_budget",
+    "0x11a9100": "depth_budget",
+    "0x11aafd0": "depth_budget",
+    "0x11aec40": "depth_budget",
+    "0x11afcb0": "depth_budget",
+    "0x11b0570": "depth_budget",
+    "0x11b0600": "depth_budget",
+    "0x11b0680": "depth_budget",
+    "0x11b1900": "depth_budget",
+    "0x11b1c80": "depth_budget",
+    "0x11b20f0": "depth_budget",
+    "0x11b2470": "depth_budget",
+    "0x11b3310": "depth_budget",
+    "0x11b3410": "depth_budget",
+    "0x11b4460": "depth_budget",
+    "0x11b4700": "depth_budget",
+    "0x11baed0": "no_unwind_metadata",
+    "0x11bb020": "no_unwind_metadata",
+    "0x11bede0": "no_unwind_metadata",
+    "0x11bedf0": "no_unwind_metadata",
+    "0x13c7bc0": "depth_budget",
+    "0x13cad90": "no_unwind_metadata",
+    "0x13cada0": "depth_budget",
+    "0x13caea0": "no_unwind_metadata",
+    "0x13caec0": "no_unwind_metadata",
+    "0x13caef0": "no_unwind_metadata",
+    "0x14870a0": "depth_budget",
+    "0x1514c50": "depth_budget",
+    "0x15152a0": "depth_budget",
+    "0x15c7e70": "depth_budget",
+    "0x3bcb120": "depth_budget",
+    "0x3c01730": "depth_budget",
+    "0x4208040": "depth_budget",
+    "0x4209900": "depth_budget",
+    "0x420f550": "depth_budget",
+    "0x420f5c0": "depth_budget",
+    "0x421f0f0": "depth_budget",
+    "0x421f980": "no_unwind_metadata",
+    "0x422ff3c": "no_unwind_metadata",
+    "0x4234738": "depth_budget",
+    "0x42447ac": "depth_budget",
+    "0x4331bb0": "no_unwind_metadata",
+    "0x62d3e0": "depth_budget",
+    "0x630320": "no_unwind_metadata",
+    "0x630340": "depth_budget",
+    "0x630380": "depth_budget",
+    "0x632f70": "no_unwind_metadata",
+    "0x635e10": "no_unwind_metadata",
+    "0x6377b0": "no_unwind_metadata",
+    "0x64fa90": "depth_budget",
+    "0x650d70": "depth_budget",
+    "0x652220": "no_unwind_metadata",
+    "0x652230": "no_unwind_metadata",
+    "0x653ad0": "depth_budget",
+    "0x653b30": "depth_budget",
+    "0x7d49c0": "depth_budget",
+    "0x7d4d80": "no_unwind_metadata",
+    "0x7d66b0": "depth_budget",
+    "0x7e73b0": "depth_budget",
+    "0x7eb8e0": "depth_budget",
+    "0x7ed5f0": "depth_budget",
+    "0x85d7c0": "depth_budget",
+    "0xc442f0": "depth_budget",
+    "0xc86990": "depth_budget",
+    "0xc86a90": "depth_budget",
+    "0xcb2de0": "no_unwind_metadata",
+    "0xde8770": "depth_budget",
+    "0xf3e040": "no_unwind_metadata",
+    "0xf771a0": "depth_budget",
+    "0xf7ec30": "no_unwind_metadata",
+    "0xf7ed30": "no_unwind_metadata",
+    "0xf8a280": "no_unwind_metadata",
+    "0xf8a2c0": "no_unwind_metadata"
+  },
+  "seeds": {
+    "CTickTask_HandleAutonomousInvestment": "0xf6e590",
+    "CTickTask_ProcessEconomicMigration": "0x11b0c00",
+    "CTickTask_UpdateEmployment": "0x13b8310"
+  },
+  "warning": "Linear static decode of metadata ranges only. Direct calls, tail-jump candidates, and code-address candidates are distinct; no runtime reachability, callback execution, task dependency, lock causality, or optimization benefit is proven."
+}

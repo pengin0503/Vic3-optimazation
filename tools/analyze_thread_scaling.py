@@ -58,6 +58,9 @@ def analyze(report: dict, plateau_threshold: float = 0.05) -> dict:
             threads = group["task_thread_count"]
             wall = group["wall_clock_seconds"]["median"]
             speedup = base_wall / wall
+            variance = group.get('wall_clock_seconds', {}).get('cv')
+            variance_known = isinstance(variance, (int, float)) and math.isfinite(variance) and variance >= 0
+            noisy = group.get('wall_clock_seconds', {}).get('noisy') if variance_known else None
             row = {
                 "task_thread_count": threads,
                 "median_wall_clock_seconds": wall,
@@ -71,8 +74,11 @@ def analyze(report: dict, plateau_threshold: float = 0.05) -> dict:
                     if base_threads == 1
                     else None
                 ),
-                "wall_clock_noisy": bool(
-                    group.get("wall_clock_seconds", {}).get("noisy", False)
+                "wall_clock_noisy": noisy,
+                "repeatability_assessed": (
+                    isinstance(group.get('runs'), int) and group['runs'] >= 3
+                    and noisy is not None
+                    and group['wall_clock_seconds'].get('repeatability_assessed', True)
                 ),
             }
             if previous is not None:
@@ -80,18 +86,18 @@ def analyze(report: dict, plateau_threshold: float = 0.05) -> dict:
                 improvement = (prev_wall - wall) / prev_wall
                 row["incremental_improvement_fraction"] = improvement
                 row["speedup_vs_previous"] = prev_wall / wall
-                plateau = (
-                    improvement < plateau_threshold
-                    and not row["wall_clock_noisy"]
-                    and not previous["wall_clock_noisy"]
-                )
+                plateau = None
+                if row['repeatability_assessed'] and previous['repeatability_assessed']:
+                    plateau = (improvement < plateau_threshold
+                               and row['wall_clock_noisy'] is False
+                               and previous['wall_clock_noisy'] is False)
                 row["plateau_screen"] = plateau
                 if plateau and first_plateau is None:
                     first_plateau = threads
             else:
                 row["incremental_improvement_fraction"] = None
                 row["speedup_vs_previous"] = None
-                row["plateau_screen"] = False
+                row["plateau_screen"] = None
             rows.append(row)
             previous = row
 
@@ -109,13 +115,14 @@ def analyze(report: dict, plateau_threshold: float = 0.05) -> dict:
         raise Error("benchmark report contains no groups")
 
     return {
-        "format_version": 1,
+        "format_version": 2,
         "variants": variants,
         "warning": (
             "Amdahl-style serial fraction is a diagnostic model only. "
             "TaskThreadCount does not represent every Victoria 3 thread, and "
             "scheduler, lock, memory, and dependency effects violate ideal "
-            "Amdahl assumptions. Plateau flags are screening hints, not causes."
+            "Amdahl assumptions. Plateau flags are screening hints, not causes. "
+            "Unknown/insufficient repeatability never establishes a plateau."
         ),
     }
 
@@ -146,7 +153,7 @@ def markdown(result: dict) -> str:
                 f"| {row['task_thread_count']} | {row['median_wall_clock_seconds']:.3f} | "
                 f"{row['speedup_vs_base']:.3f}x | {pct(efficiency)} | "
                 f"{pct(serial)} | {pct(improvement)} | "
-                f"{'yes' if row['plateau_screen'] else 'no'} |"
+                f"{'unknown' if row['plateau_screen'] is None else ('yes' if row['plateau_screen'] else 'no')} |"
             )
         if variant["first_plateau_screen_thread_count"] is not None:
             lines += [

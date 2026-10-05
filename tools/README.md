@@ -235,4 +235,25 @@ $env:VIC3_DATA = "C:\path\to\Vic3_data.zip"
 python -m unittest discover -s tests -v
 ```
 
-GitHub Actions runs the dependency-free unit suite on every push to `main` and every pull request.
+GitHub Actions installs the optional callgraph dependency and runs the unit suite on every push to `main` and every pull request. Binary integration still requires a locally supplied `VIC3_DATA` input.
+
+## 2026-10-05: source-backed follow-up
+
+`map_ticktask_rtti.py` now retains `tail_runtime_function` as the first fragment
+and adds `tail_function_group`: root triple, chained fragments, disjoint ranges,
+byte count, and explicit invalid-metadata status. Shared unwind records never
+merge unrelated functions. Overlap, cycles and bad/truncated chains fail closed.
+
+Benchmark/scaling format version 2 uses `noisy=null` when CV is unknown.
+`repeatability_assessed` requires >=3 observations and a usable CV; low CV is
+not statistical significance. Legacy unknown-CV reports cannot establish a
+plateau. Old historical JSON files remain unchanged: rerun raw CSV to update.
+
+Optional `map_hotspot_calls.py` produces bounded static candidate graphs from
+selected RTTI anchors, guarded by both executable and RTTI hash. Install
+`python -m pip install -r tools/requirements-callgraph.txt` only for this tool.
+Direct call, tail-jump candidate, code-address candidate, referenced callable
+vtable slot and unresolved indirect sites are separate. This is linear metadata
+range decoding, not runtime reachability or task-dependency reconstruction.
+
+Commands and verification: [continuation report](../docs/superpowers/reports/2026-10-05-source-backed-continuation-ja.md).

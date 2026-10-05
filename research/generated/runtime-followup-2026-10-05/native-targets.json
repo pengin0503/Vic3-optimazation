@@ -1,0 +1,1767 @@
+{
+  "format_version": 1,
+  "mapped_cost_count": 20,
+  "mapped_lock_count": 20,
+  "task_thread_count": 16,
+  "top_by_cost": [
+    {
+      "class_name": "CTickTask_HandleAutonomousInvestment",
+      "longest_lock_ms": 19.0,
+      "max_total_ms": 1593.0,
+      "mean_calls": 368,
+      "mean_total_ms": 1593.0,
+      "median_total_ms": 1593.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a4fa90",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xf6e590",
+              "end_rva": "0xf6e7a3",
+              "size_bytes": 531,
+              "unwind_rva": "0x4ee4f54"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xf6e590",
+              "end_rva": "0xf6e7a3"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xf6e590",
+            "end_rva": "0xf6e7a3",
+            "size_bytes": 531,
+            "unwind_rva": "0x4ee4f54"
+          },
+          "size_bytes": 531,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xf6e590",
+          "end_rva": "0xf6e7a3",
+          "size_bytes": 531,
+          "unwind_rva": "0x4ee4f54"
+        },
+        "task_specific_tail_vfunc_rva": "0xf6e590",
+        "type_descriptor_rva": "0x552c990",
+        "vtable_rva": "0x4558d98"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "HandleAutonomousInvestment",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdatePopGrowth",
+      "longest_lock_ms": 13.0,
+      "max_total_ms": 1200.0,
+      "mean_calls": 92,
+      "mean_total_ms": 1200.0,
+      "median_total_ms": 1200.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a8fa50",
+        "task_specific_tail_vfunc_rva": "0x13a3020",
+        "type_descriptor_rva": "0x556ae30",
+        "vtable_rva": "0x458efd0"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdatePopGrowth",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_ProcessEconomicMigration",
+      "longest_lock_ms": 29.0,
+      "max_total_ms": 956.0,
+      "mean_calls": 368,
+      "mean_total_ms": 956.0,
+      "median_total_ms": 956.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a71450",
+        "tail_function_group": {
+          "fragment_count": 3,
+          "fragments": [
+            {
+              "begin_rva": "0x11b0c00",
+              "end_rva": "0x11b0c0a",
+              "size_bytes": 10,
+              "unwind_rva": "0x4eaa664"
+            },
+            {
+              "begin_rva": "0x11b0c0a",
+              "end_rva": "0x11b0dc5",
+              "size_bytes": 443,
+              "unwind_rva": "0x4f0cd68"
+            },
+            {
+              "begin_rva": "0x11b0dc5",
+              "end_rva": "0x11b0dde",
+              "size_bytes": 25,
+              "unwind_rva": "0x4f0cd98"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x11b0c00",
+              "end_rva": "0x11b0dde"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x11b0c00",
+            "end_rva": "0x11b0c0a",
+            "size_bytes": 10,
+            "unwind_rva": "0x4eaa664"
+          },
+          "size_bytes": 478,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x11b0c00",
+          "end_rva": "0x11b0c0a",
+          "size_bytes": 10,
+          "unwind_rva": "0x4eaa664"
+        },
+        "task_specific_tail_vfunc_rva": "0x11b0c00",
+        "type_descriptor_rva": "0x554f1c0",
+        "vtable_rva": "0x4576b98"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "ProcessEconomicMigration",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateEmployment",
+      "longest_lock_ms": 14.0,
+      "max_total_ms": 846.0,
+      "mean_calls": 13,
+      "mean_total_ms": 846.0,
+      "median_total_ms": 846.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a930f8",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13b8310",
+              "end_rva": "0x13b853b",
+              "size_bytes": 555,
+              "unwind_rva": "0x4e90d44"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13b8310",
+              "end_rva": "0x13b853b"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b",
+            "size_bytes": 555,
+            "unwind_rva": "0x4e90d44"
+          },
+          "size_bytes": 555,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13b8310",
+          "end_rva": "0x13b853b",
+          "size_bytes": 555,
+          "unwind_rva": "0x4e90d44"
+        },
+        "task_specific_tail_vfunc_rva": "0x13b8310",
+        "type_descriptor_rva": "0x556fbb8",
+        "vtable_rva": "0x4590800"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateEmployment",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_RecalculateModifierNodes",
+      "longest_lock_ms": 13.0,
+      "max_total_ms": 845.0,
+      "mean_calls": 368,
+      "mean_total_ms": 845.0,
+      "median_total_ms": 845.0,
+      "native": {
+        "complete_object_locator_rva": "0x49a1f00",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x7da740",
+              "end_rva": "0x7da8de",
+              "size_bytes": 414,
+              "unwind_rva": "0x4e9f9bc"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x7da740",
+              "end_rva": "0x7da8de"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de",
+            "size_bytes": 414,
+            "unwind_rva": "0x4e9f9bc"
+          },
+          "size_bytes": 414,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x7da740",
+          "end_rva": "0x7da8de",
+          "size_bytes": 414,
+          "unwind_rva": "0x4e9f9bc"
+        },
+        "task_specific_tail_vfunc_rva": "0x7da740",
+        "type_descriptor_rva": "0x548be90",
+        "vtable_rva": "0x44d8f58"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "RecalculateModifierNodes",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateBuildingSpendingPriorities_Stage2",
+      "longest_lock_ms": 54.0,
+      "max_total_ms": 546.0,
+      "mean_calls": 368,
+      "mean_total_ms": 546.0,
+      "median_total_ms": 546.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aada30",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x157cbd0",
+              "end_rva": "0x157cd69",
+              "size_bytes": 409,
+              "unwind_rva": "0x4eaa6cc"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x157cbd0",
+              "end_rva": "0x157cd69"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x157cbd0",
+            "end_rva": "0x157cd69",
+            "size_bytes": 409,
+            "unwind_rva": "0x4eaa6cc"
+          },
+          "size_bytes": 409,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x157cbd0",
+          "end_rva": "0x157cd69",
+          "size_bytes": 409,
+          "unwind_rva": "0x4eaa6cc"
+        },
+        "task_specific_tail_vfunc_rva": "0x157cbd0",
+        "type_descriptor_rva": "0x558f320",
+        "vtable_rva": "0x459f3b8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateBuildingSpendingPriorities_Stage2",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateStateTrades",
+      "longest_lock_ms": 16.0,
+      "max_total_ms": 462.0,
+      "mean_calls": 13,
+      "mean_total_ms": 462.0,
+      "median_total_ms": 462.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a93490",
+        "task_specific_tail_vfunc_rva": "0x13b7bd0",
+        "type_descriptor_rva": "0x556ff90",
+        "vtable_rva": "0x4590c80"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateStateTrades",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateWorldMarket",
+      "longest_lock_ms": 47.0,
+      "max_total_ms": 403.0,
+      "mean_calls": 13,
+      "mean_total_ms": 403.0,
+      "median_total_ms": 403.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a3efe0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xedf260",
+              "end_rva": "0xedf2a2",
+              "size_bytes": 66,
+              "unwind_rva": "0x4e8c5a8"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xedf260",
+              "end_rva": "0xedf2a2"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xedf260",
+            "end_rva": "0xedf2a2",
+            "size_bytes": 66,
+            "unwind_rva": "0x4e8c5a8"
+          },
+          "size_bytes": 66,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xedf260",
+          "end_rva": "0xedf2a2",
+          "size_bytes": 66,
+          "unwind_rva": "0x4e8c5a8"
+        },
+        "task_specific_tail_vfunc_rva": "0xedf260",
+        "type_descriptor_rva": "0x5518878",
+        "vtable_rva": "0x4551108"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateWorldMarket",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateAICountryGoalsAdjustments",
+      "longest_lock_ms": 7.0,
+      "max_total_ms": 312.0,
+      "mean_calls": 92,
+      "mean_total_ms": 312.0,
+      "median_total_ms": 312.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aad760",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x1576300",
+              "end_rva": "0x15763af",
+              "size_bytes": 175,
+              "unwind_rva": "0x4f48e0c"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x1576300",
+              "end_rva": "0x15763af"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x1576300",
+            "end_rva": "0x15763af",
+            "size_bytes": 175,
+            "unwind_rva": "0x4f48e0c"
+          },
+          "size_bytes": 175,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x1576300",
+          "end_rva": "0x15763af",
+          "size_bytes": 175,
+          "unwind_rva": "0x4f48e0c"
+        },
+        "task_specific_tail_vfunc_rva": "0x1576300",
+        "type_descriptor_rva": "0x558df40",
+        "vtable_rva": "0x459ee78"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateAICountryGoalsAdjustments",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateSpendingVariables",
+      "longest_lock_ms": 37.0,
+      "max_total_ms": 311.0,
+      "mean_calls": 368,
+      "mean_total_ms": 311.0,
+      "median_total_ms": 311.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aad9b8",
+        "task_specific_tail_vfunc_rva": "0x1575af0",
+        "type_descriptor_rva": "0x558f6c0",
+        "vtable_rva": "0x459ef08"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateSpendingVariables",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_PrepareNavyAIData",
+      "longest_lock_ms": 5.0,
+      "max_total_ms": 258.0,
+      "mean_calls": 368,
+      "mean_total_ms": 258.0,
+      "median_total_ms": 258.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aadfa8",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x157d990",
+              "end_rva": "0x157db31",
+              "size_bytes": 417,
+              "unwind_rva": "0x4eaa6cc"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x157d990",
+              "end_rva": "0x157db31"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x157d990",
+            "end_rva": "0x157db31",
+            "size_bytes": 417,
+            "unwind_rva": "0x4eaa6cc"
+          },
+          "size_bytes": 417,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x157d990",
+          "end_rva": "0x157db31",
+          "size_bytes": 417,
+          "unwind_rva": "0x4eaa6cc"
+        },
+        "task_specific_tail_vfunc_rva": "0x157d990",
+        "type_descriptor_rva": "0x558eed8",
+        "vtable_rva": "0x459f198"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "PrepareNavyAIData",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateJobSatisfaction",
+      "longest_lock_ms": 1.0,
+      "max_total_ms": 258.0,
+      "mean_calls": 368,
+      "mean_total_ms": 258.0,
+      "median_total_ms": 258.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a8f910",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13a6bc0",
+              "end_rva": "0x13a6c08",
+              "size_bytes": 72,
+              "unwind_rva": "0x4e9f4a0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13a6bc0",
+              "end_rva": "0x13a6c08"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13a6bc0",
+            "end_rva": "0x13a6c08",
+            "size_bytes": 72,
+            "unwind_rva": "0x4e9f4a0"
+          },
+          "size_bytes": 72,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13a6bc0",
+          "end_rva": "0x13a6c08",
+          "size_bytes": 72,
+          "unwind_rva": "0x4e9f4a0"
+        },
+        "task_specific_tail_vfunc_rva": "0x13a6bc0",
+        "type_descriptor_rva": "0x556a4a0",
+        "vtable_rva": "0x458eb08"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateJobSatisfaction",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateAI",
+      "longest_lock_ms": 22.0,
+      "max_total_ms": 247.0,
+      "mean_calls": 368,
+      "mean_total_ms": 247.0,
+      "median_total_ms": 247.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aaddf0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x1575530",
+              "end_rva": "0x15756c7",
+              "size_bytes": 407,
+              "unwind_rva": "0x4ec5670"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x1575530",
+              "end_rva": "0x15756c7"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x1575530",
+            "end_rva": "0x15756c7",
+            "size_bytes": 407,
+            "unwind_rva": "0x4ec5670"
+          },
+          "size_bytes": 407,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x1575530",
+          "end_rva": "0x15756c7",
+          "size_bytes": 407,
+          "unwind_rva": "0x4ec5670"
+        },
+        "task_specific_tail_vfunc_rva": "0x1575530",
+        "type_descriptor_rva": "0x558ee00",
+        "vtable_rva": "0x459f140"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateAI",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateStatePopNeedCache",
+      "longest_lock_ms": 20.0,
+      "max_total_ms": 219.0,
+      "mean_calls": 13,
+      "mean_total_ms": 219.0,
+      "median_total_ms": 219.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a92fe0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13b7e70",
+              "end_rva": "0x13b7ed8",
+              "size_bytes": 104,
+              "unwind_rva": "0x4e9f4a0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13b7e70",
+              "end_rva": "0x13b7ed8"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13b7e70",
+            "end_rva": "0x13b7ed8",
+            "size_bytes": 104,
+            "unwind_rva": "0x4e9f4a0"
+          },
+          "size_bytes": 104,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13b7e70",
+          "end_rva": "0x13b7ed8",
+          "size_bytes": 104,
+          "unwind_rva": "0x4e9f4a0"
+        },
+        "task_specific_tail_vfunc_rva": "0x13b7e70",
+        "type_descriptor_rva": "0x556f8f0",
+        "vtable_rva": "0x4590dd8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateStatePopNeedCache",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_WeeklyBuildingBudgetUpdate",
+      "longest_lock_ms": 12.0,
+      "max_total_ms": 196.0,
+      "mean_calls": 13,
+      "mean_total_ms": 196.0,
+      "median_total_ms": 196.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a4a808",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xf48e20",
+              "end_rva": "0xf48f96",
+              "size_bytes": 374,
+              "unwind_rva": "0x4ea1258"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xf48e20",
+              "end_rva": "0xf48f96"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xf48e20",
+            "end_rva": "0xf48f96",
+            "size_bytes": 374,
+            "unwind_rva": "0x4ea1258"
+          },
+          "size_bytes": 374,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xf48e20",
+          "end_rva": "0xf48f96",
+          "size_bytes": 374,
+          "unwind_rva": "0x4ea1258"
+        },
+        "task_specific_tail_vfunc_rva": "0xf48e20",
+        "type_descriptor_rva": "0x5525740",
+        "vtable_rva": "0x4556a78"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "WeeklyBuildingBudgetUpdate",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdatePopsInterestGroupsAndMovements",
+      "longest_lock_ms": 2.0,
+      "max_total_ms": 181.0,
+      "mean_calls": 92,
+      "mean_total_ms": 181.0,
+      "median_total_ms": 181.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a8f988",
+        "task_specific_tail_vfunc_rva": "0x13a3000",
+        "type_descriptor_rva": "0x556ac20",
+        "vtable_rva": "0x458eed8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdatePopsInterestGroupsAndMovements",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_AverageStandardOfLivingUpdate",
+      "longest_lock_ms": 14.0,
+      "max_total_ms": 152.0,
+      "mean_calls": 13,
+      "mean_total_ms": 152.0,
+      "median_total_ms": 152.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a4fd88",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xf5e490",
+              "end_rva": "0xf5e4ba",
+              "size_bytes": 42,
+              "unwind_rva": "0x4e8c5a8"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xf5e490",
+              "end_rva": "0xf5e4ba"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xf5e490",
+            "end_rva": "0xf5e4ba",
+            "size_bytes": 42,
+            "unwind_rva": "0x4e8c5a8"
+          },
+          "size_bytes": 42,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xf5e490",
+          "end_rva": "0xf5e4ba",
+          "size_bytes": 42,
+          "unwind_rva": "0x4e8c5a8"
+        },
+        "task_specific_tail_vfunc_rva": "0xf5e490",
+        "type_descriptor_rva": "0x552ccd0",
+        "vtable_rva": "0x4558f58"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "AverageStandardOfLivingUpdate",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_CreateNewPoliticalMovements",
+      "longest_lock_ms": 23.0,
+      "max_total_ms": 152.0,
+      "mean_calls": 92,
+      "mean_total_ms": 152.0,
+      "median_total_ms": 152.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a969e8",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13f54e0",
+              "end_rva": "0x13f56a1",
+              "size_bytes": 449,
+              "unwind_rva": "0x4ea1258"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13f54e0",
+              "end_rva": "0x13f56a1"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13f54e0",
+            "end_rva": "0x13f56a1",
+            "size_bytes": 449,
+            "unwind_rva": "0x4ea1258"
+          },
+          "size_bytes": 449,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13f54e0",
+          "end_rva": "0x13f56a1",
+          "size_bytes": 449,
+          "unwind_rva": "0x4ea1258"
+        },
+        "task_specific_tail_vfunc_rva": "0x13f54e0",
+        "type_descriptor_rva": "0x5573910",
+        "vtable_rva": "0x4592790"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "CreateNewPoliticalMovements",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_RecalcStatePopStatistics",
+      "longest_lock_ms": 12.0,
+      "max_total_ms": 143.0,
+      "mean_calls": 13,
+      "mean_total_ms": 143.0,
+      "median_total_ms": 143.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a933a0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13c1510",
+              "end_rva": "0x13c1607",
+              "size_bytes": 247,
+              "unwind_rva": "0x4ed40e0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13c1510",
+              "end_rva": "0x13c1607"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13c1510",
+            "end_rva": "0x13c1607",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          },
+          "size_bytes": 247,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13c1510",
+          "end_rva": "0x13c1607",
+          "size_bytes": 247,
+          "unwind_rva": "0x4ed40e0"
+        },
+        "task_specific_tail_vfunc_rva": "0x13c1510",
+        "type_descriptor_rva": "0x556f5d0",
+        "vtable_rva": "0x4590b90"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "RecalcStatePopStatistics",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_ProcessPopPurchases",
+      "longest_lock_ms": 12.0,
+      "max_total_ms": 142.0,
+      "mean_calls": 13,
+      "mean_total_ms": 142.0,
+      "median_total_ms": 142.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a3ef68",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xee74b0",
+              "end_rva": "0xee75a7",
+              "size_bytes": 247,
+              "unwind_rva": "0x4ed40e0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xee74b0",
+              "end_rva": "0xee75a7"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xee74b0",
+            "end_rva": "0xee75a7",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          },
+          "size_bytes": 247,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xee74b0",
+          "end_rva": "0xee75a7",
+          "size_bytes": 247,
+          "unwind_rva": "0x4ed40e0"
+        },
+        "task_specific_tail_vfunc_rva": "0xee74b0",
+        "type_descriptor_rva": "0x5518af0",
+        "vtable_rva": "0x4550fd8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "ProcessPopPurchases",
+      "total_ms_cv": null
+    }
+  ],
+  "top_by_lock": [
+    {
+      "class_name": "CTickTask_UpdateNationalAwakenings",
+      "longest_lock_ms": 57.0,
+      "max_total_ms": 57.0,
+      "mean_calls": 3,
+      "mean_total_ms": 57.0,
+      "median_total_ms": 57.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a43c68",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xf17500",
+              "end_rva": "0xf176a6",
+              "size_bytes": 422,
+              "unwind_rva": "0x4ea1258"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xf17500",
+              "end_rva": "0xf176a6"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xf17500",
+            "end_rva": "0xf176a6",
+            "size_bytes": 422,
+            "unwind_rva": "0x4ea1258"
+          },
+          "size_bytes": 422,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xf17500",
+          "end_rva": "0xf176a6",
+          "size_bytes": 422,
+          "unwind_rva": "0x4ea1258"
+        },
+        "task_specific_tail_vfunc_rva": "0xf17500",
+        "type_descriptor_rva": "0x551d800",
+        "vtable_rva": "0x4553590"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateNationalAwakenings",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateBuildingSpendingPriorities_Stage2",
+      "longest_lock_ms": 54.0,
+      "max_total_ms": 546.0,
+      "mean_calls": 368,
+      "mean_total_ms": 546.0,
+      "median_total_ms": 546.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aada30",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x157cbd0",
+              "end_rva": "0x157cd69",
+              "size_bytes": 409,
+              "unwind_rva": "0x4eaa6cc"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x157cbd0",
+              "end_rva": "0x157cd69"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x157cbd0",
+            "end_rva": "0x157cd69",
+            "size_bytes": 409,
+            "unwind_rva": "0x4eaa6cc"
+          },
+          "size_bytes": 409,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x157cbd0",
+          "end_rva": "0x157cd69",
+          "size_bytes": 409,
+          "unwind_rva": "0x4eaa6cc"
+        },
+        "task_specific_tail_vfunc_rva": "0x157cbd0",
+        "type_descriptor_rva": "0x558f320",
+        "vtable_rva": "0x459f3b8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateBuildingSpendingPriorities_Stage2",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateWorldMarket",
+      "longest_lock_ms": 47.0,
+      "max_total_ms": 403.0,
+      "mean_calls": 13,
+      "mean_total_ms": 403.0,
+      "median_total_ms": 403.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a3efe0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xedf260",
+              "end_rva": "0xedf2a2",
+              "size_bytes": 66,
+              "unwind_rva": "0x4e8c5a8"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xedf260",
+              "end_rva": "0xedf2a2"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xedf260",
+            "end_rva": "0xedf2a2",
+            "size_bytes": 66,
+            "unwind_rva": "0x4e8c5a8"
+          },
+          "size_bytes": 66,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xedf260",
+          "end_rva": "0xedf2a2",
+          "size_bytes": 66,
+          "unwind_rva": "0x4e8c5a8"
+        },
+        "task_specific_tail_vfunc_rva": "0xedf260",
+        "type_descriptor_rva": "0x5518878",
+        "vtable_rva": "0x4551108"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateWorldMarket",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateSpendingVariables",
+      "longest_lock_ms": 37.0,
+      "max_total_ms": 311.0,
+      "mean_calls": 368,
+      "mean_total_ms": 311.0,
+      "median_total_ms": 311.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aad9b8",
+        "task_specific_tail_vfunc_rva": "0x1575af0",
+        "type_descriptor_rva": "0x558f6c0",
+        "vtable_rva": "0x459ef08"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateSpendingVariables",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateCivilWars",
+      "longest_lock_ms": 30.0,
+      "max_total_ms": 30.0,
+      "mean_calls": 13,
+      "mean_total_ms": 30.0,
+      "median_total_ms": 30.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a50f38",
+        "task_specific_tail_vfunc_rva": "0xf8fad0",
+        "type_descriptor_rva": "0x552dec8",
+        "vtable_rva": "0x4559428"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateCivilWars",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_ProcessEconomicMigration",
+      "longest_lock_ms": 29.0,
+      "max_total_ms": 956.0,
+      "mean_calls": 368,
+      "mean_total_ms": 956.0,
+      "median_total_ms": 956.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a71450",
+        "tail_function_group": {
+          "fragment_count": 3,
+          "fragments": [
+            {
+              "begin_rva": "0x11b0c00",
+              "end_rva": "0x11b0c0a",
+              "size_bytes": 10,
+              "unwind_rva": "0x4eaa664"
+            },
+            {
+              "begin_rva": "0x11b0c0a",
+              "end_rva": "0x11b0dc5",
+              "size_bytes": 443,
+              "unwind_rva": "0x4f0cd68"
+            },
+            {
+              "begin_rva": "0x11b0dc5",
+              "end_rva": "0x11b0dde",
+              "size_bytes": 25,
+              "unwind_rva": "0x4f0cd98"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x11b0c00",
+              "end_rva": "0x11b0dde"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x11b0c00",
+            "end_rva": "0x11b0c0a",
+            "size_bytes": 10,
+            "unwind_rva": "0x4eaa664"
+          },
+          "size_bytes": 478,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x11b0c00",
+          "end_rva": "0x11b0c0a",
+          "size_bytes": 10,
+          "unwind_rva": "0x4eaa664"
+        },
+        "task_specific_tail_vfunc_rva": "0x11b0c00",
+        "type_descriptor_rva": "0x554f1c0",
+        "vtable_rva": "0x4576b98"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "ProcessEconomicMigration",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_CreateNewPoliticalMovements",
+      "longest_lock_ms": 23.0,
+      "max_total_ms": 152.0,
+      "mean_calls": 92,
+      "mean_total_ms": 152.0,
+      "median_total_ms": 152.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a969e8",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13f54e0",
+              "end_rva": "0x13f56a1",
+              "size_bytes": 449,
+              "unwind_rva": "0x4ea1258"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13f54e0",
+              "end_rva": "0x13f56a1"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13f54e0",
+            "end_rva": "0x13f56a1",
+            "size_bytes": 449,
+            "unwind_rva": "0x4ea1258"
+          },
+          "size_bytes": 449,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13f54e0",
+          "end_rva": "0x13f56a1",
+          "size_bytes": 449,
+          "unwind_rva": "0x4ea1258"
+        },
+        "task_specific_tail_vfunc_rva": "0x13f54e0",
+        "type_descriptor_rva": "0x5573910",
+        "vtable_rva": "0x4592790"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "CreateNewPoliticalMovements",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateAI",
+      "longest_lock_ms": 22.0,
+      "max_total_ms": 247.0,
+      "mean_calls": 368,
+      "mean_total_ms": 247.0,
+      "median_total_ms": 247.0,
+      "native": {
+        "complete_object_locator_rva": "0x4aaddf0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x1575530",
+              "end_rva": "0x15756c7",
+              "size_bytes": 407,
+              "unwind_rva": "0x4ec5670"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x1575530",
+              "end_rva": "0x15756c7"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x1575530",
+            "end_rva": "0x15756c7",
+            "size_bytes": 407,
+            "unwind_rva": "0x4ec5670"
+          },
+          "size_bytes": 407,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x1575530",
+          "end_rva": "0x15756c7",
+          "size_bytes": 407,
+          "unwind_rva": "0x4ec5670"
+        },
+        "task_specific_tail_vfunc_rva": "0x1575530",
+        "type_descriptor_rva": "0x558ee00",
+        "vtable_rva": "0x459f140"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateAI",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateStatePopNeedCache",
+      "longest_lock_ms": 20.0,
+      "max_total_ms": 219.0,
+      "mean_calls": 13,
+      "mean_total_ms": 219.0,
+      "median_total_ms": 219.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a92fe0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13b7e70",
+              "end_rva": "0x13b7ed8",
+              "size_bytes": 104,
+              "unwind_rva": "0x4e9f4a0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13b7e70",
+              "end_rva": "0x13b7ed8"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13b7e70",
+            "end_rva": "0x13b7ed8",
+            "size_bytes": 104,
+            "unwind_rva": "0x4e9f4a0"
+          },
+          "size_bytes": 104,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13b7e70",
+          "end_rva": "0x13b7ed8",
+          "size_bytes": 104,
+          "unwind_rva": "0x4e9f4a0"
+        },
+        "task_specific_tail_vfunc_rva": "0x13b7e70",
+        "type_descriptor_rva": "0x556f8f0",
+        "vtable_rva": "0x4590dd8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateStatePopNeedCache",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_HandleAutonomousInvestment",
+      "longest_lock_ms": 19.0,
+      "max_total_ms": 1593.0,
+      "mean_calls": 368,
+      "mean_total_ms": 1593.0,
+      "median_total_ms": 1593.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a4fa90",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xf6e590",
+              "end_rva": "0xf6e7a3",
+              "size_bytes": 531,
+              "unwind_rva": "0x4ee4f54"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xf6e590",
+              "end_rva": "0xf6e7a3"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xf6e590",
+            "end_rva": "0xf6e7a3",
+            "size_bytes": 531,
+            "unwind_rva": "0x4ee4f54"
+          },
+          "size_bytes": 531,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xf6e590",
+          "end_rva": "0xf6e7a3",
+          "size_bytes": 531,
+          "unwind_rva": "0x4ee4f54"
+        },
+        "task_specific_tail_vfunc_rva": "0xf6e590",
+        "type_descriptor_rva": "0x552c990",
+        "vtable_rva": "0x4558d98"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "HandleAutonomousInvestment",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateInterestGroupSupportForPoliticalMovements",
+      "longest_lock_ms": 19.0,
+      "max_total_ms": 56.0,
+      "mean_calls": 3,
+      "mean_total_ms": 56.0,
+      "median_total_ms": 56.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a96ad8",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13f4e80",
+              "end_rva": "0x13f502f",
+              "size_bytes": 431,
+              "unwind_rva": "0x4eaa6cc"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13f4e80",
+              "end_rva": "0x13f502f"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13f4e80",
+            "end_rva": "0x13f502f",
+            "size_bytes": 431,
+            "unwind_rva": "0x4eaa6cc"
+          },
+          "size_bytes": 431,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13f4e80",
+          "end_rva": "0x13f502f",
+          "size_bytes": 431,
+          "unwind_rva": "0x4eaa6cc"
+        },
+        "task_specific_tail_vfunc_rva": "0x13f4e80",
+        "type_descriptor_rva": "0x5573410",
+        "vtable_rva": "0x45926f8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateInterestGroupSupportForPoliticalMovements",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_SpawnCulturalCommunities",
+      "longest_lock_ms": 16.0,
+      "max_total_ms": 62.0,
+      "mean_calls": 368,
+      "mean_total_ms": 62.0,
+      "median_total_ms": 62.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a431e8",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xf13300",
+              "end_rva": "0xf1338b",
+              "size_bytes": 139,
+              "unwind_rva": "0x4ede0f0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xf13300",
+              "end_rva": "0xf1338b"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xf13300",
+            "end_rva": "0xf1338b",
+            "size_bytes": 139,
+            "unwind_rva": "0x4ede0f0"
+          },
+          "size_bytes": 139,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xf13300",
+          "end_rva": "0xf1338b",
+          "size_bytes": 139,
+          "unwind_rva": "0x4ede0f0"
+        },
+        "task_specific_tail_vfunc_rva": "0xf13300",
+        "type_descriptor_rva": "0x551c920",
+        "vtable_rva": "0x4553000"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "SpawnCulturalCommunities",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateStateTrades",
+      "longest_lock_ms": 16.0,
+      "max_total_ms": 462.0,
+      "mean_calls": 13,
+      "mean_total_ms": 462.0,
+      "median_total_ms": 462.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a93490",
+        "task_specific_tail_vfunc_rva": "0x13b7bd0",
+        "type_descriptor_rva": "0x556ff90",
+        "vtable_rva": "0x4590c80"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateStateTrades",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_AverageStandardOfLivingUpdate",
+      "longest_lock_ms": 14.0,
+      "max_total_ms": 152.0,
+      "mean_calls": 13,
+      "mean_total_ms": 152.0,
+      "median_total_ms": 152.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a4fd88",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xf5e490",
+              "end_rva": "0xf5e4ba",
+              "size_bytes": 42,
+              "unwind_rva": "0x4e8c5a8"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xf5e490",
+              "end_rva": "0xf5e4ba"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xf5e490",
+            "end_rva": "0xf5e4ba",
+            "size_bytes": 42,
+            "unwind_rva": "0x4e8c5a8"
+          },
+          "size_bytes": 42,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xf5e490",
+          "end_rva": "0xf5e4ba",
+          "size_bytes": 42,
+          "unwind_rva": "0x4e8c5a8"
+        },
+        "task_specific_tail_vfunc_rva": "0xf5e490",
+        "type_descriptor_rva": "0x552ccd0",
+        "vtable_rva": "0x4558f58"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "AverageStandardOfLivingUpdate",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_MonthlyPulseJournalEntries",
+      "longest_lock_ms": 14.0,
+      "max_total_ms": 129.0,
+      "mean_calls": 3,
+      "mean_total_ms": 129.0,
+      "median_total_ms": 129.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a5c378",
+        "task_specific_tail_vfunc_rva": "0x10032a0",
+        "type_descriptor_rva": "0x55397d0",
+        "vtable_rva": "0x455ea18"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "MonthlyPulseJournalEntries",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdateEmployment",
+      "longest_lock_ms": 14.0,
+      "max_total_ms": 846.0,
+      "mean_calls": 13,
+      "mean_total_ms": 846.0,
+      "median_total_ms": 846.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a930f8",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13b8310",
+              "end_rva": "0x13b853b",
+              "size_bytes": 555,
+              "unwind_rva": "0x4e90d44"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13b8310",
+              "end_rva": "0x13b853b"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b",
+            "size_bytes": 555,
+            "unwind_rva": "0x4e90d44"
+          },
+          "size_bytes": 555,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13b8310",
+          "end_rva": "0x13b853b",
+          "size_bytes": 555,
+          "unwind_rva": "0x4e90d44"
+        },
+        "task_specific_tail_vfunc_rva": "0x13b8310",
+        "type_descriptor_rva": "0x556fbb8",
+        "vtable_rva": "0x4590800"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdateEmployment",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_RecalculateModifierNodes",
+      "longest_lock_ms": 13.0,
+      "max_total_ms": 845.0,
+      "mean_calls": 368,
+      "mean_total_ms": 845.0,
+      "median_total_ms": 845.0,
+      "native": {
+        "complete_object_locator_rva": "0x49a1f00",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x7da740",
+              "end_rva": "0x7da8de",
+              "size_bytes": 414,
+              "unwind_rva": "0x4e9f9bc"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x7da740",
+              "end_rva": "0x7da8de"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de",
+            "size_bytes": 414,
+            "unwind_rva": "0x4e9f9bc"
+          },
+          "size_bytes": 414,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x7da740",
+          "end_rva": "0x7da8de",
+          "size_bytes": 414,
+          "unwind_rva": "0x4e9f9bc"
+        },
+        "task_specific_tail_vfunc_rva": "0x7da740",
+        "type_descriptor_rva": "0x548be90",
+        "vtable_rva": "0x44d8f58"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "RecalculateModifierNodes",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_UpdatePopGrowth",
+      "longest_lock_ms": 13.0,
+      "max_total_ms": 1200.0,
+      "mean_calls": 92,
+      "mean_total_ms": 1200.0,
+      "median_total_ms": 1200.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a8fa50",
+        "task_specific_tail_vfunc_rva": "0x13a3020",
+        "type_descriptor_rva": "0x556ae30",
+        "vtable_rva": "0x458efd0"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "UpdatePopGrowth",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_ProcessPopPurchases",
+      "longest_lock_ms": 12.0,
+      "max_total_ms": 142.0,
+      "mean_calls": 13,
+      "mean_total_ms": 142.0,
+      "median_total_ms": 142.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a3ef68",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0xee74b0",
+              "end_rva": "0xee75a7",
+              "size_bytes": 247,
+              "unwind_rva": "0x4ed40e0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0xee74b0",
+              "end_rva": "0xee75a7"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0xee74b0",
+            "end_rva": "0xee75a7",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          },
+          "size_bytes": 247,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0xee74b0",
+          "end_rva": "0xee75a7",
+          "size_bytes": 247,
+          "unwind_rva": "0x4ed40e0"
+        },
+        "task_specific_tail_vfunc_rva": "0xee74b0",
+        "type_descriptor_rva": "0x5518af0",
+        "vtable_rva": "0x4550fd8"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "ProcessPopPurchases",
+      "total_ms_cv": null
+    },
+    {
+      "class_name": "CTickTask_RecalcStatePopStatistics",
+      "longest_lock_ms": 12.0,
+      "max_total_ms": 143.0,
+      "mean_calls": 13,
+      "mean_total_ms": 143.0,
+      "median_total_ms": 143.0,
+      "native": {
+        "complete_object_locator_rva": "0x4a933a0",
+        "tail_function_group": {
+          "fragment_count": 1,
+          "fragments": [
+            {
+              "begin_rva": "0x13c1510",
+              "end_rva": "0x13c1607",
+              "size_bytes": 247,
+              "unwind_rva": "0x4ed40e0"
+            }
+          ],
+          "ranges": [
+            {
+              "begin_rva": "0x13c1510",
+              "end_rva": "0x13c1607"
+            }
+          ],
+          "root_runtime_function": {
+            "begin_rva": "0x13c1510",
+            "end_rva": "0x13c1607",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          },
+          "size_bytes": 247,
+          "status": "resolved"
+        },
+        "tail_runtime_function": {
+          "begin_rva": "0x13c1510",
+          "end_rva": "0x13c1607",
+          "size_bytes": 247,
+          "unwind_rva": "0x4ed40e0"
+        },
+        "task_specific_tail_vfunc_rva": "0x13c1510",
+        "type_descriptor_rva": "0x556f5d0",
+        "vtable_rva": "0x4590b90"
+      },
+      "native_mapping_available": true,
+      "noisy": null,
+      "repeatability_assessed": false,
+      "runtime_task": "RecalcStatePopStatistics",
+      "total_ms_cv": null
+    }
+  ],
+  "variant": "baseline-no-active-mods",
+  "wall_clock_seconds": {
+    "cv": null,
+    "max": 34.64,
+    "mean": 34.64,
+    "median": 34.64,
+    "min": 34.64,
+    "noisy": null,
+    "repeatability_assessed": false,
+    "stdev": null
+  },
+  "warning": "This output joins runtime cost/lock evidence to static code anchors. It does not prove root cause or make a patch safe."
+}

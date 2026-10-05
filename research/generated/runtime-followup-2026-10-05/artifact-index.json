@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/benchmark-analysis.json",
+      "sha256": "4ceced01f451f4a36d8e696c34e8a2ee0cfb37e57121b218d102d83a0bb2373b",
+      "size_bytes": 49710
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/benchmark-analysis.md",
+      "sha256": "dc86d8d858594b81a7ec8ce7f91a2482fa672e39f366d80adb7bc003e36fd248",
+      "size_bytes": 10475
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/callback-continuations.json",
+      "sha256": "f8d29337fcd22e1101142f8e4dc2d2ee759ea83a8f2e4ae64174794a355df415",
+      "size_bytes": 15320
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/hotspot-callgraph.json",
+      "sha256": "977eee1ebada8cb8f06db99159d45e616bbbac948c48c465824c308bec8fe06f",
+      "size_bytes": 92795
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/native-targets.json",
+      "sha256": "d6282a2797f82393c09d93672e20f6455fc3709e200ecd7a1a4beac8e9166328",
+      "size_bytes": 52012
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/provenance.json",
+      "sha256": "dbb1b55596b58c99877a9646be1566762e2b40791380fbc86b4ce8236b1ead9a",
+      "size_bytes": 1462
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/selected-rtti.json",
+      "sha256": "a4e07b317029bbe69327fdbd73facf1bff2ddd542a32e326ebe8c92d5de861d8",
+      "size_bytes": 4850
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/signature-validation.json",
+      "sha256": "2282518d67c1948790f01bbd7f49e09ee8b4d772af86c9cb30e9edbf04b17242",
+      "size_bytes": 4692
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/thread-scaling.json",
+      "sha256": "7d243909139f34aff5692a2cc9895be1bd4432ebbcdc5a848fabedae9b238f3a",
+      "size_bytes": 2102
+    },
+    {
+      "path": "research/generated/runtime-followup-2026-10-05/thread-scaling.md",
+      "sha256": "8242f13cd93ecaae37e8c49348ed987fabcf20a697545f5787af64097ecae6b7",
+      "size_bytes": 854
+    }
+  ],
+  "format_version": 1
+}

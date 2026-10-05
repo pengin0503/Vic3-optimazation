@@ -74,5 +74,46 @@ class BenchmarkTests(unittest.TestCase):
             with self.assertRaises(mod.BenchmarkError):
                 mod.load_ticktask_csv(p)
 
+    def test_single_observation_never_reports_known_noise_or_zero_cv(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            make_run(root, 'single', 16, 34.64, 1)
+            result = mod.build_report([mod.load_run(root / 'single/manifest.json')])
+            wall = result['groups'][0]['wall_clock_seconds']
+            self.assertIsNone(wall['noisy'])
+            self.assertIsNone(wall['cv'])
+            self.assertFalse(wall['repeatability_assessed'])
+            self.assertIsNone(result['scaling'][0]['noisy'])
+            self.assertIsNone(result['groups'][0]['tasks_by_cost'][0]['noisy'])
+            rendered = mod.markdown(result, 1)
+            self.assertNotIn('CV: 0.00%', rendered)
+            self.assertIn('unknown', rendered)
+
+    def test_variant_comparison_propagates_unknown_variance(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            make_run(root, 'baseline', 16, 40, 1, 'vanilla')
+            make_run(root, 'patch', 16, 30, 1, 'patch')
+            result = mod.build_report([mod.load_run(p) for p in mod.discover(root)])
+            self.assertIsNone(result['comparisons'][0]['noisy'])
+            self.assertFalse(result['comparisons'][0]['repeatability_assessed'])
+
+    def test_repeated_zero_cost_is_unknown_cv_not_known_stability(self):
+        runs = [{'wall': 10, 'tasks': {'A': {'total_ms': 0, 'calls': 1, 'max_record_ms': 0, 'longest_lock_ms': 0}}} for _ in range(3)]
+        result = mod.group(runs, .03)
+        task = result['tasks_by_cost'][0]
+        self.assertIsNone(task['noisy'])
+        self.assertFalse(task['repeatability_assessed'])
+
+    def test_three_consistent_runs_make_repeatability_assessable(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            for repeat in range(1, 4):
+                make_run(root, f'r{repeat}', 16, 34.64, repeat)
+            wall = mod.build_report([mod.load_run(p) for p in mod.discover(root)])['groups'][0]['wall_clock_seconds']
+            self.assertIs(wall['noisy'], False)
+            self.assertEqual(wall['cv'], 0)
+            self.assertTrue(wall['repeatability_assessed'])
+
 if __name__ == "__main__":
     unittest.main()

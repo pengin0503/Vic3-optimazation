@@ -85,6 +85,31 @@ class TriageTests(unittest.TestCase):
         )
         self.assertEqual(result["mapped_cost_count"], 1)
 
+    def test_preserves_first_fragment_and_grouped_ranges_separately(self):
+        first = {'begin_rva':'0x1000', 'end_rva':'0x100a', 'size_bytes':10}
+        grouped = {'status':'resolved', 'fragment_count':3, 'size_bytes':478,
+                   'ranges':[{'begin_rva':'0x1000','end_rva':'0x11de'}]}
+        rtti = {'classes':[{'name':'CTickTask_UpdateEmployment', 'tail_runtime_function':first,
+                           'tail_function_group':grouped}]}
+        report = self.report()
+        report['groups'][0]['tasks_by_cost'][0]['noisy'] = None
+        report['groups'][0]['tasks_by_cost'][0]['repeatability_assessed'] = False
+        row = mod.triage(report, rtti, variant='vanilla', threads=8, top=1)['top_by_cost'][0]
+        self.assertEqual(row['native']['tail_runtime_function']['size_bytes'],10)
+        self.assertEqual(row['native']['tail_function_group']['size_bytes'],478)
+        self.assertIsNone(row['noisy'])
+        self.assertIs(row['repeatability_assessed'],False)
+
+    def test_legacy_unknown_cv_overrides_false_noise(self):
+        report = self.report()
+        for item in report['groups'][0]['tasks_by_cost']:
+            item['total_ms_cv'] = None
+            item['noisy'] = False
+            item['repeatability_assessed'] = True
+        row = mod.triage(report, {'classes':[]}, variant='vanilla', threads=8, top=1)['top_by_cost'][0]
+        self.assertIsNone(row['noisy'])
+        self.assertIs(row['repeatability_assessed'],False)
+
 
 if __name__ == "__main__":
     unittest.main()

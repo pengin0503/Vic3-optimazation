@@ -1,0 +1,38 @@
+{
+  "archive_crc_ok": true,
+  "archive_entry_count": 8104,
+  "archive_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+  "build_info": {
+    "caligula_branch.txt": "release/1.14.5",
+    "caligula_rev.txt": "9f8281a37e85639359b3b0c2c5df0196e975ca4b",
+    "clausewitz_branch.txt": "caligula/release/1.14.x",
+    "clausewitz_rev.txt": "fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef"
+  },
+  "diagnostic_threads": 16,
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "observations_per_condition": 1,
+  "os_trace_available": false,
+  "performance_patch_applied": false,
+  "repository_base_commit": "aba95bf96678a3b2d9514ff8e4f2498e35ce53fd",
+  "sources": [
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t08-r01/ticktask_timings.csv",
+      "sha256": "0a2f723b07ddad74573d36b94992c30f3918ee3224a85119038836df8575a67b",
+      "threads": 8,
+      "wall_seconds": 37.51
+    },
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t12-r01/ticktask_timings.csv",
+      "sha256": "0eaf4fbabdfacf773d3cbc7d3a0e968817af49553ef794711223459370933d59",
+      "threads": 12,
+      "wall_seconds": 36.67
+    },
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t16-r01/ticktask_timings.csv",
+      "sha256": "4d545eef88495cbb392d4dac2d6a4679e639c12f6476e58dd33264d07f83f8cf",
+      "threads": 16,
+      "wall_seconds": 34.64
+    }
+  ]
+}
