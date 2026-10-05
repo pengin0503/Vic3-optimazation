@@ -1,5 +1,6 @@
 #pragma once
 #include "../common/Validation.h"
+#include "../profiler/ProfilerRuntime.h"
 #include <filesystem>
 #include <string>
 #include <vector>
@@ -44,6 +45,10 @@ inline ArgsResult ParseLoaderArgs(const std::vector<std::wstring>& args) {
     if(!result.pid || (result.stop && seen.size()!=2))return {};
     return {result,true};
 }
+inline int StopResult(RuntimeStatus status) noexcept {return status==RuntimeStatus::Stopped?0:1;}
+#ifdef _WIN32
+RuntimeStatus StopProfilerSession(DWORD pid,DWORD timeout_ms=35000);
+#endif
 enum class InjectionError {None,InvalidPath,UnsupportedProcess,UnsupportedBuild,ModuleResolution,RemoteAllocation,RemoteWrite,RemoteThread,Timeout,LoadFailed};
 #ifdef _WIN32
 std::filesystem::path ProcessImagePath(HANDLE process);

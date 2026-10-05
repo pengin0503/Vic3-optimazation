@@ -27,7 +27,9 @@ int main(int argc,char** argv) {
 #ifdef _WIN32
     // Regression: allocating named-object setup must not escape the noexcept entry boundary.
     fail_next_allocation=true;RunProfilerRuntime(GetModuleHandleW(nullptr));CHECK(!fail_next_allocation);
-    SharedConfig received;CHECK(ReadSharedConfig(GetCurrentProcessId(),received)==ConfigError::MissingMapping);
+    SharedConfig received;
+    fail_next_allocation=true;bool allocation_reported=false;try{ReadSharedConfig(GetCurrentProcessId(),received);}catch(const std::bad_alloc&){allocation_reported=true;}CHECK(allocation_reported && !fail_next_allocation);
+    CHECK(ReadSharedConfig(GetCurrentProcessId(),received)==ConfigError::MissingMapping);
     const auto name=ObjectName(L"Config",GetCurrentProcessId());
     WinHandle mapping(CreateFileMappingW(INVALID_HANDLE_VALUE,nullptr,PAGE_READWRITE,0,sizeof(SharedMapping),name.c_str()));CHECK(mapping);
     auto* view=static_cast<SharedMapping*>(MapViewOfFile(mapping.get(),FILE_MAP_ALL_ACCESS,0,0,sizeof(SharedMapping)));CHECK(view);

@@ -1,11 +1,21 @@
 #include "Injector.h"
 #include "../common/WinHandle.h"
+#include "../common/SharedConfig.h"
 #include "../common/Sha256.h"
 #include "../common/PeImage.h"
 #include <tlhelp32.h>
 #include <array>
 #include <cstring>
 namespace vic3 {
+RuntimeStatus StopProfilerSession(DWORD pid,DWORD timeout_ms) {
+    WinHandle stop(OpenEventW(EVENT_MODIFY_STATE,FALSE,ObjectName(L"Stop",pid).c_str()));
+    WinHandle stopped(OpenEventW(SYNCHRONIZE,FALSE,ObjectName(L"Stopped",pid).c_str()));
+    // Acquire the status mapping before signaling, retaining it even after the control thread exits.
+    WinHandle mapping(OpenFileMappingW(FILE_MAP_READ,FALSE,ObjectName(L"Config",pid).c_str()));
+    MappedView view(mapping?MapViewOfFile(mapping.get(),FILE_MAP_READ,0,0,sizeof(SharedMapping)):nullptr);
+    if(!stop || !stopped || !view.get() || !SetEvent(stop.get()) || WaitForSingleObject(stopped.get(),timeout_ms)!=WAIT_OBJECT_0)return RuntimeStatus::StopFailed;
+    return static_cast<RuntimeStatus>(static_cast<SharedMapping*>(view.get())->status);
+}
 std::filesystem::path ProcessImagePath(HANDLE process) {
     std::wstring path(32768,L'\0');DWORD size=static_cast<DWORD>(path.size());
     if(!QueryFullProcessImageNameW(process,0,path.data(),&size))throw ValidationFailure(ValidationError::FileIo);

@@ -19,11 +19,9 @@ int wmain(int argc,wchar_t** argv) {
         const auto gate=ValidateVictoriaProcess(process.get(),image);
         if(gate!=InjectionError::None){std::wcerr<<L"Unsupported process/build; no remote write or injection. Gate code: "<<static_cast<int>(gate)<<L"\n";return 4;}
         if(args.stop) {
-            WinHandle stop(OpenEventW(EVENT_MODIFY_STATE,FALSE,ObjectName(L"Stop",args.pid).c_str()));
-            WinHandle stopped(OpenEventW(SYNCHRONIZE,FALSE,ObjectName(L"Stopped",args.pid).c_str()));
-            if(!stop || !stopped){std::wcerr<<L"No active profiler session.\n";return 5;}
-            if(!SetEvent(stop.get()) || WaitForSingleObject(stopped.get(),35000)!=WAIT_OBJECT_0){std::wcerr<<L"Stop/finalization not confirmed. Do not reattach this process.\n";return 5;}
-            std::wcout<<L"Profiler stop event acknowledged. DLL remains loaded and inert.\n";return 0;
+            const auto terminal=StopProfilerSession(args.pid);
+            if(StopResult(terminal)!=0){std::wcerr<<L"Stop/capture finalization failed; status "<<static_cast<int>(terminal)<<L". Do not reattach this process.\n";return 5;}
+            std::wcout<<L"Profiler stopped and capture finalized. DLL remains loaded and inert.\n";return 0;
         }
         std::wstring own(32768,L'\0');DWORD own_length=GetModuleFileNameW(nullptr,own.data(),static_cast<DWORD>(own.size()));if(!own_length || own_length>=own.size())return 3;own.resize(own_length);
         if(args.dll.empty())args.dll=std::filesystem::path(own).parent_path()/L"Vic3OptimizationProfiler.dll";

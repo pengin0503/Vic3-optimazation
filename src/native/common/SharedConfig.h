@@ -27,6 +27,6 @@ inline ConfigError ValidateConfig(const SharedConfig& c) noexcept {
 #ifdef _WIN32
 struct SharedMapping {SharedConfig config;volatile LONG status{};uint32_t enabled_mask{},validation_errors[3]{};};
 inline std::wstring ObjectName(const wchar_t* kind,DWORD pid){return std::wstring(L"Local\\Vic3OptimizationProfiler")+kind+L"-"+std::to_wstring(pid);}
-ConfigError ReadSharedConfig(DWORD pid,SharedConfig& config) noexcept;
+ConfigError ReadSharedConfig(DWORD pid,SharedConfig& config);
 #endif
 }

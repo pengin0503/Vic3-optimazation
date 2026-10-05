@@ -8,7 +8,7 @@
 #include <memory>
 #include <cstring>
 namespace vic3 {
-ConfigError ReadSharedConfig(DWORD pid,SharedConfig& config) noexcept {
+ConfigError ReadSharedConfig(DWORD pid,SharedConfig& config) {
     WinHandle mapping(OpenFileMappingW(FILE_MAP_READ,FALSE,ObjectName(L"Config",pid).c_str()));
     if(!mapping)return ConfigError::MissingMapping;
     MappedView view(MapViewOfFile(mapping.get(),FILE_MAP_READ,0,0,sizeof(SharedMapping)));if(!view.get())return ConfigError::Size;
@@ -21,6 +21,7 @@ static EventBufferPool* retained_pool{};
 static MinHookBackend* retained_backend{};
 static HANDLE stop_event{},stopped_event{}; // Remain available for the inert, pinned DLL's lifetime.
 void RunProfilerRuntime(void* module) noexcept {
+    try {
     HMODULE pinned{};
     if(!GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS|GET_MODULE_HANDLE_EX_FLAG_PIN,reinterpret_cast<const wchar_t*>(module),&pinned))return;
     const DWORD pid=GetCurrentProcessId();
@@ -92,6 +93,10 @@ void RunProfilerRuntime(void* module) noexcept {
         if(retained_hooks)retained_hooks->StopRecording();
         // A no-throw writer failure cannot free game trampolines; retained storage is process-lifetime.
         publish(RuntimeStatus::TraceFailed);
+    }
+    } catch(...) {
+        // Even allocation of the first object name must not terminate the game.
+        // Initialization did not reach ready; the loader reports a timeout and never retries.
     }
 }
 }
