@@ -184,6 +184,15 @@ def check(
 
     for run in runs:
         manifest = run["manifest"]
+        if not run["warmup"] and run["wall"] is None:
+            errors.append(
+                _issue(
+                    "missing_wall_clock",
+                    "measured run is missing wall_clock_seconds",
+                    path=run["path"],
+                    run_id=run["run_id"],
+                )
+            )
         if run["warmup"] and run["repeat"] is not None:
             errors.append(
                 _issue(
