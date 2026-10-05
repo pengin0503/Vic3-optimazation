@@ -174,12 +174,15 @@ The instrumentation milestone is intended for local performance research. Do not
 
 ## Implementation gate
 
-Do not implement the injected DLL yet.
+### Gate status — satisfied for Task 9 read-only instrumentation on 2026-10-05
 
-Start Task 9 only after:
+The start gate is now satisfied for the observation-only prototype:
 
-- real Phase 1 benchmark data exists
-- at least one OS-level trace is correlated
-- one to three native target functions are mapped with sufficient confidence
+- repeated Phase 1 measurements exist and establish a 12-thread diagnostic baseline with 16 as comparison
+- PR #11 preserved an OS sampled trace with zero lost events/buffers and correlated exact-build native execution witnesses
+- the initial three TickTask tail anchors are mapped through RTTI/vtables and pinned in research/native-profiler-runtime-targets-1.14.5.json
+- the common dispatcher call at 0x7dc23e establishes the two-pointer/void ABI used by those three tail anchors; see research/native-profiler-hook-abi-1.14.5.md
 
-Until then, this document is the selected architecture, not authorization to patch speculative targets.
+Task 9 may therefore implement the loader and read-only profiler described above, following docs/superpowers/plans/2026-10-05-read-only-native-profiler-runtime.md.
+
+This does **not** open the optimization gate. Task 9 is not complete until unsupported-build fail-closed behavior, trace correlation, and profiler overhead are validated on the Windows game machine. Wait/critical-path causality and optimization benefit also remain unresolved. Do not begin Task 11 or Task 12 from the current evidence.
