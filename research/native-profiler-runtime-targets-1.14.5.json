@@ -1,0 +1,75 @@
+{
+  "format_version": 1,
+  "game_version": "1.14.5",
+  "evidence_base_commit": "37d60f3fe89850d7241baa764494b9474c7ae8de",
+  "archive": {
+    "path": "input-data/Vic3_data.zip",
+    "size_bytes": 124462636,
+    "sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34"
+  },
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "signature_policy": {
+    "algorithm": "tools/generate_signatures.py choose_signature exact unique .text window",
+    "minimum_length_bytes": 12,
+    "expected_match_count": 1,
+    "role": "secondary validator after exact executable SHA-256 gate"
+  },
+  "dispatcher_abi": {
+    "dispatcher_rva": "0x7dc160",
+    "call_instruction_rva": "0x7dc23e",
+    "vtable_slot_index": 6,
+    "vtable_byte_offset": "0x30",
+    "prototype": "void(void* task_object, void* execution_context)",
+    "return_value_used_by_caller": false,
+    "evidence": "0x7dc233 loads task vtable, 0x7dc236 forms RDX context, 0x7dc23b moves task object to RCX, 0x7dc23e calls [RAX+0x30]; following instructions do not consume RAX as a return value."
+  },
+  "targets": [
+    {
+      "target_id": 1,
+      "runtime_task": "HandleAutonomousInvestment",
+      "class_name": "CTickTask_HandleAutonomousInvestment",
+      "kind": "ticktask_tail_anchor",
+      "function_rva": "0xf6e590",
+      "ranges": [{"begin_rva": "0xf6e590", "end_rva": "0xf6e7a3"}],
+      "vtable_rva": "0x4558d98",
+      "vtable_slot_index": 6,
+      "signature_rva": "0xf6e5ad",
+      "offset_from_function_start": 29,
+      "pattern_hex": "00 00 48 8b 42 08 48 8b f2 4c 8b f9",
+      "match_count_in_text": 1
+    },
+    {
+      "target_id": 2,
+      "runtime_task": "ProcessEconomicMigration",
+      "class_name": "CTickTask_ProcessEconomicMigration",
+      "kind": "ticktask_tail_anchor",
+      "function_rva": "0x11b0c00",
+      "ranges": [{"begin_rva": "0x11b0c00", "end_rva": "0x11b0dde"}],
+      "vtable_rva": "0x4576b98",
+      "vtable_slot_index": 6,
+      "signature_rva": "0x11b0c03",
+      "offset_from_function_start": 3,
+      "pattern_hex": "48 81 ec b8 00 00 00 48 89 58 08 48",
+      "match_count_in_text": 1
+    },
+    {
+      "target_id": 3,
+      "runtime_task": "UpdateEmployment",
+      "class_name": "CTickTask_UpdateEmployment",
+      "kind": "ticktask_tail_anchor",
+      "function_rva": "0x13b8310",
+      "ranges": [{"begin_rva": "0x13b8310", "end_rva": "0x13b853b"}],
+      "vtable_rva": "0x4590800",
+      "vtable_slot_index": 6,
+      "signature_rva": "0x13b8324",
+      "offset_from_function_start": 20,
+      "pattern_hex": "41 56 41 57 48 83 ec 60 48 8b 42 08",
+      "match_count_in_text": 1
+    }
+  ],
+  "limitations": [
+    "These exact byte windows are not cross-version signatures.",
+    "Tail-anchor duration is not the same as full TickTask inclusive cost when work is dispatched to child callbacks/jobs.",
+    "No optimization or simulation-state mutation is authorized by this target database."
+  ]
+}
