@@ -1,5 +1,8 @@
 # Offline research checkpoint — 2026-10-05
 
+> Historical checkpoint: real runtime benchmarks and measured hotspot mappings were added after this report. For current status and resume instructions, read [2026-10-05 runtime benchmark handoff](2026-10-05-runtime-benchmark-handoff-ja.md). The original research and verification history below is preserved.
+
+
 Repository: `pengin0503/Vic3-optimazation`  
 Branch: `main`  
 Checkpoint base/head before this report: `696ae7029c04885c739228139a40c19221ca6b05`  

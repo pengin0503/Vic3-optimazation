@@ -1,0 +1,63 @@
+{
+  "format_version": 1,
+  "date": "2026-10-05",
+  "repository_base_commit": "a87b4f2da7b23a8aa2b48f76be2912c8a5e7db61",
+  "latest_period": [
+    "1911-03-01",
+    "1911-06-01"
+  ],
+  "latest_wall_seconds": {
+    "8": 37.51,
+    "12": 36.67,
+    "16": 34.64
+  },
+  "diagnostic_baseline_threads": 16,
+  "observations_per_condition": 1,
+  "optimal_threads_confirmed": false,
+  "prior_1month_wall_seconds": {
+    "2": 16.28,
+    "4": 12.75,
+    "6": 11.28,
+    "8": 10.67,
+    "12": 10.22,
+    "16": 10.32
+  },
+  "prior_1month_csv_linkage": "not confirmed; do not merge with bench2 runs or 3-month repeats",
+  "latest_csv_rows_per_run": 23445,
+  "latest_frames_per_run": 368,
+  "frame_task_calls_identical": true,
+  "game_version": "1.14.5",
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "save_sha256": "08d22b19929a5ec480e3e45f4e1eb8ff581b91e1de1b4bdb16512e3d0ea5e949",
+  "save_metadata_version": "1.14.5",
+  "pop_consolidation": "aggressive_consolidation",
+  "user_context": {
+    "active_mods": false,
+    "historical_mods": [
+      "GORA UI+"
+    ],
+    "settings": "unchanged defaults per user"
+  },
+  "native_mapping": {
+    "top_cost": 20,
+    "top_longest_lock": 20,
+    "direct_call_regions": [
+      "HandleAutonomousInvestment",
+      "ProcessEconomicMigration",
+      "UpdateEmployment"
+    ]
+  },
+  "still_missing": [
+    "OS CPU/wait trace",
+    "repeat measurements to estimate variance"
+  ],
+  "not_performed": [
+    "native performance patch",
+    "runtime injection",
+    "game simulation changes"
+  ],
+  "raw_latest_csv_in_repository": true,
+  "raw_game_binary_or_save_in_repository": false,
+  "raw_logs_in_repository": false,
+  "reports_preserve_log_findings": true
+}

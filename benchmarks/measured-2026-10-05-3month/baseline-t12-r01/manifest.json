@@ -1,0 +1,17 @@
+{
+  "run_id": "baseline-t12-r01",
+  "variant": "baseline-no-active-mods",
+  "task_thread_count": 12,
+  "wall_clock_seconds": 36.67,
+  "ticktask_csv": "ticktask_timings.csv",
+  "repeat": 1,
+  "warmup": false,
+  "start_date": "1911-03-01",
+  "end_date": "1911-06-01",
+  "notes": "User-supplied 3-month CSV and wall-clock value; one observation; OS trace not yet provided. Settings/save refer to the prior supplied save; current ZIP has no new save or HWiNFO. Default settings unchanged per user. No active mods; historical GORA UI+ only. warmup=false labels this as a measured observation, not a documented warm-up.",
+  "csv_sha256": "0eaf4fbabdfacf773d3cbc7d3a0e968817af49553ef794711223459370933d59",
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "measurement_date": "2026-10-05",
+  "game_version": "1.14.5",
+  "pop_consolidation": "aggressive_consolidation"
+}

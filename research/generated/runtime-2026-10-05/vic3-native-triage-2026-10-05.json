@@ -1,0 +1,1461 @@
+{
+  "format_version": 1,
+  "date": "2026-10-05",
+  "repository": "pengin0503/Vic3-optimazation",
+  "repository_base_commit": "a87b4f2da7b23a8aa2b48f76be2912c8a5e7db61",
+  "game_version": "1.14.5",
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "benchmark_period": [
+    "1911-03-01",
+    "1911-06-01"
+  ],
+  "wall_clock_seconds": {
+    "8": 37.51,
+    "12": 36.67,
+    "16": 34.64
+  },
+  "observations_per_condition": 1,
+  "diagnostic_baseline_threads": 16,
+  "optimal_thread_count_confirmed": false,
+  "mapped_top_cost_count": 20,
+  "mapped_top_longest_lock_count": 20,
+  "mapped_targets": {
+    "top_by_cost": [
+      {
+        "runtime_task": "HandleAutonomousInvestment",
+        "class_name": "CTickTask_HandleAutonomousInvestment",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x552c990",
+          "complete_object_locator_rva": "0x4a4fa90",
+          "vtable_rva": "0x4558d98",
+          "task_specific_tail_vfunc_rva": "0xf6e590",
+          "first_unwind_fragment": {
+            "begin_rva": "0xf6e590",
+            "end_rva": "0xf6e7a3",
+            "size_bytes": 531,
+            "unwind_rva": "0x4ee4f54"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdatePopGrowth",
+        "class_name": "CTickTask_UpdatePopGrowth",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556ae30",
+          "complete_object_locator_rva": "0x4a8fa50",
+          "vtable_rva": "0x458efd0",
+          "task_specific_tail_vfunc_rva": "0x13a3020"
+        }
+      },
+      {
+        "runtime_task": "ProcessEconomicMigration",
+        "class_name": "CTickTask_ProcessEconomicMigration",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x554f1c0",
+          "complete_object_locator_rva": "0x4a71450",
+          "vtable_rva": "0x4576b98",
+          "task_specific_tail_vfunc_rva": "0x11b0c00",
+          "first_unwind_fragment": {
+            "begin_rva": "0x11b0c00",
+            "end_rva": "0x11b0c0a",
+            "size_bytes": 10,
+            "unwind_rva": "0x4eaa664"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateEmployment",
+        "class_name": "CTickTask_UpdateEmployment",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556fbb8",
+          "complete_object_locator_rva": "0x4a930f8",
+          "vtable_rva": "0x4590800",
+          "task_specific_tail_vfunc_rva": "0x13b8310",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b",
+            "size_bytes": 555,
+            "unwind_rva": "0x4e90d44"
+          }
+        }
+      },
+      {
+        "runtime_task": "RecalculateModifierNodes",
+        "class_name": "CTickTask_RecalculateModifierNodes",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x548be90",
+          "complete_object_locator_rva": "0x49a1f00",
+          "vtable_rva": "0x44d8f58",
+          "task_specific_tail_vfunc_rva": "0x7da740",
+          "first_unwind_fragment": {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de",
+            "size_bytes": 414,
+            "unwind_rva": "0x4e9f9bc"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateBuildingSpendingPriorities_Stage2",
+        "class_name": "CTickTask_UpdateBuildingSpendingPriorities_Stage2",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558f320",
+          "complete_object_locator_rva": "0x4aada30",
+          "vtable_rva": "0x459f3b8",
+          "task_specific_tail_vfunc_rva": "0x157cbd0",
+          "first_unwind_fragment": {
+            "begin_rva": "0x157cbd0",
+            "end_rva": "0x157cd69",
+            "size_bytes": 409,
+            "unwind_rva": "0x4eaa6cc"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateStateTrades",
+        "class_name": "CTickTask_UpdateStateTrades",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556ff90",
+          "complete_object_locator_rva": "0x4a93490",
+          "vtable_rva": "0x4590c80",
+          "task_specific_tail_vfunc_rva": "0x13b7bd0"
+        }
+      },
+      {
+        "runtime_task": "UpdateWorldMarket",
+        "class_name": "CTickTask_UpdateWorldMarket",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5518878",
+          "complete_object_locator_rva": "0x4a3efe0",
+          "vtable_rva": "0x4551108",
+          "task_specific_tail_vfunc_rva": "0xedf260",
+          "first_unwind_fragment": {
+            "begin_rva": "0xedf260",
+            "end_rva": "0xedf2a2",
+            "size_bytes": 66,
+            "unwind_rva": "0x4e8c5a8"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateAICountryGoalsAdjustments",
+        "class_name": "CTickTask_UpdateAICountryGoalsAdjustments",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558df40",
+          "complete_object_locator_rva": "0x4aad760",
+          "vtable_rva": "0x459ee78",
+          "task_specific_tail_vfunc_rva": "0x1576300",
+          "first_unwind_fragment": {
+            "begin_rva": "0x1576300",
+            "end_rva": "0x15763af",
+            "size_bytes": 175,
+            "unwind_rva": "0x4f48e0c"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateSpendingVariables",
+        "class_name": "CTickTask_UpdateSpendingVariables",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558f6c0",
+          "complete_object_locator_rva": "0x4aad9b8",
+          "vtable_rva": "0x459ef08",
+          "task_specific_tail_vfunc_rva": "0x1575af0"
+        }
+      },
+      {
+        "runtime_task": "PrepareNavyAIData",
+        "class_name": "CTickTask_PrepareNavyAIData",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558eed8",
+          "complete_object_locator_rva": "0x4aadfa8",
+          "vtable_rva": "0x459f198",
+          "task_specific_tail_vfunc_rva": "0x157d990",
+          "first_unwind_fragment": {
+            "begin_rva": "0x157d990",
+            "end_rva": "0x157db31",
+            "size_bytes": 417,
+            "unwind_rva": "0x4eaa6cc"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateJobSatisfaction",
+        "class_name": "CTickTask_UpdateJobSatisfaction",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556a4a0",
+          "complete_object_locator_rva": "0x4a8f910",
+          "vtable_rva": "0x458eb08",
+          "task_specific_tail_vfunc_rva": "0x13a6bc0",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13a6bc0",
+            "end_rva": "0x13a6c08",
+            "size_bytes": 72,
+            "unwind_rva": "0x4e9f4a0"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateAI",
+        "class_name": "CTickTask_UpdateAI",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558ee00",
+          "complete_object_locator_rva": "0x4aaddf0",
+          "vtable_rva": "0x459f140",
+          "task_specific_tail_vfunc_rva": "0x1575530",
+          "first_unwind_fragment": {
+            "begin_rva": "0x1575530",
+            "end_rva": "0x15756c7",
+            "size_bytes": 407,
+            "unwind_rva": "0x4ec5670"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateStatePopNeedCache",
+        "class_name": "CTickTask_UpdateStatePopNeedCache",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556f8f0",
+          "complete_object_locator_rva": "0x4a92fe0",
+          "vtable_rva": "0x4590dd8",
+          "task_specific_tail_vfunc_rva": "0x13b7e70",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13b7e70",
+            "end_rva": "0x13b7ed8",
+            "size_bytes": 104,
+            "unwind_rva": "0x4e9f4a0"
+          }
+        }
+      },
+      {
+        "runtime_task": "WeeklyBuildingBudgetUpdate",
+        "class_name": "CTickTask_WeeklyBuildingBudgetUpdate",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5525740",
+          "complete_object_locator_rva": "0x4a4a808",
+          "vtable_rva": "0x4556a78",
+          "task_specific_tail_vfunc_rva": "0xf48e20",
+          "first_unwind_fragment": {
+            "begin_rva": "0xf48e20",
+            "end_rva": "0xf48f96",
+            "size_bytes": 374,
+            "unwind_rva": "0x4ea1258"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdatePopsInterestGroupsAndMovements",
+        "class_name": "CTickTask_UpdatePopsInterestGroupsAndMovements",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556ac20",
+          "complete_object_locator_rva": "0x4a8f988",
+          "vtable_rva": "0x458eed8",
+          "task_specific_tail_vfunc_rva": "0x13a3000"
+        }
+      },
+      {
+        "runtime_task": "AverageStandardOfLivingUpdate",
+        "class_name": "CTickTask_AverageStandardOfLivingUpdate",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x552ccd0",
+          "complete_object_locator_rva": "0x4a4fd88",
+          "vtable_rva": "0x4558f58",
+          "task_specific_tail_vfunc_rva": "0xf5e490",
+          "first_unwind_fragment": {
+            "begin_rva": "0xf5e490",
+            "end_rva": "0xf5e4ba",
+            "size_bytes": 42,
+            "unwind_rva": "0x4e8c5a8"
+          }
+        }
+      },
+      {
+        "runtime_task": "CreateNewPoliticalMovements",
+        "class_name": "CTickTask_CreateNewPoliticalMovements",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5573910",
+          "complete_object_locator_rva": "0x4a969e8",
+          "vtable_rva": "0x4592790",
+          "task_specific_tail_vfunc_rva": "0x13f54e0",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13f54e0",
+            "end_rva": "0x13f56a1",
+            "size_bytes": 449,
+            "unwind_rva": "0x4ea1258"
+          }
+        }
+      },
+      {
+        "runtime_task": "RecalcStatePopStatistics",
+        "class_name": "CTickTask_RecalcStatePopStatistics",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556f5d0",
+          "complete_object_locator_rva": "0x4a933a0",
+          "vtable_rva": "0x4590b90",
+          "task_specific_tail_vfunc_rva": "0x13c1510",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13c1510",
+            "end_rva": "0x13c1607",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          }
+        }
+      },
+      {
+        "runtime_task": "ProcessPopPurchases",
+        "class_name": "CTickTask_ProcessPopPurchases",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5518af0",
+          "complete_object_locator_rva": "0x4a3ef68",
+          "vtable_rva": "0x4550fd8",
+          "task_specific_tail_vfunc_rva": "0xee74b0",
+          "first_unwind_fragment": {
+            "begin_rva": "0xee74b0",
+            "end_rva": "0xee75a7",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          }
+        }
+      }
+    ],
+    "top_by_lock": [
+      {
+        "runtime_task": "UpdateNationalAwakenings",
+        "class_name": "CTickTask_UpdateNationalAwakenings",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x551d800",
+          "complete_object_locator_rva": "0x4a43c68",
+          "vtable_rva": "0x4553590",
+          "task_specific_tail_vfunc_rva": "0xf17500",
+          "first_unwind_fragment": {
+            "begin_rva": "0xf17500",
+            "end_rva": "0xf176a6",
+            "size_bytes": 422,
+            "unwind_rva": "0x4ea1258"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateBuildingSpendingPriorities_Stage2",
+        "class_name": "CTickTask_UpdateBuildingSpendingPriorities_Stage2",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558f320",
+          "complete_object_locator_rva": "0x4aada30",
+          "vtable_rva": "0x459f3b8",
+          "task_specific_tail_vfunc_rva": "0x157cbd0",
+          "first_unwind_fragment": {
+            "begin_rva": "0x157cbd0",
+            "end_rva": "0x157cd69",
+            "size_bytes": 409,
+            "unwind_rva": "0x4eaa6cc"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateWorldMarket",
+        "class_name": "CTickTask_UpdateWorldMarket",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5518878",
+          "complete_object_locator_rva": "0x4a3efe0",
+          "vtable_rva": "0x4551108",
+          "task_specific_tail_vfunc_rva": "0xedf260",
+          "first_unwind_fragment": {
+            "begin_rva": "0xedf260",
+            "end_rva": "0xedf2a2",
+            "size_bytes": 66,
+            "unwind_rva": "0x4e8c5a8"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateSpendingVariables",
+        "class_name": "CTickTask_UpdateSpendingVariables",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558f6c0",
+          "complete_object_locator_rva": "0x4aad9b8",
+          "vtable_rva": "0x459ef08",
+          "task_specific_tail_vfunc_rva": "0x1575af0"
+        }
+      },
+      {
+        "runtime_task": "UpdateCivilWars",
+        "class_name": "CTickTask_UpdateCivilWars",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x552dec8",
+          "complete_object_locator_rva": "0x4a50f38",
+          "vtable_rva": "0x4559428",
+          "task_specific_tail_vfunc_rva": "0xf8fad0"
+        }
+      },
+      {
+        "runtime_task": "ProcessEconomicMigration",
+        "class_name": "CTickTask_ProcessEconomicMigration",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x554f1c0",
+          "complete_object_locator_rva": "0x4a71450",
+          "vtable_rva": "0x4576b98",
+          "task_specific_tail_vfunc_rva": "0x11b0c00",
+          "first_unwind_fragment": {
+            "begin_rva": "0x11b0c00",
+            "end_rva": "0x11b0c0a",
+            "size_bytes": 10,
+            "unwind_rva": "0x4eaa664"
+          }
+        }
+      },
+      {
+        "runtime_task": "CreateNewPoliticalMovements",
+        "class_name": "CTickTask_CreateNewPoliticalMovements",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5573910",
+          "complete_object_locator_rva": "0x4a969e8",
+          "vtable_rva": "0x4592790",
+          "task_specific_tail_vfunc_rva": "0x13f54e0",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13f54e0",
+            "end_rva": "0x13f56a1",
+            "size_bytes": 449,
+            "unwind_rva": "0x4ea1258"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateAI",
+        "class_name": "CTickTask_UpdateAI",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x558ee00",
+          "complete_object_locator_rva": "0x4aaddf0",
+          "vtable_rva": "0x459f140",
+          "task_specific_tail_vfunc_rva": "0x1575530",
+          "first_unwind_fragment": {
+            "begin_rva": "0x1575530",
+            "end_rva": "0x15756c7",
+            "size_bytes": 407,
+            "unwind_rva": "0x4ec5670"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateStatePopNeedCache",
+        "class_name": "CTickTask_UpdateStatePopNeedCache",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556f8f0",
+          "complete_object_locator_rva": "0x4a92fe0",
+          "vtable_rva": "0x4590dd8",
+          "task_specific_tail_vfunc_rva": "0x13b7e70",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13b7e70",
+            "end_rva": "0x13b7ed8",
+            "size_bytes": 104,
+            "unwind_rva": "0x4e9f4a0"
+          }
+        }
+      },
+      {
+        "runtime_task": "HandleAutonomousInvestment",
+        "class_name": "CTickTask_HandleAutonomousInvestment",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x552c990",
+          "complete_object_locator_rva": "0x4a4fa90",
+          "vtable_rva": "0x4558d98",
+          "task_specific_tail_vfunc_rva": "0xf6e590",
+          "first_unwind_fragment": {
+            "begin_rva": "0xf6e590",
+            "end_rva": "0xf6e7a3",
+            "size_bytes": 531,
+            "unwind_rva": "0x4ee4f54"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateInterestGroupSupportForPoliticalMovements",
+        "class_name": "CTickTask_UpdateInterestGroupSupportForPoliticalMovements",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5573410",
+          "complete_object_locator_rva": "0x4a96ad8",
+          "vtable_rva": "0x45926f8",
+          "task_specific_tail_vfunc_rva": "0x13f4e80",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13f4e80",
+            "end_rva": "0x13f502f",
+            "size_bytes": 431,
+            "unwind_rva": "0x4eaa6cc"
+          }
+        }
+      },
+      {
+        "runtime_task": "SpawnCulturalCommunities",
+        "class_name": "CTickTask_SpawnCulturalCommunities",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x551c920",
+          "complete_object_locator_rva": "0x4a431e8",
+          "vtable_rva": "0x4553000",
+          "task_specific_tail_vfunc_rva": "0xf13300",
+          "first_unwind_fragment": {
+            "begin_rva": "0xf13300",
+            "end_rva": "0xf1338b",
+            "size_bytes": 139,
+            "unwind_rva": "0x4ede0f0"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdateStateTrades",
+        "class_name": "CTickTask_UpdateStateTrades",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556ff90",
+          "complete_object_locator_rva": "0x4a93490",
+          "vtable_rva": "0x4590c80",
+          "task_specific_tail_vfunc_rva": "0x13b7bd0"
+        }
+      },
+      {
+        "runtime_task": "AverageStandardOfLivingUpdate",
+        "class_name": "CTickTask_AverageStandardOfLivingUpdate",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x552ccd0",
+          "complete_object_locator_rva": "0x4a4fd88",
+          "vtable_rva": "0x4558f58",
+          "task_specific_tail_vfunc_rva": "0xf5e490",
+          "first_unwind_fragment": {
+            "begin_rva": "0xf5e490",
+            "end_rva": "0xf5e4ba",
+            "size_bytes": 42,
+            "unwind_rva": "0x4e8c5a8"
+          }
+        }
+      },
+      {
+        "runtime_task": "MonthlyPulseJournalEntries",
+        "class_name": "CTickTask_MonthlyPulseJournalEntries",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x55397d0",
+          "complete_object_locator_rva": "0x4a5c378",
+          "vtable_rva": "0x455ea18",
+          "task_specific_tail_vfunc_rva": "0x10032a0"
+        }
+      },
+      {
+        "runtime_task": "UpdateEmployment",
+        "class_name": "CTickTask_UpdateEmployment",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556fbb8",
+          "complete_object_locator_rva": "0x4a930f8",
+          "vtable_rva": "0x4590800",
+          "task_specific_tail_vfunc_rva": "0x13b8310",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b",
+            "size_bytes": 555,
+            "unwind_rva": "0x4e90d44"
+          }
+        }
+      },
+      {
+        "runtime_task": "RecalculateModifierNodes",
+        "class_name": "CTickTask_RecalculateModifierNodes",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x548be90",
+          "complete_object_locator_rva": "0x49a1f00",
+          "vtable_rva": "0x44d8f58",
+          "task_specific_tail_vfunc_rva": "0x7da740",
+          "first_unwind_fragment": {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de",
+            "size_bytes": 414,
+            "unwind_rva": "0x4e9f9bc"
+          }
+        }
+      },
+      {
+        "runtime_task": "UpdatePopGrowth",
+        "class_name": "CTickTask_UpdatePopGrowth",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556ae30",
+          "complete_object_locator_rva": "0x4a8fa50",
+          "vtable_rva": "0x458efd0",
+          "task_specific_tail_vfunc_rva": "0x13a3020"
+        }
+      },
+      {
+        "runtime_task": "ProcessPopPurchases",
+        "class_name": "CTickTask_ProcessPopPurchases",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x5518af0",
+          "complete_object_locator_rva": "0x4a3ef68",
+          "vtable_rva": "0x4550fd8",
+          "task_specific_tail_vfunc_rva": "0xee74b0",
+          "first_unwind_fragment": {
+            "begin_rva": "0xee74b0",
+            "end_rva": "0xee75a7",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          }
+        }
+      },
+      {
+        "runtime_task": "RecalcStatePopStatistics",
+        "class_name": "CTickTask_RecalcStatePopStatistics",
+        "native_mapping_available": true,
+        "native": {
+          "type_descriptor_rva": "0x556f5d0",
+          "complete_object_locator_rva": "0x4a933a0",
+          "vtable_rva": "0x4590b90",
+          "task_specific_tail_vfunc_rva": "0x13c1510",
+          "first_unwind_fragment": {
+            "begin_rva": "0x13c1510",
+            "end_rva": "0x13c1607",
+            "size_bytes": 247,
+            "unwind_rva": "0x4ed40e0"
+          }
+        }
+      }
+    ]
+  },
+  "selected_static_call_regions": [
+    {
+      "runtime_task": "HandleAutonomousInvestment",
+      "vtable_rva": "0x4558d98",
+      "anchor_rva": "0xf6e590",
+      "ranges": [
+        [
+          "0xf6e590",
+          "0xf6e7a3"
+        ]
+      ],
+      "unwind_fragment_count": 1,
+      "decoded_bytes": 531,
+      "direct_call_site_count": 6,
+      "unique_direct_callees": [
+        "0x64b2f0",
+        "0x74f7b0",
+        "0x7c51e0",
+        "0xf2cd40",
+        "0x355be70",
+        "0x427d1b0"
+      ],
+      "indirect_call_sites": [
+        {
+          "instruction_rva": "0xf6e5fa",
+          "instruction": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0xf6e77f",
+          "instruction": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "decoded_direct_callees": [
+        {
+          "entry_rva": "0x64b2f0",
+          "ranges": [
+            [
+              "0x64b2f0",
+              "0x64b34f"
+            ]
+          ],
+          "bytes": 95,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x64b327",
+              "target_rva": "0x427cb10",
+              "runtime_function_range": [
+                "0x427cb10",
+                "0x427d17d"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x74f7b0",
+          "ranges": [
+            [
+              "0x74f7b0",
+              "0x74f900"
+            ]
+          ],
+          "bytes": 336,
+          "fully_decoded": true,
+          "direct_calls": []
+        },
+        {
+          "entry_rva": "0x7c51e0",
+          "ranges": [
+            [
+              "0x7c51e0",
+              "0x7c52d0"
+            ]
+          ],
+          "bytes": 240,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x7c5269",
+              "target_rva": "0x4208e80",
+              "runtime_function_range": [
+                "0x4208e80",
+                "0x4208f85"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x7c52c2",
+              "target_rva": "0x3ba1ce0",
+              "runtime_function_range": [
+                "0x3ba1ce0",
+                "0x3ba1dcb"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0xf2cd40",
+          "ranges": [
+            [
+              "0xf2cd40",
+              "0xf2cdb9"
+            ]
+          ],
+          "bytes": 121,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0xf2cd91",
+              "target_rva": "0x427cb10",
+              "runtime_function_range": [
+                "0x427cb10",
+                "0x427d17d"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x355be70",
+          "ranges": [
+            [
+              "0x355be70",
+              "0x355bf46"
+            ]
+          ],
+          "bytes": 214,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x355be8f",
+              "target_rva": "0x422ff3c",
+              "runtime_function_range": null,
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x355becb",
+              "target_rva": "0x7c51e0",
+              "runtime_function_range": [
+                "0x7c51e0",
+                "0x7c52d0"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x427d1b0",
+          "ranges": [
+            [
+              "0x427d1b0",
+              "0x427d538"
+            ]
+          ],
+          "bytes": 904,
+          "fully_decoded": true,
+          "direct_calls": []
+        }
+      ],
+      "fully_decoded_anchor": true
+    },
+    {
+      "runtime_task": "ProcessEconomicMigration",
+      "vtable_rva": "0x4576b98",
+      "anchor_rva": "0x11b0c00",
+      "ranges": [
+        [
+          "0x11b0c00",
+          "0x11b0dde"
+        ]
+      ],
+      "unwind_fragment_count": 3,
+      "decoded_bytes": 478,
+      "direct_call_site_count": 7,
+      "unique_direct_callees": [
+        "0x62d6c0",
+        "0x74f7b0",
+        "0x7a8980",
+        "0x7c51e0",
+        "0x11afa80",
+        "0x11b4610",
+        "0x355be70"
+      ],
+      "indirect_call_sites": [
+        {
+          "instruction_rva": "0x11b0dd3",
+          "instruction": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "decoded_direct_callees": [
+        {
+          "entry_rva": "0x62d6c0",
+          "ranges": [
+            [
+              "0x62d6c0",
+              "0x62d731"
+            ]
+          ],
+          "bytes": 113,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x62d709",
+              "target_rva": "0x4234408",
+              "runtime_function_range": [
+                "0x4234408",
+                "0x4234483"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x62d71e",
+              "target_rva": "0x4234774",
+              "runtime_function_range": [
+                "0x4234774",
+                "0x423478b"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x62d72a",
+              "target_rva": "0x423439c",
+              "runtime_function_range": [
+                "0x423439c",
+                "0x4234405"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x74f7b0",
+          "ranges": [
+            [
+              "0x74f7b0",
+              "0x74f900"
+            ]
+          ],
+          "bytes": 336,
+          "fully_decoded": true,
+          "direct_calls": []
+        },
+        {
+          "entry_rva": "0x7a8980",
+          "ranges": [
+            [
+              "0x7a8980",
+              "0x7a8a06"
+            ]
+          ],
+          "bytes": 134,
+          "fully_decoded": true,
+          "direct_calls": []
+        },
+        {
+          "entry_rva": "0x7c51e0",
+          "ranges": [
+            [
+              "0x7c51e0",
+              "0x7c52d0"
+            ]
+          ],
+          "bytes": 240,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x7c5269",
+              "target_rva": "0x4208e80",
+              "runtime_function_range": [
+                "0x4208e80",
+                "0x4208f85"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x7c52c2",
+              "target_rva": "0x3ba1ce0",
+              "runtime_function_range": [
+                "0x3ba1ce0",
+                "0x3ba1dcb"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x11afa80",
+          "ranges": [
+            [
+              "0x11afa80",
+              "0x11afbf3"
+            ]
+          ],
+          "bytes": 371,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x11afa95",
+              "target_rva": "0x42350c0",
+              "runtime_function_range": [
+                "0x42350c0",
+                "0x423510e"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11afac3",
+              "target_rva": "0x3ba1ce0",
+              "runtime_function_range": [
+                "0x3ba1ce0",
+                "0x3ba1dcb"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11afb0c",
+              "target_rva": "0x632b00",
+              "runtime_function_range": [
+                "0x632b00",
+                "0x632b5f"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11afb50",
+              "target_rva": "0x11b0310",
+              "runtime_function_range": [
+                "0x11b0310",
+                "0x11b04d3"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11afb6c",
+              "target_rva": "0x1092af0",
+              "runtime_function_range": [
+                "0x1092af0",
+                "0x1092b07"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11afb89",
+              "target_rva": "0xcc4520",
+              "runtime_function_range": [
+                "0xcc4520",
+                "0xcc45c0"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11afbb3",
+              "target_rva": "0x1092bc0",
+              "runtime_function_range": [
+                "0x1092bc0",
+                "0x1092cb9"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11afbce",
+              "target_rva": "0x421f980",
+              "runtime_function_range": null,
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x11b4610",
+          "ranges": [
+            [
+              "0x11b4610",
+              "0x11b46f6"
+            ]
+          ],
+          "bytes": 230,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x11b468d",
+              "target_rva": "0x62d6c0",
+              "runtime_function_range": [
+                "0x62d6c0",
+                "0x62d731"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x11b4699",
+              "target_rva": "0x11b27f0",
+              "runtime_function_range": [
+                "0x11b27f0",
+                "0x11b29a5"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x355be70",
+          "ranges": [
+            [
+              "0x355be70",
+              "0x355bf46"
+            ]
+          ],
+          "bytes": 214,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x355be8f",
+              "target_rva": "0x422ff3c",
+              "runtime_function_range": null,
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x355becb",
+              "target_rva": "0x7c51e0",
+              "runtime_function_range": [
+                "0x7c51e0",
+                "0x7c52d0"
+              ],
+              "known_label": null
+            }
+          ]
+        }
+      ],
+      "fully_decoded_anchor": true
+    },
+    {
+      "runtime_task": "UpdateEmployment",
+      "vtable_rva": "0x4590800",
+      "anchor_rva": "0x13b8310",
+      "ranges": [
+        [
+          "0x13b8310",
+          "0x13b853b"
+        ]
+      ],
+      "unwind_fragment_count": 1,
+      "decoded_bytes": 555,
+      "direct_call_site_count": 8,
+      "unique_direct_callees": [
+        "0x62d6c0",
+        "0x64b2f0",
+        "0x74f7b0",
+        "0xf3e040",
+        "0x105c970",
+        "0x105caa0"
+      ],
+      "indirect_call_sites": [
+        {
+          "instruction_rva": "0x13b83fd",
+          "instruction": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x13b8432",
+          "instruction": "call",
+          "operand": "qword ptr [rax + 8]"
+        },
+        {
+          "instruction_rva": "0x13b851a",
+          "instruction": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        }
+      ],
+      "decoded_direct_callees": [
+        {
+          "entry_rva": "0x62d6c0",
+          "ranges": [
+            [
+              "0x62d6c0",
+              "0x62d731"
+            ]
+          ],
+          "bytes": 113,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x62d709",
+              "target_rva": "0x4234408",
+              "runtime_function_range": [
+                "0x4234408",
+                "0x4234483"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x62d71e",
+              "target_rva": "0x4234774",
+              "runtime_function_range": [
+                "0x4234774",
+                "0x423478b"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x62d72a",
+              "target_rva": "0x423439c",
+              "runtime_function_range": [
+                "0x423439c",
+                "0x4234405"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x64b2f0",
+          "ranges": [
+            [
+              "0x64b2f0",
+              "0x64b34f"
+            ]
+          ],
+          "bytes": 95,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x64b327",
+              "target_rva": "0x427cb10",
+              "runtime_function_range": [
+                "0x427cb10",
+                "0x427d17d"
+              ],
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x74f7b0",
+          "ranges": [
+            [
+              "0x74f7b0",
+              "0x74f900"
+            ]
+          ],
+          "bytes": 336,
+          "fully_decoded": true,
+          "direct_calls": []
+        },
+        {
+          "entry_rva": "0x105c970",
+          "ranges": [
+            [
+              "0x105c970",
+              "0x105ca95"
+            ]
+          ],
+          "bytes": 293,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x105c9fc",
+              "target_rva": "0x62d6c0",
+              "runtime_function_range": [
+                "0x62d6c0",
+                "0x62d731"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x105ca09",
+              "target_rva": "0x10683d0",
+              "runtime_function_range": [
+                "0x10683d0",
+                "0x1068580"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x105ca29",
+              "target_rva": "0x1068cc0",
+              "runtime_function_range": [
+                "0x1068cc0",
+                "0x1068cdb"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x105ca31",
+              "target_rva": "0x421f980",
+              "runtime_function_range": null,
+              "known_label": null
+            }
+          ]
+        },
+        {
+          "entry_rva": "0x105caa0",
+          "ranges": [
+            [
+              "0x105caa0",
+              "0x105cb47"
+            ]
+          ],
+          "bytes": 167,
+          "fully_decoded": true,
+          "direct_calls": [
+            {
+              "instruction_rva": "0x105caf0",
+              "target_rva": "0x1068cc0",
+              "runtime_function_range": [
+                "0x1068cc0",
+                "0x1068cdb"
+              ],
+              "known_label": null
+            },
+            {
+              "instruction_rva": "0x105caf8",
+              "target_rva": "0x421f980",
+              "runtime_function_range": null,
+              "known_label": null
+            }
+          ]
+        }
+      ],
+      "fully_decoded_anchor": true
+    }
+  ],
+  "exact_signature_validation": {
+    "actual_executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+    "all_targets_ok": true,
+    "expected_executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+    "format_version": 1,
+    "hash_ok": true,
+    "target_count": 18,
+    "targets": [
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "clausewitz_profiler_csv_handler",
+        "ok": true,
+        "pattern_length": 32,
+        "signature_rva": "0x55f530"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "enable_task_threads_thunk",
+        "ok": true,
+        "pattern_length": 20,
+        "signature_rva": "0x5c1df0"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "game_timer_writer",
+        "ok": true,
+        "pattern_length": 28,
+        "signature_rva": "0x3464410"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "gui_data_profiler_handler",
+        "ok": true,
+        "pattern_length": 20,
+        "signature_rva": "0x4c97a0"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "parallel_range_heuristic",
+        "ok": true,
+        "pattern_length": 32,
+        "signature_rva": "0x7db150"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "scripted_tests_registration",
+        "ok": true,
+        "pattern_length": 48,
+        "signature_rva": "0x1183258"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "task_thread_count_handler_anchor",
+        "ok": true,
+        "pattern_length": 16,
+        "signature_rva": "0x3bcd417"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "task_thread_count_thunk",
+        "ok": true,
+        "pattern_length": 20,
+        "signature_rva": "0x5c1e10"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_csv_writer",
+        "ok": true,
+        "pattern_length": 32,
+        "signature_rva": "0x118f690"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_merge_small_pops_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0x13aaced"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_process_pop_purchases_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0xee74e6"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_recalculate_modifier_nodes_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0x7da74c"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_update_ai_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0x157553f"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_update_employment_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0x13b8324"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_update_pop_growth_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0x13a3020"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_update_state_pop_need_cache_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0x13b7e70"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_update_state_trades_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0x13b7bd7"
+      },
+      {
+        "actual_match_count": 1,
+        "expected_match_count": 1,
+        "matches_at_expected_rva": true,
+        "name": "ticktask_update_world_market_tail",
+        "ok": true,
+        "pattern_length": 12,
+        "signature_rva": "0xedf260"
+      }
+    ]
+  },
+  "scope": "Read-only static analysis. No process attachment, injection, or simulation modification.",
+  "limitations": [
+    "Single observation per thread setting; variance and significance unknown.",
+    "RTTI tail virtual is a native anchor; source-level Execute semantics are unproven.",
+    "Decoded region is a chained-unwind family, not the complete subsystem execution path.",
+    "Indirect calls, callbacks, waits, and worker execution remain unresolved.",
+    "Task timing sums are not elapsed wall-clock time; longest_lock is not proven OS mutex wait.",
+    "No runtime speedup demonstrated."
+  ],
+  "unwind_reference": "https://learn.microsoft.com/en-us/cpp/build/exception-handling-x64"
+}

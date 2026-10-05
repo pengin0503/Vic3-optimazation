@@ -1,0 +1,116 @@
+{
+  "format_version": 1,
+  "repository_base_commit": "a87b4f2da7b23a8aa2b48f76be2912c8a5e7db61",
+  "files": [
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t08-r01/manifest.json",
+      "bytes": 923,
+      "sha256": "90bd3543cebc825f493a15cb35a27b028945359b2b6ff0ca8d56affad3f7f9a4",
+      "git_blob_sha": "4b9dc7aebc266acd1634747bf4e1df936463dadc"
+    },
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t08-r01/ticktask_timings.csv",
+      "bytes": 909782,
+      "sha256": "0a2f723b07ddad74573d36b94992c30f3918ee3224a85119038836df8575a67b",
+      "git_blob_sha": "9d73132544918fdb97ddab0aebe312a710688c17"
+    },
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t12-r01/manifest.json",
+      "bytes": 924,
+      "sha256": "90a9a418d0eac004b58eb2ad140a4fdc9809b97b54ade3a639bd044186f95c34",
+      "git_blob_sha": "8834853eda0fcf3300b1c9023e6a7285d17e59c1"
+    },
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t12-r01/ticktask_timings.csv",
+      "bytes": 909754,
+      "sha256": "0eaf4fbabdfacf773d3cbc7d3a0e968817af49553ef794711223459370933d59",
+      "git_blob_sha": "6426c1b63b7ea51cda584df45d565499efe7e12e"
+    },
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t16-r01/manifest.json",
+      "bytes": 924,
+      "sha256": "2502ebcaefb2882c587810bbd27d49a5ab7ea64575bd43f55437bebc9011f8f7",
+      "git_blob_sha": "ab60d1f170e1913e02db3f3fb1c6768b1a2198fd"
+    },
+    {
+      "path": "benchmarks/measured-2026-10-05-3month/baseline-t16-r01/ticktask_timings.csv",
+      "bytes": 909756,
+      "sha256": "4d545eef88495cbb392d4dac2d6a4679e639c12f6476e58dd33264d07f83f8cf",
+      "git_blob_sha": "207a3786b67421317b342350cc6a8d259f3da6b3"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-10-05-offline-research-checkpoint.md",
+      "bytes": 12847,
+      "sha256": "097340b354031ae87004fd20ea37b5f473f8e665c92765ad56a779738826bbdd",
+      "git_blob_sha": "d09a174f81c96fe3527b1e51df94d6ab52ffb930"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-10-05-runtime-benchmark-handoff-ja.md",
+      "bytes": 9739,
+      "sha256": "1877a17d135c68ee32bb943b58a3197d6f44b4cadcba7d93b1beb28ced6f2404",
+      "git_blob_sha": "005fc31ec40957e09bdeb19b9c16d50517897180"
+    },
+    {
+      "path": "docs/superpowers/reports/vic3-bench2-review-2026-10-05-ja.md",
+      "bytes": 10749,
+      "sha256": "1da1eb698bc48c36ff5bd3c813cc8ae3e08ba377dcb5c4ddc49968380117c232",
+      "git_blob_sha": "4dc09d012eb01330c8672b8a69e89b8f82fa60c1"
+    },
+    {
+      "path": "docs/superpowers/reports/vic3-bench3-review-2026-10-05-ja.md",
+      "bytes": 7653,
+      "sha256": "91c0da45d7fdb022d16d41efdfcd34cb0d82111c07224c894d68554db3fa93df",
+      "git_blob_sha": "97cd6a050c39335151abae34a3eaaa753b2817fa"
+    },
+    {
+      "path": "docs/superpowers/reports/vic3-benchmark-review-2026-10-05-ja.md",
+      "bytes": 11402,
+      "sha256": "de91252b59a64384f6269672c12e67d16d29caef45c7128f3078bb2d22d47a04",
+      "git_blob_sha": "a20fb9aa12ca6699f064b67922016c5ba843b595"
+    },
+    {
+      "path": "docs/superpowers/reports/vic3-native-triage-2026-10-05-ja.md",
+      "bytes": 5965,
+      "sha256": "4f0783cb3153d6a7220adf3bc5732c68ce1f3c331c8d008a1338c85e97e3f457",
+      "git_blob_sha": "f98a5afc4e08398b59ef92b8da2ae9e6694dad7b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2434,
+      "sha256": "45d949fb0ea976c4711c7437e9aaf7749ae5bdf60aee03c10cfd7657d3a00f5b",
+      "git_blob_sha": "d58468e43fb75f69e978a7305dd9c90c31150ea3"
+    },
+    {
+      "path": "research/generated/runtime-2026-10-05/handoff-summary.json",
+      "bytes": 1795,
+      "sha256": "f46ccf8979b9cf0a4922d90d24f2e72220a18bb878b4fd421f2460abdd6e31ac",
+      "git_blob_sha": "21b11451254c64b81bcb605813963584020e2865"
+    },
+    {
+      "path": "research/generated/runtime-2026-10-05/vic3-bench2-analysis-2026-10-05.json",
+      "bytes": 323603,
+      "sha256": "62f48782bb808582be0ae182c1cfcc80822e11a3078658344bd74d68e4c05b95",
+      "git_blob_sha": "f1d72c00c7faeb402c9616ccf081398ea85993a1"
+    },
+    {
+      "path": "research/generated/runtime-2026-10-05/vic3-bench3-analysis-2026-10-05.json",
+      "bytes": 431260,
+      "sha256": "3d445c0f59b7f6f8cd7ef39a9171854c84558eb3b4a335a4f84a45dc9df9a0a3",
+      "git_blob_sha": "128b1db502b9479fcf909ae8f2d0c2f74155cbe1"
+    },
+    {
+      "path": "research/generated/runtime-2026-10-05/vic3-benchmark-analysis-2026-10-05.json",
+      "bytes": 1483839,
+      "sha256": "0f42d5796c2e3ad30b2d7c80b3a2fb716412253e0729690770f4519408d30d5a",
+      "git_blob_sha": "2bb4478a9e4e2953e59ab2d2baca2e6b9178a437"
+    },
+    {
+      "path": "research/generated/runtime-2026-10-05/vic3-native-triage-2026-10-05.json",
+      "bytes": 45320,
+      "sha256": "213fe81ee2575b9cf6742dcccb9f36744656965686bdb92c6b6e4df8f2bf405d",
+      "git_blob_sha": "9496aa1b36ea16719c6675d2b28810b91ebda393"
+    }
+  ],
+  "index_self_excluded": true,
+  "scope": "Latest raw timing CSVs, all four review stages and derived JSON, handoff and documentation pointers. No save/game binary/raw logs."
+}
