@@ -71,7 +71,7 @@ TickTask tail anchor だけ。ABI は `void(void*, void*)`。引数を変更せ�
 **stop 完了後**に parser を実行する。
 
 ```powershell
-python tools/parse_native_profiler_trace.py 'C:\Vic3Captures\enabled-01.v3pf' --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
+python tools/parse_native_profiler_trace.py 'C:\Vic3Captures\enabled-01.v3pf' --output 'C:\Vic3Captures\enabled-01-parsed.json' --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
 Get-FileHash 'C:\Vic3Captures\enabled-01.v3pf' -Algorithm SHA256
 ```
 

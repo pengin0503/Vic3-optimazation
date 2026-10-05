@@ -38,9 +38,9 @@ jobs:
         run: ctest --test-dir build/native -C Release --output-on-failure
       - name: Parse generated V3PF traces
         run: |
-          python tools/parse_native_profiler_trace.py build/native/runtime-format.v3pf --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
+          python tools/parse_native_profiler_trace.py build/native/runtime-format.v3pf --output build/native/runtime-parsed.json --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python tools/parse_native_profiler_trace.py build/native/hook-format.v3pf --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
+          python tools/parse_native_profiler_trace.py build/native/hook-format.v3pf --output build/native/hook-parsed.json --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -48,6 +48,7 @@ jobs:
           path: |
             build/native/Testing/Temporary/LastTest.log
             build/native/*.v3pf
+            build/native/*-parsed.json
             build/native/Release/Vic3OptimizationLoader.exe
             build/native/Release/Vic3OptimizationProfiler.dll
           if-no-files-found: ignore
