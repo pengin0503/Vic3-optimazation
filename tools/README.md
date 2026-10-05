@@ -296,3 +296,10 @@ Commands and verification: [continuation report](../docs/superpowers/reports/202
 hash and validated unwind groups from Graph/List. Depth <=3, <=256 functions,
 <=64 KiB per group; direct calls, tail jumps, indirect sites and RIP-relative
 references stay distinct. Calls/shared helpers are never task-dependency proof.
+
+## OS profile CSV normalizer
+
+`python tools/normalize_os_profile.py EXPORT.csv --mapping MAPPING.json --run-id RUN --source TOOL --output PROFILE.json`
+
+See `research/os-profile-normalized-schema.md`. Every time column requires an
+explicit unit, and export columns are supplied by the operator, not guessed.
