@@ -1,0 +1,194 @@
+{
+  "diagnostics": [],
+  "events": [
+    {
+      "correlation_id": 11,
+      "event_type": 1,
+      "offset": 616,
+      "record_bytes": 32,
+      "sequence": 1,
+      "target_id": 1,
+      "target_valid": true,
+      "thread_id": 7,
+      "timestamp_qpc": 100
+    },
+    {
+      "chunk_or_work_count": 4,
+      "correlation_id": 11,
+      "decision": 2,
+      "event_type": 3,
+      "offset": 648,
+      "range_begin": 10,
+      "range_end": 20,
+      "range_length": 10,
+      "reason_flags": 3,
+      "record_bytes": 72,
+      "sequence": 2,
+      "target_id": 1,
+      "target_valid": true,
+      "task_thread_count": 16,
+      "thread_id": 7,
+      "timestamp_qpc": 105
+    },
+    {
+      "correlation_id": 12,
+      "event_type": 4,
+      "object_token": 2748,
+      "offset": 720,
+      "record_bytes": 48,
+      "sequence": 3,
+      "target_id": 2,
+      "target_valid": true,
+      "thread_id": 7,
+      "timestamp_qpc": 110,
+      "wait_kind": 2
+    },
+    {
+      "correlation_id": 21,
+      "event_type": 1,
+      "offset": 768,
+      "record_bytes": 32,
+      "sequence": 1,
+      "target_id": 1,
+      "target_valid": true,
+      "thread_id": 8,
+      "timestamp_qpc": 102
+    },
+    {
+      "correlation_id": 12,
+      "event_type": 5,
+      "offset": 800,
+      "record_bytes": 40,
+      "result_flags": 0,
+      "sequence": 4,
+      "target_id": 2,
+      "target_valid": true,
+      "thread_id": 7,
+      "timestamp_qpc": 115
+    },
+    {
+      "correlation_id": 21,
+      "event_type": 2,
+      "offset": 840,
+      "record_bytes": 40,
+      "sequence": 2,
+      "status_flags": 0,
+      "target_id": 1,
+      "target_valid": true,
+      "thread_id": 8,
+      "timestamp_qpc": 120
+    },
+    {
+      "correlation_id": 11,
+      "event_type": 2,
+      "offset": 880,
+      "record_bytes": 40,
+      "sequence": 5,
+      "status_flags": 0,
+      "target_id": 1,
+      "target_valid": true,
+      "thread_id": 7,
+      "timestamp_qpc": 130
+    },
+    {
+      "counter_id": 1,
+      "event_type": 6,
+      "offset": 920,
+      "record_bytes": 40,
+      "sequence": 6,
+      "target_id": 0,
+      "target_valid": true,
+      "thread_id": 7,
+      "timestamp_qpc": 135,
+      "value": 0
+    }
+  ],
+  "header": {
+    "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+    "flags": 0,
+    "format_version": 1,
+    "header_bytes": 616,
+    "magic": "V3PF",
+    "pointer_size": 8,
+    "qpc_frequency": 1000,
+    "session_start_qpc": 90,
+    "signature_db_version": 1,
+    "target_table_hash": "37bcd993eeacedb4503523d2f47696ff923a47d323785b04b31e5635a51833d1",
+    "total_dropped_events": 0
+  },
+  "header_valid": true,
+  "metadata": {
+    "build_ids": {
+      "caligula_branch": "release/1.14.5",
+      "caligula_rev": "9f8281a37e85639359b3b0c2c5df0196e975ca4b",
+      "clausewitz_branch": "caligula/release/1.14.x",
+      "clausewitz_rev": "fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef"
+    },
+    "profiler_build_id": "synthetic-reference-v1",
+    "targets": [
+      {
+        "kind": "synthetic",
+        "name": "SyntheticFunction",
+        "ranges": [
+          {
+            "begin_rva": "0x1000",
+            "end_rva": "0x1100"
+          }
+        ],
+        "target_id": 1
+      },
+      {
+        "kind": "synthetic",
+        "name": "SyntheticWait",
+        "ranges": [
+          {
+            "begin_rva": "0x2000",
+            "end_rva": "0x2100"
+          }
+        ],
+        "target_id": 2
+      }
+    ]
+  },
+  "pairs": [
+    {
+      "begin_offset": 720,
+      "correlation_id": 12,
+      "duration_ns_floor": 5000000,
+      "duration_qpc": 5,
+      "end_offset": 800,
+      "family": "wait",
+      "target_id": 2,
+      "thread_id": 7
+    },
+    {
+      "begin_offset": 768,
+      "correlation_id": 21,
+      "duration_ns_floor": 18000000,
+      "duration_qpc": 18,
+      "end_offset": 840,
+      "family": "function",
+      "target_id": 1,
+      "thread_id": 8
+    },
+    {
+      "begin_offset": 616,
+      "correlation_id": 11,
+      "duration_ns_floor": 30000000,
+      "duration_qpc": 30,
+      "end_offset": 880,
+      "family": "function",
+      "target_id": 1,
+      "thread_id": 7
+    }
+  ],
+  "segment_complete": true,
+  "summary": {
+    "bytes_consumed": 960,
+    "dropped_events": 0,
+    "known_event_count": 8,
+    "paired_functions": 2,
+    "paired_waits": 1,
+    "record_count": 8
+  }
+}

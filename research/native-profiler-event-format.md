@@ -315,3 +315,14 @@ Do not implement yet:
 - automatic patching of unknown game builds
 
 The first native milestone remains observation only.
+
+## Offline compatibility vectors
+
+The committed `research/generated/native-profiler-v1-golden/trace-v1.bin` and
+`trace-v1.json` pin the synthetic v1 contract. Explicit regeneration:
+`python research/recipes/reproduce_native_profiler_golden.py`.
+Tests do not regenerate their expected artifact. Hand-derived codec tests pin
+all six payloads independently from parsing. A future C++ writer must match the
+exact bytes for identical fixture metadata/events, not merely its own struct size.
+This completes only the offline contract. No runtime writer, loader, DLL,
+wait hook or lock-free ring-buffer implementation is present.
