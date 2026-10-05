@@ -11,8 +11,8 @@ from test_native_profiler_format import META,SHA,events
 
 
 class ParserTests(unittest.TestCase):
-    def trace(self,ev=None,**kw):
-        h=fmt.encode_header(META,qpc_frequency=1000,session_start_qpc=90,executable_sha256=SHA,signature_db_version=1,**kw)
+    def trace(self,ev=None,metadata=None,**kw):
+        h=fmt.encode_header(META if metadata is None else metadata,qpc_frequency=1000,session_start_qpc=90,executable_sha256=SHA,signature_db_version=1,**kw)
         e=events()[:2] if ev is None else ev
         if ev is None:e=[dict(e[0],sequence=5,timestamp_qpc=100),dict(e[1],sequence=6,timestamp_qpc=120)]
         return fmt.encode_trace(h,[fmt.encode_event(x) for x in e])
@@ -80,3 +80,31 @@ class ParserTests(unittest.TestCase):
         self.assertFalse(mod.parse_trace(bytes(raw))['header_valid'])
         d=mod.parse_trace(self.trace([dict(events()[0],target_id=99)]))
         self.assertIn('unknown_target',self.kinds(d));self.assertEqual(d['pairs'],[])
+
+
+class PairingReviewRegressions(unittest.TestCase):
+    trace = ParserTests.trace
+    kinds = ParserTests.kinds
+    def test_concurrent_same_correlation_different_targets_are_independent(self):
+        metadata=copy.deepcopy(META)
+        metadata['targets'].append({'target_id':2,'name':'other','kind':'synthetic','ranges':[{'begin_rva':'0x2000','end_rva':'0x2100'}]})
+        a,b=events()[:2]
+        ev=[dict(a,timestamp_qpc=100,sequence=1),dict(a,target_id=2,timestamp_qpc=110,sequence=2),
+            dict(b,target_id=2,timestamp_qpc=120,sequence=3),dict(b,timestamp_qpc=130,sequence=4)]
+        doc=mod.parse_trace(self.trace(ev,metadata=metadata))
+        self.assertEqual(doc['diagnostics'],[])
+        self.assertEqual([(p['target_id'],p['duration_qpc']) for p in doc['pairs']],[(2,10),(1,30)])
+
+    def test_invalid_timestamp_duplicate_begin_invalidates_interval(self):
+        a,b=events()[:2]
+        ev=[dict(a,timestamp_qpc=110,sequence=1),dict(a,timestamp_qpc=100,sequence=2),dict(b,timestamp_qpc=120,sequence=3)]
+        doc=mod.parse_trace(self.trace(ev))
+        self.assertEqual(doc['pairs'],[])
+        self.assertIn('broken_begin_end',self.kinds(doc))
+
+    def test_invalid_timestamp_never_lowers_high_water(self):
+        a,b=events()[:2]
+        ev=[dict(a,timestamp_qpc=110,sequence=1),dict(a,timestamp_qpc=100,sequence=2),dict(b,timestamp_qpc=105,sequence=3)]
+        doc=mod.parse_trace(self.trace(ev))
+        self.assertEqual(self.kinds(doc).count('invalid_timestamp'),2)
+        self.assertEqual(doc['pairs'],[])

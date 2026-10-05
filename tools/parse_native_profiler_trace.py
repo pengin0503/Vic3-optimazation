@@ -73,7 +73,7 @@ def parse_trace(data: bytes,*,expected_executable_sha256: str | None=None) -> di
         previous_seq[thread]=sequence
         invalid_time=timestamp<start or timestamp<previous_time.get(thread,start)
         if invalid_time:report('invalid_timestamp',offset,thread_id=thread)
-        previous_time[thread]=timestamp
+        previous_time[thread]=max(timestamp,previous_time.get(thread,start))
         summary['record_count']+=1
         if kind not in fmt.PAYLOADS:
             report('unknown_event_type',offset,event_type=kind,record_bytes=size)
@@ -87,10 +87,17 @@ def parse_trace(data: bytes,*,expected_executable_sha256: str | None=None) -> di
             if not target_valid:report('unknown_target',offset,target_id=target)
             row['target_valid']=target_valid
             doc['events'].append(row);summary['known_event_count']+=1
-            if target_valid and not invalid_time and kind in (1,2,4,5):
+            if target_valid and kind in (1,2,4,5):
                 family='function' if kind in (1,2) else 'wait'
-                key=(thread,family,row['correlation_id'])
-                if kind in (1,4):
+                key=(thread,family,row['correlation_id'],target)
+                if invalid_time:
+                    # Malformed pair events invalidate this correlation, even a
+                    # duplicate Begin that cannot be accepted as a timestamp.
+                    pending.pop(key,None)
+                    if kind in (1,4):blocked.add(key)
+                    else:blocked.discard(key)
+                    report('broken_begin_end',offset,reason='invalid_pair_timestamp',thread_id=thread,correlation_id=row['correlation_id'],target_id=target)
+                elif kind in (1,4):
                     if key in pending or key in blocked:
                         pending.pop(key,None);blocked.add(key)
                         report('broken_begin_end',offset,reason='duplicate_begin',thread_id=thread,correlation_id=row['correlation_id'])
