@@ -303,3 +303,10 @@ references stay distinct. Calls/shared helpers are never task-dependency proof.
 
 See `research/os-profile-normalized-schema.md`. Every time column requires an
 explicit unit, and export columns are supplied by the operator, not guessed.
+
+`python tools/correlate_os_profile.py PROFILE.json --catalog research/generated/native-target-catalog-1.14.5.json --expected-run-id RUN --output CORRELATION.json --markdown CORRELATION.md`
+
+Ranges are half-open. Missing bases, invalid addresses, wrong modules, no hits,
+and ambiguous overlaps remain reported. An ambiguous row contributes to no target.
+Only observed metrics are summed; `metric_observations` gives each metric's coverage.
+The result describes static address correlation, not lock or critical-path causality.
