@@ -4,6 +4,12 @@
 #include <algorithm>
 #ifdef _WIN32
 #include "../common/WinHandle.h"
+#include <new>
+#include <utility>
+static bool fail_next_allocation=false;
+void* operator new(std::size_t size) {if(std::exchange(fail_next_allocation,false))throw std::bad_alloc();if(void* p=std::malloc(size?size:1))return p;throw std::bad_alloc();}
+void operator delete(void* p) noexcept {std::free(p);}
+void operator delete(void* p,std::size_t) noexcept {std::free(p);}
 #endif
 using namespace vic3;
 int main(int argc,char** argv) {
@@ -19,6 +25,8 @@ int main(int argc,char** argv) {
     c.output[0]=u'x';c.target_mask=8;CHECK(ValidateConfig(c)==ConfigError::Targets);c.target_mask=7;
     c.flags=8;CHECK(ValidateConfig(c)==ConfigError::Flags);
 #ifdef _WIN32
+    // Regression: allocating named-object setup must not escape the noexcept entry boundary.
+    fail_next_allocation=true;RunProfilerRuntime(GetModuleHandleW(nullptr));CHECK(!fail_next_allocation);
     SharedConfig received;CHECK(ReadSharedConfig(GetCurrentProcessId(),received)==ConfigError::MissingMapping);
     const auto name=ObjectName(L"Config",GetCurrentProcessId());
     WinHandle mapping(CreateFileMappingW(INVALID_HANDLE_VALUE,nullptr,PAGE_READWRITE,0,sizeof(SharedMapping),name.c_str()));CHECK(mapping);
