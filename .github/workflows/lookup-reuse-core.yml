@@ -1,0 +1,53 @@
+name: lookup-reuse-core
+
+# Portable offline lookup reuse core (Stage A): Release build, CTest and the
+# fixed-seed runner on GCC and MSVC. No native loader, DLL or game input.
+on:
+  push:
+    paths:
+      - "src/lookup_reuse/**"
+      - "research/generated/lookup-reuse-core/**"
+      - ".github/workflows/lookup-reuse-core.yml"
+  pull_request:
+    paths:
+      - "src/lookup_reuse/**"
+      - "research/generated/lookup-reuse-core/**"
+      - ".github/workflows/lookup-reuse-core.yml"
+  workflow_dispatch:
+
+jobs:
+  core:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            runner: build/lookup-reuse/lookup_reuse_runner
+          - os: windows-2022
+            runner: build/lookup-reuse/Release/lookup_reuse_runner.exe
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Show toolchain
+        run: |
+          cmake --version
+          python --version
+      - name: Configure (Release)
+        run: cmake -S src/lookup_reuse -B build/lookup-reuse -DCMAKE_BUILD_TYPE=Release -DLOOKUP_REUSE_WARNINGS_AS_ERRORS=ON
+      - name: Build (Release)
+        run: cmake --build build/lookup-reuse --config Release
+      - name: CTest (Release)
+        run: ctest --test-dir build/lookup-reuse -C Release --output-on-failure
+      - name: Fixed-seed runner
+        run: |
+          "${{ matrix.runner }}" --seed 20261007 --rebuilds 1000 --output "$RUNNER_TEMP/results.json"
+          python -c "import json,sys; a=json.load(open(sys.argv[1],encoding='utf-8')); b=json.load(open(sys.argv[2],encoding='utf-8')); sys.exit(0 if a==b else 'fresh run differs from committed results.json')" "$RUNNER_TEMP/results.json" research/generated/lookup-reuse-core/results.json
+      - name: Byte-identical results (Linux)
+        if: runner.os == 'Linux'
+        run: cmp "$RUNNER_TEMP/results.json" research/generated/lookup-reuse-core/results.json

@@ -161,3 +161,80 @@ Decisions within the plan's latitude:
   without touching the active scope.
 - An `Equal` comparison keeps the hint; a `NoCandidate` call passes the
   original result to `Remember`, which validates it or clears the hint.
+
+## Task 4 — reproducible differential runner and acceptance
+
+RED (runner stub returning an empty summary):
+
+```
+$ build/lookup-reuse/lookup_reuse_tests --filter repeatable_and_independent_membership
+[FAIL] repeatable_and_independent_membership: src/lookup_reuse/tests/OfflineRunnerTests.cpp:41: CHECK(a.core_hits > 0) failed
+0/1 tests passed
+exit=1
+```
+
+Independence of expectations: membership comes from a `std::set` of drawn
+keys; expected slots come from the runner's own Robin-Hood insertion /
+backshift placement map. The validator and `ReferencePositiveSearch` are never
+used to produce expectations, and the throwaway Python model
+(`research/generated/employment-reuse-2026-10-07/model-source.py.txt`) was
+neither imported nor ported. The query count is whatever this generator
+produces (32,948); it was not tuned toward the earlier model's 25,676.
+
+Runner sensitivity spot-check (scratch copies of the core, not committed):
+
+| Mutant | membership / slot / observer mismatches | exit |
+|---|---|---|
+| hint ignores identity and mask | 0 / 0 / 0 (full-key check on the current slot still rejects stale slots) | 0 |
+| hint ignores the current slot's control/key | 0 / 0 / 0 (identity check still rejects other snapshots) | 0 |
+| both of the above removed | 0 / 19 / 0 | 1 |
+| reference search ignores the key | 3,493 / 8,896 / 0 | 1 |
+| FNV prime changed | 0 / 0 / 0 | 0 |
+
+The last row is expected: runner placement uses the core `HashKey`, so a
+consistent hash change is invisible to the differential run; the hash itself
+is pinned by `fnv1a_hash_vectors` with independently computed vectors.
+
+### Final verification (Linux container)
+
+All commands from the repository root at the Task 4 tree.
+
+| Check | Command | Result |
+|---|---|---|
+| Direct GCC Release tests | `g++ -std=c++20 -O2 -DNDEBUG -Wall -Wextra -Wpedantic -Isrc/lookup_reuse/include -Isrc/lookup_reuse/tests -Isrc/lookup_reuse/runner src/lookup_reuse/core/*.cpp src/lookup_reuse/runner/OfflineRunner.cpp src/lookup_reuse/tests/*.cpp -o build/lookup-reuse/lookup_reuse_tests && build/lookup-reuse/lookup_reuse_tests` | build exit 0, 29/29 passed, exit 0 |
+| Direct GCC runner | `g++ … src/lookup_reuse/core/*.cpp src/lookup_reuse/runner/*.cpp -o build/lookup-reuse/lookup_reuse_runner && build/lookup-reuse/lookup_reuse_runner --seed 20261007 --rebuilds 1000 --output research/generated/lookup-reuse-core/results.json` | exit 0 |
+| JSON well-formed | `python -m json.tool research/generated/lookup-reuse-core/results.json` | exit 0 |
+| JSON / CLI | `python src/lookup_reuse/tests/VerifyRunner.py build/lookup-reuse/lookup_reuse_runner --expected research/generated/lookup-reuse-core/results.json` | all checks passed (13 CLI rejection cases incl. `/dev/full`) |
+| CMake Release | `cmake -S src/lookup_reuse -B build/lookup-reuse -DCMAKE_BUILD_TYPE=Release -DLOOKUP_REUSE_WARNINGS_AS_ERRORS=ON`, `cmake --build build/lookup-reuse --config Release`, `ctest --test-dir build/lookup-reuse -C Release --output-on-failure` | 0 warnings; CTest 5/5 passed |
+| CMake without Python | configure with `-DCMAKE_DISABLE_FIND_PACKAGE_Python3=ON` | 3 passed, `json_roundtrip_and_cli_rejection` and `runner_matches_committed_results` reported **Skipped** |
+| clang++ 18 `-Werror` | tests and runner | 29/29; runner output byte-identical (`cmp` exit 0) after fixing one `-Wfor-loop-analysis` error in the CLI loop |
+| GCC ASan + UBSan | tests and full fixed-seed runner | 29/29; runner output byte-identical |
+| Existing Python suite | `python -m unittest discover -s tests -v` | 121 tests OK, 1 skipped (`set VIC3_DATA to Vic3_data.zip for integration test`) |
+| Unchanged V3PF / targets | `git diff origin/main -- research/generated/native-profiler-v1-golden research/native-profiler-event-format.md research/native-profiler-runtime-targets-1.14.5.json research/native-target-overrides-1.14.5.json tools tests` | empty |
+
+Python suite note: before installing `tools/requirements-callgraph.txt`
+(`capstone==5.0.7`, as the existing CI does), the same suite had 3 errors
+(`ModuleNotFoundError: No module named 'capstone'`) and 14 skips; after the
+install it was 121 OK / 1 skip. Both observations were on the unmodified
+base; this work does not touch those tests.
+
+`results.json` (fixed seed 20261007, 1,000 rebuilds), SHA-256
+`ea6753fabb6d911e156c1e92abefcbb30dbb2227fb00e6aa4e50c85d25f17d2f`:
+
+- fixtures 2,004 (4 boundary + 2 × 1,000 seeded snapshots), queries 32,948
+- membership mismatches 0, slot mismatches 0
+- core caller: 5,355 hint hits, 27,593 reference searches
+- shadow: 32,948 observed calls and candidate attempts, 5,355 candidate hits,
+  5,355 equal, 0 mismatch, 9,256 original no-positive results, 0 skipped,
+  0 reentrant, 0 dropped
+
+These are lookup counts on synthetic tables. They are not timings and do not
+show a game speedup, native equivalence or game-side memory safety.
+
+### CI
+
+`.github/workflows/lookup-reuse-core.yml` runs Release configure/build/CTest
+and the fixed-seed runner on `ubuntu-24.04` (GCC) and `windows-2022` (MSVC),
+compares the fresh run with the committed `results.json` (parsed JSON on both,
+byte-identical on Linux). The MSVC result could not be run locally; see the
+CI section appended below for what was actually observed.

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scope": "offline-synthetic",
+  "config": {
+    "seed": 20261007,
+    "rebuilds": 1000
+  },
+  "table": {
+    "layout_version": 1,
+    "slot_stride": 40,
+    "hash": "fnv1a-32 over little-endian uint32 key",
+    "masks": [7, 15, 31],
+    "max_keys_per_table": 16,
+    "generator": "std::mt19937 raw output with explicit modulo; runner-local Robin-Hood insertion and backshift deletion"
+  },
+  "counts": {
+    "boundary_fixture_count": 4,
+    "fixture_count": 2004,
+    "query_count": 32948,
+    "core_hits": 5355,
+    "reference_calls": 27593,
+    "membership_mismatches": 0,
+    "slot_mismatches": 0
+  },
+  "observer": {
+    "observed_calls": 32948,
+    "candidate_attempts": 32948,
+    "candidate_hits": 5355,
+    "equal": 5355,
+    "mismatch": 0,
+    "fallback_or_no_positive": 9256,
+    "reentrant_bypass": 0,
+    "dropped_records": 0,
+    "skipped_by_reason": {
+      "Off": 0,
+      "MissingView": 0,
+      "MissingScope": 0,
+      "Reentrant": 0,
+      "SessionDisabled": 0
+    }
+  },
+  "passed": true,
+  "limits": [
+    "Owned immutable synthetic tables only; not the native container.",
+    "Lookup counts are not timings and do not measure game speed.",
+    "No statement about native ABI, live memory lifetime or game-side safety."
+  ]
+}
