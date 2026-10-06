@@ -238,3 +238,33 @@ and the fixed-seed runner on `ubuntu-24.04` (GCC) and `windows-2022` (MSVC),
 compares the fresh run with the committed `results.json` (parsed JSON on both,
 byte-identical on Linux). The MSVC result could not be run locally; see the
 CI section appended below for what was actually observed.
+
+## CI observed (GitHub Actions)
+
+Workflow `lookup-reuse-core`, run 37549380986 (run attempt 1, push event) on
+commit `8c02766279ca094636e55df1aec94aeeb33905e3`, branch
+`ccr-3431d274-cl7wbf`:
+
+| Job | Compiler | Configure / Build | CTest | Fixed-seed runner vs committed `results.json` |
+|---|---|---|---|---|
+| `ubuntu-24.04` | GCC (runner default), `-Werror` | success | success | parsed-JSON equal; `cmp` byte-identical step success |
+| `windows-2022` | MSVC 19.44.35229.0, Visual Studio 17 2022, `/W4 /permissive- /EHsc /WX` | success, no compiler warnings in the log | 5/5 passed, including `json_roundtrip_and_cli_rejection` and `runner_matches_committed_results` (Python 3.13.15) | parsed-JSON equal; byte step skipped by design (Linux only) |
+
+The only CMake warning on Windows is that `CMAKE_BUILD_TYPE` is unused by
+the multi-config Visual Studio generator (Release is selected with
+`--config Release`). The Linux job log was not downloaded; its step
+conclusions were read from the Actions API.
+
+## Remaining limits
+
+- Stage A only. No native adapter, DLL, detour, live memory access, game-side
+  lookup bypass or loader change was made. The design §8 conditions for native
+  shadow (locator, ABI, hook entry, caller scope, worker lifetime, table
+  invariants, read lifetime, profiler prerequisites, cost and coverage) remain
+  unmet.
+- `lifetime_epoch` is an offline construct; nothing shows the game has an
+  equivalent signal.
+- `core_hits` / `reference_calls` are lookup counts on synthetic tables, not
+  timings. No speedup of the game is claimed.
+- The VIC3_DATA integration test of the existing Python suite was skipped (no
+  local archive configured).

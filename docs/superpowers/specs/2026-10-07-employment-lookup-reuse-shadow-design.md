@@ -3,7 +3,7 @@
 日付: 2026-10-07（日本時間）  
 リポジトリ: `pengin0503/Vic3-optimazation`  
 作成基準main: `da2bbc1158c5a17eb5ed8faafb04890bee8bd5e5`  
-状態: **書面specはユーザー承認済み（2026-10-06 UTC、この会話）。** [段階Aの実装計画](../plans/2026-10-06-offline-lookup-reuse-core.md)を作成し、計画レビュー待ち。製品コードは未作成。
+状態: **書面specはユーザー承認済み（2026-10-06 UTC、この会話）。** [段階Aの実装計画](../plans/2026-10-06-offline-lookup-reuse-core.md)に従い、段階Aのportable offline coreを[`src/lookup_reuse/`](../../../src/lookup_reuse/README.md)へ実装済み（2026-10-06 UTC、[検証記録](../../../research/generated/lookup-reuse-core/verification.md)）。段階B（native shadow）は§8の条件未達のため未着手。
 
 ## 1. 目的と成功条件
 

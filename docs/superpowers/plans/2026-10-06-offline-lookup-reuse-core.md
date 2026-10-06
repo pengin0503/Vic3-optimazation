@@ -10,7 +10,9 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md`（この会話で書面承認済み）
 
-実行方式: 既存のユーザー選択を維持し、Native / `superpowers:executing-plans`で本人が順次実装する。計画レビュー後に開始する。作成基準main: `c7ec2845ff10b207e151cdb0fcc6cda938ab54e8`。日付: 2026-10-06 UTC。
+実行方式: 既存のユーザー選択を維持し、Native / `superpowers:executing-plans`で本人が順次実装する。計画レビュー後に開始する。
+
+**実装状況（2026-10-06 UTC）:** Task 1〜4を実装済み。基準main `788e29d`。実行記録・RED/GREEN・CI結果・計画からの差分は[verification.md](../../../research/generated/lookup-reuse-core/verification.md)を参照。テスト名の重複回避のため、Task 1の検索部分は`tail_positive_search`、Task 3のshadow版は`shadow_wrong_key_result_not_remembered`とした。boundary fixtureは4 snapshot（tail、backshift前後、mask0/最大key）。段階Bは未着手。作成基準main: `c7ec2845ff10b207e151cdb0fcc6cda938ab54e8`。日付: 2026-10-06 UTC。
 
 ## Global Constraints
 
@@ -88,7 +90,7 @@ build/lookup-reuse/lookup_reuse_tests
 - `HashKey(uint32_t) noexcept -> uint32_t`、`ReferencePositiveSearch(const ValidatedTableView&, uint32_t) noexcept -> SearchResult`。
 - test support: `RegisterTest(const char* name, void (*test)()) -> void` と `CHECK(bool)`、`RawSlots(size_t) -> std::vector<std::byte>`、`PutSlot(vector<byte>&, size_t, uint8_t control, uint32_t key) -> void`、`MakeFixture(TableIdentity,uint64_t mask,const vector<byte>&) -> unique_ptr<OwnedTableFixture>`（invalidならtest failure）。これらはtest専用。
 
-- [ ] **Step 1: TableViewTestsにfailing testsを書く。** 下の固定配置をそのまま使う。raw bytesの生成はPutSlotで指定値を置くだけとし、reference/hashで期待slotを生成しない。
+- [x] **Step 1: TableViewTestsにfailing testsを書く。** 下の固定配置をそのまま使う。raw bytesの生成はPutSlotで指定値を置くだけとし、reference/hashで期待slotを生成しない。
 
 ```cpp
 // mask=7, slots=10; control is home-distance + 1
@@ -106,10 +108,10 @@ CHECK(!ReferencePositiveSearch(one->View(), 0));
 
 さらに名前付きtests `invalid_layout_mask_size`（version=2、mask=6、mask=UINT64_MAX、slot_count=UINT64_MAX、39-byte recordを拒否）、`invalid_duplicate_distance_reachability`（同じfull key二重、key0@slot6/control1、key8@slot6/control2でslot5 emptyを拒否）、`control_distance_overflow`（mask0でhome0からindex255にkeyを配置したcontrol255を拒否）、`borrow_is_immutable`（元span変更後もowned copyが不変、fixture/viewがcopy/move不可のstatic_assert）を追加する。mask0でslots1がoccupiedの入力は末尾emptyが欠けるtruncated tailとして拒否する。
 
-- [ ] **Step 2: 直接GCC buildを実行してREDを確認する。** Expected: TableView APIが未定義でcompile非0。TestMain/TestSupport/CMake scaffoldingを用意した後は、宣言だけのstubがtyped error/nulloptを返す状態で `--filter one_primary_and_max_key` がCHECK failureになることも確認する。失敗が環境依存だけならREDと扱わない。
-- [ ] **Step 3: 上記APIをTableView.h/.cppへ実装する。** FNVは初期値 `0x811c9dc5`、multiplier `0x01000193`、keyの4-byte little-endian、uint32 wrap。mask+1、slot_count×40をchecked算術してcopy前にサイズ検査する。各occupied keyのhome、非wrap距離+1とcontrolを照合し、独立した逐次検証で通常検索の停止条件より前に到達可能か調べる。full keyの一意性、primary数以上のspan、全occupied probe後のempty terminatorを検査する。validatorが未validated viewを作る循環を避ける。typed errorは上記の列挙順で最初の該当原因を返す。lookupはslot/control/spanを境界検査して停止し、fallbackを再現しない。
-- [ ] **Step 4: Release buildと全TableView testsを実行する。** Expected: 全PASS、未知filterは非0。CMake使用可能ならCTestもPASS。
-- [ ] **Step 5: Task 1のfilesをcommitする。** Message: `feat: add owned validated offline lookup tables`。RED/GREEN commandsと実出力を作業記録へ残す。
+- [x] **Step 2: 直接GCC buildを実行してREDを確認する。** Expected: TableView APIが未定義でcompile非0。TestMain/TestSupport/CMake scaffoldingを用意した後は、宣言だけのstubがtyped error/nulloptを返す状態で `--filter one_primary_and_max_key` がCHECK failureになることも確認する。失敗が環境依存だけならREDと扱わない。
+- [x] **Step 3: 上記APIをTableView.h/.cppへ実装する。** FNVは初期値 `0x811c9dc5`、multiplier `0x01000193`、keyの4-byte little-endian、uint32 wrap。mask+1、slot_count×40をchecked算術してcopy前にサイズ検査する。各occupied keyのhome、非wrap距離+1とcontrolを照合し、独立した逐次検証で通常検索の停止条件より前に到達可能か調べる。full keyの一意性、primary数以上のspan、全occupied probe後のempty terminatorを検査する。validatorが未validated viewを作る循環を避ける。typed errorは上記の列挙順で最初の該当原因を返す。lookupはslot/control/spanを境界検査して停止し、fallbackを再現しない。
+- [x] **Step 4: Release buildと全TableView testsを実行する。** Expected: 全PASS、未知filterは非0。CMake使用可能ならCTestもPASS。
+- [x] **Step 5: Task 1のfilesをcommitする。** Message: `feat: add owned validated offline lookup tables`。RED/GREEN commandsと実出力を作業記録へ残す。
 
 ## Task 2: 1つのpositive-slot hint
 
@@ -117,7 +119,7 @@ CHECK(!ReferencePositiveSearch(one->View(), 0));
 
 **Interfaces:** Task 1のview/SearchResultを消費する。`PositiveSlotHint::Try(const ValidatedTableView&, uint32_t) noexcept -> SearchResult`（nulloptはNeedsOriginal）、`Remember(const ValidatedTableView&, uint32_t, SearchResult) noexcept -> void`、`Clear() noexcept -> void`。保持値はidentity/mask/key/indexとoccupied boolだけ。Tryは通常検索を呼ばない。
 
-- [ ] **Step 1: failing hint testsを書く。**
+- [x] **Step 1: failing hint testsを書く。**
 
 ```cpp
 // test: repeat_hit_avoids_reference; fixture key0@5, key8@6
@@ -135,10 +137,10 @@ CHECK(!hint.Try(view, 8));
 
 `identity_and_mask_changes`はmap/storage/epochをそれぞれ変えた新snapshot、mask15の新snapshotでNeedsOriginalを確認する。layout2はview生成失敗をTask1で確認し、hintをClearするcaller経路をTask3で確認する。`backshift_and_slot_reuse`はkey0削除後key8@5/control1へ再配置、別snapshotでslot6に別full keyを置き、旧hintが使われないことと再Remember後の正しいslotを確認する。再生成のtest builderはepochを増やし、mutableなviewを作らない。`full_key_and_uncacheable`は低24bitが同じ別key、nullopt、span外index、empty slot、Clearを確認する。
 
-- [ ] **Step 2: buildして `--filter repeat_hit_avoids_reference` をRED確認する。** Expected: Tryが常にnulloptのstubで2つ目のCHECKがFAIL。
-- [ ] **Step 3: Try/Remember/Clearを実装する。** Tryはidentity/mask/fullkey/primary boundsと現在のSlotのcontrol/keyを確認する。Rememberは先にClearし、元のpositive indexがprimary内かつ現在slotのfull key/control一致の場合だけ保存する。tailを検索できることとhint適格性を混同しない。旧view/bytes/pointerは保存しない。
-- [ ] **Step 4: Release buildとTableView+hint全testsを実行する。** Expected: 全PASS。4回同じkeyをcore callerがTry→必要時のみReference→Rememberで扱うtestではsearch counter=1、各slot=6。shadow testとは別のtestである。
-- [ ] **Step 5: Task 2をcommitする。** Message: `feat: validate a single positive lookup slot hint`。
+- [x] **Step 2: buildして `--filter repeat_hit_avoids_reference` をRED確認する。** Expected: Tryが常にnulloptのstubで2つ目のCHECKがFAIL。
+- [x] **Step 3: Try/Remember/Clearを実装する。** Tryはidentity/mask/fullkey/primary boundsと現在のSlotのcontrol/keyを確認する。Rememberは先にClearし、元のpositive indexがprimary内かつ現在slotのfull key/control一致の場合だけ保存する。tailを検索できることとhint適格性を混同しない。旧view/bytes/pointerは保存しない。
+- [x] **Step 4: Release buildとTableView+hint全testsを実行する。** Expected: 全PASS。4回同じkeyをcore callerがTry→必要時のみReference→Rememberで扱うtestではsearch counter=1、各slot=6。shadow testとは別のtestである。
+- [x] **Step 5: Task 2をcommitする。** Message: `feat: validate a single positive lookup slot hint`。
 
 ## Task 3: 元結果を維持するoffline shadow observer
 
@@ -155,7 +157,7 @@ CHECK(!hint.Try(view, 8));
 - `OfflineShadowEvaluator`: default Off、新instanceだけがsession停止をresetする。`SetMode(ObserverMode) noexcept -> void`、`Evaluate(const ValidatedTableView* nullable_view, uint32_t key, OriginalLookup) -> SearchResult`、`LastRecord() const noexcept -> ComparisonRecord`、`Counters() const noexcept -> const ObserverCounters&`。
 - `ObserverScope(OfflineShadowEvaluator&)`はcopy/move不可。constructor/destructorでhintをClearしscopeを開始/終了する。nested scopeは禁止、再入は同じscope内のEvaluate再帰で検証する。Evaluateは1-thread/session、同期callbackのみというoffline契約。
 
-- [ ] **Step 1: failing shadow testsを書く。**
+- [x] **Step 1: failing shadow testsを書く。**
 
 ```cpp
 // test: shadow_original_once_and_return; mode Shadow, active scope, key8
@@ -173,10 +175,10 @@ CHECK(eval.Counters().mismatch == 1);
 
 追加tests: `exception_then_next_call`は元callbackの固有exceptionを捕捉し、次回はNoCandidate、callback回数=試行数を確認する。`reentrant_bypasses_and_invalidates_outer`はinnerにも元callback1回、reentrant_bypass=1、inner Skipped/Reentrant、outerは比較せずSkipped/Reentrant、次の呼び出しもNoCandidate。`off_missing_view_scope`はそれぞれ元callback1回とSkippedを確認し、invalid layoutのCreate失敗をnullptr経路へ渡す。`wrong_key_result_not_remembered`は元結果slot5をそのまま返すが次回もNoCandidate。`mode_toggle_keeps_disabled`はmismatch後のOff→ShadowがSkipped/SessionDisabled、hint復活無し。`scope_end_and_miss`は新scopeでNoCandidate、missを毎回元callbackへ渡すことを確認する。
 
-- [ ] **Step 2: buildして `--filter shadow_original_once_and_return` をRED確認する。** Expected: callbackだけを呼ぶstubでEqualのCHECKがFAIL。元結果を返さないstubにしない。
-- [ ] **Step 3: evaluatorとRAII scopeを実装する。** candidateは元callback前に取得し、元callbackをexactly once実行する。例外時はhintとin-call状態をRAIIで消して例外をそのまま伝播する。再入時は内側候補をbypassし、外側に固定boolで失効を通知する。戻ったouterは候補を比較/再保存しない。候補があり比較可能ならEqual/Mismatch、候補無しはNoCandidate、証拠/scope/mode不足はSkipped。正常戻り値は改変しない。mismatch後はそのsessionをdisableし、SetModeでも復帰しない。
-- [ ] **Step 4: countersのテストを実行する。** observed_callsは例外含む全Evaluate入場、candidate_attemptsはShadow・scope・validview・非再入・未disableのTry実行、candidate_hitsはTry成功、equal/mismatchは比較完了のみ。fallback_or_no_positiveは正常nullopt、skipはreason別、reentrant_bypassはinner入場。例外は正常recordを偽造しない。LastRecordは最後に完了した呼び出しの値であり、outer完了がinner recordを上書きする。fixed recordのみなのでdropped_records=0。全Release testsがPASS、hit数と比較完了数が再入ケースで異なることを確認する。
-- [ ] **Step 5: Task 3をcommitする。** Message: `feat: compare offline lookup hints without replacing original results`。
+- [x] **Step 2: buildして `--filter shadow_original_once_and_return` をRED確認する。** Expected: callbackだけを呼ぶstubでEqualのCHECKがFAIL。元結果を返さないstubにしない。
+- [x] **Step 3: evaluatorとRAII scopeを実装する。** candidateは元callback前に取得し、元callbackをexactly once実行する。例外時はhintとin-call状態をRAIIで消して例外をそのまま伝播する。再入時は内側候補をbypassし、外側に固定boolで失効を通知する。戻ったouterは候補を比較/再保存しない。候補があり比較可能ならEqual/Mismatch、候補無しはNoCandidate、証拠/scope/mode不足はSkipped。正常戻り値は改変しない。mismatch後はそのsessionをdisableし、SetModeでも復帰しない。
+- [x] **Step 4: countersのテストを実行する。** observed_callsは例外含む全Evaluate入場、candidate_attemptsはShadow・scope・validview・非再入・未disableのTry実行、candidate_hitsはTry成功、equal/mismatchは比較完了のみ。fallback_or_no_positiveは正常nullopt、skipはreason別、reentrant_bypassはinner入場。例外は正常recordを偽造しない。LastRecordは最後に完了した呼び出しの値であり、outer完了がinner recordを上書きする。fixed recordのみなのでdropped_records=0。全Release testsがPASS、hit数と比較完了数が再入ケースで異なることを確認する。
+- [x] **Step 5: Task 3をcommitする。** Message: `feat: compare offline lookup hints without replacing original results`。
 
 ## Task 4: 再現可能なdifferential runnerと受け入れ
 
@@ -186,7 +188,7 @@ CHECK(eval.Counters().mismatch == 1);
 
 CLI: `lookup_reuse_runner --seed 20261007 --rebuilds 1000 --output <path>`。unsigned decimal厳密parse、overflow・負値・unknown option・rebuilds=0を拒否して非0。mismatch>0も非0、I/O failure非0。stdoutを使う場合だけoutputを省略可。
 
-- [ ] **Step 1: OfflineRunnerTestsへfailing testsを書く。**
+- [x] **Step 1: OfflineRunnerTestsへfailing testsを書く。**
 
 ```cpp
 // test: repeatable_and_independent_membership
@@ -202,9 +204,9 @@ CHECK(a.observer.dropped_records == 0);
 
 `json_roundtrip_and_cli_rejection`は生成JSONをPython標準jsonで読み、schema_version=1、seed=20261007、rebuilds=1000、全required counts、`scope="offline-synthetic"` を確認する。CLIの `--seed -1`、`--seed 4294967296`、`--rebuilds 0`、unknown option、書けないoutputを非0で確認する（CTestがPython interpreterを見つけた場合のみこのCLI検査を登録し、無い場合は明示skip）。`boundary_fixtures_independent_of_seed`はTask1/2のtail/backshift/max-keyを固定して通常検索・hint・shadowで検証する。
 
-- [ ] **Step 2: runner stubで `--filter repeatable_and_independent_membership` をRED確認する。** Expected: core_hits=0のCHECKがFAIL。
-- [ ] **Step 3: runnerを実装する。** std::mt19937の生出力と明示したmodulo選択を使い、実装依存のuniform_int_distributionによるfixture差を避ける。mask7/15/31を巡回し、1–16個のunique full uint32 keysを独立std::setに保持する。runner専用のRobin-Hood insertionがraw recordsを作り、validatorへ渡す。通常検索/validatorを使って期待存在集合を生成しない。probe用tailはoccupied後のemptyを含むだけ確保する。fixture再生成ごとにopaque storage_id/epochを増やす。present/absent queryと4回同key queryを生成し、referenceの存在判定を独立setへ、coreのslotをreferenceへ比較する。shadowは同fixtureを読む元callbackを毎回呼ぶ。old Python sourceはimport/移植しない。結果のquery数は実測した生成数を保存し、旧モデルの25,676に合わせない。
-- [ ] **Step 4: JSON出力とCLIを実装し、fixed runを生成する。** JSONはschema/config/countsとoffline適用範囲を含み、Skipped理由別数を出す。serializer/stream/動的fixture構築はrunnerのみ。証拠のverification.mdへ実compiler・OS・commands・exitcode・fixture/query数・skipとgit基準を書き、未実行をPASS扱いしない。
+- [x] **Step 2: runner stubで `--filter repeatable_and_independent_membership` をRED確認する。** Expected: core_hits=0のCHECKがFAIL。
+- [x] **Step 3: runnerを実装する。** std::mt19937の生出力と明示したmodulo選択を使い、実装依存のuniform_int_distributionによるfixture差を避ける。mask7/15/31を巡回し、1–16個のunique full uint32 keysを独立std::setに保持する。runner専用のRobin-Hood insertionがraw recordsを作り、validatorへ渡す。通常検索/validatorを使って期待存在集合を生成しない。probe用tailはoccupied後のemptyを含むだけ確保する。fixture再生成ごとにopaque storage_id/epochを増やす。present/absent queryと4回同key queryを生成し、referenceの存在判定を独立setへ、coreのslotをreferenceへ比較する。shadowは同fixtureを読む元callbackを毎回呼ぶ。old Python sourceはimport/移植しない。結果のquery数は実測した生成数を保存し、旧モデルの25,676に合わせない。
+- [x] **Step 4: JSON出力とCLIを実装し、fixed runを生成する。** JSONはschema/config/countsとoffline適用範囲を含み、Skipped理由別数を出す。serializer/stream/動的fixture構築はrunnerのみ。証拠のverification.mdへ実compiler・OS・commands・exitcode・fixture/query数・skipとgit基準を書き、未実行をPASS扱いしない。
 
 ```bash
 g++ -std=c++20 -O2 -DNDEBUG -Wall -Wextra -Wpedantic -Isrc/lookup_reuse/include -Isrc/lookup_reuse/runner src/lookup_reuse/core/*.cpp src/lookup_reuse/runner/*.cpp -o build/lookup-reuse/lookup_reuse_runner
@@ -212,9 +214,9 @@ build/lookup-reuse/lookup_reuse_runner --seed 20261007 --rebuilds 1000 --output 
 python -m json.tool research/generated/lookup-reuse-core/results.json
 ```
 
-- [ ] **Step 5: 専用CIとbuild/readmeを完成する。** workflowはubuntu-24.04/windows-2022 matrix、既存と同じactions/checkout@v4を使い、Release configure/build/CTestとfixed runnerを実行する。Windows executable pathは `build/lookup-reuse/Release/`、Linuxは `build/lookup-reuse/`。core test用CMakeへPythonが見つかった時だけJSON/CLI CTestを登録する。この検査のため `src/lookup_reuse/tests/VerifyRunner.py`（Python stdlibのみ、引数はrunner executable path）を追加する。READMEはGCC/MSVC commands、ownership/scoping、mode、合成結果の限界を説明し、段階Bの未達条件をspecへリンクする。
-- [ ] **Step 6: 最終verificationを実行する。** Task4以降の直接test buildは前掲GCC commandへ `-Isrc/lookup_reuse/runner src/lookup_reuse/runner/OfflineRunner.cpp` を追加してlinkし、`python src/lookup_reuse/tests/VerifyRunner.py build/lookup-reuse/lookup_reuse_runner` を実行する。Release core全tests、runner、JSON/CLI検査、`python -m unittest discover -s tests -v`。CIでGCC/MSVC双方の結果を確認できた場合のみ双方PASSと書く。CMake無しなら直接GCC結果とCI未確認を区別する。必要dependency不足による既存Python test skip/failureは件数と原因を残す。V3PF goldenが変わっていないことをgit diffで確認する。
-- [ ] **Step 7: 最終handoffをcommitする。** Message: `feat: add reproducible offline lookup reuse verification`。requesting-code-reviewとverification-before-completionを適用し、承認済みNative方式の最終reviewを行う。finishing-a-development-branchで統合方法を判断する。段階Aの完了、実際のtests、native未達条件を報告する。速度改善率やgame内の安全性はこの合成結果から主張しない。
+- [x] **Step 5: 専用CIとbuild/readmeを完成する。** workflowはubuntu-24.04/windows-2022 matrix、既存と同じactions/checkout@v4を使い、Release configure/build/CTestとfixed runnerを実行する。Windows executable pathは `build/lookup-reuse/Release/`、Linuxは `build/lookup-reuse/`。core test用CMakeへPythonが見つかった時だけJSON/CLI CTestを登録する。この検査のため `src/lookup_reuse/tests/VerifyRunner.py`（Python stdlibのみ、引数はrunner executable path）を追加する。READMEはGCC/MSVC commands、ownership/scoping、mode、合成結果の限界を説明し、段階Bの未達条件をspecへリンクする。
+- [x] **Step 6: 最終verificationを実行する。** Task4以降の直接test buildは前掲GCC commandへ `-Isrc/lookup_reuse/runner src/lookup_reuse/runner/OfflineRunner.cpp` を追加してlinkし、`python src/lookup_reuse/tests/VerifyRunner.py build/lookup-reuse/lookup_reuse_runner` を実行する。Release core全tests、runner、JSON/CLI検査、`python -m unittest discover -s tests -v`。CIでGCC/MSVC双方の結果を確認できた場合のみ双方PASSと書く。CMake無しなら直接GCC結果とCI未確認を区別する。必要dependency不足による既存Python test skip/failureは件数と原因を残す。V3PF goldenが変わっていないことをgit diffで確認する。
+- [x] **Step 7: 最終handoffをcommitする。** Message: `feat: add reproducible offline lookup reuse verification`。requesting-code-reviewとverification-before-completionを適用し、承認済みNative方式の最終reviewを行う。finishing-a-development-branchで統合方法を判断する。段階Aの完了、実際のtests、native未達条件を報告する。速度改善率やgame内の安全性はこの合成結果から主張しない。
 
 ## Self-reviewとhandoff
 
@@ -226,4 +228,4 @@ python -m json.tool research/generated/lookup-reuse-core/results.json
 - API型はSearchResult=optional slotで統一し、callback戻り値とcandidateを別に記録する。mode切替によるsession disable解除は認めない。
 - 実装時にspec契約を満たせないことが判明したら、native前提を追加せず、具体的な矛盾と選択肢を提示する。
 
-本計画はレビュー待ち。ここに記載したcommands/testsは実装後の実行手順であり、現時点のPASS結果ではない。計画の書面レビュー後、保存済みNative方式で実装を開始する。
+本計画は段階Aとして実装済み。実際に実行したcommandsと結果は[verification.md](../../../research/generated/lookup-reuse-core/verification.md)に記録した。合成結果は速度改善やnative等価性の証拠ではない。
