@@ -1,5 +1,6 @@
 #pragma once
 #include "../common/Validation.h"
+#include "ModuleResolutionDiagnostics.h"
 #include "../profiler/ProfilerRuntime.h"
 #include <filesystem>
 #include <string>
@@ -54,6 +55,6 @@ enum class InjectionError {None,InvalidPath,UnsupportedProcess,UnsupportedBuild,
 std::filesystem::path ProcessImagePath(HANDLE process);
 InjectionError ValidateVictoriaProcess(HANDLE process,const std::filesystem::path& path);
 // Private native primitive. The production CLI always passes the exact Victoria gate first.
-InjectionError InjectLibraryForValidatedProcess(HANDLE process,DWORD pid,const std::filesystem::path& dll);
+InjectionError InjectLibraryForValidatedProcess(HANDLE process,DWORD pid,const std::filesystem::path& dll,ModuleResolutionDiagnostics* diagnostics=nullptr);
 #endif
 }

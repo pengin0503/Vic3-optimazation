@@ -119,3 +119,26 @@ Threading.TaskThreadCount を変更する場合は測定者がゲーム標準 co
 6. ゲーム状態変更がないことをコード確認と長時間実行・セーブ確認で検証する。
 
 合成 CTest/CI の成功だけでは、この合格条件は満たさない。性能改善率はまだ主張できない。
+
+## Attach code 4 の切り分け
+
+`Attach failed (no retry), code 4` は LoadLibraryW の module resolution failure。
+`Unsupported process/build ... Gate code: 4` とは別の表示である。
+この失敗経路は exact-build gate 通過後、remote allocation/write/thread 作成より前で終了する。
+
+診断版 loader は続けて `Module resolution diagnostics v1` を出力する。
+`stage` は失敗した条件、`win32_error` は失敗した Win32 API 直後のエラー番号。
+比較検証だけの不一致では `win32_error=0` とし、古い GetLastError 値を流用しない。
+
+| stage | 調査対象 |
+| --- | --- |
+| export_lookup / owner_lookup | local LoadLibraryW export / owner module |
+| local_pe / local_address / local_text / local_path | local module PE / export RVA / executable .text / module path |
+| snapshot / module_first | explicit PID の module snapshot / enumeration API |
+| module_match / module_size / remote_address | owner module path の一意一致 / image size / checked offset |
+| remote_query / remote_protection | remote memory query / committed executable-read protection |
+| remote_read / byte_mismatch | 16-byte 読み取り / local export bytes との一致 |
+
+`owner_path`、local/remote size、export RVA、matches、bytes_read、remote state/protection、
+`pe_error` もログへ保存する。code 4 だけで OS バージョンやセキュリティ製品を原因と断定しない。
+診断追加で address fallback、retry、validation bypass は行わない。

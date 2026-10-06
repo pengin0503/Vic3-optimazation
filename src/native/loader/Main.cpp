@@ -38,8 +38,13 @@ int wmain(int argc,wchar_t** argv) {
         MappedView view(MapViewOfFile(mapping.get(),FILE_MAP_ALL_ACCESS,0,0,sizeof(SharedMapping)));if(!view.get())return 7;
         auto* shared=static_cast<SharedMapping*>(view.get());std::memset(shared,0,sizeof(SharedMapping));shared->config=config;
         WinHandle ready(CreateEventW(nullptr,TRUE,FALSE,ObjectName(L"Ready",args.pid).c_str()));const DWORD ready_error=GetLastError();if(!ready || ready_error==ERROR_ALREADY_EXISTS)return 7;
-        auto injection=InjectLibraryForValidatedProcess(process.get(),args.pid,args.dll);
-        if(injection!=InjectionError::None){std::wcerr<<L"Attach failed (no retry), code "<<static_cast<int>(injection)<<L"\n";return 8;}
+        ModuleResolutionDiagnostics resolution;
+        auto injection=InjectLibraryForValidatedProcess(process.get(),args.pid,args.dll,&resolution);
+        if(injection!=InjectionError::None) {
+            std::wcerr<<L"Attach failed (no retry), code "<<static_cast<int>(injection)<<L"\n";
+            if(injection==InjectionError::ModuleResolution)WriteModuleResolutionDiagnostics(std::wcerr,resolution);
+            return 8;
+        }
         if(WaitForSingleObject(ready.get(),30000)!=WAIT_OBJECT_0){std::wcerr<<L"Profiler ready timed out. Do not retry; restart the game.\n";return 9;}
         for(size_t i=0;i<3;++i)std::cout<<generated::kTargets[i].runtime_task<<" validation="<<shared->validation_errors[i]<<'\n';
         if(shared->status!=static_cast<LONG>(RuntimeStatus::Ready)){std::wcerr<<L"DLL rejected initialization, status "<<shared->status<<L"\n";return 10;}
