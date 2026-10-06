@@ -1,0 +1,98 @@
+"""Throwaway feasibility tests. No game data is written or hooked."""
+import random
+import unittest
+from slot_hint_model import Table, PositiveSlotHint
+
+
+class SlotHintTests(unittest.TestCase):
+    def test_hit_preserves_descriptor_identity_and_skips_hash_search(self):
+        table = Table({123: 'first'}, mask=7)
+        hint = PositiveSlotHint()
+        expected = table.lookup(123)
+        self.assertEqual(hint.lookup(table, 123), expected)
+        searches = table.searches
+        self.assertEqual(hint.lookup(table, 123), expected)
+        self.assertEqual(table.searches, searches)
+
+    def test_same_table_storage_relocation_invalidates_hint(self):
+        table = Table({123: 'first'}, mask=7)
+        hint = PositiveSlotHint()
+        hint.lookup(table, 123)
+        table.rebuild({123: 'changed'}, relocate=True)
+        self.assertEqual(hint.lookup(table, 123), table.lookup(123))
+
+    def test_deleted_key_calls_fallback_every_time(self):
+        table = Table({123: 'first'}, mask=7)
+        hint = PositiveSlotHint()
+        hint.lookup(table, 123)
+        table.rebuild({})
+        before = table.fallback_calls
+        self.assertEqual(hint.lookup(table, 123), table.fallback)
+        self.assertEqual(hint.lookup(table, 123), table.fallback)
+        self.assertEqual(table.fallback_calls, before + 2)
+
+    def test_value_change_reads_current_descriptor(self):
+        table = Table({123: 'old'}, mask=7)
+        hint = PositiveSlotHint()
+        old = hint.lookup(table, 123)
+        table.rebuild({123: 'new'})
+        current = hint.lookup(table, 123)
+        self.assertEqual(current, table.lookup(123))
+        self.assertEqual(table.value(current), 'new')
+        self.assertEqual(old, current)
+
+    def test_mask_change_invalidates_hint(self):
+        table = Table({123: 'first'}, mask=7)
+        hint = PositiveSlotHint()
+        hint.lookup(table, 123)
+        table.rebuild({123: 'new'}, mask=15)
+        self.assertEqual(hint.lookup(table, 123), table.lookup(123))
+
+    def test_same_storage_rehash_and_collision_matches_search(self):
+        hint = PositiveSlotHint()
+        rng = random.Random(20261007)
+        table = Table({}, mask=7)
+        compared = 0
+        for _ in range(1000):
+            entries = {rng.getrandbits(32): rng.randrange(1000000) for _ in range(rng.randrange(8))}
+            table.rebuild(entries, relocate=rng.randrange(4) == 0)
+            queries = list(entries) + [rng.getrandbits(32), 0xffffffff, 0]
+            for key in queries:
+                expected = table.lookup(key)
+                for _ in range(4):
+                    actual = hint.lookup(table, key)
+                    self.assertEqual(actual, expected)
+                    if actual != table.fallback:
+                        self.assertEqual(table.value(actual), entries[key])
+                    compared += 1
+        self.assertGreater(compared, 20000)
+
+    def test_different_map_same_key_does_not_reuse_hint(self):
+        left = Table({123: 'left'}, mask=7)
+        right = Table({123: 'right'}, mask=7)
+        hint = PositiveSlotHint()
+        hint.lookup(left, 123)
+        self.assertEqual(hint.lookup(right, 123), right.lookup(123))
+
+    def test_collision_move_in_same_storage_invalidates_saved_slot(self):
+        table = Table({0: 'zero', 8: 'eight'}, mask=7)
+        hint = PositiveSlotHint()
+        before = hint.lookup(table, 8)
+        self.assertEqual(before[1], 6)
+        table.rebuild({8: 'new eight'})
+        after = hint.lookup(table, 8)
+        self.assertEqual(after[1], 5)
+        self.assertEqual(table.value(after), 'new eight')
+
+    def test_tail_slot_remains_uncached(self):
+        table = Table({2: 'two', 10: 'ten'}, mask=7)
+        hint = PositiveSlotHint()
+        first = hint.lookup(table, 10)
+        self.assertEqual(first[1], 8)
+        searches = table.searches
+        self.assertEqual(hint.lookup(table, 10), first)
+        self.assertEqual(table.searches, searches + 1)
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

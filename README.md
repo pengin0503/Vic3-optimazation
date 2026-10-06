@@ -4,6 +4,8 @@ Private research project for improving Victoria 3 simulation performance beyond 
 
 ## Current state
 
+The [measurement-free employment reuse investigation — 2026-10-07](docs/superpowers/reports/2026-10-07-offline-employment-optimization-ja.md) adds a fourth same-item ID-array lookup site, preserves the reset-before-processing order and the fallback initialization path, and explores a validated positive-slot hint in a throwaway synthetic model. Its nine model tests and 25,676 comparisons are research evidence only; no game optimization, native equivalence or speedup has been demonstrated. The next proposed step is a reviewed native/shadow design.
+
 Start here: [latest repeated benchmark analysis — 2026-10-05](docs/superpowers/reports/2026-10-05-repeated-benchmark-analysis-ja.md).
 For the next native optimization investigation, read the [deep native findings and handoff](docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md). It adds six exact-build economics candidates, classified synchronization witnesses, eight primary sources, and reproducible research recipes; none establishes a runtime bottleneck or speedup yet.
 The [first OS capture attempt](research/os-capture-attempt-2026-10-05-ja.md) preserved 37.53 seconds and a matched 368-frame TickTask CSV, but its trace lost 43,082 events. The [second sampled CPU capture and handoff](research/os-sampled-capture-2026-10-05-ja.md) saved with zero lost events and now observes downstream ID/table/page, temporary-memory and employment-preparation candidates in real game samples/stacks. The operator reported 48.46 seconds; its matching TickTask CSV, exact gameplay boundaries and game exit reason remain unconfirmed. These are runtime execution witnesses, not a validated bottleneck or speedup.

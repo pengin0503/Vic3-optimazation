@@ -1,0 +1,10 @@
+{
+  "seed": 20261007,
+  "rebuilds": 1000,
+  "query_comparisons": 25676,
+  "positive_query_comparisons": 13676,
+  "mismatches": 0,
+  "model_tests_passed": 9,
+  "not_native_equivalence": true,
+  "speedup_measured": false
+}

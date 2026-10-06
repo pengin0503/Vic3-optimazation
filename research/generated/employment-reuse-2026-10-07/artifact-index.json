@@ -1,0 +1,25 @@
+{
+  "hash_convention": "utf8_lf; not exact checkout bytes on CRLF platforms",
+  "files": {
+    "2026-10-07-offline-employment-optimization-ja.md": {
+      "sha256_utf8_lf": "d6b6cdd9bb0e88072de747b6a181ce4ee899e7e5050f07530cbbfb6d7096207b",
+      "size_bytes": 9685
+    },
+    "evidence.json": {
+      "sha256_utf8_lf": "cbfc50fb52cbf0363d23b5ed6ecf0253719322232e502933fecdfeeeffbc90ca",
+      "size_bytes": 25574
+    },
+    "model-source.py.txt": {
+      "sha256_utf8_lf": "52c9239e74505231f97e658c67be9e5ba6567c1ed3515285f57e7bce6653e39f",
+      "size_bytes": 2626
+    },
+    "model-tests.py.txt": {
+      "sha256_utf8_lf": "c10fcd738178034224b44075ba2119d53ba9178a2fb6e34feefba5d6a9c6edff",
+      "size_bytes": 4011
+    },
+    "synthetic-results.json": {
+      "sha256_utf8_lf": "644ed27dcb38a614d74b411a967bd96682cf8c427f58c698442b9630a20bd0e2",
+      "size_bytes": 221
+    }
+  }
+}

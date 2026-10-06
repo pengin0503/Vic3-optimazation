@@ -1,0 +1,74 @@
+"""Throwaway valid-table model. This does not emulate or modify the game.
+
+Only positive lookup results may be hinted. The model assumes sequential
+access, valid robin-hood table invariants, and stable storage during a call.
+It deliberately does not establish those assumptions for Victoria 3.
+"""
+def hash32(key):
+    value = 0x811c9dc5
+    for byte in (key & 0xffffffff).to_bytes(4, 'little'):
+        value = ((value ^ byte) * 0x1000193) & 0xffffffff
+    return value
+
+
+class Table:
+    next_storage = 0
+    def __init__(self, entries, mask):
+        self.fallback = ('fallback',)
+        self.fallback_calls = self.searches = 0
+        self.mask = mask
+        self.rebuild(entries, relocate=True)
+
+    def lookup(self, key):
+        self.searches += 1
+        index = hash32(key) & self.mask
+        distance = 1
+        while self.slots[index] is not None and self.slots[index][2] >= distance:
+            if self.slots[index][0] == key:
+                return (self.storage, index)
+            index += 1
+            distance += 1
+        self.fallback_calls += 1
+        return self.fallback
+
+    def rebuild(self, entries, relocate=False, mask=None):
+        if mask is not None:
+            self.mask = mask
+        if relocate:
+            Table.next_storage += 1
+            self.storage = Table.next_storage
+        self.slots = [None] * (self.mask + 2 + len(entries))
+        for key, value in entries.items():
+            index = hash32(key) & self.mask
+            row = [key, value, 1]
+            while self.slots[index] is not None:
+                if self.slots[index][2] < row[2]:
+                    self.slots[index], row = row, self.slots[index]
+                index += 1
+                row[2] += 1
+            self.slots[index] = row
+
+    def value(self, pointer):
+        storage, index = pointer
+        assert storage == self.storage
+        return self.slots[index][1]
+
+
+class PositiveSlotHint:
+    def __init__(self):
+        self.hint = None
+
+    def lookup(self, table, key):
+        if self.hint is not None:
+            owner, storage, mask, saved_key, index = self.hint
+            if owner is table and storage == table.storage and mask == table.mask and saved_key == key:
+                row = table.slots[index]
+                if row is not None and row[2] >= 1 and row[0] == key:
+                    return (storage, index)
+        result = table.lookup(key)
+        self.hint = None
+        if result != table.fallback:
+            storage, index = result
+            if index <= table.mask:
+                self.hint = (table, storage, table.mask, key, index)
+        return result
