@@ -41,3 +41,6 @@ raw-captures/
 __pycache__/
 *.pyc
 .venv/
+
+# Local build output
+build/
