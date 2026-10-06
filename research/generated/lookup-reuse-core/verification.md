@@ -113,3 +113,51 @@ unchanged identity, a different mask cannot keep key 8 in a primary slot of a
 valid table — under mask 3 slot 6 is tail, under masks ≥ 15 key 8 homes at
 13+; `identity_and_mask_changes` documents both cases) and the `occupied_`
 flag (a cleared hint has layout_version 0, which no validated view has).
+
+## Task 3 — offline shadow observer
+
+RED (stub calls the original once, returns its result, writes no record):
+
+```
+$ build/lookup-reuse/lookup_reuse_tests --filter shadow_original_once_and_return
+[FAIL] shadow_original_once_and_return: src/lookup_reuse/tests/ShadowComparisonTests.cpp:86: CHECK(eval.LastRecord().original == SearchResult{6}) failed
+0/1 tests passed
+exit=1
+```
+
+(The first build attempt failed on `-Wmissing-field-initializers` in the test
+double under `-Werror`; default member initializers were added to the test
+double and to `ComparisonRecord`. That was a compile error, not counted as RED.)
+
+GREEN: direct GCC (`-Werror`) 26/26, CMake Release CTest 3/3, clang++ 18
+`-Werror` 26/26, GCC `-fsanitize=address,undefined` 26/26.
+
+Behaviour fixed by tests: the original callback runs exactly once per
+`Evaluate` in every path (Off, missing scope/view, disabled session, reentrant
+inner, hint hit); its normal return value is returned unchanged even when it
+differs from the candidate (`mismatch_disables`) or points at another key's
+slot (`shadow_wrong_key_result_not_remembered`, named apart from the Task 2
+test of the same plan name); exceptions propagate unchanged and leave no record
+or hint (`exception_then_next_call`); a reentrant inner call is bypassed and
+invalidates the outer hint, so `candidate_hits` (2) differs from completed
+comparisons (`equal` 1) in `reentrant_bypasses_and_invalidates_outer`; a
+mismatch disables the session and Off→Shadow does not re-enable it.
+
+Mutation spot-check: 12 mutants of `ShadowComparison.cpp` were run. Two real
+gaps were found and closed: reentry while the outer call is ineligible
+(missing view) did not test hint invalidation, and an inner exception caught by
+the outer callback was untested (`reentrant_exception_caught_by_outer` added).
+A redundant reset of the reentry flag in the exception guard was removed (the
+outermost call resets it on entry). Clearing the hint in the scope destructor
+is observationally equivalent to the clear in the next scope's constructor and
+was kept as defence in depth.
+
+Decisions within the plan's latitude:
+
+- Skip priority for a non-reentrant call: `Off`, then `SessionDisabled`, then
+  `MissingScope`, then `MissingView`. A reentrant call is always
+  `Skipped/Reentrant` regardless of mode.
+- A nested `ObserverScope` on the same evaluator throws `std::logic_error`
+  without touching the active scope.
+- An `Equal` comparison keeps the hint; a `NoCandidate` call passes the
+  original result to `Remember`, which validates it or clears the hint.
