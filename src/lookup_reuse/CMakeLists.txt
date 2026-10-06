@@ -26,6 +26,7 @@ endfunction()
 
 add_library(lookup_reuse_core STATIC
   core/TableView.cpp
+  core/PositiveSlotHint.cpp
 )
 target_include_directories(lookup_reuse_core PUBLIC include)
 lookup_reuse_warnings(lookup_reuse_core)
@@ -35,6 +36,7 @@ enable_testing()
 add_executable(lookup_reuse_tests
   tests/TestMain.cpp
   tests/TableViewTests.cpp
+  tests/PositiveSlotHintTests.cpp
 )
 target_include_directories(lookup_reuse_tests PRIVATE tests)
 target_link_libraries(lookup_reuse_tests PRIVATE lookup_reuse_core)

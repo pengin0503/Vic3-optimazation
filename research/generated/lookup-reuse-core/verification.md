@@ -87,3 +87,29 @@ control).
 Naming note: the plan lists `tail_positive_never_cached` under both Task 1
 (search portion) and Task 2. To keep `--filter` names unique, the Task 1 search
 portion is `tail_positive_search`; Task 2 owns `tail_positive_never_cached`.
+
+## Task 2 — single positive-slot hint
+
+RED (stub `Try` always returns `std::nullopt`):
+
+```
+$ build/lookup-reuse/lookup_reuse_tests --filter repeat_hit_avoids_reference
+[FAIL] repeat_hit_avoids_reference: src/lookup_reuse/tests/PositiveSlotHintTests.cpp:41: CHECK(hint.Try(view, 8) == SearchResult{6}) failed
+0/1 tests passed
+exit=1
+```
+
+GREEN: direct GCC (`-Werror`) 16/16 passed; CMake Release CTest 3/3 passed;
+clang++ 18 `-Werror` 16/16 passed. `repeat_four_lookups_one_search` observed
+one reference search for four lookups of key 8, each returning slot 6. This is
+a lookup-count property of the offline core caller, not a speed measurement.
+
+Mutation spot-check found one real gap: removing the `control != 0` check in
+the hint survived because no test placed stale key bytes in an empty slot.
+`full_key_and_uncacheable` now covers an empty slot carrying key 8 and the
+zero-filled empty slots for key 0; the mutant then fails. Remaining survivors
+were analysed as equivalent on validated views: the mask comparison (with an
+unchanged identity, a different mask cannot keep key 8 in a primary slot of a
+valid table — under mask 3 slot 6 is tail, under masks ≥ 15 key 8 homes at
+13+; `identity_and_mask_changes` documents both cases) and the `occupied_`
+flag (a cleared hint has layout_version 0, which no validated view has).
