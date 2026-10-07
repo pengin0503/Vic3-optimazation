@@ -1,7 +1,7 @@
 # B0: offline native shadow 接続契約
 
 日付: 2026-10-07  
-状態: 会話で選択したB0案を書面化。書面レビュー待ち。実装計画・B0実装は未作成。
+状態: 2026-10-07にユーザーが書面を承認。[実装計画](../plans/2026-10-07-offline-native-shadow-contract.md)を作成済み（計画レビュー待ち）。B0は未実装。
 
 ## 1. 目的と今回の到達点
 
@@ -124,4 +124,4 @@ statusはEqual、Mismatch、NoCandidate、Skipped。skip reasonは§6の条件�
 
 B0終了後の報告は「所有fixtureの接続契約が検証できた」に限定する。live read window、worker/job scopeの伝播、実pointer結果の分類、native ABIとleaf hook relocation/unwind、actual return-address allowlist、Task 9 attach/stop/pairing/observer overheadは別々に証拠を要する。loader code 4の診断を含む既存の未解決事項を、B0で解決した扱いにしない。
 
-次の作業はこの書面のレビュー後の実装計画作成である。計画のレビューと実行方式選択後にB0を実装し、live native shadowの接続判断はさらに§8のnative gateを満たしてから行う。
+次の作業は実装計画のレビューである。実装はOpus 5.5でNative/executing-plansを使用する。計画レビュー後にB0を実装し、live native shadowの接続判断はさらに§8のnative gateを満たしてから行う。
