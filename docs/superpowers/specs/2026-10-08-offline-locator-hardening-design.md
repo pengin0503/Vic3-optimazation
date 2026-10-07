@@ -1,6 +1,6 @@
 # Offline locator hardening
 
-Status: authorized for inline execution without approval pauses.
+Status: implemented and locally verified; fresh GitHub CI has not started.
 
 ## Scope
 

@@ -70,4 +70,25 @@ live read window and table lifetime, worker/job scope, actual result pointers,
 native ABI, relocation/unwind behavior, runtime return addresses, and observer
 overhead. Their state is unchanged. No speedup claim or lookup bypass.
 
-GitHub CI will be checked after the force-free main update.
+Implementation commit: 99ef9728b5ce0a0d7d7c331811522c331d412973.
+main advanced from c13bb27 to that commit without force, PR or branch deletion.
+The resulting tree differs at exactly 11 intended paths; 465 existing blobs
+are unchanged.
+
+Ruling: the connector's expected-SHA update failed twice with GitHub GraphQL
+UNKNOWN errors and left main unchanged. Re-read main, use force=false without
+the broken optional lease parameter, then verify the resulting head.
+Cost: no atomic compare-and-swap lease; a non-fast-forward race is rejected by
+the normal force=false update rather than overwriting another commit.
+
+CI status: repeated Actions queries for head_sha=99ef972... returned zero runs.
+The latest existing successful tests/B0 runs still refer to c13bb27, not this
+implementation. No claim of fresh CI/MSVC/Clang success is made. The connector
+exposes rerun of existing runs, but no workflow_dispatch operation for a new
+head; rerunning old runs would not test this commit. No credentials, new PR,
+browser session, permission change or synthetic status is used to work around
+that limitation. The reason for the missing automatic trigger is unknown.
+
+Additional CI-mode local run (VIC3_DATA unset): Python 207 OK, two expected
+skips. Artifact hash/size and -text attribute checks passed. Supplied ZIP
+SHA-256 remains 79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34.

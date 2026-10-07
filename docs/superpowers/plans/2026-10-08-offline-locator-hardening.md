@@ -29,13 +29,13 @@ tests/test_lookup_contract_locator.py, .github/workflows/lookup-reuse-contract.y
 Consumes: verify_owned_image(image: bytes, manifest: dict) -> dict.
 Produces: same API with verified caller metadata and true verification flag.
 
-- [ ] Extend the mini fixture with literal exception records; add direct,
+- [x] Extend the mini fixture with literal exception records; add direct,
   chained-root, wrong-root, gap, overlap, malformed chain, and bad directory tests.
-- [ ] Run locator tests; confirm missing checks fail with assertions.
-- [ ] Implement bounded exception-directory parsing and RuntimeFunctionIndex
+- [x] Run locator tests; confirm missing checks fail with assertions.
+- [x] Implement bounded exception-directory parsing and RuntimeFunctionIndex
   association checks; require every byte of the call to be covered.
-- [ ] Run all Python tests; add runtime_function_groups.py to workflow paths.
-- [ ] Record RED/GREEN and exact ZIP evidence; save code with tests.
+- [x] Run all Python tests; add runtime_function_groups.py to workflow paths.
+- [x] Record RED/GREEN and exact ZIP evidence; save code with tests.
 
 ### Task 2: Selected executable output protection
 
@@ -43,9 +43,13 @@ Files: tools/check_lookup_contract_locator.py, tests/test_lookup_contract_locato
 Consumes: check_output_path(input_path: Path, output_path: Path) -> None.
 Produces: same API refusing external hard links to selected directory exe.
 
-- [ ] Add a real temporary-filesystem external hard-link test.
-- [ ] Run it; confirm current guard incorrectly accepts the alias.
-- [ ] Resolve the same executable selected by read_input; reject same-file output.
-- [ ] Run all Python tests, exact ZIP locator, B0 Release CTest and runner.
-- [ ] Review changed files, record limits and results, commit to main by
-  force-free fast-forward with an expected-SHA lease, then verify CI.
+- [x] Add a real temporary-filesystem external hard-link test.
+- [x] Run it; confirm current guard incorrectly accepts the alias.
+- [x] Resolve the same executable selected by read_input; reject same-file output.
+- [x] Run all Python tests, exact ZIP locator, B0 Release CTest and runner.
+- [x] Review changed files, record limits and results, commit to main by
+  force-free fast-forward (see API lease limitation in the verification record).
+- [ ] Verify fresh GitHub CI for the implementation commit.
+
+Implementation and local verification are complete at 99ef9728b5ce0a0d7d7c331811522c331d412973.
+CI has not started; available connector has no workflow-dispatch operation.
