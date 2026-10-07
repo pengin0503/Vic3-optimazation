@@ -3,3 +3,5 @@ research/vic3-focused-cpu.wprp -text
 # Code generation and byte-level --check have the same bytes on Windows/Linux.
 src/native/generated/*.inc text eol=lf
 src/lookup_reuse_contract/generated/*.inc text eol=lf
+# Hash-pinned static evidence (artifact-index.json pins raw bytes): no eol conversion.
+research/generated/native-shadow-preparation-2026-10-07/** -text

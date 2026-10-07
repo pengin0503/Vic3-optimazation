@@ -56,6 +56,22 @@ class ManifestTests(unittest.TestCase):
         self.assertEqual(sha, SOURCE_SHA)
         self.assertEqual(evidence, self.evidence)
 
+    def test_pinned_evidence_is_checked_out_byte_exact(self):
+        # The index pins raw bytes; an eol conversion on checkout (Windows
+        # core.autocrlf) would change the SHA-256.
+        for path in (EVIDENCE, INDEX):
+            r = subprocess.run(["git", "check-attr", "text", "--", path.relative_to(ROOT).as_posix()],
+                               cwd=ROOT, capture_output=True, text=True)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            self.assertTrue(r.stdout.strip().endswith("text: unset"), r.stdout)
+
+    def test_crlf_converted_evidence_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "static-evidence.json"
+            p.write_bytes(EVIDENCE.read_bytes().replace(b"\n", b"\r\n"))
+            with self.assertRaisesRegex(ValueError, "artifact index"):
+                self.mod.load_source(p, INDEX)
+
     def test_index_sha_or_size_mismatch_is_rejected(self):
         index = json.loads(INDEX.read_text(encoding="utf-8"))
         for field, value in (("sha256", "0" * 64), ("size_bytes", 1)):
