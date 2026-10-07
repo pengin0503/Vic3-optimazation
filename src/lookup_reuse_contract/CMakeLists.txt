@@ -33,12 +33,22 @@ endfunction()
 set(LOOKUP_CONTRACT_CORE_SOURCES
   core/NativeFixture.cpp
   core/ResultNormalization.cpp
+  core/NativeShadow.cpp
 )
 
+# Production core: what the runner links. No fault seam.
 add_library(lookup_contract_core STATIC ${LOOKUP_CONTRACT_CORE_SOURCES})
-target_include_directories(lookup_contract_core PUBLIC include generated)
+target_include_directories(lookup_contract_core PUBLIC include generated PRIVATE core)
 target_link_libraries(lookup_contract_core PUBLIC lookup_reuse_core)
 lookup_contract_warnings(lookup_contract_core)
+
+# Test variant of the same sources with the private fault seam. Only the unit
+# test executable links it; the two variants never share a binary.
+add_library(lookup_contract_test_core STATIC ${LOOKUP_CONTRACT_CORE_SOURCES})
+target_include_directories(lookup_contract_test_core PUBLIC include generated PRIVATE core)
+target_compile_definitions(lookup_contract_test_core PUBLIC LOOKUP_CONTRACT_TESTING=1)
+target_link_libraries(lookup_contract_test_core PUBLIC lookup_reuse_core)
+lookup_contract_warnings(lookup_contract_test_core)
 
 set(STAGE_A_TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../lookup_reuse/tests")
 
@@ -46,12 +56,30 @@ add_executable(lookup_contract_tests
   ${STAGE_A_TEST_DIR}/TestMain.cpp
   tests/NativeFixtureTests.cpp
   tests/ResultNormalizationTests.cpp
+  tests/NativeShadowTests.cpp
+  tests/AllocationTests.cpp
 )
 target_include_directories(lookup_contract_tests PRIVATE tests ${STAGE_A_TEST_DIR})
-target_link_libraries(lookup_contract_tests PRIVATE lookup_contract_core)
+target_link_libraries(lookup_contract_tests PRIVATE lookup_contract_test_core)
 lookup_contract_warnings(lookup_contract_tests)
 
 add_test(NAME lookup_contract_unit_tests COMMAND lookup_contract_tests)
 add_test(NAME lookup_contract_tests_unknown_filter_fails
          COMMAND lookup_contract_tests --filter no_such_test)
 set_tests_properties(lookup_contract_tests_unknown_filter_fails PROPERTIES WILL_FAIL TRUE)
+
+# The fault seam must not compile against the production core: neither the
+# header nor its private members. Each target is built on demand by CTest and
+# must fail with the named diagnostic.
+foreach(negative faults_header seam_member)
+  add_executable(lookup_contract_negative_${negative} EXCLUDE_FROM_ALL tests/negative/${negative}.cpp)
+  target_include_directories(lookup_contract_negative_${negative} PRIVATE tests ${STAGE_A_TEST_DIR})
+  target_link_libraries(lookup_contract_negative_${negative} PRIVATE lookup_contract_core)
+  add_test(NAME lookup_contract_negative_${negative}
+           COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}
+                   --target lookup_contract_negative_${negative} --config $<CONFIG>)
+endforeach()
+set_tests_properties(lookup_contract_negative_faults_header PROPERTIES
+  PASS_REGULAR_EXPRESSION "requires LOOKUP_CONTRACT_TESTING")
+set_tests_properties(lookup_contract_negative_seam_member PROPERTIES
+  PASS_REGULAR_EXPRESSION "fault_candidate_override_")

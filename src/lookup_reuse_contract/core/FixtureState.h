@@ -1,9 +1,7 @@
 // Private state shared by an OwnedNativeFixture and its borrows. Not part of
-// the public include directory: only B0 core sources (and the test-only
-// fault seam) see it.
+// the public include directory: only B0 core sources see it.
 #pragma once
 
-#include <atomic>
 #include <cstddef>
 #include <cstdint>
 #include <memory>
@@ -33,9 +31,6 @@ struct SlotFields {
 
 // Little-endian field reads; index must be < state.slot_count.
 SlotFields ReadSlotFields(const FixtureState& state, std::size_t index) noexcept;
-
-// Process-wide monotonic generation source (0 is never issued).
-std::atomic<std::uint64_t>& GenerationCounter() noexcept;
 
 struct BorrowAccess {
     static const FixtureState* State(const FixtureBorrow& borrow) noexcept { return borrow.state_.get(); }

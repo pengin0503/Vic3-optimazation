@@ -1,5 +1,6 @@
 #include "NativeFixture.h"
 
+#include <atomic>
 #include <limits>
 #include <utility>
 
@@ -19,16 +20,17 @@ SlotFields ReadSlotFields(const FixtureState& state, std::size_t index) noexcept
     return fields;
 }
 
-std::atomic<std::uint64_t>& GenerationCounter() noexcept {
-    static std::atomic<std::uint64_t> counter{0};
-    return counter;
-}
-
 }  // namespace detail
 
 namespace {
 
 constexpr std::uint64_t kU64Max = std::numeric_limits<std::uint64_t>::max();
+
+// Process-wide monotonic generation source; 0 is never issued.
+std::atomic<std::uint64_t>& GenerationCounter() noexcept {
+    static std::atomic<std::uint64_t> counter{0};
+    return counter;
+}
 
 FixtureError AddressLayout() { return FixtureError{FixtureError::Kind::AddressLayout, std::nullopt}; }
 
@@ -61,7 +63,7 @@ bool ValidAddressLayout(const NativeFixtureSpec& spec) noexcept {
 
 // Issues the next generation, refusing to wrap.
 bool NextGeneration(std::uint64_t& out) noexcept {
-    auto& counter = detail::GenerationCounter();
+    auto& counter = GenerationCounter();
     std::uint64_t current = counter.load();
     do {
         if (current == kU64Max) {
@@ -73,6 +75,14 @@ bool NextGeneration(std::uint64_t& out) noexcept {
 }
 
 }  // namespace
+
+#if defined(LOOKUP_CONTRACT_TESTING)
+namespace testing {
+std::uint64_t ExchangeGenerationCounterForTest(std::uint64_t value) noexcept {
+    return GenerationCounter().exchange(value);
+}
+}  // namespace testing
+#endif
 
 bool FixtureBorrow::Valid() const noexcept { return state_ != nullptr && !state_->revoked; }
 
