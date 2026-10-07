@@ -57,23 +57,31 @@ def call_pattern(site: int, rel: int, index: int) -> bytes:
 
 
 def mini_case() -> tuple[bytes, dict]:
-    image = bytearray(0x400)
+    image = bytearray(0x600)
     image[0:2] = b"MZ"
     struct.pack_into("<I", image, 0x3C, 0x40)
     image[0x40:0x44] = b"PE\0\0"
-    # COFF: AMD64, one section, optional header 0xF0 bytes.
-    struct.pack_into("<HHIIIHH", image, 0x44, 0x8664, 1, 0, 0, 0, 0xF0, 0x22)
+    # COFF: AMD64, three sections, optional header 0xF0 bytes.
+    struct.pack_into("<HHIIIHH", image, 0x44, 0x8664, 3, 0, 0, 0, 0xF0, 0x22)
     o = 0x58
     struct.pack_into("<H", image, o, 0x20B)
     struct.pack_into("<I", image, o + 16, ENTRY)
     struct.pack_into("<Q", image, o + 24, 0x140000000)
-    struct.pack_into("<I", image, o + 56, 0x2000)
+    struct.pack_into("<I", image, o + 56, 0x4000)
     struct.pack_into("<I", image, o + 60, 0x200)
     struct.pack_into("<I", image, o + 108, 16)
     s = SECTION_HEADER
     image[s:s + 8] = b".text\0\0\0"
     struct.pack_into("<IIII", image, s + 8, TEXT_SIZE, TEXT_VA, TEXT_SIZE, TEXT_RAW)
     struct.pack_into("<I", image, s + 36, 0x60000020)
+    for index, name, va, raw in ((1, b".pdata", 0x2000, 0x400),
+                                (2, b".xdata", 0x3000, 0x500)):
+        at = s + index * 40
+        image[at:at + 8] = name.ljust(8, b"\0")
+        struct.pack_into("<IIII", image, at + 8, 0x100, va, 0x100, raw)
+        struct.pack_into("<I", image, at + 36, 0x40000040)
+    # IMAGE_DIRECTORY_ENTRY_EXCEPTION: six literal 12-byte records.
+    struct.pack_into("<II", image, o + 112 + 3 * 8, 0x2000, 72)
     image[TEXT_RAW:TEXT_RAW + TEXT_SIZE] = b"\xcc" * TEXT_SIZE
     put(image, ENTRY, ENTRY_PATTERN)
     callers = []
@@ -85,6 +93,9 @@ def mini_case() -> tuple[bytes, dict]:
             "caller_entry_rva": site - 0x10, "allowed": i <= 4,
             "pattern_hex": pattern.hex(" "),
         })
+        struct.pack_into("<III", image, 0x400 + (i - 1) * 12,
+                         site - 0x10, site + 0x10, 0x3000 + (i - 1) * 4)
+        image[0x500 + (i - 1) * 4] = 1  # version 1, no codes/chain
     data = bytes(image)
     manifest = {
         "schema_version": 1,
@@ -126,7 +137,10 @@ class LocatorTests(unittest.TestCase):
         self.assertEqual([c["return_rva"] for c in r["callers"]], [s + 5 for s in CALLS])
         self.assertEqual(sum(c["allowed"] for c in r["callers"]), 4)
         self.assertIs(r["static_only"], True)
-        self.assertIs(r["caller_entry_rva_verified"], False)
+        self.assertIs(r["caller_entry_rva_verified"], True)
+        self.assertEqual(r["callers"][0]["caller_metadata"]["root_runtime_function"],
+                         {"begin_rva": "0x1030", "end_rva": "0x1050",
+                          "unwind_rva": "0x3000", "size_bytes": 32})
         self.assertEqual(r["executable_sha256"], m["executable_sha256"])
 
     def test_bad_hash(self):
@@ -134,6 +148,115 @@ class LocatorTests(unittest.TestCase):
         m["executable_sha256"] = "1" * 64
         with self.assertRaisesRegex(ValueError, "sha256"):
             self.mod.verify_owned_image(image, m)
+
+    def test_wrong_caller_root_is_rejected(self):
+        image, m = mini_case()
+        m["callers"][0]["caller_entry_rva"] = 0x1050
+        with self.assertRaisesRegex(ValueError, "caller 1.*root"):
+            self.mod.verify_owned_image(image, m)
+
+    def test_chained_fragment_resolves_to_root_not_nearest_begin(self):
+        image, m = mini_case()
+        bad = bytearray(image)
+        # Add a disjoint primary fragment 0x1100..0x1110. The call's existing
+        # 0x1030 fragment chains to that exact RUNTIME_FUNCTION triple.
+        struct.pack_into("<II", bad, 0xE0, 0x2000, 84)
+        struct.pack_into("<III", bad, 0x448, 0x1100, 0x1110, 0x3020)
+        bad[0x520:0x524] = b"\x01\0\0\0"
+        bad[0x500:0x504] = b"\x21\0\0\0"  # CHAININFO
+        struct.pack_into("<III", bad, 0x504, 0x1100, 0x1110, 0x3020)
+        # Move the next three unwind records clear of the chain payload.
+        for i in range(1, 4):
+            struct.pack_into("<I", bad, 0x400 + i * 12 + 8, 0x3030 + i * 4)
+            bad[0x530 + i * 4:0x534 + i * 4] = b"\x01\0\0\0"
+        data, mm = rehash(bad, m)
+        mm["callers"][0]["caller_entry_rva"] = 0x1100
+        r = self.mod.verify_owned_image(data, mm)
+        self.assertIn("caller_metadata", r["callers"][0])
+        meta = r["callers"][0]["caller_metadata"]
+        self.assertEqual(meta["root_runtime_function"]["begin_rva"], "0x1100")
+        self.assertEqual(meta["fragment_count"], 2)
+        self.assertEqual(meta["ranges"], [
+            {"begin_rva": "0x1030", "end_rva": "0x1050"},
+            {"begin_rva": "0x1100", "end_rva": "0x1110"}])
+        mm["callers"][0]["caller_entry_rva"] = 0x1030
+        with self.assertRaisesRegex(ValueError, "caller 1.*root"):
+            self.mod.verify_owned_image(data, mm)
+
+    def test_metadata_gap_and_partial_call_are_rejected(self):
+        image, m = mini_case()
+        for end in (0x103F, 0x1044):
+            with self.subTest(end=end):
+                bad = bytearray(image)
+                struct.pack_into("<I", bad, 0x404, end)
+                data, mm = rehash(bad, m)
+                with self.assertRaisesRegex(ValueError, "caller 1.*(metadata|covered)"):
+                    self.mod.verify_owned_image(data, mm)
+
+    def test_overlapping_metadata_is_rejected(self):
+        image, m = mini_case()
+        bad = bytearray(image)
+        struct.pack_into("<I", bad, 0x404, 0x1070)
+        data, mm = rehash(bad, m)
+        with self.assertRaisesRegex(ValueError, "caller 1.*overlap"):
+            self.mod.verify_owned_image(data, mm)
+
+    def test_invalid_unwind_and_chain_are_rejected(self):
+        image, m = mini_case()
+        for header, target in ((0, None), (0x21, (0x1030, 0x1050, 0x3000)),
+                               (0x21, (0x1100, 0x1110, 0x3040)), (0x29, None)):
+            with self.subTest(header=header, target=target):
+                bad = bytearray(image)
+                bad[0x500] = header
+                if target:
+                    struct.pack_into("<III", bad, 0x504, *target)
+                data, mm = rehash(bad, m)
+                with self.assertRaisesRegex(ValueError, "caller 1.*metadata"):
+                    self.mod.verify_owned_image(data, mm)
+
+    def test_exception_directory_is_required_and_bounds_checked(self):
+        image, m = mini_case()
+        for rva, size in ((0, 0), (0x2000, 71), (0x20F0, 72),
+                          (0xFFFFFFF0, 72), (0x1000, 72)):
+            with self.subTest(rva=rva, size=size):
+                bad = bytearray(image)
+                struct.pack_into("<II", bad, 0xE0, rva, size)
+                data, mm = rehash(bad, m)
+                with self.assertRaisesRegex(ValueError, "exception"):
+                    self.mod.verify_owned_image(data, mm)
+
+    def test_zero_fill_unwind_is_rejected(self):
+        image, m = mini_case()
+        bad = bytearray(image)
+        struct.pack_into("<I", bad, SECTION_HEADER + 2 * 40 + 8, 0x20)
+        struct.pack_into("<I", bad, 0x408, 0x3030)
+        data, mm = rehash(bad, m)
+        with self.assertRaisesRegex(ValueError, "caller 1.*metadata"):
+            self.mod.verify_owned_image(data, mm)
+
+    def test_optional_header_must_contain_declared_directories(self):
+        image, m = mini_case()
+        bad = bytearray(image)
+        struct.pack_into("<H", bad, 0x54, 0x70)
+        data, mm = rehash(bad, m)
+        with self.assertRaisesRegex(ValueError, "optional header"):
+            self.mod.verify_owned_image(data, mm)
+
+    def test_directory_count_cannot_exceed_optional_header(self):
+        image, m = mini_case()
+        bad = bytearray(image)
+        struct.pack_into("<I", bad, 0xC4, 17)
+        data, mm = rehash(bad, m)
+        with self.assertRaisesRegex(ValueError, "optional header"):
+            self.mod.verify_owned_image(data, mm)
+
+    def test_size_headers_must_cover_section_table(self):
+        image, m = mini_case()
+        bad = bytearray(image)
+        struct.pack_into("<I", bad, 0x94, 0x180)
+        data, mm = rehash(bad, m)
+        with self.assertRaisesRegex(ValueError, "SizeOfHeaders"):
+            self.mod.verify_owned_image(data, mm)
 
     def test_changed_call_is_rejected_after_hash_matches(self):
         image, m = mini_case()
@@ -297,6 +420,33 @@ class LocatorTests(unittest.TestCase):
             self.assertIn("same file", r.stderr)
             self.assertEqual(p.read_bytes(), b"MZ-not-really")
 
+    def test_directory_external_hard_link_to_selected_exe_rejected(self):
+        # A directory and its exe have different inodes. Comparing output
+        # with the directory alone misses a hard link outside that directory.
+        for member in ("victoria3.exe", "binaries/victoria3.exe", "nested/victoria3.exe"):
+            with self.subTest(member=member), tempfile.TemporaryDirectory() as tmp:
+                game = Path(tmp) / "game"
+                exe = game / member
+                exe.parent.mkdir(parents=True)
+                exe.write_bytes(b"preserve selected executable")
+                out = Path(tmp) / "locator.json"
+                try:
+                    os.link(exe, out)
+                except OSError as exc:
+                    self.skipTest(f"hard links unavailable: {exc}")
+                with self.assertRaisesRegex(ValueError, "same file"):
+                    self.mod.check_output_path(game, out)
+                self.assertEqual(exe.read_bytes(), b"preserve selected executable")
+
+    def test_directory_unrelated_existing_output_is_allowed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            game = Path(tmp) / "game"
+            (game / "binaries").mkdir(parents=True)
+            (game / "binaries" / "victoria3.exe").write_bytes(b"exe")
+            out = Path(tmp) / "locator.json"
+            out.write_text("{}")
+            self.mod.check_output_path(game, out)
+
     def test_failed_validation_does_not_write_output(self):
         image, _ = mini_case()
         with tempfile.TemporaryDirectory() as tmp:
@@ -323,6 +473,9 @@ class LocatorTests(unittest.TestCase):
                          [0x13b847c, 0xc6b5ca])
         self.assertEqual([c["call_destination_rva"] for c in r["callers"]], [0xF3E040] * 6)
         self.assertIs(r["static_only"], True)
+        self.assertIs(r["caller_entry_rva_verified"], True)
+        self.assertEqual([c["caller_metadata"]["fragment_count"] for c in r["callers"]],
+                         [5, 4, 1, 1, 1, 1])
 
 
 if __name__ == "__main__":

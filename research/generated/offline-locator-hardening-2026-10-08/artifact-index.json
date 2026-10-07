@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "base_commit": "c13bb2730a38a130186e1edb389f9ed8e1f54eef",
+  "input_zip_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "manifest_source_sha256": "3e37e77f0a2600120046282c03775d2322787fec0f66613c47c2cc7f020929aa",
+  "static_only": true,
+  "reproduction": "python tools/check_lookup_contract_locator.py <exact-Vic3_data.zip> --output <outside-input>/locator.json",
+  "files": [
+    {
+      "path": "research/generated/offline-locator-hardening-2026-10-08/locator.json",
+      "size_bytes": 6668,
+      "sha256": "e2098b66e5450b75e6b8bb62157f289885fe31e65116bdcf4a4a61c226ac996b"
+    }
+  ]
+}
+

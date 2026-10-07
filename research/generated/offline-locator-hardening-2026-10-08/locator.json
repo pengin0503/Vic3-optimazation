@@ -1,0 +1,258 @@
+{
+  "caller_entry_rva_verified": true,
+  "callers": [
+    {
+      "allowed": true,
+      "call_destination_rva": 15982656,
+      "call_rva": 20678194,
+      "caller_entry_rva": 20677952,
+      "caller_id": 1,
+      "caller_metadata": {
+        "fragment_count": 5,
+        "fragments": [
+          {
+            "begin_rva": "0x13b8540",
+            "end_rva": "0x13b8559",
+            "size_bytes": 25,
+            "unwind_rva": "0x4f2dff0"
+          },
+          {
+            "begin_rva": "0x13b8559",
+            "end_rva": "0x13b85bc",
+            "size_bytes": 99,
+            "unwind_rva": "0x4f2dffc"
+          },
+          {
+            "begin_rva": "0x13b85bc",
+            "end_rva": "0x13b86e8",
+            "size_bytes": 300,
+            "unwind_rva": "0x4f2e01c"
+          },
+          {
+            "begin_rva": "0x13b86e8",
+            "end_rva": "0x13b8712",
+            "size_bytes": 42,
+            "unwind_rva": "0x4f2e034"
+          },
+          {
+            "begin_rva": "0x13b8712",
+            "end_rva": "0x13b8765",
+            "size_bytes": 83,
+            "unwind_rva": "0x4f2e044"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x13b8540",
+            "end_rva": "0x13b8765"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x13b8540",
+          "end_rva": "0x13b8559",
+          "size_bytes": 25,
+          "unwind_rva": "0x4f2dff0"
+        },
+        "size_bytes": 549,
+        "status": "resolved"
+      },
+      "pattern_match_count": 1,
+      "return_rva": 20678199
+    },
+    {
+      "allowed": true,
+      "call_destination_rva": 15982656,
+      "call_rva": 17530292,
+      "caller_entry_rva": 17529952,
+      "caller_id": 2,
+      "caller_metadata": {
+        "fragment_count": 4,
+        "fragments": [
+          {
+            "begin_rva": "0x10b7c60",
+            "end_rva": "0x10b7c7a",
+            "size_bytes": 26,
+            "unwind_rva": "0x4ef94d0"
+          },
+          {
+            "begin_rva": "0x10b7c7a",
+            "end_rva": "0x10b7d97",
+            "size_bytes": 285,
+            "unwind_rva": "0x4ef94dc"
+          },
+          {
+            "begin_rva": "0x10b7d97",
+            "end_rva": "0x10b83b2",
+            "size_bytes": 1563,
+            "unwind_rva": "0x4ef9500"
+          },
+          {
+            "begin_rva": "0x10b83b2",
+            "end_rva": "0x10b83d5",
+            "size_bytes": 35,
+            "unwind_rva": "0x4ef9514"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x10b7c60",
+            "end_rva": "0x10b83d5"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x10b7c60",
+          "end_rva": "0x10b7c7a",
+          "size_bytes": 26,
+          "unwind_rva": "0x4ef94d0"
+        },
+        "size_bytes": 1909,
+        "status": "resolved"
+      },
+      "pattern_match_count": 1,
+      "return_rva": 17530297
+    },
+    {
+      "allowed": true,
+      "call_destination_rva": 15982656,
+      "call_rva": 17552741,
+      "caller_entry_rva": 17552528,
+      "caller_id": 3,
+      "caller_metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x10bd490",
+            "end_rva": "0x10bd7bd",
+            "size_bytes": 813,
+            "unwind_rva": "0x4ef9a1c"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x10bd490",
+            "end_rva": "0x10bd7bd"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x10bd490",
+          "end_rva": "0x10bd7bd",
+          "size_bytes": 813,
+          "unwind_rva": "0x4ef9a1c"
+        },
+        "size_bytes": 813,
+        "status": "resolved"
+      },
+      "pattern_match_count": 1,
+      "return_rva": 17552746
+    },
+    {
+      "allowed": true,
+      "call_destination_rva": 15982656,
+      "call_rva": 17553003,
+      "caller_entry_rva": 17552528,
+      "caller_id": 4,
+      "caller_metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x10bd490",
+            "end_rva": "0x10bd7bd",
+            "size_bytes": 813,
+            "unwind_rva": "0x4ef9a1c"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x10bd490",
+            "end_rva": "0x10bd7bd"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x10bd490",
+          "end_rva": "0x10bd7bd",
+          "size_bytes": 813,
+          "unwind_rva": "0x4ef9a1c"
+        },
+        "size_bytes": 813,
+        "status": "resolved"
+      },
+      "pattern_match_count": 1,
+      "return_rva": 17553008
+    },
+    {
+      "allowed": false,
+      "call_destination_rva": 15982656,
+      "call_rva": 20677756,
+      "caller_entry_rva": 20677392,
+      "caller_id": 5,
+      "caller_metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b",
+            "size_bytes": 555,
+            "unwind_rva": "0x4e90d44"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x13b8310",
+            "end_rva": "0x13b853b"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x13b8310",
+          "end_rva": "0x13b853b",
+          "size_bytes": 555,
+          "unwind_rva": "0x4e90d44"
+        },
+        "size_bytes": 555,
+        "status": "resolved"
+      },
+      "pattern_match_count": 1,
+      "return_rva": 20677761
+    },
+    {
+      "allowed": false,
+      "call_destination_rva": 15982656,
+      "call_rva": 13022666,
+      "caller_entry_rva": 13022416,
+      "caller_id": 6,
+      "caller_metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0xc6b4d0",
+            "end_rva": "0xc6b701",
+            "size_bytes": 561,
+            "unwind_rva": "0x4eaf124"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0xc6b4d0",
+            "end_rva": "0xc6b701"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0xc6b4d0",
+          "end_rva": "0xc6b701",
+          "size_bytes": 561,
+          "unwind_rva": "0x4eaf124"
+        },
+        "size_bytes": 561,
+        "status": "resolved"
+      },
+      "pattern_match_count": 1,
+      "return_rva": 13022671
+    }
+  ],
+  "entry_match_count": 1,
+  "entry_rva": 15982656,
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "input_member": "victoria3.exe",
+  "manifest_source_sha256": "3e37e77f0a2600120046282c03775d2322787fec0f66613c47c2cc7f020929aa",
+  "schema_version": 1,
+  "static_only": true
+}

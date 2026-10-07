@@ -105,6 +105,15 @@ def strings(b):
     for m in ASCII.finditer(b): yield m.group().decode("ascii","ignore")
     for m in UTF16.finditer(b): yield m.group()[::2].decode("ascii","ignore")
 
+def resolve_input_file(path:Path,target:str) -> Path:
+    """Select a file/directory member without reading its bytes (not ZIP members)."""
+    if not path.exists():raise Error(f"input path does not exist: {path}")
+    if path.is_file():return path
+    hits=[p for p in (path/target,path/"binaries"/target) if p.is_file()]
+    if not hits:hits=sorted(path.rglob(target))
+    if len(hits)!=1:raise Error(f"target {target!r} resolved to {len(hits)} files")
+    return hits[0]
+
 def read_input(path:Path,target:str):
     if not path.exists():raise Error(f"input path does not exist: {path}")
     if path.is_file() and zipfile.is_zipfile(path):
@@ -115,11 +124,8 @@ def read_input(path:Path,target:str):
             if not hits and req.lower()=="victoria3.exe": hits=[n for n in names if n.lower().endswith("/binaries/victoria3.exe")]
             if len(hits)!=1:raise Error(f"target {target!r} resolved to {len(hits)} ZIP members")
             return z.read(hits[0]),hits[0]
-    if path.is_file():return path.read_bytes(),str(path)
-    hits=[p for p in (path/target,path/"binaries"/target) if p.is_file()]
-    if not hits:hits=sorted(path.rglob(target))
-    if len(hits)!=1:raise Error(f"target {target!r} resolved to {len(hits)} files")
-    return hits[0].read_bytes(),str(hits[0])
+    selected=resolve_input_file(path,target)
+    return selected.read_bytes(),str(selected)
 
 def analyze(b:bytes,logical:str):
     pe=PE(b); ss=list(strings(b))

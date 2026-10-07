@@ -18,13 +18,22 @@ does not satisfy the Stage B native gate (spec section 9).
 | File | Responsibility |
 |---|---|
 | `../../tools/render_lookup_contract_manifest.py` | Derives the locator manifest from the pinned native-shadow static evidence and renders `generated/manifest_1_14_5.inc` (`--check` never writes) |
-| `../../tools/check_lookup_contract_locator.py` | Offline exact-build locator: owned exe/ZIP/directory input, checked PE bounds, unique entry/caller signatures, signed rel32, return = call + 5. Static witnesses only |
+| `../../tools/check_lookup_contract_locator.py` | Offline exact-build locator: owned exe/ZIP/directory input, checked PE bounds, unique entry/caller signatures, signed rel32, return = call + 5, and reconstructed caller roots from exception/chained-unwind metadata. Static witnesses only |
 | `include/NativeFixture.h`, `core/NativeFixture.cpp` | `OwnedNativeFixture` owns a validated copy (Stage A `OwnedTableFixture` underneath), private generation, revocation; `FixtureBorrow` pins the state |
 | `include/ResultNormalization.h`, `core/ResultNormalization.cpp` | Classifies a synthetic 64-bit result value into six classes without dereferencing it |
 | `include/NativeShadow.h`, `include/NativeRecords.h`, `core/NativeShadow.cpp` | `OfflineNativeShadow` / `NativeScope`: original exactly once, scope/session rules, fixed 256-record collector and saturating counters |
 | `tests/TestFaults.h` | Test-only fault seam (`LOOKUP_CONTRACT_TESTING`): candidate override before comparison, generation/session/scope exhaustion. Built only into `lookup_contract_test_core` and the unit test executable |
 
 ## Fixture contract
+
+The locator now sets `caller_entry_rva_verified=true` only after reconstructing
+all six caller roots from the owned executable. Each caller carries
+`caller_metadata` with disjoint ranges and runtime-function fragments.
+This is metadata association, not validation of unwind operations, native ABI,
+hook safety or actual runtime return addresses. Output protection also refuses
+external hard links to an executable selected from a directory input; it is
+not a security boundary against concurrent filesystem replacement.
+See the [offline hardening verification](../../docs/superpowers/reports/2026-10-08-offline-locator-hardening-verification.md).
 
 40-byte slots, control `+4`, uint32 key `+8`, descriptor value
 `table_base + 40 * slot + 0x10`. Creation rejects, in this order: a mask above

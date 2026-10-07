@@ -14,6 +14,7 @@ on:
       - "tools/render_lookup_contract_manifest.py"
       - "tools/check_lookup_contract_locator.py"
       - "tools/analyze_vic3.py"
+      - "tools/runtime_function_groups.py"
       - "tests/test_lookup_contract_*.py"
       - ".github/workflows/lookup-reuse-contract.yml"
   pull_request:
@@ -25,6 +26,7 @@ on:
       - "tools/render_lookup_contract_manifest.py"
       - "tools/check_lookup_contract_locator.py"
       - "tools/analyze_vic3.py"
+      - "tools/runtime_function_groups.py"
       - "tests/test_lookup_contract_*.py"
       - ".github/workflows/lookup-reuse-contract.yml"
   workflow_dispatch:

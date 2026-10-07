@@ -8,11 +8,10 @@ a unique entry signature at the manifest RVA, and for each of the six caller
 witnesses a unique signature at its call RVA, a 5-byte E8 call whose signed
 rel32 reaches the entry, and return = call + 5.
 
-Success means only that these static witnesses match. It grants no live
-memory access and says nothing about relocation, unwind, ABI or runtime
-return addresses. caller_entry_rva is carried from the evidence's unwind
-metadata and is not re-verified here. There is deliberately no option to
-substitute a manifest or an executable hash.
+Caller roots are reconstructed from the exception directory and chained
+unwind metadata. Success proves static association, not unwind-code
+semantics, relocation, ABI, runtime return addresses or live memory safety.
+There is deliberately no option to substitute a manifest or executable hash.
 """
 from __future__ import annotations
 
@@ -29,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 import analyze_vic3  # noqa: E402
 import render_lookup_contract_manifest as manifest_tool  # noqa: E402
+from runtime_function_groups import RuntimeFunctionIndex, backed_bytes, group_metadata  # noqa: E402
 
 UINT32_MAX = (1 << 32) - 1
 AMD64 = 0x8664
@@ -68,14 +68,21 @@ def _text_section(image: bytes) -> dict:
     section_count = _u16(image, coff + 2, "COFF section count")
     optional_size = _u16(image, coff + 16, "COFF optional header size")
     optional = coff + 20
+    if optional_size < 112:
+        raise ValueError("optional header is too short for PE32+")
     if machine != AMD64:
         raise ValueError(f"expected AMD64 machine, got 0x{machine:04x}")
     if _u16(image, optional, "optional header magic") != PE32_PLUS:
         raise ValueError("expected PE32+ optional header")
     _read(image, optional, optional_size, "optional header")
+    directories = _u32(image, optional + 108, "NumberOfRvaAndSizes")
+    if 112 + directories * 8 > optional_size:
+        raise ValueError("optional header does not contain its declared directories")
     size_headers = _u32(image, optional + 60, "SizeOfHeaders")
     table = optional + optional_size
     _read(image, table, section_count * SECTION_HEADER_SIZE, "section table")
+    if table + section_count * SECTION_HEADER_SIZE > size_headers:
+        raise ValueError("SizeOfHeaders does not cover the section table")
     if size_headers > len(image):
         raise ValueError("truncated PE: SizeOfHeaders is outside the input")
     # Cross-check against the repository's existing parser on the now
@@ -97,6 +104,53 @@ def _text_section(image: bytes) -> dict:
     if raw + raw_size > len(image):
         raise ValueError("truncated PE: .text raw range is outside the input")
     return {"virtual_address": va, "virtual_size": vsize, "raw_pointer": raw, "raw_size": raw_size}
+
+
+def _runtime_index(image: bytes) -> RuntimeFunctionIndex:
+    """Read the exception directory, excluding section padding/zero-fill.
+
+    _text_section has already checked the PE headers. Narrow the existing
+    index's PE mapping to unambiguous virtual AND raw-backed section spans.
+    This reconstructs chains only; it does not emulate Windows unwinding.
+    """
+    pe = analyze_vic3.PE(image)
+    spans = []
+    sections = []
+    for section in pe.sections:
+        s = dict(section)
+        va, size = s["virtual_address"], s["virtual_size"]
+        raw, raw_size = s["raw_pointer"], s["raw_size"]
+        _check_uint32(va + size, "metadata section virtual range")
+        _check_uint32(raw + raw_size, "metadata section raw range")
+        _read(image, raw, raw_size, "metadata section")
+        if size:
+            if va < pe.size_headers:
+                raise ValueError("metadata section overlaps PE headers")
+            spans.append((va, va + size))
+        s["raw_size"] = min(size, raw_size)
+        sections.append(s)
+    spans.sort()
+    if any(a[1] > b[0] for a, b in zip(spans, spans[1:])):
+        raise ValueError("metadata sections overlap")
+    pe.sections = sections
+    rva, size = pe.directory(3)
+    if not rva or not size or size % 12:
+        raise ValueError("exception directory is missing or not a multiple of 12 bytes")
+    _check_uint32(rva + size, "exception directory range")
+    pdata = [s for s in sections if s["name"] == ".pdata"]
+    if len(pdata) != 1 or not (pdata[0]["virtual_address"] <= rva
+            and rva + size <= pdata[0]["virtual_address"] + pdata[0]["raw_size"]):
+        raise ValueError("exception directory is not file-backed .pdata")
+    try:
+        records = list(struct.iter_unpack("<III", backed_bytes(image, pe, rva, size)))
+    except analyze_vic3.Error as exc:
+        raise ValueError(f"exception directory: {exc}") from exc
+    previous = -1
+    for begin, end, unwind in records:
+        if begin <= previous or begin >= end:
+            raise ValueError("exception directory has invalid/unsorted/duplicate records")
+        previous = begin
+    return RuntimeFunctionIndex(image, pe, records)
 
 
 def _matches(haystack: bytes, needle: bytes) -> list[int]:
@@ -143,6 +197,7 @@ def verify_owned_image(image: bytes, manifest: dict) -> dict:
 
     entry_rva = manifest["entry_rva"]
     entry_count = unique_at(_pattern(manifest["entry_pattern_hex"]), entry_rva, "entry")
+    function_index = _runtime_index(image)
     callers = []
     for c in manifest["callers"]:
         what = f"caller {c['caller_id']}"
@@ -158,10 +213,22 @@ def verify_owned_image(image: bytes, manifest: dict) -> dict:
         destination = site + 5 + struct.unpack("<i", code[at + 1:at + 5])[0]
         if destination != entry_rva:
             raise ValueError(f"{what}: call destination 0x{destination:x} is not the entry 0x{entry_rva:x}")
+        group = function_index.group_for(site)
+        if group is None:
+            raise ValueError(f"{what}: no caller metadata covers the call")
+        if group["status"] != "resolved":
+            raise ValueError(f"{what}: invalid caller metadata: {group['error']}")
+        if group["root"][0] != c["caller_entry_rva"]:
+            raise ValueError(f"{what}: caller root 0x{group['root'][0]:x} "
+                             f"is not 0x{c['caller_entry_rva']:x}")
+        # A call cannot cross a hole, a foreign fragment or an ambiguous span.
+        if any(function_index.group_for(pc) is not group for pc in range(site, site + 5)):
+            raise ValueError(f"{what}: call is not fully covered by caller metadata")
         callers.append({
             "caller_id": c["caller_id"], "call_rva": site, "return_rva": c["return_rva"],
             "caller_entry_rva": c["caller_entry_rva"], "allowed": c["allowed"],
             "call_destination_rva": destination, "pattern_match_count": count,
+            "caller_metadata": group_metadata(group),
         })
     return {
         "schema_version": manifest["schema_version"],
@@ -170,7 +237,7 @@ def verify_owned_image(image: bytes, manifest: dict) -> dict:
         "entry_rva": entry_rva,
         "entry_match_count": entry_count,
         "callers": callers,
-        "caller_entry_rva_verified": False,
+        "caller_entry_rva_verified": True,
         "static_only": True,
     }
 
@@ -188,15 +255,23 @@ def verify_exact_input(input_path: Path) -> dict:
 
 
 def check_output_path(input_path: Path, output_path: Path) -> None:
-    """Refuse an output that could overwrite the input or anything under a directory input."""
+    """Protect the input and selected directory exe from accidental overwrites.
+
+    This is not a security boundary against concurrent filesystem replacement.
+    """
     source = input_path.resolve()
     target = output_path.resolve()
     if source == target:
         raise ValueError("input and output are the same path")
     if source.is_dir() and target.is_relative_to(source):
         raise ValueError("output is inside the input directory")
-    if target.exists() and os.path.samefile(source, target):
-        raise ValueError("output is the same file as the input")
+    if target.exists():
+        try:
+            selected = analyze_vic3.resolve_input_file(source, "victoria3.exe")
+        except analyze_vic3.Error as exc:
+            raise ValueError(str(exc)) from exc
+        if os.path.samefile(selected, target):
+            raise ValueError("output is the same file as the input")
 
 
 def main(argv: list[str] | None = None) -> int:
