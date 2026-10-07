@@ -1,0 +1,15 @@
+{
+  "artifacts": {
+    "modifier-node-callgraph.json": "3ccaf870bf9045bccccd2214525904bd14571cc336f58d6841a9d037740b6a07",
+    "modifier-node-selected-regions.json": "42d1ed437b03493e786a481e1b4df61292e744f1d1183dd19affc4403406f45e"
+  },
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "provenance": {
+    "input_container_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+    "input_logical_path": "Vic3_data/binaries/victoria3.exe",
+    "rtti_mode": "reused_matching_exact_build",
+    "rtti_sha256": "9110d33e4d60deae34f6bf5444ac1fa5c110126e2a241d6adf8d022161ed305d",
+    "seed_class": "CTickTask_RecalculateModifierNodes"
+  }
+}

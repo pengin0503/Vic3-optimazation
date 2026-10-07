@@ -132,6 +132,90 @@ class QualityTests(unittest.TestCase):
             self.assertFalse(report["valid"])
             self.assertFalse(report["valid_for_performance_claim"])
 
+    def test_extra_frame_is_workload_boundary_mismatch(self):
+        base = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n10,B,2,3,0\n11,A,1,1,0\n"
+        extended = base + "12,A,1,1,0\n"
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "runs"
+            write_run(root, "r1", threads=12, repeat=1, wall=10.0, csv_text=base)
+            write_run(root, "r2", threads=12, repeat=2, wall=10.0, csv_text=extended)
+            write_run(root, "r3", threads=12, repeat=3, wall=10.0, csv_text=base)
+            report = self.mod.check(root)
+            mismatches = [w for w in report["warnings"] if w["code"] == "workload_boundary_mismatch"]
+            self.assertEqual([w["run_id"] for w in mismatches], ["r2"])
+            self.assertIn("frames 10..12", mismatches[0]["message"])
+            self.assertIn("frames 10..11", mismatches[0]["message"])
+            self.assertEqual(report["errors"], [])
+            self.assertTrue(report["valid"])
+            self.assertFalse(report["valid_for_performance_claim"])
+            boundaries = {b["run_id"]: b for b in report["workload_boundaries"]}
+            self.assertEqual(boundaries["r2"]["frame_count"], 3)
+            self.assertEqual((boundaries["r2"]["min_frame"], boundaries["r2"]["max_frame"]), (10, 12))
+            self.assertEqual(boundaries["r1"]["fingerprint_sha256"], boundaries["r3"]["fingerprint_sha256"])
+            self.assertNotEqual(boundaries["r1"]["fingerprint_sha256"], boundaries["r2"]["fingerprint_sha256"])
+
+    def test_same_row_count_different_frame_task_calls_is_mismatch(self):
+        a = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n11,B,1,2,0\n"
+        b = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n11,B,1,5,0\n"
+        c = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n11,C,1,2,0\n"
+        d = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n12,B,1,2,0\n"
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "runs"
+            write_run(root, "r1", threads=8, repeat=1, csv_text=a)
+            write_run(root, "r2", threads=8, repeat=2, csv_text=a)
+            write_run(root, "r3", threads=8, repeat=3, csv_text=b)
+            write_run(root, "r4", threads=8, repeat=4, csv_text=c)
+            write_run(root, "r5", threads=8, repeat=5, csv_text=d)
+            report = self.mod.check(root)
+            flagged = sorted(w["run_id"] for w in report["warnings"] if w["code"] == "workload_boundary_mismatch")
+            self.assertEqual(flagged, ["r3", "r4", "r5"])
+            self.assertFalse(report["valid_for_performance_claim"])
+
+    def test_timing_and_lock_columns_are_not_workload_identity(self):
+        a = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n11,B,1,2,0\n"
+        b = "frame,task,milliseconds,calls,longest_lock\n11,B,9.5,2,4\n10,A,3,1,7\n"
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "runs"
+            write_run(root, "r1", threads=8, repeat=1, wall=10.0, csv_text=a)
+            write_run(root, "r2", threads=8, repeat=2, wall=10.1, csv_text=b)
+            write_run(root, "r3", threads=8, repeat=3, wall=9.9, csv_text=a)
+            report = self.mod.check(root)
+            self.assertEqual(report["warnings"], [])
+            self.assertTrue(report["valid_for_performance_claim"])
+            prints = {b["fingerprint_sha256"] for b in report["workload_boundaries"]}
+            self.assertEqual(len(prints), 1)
+
+    def test_boundaries_compared_across_thread_groups(self):
+        a = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n"
+        b = "frame,task,milliseconds,calls,longest_lock\n10,A,1,1,0\n11,A,1,1,0\n"
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "runs"
+            for i in (1, 2, 3):
+                write_run(root, f"t12-r{i}", threads=12, repeat=i, csv_text=a)
+                write_run(root, f"t16-r{i}", threads=16, repeat=i, csv_text=b if i == 2 else a)
+            report = self.mod.check(root)
+            flagged = [w["run_id"] for w in report["warnings"] if w["code"] == "workload_boundary_mismatch"]
+            self.assertEqual(flagged, ["t16-r2"])
+
+    def test_deterministic_fingerprint_is_order_independent_multiset(self):
+        rows = [(10, "A", 1), (10, "A", 1), (11, "B", 2)]
+        first = self.mod.workload_fingerprint(rows)
+        second = self.mod.workload_fingerprint(list(reversed(rows)))
+        self.assertEqual(first, second)
+        self.assertNotEqual(first, self.mod.workload_fingerprint(rows[1:]))
+        self.assertEqual(first["frame_count"], 2)
+        self.assertEqual(first["row_count"], 3)
+
+    def test_unparseable_ticktask_csv_is_error(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td) / "runs"
+            write_run(root, "r1", threads=8, repeat=1,
+                      csv_text="frame,task,milliseconds,calls,longest_lock\nx,A,1,1,0\n")
+            report = self.mod.check(root)
+            codes = {x["code"] for x in report["errors"]}
+            self.assertIn("invalid_ticktask_csv", codes)
+            self.assertFalse(report["valid"])
+
     def test_single_observation_is_repeatability_warning_not_error(self):
         with tempfile.TemporaryDirectory() as td:
             root = Path(td) / "runs"

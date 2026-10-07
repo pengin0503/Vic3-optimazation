@@ -1,0 +1,246 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "game_version": "1.14.5",
+  "runtime_unverified": true,
+  "targets": [
+    {
+      "claims_inclusive_ticktask_cost": false,
+      "confidence": "candidate_static",
+      "evidence": [
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+          "entry_rva": "0x13cada0",
+          "region": "employment_collect_continuation",
+          "type": "existing_exact_build_recipe"
+        },
+        {
+          "source_region": "employment_collect_continuation",
+          "type": "rtti_type_name"
+        },
+        {
+          "source_region": "employment_collect_continuation",
+          "type": "static_control_flow"
+        }
+      ],
+      "locations": [
+        {
+          "begin_rva": "0x13cada0",
+          "end_rva": "0x13cae91",
+          "kind": "range"
+        }
+      ],
+      "name": "CollectEmployment candidate/continuation",
+      "runtime_unverified": true,
+      "source_region": "employment_collect_continuation",
+      "target_id": "employment.collect_continuation"
+    },
+    {
+      "claims_inclusive_ticktask_cost": false,
+      "confidence": "candidate_static",
+      "evidence": [
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+          "entry_rva": "0x10befb0",
+          "region": "employment_work_item_candidate",
+          "type": "existing_exact_build_recipe"
+        },
+        {
+          "source_region": "employment_work_item_candidate",
+          "type": "static_control_flow"
+        }
+      ],
+      "locations": [
+        {
+          "begin_rva": "0x10befb0",
+          "end_rva": "0x10bf094",
+          "kind": "range"
+        }
+      ],
+      "name": "Employment item-processing candidate",
+      "runtime_unverified": true,
+      "source_region": "employment_work_item_candidate",
+      "target_id": "employment.item_processing_candidate"
+    },
+    {
+      "claims_inclusive_ticktask_cost": false,
+      "confidence": "confirmed_static",
+      "evidence": [
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+          "entry_rva": "0x13b8310",
+          "region": "employment_prepare",
+          "type": "existing_exact_build_recipe"
+        },
+        {
+          "source_region": "employment_prepare",
+          "type": "rtti_type_name"
+        },
+        {
+          "source_region": "employment_prepare",
+          "type": "static_control_flow"
+        }
+      ],
+      "locations": [
+        {
+          "begin_rva": "0x13b8310",
+          "end_rva": "0x13b853b",
+          "kind": "range"
+        }
+      ],
+      "name": "Employment Prepare",
+      "runtime_unverified": true,
+      "source_region": "employment_prepare",
+      "target_id": "employment.prepare"
+    },
+    {
+      "claims_inclusive_ticktask_cost": false,
+      "confidence": "confirmed_static",
+      "evidence": [
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+          "entry_rva": "0x13cad10",
+          "region": "employment_sort_callback",
+          "type": "existing_exact_build_recipe"
+        },
+        {
+          "source_region": "employment_sort_callback",
+          "type": "rtti_type_name"
+        },
+        {
+          "source_region": "employment_sort_callback",
+          "type": "static_control_flow"
+        }
+      ],
+      "locations": [
+        {
+          "begin_rva": "0x13cad10",
+          "end_rva": "0x13cad62",
+          "kind": "range"
+        }
+      ],
+      "name": "SortEmployment callback",
+      "runtime_unverified": true,
+      "source_region": "employment_sort_callback",
+      "target_id": "employment.sort_callback"
+    },
+    {
+      "claims_inclusive_ticktask_cost": false,
+      "confidence": "candidate_static",
+      "evidence": [
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+          "entry_rva": "0x7dc160",
+          "region": "dispatcher_candidate",
+          "type": "existing_exact_build_recipe"
+        },
+        {
+          "source_region": "dispatcher_candidate",
+          "type": "static_control_flow"
+        },
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/scheduler-callers.json",
+          "caller_root_rva": "0x7e1820",
+          "instruction_rva": "0x7e18c3",
+          "kind": "decoded_direct_call",
+          "target_rva": "0x7dc160",
+          "type": "static_control_flow"
+        },
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/scheduler-callers.json",
+          "caller_root_rva": "0x7e20c0",
+          "instruction_rva": "0x7e2678",
+          "kind": "decoded_direct_call",
+          "target_rva": "0x7dc160",
+          "type": "static_control_flow"
+        }
+      ],
+      "locations": [
+        {
+          "begin_rva": "0x7dc160",
+          "end_rva": "0x7dc606",
+          "kind": "range"
+        }
+      ],
+      "name": "Common dispatcher candidate",
+      "runtime_unverified": true,
+      "source_region": "dispatcher_candidate",
+      "target_id": "shared.dispatcher_candidate"
+    },
+    {
+      "claims_inclusive_ticktask_cost": false,
+      "confidence": "candidate_static",
+      "evidence": [
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+          "entry_rva": "0x7dbaa0",
+          "region": "range_runner_candidate",
+          "type": "existing_exact_build_recipe"
+        },
+        {
+          "source_region": "range_runner_candidate",
+          "type": "static_control_flow"
+        },
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/scheduler-callers.json",
+          "caller_root_rva": "0x7dc160",
+          "instruction_rva": "0x7dc412",
+          "kind": "decoded_direct_call",
+          "target_rva": "0x7dbaa0",
+          "type": "static_control_flow"
+        }
+      ],
+      "locations": [
+        {
+          "begin_rva": "0x7dbaa0",
+          "end_rva": "0x7dc13e",
+          "kind": "range"
+        }
+      ],
+      "name": "Range runner candidate",
+      "runtime_unverified": true,
+      "source_region": "range_runner_candidate",
+      "target_id": "shared.range_runner_candidate"
+    },
+    {
+      "claims_inclusive_ticktask_cost": false,
+      "confidence": "confirmed_static",
+      "evidence": [
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/dispatch-regions.json",
+          "entry_rva": "0x7db150",
+          "region": "heuristic_candidate",
+          "type": "existing_exact_build_recipe"
+        },
+        {
+          "source_region": "heuristic_candidate",
+          "type": "source_string"
+        },
+        {
+          "source_region": "heuristic_candidate",
+          "type": "static_control_flow"
+        },
+        {
+          "artifact": "research/generated/dispatch-followup-2026-10-05/scheduler-callers.json",
+          "caller_root_rva": "0x7dbaa0",
+          "instruction_rva": "0x7dbde0",
+          "kind": "decoded_direct_call",
+          "target_rva": "0x7db150",
+          "type": "static_control_flow"
+        }
+      ],
+      "locations": [
+        {
+          "begin_rva": "0x7db150",
+          "end_rva": "0x7dba91",
+          "kind": "range"
+        }
+      ],
+      "name": "Scheduler heuristic candidate",
+      "runtime_unverified": true,
+      "source_region": "heuristic_candidate",
+      "target_id": "shared.scheduler_heuristic_candidate"
+    }
+  ],
+  "warning": "Static correlation targets only. Stage labels preserve their evidence provenance and runtime_unverified=true. A target range is not measured inclusive Employment cost, runtime reachability, a critical path, wait causality, or optimization benefit."
+}

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import math
@@ -68,6 +69,54 @@ def _csv_expected_hash(manifest: dict):
     if isinstance(capture, dict) and capture.get("ticktask_csv_sha256"):
         return capture["ticktask_csv_sha256"]
     return manifest.get("csv_sha256")
+
+
+def workload_fingerprint(rows: list[tuple[int, str, int]]) -> dict:
+    """Deterministic workload identity from (frame, task, calls) rows only.
+
+    Milliseconds and longest_lock are measurements, not workload identity, so
+    they never participate. Rows form a multiset: file order is irrelevant but
+    duplicate rows are significant.
+    """
+    digest = hashlib.sha256()
+    for frame, task, calls in sorted(rows):
+        digest.update(f"{frame}\t{task}\t{calls}\n".encode("utf-8"))
+    frames = {frame for frame, _, _ in rows}
+    return {
+        "row_count": len(rows),
+        "frame_count": len(frames),
+        "min_frame": min(frames) if frames else None,
+        "max_frame": max(frames) if frames else None,
+        "fingerprint_sha256": digest.hexdigest(),
+    }
+
+
+def _read_boundary_rows(csv_path: Path) -> list[tuple[int, str, int]]:
+    with csv_path.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        missing = {"frame", "task", "calls"} - set(reader.fieldnames or ())
+        if missing:
+            raise Error(f"missing CSV columns: {', '.join(sorted(missing))}")
+        rows = []
+        for line, row in enumerate(reader, 2):
+            task = (row["task"] or "").strip()
+            try:
+                frame = int(row["frame"])
+                calls_value = float(row["calls"])
+            except (TypeError, ValueError) as exc:
+                raise Error(f"row {line}: invalid frame/calls") from exc
+            if not task or not math.isfinite(calls_value) or calls_value < 0 or calls_value != int(calls_value):
+                raise Error(f"row {line}: invalid task/calls")
+            rows.append((frame, task, int(calls_value)))
+    return rows
+
+
+def _boundary_summary(boundary: dict) -> str:
+    return (
+        f"frames {boundary['min_frame']}..{boundary['max_frame']} "
+        f"({boundary['frame_count']} frames, {boundary['row_count']} rows, "
+        f"sha256 {boundary['fingerprint_sha256'][:12]})"
+    )
 
 
 def _load_run(path: Path) -> dict:
@@ -224,6 +273,17 @@ def check(
                 )
             )
             continue
+        try:
+            run["boundary"] = workload_fingerprint(_read_boundary_rows(csv_path))
+        except (Error, csv.Error, UnicodeError) as exc:
+            errors.append(
+                _issue(
+                    "invalid_ticktask_csv",
+                    f"TickTask CSV workload boundary is unreadable: {exc}",
+                    path=run["path"],
+                    run_id=run["run_id"],
+                )
+            )
         expected = _csv_expected_hash(manifest)
         if expected:
             actual = _sha256(csv_path)
@@ -366,10 +426,54 @@ def check(
             }
         )
 
+    # Every measured run in one report is compared against one workload: thread
+    # scaling and profiler enabled/disabled comparisons are only meaningful when
+    # each run simulated the same frames/tasks/calls.
+    bounded = sorted(
+        (r for r in measured if r.get("boundary") is not None),
+        key=lambda r: r["run_id"],
+    )
+    if bounded:
+        counts: dict[str, int] = {}
+        for run in bounded:
+            key = run["boundary"]["fingerprint_sha256"]
+            counts[key] = counts.get(key, 0) + 1
+        # Reference = most common boundary; ties go to the first run_id.
+        reference = max(
+            bounded, key=lambda r: counts[r["boundary"]["fingerprint_sha256"]]
+        )
+        reference_key = reference["boundary"]["fingerprint_sha256"]
+        for run in bounded:
+            if run["boundary"]["fingerprint_sha256"] != reference_key:
+                warnings.append(
+                    _issue(
+                        "workload_boundary_mismatch",
+                        (
+                            f"workload boundary {_boundary_summary(run['boundary'])} "
+                            f"differs from reference run {reference['run_id']} "
+                            f"{_boundary_summary(reference['boundary'])}"
+                        ),
+                        path=run["path"],
+                        run_id=run["run_id"],
+                    )
+                )
+
+    workload_boundaries = [
+        {
+            "run_id": r["run_id"],
+            "warmup": r["warmup"],
+            "task_thread_count": r["threads"],
+            **r["boundary"],
+        }
+        for r in sorted(runs, key=lambda r: r["run_id"])
+        if r.get("boundary") is not None
+    ]
+
     performance_warning_codes = {
         "insufficient_repeats",
         "excessive_cv",
         "wall_clock_outlier",
+        "workload_boundary_mismatch",
     }
     performance_warnings = [
         w for w in warnings if w["code"] in performance_warning_codes
@@ -382,6 +486,7 @@ def check(
         "errors": errors,
         "warnings": warnings,
         "groups": groups,
+        "workload_boundaries": workload_boundaries,
         "valid": not errors,
         "valid_for_performance_claim": not errors and not performance_warnings,
         "thresholds": {

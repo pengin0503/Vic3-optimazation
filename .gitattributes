@@ -1,2 +1,4 @@
 input-data/Vic3_data.zip filter=lfs diff=lfs merge=lfs -text
 research/vic3-focused-cpu.wprp -text
+# Code generation and byte-level --check have the same bytes on Windows/Linux.
+src/native/generated/*.inc text eol=lf

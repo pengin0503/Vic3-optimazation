@@ -1,0 +1,9 @@
+{
+  "artifacts": {
+    "modifier-node-callgraph.json": "f67f119763b8a300237f48ded653d178ddedb31034303bb6942adeaba6873804",
+    "modifier-node-selected-regions.json": "15a31a04a20a3c2f732a7db68bff4d2f3f0a80c859161e031040f26417d68829"
+  },
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "warning": "Exact-build static instruction/reference evidence only. Runtime reachability, critical-path cost, wait causality, dirty-propagation semantics, and optimization benefit are not proven."
+}

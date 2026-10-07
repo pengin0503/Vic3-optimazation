@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "sync-callers.json": "e8984eff1bdeba2afe5076b52c34aa4a8d5d09e5a2e66e3fc928133111dc77bd",
+    "sync-imports.json": "6adb010186b20171de636a54ca1378890542e9c1f8936cb7e597fa76d7dceb7b"
+  },
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "provenance": {
+    "input_container_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+    "input_logical_path": "Vic3_data/binaries/victoria3.exe"
+  }
+}

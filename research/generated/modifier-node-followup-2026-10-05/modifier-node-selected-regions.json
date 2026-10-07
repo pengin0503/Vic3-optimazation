@@ -1,0 +1,197 @@
+{
+  "decoded_bytes": 12177,
+  "decoded_group_count": 31,
+  "direct_caller_evidence": {
+    "budgets": {
+      "max_caller_regions": 128,
+      "max_function_bytes": 65536
+    },
+    "caller_regions": [],
+    "confirmed_calls": [],
+    "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+    "format_version": 1,
+    "raw_candidate_count": 0,
+    "rejected_candidates": [],
+    "scan_scope": "E8 rel32 candidates in all file-backed executable sections",
+    "targets": {
+      "modifier_node_task_tail": "0x7da740"
+    },
+    "unresolved_candidates": [],
+    "warning": "Instruction-boundary validation is linear static evidence, not runtime reachability. Indirect calls, tail jumps, and regions without unwind metadata are not exhaustively mapped."
+  },
+  "edge_classes": {
+    "code_address_references": "graph.nodes[].code_address_references",
+    "direct_calls_and_tail_jumps": "graph.nodes[].direct_edges",
+    "indirect_sites": "graph.nodes[].indirect_sites",
+    "rtti_vtable_references": "graph.nodes[].vtable_address_references"
+  },
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "graph_budgets": {
+    "max_depth": 2,
+    "max_function_bytes": 65536,
+    "max_functions": 80
+  },
+  "known_shared_helper_evidence": {
+    "dispatcher_candidate": {
+      "evidence": [],
+      "observed_in_bounded_graph": false,
+      "rva": "0x7dc160"
+    },
+    "heuristic_candidate": {
+      "evidence": [],
+      "observed_in_bounded_graph": false,
+      "rva": "0x7db150"
+    },
+    "range_runner_candidate": {
+      "evidence": [],
+      "observed_in_bounded_graph": false,
+      "rva": "0x7dbaa0"
+    }
+  },
+  "not_expanded": {
+    "0x1014a30": "depth_budget",
+    "0x1015360": "depth_budget",
+    "0x1015650": "no_unwind_metadata",
+    "0x1015660": "no_unwind_metadata",
+    "0x1015680": "no_unwind_metadata",
+    "0x10174a0": "depth_budget",
+    "0x1017a10": "depth_budget",
+    "0x101b7a0": "depth_budget",
+    "0x108df00": "depth_budget",
+    "0x35a1f20": "depth_budget",
+    "0x35a6850": "no_unwind_metadata",
+    "0x35a6870": "no_unwind_metadata",
+    "0x35a6880": "no_unwind_metadata",
+    "0x3b15d70": "depth_budget",
+    "0x3b89c70": "no_unwind_metadata",
+    "0x3b92cc0": "depth_budget",
+    "0x3bcdd90": "no_unwind_metadata",
+    "0x3bf01f0": "no_unwind_metadata",
+    "0x3bfdd00": "depth_budget",
+    "0x3c01730": "depth_budget",
+    "0x3c33ad0": "no_unwind_metadata",
+    "0x42076d0": "depth_budget",
+    "0x4207b40": "depth_budget",
+    "0x42082d0": "depth_budget",
+    "0x42088f0": "depth_budget",
+    "0x4208b70": "depth_budget",
+    "0x4208e80": "depth_budget",
+    "0x4209ed0": "depth_budget",
+    "0x420a1c0": "depth_budget",
+    "0x420b4a0": "depth_budget",
+    "0x420e350": "depth_budget",
+    "0x4214b90": "depth_budget",
+    "0x4217840": "no_unwind_metadata",
+    "0x421cc70": "depth_budget",
+    "0x421f980": "no_unwind_metadata",
+    "0x421fa90": "depth_budget",
+    "0x422c818": "depth_budget",
+    "0x422ff3c": "no_unwind_metadata",
+    "0x4234738": "depth_budget",
+    "0x4234bb4": "depth_budget",
+    "0x4235144": "depth_budget",
+    "0x42353bc": "no_unwind_metadata",
+    "0x4236570": "depth_budget",
+    "0x42374fc": "depth_budget",
+    "0x424d8f0": "no_unwind_metadata",
+    "0x42579d0": "depth_budget",
+    "0x427d1b0": "depth_budget",
+    "0x427d550": "depth_budget",
+    "0x4331bb0": "no_unwind_metadata",
+    "0x4339450": "depth_budget",
+    "0x4377c60": "depth_budget",
+    "0x62d220": "no_unwind_metadata",
+    "0x62d240": "depth_budget",
+    "0x62d2b0": "depth_budget",
+    "0x62d4d0": "depth_budget",
+    "0x630320": "no_unwind_metadata",
+    "0x6306a0": "depth_budget",
+    "0x630910": "depth_budget",
+    "0x630d70": "depth_budget",
+    "0x635e10": "no_unwind_metadata",
+    "0x636fd0": "depth_budget",
+    "0x652220": "no_unwind_metadata",
+    "0x652230": "no_unwind_metadata",
+    "0x652b60": "depth_budget",
+    "0x6ce780": "no_unwind_metadata",
+    "0x74f7b0": "depth_budget",
+    "0x7c51e0": "depth_budget",
+    "0x7d4d80": "no_unwind_metadata",
+    "0x7d5320": "depth_budget",
+    "0x7d5380": "depth_budget",
+    "0x7d57b0": "depth_budget",
+    "0x7d5be0": "depth_budget",
+    "0x835540": "depth_budget",
+    "0x835640": "depth_budget",
+    "0x841040": "depth_budget",
+    "0x8622b0": "depth_budget"
+  },
+  "runtime_unverified": true,
+  "seed": {
+    "class_name": "CTickTask_RecalculateModifierNodes",
+    "complete_object_locator_rva": "0x49a1f00",
+    "resolution": "rtti_type_name_unique_vtable_task_specific_tail_vfunc",
+    "runtime_unverified": true,
+    "source_method_name": null,
+    "task_specific_tail_vfunc_rva": "0x7da740",
+    "type_descriptor_rva": "0x548be90",
+    "vtable_rva": "0x44d8f58"
+  },
+  "selected_regions": [
+    {
+      "depth": 0,
+      "entry_rva": "0x7da740",
+      "metadata": {
+        "fragment_count": 1,
+        "fragments": [
+          {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de",
+            "size_bytes": 414,
+            "unwind_rva": "0x4e9f9bc"
+          }
+        ],
+        "ranges": [
+          {
+            "begin_rva": "0x7da740",
+            "end_rva": "0x7da8de"
+          }
+        ],
+        "root_runtime_function": {
+          "begin_rva": "0x7da740",
+          "end_rva": "0x7da8de",
+          "size_bytes": 414,
+          "unwind_rva": "0x4e9f9bc"
+        },
+        "size_bytes": 414,
+        "status": "resolved"
+      },
+      "ranges": [
+        {
+          "begin_rva": "0x7da740",
+          "decoded_bytes": 414,
+          "end_rva": "0x7da8de",
+          "fully_decoded": true,
+          "sha256": "3c712d6affbb50f81e0d6424a06ff40cb58eb1dbce930c7d43ba84f4a445092f",
+          "size_bytes": 414
+        }
+      ]
+    }
+  ],
+  "unresolved_graph_nodes": [
+    {
+      "decoded_bytes": 569,
+      "entry_rva": "0x3c014f0",
+      "metadata_size_bytes": 572,
+      "reason": "partial_decode"
+    },
+    {
+      "decoded_bytes": 1453,
+      "entry_rva": "0x4209900",
+      "metadata_size_bytes": 1484,
+      "reason": "partial_decode"
+    }
+  ],
+  "warning": "Exact-build static instruction/reference evidence only. Direct calls/tail jumps, indirect sites, code-address references and validated RTTI/vtable references remain separate. Runtime reachability, critical-path cost, wait causality and optimization benefit are unproven."
+}
