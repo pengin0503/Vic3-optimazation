@@ -1,7 +1,7 @@
 # B0: offline native shadow 接続契約
 
 日付: 2026-10-07  
-状態: 2026-10-07にユーザーが書面を承認。[実装計画](../plans/2026-10-07-offline-native-shadow-contract.md)を作成済み（計画レビュー待ち）。B0は未実装。
+状態: 2026-10-07にユーザーが書面を承認。[実装計画](../plans/2026-10-07-offline-native-shadow-contract.md)のTask 1〜4を実装・検証済み（[検証記録](../../../research/generated/lookup-reuse-contract/verification.md)）。owned fixture上の接続契約に限り、§9のnative gateは未充足。
 
 ## 1. 目的と今回の到達点
 

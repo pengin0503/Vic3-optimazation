@@ -4,7 +4,8 @@ Portable C++20 library, tests and (Task 4) offline runner for the
 [B0 contract design](../../docs/superpowers/specs/2026-10-07-offline-native-shadow-contract-design.md),
 implemented from the
 [B0 plan](../../docs/superpowers/plans/2026-10-07-offline-native-shadow-contract.md).
-Status: in progress (Tasks 1-3 implemented).
+Status: Tasks 1-4 implemented and verified; see the
+[verification record](../../research/generated/lookup-reuse-contract/verification.md).
 
 **Scope.** Owned fixtures only. No live process memory, detour, native ABI
 call, DLL, loader, Windows SDK or MinHook, and no lookup-bypass mode. Passing

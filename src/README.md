@@ -22,6 +22,10 @@ Do **not** add game-state-changing optimization patches, scheduler overrides, lo
 
 [`lookup_reuse/`](lookup_reuse/README.md) is a separate, platform-neutral C++20 static library with tests and an offline runner (Stage A of the [lookup reuse / shadow design](../docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md)). It works only on owned, immutable synthetic tables, always calls the original lookup in shadow mode and has no optimizing mode. It does not build or touch the native loader, DLL, hooks, live memory or the V3PF v1 profiler format, and it is not part of the Task 9 runtime plan. Native shadow (Stage B) remains gated on the evidence conditions in §8 of that design.
 
+## Offline native shadow contract (`src/lookup_reuse_contract/`)
+
+[`lookup_reuse_contract/`](lookup_reuse_contract/README.md) is B0 of the [offline native shadow contract design](../docs/superpowers/specs/2026-10-07-offline-native-shadow-contract-design.md): a platform-neutral C++20 library, tests and fixed-seed runner built on Stage A. It covers an offline exact-build locator, owned native-shaped fixtures, opaque-result normalization and a shadow that always calls the original exactly once. It does not read live memory, install hooks, or touch the loader, DLL or V3PF format, and it does not satisfy the Stage B native gate.
+
 ## Read-only native runtime (`src/native/`)
 
 `native/` に exact Victoria 3 1.14.5 用の read-only prototype を実装しています。

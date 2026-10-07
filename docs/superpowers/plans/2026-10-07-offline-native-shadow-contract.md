@@ -10,7 +10,7 @@
 
 **Spec:** `docs/superpowers/specs/2026-10-07-offline-native-shadow-contract-design.md`（2026-10-07書面承認済み）。
 
-**Status:** 計画レビュー待ち。実装担当はOpus 5.5、実行方式はNative/executing-plans。開始時確認mainは`a4a39cad52d8b07ee3d54db7a861fd26a0da1144`だが、実装時は最新mainを取得する。
+**Status:** 2026-10-07に実装・検証完了（Native/executing-plans、実装開始main `f94a2d0`）。Task 1〜4の結果、CI、未実行項目は[検証記録](../../../research/generated/lookup-reuse-contract/verification.md)を参照。owned fixture上の接続契約だけを示し、Stage Bのnative gateは未充足。
 
 ## Global Constraints
 
@@ -56,7 +56,7 @@
 
 C++生成物はnamespace `lookup_contract::generated`で`CallerWitness { uint32_t caller_id, call_rva, return_rva, caller_entry_rva; bool allowed; }`、`kCallers`（6件）、`kManifestSourceSha256`、`kSchemaVersion`を出す。ID 1..4は正本のallowed順、5..6はexcluded順。unknownは0。pattern/PE metadataはPython manifestが保持する。C++はこのID/RVAを合成caller分類にだけ使い、locator成功をlive memoryの権限にしない。
 
-- [ ] **1. RED testsを書く。** `tests/test_lookup_contract_manifest.py`で正本のentry `0xf3e040`、hash、14-byte pattern、4 allowed/2 excluded、各call+5=return、metadata root begin、indexに記載のsource SHA/size、欠落/重複/schema改変、boolの型、deterministic rendering、stale `--check` failureを確認する。
+- [x] **1. RED testsを書く。** `tests/test_lookup_contract_manifest.py`で正本のentry `0xf3e040`、hash、14-byte pattern、4 allowed/2 excluded、各call+5=return、metadata root begin、indexに記載のsource SHA/size、欠落/重複/schema改変、boolの型、deterministic rendering、stale `--check` failureを確認する。
 
 ```python
 def test_manifest_keeps_four_allowed_two_excluded(self):
@@ -81,10 +81,10 @@ def test_changed_call_is_rejected_after_hash_matches(self):
 `test_bad_hash`, `test_duplicate_entry_signature`, `test_duplicate_caller_signature`, `test_truncated_pe`, `test_raw_and_virtual_overflow`, `test_unsigned_rel32_is_not_accepted`, `test_changed_return_rva`, `test_out_of_text`, `test_same_input_output_rejected`, `test_failed_validation_does_not_write_output`も追加する。改変構造のtestsはhashを合わせて、hash gateだけの拒否でGREENにしない。
 rel32検査専用caseではmini manifestの該当patternも改変bytesと一致させ、期待entryは変更せず、signature gateではなくdestination検査で拒否させる。
 `test_exact_input_optional`はVIC3_DATA未設定時に明示skip、設定時は固定production manifestによるentry_match_count=1、4 allowed/2 excluded、pinned exe hashをassertする。
-- [ ] **2. REDを確認。** `python -m unittest discover -s tests -p 'test_lookup_contract_*.py' -v`。新module/API不在または上のassertionでFAILを確認する。
-- [ ] **3. 最小実装。** 正本は`research/generated/native-shadow-preparation-2026-10-07/static-evidence.json`、indexは同folderの`artifact-index.json`。schema=1、entry signatureと全6caller signature/metadata、sourceのSHA-256/sizeを検証し、署名を含む内部manifestとC++includeを同じ正本から生成する。既存`analyze_vic3.read_input/PE`を再利用するが、parser例外を明確なValueError/CLI exit 2に変換し、header/section table/raw/virtual boundsをこのtoolで追加確認する。整数演算の各結果をuint32範囲とinput lengthに照合し、RVAのzero-fillをfile-backed bytesとみなさない。entry/caller patternは重複を含め`.text`全体で一意、指定RVAで一致、callはE8/5 bytes/signed int32 rel32で同じentry、returnはcall+5を検証する。CLIにmanifest/hash置換optionを追加しない。
-- [ ] **4. GREENと生成物check。** 上のunittestを全PASSにし、`python tools/render_lookup_contract_manifest.py --check`をPASSにする。optional exact input検証は`python tools/check_lookup_contract_locator.py "$VIC3_DATA" --output build/lookup-contract/locator.json`。4 allowed/2 excludedとstatic_only=trueを確認する。CLIの入力はexe/ZIP/既存read_inputが対応するdirectory、出力はJSON。同一input/outputは拒否し、検証成功後だけ出力する。
-- [ ] **5. Commit。** `git add`はFilesで列挙したpathだけ。message: `feat: add offline lookup contract manifest and locator`。
+- [x] **2. REDを確認。** `python -m unittest discover -s tests -p 'test_lookup_contract_*.py' -v`。新module/API不在または上のassertionでFAILを確認する。
+- [x] **3. 最小実装。** 正本は`research/generated/native-shadow-preparation-2026-10-07/static-evidence.json`、indexは同folderの`artifact-index.json`。schema=1、entry signatureと全6caller signature/metadata、sourceのSHA-256/sizeを検証し、署名を含む内部manifestとC++includeを同じ正本から生成する。既存`analyze_vic3.read_input/PE`を再利用するが、parser例外を明確なValueError/CLI exit 2に変換し、header/section table/raw/virtual boundsをこのtoolで追加確認する。整数演算の各結果をuint32範囲とinput lengthに照合し、RVAのzero-fillをfile-backed bytesとみなさない。entry/caller patternは重複を含め`.text`全体で一意、指定RVAで一致、callはE8/5 bytes/signed int32 rel32で同じentry、returnはcall+5を検証する。CLIにmanifest/hash置換optionを追加しない。
+- [x] **4. GREENと生成物check。** 上のunittestを全PASSにし、`python tools/render_lookup_contract_manifest.py --check`をPASSにする。optional exact input検証は`python tools/check_lookup_contract_locator.py "$VIC3_DATA" --output build/lookup-contract/locator.json`。4 allowed/2 excludedとstatic_only=trueを確認する。CLIの入力はexe/ZIP/既存read_inputが対応するdirectory、出力はJSON。同一input/outputは拒否し、検証成功後だけ出力する。
+- [x] **5. Commit。** `git add`はFilesで列挙したpathだけ。message: `feat: add offline lookup contract manifest and locator`。
 
 ## Task 2: 所有fixture、borrow、結果正規化
 
@@ -117,7 +117,7 @@ NormalizedResult NormalizeResult(const FixtureBorrow&, std::uint32_t key, Opaque
 
 `FixtureBorrow`が持つprivate `shared_ptr<FixtureState>`はimmutable bytes、Stage A owner、spec、private generation、revoked flagを保持する。raw Viewへのaccessはnormalizer/shadowのfriend/private経路だけ。public Validは状態の照会であり、boolからborrowを作るconstructorはない。borrowがcallback終了までstateをpinするため、owner破棄後もdanglingにならない。全操作は同じthreadの同期使用。
 
-- [ ] **1. RED testsとbuild targetを用意。** B0 CMakeは`enable_testing()`と`add_subdirectory(../lookup_reuse stage-a)`で既存target `lookup_reuse_core`を参照する。B0 `lookup_contract_core`、`lookup_contract_tests`を作る。Releaseでも消えない既存`tests/TestSupport.h`/`TestMain.cpp`を別test executableで再利用し、Stage Aのsourceを編集しない。
+- [x] **1. RED testsとbuild targetを用意。** B0 CMakeは`enable_testing()`と`add_subdirectory(../lookup_reuse stage-a)`で既存target `lookup_reuse_core`を参照する。B0 `lookup_contract_core`、`lookup_contract_tests`を作る。Releaseでも消えない既存`tests/TestSupport.h`/`TestMain.cpp`を別test executableで再利用し、Stage Aのsourceを編集しない。
 
 `MakeFixedFixture() -> unique_ptr<OwnedNativeFixture>`をFixtureSupport.hに作る。mask=7、10 slots、base=`0x1000`、sentinel=`0x8000`、fallback=`0x9000`。手書き配置はkey0@5/control1、key8@6/control2、key2@7/control1、key10@8/control2。他slotはempty。独立vectorを以下に固定する。
 
@@ -133,12 +133,12 @@ LOOKUP_TEST(primary_tail_unknown_vectors) {
 ```
 
 別fixture mask=0/2 slots/key=`UINT32_MAX`@0/control1でfirst-primary=`0x1010`を確認。空slotに古いkeyを残した`0x1010`/key0とwrong-keyの`0x10d8`/key8はInvalidPrimaryResult。tail内のempty/wrong-keyはUnknown。sentinel/fallback classification、copy後にinput変更しても結果不変、宣言値重複/0/全descriptor位置との衝突、base/offset/size overflow、invalid signed-mask表現、既存ViewError拒否を試す。
-- [ ] **2. REDを確認。** `cmake -S src/lookup_reuse_contract -B build/lookup-contract -DCMAKE_BUILD_TYPE=Release -DLOOKUP_CONTRACT_WARNINGS_AS_ERRORS=ON`、`cmake --build build/lookup-contract --config Release`。まず新API未実装によるcompile/link/test FAILを記録する。
-- [ ] **3. 最小実装。** inputをprivate copyし、そのcopyから既存`OwnedTableFixture::Create`を呼ぶ。呼び出し側のidentityは受け取らず、process内のprivate monotonic generationをCASで発行し、上限到達時はwrap前にEpochExhausted。map_id/storage_id/lifetime_epochはこのunique generation、layout_versionはStage Aの1とする。generationの状態は公開せず、overflow試験だけTask 3のtest専用guardを使う。maskはnative signed int32で非負に表現可能な範囲に制限する。
+- [x] **2. REDを確認。** `cmake -S src/lookup_reuse_contract -B build/lookup-contract -DCMAKE_BUILD_TYPE=Release -DLOOKUP_CONTRACT_WARNINGS_AS_ERRORS=ON`、`cmake --build build/lookup-contract --config Release`。まず新API未実装によるcompile/link/test FAILを記録する。
+- [x] **3. 最小実装。** inputをprivate copyし、そのcopyから既存`OwnedTableFixture::Create`を呼ぶ。呼び出し側のidentityは受け取らず、process内のprivate monotonic generationをCASで発行し、上限到達時はwrap前にEpochExhausted。map_id/storage_id/lifetime_epochはこのunique generation、layout_versionはStage Aの1とする。generationの状態は公開せず、overflow試験だけTask 3のtest専用guardを使う。maskはnative signed int32で非負に表現可能な範囲に制限する。
 
 合成addressはuint64演算だけ。base+40*slot_countと各descriptor offsetのoverflowを検査し、sentinel/fallbackは非zero・互いに異なる・**emptyを含む全slotのdescriptor値と非衝突**を要求する。NormalizeResultは借用が無効ならUnknown/slotなし、borrowが有効なら表の6分類だけを返す。slotを返すのはPrimaryPositive/TailPositiveだけ。base未満、descriptor offset未満、misaligned、span外をdereferenceなしで拒否する。constructor検証に失敗したstateを返さない。
-- [ ] **4. GREEN。** `ctest --test-dir build/lookup-contract -C Release --output-on-failure`で新testsとStage A testsをPASSにする。新fixture・borrowをraw pointer/spanや任意identityから構築できないcompile-time assertion、同base/bytesの再生成でgenerationが異なることも確認する。
-- [ ] **5. Commit。** message: `feat: add owned native-shaped fixtures and result normalization`。
+- [x] **4. GREEN。** `ctest --test-dir build/lookup-contract -C Release --output-on-failure`で新testsとStage A testsをPASSにする。新fixture・borrowをraw pointer/spanや任意identityから構築できないcompile-time assertion、同base/bytesの再生成でgenerationが異なることも確認する。
+- [x] **5. Commit。** message: `feat: add owned native-shaped fixtures and result normalization`。
 
 ## Task 3: original exactly once、scope/session、固定record
 
@@ -187,7 +187,7 @@ class NativeScope { public: explicit NativeScope(OfflineNativeShadow&); ~NativeS
 
 return_rvaはfixtureが供給する合成値であり、実return address取得ではない。caller_idをgenerated tableから引き、ID 1..4だけ比較対象とする。unknown/excludedはCallerExcluded。正規化を行わなかったrecordのresult_classはnullopt、正規化して不明だった場合はUnknown。
 
-- [ ] **1. RED tests。** `test_original_once_all_modes_and_skips`で各NativeSkipとUnknown/0/UINT64_MAXの戻り値保持、invoke回数を確認。`test_primary_warm_then_equal`では同scope内のkey0/`0x13b8637`/元結果`0x10d8`を2回呼び、NoCandidate→Equal、両方original一回、candidate slot=5とする。`test_revoked_during_callback`と次のowner破棄を含める。
+- [x] **1. RED tests。** `test_original_once_all_modes_and_skips`で各NativeSkipとUnknown/0/UINT64_MAXの戻り値保持、invoke回数を確認。`test_primary_warm_then_equal`では同scope内のkey0/`0x13b8637`/元結果`0x10d8`を2回呼び、NoCandidate→Equal、両方original一回、candidate slot=5とする。`test_revoked_during_callback`と次のowner破棄を含める。
 
 ```cpp
 LOOKUP_TEST(owner_destroyed_in_callback_is_proof_lost) {
@@ -204,16 +204,16 @@ LOOKUP_TEST(owner_destroyed_in_callback_is_proof_lost) {
 `test_off_outer_reentry_invalidates`, `test_excluded_outer_reentry_invalidates`、`test_inner_throw_caught_by_outer`、`test_same_exception_propagates`（exception_ptrを比較）、`test_scope_boundaries_and_nested_rejection`、`test_mode_roundtrip_during_callback_invalidates`、`test_scope_replaced_during_callback_invalidates`、`test_other_evaluator_does_not_inherit_scope`、`test_address_reuse_has_no_candidate`を作る。getter/record/countの独立assertionでhintを誤記憶していないことを次callから確認する。
 
 `test_mismatch_disables_until_new_evaluator`は温まったcandidateをtest専用seamでslot6に差し替え、originalはslot5のままとする。Mismatch、Off→Shadow、新scopeでもSessionDisabled、新evaluatorのみNoCandidateを確認。`test_record_full_and_drain`は256件の正常call後に257件目だけdrop、original_calls=257、dropped_records=1、LastRecordは257件目、drain後は再び記録可能を確認する。
-- [ ] **2. REDを確認。** `lookup_contract_tests --filter primary_warm_then_equal`等、登録した実名で実行し、未実装の状態管理/契約によりFAILになることを記録する。
-- [ ] **3. 最小実装。** 最初に全callのdepth guardを設定し、再入は外側を失効する。許可されたcallだけ既存`PositiveSlotHint::Try`を呼ぶ。callback後に同じborrowのgeneration/revocation、outer-invalidatedを再確認する。scope/modeの変更はcallback中に元へ戻っても失効とする。mode OffならOff、scope変更ならMissingScope、modeだけ変化してShadowへ戻ったらProofLostでskipする。候補計算にReferencePositiveSearchを呼ばない。sourceの§6優先順位を守り、再入の失効は理由順位と独立に行う。
+- [x] **2. REDを確認。** `lookup_contract_tests --filter primary_warm_then_equal`等、登録した実名で実行し、未実装の状態管理/契約によりFAILになることを記録する。
+- [x] **3. 最小実装。** 最初に全callのdepth guardを設定し、再入は外側を失効する。許可されたcallだけ既存`PositiveSlotHint::Try`を呼ぶ。callback後に同じborrowのgeneration/revocation、outer-invalidatedを再確認する。scope/modeの変更はcallback中に元へ戻っても失効とする。mode OffならOff、scope変更ならMissingScope、modeだけ変化してShadowへ戻ったらProofLostでskipする。候補計算にReferencePositiveSearchを呼ばない。sourceの§6優先順位を守り、再入の失効は理由順位と独立に行う。
 
 PrimaryPositiveのみslot比較/Remember。NoCandidateは古いhintをclearして有効元slotをRemember。全Skipped/Mismatch/throwはclear。exceptionはRAIIでcleanupして再throwし、callback retryはしない。新scope IDはevaluator内のmonotonic counterで発行し、上限前にconstructorでoverflow_error、新session IDもprivate allocatorでwrapを拒否する。
 
 固定容量256のcollectorはevaluator内部array。満杯ではcounterだけ増やし、LastRecord/returnは通常通り更新。DrainRecordsは呼び出しの外で同threadから使う。counterとrecord更新はnoexcept、uint64 counterはwrapせず飽和させる。正常call数とthrow数を区別し、result-class counterは実際に正規化したcallだけ増やす。
 
 CMakeは同じB0 core sourceから`lookup_contract_core`（production）と`lookup_contract_test_core`を別にbuildする。`LOOKUP_CONTRACT_TESTING=1`はtest_coreとunit executableの両方だけに設定し、headerのclass定義とlibraryの定義を一致させる。private fault code/アクセスはguard内だけ、headerは`tests/TestFaults.h`に置く。fixture generation上限とcandidate比較前の差し替えを試す。unit executableはtest_coreだけ、runnerはproduction coreだけにlinkし、両variantを同じexecutableに混ぜない。
-- [ ] **4. GREEN。** 全CTest PASS。test用global operator new counterで、事前作成したthrowしないallocation-free callbackのEvaluate/正規化/collector経路のallocationが0であることを確認する。ASanでowner破棄/再入を試す。production runner側ではfault header/APIが使えないことをCMakeのcompile-negative checkとsource guardで確認する。I/O/mutex/full-validation呼び出しがEvaluateにないことをレビューする。
-- [ ] **5. Commit。** message: `feat: add opaque-result offline shadow contract and fixed records`。
+- [x] **4. GREEN。** 全CTest PASS。test用global operator new counterで、事前作成したthrowしないallocation-free callbackのEvaluate/正規化/collector経路のallocationが0であることを確認する。ASanでowner破棄/再入を試す。production runner側ではfault header/APIが使えないことをCMakeのcompile-negative checkとsource guardで確認する。I/O/mutex/full-validation呼び出しがEvaluateにないことをレビューする。
+- [x] **5. Commit。** message: `feat: add opaque-result offline shadow contract and fixed records`。
 
 ## Task 4: 独立oracle runner、CLI、CI、検証記録
 
@@ -221,12 +221,12 @@ CMakeは同じB0 core sourceから`lookup_contract_core`（production）と`look
 
 **Interfaces (namespace `lookup_contract::runner`):** `RunConfig { uint32_t seed=20261007; size_t rebuilds=1000; }`、`RunSummary`（config、boundary_fixture_count、fixture_count、query_count、oracle_mismatches、NativeCounters、caller ID別call/compare/skip、all_game_gates_met=false）、`RunContract(const RunConfig&) -> RunSummary`、`WriteJson(const RunSummary&, ostream&) -> void`、`Passed(const RunSummary&) noexcept -> bool`。fixture builderのplacement mapが期待slotを記録し、callbackはそのmapから合成addressを返す。normalizer/Stage A searchを期待slot計算の唯一の方法にしない。
 
-- [ ] **1. RED tests。** `VerifyContractRunner.py`で同seedの2回のJSON内容一致、全4allowedと2excluded caller coverage、6結果分類の固定boundary coverage、opaque returnのoracle_mismatches=0、集計counterとcallback総数の整合、default Off、queue drop/drainの固定caseを確認する。production runnerではforced mismatchを使わず、unit testのMismatch証拠と区別する。`--help`/正常CLI、unknown option、重複option、seed<0/>UINT32_MAX、rebuilds=0/>100000、欠けたoutput/値、不正数値、書き込み不能pathは明確なnonzero exitを確認する。
-- [ ] **2. REDを確認。** `python src/lookup_reuse_contract/tests/VerifyContractRunner.py build/lookup-contract/lookup_contract_runner`（WindowsではRelease/exe）。新CLI/集計未実装によるFAILを残す。
-- [ ] **3. 最小実装。** 境界fixtureはseed非依存、random生成は独自固定PRNGを使い、標準distributionやpointer値/hash-map iteration順に依存しない。生成ごとに同じnumeric baseを再使用してidentity失効を検査する。通常primaryを温める反復とtail/sentinel/fallback/Unknown/invalid-result、Off/対象外/再入/ProofLostを含める。CLIは`--seed N --rebuilds N --output PATH`、default値はRunConfig、seedは0..UINT32_MAX、rebuildsは1..100000。JSONキー順/改行を固定し、session/generationはrun内ordinalへ正規化してprocess間の再現性を保つ。live locator結果は別JSONであり、runnerのall_game_gates_metをtrueにしない。
+- [x] **1. RED tests。** `VerifyContractRunner.py`で同seedの2回のJSON内容一致、全4allowedと2excluded caller coverage、6結果分類の固定boundary coverage、opaque returnのoracle_mismatches=0、集計counterとcallback総数の整合、default Off、queue drop/drainの固定caseを確認する。production runnerではforced mismatchを使わず、unit testのMismatch証拠と区別する。`--help`/正常CLI、unknown option、重複option、seed<0/>UINT32_MAX、rebuilds=0/>100000、欠けたoutput/値、不正数値、書き込み不能pathは明確なnonzero exitを確認する。
+- [x] **2. REDを確認。** `python src/lookup_reuse_contract/tests/VerifyContractRunner.py build/lookup-contract/lookup_contract_runner`（WindowsではRelease/exe）。新CLI/集計未実装によるFAILを残す。
+- [x] **3. 最小実装。** 境界fixtureはseed非依存、random生成は独自固定PRNGを使い、標準distributionやpointer値/hash-map iteration順に依存しない。生成ごとに同じnumeric baseを再使用してidentity失効を検査する。通常primaryを温める反復とtail/sentinel/fallback/Unknown/invalid-result、Off/対象外/再入/ProofLostを含める。CLIは`--seed N --rebuilds N --output PATH`、default値はRunConfig、seedは0..UINT32_MAX、rebuildsは1..100000。JSONキー順/改行を固定し、session/generationはrun内ordinalへ正規化してprocess間の再現性を保つ。live locator結果は別JSONであり、runnerのall_game_gates_metをtrueにしない。
 
 専用CIはubuntu-24.04 GCC Release、Clang Release、Clang ASan+UBSan、およびwindows-2022 MSVC x64 Release。warnings-as-errorsを有効化し、codegen --check、新しいPython unit（`-p 'test_lookup_contract_*.py'`）、B0 CTest、fresh JSONとcommit済みJSON内容比較を実行する。既存Python全testsは従来のtests workflowが依存をinstallして実行し、ローカルでも既存`tools/requirements-callgraph.txt`を使って実行する。Linuxはbyte一致も確認。path filterにB0 source/results、Stage A source、両manifest/locator tool・新Python tests・正本、専用workflowを含める。実exeをCIに持ち込まず、VIC3_DATA optional testは未設定時に明示skipする。
-- [ ] **4. GREENと最終検証。** 次のcommand/結果を`research/generated/lookup-reuse-contract/verification.md`に保存し、testsが拾うfaultを確認する。test fileを行動と同じbodyに書き直してGREENにしない。
+- [x] **4. GREENと最終検証。** 次のcommand/結果を`research/generated/lookup-reuse-contract/verification.md`に保存し、testsが拾うfaultを確認する。test fileを行動と同じbodyに書き直してGREENにしない。
 
 ```bash
 python -m unittest discover -s tests -v
@@ -241,7 +241,7 @@ git diff --check
 ```
 
 初回expected resultsはfixed-seed runnerで生成し、検証した数値だけcommitする。Clangは別build dirで`-DCMAKE_CXX_COMPILER=clang++`、sanitizerはさらに`-DCMAKE_CXX_FLAGS='-fsanitize=address,undefined -fno-omit-frame-pointer' -DCMAKE_EXE_LINKER_FLAGS='-fsanitize=address,undefined'`。Windowsは`-A x64`/`--config Release`/`ctest -C Release`とexe pathを使う。専用CIの4構成と既存Windows native CIを実際に確認する。実装開始mainからのdiffでV3PF golden/target JSON/Stage Aコード/resultsが無変更であることを確認する。添付ZIPを利用できる場合はlocatorをexact exeでも検証し、CLI outputのhash/6callers/static_onlyを確認する。
-- [ ] **5. Commitとhandoff。** message: `test: add reproducible lookup contract runner and cross-platform CI`。設計/計画の状態とcheckboxを実際の結果に合わせて更新する。レビュー指摘のうちB0 scope内だけ解決し、Critical/Important残件なし、検証完了後に最新mainを取り込みforceなしでfast-forward統合する。報告はcommit、CI links、再現command、不一致/skip/drop/coverage、未実行構成と残るnative gateを含める。
+- [x] **5. Commitとhandoff。** message: `test: add reproducible lookup contract runner and cross-platform CI`。設計/計画の状態とcheckboxを実際の結果に合わせて更新する。レビュー指摘のうちB0 scope内だけ解決し、Critical/Important残件なし、検証完了後に最新mainを取り込みforceなしでfast-forward統合する。報告はcommit、CI links、再現command、不一致/skip/drop/coverage、未実行構成と残るnative gateを含める。
 
 ## Self-review mapping
 
