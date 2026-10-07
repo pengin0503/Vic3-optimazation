@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "base_commit": "66ac704e46c1028655b2577aaa6f14479b4fce1b",
+  "scope": "stage-b-preparation-only",
+  "files": [
+    {
+      "path": "research/generated/native-shadow-preparation-2026-10-07/static-evidence.json",
+      "size_bytes": 43126,
+      "sha256": "3e37e77f0a2600120046282c03775d2322787fec0f66613c47c2cc7f020929aa"
+    },
+    {
+      "path": "research/generated/native-shadow-preparation-2026-10-07/repository-state.json",
+      "size_bytes": 2744,
+      "sha256": "49feb172aecbc63bb742ad9ab90628b9689ddae759f53feaf636a4497e0b6c51"
+    },
+    {
+      "path": "research/generated/native-shadow-preparation-2026-10-07/collect-static-evidence.py.txt",
+      "size_bytes": 7752,
+      "sha256": "d2f8a35f241c962ad86fba82252eaba8c17505e3f73c3b1916e06b0299807e22"
+    },
+    {
+      "path": "docs/superpowers/reports/2026-10-07-native-shadow-preparation-ja.md",
+      "size_bytes": 19202,
+      "sha256": "b7266fb56a2fc784ccb48f66b233a789d7b3a57534cc7ef54ecaab4655aa67b3"
+    }
+  ],
+  "self_excluded": true
+}

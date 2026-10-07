@@ -1,0 +1,167 @@
+#!/usr/bin/env python3
+"""Read-only Stage B preparation; bounded static witnesses, no live access.
+
+Run from a repository checkout with PYTHONPATH=tools. Requires Python stdlib
+and GNU objdump only. Neither emits nor installs game patches.
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import struct
+import subprocess
+import tempfile
+
+from analyze_vic3 import PE, read_input
+from map_ticktask_rtti import runtime_functions
+from runtime_function_groups import RuntimeFunctionIndex, backed_bytes, group_metadata
+
+EXE_SHA = "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+ARCHIVE_SHA = "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34"
+BASE = "66ac704e46c1028655b2577aaa6f14479b4fce1b"
+LOOKUP = 0xf3e040
+SITES = (0x13b8632, 0x10b7db4, 0x10bd565, 0x10bd66b)
+EXCLUDED_WITNESSES = (0x13b847c, 0xc6b5ca)
+
+
+def count_matches(text, pattern):
+    count, offset = 0, 0
+    while True:
+        offset = text.find(pattern, offset)
+        if offset < 0:
+            return count
+        count += 1
+        offset += 1
+
+
+def decode(data, start):
+    with tempfile.TemporaryDirectory() as tmp:
+        path = Path(tmp) / "excerpt.bin"
+        path.write_bytes(data)
+        output = subprocess.run([
+            "objdump", "-D", "-b", "binary", "-m", "i386:x86-64", "-M", "intel",
+            "--insn-width=16", f"--adjust-vma={start}", str(path),
+        ], check=True, capture_output=True, text=True).stdout
+    instructions = []
+    for line in output.splitlines():
+        fields = line.split("\t")
+        if len(fields) < 3 or not fields[0].strip().endswith(":"):
+            continue
+        try:
+            rva = int(fields[0].strip()[:-1], 16)
+            code = bytes.fromhex(fields[1])
+        except ValueError:
+            continue
+        assembly = fields[2].strip().split(None, 1)
+        if not assembly or assembly[0] in ("(bad)", ".byte"):
+            raise ValueError(f"undecoded instruction at {rva:x}")
+        instructions.append({"rva": hex(rva), "bytes": code.hex(),
+                             "mnemonic": assembly[0],
+                             "operand": assembly[1] if len(assembly) > 1 else ""})
+    expected = start
+    for ins in instructions:
+        if int(ins["rva"], 16) != expected:
+            raise ValueError("noncontiguous disassembly")
+        expected += len(bytes.fromhex(ins["bytes"]))
+    if expected != start + len(data):
+        raise ValueError("incomplete bounded disassembly")
+    return instructions
+
+
+def collect(path):
+    archive_hash = hashlib.sha256(path.read_bytes()).hexdigest()
+    if archive_hash != ARCHIVE_SHA:
+        raise ValueError("unsupported archive SHA-256")
+    binary, member = read_input(path, "victoria3.exe")
+    if hashlib.sha256(binary).hexdigest() != EXE_SHA:
+        raise ValueError("unsupported executable SHA-256")
+    pe = PE(binary)
+    section = next(s for s in pe.sections if s["name"] == ".text")
+    text = backed_bytes(binary, pe, section["virtual_address"], section["raw_size"])
+    index = RuntimeFunctionIndex(binary, pe, runtime_functions(binary, pe))
+
+    def excerpt(start, end):
+        data = backed_bytes(binary, pe, start, end - start)
+        return {"begin_rva": hex(start), "end_rva": hex(end), "size_bytes": len(data),
+                "sha256": hashlib.sha256(data).hexdigest(),
+                "metadata": group_metadata(index.group_for(start)),
+                "instructions": decode(data, start)}
+
+    lookup = excerpt(LOOKUP, 0xf3e0fd)
+    fallback = excerpt(0xf468d0, 0xf469aa)
+    signature = backed_bytes(binary, pe, LOOKUP, 14)
+    if count_matches(text, signature) != 1:
+        raise ValueError("nonunique entry signature")
+    callers = []
+    for site in SITES + EXCLUDED_WITNESSES:
+        group = index.group_for(site)
+        if not group or group["status"] != "resolved" or group["size_bytes"] > 65536:
+            raise ValueError("caller metadata unavailable or oversized")
+        instructions = []
+        for begin, end in group["ranges"]:
+            instructions.extend(decode(backed_bytes(binary, pe, begin, end - begin), begin))
+        position = next(i for i, ins in enumerate(instructions) if int(ins["rva"], 16) == site)
+        code = bytes.fromhex(instructions[position]["bytes"])
+        if len(code) != 5 or code[0] != 0xe8 or site + 5 + struct.unpack("<i", code[1:])[0] != LOOKUP:
+            raise ValueError("caller edge mismatch")
+        witness = instructions[max(0, position - 9):position + 8]
+        # Instruction-aligned exact call + following-instruction signature.
+        pattern = b""
+        for ins in instructions[position:]:
+            pattern += bytes.fromhex(ins["bytes"])
+            if len(pattern) >= 12:
+                break
+        callers.append({"site_rva": hex(site), "return_rva": hex(site + 5),
+                        "future_candidate_allowlist": site in SITES,
+                        "target_rva": hex(LOOKUP), "call_bytes": code.hex(),
+                        "caller_metadata": group_metadata(group),
+                        "signature": {"begin_rva": hex(site), "pattern_hex": pattern.hex(" "),
+                                      "length": len(pattern), "match_count_in_text": count_matches(text, pattern)},
+                        "instructions": witness})
+    raw_candidates = []
+    offset = 0
+    while True:
+        offset = text.find(b"\xe8", offset)
+        if offset < 0:
+            break
+        if offset + 5 <= len(text):
+            site = section["virtual_address"] + offset
+            if site + 5 + struct.unpack_from("<i", text, offset + 1)[0] == LOOKUP:
+                raw_candidates.append(hex(site))
+        offset += 1
+    return {"schema_version": 1, "scope": "offline-static-stage-b-preparation",
+            "repository_base": BASE, "archive_sha256": archive_hash,
+            "executable_member": member, "executable_sha256": EXE_SHA,
+            "text_section": section, "lookup_excerpt": lookup, "fallback_excerpt": fallback,
+            "entry_signature": {"begin_rva": hex(LOOKUP), "offset_from_entry": 0,
+                                "pattern_hex": signature.hex(" "), "length": 14,
+                                "match_count_in_text": count_matches(text, signature)},
+            "prologue_instruction_lengths": [4, 3, 4, 3],
+            "minimum_whole_instruction_span_for_5_byte_patch": 7,
+            "minimum_whole_instruction_span_for_14_byte_patch": 14,
+            "verified_callers": callers,
+            "raw_e8_candidates": {"count": len(raw_candidates), "sites": raw_candidates,
+                                  "instruction_boundaries_validated": False},
+            "limits": ["No hook, trampoline, live memory or game execution is validated.",
+                       "189-byte entry excerpt is not a proven complete source function.",
+                       "Only six caller instruction boundaries were decoded; raw E8 scans are not call counts.",
+                       "Neither native table lifetime nor its full layout is proven.",
+                       "Patch spans describe instruction boundaries, not backend safety."]}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("archive", type=Path)
+    parser.add_argument("output", type=Path)
+    args = parser.parse_args()
+    result = collect(args.archive)
+    args.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+    print(json.dumps({"callers_verified": len(result["verified_callers"]),
+                      "raw_candidates": result["raw_e8_candidates"]["count"],
+                      "entry_signature_matches": result["entry_signature"]["match_count_in_text"]}))
+
+
+if __name__ == "__main__":
+    main()

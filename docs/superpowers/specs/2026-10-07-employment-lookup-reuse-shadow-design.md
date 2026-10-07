@@ -128,6 +128,8 @@ shadowは元関数をexact original trampolineで1回呼び、正常戻り値・
 
 現在の資料は下表の条件を満たしていない。条件が未達なら段階Aの完了を報告できても、game向けshadowを有効化できない。native接続を実装する前に、証拠addendumとその実装計画をレビューする。
 
+2026-10-07の[段階B準備・証拠addendum](../reports/2026-10-07-native-shadow-preparation-ja.md)で、一意署名・callsite/return・register経路と既存runtime branchの所在を整理した。静的材料は増えたが、全gateの成立やnative実装開始を認定したものではない。
+
 | 条件 | 必要な証拠 / 未達時 |
 |---|---|
 | 対象locator | 支持exe hash、.text内のunique signature、相対callsite・control-flowの照合。研究RVAだけではarmしない |

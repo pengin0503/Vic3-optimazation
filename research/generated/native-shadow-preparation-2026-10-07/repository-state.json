@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "scope": "repository-observations-stage-b-preparation",
+  "repository": "pengin0503/Vic3-optimazation",
+  "base_commit": "66ac704e46c1028655b2577aaa6f14479b4fce1b",
+  "base_tree": "61a4f2d129bfc1e20e81b857c9e45b7df9cd7cb6",
+  "main_native_source_present": false,
+  "runtime_branch": {
+    "name": "claude/vic3-native-profiler-tasks-suugii",
+    "commit": "271d5ea0a2a46557ed1ef21ac89df42c3d464d51",
+    "comparison_to_base": {
+      "status": "diverged",
+      "ahead_by": 14,
+      "behind_by": 8,
+      "merge_base": "7f2c5772de280481811562ecb6c4085f4e451a0c"
+    }
+  },
+  "stage_a_ci": [
+    {
+      "id": 37549511496,
+      "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37549511496",
+      "head_sha": "66ac704e46c1028655b2577aaa6f14479b4fce1b",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "python",
+          "conclusion": "success",
+          "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37549511496/job/112561394449"
+        }
+      ]
+    },
+    {
+      "id": 37549511550,
+      "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37549511550",
+      "head_sha": "66ac704e46c1028655b2577aaa6f14479b4fce1b",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "core (ubuntu-24.04, build/lookup-reuse/lookup_reuse_runner)",
+          "conclusion": "success",
+          "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37549511550/job/112561394793"
+        },
+        {
+          "name": "core (windows-2022, build/lookup-reuse/Release/lookup_reuse_runner.exe)",
+          "conclusion": "success",
+          "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37549511550/job/112561395026"
+        }
+      ]
+    }
+  ],
+  "runtime_ci": [
+    {
+      "id": 37398991761,
+      "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37398991761",
+      "head_sha": "271d5ea0a2a46557ed1ef21ac89df42c3d464d51",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "python",
+          "conclusion": "success",
+          "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37398991761/job/112061638113"
+        },
+        {
+          "name": "native",
+          "conclusion": "success",
+          "url": "https://github.com/pengin0503/Vic3-optimazation/actions/runs/37398991761/job/112061638391"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "CI status inspection is not an independent local rerun or real-game test.",
+    "Branch divergence is relative to the recorded base commit, before the preparation-docs commit.",
+    "No runtime integration, loader fix, native shadow or game execution performed."
+  ]
+}
