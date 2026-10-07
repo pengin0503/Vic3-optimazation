@@ -47,10 +47,15 @@ OpaqueResult InvokeCounting(void* context, std::uint32_t key) {
 
 OpaqueOriginal Fixed(Counting& c) { return OpaqueOriginal{&c, &InvokeCounting}; }
 
+template <class F>
+struct Trampoline {
+    static OpaqueResult Invoke(void* context, std::uint32_t key) { return (*static_cast<F*>(context))(key); }
+};
+
 // Wraps any callable (owned by the caller) as an OpaqueOriginal.
 template <class F>
 OpaqueOriginal Call(F& f) {
-    return OpaqueOriginal{&f, +[](void* context, std::uint32_t key) { return (*static_cast<F*>(context))(key); }};
+    return OpaqueOriginal{&f, &Trampoline<F>::Invoke};
 }
 
 NativeRecord Last(const OfflineNativeShadow& s) {

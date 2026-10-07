@@ -1,0 +1,113 @@
+name: lookup-reuse-contract
+
+# B0 offline native shadow contract: manifest codegen check, locator/manifest
+# Python tests, Release builds on GCC, Clang and MSVC x64, Clang ASan+UBSan,
+# CTest (with Stage A) and the fixed-seed runner against the committed JSON.
+# No native loader, DLL, game executable or live memory.
+on:
+  push:
+    paths:
+      - "src/lookup_reuse_contract/**"
+      - "src/lookup_reuse/**"
+      - "research/generated/lookup-reuse-contract/**"
+      - "research/generated/native-shadow-preparation-2026-10-07/**"
+      - "tools/render_lookup_contract_manifest.py"
+      - "tools/check_lookup_contract_locator.py"
+      - "tools/analyze_vic3.py"
+      - "tests/test_lookup_contract_*.py"
+      - ".github/workflows/lookup-reuse-contract.yml"
+  pull_request:
+    paths:
+      - "src/lookup_reuse_contract/**"
+      - "src/lookup_reuse/**"
+      - "research/generated/lookup-reuse-contract/**"
+      - "research/generated/native-shadow-preparation-2026-10-07/**"
+      - "tools/render_lookup_contract_manifest.py"
+      - "tools/check_lookup_contract_locator.py"
+      - "tools/analyze_vic3.py"
+      - "tests/test_lookup_contract_*.py"
+      - ".github/workflows/lookup-reuse-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: gcc-release
+            os: ubuntu-24.04
+            cxx: g++
+            build_type: Release
+            flags: ""
+            runner: build/lookup-contract/lookup_contract_runner
+          - name: clang-release
+            os: ubuntu-24.04
+            cxx: clang++
+            build_type: Release
+            flags: ""
+            runner: build/lookup-contract/lookup_contract_runner
+          - name: clang-asan-ubsan
+            os: ubuntu-24.04
+            cxx: clang++
+            build_type: RelWithDebInfo
+            flags: "-fsanitize=address,undefined -fno-omit-frame-pointer -fno-sanitize-recover=all"
+            runner: build/lookup-contract/lookup_contract_runner
+          - name: msvc-x64-release
+            os: windows-2022
+            cxx: ""
+            build_type: Release
+            flags: ""
+            runner: build/lookup-contract/Release/lookup_contract_runner.exe
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install sanitizer runtime
+        if: matrix.name == 'clang-asan-ubsan'
+        run: sudo apt-get update && sudo apt-get install -y libclang-rt-18-dev
+      - name: Show toolchain
+        run: |
+          cmake --version
+          python --version
+          if [ -n "${{ matrix.cxx }}" ]; then ${{ matrix.cxx }} --version; fi
+      - name: Manifest include is current
+        run: python tools/render_lookup_contract_manifest.py --check
+      - name: Manifest and locator unit tests (VIC3_DATA unset, exact input skipped)
+        run: python -m unittest discover -s tests -p 'test_lookup_contract_*.py' -v
+      - name: Configure (Linux)
+        if: runner.os == 'Linux'
+        run: >
+          cmake -S src/lookup_reuse_contract -B build/lookup-contract
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -DCMAKE_CXX_COMPILER=${{ matrix.cxx }}
+          -DCMAKE_CXX_FLAGS="${{ matrix.flags }}"
+          -DCMAKE_EXE_LINKER_FLAGS="${{ matrix.flags }}"
+          -DLOOKUP_CONTRACT_WARNINGS_AS_ERRORS=ON
+      - name: Configure (MSVC x64)
+        if: runner.os == 'Windows'
+        run: cmake -S src/lookup_reuse_contract -B build/lookup-contract -A x64 -DLOOKUP_CONTRACT_WARNINGS_AS_ERRORS=ON
+      - name: Build
+        run: cmake --build build/lookup-contract --config ${{ matrix.build_type }}
+      - name: CTest (B0 + Stage A + negative seam checks)
+        run: ctest --test-dir build/lookup-contract -C ${{ matrix.build_type }} --output-on-failure
+      - name: No skipped CTest entries
+        run: "! grep -q SKIPPED build/lookup-contract/Testing/Temporary/LastTest.log"
+      - name: Runner JSON and CLI checks
+        run: python src/lookup_reuse_contract/tests/VerifyContractRunner.py "${{ matrix.runner }}" --expected research/generated/lookup-reuse-contract/results.json
+      - name: Fixed-seed runner equals committed results
+        run: |
+          "${{ matrix.runner }}" --seed 20261007 --rebuilds 1000 --output "$RUNNER_TEMP/results.json"
+          python -c "import json,sys; a=json.load(open(sys.argv[1],encoding='utf-8')); b=json.load(open(sys.argv[2],encoding='utf-8')); sys.exit(0 if a==b else 'fresh run differs from committed results.json')" "$RUNNER_TEMP/results.json" research/generated/lookup-reuse-contract/results.json
+      - name: Byte-identical results (Linux)
+        if: runner.os == 'Linux'
+        run: cmp "$RUNNER_TEMP/results.json" research/generated/lookup-reuse-contract/results.json

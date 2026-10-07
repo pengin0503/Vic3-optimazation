@@ -50,6 +50,26 @@ target_compile_definitions(lookup_contract_test_core PUBLIC LOOKUP_CONTRACT_TEST
 target_link_libraries(lookup_contract_test_core PUBLIC lookup_reuse_core)
 lookup_contract_warnings(lookup_contract_test_core)
 
+# Runner: fixed-seed oracle run and JSON (runner-only formatting and I/O).
+# Links the production core only.
+add_library(lookup_contract_runner_lib STATIC runner/ContractRunner.cpp)
+target_include_directories(lookup_contract_runner_lib PUBLIC runner)
+target_link_libraries(lookup_contract_runner_lib PUBLIC lookup_contract_core)
+lookup_contract_warnings(lookup_contract_runner_lib)
+
+add_executable(lookup_contract_runner runner/main.cpp)
+target_link_libraries(lookup_contract_runner PRIVATE lookup_contract_runner_lib)
+lookup_contract_warnings(lookup_contract_runner)
+
+# Source guard: runner sources never name the test seam.
+file(GLOB LOOKUP_CONTRACT_RUNNER_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/runner/*")
+foreach(source ${LOOKUP_CONTRACT_RUNNER_SOURCES})
+  file(STRINGS "${source}" seam_lines REGEX "TestFaults|LOOKUP_CONTRACT_TESTING|FaultAccess")
+  if(seam_lines)
+    message(FATAL_ERROR "runner source ${source} references the test-only fault seam")
+  endif()
+endforeach()
+
 set(STAGE_A_TEST_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../lookup_reuse/tests")
 
 add_executable(lookup_contract_tests
@@ -83,3 +103,26 @@ set_tests_properties(lookup_contract_negative_faults_header PROPERTIES
   PASS_REGULAR_EXPRESSION "requires LOOKUP_CONTRACT_TESTING")
 set_tests_properties(lookup_contract_negative_seam_member PROPERTIES
   PASS_REGULAR_EXPRESSION "fault_candidate_override_")
+
+# JSON / CLI checks need a Python interpreter. Without one they are registered
+# as explicitly skipped tests rather than silently omitted.
+set(LOOKUP_CONTRACT_EXPECTED_RESULTS
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../research/generated/lookup-reuse-contract/results.json")
+# Stage A's find_package result is scoped to its subdirectory.
+find_package(Python3 COMPONENTS Interpreter)
+if(Python3_Interpreter_FOUND)
+  add_test(NAME contract_runner_json_and_cli
+           COMMAND Python3::Interpreter "${CMAKE_CURRENT_SOURCE_DIR}/tests/VerifyContractRunner.py"
+                   $<TARGET_FILE:lookup_contract_runner>)
+  if(EXISTS "${LOOKUP_CONTRACT_EXPECTED_RESULTS}")
+    add_test(NAME contract_runner_matches_committed_results
+             COMMAND Python3::Interpreter "${CMAKE_CURRENT_SOURCE_DIR}/tests/VerifyContractRunner.py"
+                     $<TARGET_FILE:lookup_contract_runner> --expected "${LOOKUP_CONTRACT_EXPECTED_RESULTS}")
+  endif()
+else()
+  message(WARNING "Python3 interpreter not found: B0 JSON/CLI runner checks are skipped")
+  foreach(skipped contract_runner_json_and_cli contract_runner_matches_committed_results)
+    add_test(NAME ${skipped} COMMAND ${CMAKE_COMMAND} -E echo "SKIPPED: Python3 not found")
+    set_tests_properties(${skipped} PROPERTIES SKIP_REGULAR_EXPRESSION "SKIPPED")
+  endforeach()
+endif()

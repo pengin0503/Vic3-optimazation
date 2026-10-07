@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "scope": "offline-owned-fixtures",
+  "config": {
+    "seed": 20261007,
+    "rebuilds": 1000
+  },
+  "default_mode": "Off",
+  "fixture": {
+    "slot_stride": 40,
+    "control_offset": 4,
+    "key_offset": 8,
+    "descriptor_offset": 16,
+    "masks": [7, 15, 31],
+    "max_keys_per_table": 16,
+    "seeded_table_base": "0x10000000",
+    "generator": "runner-local SplitMix64 with explicit modulo; Robin-Hood insertion; odd rebuilds re-create the previous bytes at the same addresses in the same scope",
+    "oracle": "runner placement map and synthetic address formula; runner-side one-hint model"
+  },
+  "counts": {
+    "boundary_fixture_count": 2,
+    "fixture_count": 1002,
+    "query_count": 43979,
+    "callback_invocations": 43979,
+    "oracle_mismatches": 0
+  },
+  "native": {
+    "original_calls": 43979,
+    "candidate_attempts": 37966,
+    "candidate_hits": 11932,
+    "equal": 7423,
+    "mismatch": 0,
+    "no_candidate": 21244,
+    "reentrant_calls": 1002,
+    "exception_calls": 1002,
+    "dropped_records": 0,
+    "skipped_by_reason": {
+      "Off": 1002,
+      "SessionDisabled": 0,
+      "Reentrant": 2004,
+      "MissingScope": 1,
+      "CallerExcluded": 3006,
+      "MissingFixture": 1002,
+      "ProofLost": 501,
+      "TailPositive": 879,
+      "EndSentinel": 1002,
+      "Fallback": 1002,
+      "InvalidPrimaryResult": 1907,
+      "UnknownResult": 2004
+    },
+    "result_class_counts": {
+      "PrimaryPositive": 28667,
+      "TailPositive": 879,
+      "EndSentinel": 1002,
+      "Fallback": 1002,
+      "InvalidPrimaryResult": 1907,
+      "Unknown": 2004
+    }
+  },
+  "callers": [
+    {"caller_id": 0, "allowed": false, "calls": 1002, "compared": 0, "skipped": 1002},
+    {"caller_id": 1, "allowed": true, "calls": 10652, "compared": 1904, "skipped": 1898},
+    {"caller_id": 2, "allowed": true, "calls": 10299, "compared": 1838, "skipped": 4719},
+    {"caller_id": 3, "allowed": true, "calls": 9898, "compared": 1835, "skipped": 1181},
+    {"caller_id": 4, "allowed": true, "calls": 9122, "compared": 1846, "skipped": 3506},
+    {"caller_id": 5, "allowed": false, "calls": 1002, "compared": 0, "skipped": 1002},
+    {"caller_id": 6, "allowed": false, "calls": 1002, "compared": 0, "skipped": 1002}
+  ],
+  "collector_case": {
+    "capacity": 256,
+    "calls": 257,
+    "original_calls": 257,
+    "dropped": 1,
+    "drained": 256,
+    "drained_after_refill": 1
+  },
+  "all_game_gates_met": false,
+  "passed": true,
+  "limits": [
+    "Owned native-shaped fixtures and synthetic address values only; no live memory or game input.",
+    "Mismatch is unreachable here by design; its path is proven only by unit tests with a test-only fault seam.",
+    "Counts are not timings and say nothing about native ABI, hook relocation, real return addresses or game speed.",
+    "Many calls are skipped by design; zero mismatches does not mean native equivalence."
+  ]
+}
