@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import struct
 import sys
 import zipfile
@@ -186,14 +187,25 @@ def verify_exact_input(input_path: Path) -> dict:
     return result
 
 
+def check_output_path(input_path: Path, output_path: Path) -> None:
+    """Refuse an output that could overwrite the input or anything under a directory input."""
+    source = input_path.resolve()
+    target = output_path.resolve()
+    if source == target:
+        raise ValueError("input and output are the same path")
+    if source.is_dir() and target.is_relative_to(source):
+        raise ValueError("output is inside the input directory")
+    if target.exists() and os.path.samefile(source, target):
+        raise ValueError("output is the same file as the input")
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("input", type=Path, help="victoria3.exe, a ZIP containing it, or a game directory")
     p.add_argument("--output", type=Path, required=True, help="JSON result, written only on success")
     a = p.parse_args(argv)
     try:
-        if a.input.resolve() == a.output.resolve():
-            raise ValueError("input and output are the same path")
+        check_output_path(a.input, a.output)
         result = verify_exact_input(a.input)
     except (OSError, ValueError) as exc:
         print(f"error: {exc}", file=sys.stderr)

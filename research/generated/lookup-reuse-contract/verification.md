@@ -138,10 +138,29 @@ of native equivalence; the Mismatch path and the permanent session stop are
 proven only by `mismatch_disables_until_new_evaluator` with the test-only
 seam.
 
+## Final whole-branch review
+
+A fresh reviewer (subagent) reviewed `f94a2d0..f865d78`, rebuilt it with GCC
+Release and Clang ASan+UBSan (CTest 11/11 each) and reported no Critical
+finding and three Important ones:
+
+1. The locator CLI only compared resolved input/output paths, so a game
+   directory input with `--output <dir>/binaries/victoria3.exe` (or a hard
+   link) could replace the verified executable with JSON. Fixed: output inside
+   a directory input or the same file as the input is refused before
+   verification (`test_output_inside_directory_input_rejected`,
+   `test_hard_link_output_rejected`, RED then GREEN).
+2. MSVC could not pass at `f865d78`: already fixed by `2c87dd1`, MSVC green
+   (see CI).
+3. The verification record and status updates were uncommitted: committed in
+   `0592f98`.
+
+Five Minor findings were deferred (listed in the final report).
+
 ## Local verification at the final head
 
 ```
-python -m unittest discover -s tests -v                       # 193 tests OK (skipped=2: VIC3_DATA)
+python -m unittest discover -s tests -v                       # 195 tests OK (skipped=2: VIC3_DATA)
 VIC3_DATA=input-data/Vic3_data.zip python -m unittest discover -s tests -p 'test_lookup_contract_*.py'   # OK, no skip
 python tools/render_lookup_contract_manifest.py --check       # exit 0
 python tools/render_native_profiler_targets.py --check        # exit 0

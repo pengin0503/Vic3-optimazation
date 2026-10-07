@@ -265,6 +265,38 @@ class LocatorTests(unittest.TestCase):
             self.assertIn("same path", r.stderr)
             self.assertEqual(p.read_bytes(), b"MZ-not-really")
 
+    def test_output_inside_directory_input_rejected(self):
+        # read_input resolves <dir>/binaries/victoria3.exe; an output at that
+        # member (or anywhere under the game directory) must be refused.
+        with tempfile.TemporaryDirectory() as tmp:
+            game = Path(tmp) / "game"
+            (game / "binaries").mkdir(parents=True)
+            exe = game / "binaries" / "victoria3.exe"
+            exe.write_bytes(b"MZ-not-really")
+            for out in (exe, game / "locator.json"):
+                r = subprocess.run([sys.executable, str(TOOL), str(game), "--output", str(out)],
+                                   capture_output=True, text=True)
+                self.assertEqual(r.returncode, 2)
+                self.assertIn("inside the input directory", r.stderr)
+            self.assertEqual(exe.read_bytes(), b"MZ-not-really")
+            self.assertFalse((game / "locator.json").exists())
+
+    def test_hard_link_output_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            p = Path(tmp) / "victoria3.exe"
+            p.write_bytes(b"MZ-not-really")
+            link = Path(tmp) / "out" / "locator.json"
+            link.parent.mkdir()
+            try:
+                os.link(p, link)
+            except OSError as exc:
+                self.skipTest(f"hard links unavailable: {exc}")
+            r = subprocess.run([sys.executable, str(TOOL), str(p), "--output", str(link)],
+                               capture_output=True, text=True)
+            self.assertEqual(r.returncode, 2)
+            self.assertIn("same file", r.stderr)
+            self.assertEqual(p.read_bytes(), b"MZ-not-really")
+
     def test_failed_validation_does_not_write_output(self):
         image, _ = mini_case()
         with tempfile.TemporaryDirectory() as tmp:
