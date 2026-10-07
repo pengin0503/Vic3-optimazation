@@ -115,6 +115,7 @@ statusはEqual、Mismatch、NoCandidate、Skipped。skip reasonは§6の条件�
 - locator: exact入力、一意署名、四caller/二除外caller、wrong hash、署名重複、範囲/rel32 overflow、call改変、return改変を検査する。exact exeの成功はoptional実データ検証とし、CIは小さい所有fixtureでも拒否経路を試す。
 - normalization: primaryの最初/最後、tail、sentinel、fallback、0、misalignment、range/offset overflow、空slotの古いkey、wrong key、宣言値衝突を独立に計算した固定値で検査する。
 - shadow:全mode/skip、Equal/Mismatch、scope終了、session停止、caller変更、fixture変更・address値再利用、revocationを検査する。
+- Mismatchの到達性: immutable・unique-keyの有効fixtureでは通常は同じprimary slotになるため、test binary内の非公開fault injectionで候補取得後・比較前のcandidate slotだけを改変し、Mismatchとsession永久停止を確認する。元callbackの結果、fixture検証、正規化は改変しない。このseamはtest専用compile guard内に置き、通常library/runnerの公開API、CLI、Release成果物には存在させない。
 - original contract: normal return、throw、対象外の外側からの再入、内側throwを外側がcatchする場合、nested scope拒否、drop時にもoriginal exactly onceと結果/例外保持を検査する。
 - independent oracle:期待slotはfixture作成者の配置記録、期待結果値はchecked formulaの手計算vectorを使い、正規化器自体やStage A検索を唯一の期待値生成器にしない。
 - GCC/ClangのRelease・ASan/UBSan、およびMSVC x64 Releaseを検証し、既存Python tests、Stage A CTest、V3PF golden、target JSON、native CIを維持する。実行できなかった構成は成功と報告しない。

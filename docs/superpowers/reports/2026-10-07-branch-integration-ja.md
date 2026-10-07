@@ -40,7 +40,10 @@ isolated scratch workspaceにGitHub blobをmaterializeし、Git blob SHA-1と受
 
 Windows専用native build、real MinHook、DLL/loader fixtureはローカルLinuxでは実行しない。統合後mainの`tests` workflowでPythonとWindows native jobを確認する。CIの最終状態は該当main commitのActions runを参照する。既存lookup-reuse-core workflowはpath filterを保持しており、coreを変更しないこの統合では新規runを要求しない。
 
+## マージ前レビュー
+
+Superpowers requesting-code-reviewに基づくread-only reviewではCritical 0 / Important 0 / Minor 1、統合可能という判定を得た。MinorはB0のimmutable fixtureでMismatchをどう試すかという曖昧さであり、test binaryだけの候補fault injectionを設計の受入条件に追記した。production検証条件は弱めない。レビュー担当もadopted 67ファイル、公有別版6ファイル、artifact hash、両方のREADME変更を独立に確認した。
+
 ## B0とnative gate
 
 [B0書面設計](../specs/2026-10-07-offline-native-shadow-contract-design.md)を保存する。書面レビュー後に実装計画へ進む。今回はB0 product codeを書かず、native lookup detourやlive memory viewも追加しない。native profilerの統合は実ゲームのattach成功、observer overhead、lookup ABI、live table寿命、worker scopeの証明にならない。
-
