@@ -7,7 +7,16 @@ Issue #12: test whether running independent integer kernels on a **real RX 7800 
 ## Windows 11 / RX 7800 XT
 
 1. Install current AMD Radeon GPU driver with OpenCL support and Python 3.11+ x64.
-2. In PowerShell from the repository root:
+2. This is a stacked PR (#14 on #13), so ensure that the local checkout uses this research branch before running it. From an existing clone:
+
+```powershell
+git fetch origin research/gpu-offload-opencl-20261008
+git switch research/gpu-offload-opencl-20261008
+# If the local branch does not exist, use instead:
+# git switch -c research/gpu-offload-opencl-20261008 --track origin/research/gpu-offload-opencl-20261008
+```
+
+3. In PowerShell from the repository root:
 
 ```powershell
 cd research\experiments\gpu_offload_spike
@@ -19,7 +28,7 @@ py -3 -m venv .venv
 .\.venv\Scripts\python.exe gpu_runtime.py --sizes 100000 1000000 --repeats 9 --warmups 2 --device-substring 7800 --output gpu-results-local.json
 ```
 
-3. Share only `gpu-results-local.json` and `gpu-devices.json` if review is desired. They contain device/OS metadata and hashes/timing of synthetic input, **not game data**.
+4. Share only `gpu-results-local.json` and `gpu-devices.json` if review is desired. They contain device/OS metadata and hashes/timing of synthetic input, **not game data**.
 
 The tool requires exactly **one OpenCL GPU** whose device name includes `7800`, refusing CPU drivers, missing runtime, ambiguous devices, kernel build failures and unequal results. If the name differs, inspect `gpu-devices.json` and supply a unique substring. Installing PyOpenCL alone does not install the AMD driver or an OpenCL ICD.
 
