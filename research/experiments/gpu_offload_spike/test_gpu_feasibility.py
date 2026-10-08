@@ -34,10 +34,25 @@ class TestGpuFeasibility(unittest.TestCase):
                     actual = run_numba(data)
                     np.testing.assert_array_equal(expected, actual)
 
-    def test_overflow_and_mask_edge_cases(self):
-        for kind in ['pop_growth', 'group_sum', 'id_lookup']:
-            case = make_case(kind, 101, 52)
-            np.testing.assert_array_equal(run_numpy(case), run_numba(case))
+    def test_64_bit_intermediate_and_mask_edge_cases(self):
+        i32max = np.iinfo(np.int32).max
+        cases = [
+            ({'kind': 'pop_growth', 'inputs': (
+                np.array([i32max], np.int32), np.array([100], np.int32),
+                np.array([i32max], np.int32))}, np.array([i32max], np.int32)),
+            ({'kind': 'group_sum', 'inputs': (
+                np.array([0, 0, 0, 0], np.int32),
+                np.array([i32max] * 4, np.int32))}, np.array([i32max * 4], np.int64)),
+            ({'kind': 'id_lookup', 'inputs': (
+                np.array([0, 1, 1, 0], np.int32),
+                np.array([222, 333], np.int32),
+                np.array([0, 1], np.uint8))}, np.array([-1, 333, 333, -1], np.int32)),
+        ]
+        for case, expected_prefix in cases:
+            numpy_output = run_numpy(case)
+            numba_output = run_numba(case)
+            np.testing.assert_array_equal(numpy_output, numba_output)
+            np.testing.assert_array_equal(numba_output[:len(expected_prefix)], expected_prefix)
 
 
 if __name__ == '__main__':
