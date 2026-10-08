@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "purpose": "CPU synthetic / hypothetical transfer only",
+  "not_a_gpu_benchmark": true,
+  "not_a_vic3_speedup": true,
+  "host": {
+    "machine": "x86_64",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "processor": "",
+    "cpu_count": 5,
+    "numpy": "2.3.5",
+    "gpu_device_used": false
+  },
+  "repeats": 11,
+  "results": [
+    {
+      "workload": "pop_growth",
+      "records": 100000,
+      "bytes_h2d_plus_d2h": 1600000,
+      "correctness": "numpy_int_reference_exact",
+      "sha256_output": "714356b3ab41a95601cf8d24b1c87dd8b311aba2f96447f20967286cf99cfc9f",
+      "cpu_numba_median_ms": 0.162986,
+      "cpu_numpy_median_ms": 0.214493,
+      "gpu_executed": false,
+      "scenarios": [
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.133333,
+          "optimistic_budget_for_gpu_kernel_ms": 0.029653
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.133333,
+          "optimistic_budget_for_gpu_kernel_ms": -0.070347
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.066667,
+          "optimistic_budget_for_gpu_kernel_ms": 0.096319
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.066667,
+          "optimistic_budget_for_gpu_kernel_ms": -0.003681
+        }
+      ]
+    },
+    {
+      "workload": "group_sum",
+      "records": 100000,
+      "bytes_h2d_plus_d2h": 804096,
+      "correctness": "numpy_int_reference_exact",
+      "sha256_output": "7f52b0ae5594e7f2667aa734707043576affc7d36372c811b4dab70ffc6d6f1f",
+      "cpu_numba_median_ms": 0.056986,
+      "cpu_numpy_median_ms": 0.163937,
+      "gpu_executed": false,
+      "scenarios": [
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.067008,
+          "optimistic_budget_for_gpu_kernel_ms": -0.010022
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.067008,
+          "optimistic_budget_for_gpu_kernel_ms": -0.110022
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.033504,
+          "optimistic_budget_for_gpu_kernel_ms": 0.023482
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.033504,
+          "optimistic_budget_for_gpu_kernel_ms": -0.076518
+        }
+      ]
+    },
+    {
+      "workload": "id_lookup",
+      "records": 100000,
+      "bytes_h2d_plus_d2h": 1300000,
+      "correctness": "numpy_int_reference_exact",
+      "sha256_output": "62f9e7ee2a1b5f54f412495e301ab1f64d29876ffa8593d3390ba95d5f56b72b",
+      "cpu_numba_median_ms": 0.470651,
+      "cpu_numpy_median_ms": 0.668038,
+      "gpu_executed": false,
+      "scenarios": [
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.108333,
+          "optimistic_budget_for_gpu_kernel_ms": 0.362318
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.108333,
+          "optimistic_budget_for_gpu_kernel_ms": 0.262318
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.054167,
+          "optimistic_budget_for_gpu_kernel_ms": 0.416484
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.054167,
+          "optimistic_budget_for_gpu_kernel_ms": 0.316484
+        }
+      ]
+    },
+    {
+      "workload": "pop_growth",
+      "records": 1000000,
+      "bytes_h2d_plus_d2h": 16000000,
+      "correctness": "numpy_int_reference_exact",
+      "sha256_output": "1bd5f4be056bb53980ad5343c41c32e7cd1cd919b490f7824c9d993e7ae9fecd",
+      "cpu_numba_median_ms": 1.807918,
+      "cpu_numpy_median_ms": 3.792523,
+      "gpu_executed": false,
+      "scenarios": [
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 1.333333,
+          "optimistic_budget_for_gpu_kernel_ms": 0.474585
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 1.333333,
+          "optimistic_budget_for_gpu_kernel_ms": 0.374585
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.666667,
+          "optimistic_budget_for_gpu_kernel_ms": 1.141251
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.666667,
+          "optimistic_budget_for_gpu_kernel_ms": 1.041251
+        }
+      ]
+    },
+    {
+      "workload": "group_sum",
+      "records": 1000000,
+      "bytes_h2d_plus_d2h": 8004096,
+      "correctness": "numpy_int_reference_exact",
+      "sha256_output": "ec134e505694770ecbd40389f16658c8140eb0f4f889a29f86a433bf634d793e",
+      "cpu_numba_median_ms": 0.581528,
+      "cpu_numpy_median_ms": 1.867989,
+      "gpu_executed": false,
+      "scenarios": [
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.667008,
+          "optimistic_budget_for_gpu_kernel_ms": -0.08548
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.667008,
+          "optimistic_budget_for_gpu_kernel_ms": -0.18548
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.333504,
+          "optimistic_budget_for_gpu_kernel_ms": 0.248024
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.333504,
+          "optimistic_budget_for_gpu_kernel_ms": 0.148024
+        }
+      ]
+    },
+    {
+      "workload": "id_lookup",
+      "records": 1000000,
+      "bytes_h2d_plus_d2h": 13000000,
+      "correctness": "numpy_int_reference_exact",
+      "sha256_output": "d80df562966c864244c39754cf876d9cd29d7997359389568aa58144ce8e5fe7",
+      "cpu_numba_median_ms": 6.279987,
+      "cpu_numpy_median_ms": 10.011858,
+      "gpu_executed": false,
+      "scenarios": [
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 1.083333,
+          "optimistic_budget_for_gpu_kernel_ms": 5.196654
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 12,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 1.083333,
+          "optimistic_budget_for_gpu_kernel_ms": 5.096654
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0,
+          "transfer_floor_ms": 0.541667,
+          "optimistic_budget_for_gpu_kernel_ms": 5.73832
+        },
+        {
+          "hypothetical_pcie_effective_gbps": 24,
+          "hypothetical_fixed_ms": 0.1,
+          "transfer_floor_ms": 0.541667,
+          "optimistic_budget_for_gpu_kernel_ms": 5.63832
+        }
+      ]
+    }
+  ]
+}
