@@ -18,7 +18,7 @@ This is a **synthetic offline microbenchmark**, not a Victoria 3 code modificati
 Run this in your existing clone. Until this branch is merged to main, first check it out:
 
 ```powershell
-cd C:\Users\pengin0053\Desktop\Vic3-optimazation
+cd $HOME\Desktop\Vic3-optimazation
 git fetch origin research/gpu-numba-fair-baseline-20261008
 git switch -c research/gpu-numba-fair-baseline-20261008 --track origin/research/gpu-numba-fair-baseline-20261008
 cd research\experiments\gpu_offload_spike
