@@ -229,8 +229,7 @@ def main(argv=None):
         code=2
     else:
         code=0
-    payload=json.dumps(report,indent=2,ensure_ascii=False)+'
-'
+    payload=json.dumps(report,indent=2,ensure_ascii=False)+'\n'
     if args.output=='-':
         print(payload,end='')
     else:
