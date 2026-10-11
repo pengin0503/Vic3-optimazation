@@ -136,3 +136,23 @@ class ComparisonCliTests(unittest.TestCase):
             original = source.read_bytes()
             self.assertEqual(mod.main([str(source), '--output', str(source)]), 2)
             self.assertEqual(source.read_bytes(), original)
+
+class ResourceLimitTests(unittest.TestCase):
+    def test_validation_rejects_unbounded_synthetic_work(self):
+        tasks, _, _ = mod.validate_workload(fixture())
+        with self.assertRaises(ValueError):
+            mod.simulate(tasks, 100_000_000, 0, policy='ready')
+        case = fixture(); case['worker_counts'] = [100_000_000]
+        with self.assertRaises(ValueError):
+            mod.validate_workload(case)
+        case = fixture(); case['dispatch_cost_units'] = 1 << 100
+        with self.assertRaises(ValueError):
+            mod.validate_workload(case)
+        case = fixture(); case['tasks'][0]['work_units'] = 1 << 100
+        with self.assertRaises(ValueError):
+            mod.validate_workload(case)
+        case = fixture(); case['tasks'] = [
+            {'id': str(i), 'work_units': 1, 'depends_on': []}
+            for i in range(4097)]
+        with self.assertRaises(ValueError):
+            mod.validate_workload(case)
