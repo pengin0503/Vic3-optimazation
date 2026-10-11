@@ -12,6 +12,7 @@ add_library(native_offline STATIC
   ${NATIVE_ROOT}/common/TargetResolver.cpp
   ${NATIVE_ROOT}/common/EventBuffer.cpp
   ${NATIVE_ROOT}/common/V3pfFormat.cpp
+  ${NATIVE_ROOT}/profiler/TickTaskHooks.cpp
   ${NATIVE_ROOT}/loader/ModuleResolutionPolicy.cpp)
 target_link_libraries(native_offline PUBLIC Threads::Threads)
 if(WIN32)
@@ -27,7 +28,7 @@ function(offline_warnings target)
   endif()
 endfunction()
 offline_warnings(native_offline)
-foreach(pair "NativeResolverOffline;TargetResolverTests.cpp" "NativeBufferOffline;EventBufferTests.cpp" "NativeModuleResolutionOffline;ModuleResolutionTests.cpp")
+foreach(pair "NativeResolverOffline;TargetResolverTests.cpp" "NativeBufferOffline;EventBufferTests.cpp" "NativeModuleResolutionOffline;ModuleResolutionTests.cpp" "NativeHookFailuresOffline;HookFailureTests.cpp")
   list(GET pair 0 name)
   list(GET pair 1 source)
   add_executable(${name} ${NATIVE_ROOT}/tests/${source})

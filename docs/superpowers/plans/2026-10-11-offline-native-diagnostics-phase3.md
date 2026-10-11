@@ -54,11 +54,11 @@
 
 **Interfaces:** reuse `TickTaskHooks::Invoke/Active/StopRecording`, `EventBufferPool`, `StopProfilerSession`, `OfflineNativeShadow::Evaluate/DrainRecords` unchanged.
 
-- [ ] Add real owned-object tests: nested hook return/throw keeps Active balanced and correlation pairs; one remaining slot drops End only; pool exhaustion and failed timestamp preserve original; stop during original preserves the in-flight pair and suppresses the next call's telemetry.
-- [ ] Add named-IPC Windows regressions: absent mapping/events, timeout with no stopped signal, signaled Pending/Ready rejected, successful retry by the subscriber after completion (not injector retry). No sleeps or game host needed.
-- [ ] Add B0 regressions: full records + reentrant inner throw preserves outer opaque bits/exact counts and drops only returned outer record; zero-sized drain preserves uniquely tagged FIFO records across partial drain/refill.
-- [ ] Run focused tests. Existing-correct coverage may pass immediately; do not alter production solely to manufacture RED. Verify sensitivity using temporary copies with original suppressed / drain order reversed / Active decrement removed, never commit mutants. Expected: the new tests reject each mutant.
-- [ ] Run offline native CTest plus Stage A/B0 CTest once; commit `test: cover native stop and nested telemetry failure paths`.
+- [x] Add real owned-object tests: nested hook return/throw keeps Active balanced and correlation pairs; one remaining slot drops End only; pool exhaustion and failed timestamp preserve original; stop during original preserves the in-flight pair and suppresses the next call's telemetry.
+- [x] Add named-IPC Windows regressions: absent mapping/events, timeout with no stopped signal, signaled Pending/Ready rejected, successful retry by the subscriber after completion (not injector retry). No sleeps or game host needed.
+- [x] Add B0 regressions: full records + reentrant inner throw preserves outer opaque bits/exact counts and drops only returned outer record; zero-sized drain preserves uniquely tagged FIFO records across partial drain/refill.
+- [x] Run focused tests. Existing-correct coverage may pass immediately; do not alter production solely to manufacture RED. Verify sensitivity using temporary copies with original suppressed / drain order reversed / Active decrement removed, never commit mutants. Expected: the new tests reject each mutant.
+- [x] Run offline native CTest plus Stage A/B0 CTest once; commit `test: cover native stop and nested telemetry failure paths`.
 
 ### Task 3: Final verification and evidence handoff
 

@@ -33,7 +33,7 @@ int main(int argc,char** argv) {
     CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--targets",L"investment,investment"}));CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--targets",L"ai"}));CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--stop",L"--disabled"}));CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--pid",L"124"}));
 #ifdef _WIN32
     // Exercise the actual stop subscriber with real named IPC. Producer errors are never success.
-    for(auto terminal:{RuntimeStatus::Stopped,RuntimeStatus::StopFailed,RuntimeStatus::TraceFailed}) {
+    for(auto terminal:{RuntimeStatus::Stopped,RuntimeStatus::StopFailed,RuntimeStatus::TraceFailed,RuntimeStatus::Pending,RuntimeStatus::Ready}) {
         const DWORD self=GetCurrentProcessId();
         WinHandle stop_event(CreateEventW(nullptr,TRUE,FALSE,ObjectName(L"Stop",self).c_str()));
         WinHandle stopped_event(CreateEventW(nullptr,TRUE,FALSE,ObjectName(L"Stopped",self).c_str()));
@@ -42,6 +42,23 @@ int main(int argc,char** argv) {
         auto* shared=static_cast<SharedMapping*>(view.get());shared->status=static_cast<LONG>(RuntimeStatus::Ready);
         std::thread controller([&]{CHECK(WaitForSingleObject(stop_event.get(),5000)==WAIT_OBJECT_0);InterlockedExchange(&shared->status,static_cast<LONG>(terminal));SetEvent(stopped_event.get());});
         CHECK(StopProfilerSession(self,5000)==terminal);CHECK(StopResult(terminal)==(terminal==RuntimeStatus::Stopped?0:1));controller.join();
+    }
+    // Missing IPC and a stop signal without completion are never a success.
+    const DWORD self=GetCurrentProcessId();
+    CHECK(StopProfilerSession(self,0)==RuntimeStatus::StopFailed);
+    {
+        WinHandle stop_event(CreateEventW(nullptr,TRUE,FALSE,ObjectName(L"Stop",self).c_str()));CHECK(stop_event);
+        WinHandle stopped_event(CreateEventW(nullptr,TRUE,FALSE,ObjectName(L"Stopped",self).c_str()));CHECK(stopped_event);
+        CHECK(StopProfilerSession(self,0)==RuntimeStatus::StopFailed); // mapping is absent
+        CHECK(WaitForSingleObject(stop_event.get(),0)==WAIT_TIMEOUT); // do not signal an incomplete session
+        WinHandle config(CreateFileMappingW(INVALID_HANDLE_VALUE,nullptr,PAGE_READWRITE,0,sizeof(SharedMapping),ObjectName(L"Config",self).c_str()));CHECK(config);
+        MappedView view(MapViewOfFile(config.get(),FILE_MAP_ALL_ACCESS,0,0,sizeof(SharedMapping)));CHECK(view.get());
+        auto* shared=static_cast<SharedMapping*>(view.get());shared->status=static_cast<LONG>(RuntimeStatus::Ready);
+        CHECK(StopProfilerSession(self,0)==RuntimeStatus::StopFailed);
+        CHECK(WaitForSingleObject(stop_event.get(),0)==WAIT_OBJECT_0);
+        CHECK(WaitForSingleObject(stopped_event.get(),0)==WAIT_TIMEOUT);
+        InterlockedExchange(&shared->status,static_cast<LONG>(RuntimeStatus::Stopped));CHECK(SetEvent(stopped_event.get()));
+        CHECK(StopProfilerSession(self,0)==RuntimeStatus::Stopped);
     }
     CHECK(argc==4);
     std::wstring command=L"\""+std::filesystem::path(argv[1]).wstring()+L"\"";STARTUPINFOW startup{};startup.cb=sizeof(startup);PROCESS_INFORMATION process{};
