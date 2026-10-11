@@ -10,6 +10,10 @@ from pathlib import Path
 import sys
 import tempfile
 
+MAX_TASKS = 4096
+MAX_WORKERS = 256
+MAX_UNITS = 1_000_000_000
+
 WARNING = ('Synthetic integer work units only; not Victoria 3 tasks, timings, '
            'CPU utilization, dependencies, or engine speedup evidence.')
 
@@ -43,15 +47,15 @@ def validate_workload(doc: dict) -> tuple[list[dict], list[int], int]:
     if not isinstance(doc, dict) or type(doc.get('format_version')) is not int or doc['format_version'] != 1:
         raise ValueError('unsupported synthetic workload format')
     tasks = doc.get('tasks')
-    if not isinstance(tasks, list) or not tasks:
+    if not isinstance(tasks, list) or not tasks or len(tasks) > MAX_TASKS:
         raise ValueError('tasks must be a nonempty list')
     worker_counts = doc.get('worker_counts')
     if (not isinstance(worker_counts, list) or not worker_counts or
-            any(type(n) is not int or n < 1 for n in worker_counts) or
+            any(type(n) is not int or not 1 <= n <= MAX_WORKERS for n in worker_counts) or
             len(set(worker_counts)) != len(worker_counts)):
         raise ValueError('worker_counts must be distinct positive integers')
     dispatch_cost = doc.get('dispatch_cost_units')
-    if type(dispatch_cost) is not int or dispatch_cost < 0:
+    if type(dispatch_cost) is not int or not 0 <= dispatch_cost <= MAX_UNITS:
         raise ValueError('dispatch cost must be nonnegative integer')
     identifiers = set()
     for task in tasks:
@@ -63,7 +67,7 @@ def validate_workload(doc: dict) -> tuple[list[dict], list[int], int]:
         if not isinstance(ident, str) or not ident or ident in identifiers:
             raise ValueError('missing or duplicate task id')
         identifiers.add(ident)
-        if type(work) is not int or work < 1:
+        if type(work) is not int or not 1 <= work <= MAX_UNITS:
             raise ValueError('work units must be positive integers')
         if (not isinstance(parents, list) or
                 any(not isinstance(p, str) or not p for p in parents) or
@@ -89,7 +93,8 @@ def simulate(tasks: list[dict], workers: int, dispatch_cost: int, *, policy: str
     """Schedule synthetic DAG nodes in integer units, with no preemption."""
     if policy not in ('ready', 'layer-barrier'):
         raise ValueError('unknown synthetic scheduling policy')
-    if type(workers) is not int or workers < 1 or type(dispatch_cost) is not int or dispatch_cost < 0:
+    if (type(workers) is not int or not 1 <= workers <= MAX_WORKERS or
+            type(dispatch_cost) is not int or not 0 <= dispatch_cost <= MAX_UNITS):
         raise ValueError('invalid worker count or dispatch cost')
     order, children, indegree = _graph(tasks)
     if policy == 'layer-barrier':
