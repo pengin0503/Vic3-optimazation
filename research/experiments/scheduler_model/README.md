@@ -11,7 +11,7 @@ python -m unittest discover -s research/experiments/scheduler_model -p 'test_*.p
 python research/experiments/scheduler_model/compare_schedulers.py research/experiments/scheduler_model/example-workload.json --output local-data/synthetic-scheduler-comparison.json
 ```
 
-The JSON input contains `format_version:1`, nonempty `tasks`, distinct positive `worker_counts`, and nonnegative integer `dispatch_cost_units`. Each task has a distinct nonempty `id`, a positive integer `work_units`, and a list of distinct `depends_on` IDs (no missing IDs/cycles). Wrong/malformed input exits 2 and does not replace existing output. Output preserves the raw source-byte SHA-256 for reproducibility.
+The JSON input contains `format_version:1`, nonempty `tasks`, distinct positive `worker_counts`, and nonnegative integer `dispatch_cost_units`. To bound memory and work, this implementation accepts at most 4,096 tasks, at most 256 workers per configuration, and each task/dispatch work value at most 1,000,000,000 units. Each task has a distinct nonempty `id`, a positive integer `work_units`, and a list of distinct `depends_on` IDs (no missing IDs/cycles). Wrong/malformed input exits 2 and does not replace existing output. Output preserves the raw source-byte SHA-256 for reproducibility.
 
 ## Policies and assumptions
 
