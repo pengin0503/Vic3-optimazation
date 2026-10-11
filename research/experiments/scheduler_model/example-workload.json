@@ -1,0 +1,11 @@
+{
+  "format_version": 1,
+  "worker_counts": [1, 2, 4, 8, 12, 16],
+  "dispatch_cost_units": 1,
+  "tasks": [
+    {"id": "a", "work_units": 8, "depends_on": []},
+    {"id": "b", "work_units": 2, "depends_on": []},
+    {"id": "c", "work_units": 3, "depends_on": ["b"]},
+    {"id": "d", "work_units": 1, "depends_on": ["c"]}
+  ]
+}
