@@ -9,7 +9,7 @@ Phase 1 handoff: [TickTask triage and binary spot-check](2026-10-11-offline-cpu-
 ## 実装・実行したもの
 
 - `research/experiments/scheduler_model/compare_schedulers.py`: Python標準ライブラリだけの合成DAGシミュレータ。即時ready queueと仮想global layer barrierを比較。worker数・dispatch overhead・dependency chainを変えられる。
-- `research/experiments/scheduler_model/test_compare_schedulers.py`: 10 synthetic tests。validation, missing/duplicate dependency, cycle, work integer, worker count, ready/barrier differences, dispatch overhead, repeatability, CLI fail closed.
+- `research/experiments/scheduler_model/test_compare_schedulers.py`: 11 synthetic tests。validation, missing/duplicate dependency, cycle, work integer, worker count, ready/barrier differences, dispatch overhead, repeatability, CLI fail closed.
 - `research/experiments/scheduler_model/example-workload.json`: 4 synthetic tasks, dispatch cost 1 unit, worker count 1/2/4/8/12/16。
 - [README](../../../research/experiments/scheduler_model/README.md): モデルの目的、仮定、例示結果、非結論。
 
