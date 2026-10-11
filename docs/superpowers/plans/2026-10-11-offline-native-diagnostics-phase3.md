@@ -33,7 +33,7 @@
 - Injector already covers argument validation, diagnostic formatting, wrong-process CLI gate, invalid snapshot/query handle, successful synthetic injection and stopped/trace-failed IPC.
 - Native hooks already cover arguments, one original call, full-buffer drop, stopped recording, throwing original and Windows MinHook.
 - B0 already covers opaque bits, reentry, caught inner exception, proof/scope loss, saturation and partial drain. Add only combined exhaustion/reentry and zero-sized/FIFO drain cases.
-- Baseline: Python 214 tests, 2 GPU tests skipped after installing pinned optional capstone; Stage A/B0 CTest 11/11 passed. No Windows SDK/runtime available.
+- Baseline: Python 214 tests, 2 optional exact-input integration tests skipped after installing pinned optional capstone; Stage A/B0 CTest 11/11 passed. No Windows SDK/runtime available.
 
 ### Task 1: Module resolution policies and diagnostics
 

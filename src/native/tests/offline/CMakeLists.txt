@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.25)
 project(Vic3NativeOfflinePolicies LANGUAGES CXX)
+if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+  message(FATAL_ERROR "Vic3 offline native policies require 64-bit pointers (PE32+ fixtures).")
+endif()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
