@@ -1,5 +1,10 @@
 # Vic3-optimazation
 
+
+## Measurement-free CPU research (2026-10-11)
+
+The [offline CPU research spec](docs/superpowers/specs/2026-10-11-offline-cpu-research-design.md), [TickTask triage handoff](docs/superpowers/reports/2026-10-11-offline-cpu-research-handoff-ja.md) and [evidence-gate review](docs/superpowers/reports/2026-10-11-offline-cpu-gate-review-ja.md) document new read-only research on this branch. The [unresolved dependency triage tool](tools/triage_ticktask_unresolved.py) and [standalone synthetic DAG scheduler experiment](research/experiments/scheduler_model/README.md) require no game run. Both are research aids only: no native optimization, game CPU-utilization change or game speedup has been demonstrated. Local isolated tests: 7 TickTask triage and 11 synthetic scheduler tests passed; full-repository and Windows runtime checks remain outstanding.
+
 Private research project for improving Victoria 3 simulation performance beyond ordinary script/define tuning.
 
 ## Current state
