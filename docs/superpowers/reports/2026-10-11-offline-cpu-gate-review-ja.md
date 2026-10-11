@@ -34,9 +34,9 @@ Local synthetic tests: Phase 1 7/7、Phase 2 11/11。GitHub上のソースと検
 
 ## Phase 3: Offline-only Windows diagnostic host — evidence gap
 
-**更新:** Phase 3のオフライン実装とLinux上で実行可能な検証は完了。
+**更新:** Phase 3のオフライン実装、Linux検証、Windows x64 Releaseのnative CTest 10/10は完了。
 [診断・回帰テストの実装記録](2026-10-11-offline-native-diagnostics-phase3-ja.md)を参照。
-Windows native CTestと実ゲームattach code 4の解消は未検証。以下の「未実施」はPhase 2時点の記録。
+Windowsの証拠は [run 38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363)。実ゲームattach code 4の解消、正常に有効化されたDLLセッション全体のstop/finalize、observer overheadは未検証。以下の「未実施」はPhase 2時点の記録。
 
 既存 `src/native/` にはWindows synthetic host、loader、V3PF parserと診断手順がある。以前報告された `Attach failed (no retry), code 4` はゲーム内attachについて未解消のまま。
 

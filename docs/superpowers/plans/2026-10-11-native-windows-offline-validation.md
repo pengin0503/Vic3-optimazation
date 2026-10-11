@@ -34,18 +34,18 @@
 - [x] Preserve the current job as a local comparison baseline; validate YAML and compare the extracted job exactly against that baseline.
 - [x] Extract the existing job, add the targeted trigger, and validate the old entry points, branch/path filters, permissions and unchanged commands. Expected: same native job, no documentation trigger.
 - [x] Run both generated include checks and `git diff --check`. Expected: success. Configuration changes use structural checks rather than redundant production unit tests; any native defect is fixed with TDD and systematic-debugging.
-- [ ] Commit the plan and verified workflow configuration, then save the branch with an expected-head lease. Expected: one Windows final-gate run.
+- [x] Commit the plan and verified workflow configuration, then save the branch with an expected-head lease. Expected: one Windows final-gate run.
 
 ## Task 2: Execute and record Windows evidence
 
 **Files:** Phase 3 report, Phase 2 gate review, `src/README.md`, native runtime guide, this plan.
 **Interfaces:** GitHub run/job logs and `native-profiler-validation` artifact provide tested SHA, compiler, test count and trace evidence.
 
-- [ ] Observe configure/build/CTest/parser results and inspect retained evidence. Expected: all native tests pass; failures remain failures until diagnosed and corrected.
-- [ ] If a defect appears, read the exact error and implicated code first; use the failing Windows test/build as RED, make the smallest correction and repeat only the affected final gate. Do not weaken validation to make CI green.
-- [ ] Perform one fresh review of this continuation, preserving the already completed Phase 3 review. Address material findings in one fix pass.
-- [ ] Record exact run/commit, test names/counts, artifact provenance, any remaining Windows gaps and real-game conditions. Update references without erasing historical Linux-only results. Expected: no claim that synthetic injection resolves game code 4.
-- [ ] Check documentation links and `git diff --check`, commit results and verify the remote head. Expected: documentation commit causes no additional CI run; main unchanged.
+- [x] Observe configure/build/CTest/parser results and inspect retained evidence. Expected: all native tests pass; failures remain failures until diagnosed and corrected.
+- [x] If a defect appears, read the exact error and implicated code first; use the failing Windows test/build as RED, make the smallest correction and repeat only the affected final gate. Do not weaken validation to make CI green.
+- [x] Perform one fresh review of this continuation, preserving the already completed Phase 3 review. Address material findings in one fix pass.
+- [x] Record exact run/commit, test names/counts, artifact provenance, any remaining Windows gaps and real-game conditions. Update references without erasing historical Linux-only results. Expected: no claim that synthetic injection resolves game code 4.
+- [x] Check documentation links and `git diff --check`, commit results and verify the remote head. Expected: documentation commit causes no additional CI run; main unchanged.
 
 ## Execution decisions
 

@@ -8,7 +8,7 @@ Previous gate: [Phase 2 gate review](2026-10-11-offline-cpu-gate-review-ja.md)
 
 ## 結論と境界
 
-Phase 3のオフライン実装・実行可能な検証は完了。Windows Loader/DLLのビルド・実行、named IPC、MinHook、および実ゲームattachは**未検証**。実ゲームで以前発生した `Attach failed (no retry), code 4` の原因・解消は確認できていない。今回の変更は失敗の説明と拒否条件を強化するもので、attach成功やゲーム高速化の主張ではない。
+Phase 3のオフライン実装とWindows x64 synthetic検証は完了。Windows Loader/DLLのビルド、synthetic hostへの注入、named IPCのstop subscriber、DLLのfail-closed lifecycle、MinHookの合成関数hookは検証済み。実ゲームattach、正常に有効化されたDLLセッション全体のstop/finalize、observer overhead・安定性は**未検証**。実ゲームで以前発生した `Attach failed (no retry), code 4` の原因・解消は確認できていない。今回の変更は失敗の説明と拒否条件を強化するもので、attach成功やゲーム高速化の主張ではない。
 
 ゲームは起動せず、セーブ・ゲーム状態・スケジューラ・ロック・並列化・更新頻度を変更していない。native hook/B0のproduction実装も変更していない。追加したproduction policyにはprocess accessや新しいlive-pointer読み取りAPIがない。
 
@@ -42,6 +42,8 @@ ZIPはread-onlyで一覧・hashを確認し、最後に既存のexact-inputオ�
 
 ### テストの不足分
 
+以下の結果は最初のLinux検証時点。後続のWindows結果は「Windows x64最終検証」を参照。
+
 | 対象 | 既存との重複を避けた追加検証 | この環境での結果 |
 | --- | --- | --- |
 | PE/export/address | section count 0/97、overlap、header内に収まらないtable、16-byte境界、zero base、overflow | owned fixtureで成功 |
@@ -69,7 +71,7 @@ mutantはbuild内の一時コピーだけで、repositoryや配布物には含�
 
 最終レビューは独立したread-only reviewerを1回使用し、実装担当の委譲は行っていない。レビューでoffline CMakeの32-bit guard不足を確認。32-bitで8-byte pointerをコピーし得るため修正対象として扱い、CMakeのproject includeでpointer-size=4を模擬したconfigureをRED（受理）→GREEN（拒否）にした。これは実際の32-bitコンパイル検証ではない。通常64-bit構成・テストも再確認した。未対応のレビュー指摘はない。
 
-## 最終ローカル検証
+## 最終ローカル検証（Windows継続前の履歴）
 
 | 検証 | 結果 |
 | --- | --- |
@@ -107,6 +109,71 @@ ctest --test-dir build/contract -C Release --output-on-failure
 
 exact-inputの2 testsを含める場合は `VIC3_DATA` に元のZIPを設定する。未設定のfull suiteでのskipを成功件数に混ぜない。
 
+## Windows x64最終検証（2026-10-11の継続作業）
+
+[継続計画](../plans/2026-10-11-native-windows-offline-validation.md)に沿って、既存 `tests.yml` のWindows jobを `.github/workflows/native-validation.yml` へそのまま抽出した。既存main/PR/manual入口は再利用呼び出しに変え、研究branchにはnative関連pathだけのpush入口を追加した。ドキュメント更新は対象外。Python/B0を重複してCI実行するためのPRは作成していない。native production・テスト・generated include・exact-build gate・MinHook pinに追加変更はない。
+
+| 証拠 | 結果 |
+| --- | --- |
+| 開始時main / branch | `6584565f0000e56e4653274dbb7659b74806ae84` / `0b9aa43fb728d323f9253002fb3cee17c8f09856`（最新fetch、clean） |
+| 検証commit | `a101c56a7dcb33b9361677e99f146ae10b3ef831` |
+| 最終CI | [run 38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363)、attempt 1、1 job成功、再実行なし |
+| 環境 | Windows 2022、Visual Studio 17 2022、MSVC 19.44.35229.0、Python 3.13.16、x64 Release |
+| configure / build | 成功；first-partyは既存 `/W4 /WX /permissive-` を維持 |
+| native CTest | **10/10成功、skip 0**、0.28秒（合成テスト時間でありゲーム性能ではない） |
+| V3PF parser CLI | runtime-format / hook-formatの2本とも成功 |
+| ローカルCI設定検証 | actionlint 1.7.12成功、抽出jobのbaseline完全一致、branch/path/permission構造確認成功 |
+| generated checks / diff check | 両include `--check` と `git diff --check` 成功 |
+
+CTestの実行証拠はjob logとartifactの `Testing/Temporary/LastTest.log` で照合した。Windowsビルドでは `_WIN32` 内のAPI/IPC/MinHook処理も実行され、portable testsのみの成功ではない。
+
+| 実行テスト | 確認範囲 |
+| --- | --- |
+| NativeResolverTests | owned PEとtarget拒否、Windows SHA-256実装 |
+| NativeFormatTests | Python golden bytesとの一致、合成V3PF出力 |
+| NativeBufferTests | overflow・pool不足・SPSC順序 |
+| NativePythonCompatibility | runtime-formatのPython parse |
+| NativeRuntimeTests | config、allocation failure境界、DLL loadと独立validation拒否（ValidationFailed / enabled mask 0） |
+| NativeHookTests | original exactly once・arguments・exception・drops、MinHookのcreate/enable/disable/remove/shutdown |
+| NativeHookFailureTests | 再入・exception identity・partial drops・original実行中stop |
+| NativeHookPythonCompatibility | hook-formatのPython parse |
+| NativeModuleResolutionTests | owned PE/export境界、列挙途中失敗、size/read/bytes不一致の拒否 |
+| NativeInjectorTests | real named IPCのstop失敗/timeout/terminal status、wrong-process CLI拒否、snapshot/query失敗、synthetic hostへのInjectionProbe注入成功 |
+
+### Artifactとprovenance
+
+[保存artifact 11706440529](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363/artifacts/11706440529)のZIPを取得し、APIのdigestと実bytesのSHA-256一致を確認した。サイズ89,625 bytes、保存期限2027-01-09（GitHubの期限付きartifact）。配布・ゲーム導入は行っていない。
+
+| ファイル | SHA-256 |
+| --- | --- |
+| artifact ZIP | `2aa26f369f4a91590d694e4228b41052e63dc82b00467ea39555c973c594799c` |
+| Vic3OptimizationLoader.exe | `2abbfcd6e1dcb69a967b3e9a24f7e9270e080767f24a364741636d90f34770bc` |
+| Vic3OptimizationProfiler.dll | `39d14473352914bc51d2eb015d3c053604d6f5be45ad058f27402b7ece5e790d` |
+| Testing/Temporary/LastTest.log | `29103111efbdff765a7422f9081cbae6c008ec4ac884c5a29b2af4e60c25e6fd` |
+| runtime-format.v3pf | `928d1a2d7b46aed32fe98ad39fced603d26c1d0c82d12f7bfa6a642650279cd6` |
+| hook-format.v3pf | `5ea576bc90e0243af516133c1a270ca6c3d6e3e56db886511f503b978d595c18` |
+
+両parsed JSONは `header_valid=true`、`segment_complete=true`、diagnostics空、2 events / 1 function pair / drops 0。header内のexact executable hashとtarget table hashは**fixture metadata**であり、ゲームを実行した証拠ではない。追加の異常系は個別CTestのassertで検証しており、この2本のtraceにすべて含まれるわけではない。
+
+### 継続分の最終レビュー
+
+独立したread-only reviewerを1回使用し、CI抽出・routing・failure propagation・Windows条件付きtests・artifact・記録を確認した。reviewerもrun/job証拠をread-onlyで照合した。Critical/Important/Minorの指摘は0、実装の委譲・再レビュー・CI再実行はなし。
+
+判断記録（reviewの対象外範囲）:
+
+- 実ゲーム挙動: 成功へ拡張せず未検証を維持。誤認すればruntime gateを誤って通すため、attach/stop/overheadを実ゲーム条件として残す。
+- 他のWindows build/security environment: このCI環境だけの証拠。別環境での失敗を否定できないので、対象環境のCTestとdiagnosticsを必要条件として残す。
+- 既存Phase 3 productionの再レビュー: 前回の独立レビューとテストを保持し、今回変更したCI/記録のみをレビュー。既存不具合の再発見を保証しない。
+- branch protection/required check名との互換性: 今回はmainにmergeせず、既存設定を変更しない。entry pointsは構造検証し、研究branchの直接pushを実行確認した。将来mergeを行う場合は再利用jobのcheck名とrequired checksを確認する。誤りがあればmerge gateが期待どおりにならない可能性がある。
+
+### 残るWindows／実ゲーム条件
+
+synthetic hostではmodule owner/path/size、remote memory protection/read、実LoadLibrary注入の正常経路が通った。policy拒否はowned fixtures、APIエラーは既存hostのinvalid PID/handleで確認した。remote processで途中列挙失敗・module mismatchを強制するfault injection、別Windows build/security environmentでの成功は未検証。
+
+`NativeRuntimeTests` はDLLが未知hostを拒否する経路を確認する。exactゲームを受理して3 targetsを有効化し、writerを含む正常セッション全体をstop/finalizeする経路は今回の証拠に含めない。既存MinHookテストで合成関数hookの停止・除去が通っても、この境界は変わらない。実ゲーム `Attach failed (no retry), code 4` の原因・解消は依然未確認。
+
+判断記録: 承認済み設計と専用checkoutを継続し、CI設定は構造検証とWindows最終gateで確認した。ゲームコードや低影響設定を写すunit testsは増やしていない。誤りがあればworkflow routing失敗として扱い、Windows成功を主張しない。無関係なLinux full suiteは再実行せず、以前の結果を履歴として保持したため、新たなLinux全体の成功とは主張しない。branch保持・main非mergeは既存指示どおり。
+
 ## 保存commit
 
 以下はGitHub上の正規commit。既存17 commitsを親履歴として保持し、指定branchだけをfast-forward更新した。mainへのmergeやPR作成はしていない。
@@ -117,11 +184,13 @@ exact-inputの2 testsを含める場合は `VIC3_DATA` に元のZIPを設定す�
 | module/export診断とfail-closed | `e0e964cc71635a0a7643b4b600242c34e26fa344` |
 | stop/hook/B0異常系回帰 | `428164402a4bfe84e4b7f794ff82f100ee8653c7` |
 | offline 32-bit構成拒否 | `715139d4f902a2507b8aec982d9a39dc01a037f5` |
-| 本記録・案内の更新 | 本ファイルを追加するcommitを参照 |
+| 本記録・案内の初回更新 | `67ad236277d19555895ae7e9aef652126fe6cd4e` |
+| Windows最終検証のCI再利用入口 | `a101c56a7dcb33b9361677e99f146ae10b3ef831` |
+| Windows結果の記録 | 本ファイルの継続更新commitを参照 |
 
 ## 残る検証と次のゲーム内測定条件
 
-まず**ゲームなし**でWindows x64 / Visual Studio 2022の既存native configure/build/CTestを行う。`NativeModuleResolutionTests`、`NativeHookFailureTests`、拡張 `NativeInjectorTests` を含める。Windows APIのowner lookup・module path/size・protection・read、named IPC、DLL/MinHook接続、実際の停止待ちとfinalizeは、このLinux検証では証明していない。
+**ゲームなし**のWindows x64 configure/build/CTestは上記CIで完了した。10/10成功には `NativeModuleResolutionTests`、`NativeHookFailureTests`、拡張 `NativeInjectorTests` が含まれる。正常に有効化されたDLLセッション全体の停止待ち・writer finalizeと、各実ゲーム条件は未検証のまま残る。
 
 Windows synthetic testsが通っても、以前のゲームattach code 4が解決したことにはならない。次に必要な実ゲーム検証:
 

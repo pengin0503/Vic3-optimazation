@@ -39,7 +39,7 @@ DLL は independent validation 後のみ 3 つの tail anchors を観測し、`-
 
 Latest loader diagnosis: [module-resolution diagnostics](../docs/superpowers/reports/2026-10-06-loader-module-resolution-diagnostics-ja.md). Synthetic-host success does not establish real-game attach success.
 
-Phase 3 adds [offline module/export policies and failure regressions](../docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md). Diagnostics v2 rejects incomplete module enumeration and validates the full 16-byte export probe before injection. Real-game attach code 4 remains unresolved; Windows integration is unverified in that report.
+Phase 3 adds [offline module/export policies and failure regressions](../docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md). Diagnostics v2 rejects incomplete module enumeration and validates the full 16-byte export probe before injection. Windows x64 Release build and all 10 synthetic CTests passed in [run 38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363), including named IPC, injection into the existing host, fail-closed DLL lifecycle and MinHook. Real-game attach code 4 and a fully enabled DLL session's stop/finalize remain unverified. The Windows job is shared by `tests.yml` and `native-validation.yml`; research-branch pushes run it only for native-related paths.
 
 Owned PE/module/buffer/hook tests can be run separately on a 64-bit system, without a game, Windows loader/DLL or MinHook:
 

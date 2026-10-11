@@ -152,7 +152,9 @@ module列挙は `ERROR_NO_MORE_FILES` の正常終端だけを受理する。rem
 
 Windows x64の上記native CTestには `NativeModuleResolutionTests` と
 `NativeHookFailureTests`、IPC不在・stop timeout・signaled Pending/Readyを拒否する
-拡張 `NativeInjectorTests` が含まれる。合成hostでまず確認する。
+拡張 `NativeInjectorTests` が含まれる。[run 38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363)でx64 Release build・10/10 CTestsと2本のtrace parseが成功した。named IPC、synthetic host注入、DLLのValidationFailed経路とMinHookを確認済み。実ゲームattachや正常に有効化されたDLLセッション全体のstop/finalizeは未検証。
+
+既存 `tests.yml` は共有Windows jobを呼ぶ。`native-validation.yml` の研究branch pushはnative関連pathに限定し、ドキュメント更新では実行しない。手動実行入口も保持する。CI runnerと異なるWindows環境への導入や再現しない障害では、上記configure/build/CTestを対象環境で確認する。
 
 Windowsがない場合のowned fixture検証:
 
