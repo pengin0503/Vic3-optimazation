@@ -13,7 +13,7 @@ Phase 1 handoff: [TickTask triage and binary spot-check](2026-10-11-offline-cpu-
 - `research/experiments/scheduler_model/example-workload.json`: 4 synthetic tasks, dispatch cost 1 unit, worker count 1/2/4/8/12/16。
 - [README](../../../research/experiments/scheduler_model/README.md): モデルの目的、仮定、例示結果、非結論。
 
-Local synthetic tests: Phase 1 7/7、Phase 2 10/10。GitHub上のソースと検証したローカルファイルの Git blob SHA-1 は5ファイルすべて一致。出力を2度生成してbyte-for-byte一致。GitHub Actionsとcomplete repository Python suiteは実行していない（開発中のActions使用量を避けるため／本環境に全checkoutがないため）。
+Local synthetic tests: Phase 1 7/7、Phase 2 11/11。GitHub上のソースと検証したローカルファイルの Git blob SHA-1 は5ファイルすべて一致。出力を2度生成してbyte-for-byte一致。GitHub Actionsとcomplete repository Python suiteは実行していない（開発中のActions使用量を避けるため／本環境に全checkoutがないため）。
 
 元の `Vic3_data.zip` SHA-256は `79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34`、抽出した `victoria3.exe` は `9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54`。研究用fixtureはゲームの実仕事量から生成していない。
 
