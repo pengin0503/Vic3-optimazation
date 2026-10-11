@@ -22,33 +22,4 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests -v
   native:
-    runs-on: windows-2022
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-      - name: Check target include regeneration
-        run: python tools/render_native_profiler_targets.py --check
-      - name: Configure x64
-        run: cmake -S src/native -B build/native -A x64
-      - name: Build Release
-        run: cmake --build build/native --config Release
-      - name: CTest and native to Python trace compatibility
-        run: ctest --test-dir build/native -C Release --output-on-failure
-      - name: Parse generated V3PF traces
-        run: |
-          python tools/parse_native_profiler_trace.py build/native/runtime-format.v3pf --output build/native/runtime-parsed.json --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          python tools/parse_native_profiler_trace.py build/native/hook-format.v3pf --output build/native/hook-parsed.json --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: native-profiler-validation
-          path: |
-            build/native/Testing/Temporary/LastTest.log
-            build/native/*.v3pf
-            build/native/*-parsed.json
-            build/native/Release/Vic3OptimizationLoader.exe
-            build/native/Release/Vic3OptimizationProfiler.dll
-          if-no-files-found: ignore
+    uses: ./.github/workflows/native-validation.yml
