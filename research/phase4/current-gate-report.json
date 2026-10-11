@@ -1,0 +1,215 @@
+{
+  "benchmark_quality": null,
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "hypotheses": [
+    {
+      "artifact_ids": [
+        "ticktask-static",
+        "repeat-records"
+      ],
+      "claim": "Serial execution or dependency chains may limit 12-to-16 scaling.",
+      "falsification": "Matched gameplay intervals and synchronized states show that the longest elapsed chain is explained by a different cause; static range hits alone cannot confirm the hypothesis.",
+      "id": "serial-critical-path",
+      "runtime_verified": false
+    },
+    {
+      "artifact_ids": [
+        "scheduler-static",
+        "scheduler-model",
+        "repeat-records"
+      ],
+      "claim": "Uneven work, barrier waits or dispatch costs may limit scaling.",
+      "falsification": "Per-thread Running/Ready/Waiting and correctly scoped task intervals show balanced useful work and negligible barrier/dispatch time during the matched interval.",
+      "id": "imbalance-barrier-dispatch",
+      "runtime_verified": false
+    },
+    {
+      "artifact_ids": [
+        "repeat-handoff",
+        "os-manifest",
+        "windows-validation"
+      ],
+      "claim": "Boundary differences or observer overhead may obscure small 12/16 differences.",
+      "falsification": "Fresh identical boundaries, alternating disabled/enabled repeated runs and reviewed observer effects show differences larger than measured noise without capture loss.",
+      "id": "measurement-observer-bias",
+      "runtime_verified": false
+    }
+  ],
+  "index_canonical_sha256": "d7044887514a3b335c6c765e5b29a5c506a4cedfe51a9216511fdf979cc5f9db",
+  "index_sha256": "c909b6e2481433bf58f86c351659f6a376b85b66004f3bc0c8ecc8be8cdfe22e",
+  "interpretation": "Verified bytes and operator declarations are not proof of game execution or causality; readiness requires runtime review.",
+  "inventory": [
+    {
+      "actual_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+      "id": "archive",
+      "kind": "static",
+      "notes": "Read-only source archive; not a game capture.",
+      "path": "input-data/Vic3_data.zip",
+      "role": "source",
+      "sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+      "size_bytes": 124462636,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "0d78a93d5b834c22ea806f76a91c4e325fd280411fc756b9eef74e2814e98250",
+      "id": "targets",
+      "kind": "static",
+      "notes": "Exact three tail-anchor identities, not runtime costs.",
+      "path": "research/native-profiler-runtime-targets-1.14.5.json",
+      "role": "source",
+      "sha256": "0d78a93d5b834c22ea806f76a91c4e325fd280411fc756b9eef74e2814e98250",
+      "size_bytes": 2965,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6dee83e98fbf33fc6b3eabcbb7770fd50af953e3f21fee0cdf666d08069d8fd4",
+      "id": "ticktask-static",
+      "kind": "static",
+      "notes": "41 static function groups, zero confirmed parent-child edges.",
+      "path": "research/generated/ticktask-dependencies-1.14.5.json",
+      "role": "source",
+      "sha256": "6dee83e98fbf33fc6b3eabcbb7770fd50af953e3f21fee0cdf666d08069d8fd4",
+      "size_bytes": 96476,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+      "id": "scheduler-static",
+      "kind": "static",
+      "notes": "Instruction/object evidence; no runtime critical path proof.",
+      "path": "research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json",
+      "role": "source",
+      "sha256": "875cbddb860b05f750cd89c5bb0164cc4cce127573ddfa3a5bc894b46ee41efb",
+      "size_bytes": 73181,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1c14ee9af3509ff5f6c14ba2bfaa3dfb4aa213c9ad1dc02d022bd991c78403da",
+      "id": "repeat-records",
+      "kind": "historical",
+      "notes": "Nine recorded benchmark summaries; fresh identity and matching profiler captures missing.",
+      "path": "research/generated/repeats-2026-10-05/repeat-evidence.json",
+      "role": "source",
+      "sha256": "1c14ee9af3509ff5f6c14ba2bfaa3dfb4aa213c9ad1dc02d022bd991c78403da",
+      "size_bytes": 445354,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "d1b9daa582dae484de41a61bb5ae459959749c5bb435d5458156172bf1a17208",
+      "id": "repeat-handoff",
+      "kind": "historical",
+      "notes": "12_r2 has three extra frames; only two strict 12-thread comparisons.",
+      "path": "research/generated/repeats-2026-10-05/handoff-summary.json",
+      "role": "source",
+      "sha256": "d1b9daa582dae484de41a61bb5ae459959749c5bb435d5458156172bf1a17208",
+      "size_bytes": 1266,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "6f6f35448d8a29ff07f0ba8fa5102bdc968b3a54aaab5a6308ae61231b551cdd",
+      "id": "os-manifest",
+      "kind": "historical",
+      "notes": "Standalone OS capture: outer markers, matching CSV missing, overhead unmeasured.",
+      "path": "research/generated/os-sampled-capture-2026-10-05/capture-manifest.json",
+      "role": "source",
+      "sha256": "6f6f35448d8a29ff07f0ba8fa5102bdc968b3a54aaab5a6308ae61231b551cdd",
+      "size_bytes": 3245,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "5ae43ad655cc2aa3addfd4526352e3e18366bee6cceb9e84a0c62395b55e9be7",
+      "id": "os-verification",
+      "kind": "historical",
+      "notes": "Recorded sample correlation; explicitly does not establish critical path/speedup.",
+      "path": "research/generated/os-sampled-capture-2026-10-05/verification.json",
+      "role": "source",
+      "sha256": "5ae43ad655cc2aa3addfd4526352e3e18366bee6cceb9e84a0c62395b55e9be7",
+      "size_bytes": 1128,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "91a45b9c3cf8bae07b21c641d030fed5b9681a6182b4905ebfce64b9020bb80e",
+      "id": "os-samples",
+      "kind": "historical",
+      "notes": "Historical address samples, not synchronized per-thread state measurements.",
+      "path": "research/generated/os-sampled-capture-2026-10-05/sample-observations.json",
+      "role": "source",
+      "sha256": "91a45b9c3cf8bae07b21c641d030fed5b9681a6182b4905ebfce64b9020bb80e",
+      "size_bytes": 63337,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1815030173163e559bdbc8e0f32ddca2ff9c4d550a8e1408db6ad25a24edf888",
+      "id": "save-validation",
+      "kind": "historical",
+      "notes": "Recovered initial save; not fresh run identity or long-run post-save stability proof.",
+      "path": "research/generated/pc-evidence-2026-10-05/save-validation.json",
+      "role": "source",
+      "sha256": "1815030173163e559bdbc8e0f32ddca2ff9c4d550a8e1408db6ad25a24edf888",
+      "size_bytes": 968,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "1ef7ae4eb884f1f5e2682fa57726ed5d964a42563cf4da3233a5cd8c3f183dd2",
+      "id": "native-golden",
+      "kind": "synthetic",
+      "notes": "Owned golden codec fixture; matching build metadata does not prove game execution.",
+      "path": "research/generated/native-profiler-v1-golden/trace-v1.bin",
+      "role": "native_trace",
+      "sha256": "1ef7ae4eb884f1f5e2682fa57726ed5d964a42563cf4da3233a5cd8c3f183dd2",
+      "size_bytes": 960,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "2a4bd1bba8f3206351f203b214e4545331c34b7a58371cd36d05829bedf10a1d",
+      "id": "scheduler-model",
+      "kind": "synthetic",
+      "notes": "Arbitrary DAG weights; not measured game workload.",
+      "path": "research/experiments/scheduler_model/example-workload.json",
+      "role": "source",
+      "sha256": "2a4bd1bba8f3206351f203b214e4545331c34b7a58371cd36d05829bedf10a1d",
+      "size_bytes": 326,
+      "status": "verified"
+    },
+    {
+      "actual_sha256": "c941c9a4544fe85da78e503fc696f7361a5b88a3282b94b77f7ff02bff583ad8",
+      "id": "windows-validation",
+      "kind": "synthetic",
+      "notes": "Windows x64 synthetic CTest10/10; game attach and enabled session finalize remain unverified.",
+      "path": "docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md",
+      "role": "source",
+      "sha256": "c941c9a4544fe85da78e503fc696f7361a5b88a3282b94b77f7ff02bff583ad8",
+      "size_bytes": 18890,
+      "status": "verified"
+    }
+  ],
+  "issues": [],
+  "overhead": null,
+  "performance_patch_authorized": false,
+  "provenance_valid": true,
+  "requirements": {
+    "matched_workload": {
+      "details": [],
+      "status": "missing"
+    },
+    "native_capture_validation": {
+      "details": [],
+      "status": "missing"
+    },
+    "os_thread_states": {
+      "details": [],
+      "status": "missing"
+    },
+    "runtime_capture_matrix": {
+      "details": [],
+      "status": "missing"
+    },
+    "runtime_reviews": {
+      "details": [],
+      "status": "missing"
+    }
+  },
+  "runtime_capture_count": 0,
+  "status": "blocked"
+}

@@ -70,3 +70,7 @@ Owner は検証済みの半開 `[begin_rva,end_rva)` 範囲を含む場合だけ
 - `src/README.md` と `research/os-sampled-capture-2026-10-05-ja.md`
 
 Status: first increment implementation scoped; remaining workstreams retain their own evidence gates. No performance change authorized.
+
+## Phase 4 offline handoff status
+
+[証拠gate実装・監査記録](../reports/2026-10-12-cpu-runtime-evidence-gate-ja.md)と[次回実測手順](../guides/2026-10-12-phase4-runtime-evidence-handoff-ja.md)を追加した。オフライン準備は完了、実ゲームruntime acceptanceは未達。追加測定を行わず、未知のoverhead・同期OS states・save stabilityを成功扱いしない。

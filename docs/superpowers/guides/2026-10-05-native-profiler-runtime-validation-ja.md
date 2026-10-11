@@ -167,3 +167,7 @@ ctest --test-dir build/native-offline -C Release --output-on-failure
 64-bit pointersが必要。この入口はWindows API、DLL、MinHook、named IPCや実際の
 game attach/stopを検証しない。今回の実行範囲と未検証条件は
 [Phase 3記録](../reports/2026-10-11-offline-native-diagnostics-phase3-ja.md)を参照。
+
+## Phase 4 evidence handoff
+
+次回の測定・provenance記録には[Phase 4手順](2026-10-12-phase4-runtime-evidence-handoff-ja.md)を併用する。既存Loader/DLL・Windows synthetic結果を再利用し、実ゲームacceptanceは欠落した実capture・同期CSV/OS・observer overhead・save stabilityが揃うまでblocked。

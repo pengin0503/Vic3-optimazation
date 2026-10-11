@@ -1,0 +1,61 @@
+{
+  "build": {
+    "victoria3_exe_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54"
+  },
+  "capture": {
+    "identity_verified_at_start": null,
+    "ticktask_csv_sha256": null
+  },
+  "end_date": null,
+  "environment": {
+    "camera_state": null,
+    "ui_state": null
+  },
+  "execution_order": null,
+  "format_version": 1,
+  "game_rules": {
+    "pop_consolidation": null
+  },
+  "game_speed": null,
+  "native_profiler": {
+    "attach_exit_code": null,
+    "attach_log_artifact_id": null,
+    "capture_kind": null,
+    "dll_artifact_id": null,
+    "fresh_process": null,
+    "identity_log_artifact_id": null,
+    "loader_artifact_id": null,
+    "mode": null,
+    "pid": null,
+    "process_start_utc": null,
+    "source_commit": null,
+    "stop_exit_code": null,
+    "stop_log_artifact_id": null,
+    "trace_artifact_id": null
+  },
+  "notes": "TEMPLATE ONLY: null fields are unmeasured; no captured game run exists.",
+  "os_capture": {
+    "begin_ns": null,
+    "boundary_artifact_id": null,
+    "clock_alignment_verified": null,
+    "dropped_events": null,
+    "end_ns": null,
+    "exact_boundaries": null,
+    "lost_buffers": null,
+    "states": null,
+    "trace_artifact_id": null
+  },
+  "repeat": null,
+  "run_id": null,
+  "save": {
+    "filename": null,
+    "sha256": null
+  },
+  "start_date": null,
+  "task_thread_count": null,
+  "ticktask_csv": "ticktask_timings.csv",
+  "variant": null,
+  "wall_clock_seconds": null,
+  "warmup": false,
+  "warmup_performed": null
+}

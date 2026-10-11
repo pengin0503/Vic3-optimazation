@@ -50,3 +50,5 @@ ctest --test-dir build/native-offline -C Release --output-on-failure
 ```
 
 This entry point does not replace `src/native` Windows x64 CTest or the real-game validation gate.
+
+Phase 4 adds a read-only [runtime evidence auditor and handoff](../docs/superpowers/reports/2026-10-12-cpu-runtime-evidence-gate-ja.md). The current 13-artifact inventory verifies provenance but has zero game native captures: runtime acceptance stays blocked and overhead stays null. See [capture instructions](../docs/superpowers/guides/2026-10-12-phase4-runtime-evidence-handoff-ja.md); readiness is a consistency check, not authorization of a performance patch.

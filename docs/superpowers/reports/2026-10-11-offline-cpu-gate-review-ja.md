@@ -67,3 +67,7 @@ python research/experiments/scheduler_model/compare_schedulers.py research/exper
 ```
 
 Generated output is local, not part of this branch. Do not add game binaries/large raw traces to the research commit. GitHub PR/merge is deferred to avoid triggering Actions before a final integration gate.
+
+## Phase 4 offline implementation update
+
+[専用実装・監査記録](2026-10-12-cpu-runtime-evidence-gate-ja.md)で13 source artifactsのprovenanceを確認し、read-only auditor・null template・測定handoffを保存した。実ゲームcaptureは0件、runtime gateはblockedのまま。旧測定とsynthetic Windows成功はgame evidenceの代用にしない。

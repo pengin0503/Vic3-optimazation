@@ -47,11 +47,11 @@
 
 **Files:** `research/phase4/` evidence index, report, null run template and README; Phase 4 report/guide and source-of-truth links; `.gitattributes` raw-hash evidence LF preservation.
 
-- [ ] Index current static evidence, historical repeats/OS/save records and Phase 3 Windows result by exact bytes. Record hypotheses and falsification conditions. Run the auditor twice and compare bytes; expected blocked with no game runtime captures and null overhead.
-- [ ] Create a null-filled measured manifest extension and exact manual capture/review workflow. Keep old measurements distinct; do not repair 12_r2 wall time or import stale CSV as synchronized OS evidence.
-- [ ] Run the complete repository Python suite once, scheduler model tests, generated checks and diff/link checks. Expected: no new failures; optional exact-input skips remain reported separately. No native/B0 rerun absent changes.
-- [ ] One final fresh review of Phase 4 work; fix material findings in one TDD pass. Record any unverified judgments.
-- [ ] Commit handoff/report, verify remote head and unchanged main. Report offline implementation complete and actual runtime gate blocked with exact evidence requirements.
+- [x] Index current static evidence, historical repeats/OS/save records and Phase 3 Windows result by exact bytes. Record hypotheses and falsification conditions. Run the auditor twice and compare bytes; expected blocked with no game runtime captures and null overhead.
+- [x] Create a null-filled measured manifest extension and exact manual capture/review workflow. Keep old measurements distinct; do not repair 12_r2 wall time or import stale CSV as synchronized OS evidence.
+- [x] Run the complete repository Python suite once, scheduler model tests, generated checks and diff/link checks. Expected: no new failures; optional exact-input skips remain reported separately. No native/B0 rerun absent changes.
+- [x] One final fresh review of Phase 4 work; fix material findings in one TDD pass. Record any unverified judgments.
+- [x] Commit handoff/report, verify remote head and unchanged main. Report offline implementation complete and actual runtime gate blocked with exact evidence requirements.
 
 ## Execution decisions
 
