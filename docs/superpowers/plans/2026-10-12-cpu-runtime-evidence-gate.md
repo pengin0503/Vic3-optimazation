@@ -37,11 +37,11 @@
 **Files:** same auditor/tests; consume existing benchmark quality, native parser and target renderer without rewriting them.
 **Interfaces:** verified `runs_root` manifests + indexed raw artifacts; four scoped review records; CLI exit 0/1/2.
 
-- [ ] Add positive owned fixture for all four 12/16 × disabled/enabled groups, three repeats each, alternating order, exact CSV and all targets, plus explicit reviewed evidence. Expected: current implementation stays blocked (RED).
-- [ ] Add rejects for historical/synthetic runtime roles, missing identities/context, wrong target table/mask, drops/broken pairs, attach/stop disagreement, CSV extra frame/hash, insufficient/duplicate repeats, reused process instance, unknown OS boundary/states/loss and incomplete/rejected review scope.
-- [ ] Reuse the production parser/renderer/benchmark checker; calculate overhead only from complete groups. Return ready-for-review only after all mechanical checks, never performance-patch authorization.
-- [ ] Add CLI tests for blocked/invalid/ready exit codes, atomic output, duplicate JSON keys and input/artifact output aliases including hard links. Expected: each new behavior RED→GREEN.
-- [ ] Run focused suite plus existing quality/parser tests; commit runtime gate task.
+- [x] Add positive owned fixture for all four 12/16 × disabled/enabled groups, three repeats each, alternating order, exact CSV and all targets, plus explicit reviewed evidence. Expected: current implementation stays blocked (RED).
+- [x] Add rejects for historical/synthetic runtime roles, missing identities/context, wrong target table/mask, drops/broken pairs, attach/stop disagreement, CSV extra frame/hash, insufficient/duplicate repeats, reused process instance, unknown OS boundary/states/loss and incomplete/rejected review scope.
+- [x] Reuse the production parser/renderer/benchmark checker; calculate overhead only from complete groups. Return ready-for-review only after all mechanical checks, never performance-patch authorization.
+- [x] Add CLI tests for blocked/invalid/ready exit codes, atomic output, duplicate JSON keys and input/artifact output aliases including hard links. Expected: each new behavior RED→GREEN.
+- [x] Run focused suite plus existing quality/parser tests; commit runtime gate task.
 
 ## Task 3: Current audit and measurement handoff
 
