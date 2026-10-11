@@ -64,10 +64,10 @@
 
 **Files:** create `docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md`; update `src/README.md`, operator guide and Phase 2 gate review; mark this plan's steps.
 
-- [ ] Review the whole Phase 3 diff against all four source-of-truth files, preserve exact build gates and unchanged original behavior; record review method/findings.
-- [ ] Run `python -m unittest discover -s tests`, scheduler model tests, both generated-include `--check`s, offline native CTest, Stage A/B0 CTest and `git diff --check` as final combined verification. Do not repeat absent new failures/changes.
-- [ ] Record commands/counts, baseline dependency error, provenance hashes, mutations, Windows unverified items, code 4 still unresolved in the game and exact real-game acceptance conditions. Final CI is optional; do not open a PR merely to run every workflow.
-- [ ] Commit `docs: record Phase 3 offline diagnostics and pending Windows gate`; push only the named research branch without force and verify its remote head.
+- [x] Review the whole Phase 3 diff against all four source-of-truth files, preserve exact build gates and unchanged original behavior; record review method/findings.
+- [x] Run `python -m unittest discover -s tests`, scheduler model tests, both generated-include `--check`s, offline native CTest, Stage A/B0 CTest and `git diff --check` as final combined verification. Do not repeat absent new failures/changes.
+- [x] Record commands/counts, baseline dependency error, provenance hashes, mutations, Windows unverified items, code 4 still unresolved in the game and exact real-game acceptance conditions. Final CI is optional; do not open a PR merely to run every workflow.
+- [x] Commit `docs: record Phase 3 offline diagnostics and pending Windows gate`; push only the named research branch without force and verify its remote head.
 
 ## Execution decisions
 

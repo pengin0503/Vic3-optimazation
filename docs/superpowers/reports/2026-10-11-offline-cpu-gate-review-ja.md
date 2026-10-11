@@ -34,6 +34,10 @@ Local synthetic tests: Phase 1 7/7、Phase 2 11/11。GitHub上のソースと検
 
 ## Phase 3: Offline-only Windows diagnostic host — evidence gap
 
+**更新:** Phase 3のオフライン実装とLinux上で実行可能な検証は完了。
+[診断・回帰テストの実装記録](2026-10-11-offline-native-diagnostics-phase3-ja.md)を参照。
+Windows native CTestと実ゲームattach code 4の解消は未検証。以下の「未実施」はPhase 2時点の記録。
+
 既存 `src/native/` にはWindows synthetic host、loader、V3PF parserと診断手順がある。以前報告された `Attach failed (no retry), code 4` はゲーム内attachについて未解消のまま。
 
 次に進める場合、まず現在の Windows CTest に module owner lookup / address arithmetic / PE and export validation / remote module mismatch / stop timeout / original exactly once の対応テストがあるか調べ、不足分だけ fixture-based regression を追加する。安全な範囲で成功・拒否経路を実機ゲームなしで確認する。Linux単体試験をWindows runtime相当と認めない。

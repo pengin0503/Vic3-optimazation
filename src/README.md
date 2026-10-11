@@ -38,3 +38,15 @@ DLL は independent validation 後のみ 3 つの tail anchors を観測し、`-
 と [handoff](../docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md) を参照。
 
 Latest loader diagnosis: [module-resolution diagnostics](../docs/superpowers/reports/2026-10-06-loader-module-resolution-diagnostics-ja.md). Synthetic-host success does not establish real-game attach success.
+
+Phase 3 adds [offline module/export policies and failure regressions](../docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md). Diagnostics v2 rejects incomplete module enumeration and validates the full 16-byte export probe before injection. Real-game attach code 4 remains unresolved; Windows integration is unverified in that report.
+
+Owned PE/module/buffer/hook tests can be run separately on a 64-bit system, without a game, Windows loader/DLL or MinHook:
+
+```sh
+cmake -S src/native/tests/offline -B build/native-offline
+cmake --build build/native-offline --config Release
+ctest --test-dir build/native-offline -C Release --output-on-failure
+```
+
+This entry point does not replace `src/native` Windows x64 CTest or the real-game validation gate.
