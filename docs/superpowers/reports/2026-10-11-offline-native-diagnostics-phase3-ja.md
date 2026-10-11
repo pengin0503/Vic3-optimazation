@@ -82,11 +82,12 @@ mutantはbuild内の一時コピーだけで、repositoryや配布物には含�
 | Linuxで通常native configure | Windows x64専用の既存gateで拒否 |
 | 模擬32-bit offline configure | pointer-size guardで拒否 |
 | `git diff --check` | 成功 |
-| Windows native CTest / CI / 実ゲーム | **未実行・未検証** |
+| Windows native Loader/DLL CTest / 実ゲーム | **未実行・未検証** |
+| B0の既存push CI | 1回・4/4 jobs成功（GCC、Clang、Clang ASan/UBSan、MSVC x64）；native Loader/DLLは対象外 |
 
 最初のPython baselineはoptional capstone未導入で3 errors・16 skipsだった。原因は既存 `tools/requirements-callgraph.txt` の依存不足。`capstone==5.0.7` を導入すると214件・2 skipsになり、残った2件も添付ZIPで個別成功した。コードをこの依存不足に合わせて変更していない。
 
-開発中は対象テストを中心に実行し、最後に既存suiteとgenerated checksをまとめた。レビュー修正後は影響するconfigureとsuiteだけ再確認。Actionsは起動せず、Windows成功を推測していない。
+開発中は対象テストを中心に実行し、最後に既存suiteとgenerated checksをまとめた。レビュー修正後は影響するconfigureとsuiteだけ再確認。手動でActionsを起動・再実行していない。ただし既存 `lookup-reuse-contract.yml` が全branchの対象path pushを受け取るため、B0テストcommitの保存時に[CI run 38147618975](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38147618975)が1回自動実行され、成功していた。これはWindows Loader/DLLの検証ではない。branch制限を確認する前に保存したため、CI利用が最終確認だけにならなかった点を記録する。
 
 再現コマンド（通常PATHにcmake/ctestがある環境）:
 
