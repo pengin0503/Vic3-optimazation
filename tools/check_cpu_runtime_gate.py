@@ -201,6 +201,17 @@ def _manifest_identity(manifest):
     return rid, (save_hash, str(start), str(end), speed, pop, camera, ui, commit, pid, launched.isoformat())
 
 
+def runtime_csv_path(manifest_path, manifest):
+    # Validate the CSV field before joining; Path joining must agree with quality.
+    return confined(manifest_path.parent, text(manifest.get('ticktask_csv'), 'CSV path'))
+
+
+class NativeCounterError(ValueError):
+    def __init__(self, counters):
+        self.counters = counters
+        super().__init__('nonzero native diagnostic counters')
+
+
 def _native_check(manifest, ref, expected_table_hash):
     native = manifest['native_profiler']
     for key in ('attach_exit_code', 'stop_exit_code'):
@@ -224,6 +235,12 @@ def _native_check(manifest, ref, expected_table_hash):
         raise ValueError('V3PF has incomplete segment or diagnostics')
     if trace['header']['target_table_hash'] != expected_table_hash:
         raise ValueError('trace target table differs from exact production table')
+    # These IDs are emitted by ProfilerRuntime.cpp, independently of parser errors.
+    names = {1: 'dropped_events', 3: 'signature_validation_failures', 4: 'thread_buffer_exhaustion'}
+    counters = [{'counter_id': e['counter_id'], 'name': names[e['counter_id']], 'value': e['value']}
+                for e in trace['events'] if e['event_type'] == 6 and e['counter_id'] in names and e['value'] != 0]
+    if counters:
+        raise NativeCounterError(counters)
     meta = trace['metadata']
     if type(meta.get('enabled_target_mask')) is not int or meta['enabled_target_mask'] != expected_mask or meta.get('disabled') is not (expected_mask == 0):
         raise ValueError('trace mode/mask differs from requested mode')
@@ -286,7 +303,7 @@ def _audit_runtime(document, root, report):
         try:
             manifest = read_json(path)
             rid, context = _manifest_identity(manifest)
-            csv_path = confined(root, path.parent.relative_to(root).as_posix()+'/'+text(manifest.get('ticktask_csv'), 'CSV path'))
+            csv_path = runtime_csv_path(path, manifest)
             csv_record = by_path.get(csv_path)
             if not csv_record or csv_record['kind'] != 'game' or csv_record['role'] != 'ticktask_csv' or csv_record['status'] != 'verified':
                 raise ValueError('indexed verified game TickTask CSV required')
@@ -314,7 +331,8 @@ def _audit_runtime(document, root, report):
             _native_check(manifest, ref, expected_table_hash)
             native_ok += 1
         except (OSError, ValueError, TypeError, KeyError) as exc:
-            issue('native_capture_invalid', 'native_capture_validation', run_id=rid, message=str(exc))
+            details = {'diagnostic_counters': exc.counters} if isinstance(exc, NativeCounterError) else {}
+            issue('native_capture_invalid', 'native_capture_validation', run_id=rid, message=str(exc), **details)
         try:
             _os_check(manifest, ref)
             os_ok += 1
@@ -347,6 +365,9 @@ def _audit_runtime(document, root, report):
                 if 'path' in row:
                     row['path'] = Path(row['path']).relative_to(root).as_posix()
                 issue(row['code'], 'matched_workload', quality_issue=copy.deepcopy(row))
+            for boundary in q['workload_boundaries']:
+                if not boundary['warmup'] and (boundary['row_count'] == 0 or boundary['frame_count'] == 0):
+                    issue('empty_measured_workload', 'matched_workload', run_id=boundary['run_id'])
             report['benchmark_quality'] = q
         except (quality.Error, OSError, ValueError, TypeError, KeyError) as exc:
             issue('benchmark_quality_invalid', 'matched_workload', message=str(exc))
@@ -397,6 +418,20 @@ def _audit_runtime(document, root, report):
 
 def _check_output_alias(output, source, document, root):
     sources = [source.resolve()] + [confined(root, a['path']) for a in document['artifacts']]
+    # Protect the same per-run CSVs quality would consume, before any output write.
+    # Unsafe raw CSV fields are invalid CLI input, even if an indexed shadow exists.
+    for entry in document['artifacts']:
+        if entry['role'] != 'run_manifest':
+            continue
+        path = confined(root, entry['path'])
+        if not path.is_file():
+            continue
+        try:
+            manifest = read_json(path)
+        except ValueError:
+            continue  # audit reports malformed runtime JSON as blocked.
+        if isinstance(manifest, dict) and isinstance(manifest.get('ticktask_csv'), str):
+            sources.append(runtime_csv_path(path, manifest))
     resolved = output.resolve()
     if any(resolved == p or (output.exists() and p.exists() and output.samefile(p)) for p in sources):
         raise ValueError('output aliases an evidence input')

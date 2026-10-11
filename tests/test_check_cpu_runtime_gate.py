@@ -314,6 +314,74 @@ class RuntimeTests(unittest.TestCase):
         self.change_manifest(lambda m:m.update(ticktask_csv='../../../../outside.csv'))
         self.assert_blocked('invalid_runtime_manifest')
 
+    def bind_reviews(self):
+        scope = {a['id']: a['sha256'] for a in self.doc['artifacts'] if a['role'] != 'review'}
+        for review in self.doc['reviews'].values():
+            review['evidence_sha256'] = scope.copy()
+
+    def test_absolute_csv_cannot_read_or_overwrite_external_evidence(self):
+        with tempfile.TemporaryDirectory() as other:
+            outside = Path(other) / 'external.csv'
+            original = (self.root/'runs/t12-disabled-r1/ticktask_timings.csv').read_bytes()
+            outside.write_bytes(original)
+            # The old string join validates this shadow, while quality reads outside.
+            shadow = 'runs/t12-disabled-r1/' + outside.as_posix().lstrip('/')
+            artifact(self.root, self.doc, shadow, original, kind='game', role='ticktask_csv')
+            self.change_manifest(lambda m: m.update(ticktask_csv=outside.as_posix()))
+            self.bind_reviews()
+            result = self.report()
+            with self.subTest(audit=True):
+                self.assertEqual(result['status'], 'blocked')
+                self.assertIn('invalid_runtime_manifest', {x['code'] for x in result['issues']})
+            source = self.root/'index.json'; source.write_text(json.dumps(self.doc))
+            with contextlib.redirect_stderr(io.StringIO()):
+                code = gate.main([str(source), '--root', str(self.root), '--output', str(outside)])
+            self.assertEqual(code, 2)
+            self.assertEqual(outside.read_bytes(), original)
+
+    def test_csv_drive_relative_and_backslash_paths_are_rejected(self):
+        for name in ('C:/outside.csv', 'C:outside.csv', 'folder\\outside.csv'):
+            with self.subTest(name=name):
+                self.doc = runtime_bundle(self.root)
+                # On Linux a colon can name a shadow path; it is a drive on Windows.
+                if '\\' not in name:
+                    raw = (self.root/'runs/t12-disabled-r1/ticktask_timings.csv').read_bytes()
+                    artifact(self.root, self.doc, 'runs/t12-disabled-r1/'+name, raw,
+                             kind='game', role='ticktask_csv')
+                self.change_manifest(lambda m:m.update(ticktask_csv=name))
+                self.bind_reviews()
+                self.assert_blocked('invalid_runtime_manifest')
+
+    def test_production_diagnostic_counters_block_and_keep_values(self):
+        for mode in ('disabled', 'enabled'):
+            for cid in (1, 3, 4):
+                for value in (1, -1):
+                    with self.subTest(mode=mode, counter_id=cid, value=value):
+                        self.doc = runtime_bundle(self.root)
+                        path = f'runs/t12-{mode}-r1/trace.v3pf'
+                        p = self.root/path
+                        p.write_bytes(p.read_bytes()+fmt.encode_event(dict(event_type=6,
+                            counter_id=cid, value=value, target_id=0, thread_id=99,
+                            sequence=0, timestamp_qpc=150)))
+                        next(a for a in self.doc['artifacts'] if a['path']==path)['sha256'] = hashlib.sha256(p.read_bytes()).hexdigest()
+                        self.bind_reviews()
+                        result = self.assert_blocked('native_capture_invalid')
+                        row = next(i for i in result['issues'] if i['code']=='native_capture_invalid')
+                        self.assertEqual(row['diagnostic_counters'][0]['counter_id'], cid)
+                        self.assertEqual(row['diagnostic_counters'][0]['value'], value)
+
+    def test_header_only_csv_cannot_certify_measured_workload_or_overhead(self):
+        for a in self.doc['artifacts']:
+            if a['role'] != 'ticktask_csv': continue
+            (self.root/a['path']).write_bytes(b'frame,task,milliseconds,calls,longest_lock\n')
+            a['sha256'] = hashlib.sha256((self.root/a['path']).read_bytes()).hexdigest()
+            self.change_manifest(lambda m: m['capture'].update(ticktask_csv_sha256=a['sha256']),
+                                 str(Path(a['path']).parent/'manifest.json'))
+        self.bind_reviews()
+        result = self.assert_blocked('empty_measured_workload')
+        self.assertIsNone(result['overhead'])
+        self.assertEqual(result['requirements']['matched_workload']['status'], 'rejected')
+
     def test_missing_measured_repeat_is_explicit_matrix_failure(self):
         (self.root/self.manifest_path).unlink()
         self.assert_blocked('invalid_repeat_matrix')
