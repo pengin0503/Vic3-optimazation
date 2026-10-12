@@ -126,7 +126,7 @@ Threading.TaskThreadCount を変更する場合は測定者がゲーム標準 co
 `Unsupported process/build ... Gate code: 4` とは別の表示である。
 この失敗経路は exact-build gate 通過後、remote allocation/write/thread 作成より前で終了する。
 
-診断版 loader は続けて `Module resolution diagnostics v1` を出力する。
+Phase 3診断版 loader は続けて `Module resolution diagnostics v2` を出力する。
 `stage` は失敗した条件、`win32_error` は失敗した Win32 API 直後のエラー番号。
 比較検証だけの不一致では `win32_error=0` とし、古い GetLastError 値を流用しない。
 
@@ -135,10 +135,39 @@ Threading.TaskThreadCount を変更する場合は測定者がゲーム標準 co
 | export_lookup / owner_lookup | local LoadLibraryW export / owner module |
 | local_pe / local_address / local_text / local_path | local module PE / export RVA / executable .text / module path |
 | snapshot / module_first | explicit PID の module snapshot / enumeration API |
+| module_next | module列挙途中のAPI失敗。1件一致が見つかっていても拒否 |
 | module_match / module_size / remote_address | owner module path の一意一致 / image size / checked offset |
 | remote_query / remote_protection | remote memory query / committed executable-read protection |
 | remote_read / byte_mismatch | 16-byte 読み取り / local export bytes との一致 |
 
-`owner_path`、local/remote size、export RVA、matches、bytes_read、remote state/protection、
+`owner_path`、local/remote base・export address・size、export RVA、matches、bytes_read、remote state/protection、
 `pe_error` もログへ保存する。code 4 だけで OS バージョンやセキュリティ製品を原因と断定しない。
 診断追加で address fallback、retry、validation bypass は行わない。
+
+module列挙は `ERROR_NO_MORE_FILES` の正常終端だけを受理する。remote address検査は
+16 bytes全体のimage境界とアドレスoverflowも含める。オフラインで拒否経路が通っても、
+以前の実ゲーム `Attach code 4` が解決したとは扱わない。
+
+## ゲーム起動前に可能なPhase 3検証
+
+Windows x64の上記native CTestには `NativeModuleResolutionTests` と
+`NativeHookFailureTests`、IPC不在・stop timeout・signaled Pending/Readyを拒否する
+拡張 `NativeInjectorTests` が含まれる。[run 38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363)でx64 Release build・10/10 CTestsと2本のtrace parseが成功した。named IPC、synthetic host注入、DLLのValidationFailed経路とMinHookを確認済み。実ゲームattachや正常に有効化されたDLLセッション全体のstop/finalizeは未検証。
+
+既存 `tests.yml` は共有Windows jobを呼ぶ。`native-validation.yml` の研究branch pushはnative関連pathに限定し、ドキュメント更新では実行しない。手動実行入口も保持する。CI runnerと異なるWindows環境への導入や再現しない障害では、上記configure/build/CTestを対象環境で確認する。
+
+Windowsがない場合のowned fixture検証:
+
+```sh
+cmake -S src/native/tests/offline -B build/native-offline
+cmake --build build/native-offline --config Release
+ctest --test-dir build/native-offline -C Release --output-on-failure
+```
+
+64-bit pointersが必要。この入口はWindows API、DLL、MinHook、named IPCや実際の
+game attach/stopを検証しない。今回の実行範囲と未検証条件は
+[Phase 3記録](../reports/2026-10-11-offline-native-diagnostics-phase3-ja.md)を参照。
+
+## Phase 4 evidence handoff
+
+次回の測定・provenance記録には[Phase 4手順](2026-10-12-phase4-runtime-evidence-handoff-ja.md)を併用する。既存Loader/DLL・Windows synthetic結果を再利用し、実ゲームacceptanceは欠落した実capture・同期CSV/OS・observer overhead・save stabilityが揃うまでblocked。

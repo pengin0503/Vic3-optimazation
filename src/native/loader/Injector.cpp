@@ -1,4 +1,5 @@
 #include "Injector.h"
+#include "ModuleResolutionPolicy.h"
 #include "../common/WinHandle.h"
 #include "../common/SharedConfig.h"
 #include "../common/Sha256.h"
@@ -34,35 +35,33 @@ static uintptr_t RemoteLoadLibrary(HANDLE process,DWORD pid,ModuleResolutionDiag
     if(!GetModuleHandleExW(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS|GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,reinterpret_cast<const wchar_t*>(function),&owner))return reject(ModuleResolutionStage::OwnerLookup,GetLastError());
     auto image=PeImage::FromModule(owner);
     if(!image){d.pe_error=image.error;return reject(ModuleResolutionStage::LocalPe);}
-    d.local_size=image.value.bytes.size();
     const uintptr_t address=reinterpret_cast<uintptr_t>(function),base=reinterpret_cast<uintptr_t>(owner);
-    if(address<base)return reject(ModuleResolutionStage::LocalAddress);
-    const size_t offset=address-base;d.export_rva=offset;
-    if(!image.value.ExecutableText(offset,16))return reject(ModuleResolutionStage::LocalText);
+    if(!ValidateLocalExport(image.value,base,address,d))return 0;
+    const size_t offset=address-base;
     std::wstring local_path(32768,L'\0');const DWORD length=GetModuleFileNameW(owner,local_path.data(),static_cast<DWORD>(local_path.size()));
     if(!length || length>=local_path.size())return reject(ModuleResolutionStage::LocalPath,GetLastError());
     local_path.resize(length);d.owner_path=local_path;
     // One explicit-PID module snapshot. A failed/ambiguous lookup is final; no address fallback.
     WinHandle snapshot(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE,pid));if(!snapshot)return reject(ModuleResolutionStage::Snapshot,GetLastError());
-    MODULEENTRY32W entry{};entry.dwSize=sizeof(entry);uintptr_t remote=0;size_t matches=0;
+    MODULEENTRY32W entry{};entry.dwSize=sizeof(entry);uintptr_t remote=0;
     if(!Module32FirstW(snapshot.get(),&entry))return reject(ModuleResolutionStage::ModuleFirst,GetLastError());
     do {
         if(_wcsicmp(entry.szExePath,local_path.c_str())!=0)continue;
-        d.remote_size=entry.modBaseSize;
-        if(entry.modBaseSize!=image.value.bytes.size())return reject(ModuleResolutionStage::ModuleSize);
-        if(offset>=entry.modBaseSize || !CheckedAddress(reinterpret_cast<uintptr_t>(entry.modBaseAddr),offset,remote))return reject(ModuleResolutionStage::RemoteAddress);
-        ++matches;d.matches=matches;
+        ++d.matches;
+        remote=ValidateRemoteModuleAddress(image.value.bytes.size(),offset,reinterpret_cast<uintptr_t>(entry.modBaseAddr),entry.modBaseSize,d);
+        if(!remote)return 0;
     }while(Module32NextW(snapshot.get(),&entry));
-    if(matches!=1)return reject(ModuleResolutionStage::ModuleMatch);
+    // Capture the final enumeration API's error before any other API call.
+    const DWORD enumeration_error=GetLastError();
+    if(!CompleteModuleEnumeration(enumeration_error==ERROR_NO_MORE_FILES,enumeration_error,d))return 0;
     MEMORY_BASIC_INFORMATION region{};
     if(!VirtualQueryEx(process,reinterpret_cast<void*>(remote),&region,sizeof(region)))return reject(ModuleResolutionStage::RemoteQuery,GetLastError());
     d.remote_state=region.State;d.remote_protection=region.Protect;
     if(region.State!=MEM_COMMIT || region.Protect!=PAGE_EXECUTE_READ)return reject(ModuleResolutionStage::RemoteProtection);
-    std::array<std::byte,16> bytes{};SIZE_T read{};
+    std::array<std::byte,kExportProbeSize> bytes{};SIZE_T read{};
     if(!ReadProcessMemory(process,reinterpret_cast<void*>(remote),bytes.data(),bytes.size(),&read)){const DWORD error=GetLastError();d.bytes_read=read;return reject(ModuleResolutionStage::RemoteRead,error);}
-    d.bytes_read=read;
-    if(read!=bytes.size())return reject(ModuleResolutionStage::RemoteRead);
-    if(std::memcmp(bytes.data(),reinterpret_cast<const void*>(function),bytes.size())!=0)return reject(ModuleResolutionStage::ByteMismatch);
+    const auto local=std::span<const std::byte,kExportProbeSize>(reinterpret_cast<const std::byte*>(function),kExportProbeSize);
+    if(!ValidateRemoteExportRead(local,bytes,read,d))return 0;
     return remote;
 }
 InjectionError InjectLibraryForValidatedProcess(HANDLE process,DWORD pid,const std::filesystem::path& dll,ModuleResolutionDiagnostics* diagnostics) {

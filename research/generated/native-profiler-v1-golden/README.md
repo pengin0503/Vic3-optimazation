@@ -1,21 +1,13 @@
-# Synthetic native profiler v1 golden
+# ネイティブプロファイラーv1の合成参照データ
 
-These are synthetic wire-format fixtures, not captured game measurements.
-The executable/build IDs identify the supported metadata gate, not real execution.
-8 records: threads 7 and 8, 2 function pairs, 1 scheduler decision, 1 wait pair,
-and 1 counter. There are no dropped, malformed or unknown events.
+ここにあるのはバイナリ形式を検証する合成テストデータであり、ゲームの測定記録ではありません。実行ファイル・ビルドのIDは対応するメタデータの検査条件を示し、実際の実行を意味しません。
 
-Explicit regeneration (never run automatically in the golden test):
+レコードは8件で、スレッド7・8、関数の開始・終了2組、スケジューラー判断1件、待機の開始・終了1組、カウンター1件を含みます。欠落、不正、未知のイベントはありません。
+
+明示的に再生成する場合は次を実行します。参照データのテスト中に自動実行してはいけません。
 
 `python research/recipes/reproduce_native_profiler_golden.py`
 
-Tests compare the committed binary to committed expected JSON. The codec tests
-also pin hand-derived literal bytes for all six payload types and header offsets.
-`artifact-index.json` records SHA-256 for both files.
+テストはコミット済みのバイナリと期待値JSONを比較します。コーデックのテストでは、6種類すべてのペイロードとヘッダーのオフセットについて、手作業で求めたリテラルのバイト列も固定しています。`artifact-index.json`には両ファイルのSHA-256を記録しています。
 
-A future C++ writer must serialize explicit little-endian fields at the documented
-offsets, canonicalize targets with UTF-8/sorted keys/compact separators, zero pad,
-and reproduce these bytes for identical fixture values. Parser semantics must
-retain file order, pair only within a thread/family/target, skip valid extensions,
-and surface data loss. C++ ring-buffer correctness, memory ordering, allocation,
-writer overhead and game attach behavior have not been implemented or proven.
+この参照データの作成時に定めたC++側の書き込み要件は、文書化されたオフセットに明示的なリトルエンディアンのフィールドを直列化し、対象情報をUTF-8・キー順ソート・簡潔な区切りで正規化し、ゼロで埋め、同じテスト値に対して同じバイト列を再現することです。パーサーはファイル順序を保持し、スレッド・種類・対象が同じ範囲内だけで開始・終了を組にし、有効な拡張を読み飛ばし、データ欠落を報告する必要があります。作成時点では、C++リングバッファの正しさ、メモリ順序、メモリ確保、書き込み負荷、ゲームへの接続動作は未実装・未証明でした。後続実装の状況はルートと`src/`のREADMEを参照してください。

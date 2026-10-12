@@ -1,0 +1,41 @@
+cmake_minimum_required(VERSION 3.25)
+project(Vic3NativeOfflinePolicies LANGUAGES CXX)
+if(NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
+  message(FATAL_ERROR "Vic3 offline native policies require 64-bit pointers (PE32+ fixtures).")
+endif()
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+enable_testing()
+find_package(Threads REQUIRED)
+get_filename_component(NATIVE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
+# These targets do not build a loader, DLL, MinHook or Windows API adapter.
+add_library(native_offline STATIC
+  ${NATIVE_ROOT}/common/PeImage.cpp
+  ${NATIVE_ROOT}/common/TargetResolver.cpp
+  ${NATIVE_ROOT}/common/EventBuffer.cpp
+  ${NATIVE_ROOT}/common/V3pfFormat.cpp
+  ${NATIVE_ROOT}/profiler/TickTaskHooks.cpp
+  ${NATIVE_ROOT}/loader/ModuleResolutionPolicy.cpp)
+target_link_libraries(native_offline PUBLIC Threads::Threads)
+if(WIN32)
+  target_sources(native_offline PRIVATE ${NATIVE_ROOT}/common/Sha256.cpp)
+  target_link_libraries(native_offline PUBLIC bcrypt)
+  target_compile_definitions(native_offline PUBLIC WIN32_LEAN_AND_MEAN NOMINMAX)
+endif()
+function(offline_warnings target)
+  if(MSVC)
+    target_compile_options(${target} PRIVATE /W4 /WX /permissive- /EHsc /utf-8 /wd4324)
+  else()
+    target_compile_options(${target} PRIVATE -Wall -Wextra -Wpedantic -Werror)
+  endif()
+endfunction()
+offline_warnings(native_offline)
+foreach(pair "NativeResolverOffline;TargetResolverTests.cpp" "NativeBufferOffline;EventBufferTests.cpp" "NativeModuleResolutionOffline;ModuleResolutionTests.cpp" "NativeHookFailuresOffline;HookFailureTests.cpp")
+  list(GET pair 0 name)
+  list(GET pair 1 source)
+  add_executable(${name} ${NATIVE_ROOT}/tests/${source})
+  target_link_libraries(${name} PRIVATE native_offline)
+  offline_warnings(${name})
+  add_test(NAME ${name} COMMAND ${name})
+endforeach()

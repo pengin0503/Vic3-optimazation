@@ -3,6 +3,14 @@ import unittest
 from gpu_opencl import KERNEL_SOURCE, NoGpuAvailable, select_device, device_catalog, OpenCLExecutor
 
 class BackendTests(unittest.TestCase):
+    def test_backend_preserves_each_copy_event_duration_before_summing(self):
+        from types import SimpleNamespace
+        events=[SimpleNamespace(profile=SimpleNamespace(start=0,end=end)) for end in (0,200000,200000)]
+        helper=getattr(OpenCLExecutor,'_event_durations_ms',None)
+        self.assertTrue(callable(helper), 'per-copy profile information missing')
+        self.assertEqual(helper(events),[0,0.2,0.2])
+        self.assertAlmostEqual(OpenCLExecutor._event_ms(events),0.4)
+
     def test_source_defines_both_kernels(self):
         self.assertIn('__kernel void pop_growth', KERNEL_SOURCE)
         self.assertIn('__kernel void id_lookup', KERNEL_SOURCE)

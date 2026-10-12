@@ -623,6 +623,69 @@ LOOKUP_TEST(record_full_and_drain) {
     CHECK(out[0].status == NativeStatus::Equal);
 }
 
+LOOKUP_TEST(full_records_reentrant_throw_preserves_outer_bits) {
+    auto f = MakeFixedFixture();
+    const auto b = f->Borrow();
+    auto s = std::make_unique<OfflineNativeShadow>();
+    s->SetMode(NativeMode::Shadow);
+    NativeScope scope(*s);
+    Counting fill{kKey0Result};
+    for (std::size_t i = 0; i < kNativeRecordCapacity; ++i) {
+        s->Evaluate(b, 0, kCaller1, Fixed(fill));
+    }
+    int token = 0, outer_calls = 0, inner_calls = 0;
+    const std::uint64_t bits = 0xfedcba9876543210ULL;
+    auto inner = [&](std::uint32_t) -> OpaqueResult {
+        ++inner_calls;
+        throw Marker{&token};
+    };
+    auto outer = [&](std::uint32_t) {
+        ++outer_calls;
+        try { s->Evaluate(b, 0, kCaller1, Call(inner)); }
+        catch (const Marker& m) { CHECK(m.token == &token); }
+        return OpaqueResult{bits};
+    };
+    CHECK(s->Evaluate(b, 0, kCaller1, Call(outer)).value == bits);
+    CHECK(outer_calls == 1 && inner_calls == 1);
+    CHECK(s->Counters().original_calls == kNativeRecordCapacity + 2);
+    CHECK(s->Counters().exception_calls == 1);
+    CHECK(s->Counters().reentrant_calls == 1);
+    CHECK(s->Counters().dropped_records == 1); // only the normally returned outer call
+    CHECK(Last(*s).original.value == bits && Last(*s).reason == NativeSkip::Reentrant);
+    std::vector<NativeRecord> records(kNativeRecordCapacity);
+    CHECK(s->DrainRecords(records) == kNativeRecordCapacity);
+    CHECK(RunKey0(*s, b).status == NativeStatus::NoCandidate); // recovered depth and cleared hint
+}
+
+LOOKUP_TEST(zero_and_partial_drain_preserve_fifo_after_refill) {
+    OfflineNativeShadow s; // Off: opaque values are returned without normalization.
+    Counting c{0};
+    for (std::uint32_t i = 0; i < 4; ++i) {
+        c.value = 0x8000000000000000ULL + i;
+        CHECK(s.Evaluate({}, i, kCaller1, Fixed(c)).value == c.value);
+    }
+    CHECK(s.DrainRecords({}) == 0);
+    CHECK(s.Counters().original_calls == 4 && s.Counters().dropped_records == 0);
+    std::array<NativeRecord, 2> first;
+    CHECK(s.DrainRecords(first) == 2);
+    CHECK(first[0].key == 0 && first[1].key == 1);
+    CHECK(first[0].original.value == 0x8000000000000000ULL);
+    CHECK(first[1].original.value == 0x8000000000000001ULL);
+    for (std::uint32_t i = 4; i < 6; ++i) {
+        c.value = 0x8000000000000000ULL + i;
+        s.Evaluate({}, i, kCaller1, Fixed(c));
+    }
+    std::array<NativeRecord, 5> rest;
+    rest[4].key = 999;
+    CHECK(s.DrainRecords(rest) == 4);
+    for (std::uint32_t i = 0; i < 4; ++i) {
+        CHECK(rest[i].key == i + 2);
+        CHECK(rest[i].original.value == 0x8000000000000000ULL + i + 2);
+    }
+    CHECK(rest[4].key == 999 && s.DrainRecords(rest) == 0);
+    CHECK(c.calls == 6 && s.Counters().original_calls == 6 && s.Counters().dropped_records == 0);
+}
+
 LOOKUP_TEST(null_invoke_is_rejected_before_any_state_change) {
     auto f = MakeFixedFixture();
     OfflineNativeShadow s;

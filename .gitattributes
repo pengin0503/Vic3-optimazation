@@ -6,3 +6,18 @@ src/lookup_reuse_contract/generated/*.inc text eol=lf
 # Hash-pinned static evidence (artifact-index.json pins raw bytes): no eol conversion.
 research/generated/native-shadow-preparation-2026-10-07/** -text
 research/generated/offline-locator-hardening-2026-10-08/** -text
+# Phase 4 evidence index/report hashes pin exact JSON bytes across platforms.
+research/phase4/*.json -text
+research/native-profiler-runtime-targets-1.14.5.json -text
+research/generated/ticktask-dependencies-1.14.5.json -text
+research/generated/deep-native-2026-10-05/scheduler/scheduler-classified-evidence.json -text
+research/generated/repeats-2026-10-05/repeat-evidence.json -text
+research/generated/repeats-2026-10-05/handoff-summary.json -text
+research/generated/os-sampled-capture-2026-10-05/capture-manifest.json -text
+research/generated/os-sampled-capture-2026-10-05/verification.json -text
+research/generated/os-sampled-capture-2026-10-05/sample-observations.json -text
+research/generated/pc-evidence-2026-10-05/save-validation.json -text
+research/experiments/scheduler_model/example-workload.json -text
+docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md -text
+# Byte-pinned bounded research witnesses and lifecycle model outputs.
+research/generated/offline-closeout-2026-10-12/** -text
