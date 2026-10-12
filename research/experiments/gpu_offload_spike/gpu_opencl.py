@@ -88,8 +88,12 @@ class OpenCLExecutor:
                 'output': cl.Buffer(self.context, cl.mem_flags.WRITE_ONLY, size=max(4, case['n'] * 4))}
 
     @staticmethod
+    def _event_durations_ms(events):
+        return [(int(e.profile.end) - int(e.profile.start)) / 1_000_000 for e in events]
+
+    @staticmethod
     def _event_ms(events):
-        return sum((int(e.profile.end) - int(e.profile.start)) / 1_000_000 for e in events)
+        return sum(OpenCLExecutor._event_durations_ms(events))
 
     def _upload(self, buffers, case):
         events=[]
@@ -145,11 +149,14 @@ class OpenCLExecutor:
         a0=time.perf_counter_ns()
         applied=np.array(output_host, copy=True)
         a1=time.perf_counter_ns()
+        upload_profile=self._event_durations_ms(upload_events)
         return applied, {
             'pack_ms': (t1-t0)/1e6,
             'h2d_host_submit_ms': upload_submit_ns/1e6,
             'h2d_host_wait_ms': upload_wait_ns/1e6,
-            'h2d_device_event_ms': self._event_ms(upload_events),
+            'h2d_device_event_ms': sum(upload_profile),
+            'h2d_device_event_durations_ms': upload_profile,
+            'h2d_copy_bytes': [a.nbytes for a in packed['inputs'] if a.nbytes] if mode=='cold' else [],
             'kernel_host_submit_ms': (k1-k0)/1e6,
             'kernel_host_wait_ms': (k2-k1)/1e6,
             'kernel_device_event_ms': self._event_ms([ev_kernel]),

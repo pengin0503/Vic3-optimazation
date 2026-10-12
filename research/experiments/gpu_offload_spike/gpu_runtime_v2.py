@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import platform
 import statistics
 import sys
@@ -103,13 +104,39 @@ def summarize_h2d(samples: list[dict]) -> dict:
     host = [s['h2d_host_submit_ms'] + s['h2d_host_wait_ms'] for s in samples]
     durations = [s['h2d_device_event_ms'] for s in samples]
     bytes_per = [s['h2d_bytes'] for s in samples]
-    valid = all(d > 0 for d in durations) and all(n > 0 for n in bytes_per)
     no_transfer = all(n == 0 for n in bytes_per)
+    all_profiles_valid = True
+    missing_profiles = malformed_profiles = zero_copies = zero_iterations = 0
+    for sample in samples:
+        ds = sample.get('h2d_device_event_durations_ms')
+        sizes = sample.get('h2d_copy_bytes')
+        if ds is None or sizes is None:
+            missing_profiles += 1
+            all_profiles_valid = False
+            zero_iterations += sample['h2d_device_event_ms'] == 0 and sample['h2d_bytes'] > 0
+            continue
+        if (not isinstance(ds,list) or not isinstance(sizes,list) or len(ds) != len(sizes) or
+            any(type(n) is not int or n <= 0 for n in sizes) or
+            any(type(d) not in (int,float) or not math.isfinite(d) or d < 0 for d in ds) or
+            sum(sizes) != sample['h2d_bytes'] or
+            not math.isclose(sum(ds),sample['h2d_device_event_ms'],rel_tol=1e-9,abs_tol=1e-12)):
+            malformed_profiles += 1
+            all_profiles_valid = False
+            continue
+        zeros = sum(d == 0 for d in ds)
+        zero_copies += zeros
+        zero_iterations += zeros > 0
+        if zeros or (sample['h2d_bytes'] > 0 and not ds):
+            all_profiles_valid = False
+    valid = all_profiles_valid and all(d > 0 for d in durations) and all(n > 0 for n in bytes_per)
     return {
         'host_phase_median_ms': statistics.median(host),
-        'zero_duration_events': sum(d == 0 and n > 0 for d,n in zip(durations, bytes_per)),
+        'zero_duration_events': zero_iterations,
+        'zero_duration_copy_events': None if missing_profiles else zero_copies,
+        'missing_copy_profiles': missing_profiles,
+        'malformed_copy_profiles': malformed_profiles,
         'device_event_valid': valid,
-        'event_status': 'not_applicable_resident' if no_transfer else ('valid' if valid else 'invalid_zero_or_mixed'),
+        'event_status': 'not_applicable_resident' if no_transfer else ('valid' if valid else 'invalid_or_incomplete_copy_profiles'),
         'observed_device_gb_per_s': (statistics.median(bytes_per) / (statistics.median(durations)*1e6)) if valid else None,
         'bytes_per_iteration': bytes_per[0],
     }

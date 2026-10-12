@@ -9,7 +9,11 @@ This is a **synthetic offline microbenchmark**, not a Victoria 3 code modificati
 - CPU and GPU samples interleaved within each case; alternate backend and mode order. JIT compilation, device allocation and GPU preloading happen before timing.
 - Strict per-iteration GPU/CPU result equality; independently report GPU output SHA-256, reference output SHA-256 and successful GPU validation iteration count. Hash computation happens outside the timed GPU processing interval.
 - OpenCL H2D event time **zero when bytes >0 means invalid profiling**, not free transfer. The JSON retains measured host submit+wait wall timings and `h2d.event_status`; H2D device bandwidth stays `null` until **every** device event is positive.
-- `session_id`, driver and software versions, per-run raw samples, numba thread count and comparison ratios for auditability. Schema v2, without changing v1's files or result format.
+- `session_id`, driver and software versions, per-run raw samples, numba thread count and comparison ratios for auditability. Schema v2; v1's entry point and existing result fields remain available.
+
+### Per-copy H2D diagnostic hardening (2026-10-12)
+
+Each raw sample now retains `h2d_device_event_durations_ms` and `h2d_copy_bytes`. A positive sum is insufficient: any zero, negative/nonfinite duration, mismatched copy/byte total, or missing per-copy profile keeps bandwidth null. Aggregate-only legacy data cannot certify individual copy validity. `zero_duration_events` counts affected iterations; `zero_duration_copy_events` counts known zero copies (null if profiles are missing). Resident no-transfer events stay not applicable. The shared executor adds these fields without removing v1 fields; it does not fix a driver or establish actual PCIe bandwidth. Existing all-zero hardware findings remain invalid.
 
 **Limitation:** A Numba JIT microbenchmark is a more credible CPU baseline than NumPy, **but is still not the optimized native C++ or real Victoria 3 CPU workload**. Kernel/dataset isolation, scheduling/dependencies, save determinism, critical path, game wall-time and actual PCIe bandwidth remain unmeasured. No assertions about gameplay speed are permitted.
 

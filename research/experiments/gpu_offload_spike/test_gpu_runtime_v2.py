@@ -13,10 +13,12 @@ class FakeGPU:
         return out, dict(pack_ms=0, h2d_host_submit_ms=0.04 if mode=='cold' else 0,
             h2d_host_wait_ms=0.12 if mode=='cold' else 0,
             h2d_device_event_ms=0, kernel_host_submit_ms=0.01,
+            h2d_device_event_durations_ms=[0,0,0] if mode=='cold' else [],
+            h2d_copy_bytes=[a.nbytes for a in case['inputs']] if mode=='cold' else [],
             kernel_host_wait_ms=0.03, kernel_device_event_ms=0.006,
             d2h_host_submit_ms=0.01, d2h_host_wait_ms=0.1,
             d2h_device_event_ms=0.08, apply_ms=0.01,
-            e2e_wall_ms=0.31, h2d_bytes=0 if mode=='resident' else 12*case['n'],
+            e2e_wall_ms=0.31, h2d_bytes=0 if mode=='resident' else sum(a.nbytes for a in case['inputs']),
             d2h_bytes=4*case['n'])
 
 class CPUv2Tests(unittest.TestCase):
@@ -51,10 +53,32 @@ class CPUv2Tests(unittest.TestCase):
         self.assertGreater(m['host_phase_median_ms'],0.2)
 
     def test_h2d_positive_events_valid(self):
-        samples=[{'h2d_bytes':1200000,'h2d_device_event_ms':0.2,'h2d_host_submit_ms':0.02,'h2d_host_wait_ms':0.3} for _ in range(3)]
+        samples=[{'h2d_bytes':1200000,'h2d_device_event_ms':0.2,
+                  'h2d_device_event_durations_ms':[0.05,0.05,0.1], 'h2d_copy_bytes':[400000]*3,
+                  'h2d_host_submit_ms':0.02,'h2d_host_wait_ms':0.3} for _ in range(3)]
         m=summarize_h2d(samples)
         self.assertTrue(m['device_event_valid'])
         self.assertAlmostEqual(m['observed_device_gb_per_s'],6)
+
+    def test_mixed_zero_copy_profile_cannot_certify_transfer_bandwidth(self):
+        samples=[dict(h2d_bytes=1200000, h2d_device_event_ms=0.4,
+            h2d_device_event_durations_ms=[0,0.2,0.2], h2d_copy_bytes=[400000]*3,
+            h2d_host_submit_ms=0.02, h2d_host_wait_ms=0.3)]
+        r=summarize_h2d(samples)
+        self.assertFalse(r['device_event_valid'])
+        self.assertIsNone(r['observed_device_gb_per_s'])
+        self.assertEqual(r.get('zero_duration_copy_events'),1)
+
+    def test_aggregate_only_missing_misaligned_and_invalid_copy_profiles_fail_closed(self):
+        base=dict(h2d_bytes=1200000,h2d_device_event_ms=0.6,
+                  h2d_host_submit_ms=0.02,h2d_host_wait_ms=0.3)
+        for fields in ({},dict(h2d_device_event_durations_ms=[0.2]*3,h2d_copy_bytes=[400000]),
+                       dict(h2d_device_event_durations_ms=[-0.2,0.4,0.4],h2d_copy_bytes=[400000]*3),
+                       dict(h2d_device_event_durations_ms=[float('nan'),0.2,0.2],h2d_copy_bytes=[400000]*3)):
+            with self.subTest(fields=fields):
+                r=summarize_h2d([dict(base,**fields)])
+                self.assertFalse(r['device_event_valid'])
+                self.assertIsNone(r['observed_device_gb_per_s'])
 
     def test_fake_gpu_output_digest_and_baseline_records(self):
         gpu=FakeGPU()
