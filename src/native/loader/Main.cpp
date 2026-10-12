@@ -9,15 +9,22 @@ using namespace vic3;
 int wmain(int argc,wchar_t** argv) {
     try {
         std::vector<std::wstring> arguments(argv+1,argv+argc);auto parsed=ParseLoaderArgs(arguments);
-        if(!parsed){std::wcerr<<L"Usage: Vic3OptimizationLoader --pid PID [--disabled] [--dll PATH] [--output TRACE] [--targets investment,migration,employment] [--allow-partial-targets]\n       Vic3OptimizationLoader --stop --pid PID\n";return 2;}
+        if(!parsed){std::wcerr<<L"Usage: Vic3OptimizationLoader --pid PID [--disabled] [--dll PATH] [--output TRACE] [--targets investment,migration,employment] [--allow-partial-targets]\n       Vic3OptimizationLoader --stop --pid PID\n       Vic3OptimizationLoader --diagnose-loadlibrary --pid PID\n";return 2;}
         auto args=parsed.value;
         // Stop also requires an explicitly selected exact Victoria build; it is not a generic process tool.
-        const DWORD rights=args.stop?PROCESS_QUERY_LIMITED_INFORMATION:(PROCESS_QUERY_INFORMATION|PROCESS_CREATE_THREAD|PROCESS_VM_OPERATION|PROCESS_VM_WRITE|PROCESS_VM_READ);
+        const DWORD rights=LoaderProcessRights(args);
         WinHandle process(OpenProcess(rights,FALSE,args.pid));if(!process){std::wcerr<<L"Cannot open explicit PID. No privileges are changed.\n";return 3;}
         const auto image=ProcessImagePath(process.get());
         WinHandle executable(CreateFileW(image.c_str(),GENERIC_READ,FILE_SHARE_READ,nullptr,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,nullptr));if(!executable)return 3;
         const auto gate=ValidateVictoriaProcess(process.get(),image);
         if(gate!=InjectionError::None){std::wcerr<<L"Unsupported process/build; no remote write or injection. Gate code: "<<static_cast<int>(gate)<<L"\n";return 4;}
+        if(args.diagnose) {
+            ModuleResolutionDiagnostics resolution;
+            const bool matched=DiagnoseLoadLibraryForValidatedProcess(process.get(),args.pid,resolution);
+            WriteModuleResolutionDiagnostics(std::wcout,resolution);
+            std::wcout<<L"Read-only diagnosis only; no DLL injected. Export probe "<<(matched?L"matched":L"rejected")<<L"; not an attach result.\n";
+            return matched?0:8;
+        }
         if(args.stop) {
             const auto terminal=StopProfilerSession(args.pid);
             if(StopResult(terminal)!=0){std::wcerr<<L"Stop/capture finalization failed; status "<<static_cast<int>(terminal)<<L". Do not reattach this process.\n";return 5;}

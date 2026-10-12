@@ -29,6 +29,12 @@ InjectionError ValidateVictoriaProcess(HANDLE process,const std::filesystem::pat
 }
 static uintptr_t RemoteLoadLibrary(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& d) {
     const auto reject=[&](ModuleResolutionStage stage,DWORD error=0)->uintptr_t {d.stage=stage;d.win32_error=error;return 0;};
+    d.requested_pid=pid;d.handle_pid=GetProcessId(process);
+    if(!d.handle_pid)return reject(ModuleResolutionStage::ProcessIdentity,GetLastError());
+    if(d.handle_pid!=pid)return reject(ModuleResolutionStage::ProcessIdentity);
+    FILETIME creation{},exit{},kernel{},user{};
+    if(!GetProcessTimes(process,&creation,&exit,&kernel,&user))return reject(ModuleResolutionStage::ProcessTimes,GetLastError());
+    d.process_start_filetime=(static_cast<uint64_t>(creation.dwHighDateTime)<<32)|creation.dwLowDateTime;
     const auto function=GetProcAddress(GetModuleHandleW(L"kernel32.dll"),"LoadLibraryW");
     if(!function)return reject(ModuleResolutionStage::ExportLookup,GetLastError());
     HMODULE owner{};
@@ -61,8 +67,21 @@ static uintptr_t RemoteLoadLibrary(HANDLE process,DWORD pid,ModuleResolutionDiag
     std::array<std::byte,kExportProbeSize> bytes{};SIZE_T read{};
     if(!ReadProcessMemory(process,reinterpret_cast<void*>(remote),bytes.data(),bytes.size(),&read)){const DWORD error=GetLastError();d.bytes_read=read;return reject(ModuleResolutionStage::RemoteRead,error);}
     const auto local=std::span<const std::byte,kExportProbeSize>(reinterpret_cast<const std::byte*>(function),kExportProbeSize);
-    if(!ValidateRemoteExportRead(local,bytes,read,d))return 0;
+    if(!ValidateRemoteExportRead(local,bytes,read,d)) {
+        // Additional observation cannot change the rejection or nominate another entry.
+        if(d.stage==ModuleResolutionStage::ByteMismatch && d.remote_entry==RemoteEntryObservation::Rel32Jump) {
+            MEMORY_BASIC_INFORMATION target{};
+            if(VirtualQueryEx(process,reinterpret_cast<void*>(static_cast<uintptr_t>(d.branch_target)),&target,sizeof(target))) {
+                d.branch_query_available=true;d.branch_state=target.State;d.branch_protection=target.Protect;
+                d.branch_type=target.Type;d.branch_allocation_base=reinterpret_cast<uintptr_t>(target.AllocationBase);
+            } else d.branch_query_error=GetLastError();
+        }
+        return 0;
+    }
     return remote;
+}
+bool DiagnoseLoadLibraryForValidatedProcess(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& diagnostics) {
+    diagnostics={};return RemoteLoadLibrary(process,pid,diagnostics)!=0;
 }
 InjectionError InjectLibraryForValidatedProcess(HANDLE process,DWORD pid,const std::filesystem::path& dll,ModuleResolutionDiagnostics* diagnostics) {
     ModuleResolutionDiagnostics local_diagnostics;

@@ -11,7 +11,7 @@ enum class RemoteEntryObservation {Unknown,Rel32Jump,Rel32Overflow};
 enum class ModuleResolutionStage {
     None,ExportLookup,OwnerLookup,LocalPe,LocalAddress,LocalText,LocalPath,
     Snapshot,ModuleFirst,ModuleMatch,ModuleSize,RemoteAddress,RemoteQuery,
-    RemoteProtection,RemoteRead,ByteMismatch,ModuleNext
+    RemoteProtection,RemoteRead,ByteMismatch,ModuleNext,ProcessIdentity,ProcessTimes
 };
 struct ModuleResolutionDiagnostics {
     ModuleResolutionStage stage{ModuleResolutionStage::None};
@@ -35,6 +35,8 @@ struct ModuleResolutionDiagnostics {
 inline const wchar_t* ModuleResolutionStageName(ModuleResolutionStage stage) noexcept {
     switch(stage) {
     case ModuleResolutionStage::None:return L"none";
+    case ModuleResolutionStage::ProcessIdentity:return L"process_identity";
+    case ModuleResolutionStage::ProcessTimes:return L"process_times";
     case ModuleResolutionStage::ExportLookup:return L"export_lookup";
     case ModuleResolutionStage::OwnerLookup:return L"owner_lookup";
     case ModuleResolutionStage::LocalPe:return L"local_pe";
