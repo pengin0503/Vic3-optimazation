@@ -272,6 +272,27 @@ class RuntimeTests(unittest.TestCase):
                 (self.root/p).write_bytes(b); a['sha256'] = hashlib.sha256(b).hexdigest()
                 self.assert_blocked('native_capture_invalid')
 
+    def test_rejected_trace_preserves_structured_parser_diagnostics(self):
+        import struct
+        path = 'runs/t12-enabled-r1/trace.v3pf'
+        for damage in ('truncated', 'dropped'):
+            with self.subTest(damage=damage):
+                self.doc = runtime_bundle(self.root)
+                raw = bytearray((self.root/path).read_bytes())
+                if damage == 'truncated':
+                    raw = raw[:-1]
+                else:
+                    struct.pack_into('<Q', raw, 104, 3)
+                (self.root/path).write_bytes(raw)
+                next(a for a in self.doc['artifacts'] if a['path']==path)['sha256'] = hashlib.sha256(raw).hexdigest()
+                self.bind_reviews()
+                expected = gate.parse_trace(raw)['diagnostics']
+                result = self.assert_blocked('native_capture_invalid')
+                issue = next(i for i in result['issues'] if i['code']=='native_capture_invalid')
+                self.assertEqual(issue.get('parser_diagnostics'), expected)
+                self.assertIsNone(result['overhead'])
+                self.assertEqual(json.loads(json.dumps(issue))['parser_diagnostics'], expected)
+
     def test_extra_csv_frame_stays_a_boundary_mismatch(self):
         p = 'runs/t12-disabled-r1/ticktask_timings.csv'
         a = next(a for a in self.doc['artifacts'] if a['path']==p)

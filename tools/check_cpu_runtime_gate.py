@@ -212,6 +212,12 @@ class NativeCounterError(ValueError):
         super().__init__('nonzero native diagnostic counters')
 
 
+class NativeTraceError(ValueError):
+    def __init__(self, diagnostics):
+        self.diagnostics = copy.deepcopy(diagnostics)
+        super().__init__('V3PF has incomplete segment or diagnostics')
+
+
 def _native_check(manifest, ref, expected_table_hash):
     native = manifest['native_profiler']
     for key in ('attach_exit_code', 'stop_exit_code'):
@@ -232,7 +238,7 @@ def _native_check(manifest, ref, expected_table_hash):
     trace = parse_trace(ref(native.get('trace_artifact_id'), 'native_trace').read_bytes(),
                         expected_executable_sha256=EXPECTED_SHA256)
     if not trace['header_valid'] or not trace['segment_complete'] or trace['diagnostics']:
-        raise ValueError('V3PF has incomplete segment or diagnostics')
+        raise NativeTraceError(trace['diagnostics'])
     if trace['header']['target_table_hash'] != expected_table_hash:
         raise ValueError('trace target table differs from exact production table')
     # These IDs are emitted by ProfilerRuntime.cpp, independently of parser errors.
@@ -332,6 +338,8 @@ def _audit_runtime(document, root, report):
             native_ok += 1
         except (OSError, ValueError, TypeError, KeyError) as exc:
             details = {'diagnostic_counters': exc.counters} if isinstance(exc, NativeCounterError) else {}
+            if isinstance(exc, NativeTraceError):
+                details['parser_diagnostics'] = exc.diagnostics
             issue('native_capture_invalid', 'native_capture_validation', run_id=rid, message=str(exc), **details)
         try:
             _os_check(manifest, ref)
