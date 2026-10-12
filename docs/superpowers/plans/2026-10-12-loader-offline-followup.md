@@ -34,11 +34,11 @@
 
 **Interfaces:** `ObserveRemoteBranchRegion(HANDLE,ModuleResolutionDiagnostics&) -> void`。各helperの既存signatureは保持。
 
-- [ ] 欠けている観測関数のtestを追加し、未実装REDを確認。
-- [ ] 既存queryを抽出し、実invalid handle、成功→失敗→成功、query不要条件の保持をGREEN。
-- [ ] hex設定streamからdecimal出力・flags復元を追加検証。既存実装が通ることを確認。
-- [ ] 各pure helperの拒否後成功で古いstage/errorが残るREDを確認し、成功結果をclearしてGREEN。
-- [ ] 全Windows x64 CTestを実行してcommit。
+- [x] 欠けている観測関数のtestを追加し、未実装REDを確認。
+- [x] 既存queryを抽出し、実invalid handle、成功→失敗→成功、query不要条件の保持をGREEN。
+- [x] hex設定streamからdecimal出力・flags復元を追加検証。既存実装が通ることを確認。
+- [x] 各pure helperの拒否後成功で古いstage/errorが残るREDを確認し、成功結果をclearしてGREEN。
+- [x] 全Windows x64 CTestを実行してcommit。
 
 ### Task 2: Windows Python fixture
 
@@ -46,18 +46,18 @@
 
 **Interfaces:** production CPU runtime gateのsignature/判定は変更しない。test artifact pathのPOSIX表現を維持。
 
-- [ ] 前回の5 methods / 6 errorsを現在checkoutで再現。
-- [ ] link検証を独立化し、能力不足時のみ明示skip。通常path検証は必ず実行。
-- [ ] Windowsで不可能なshadow directory作成を抑止し、malicious manifestの拒否を検証。
-- [ ] header-only fixtureのmanifest検索pathをPOSIXに修正。
-- [ ] golden改行変換を.gitattributesで抑止、git blobの元bytesと既存hashを検証。
-- [ ] 修正対象と全Python suiteをローカル実行し、skip理由を記録してcommit。
+- [x] 前回の5 methods / 6 errorsを現在checkoutで再現。
+- [x] link検証を独立化し、能力不足時のみ明示skip。通常path検証は必ず実行。
+- [x] Windowsで不可能なshadow directory作成を抑止し、malicious manifestの拒否を検証。
+- [x] header-only fixtureのmanifest検索pathをPOSIXに修正。
+- [x] golden改行変換を.gitattributesで抑止、git blobの元bytesと既存hashを検証。
+- [x] 修正対象と全Python suiteをローカル実行し、skip理由を記録してcommit。
 
 ### Task 3: 報告・PR更新・最終確認
 
 **Files:** 日本語followup report、validation.json、guide/READMEへの導線、ローカル配布package。
 
-- [ ] 検証済みsource/binary/log hash、新旧結果、残runtime境界を保存。
-- [ ] 全branchの独立read-only review、重大指摘のTDD修正。
-- [ ] PR #18へまとめてpushし、最終CIを1回確認。結果はPR本文へ記録し不要な再CIを避ける。
+- [x] 検証済みsource/binary/log hash、新旧結果、残runtime境界を保存。
+- [x] 全branchの独立read-only review、重大指摘のTDD修正。
+- [ ] PR #18へまとめてpushし、最終CIを1回確認。結果はPR本文へ記録し不要な再CIを避ける（外部状態のsource of truthはPR本文/checks）。
 - [ ] local packageを新binary/provenanceへ更新し、CRC/内容を検証。

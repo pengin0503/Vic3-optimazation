@@ -60,4 +60,4 @@
 - [x] Step 1: base/変更内容/RED→GREEN/Windows環境/limitationsを保存。
 - [x] Step 2: 新binaryのprovenance/hashと診断だけのコマンドを記載。旧artifact hashを新binaryに適用しない。
 - [x] Step 3: 全branch reviewを依頼し、重大な指摘を修正・検証。
-- [ ] Step 4: 新branchをpush、PRを作成。PRの最終CIを一度確認し、結果を保存する。最終結果のsource of truthはPR本文とchecks（不要な文書pushで再CIしない）。
+- [x] Step 4: 新branchをpush、PRを作成。PRの最終CIを一度確認し、結果を保存する。最終結果のsource of truthはPR本文とchecks（不要な文書pushで再CIしない）。

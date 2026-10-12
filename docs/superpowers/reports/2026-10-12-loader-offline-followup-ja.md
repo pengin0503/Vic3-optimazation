@@ -27,7 +27,13 @@ Date: 2026-10-12 JST
 | golden RED→GREEN | checkout byte hash不一致を再現→元blob/新attributeで1 test OK、元hash維持 |
 | Windows Python全suite | 257 tests、OK（skipped=8）、errors/failures=0。リンク検証を2つの独立methodsに分離したので前回255から257へ増えた |
 
-前回の6 errorsは今回のWindows full suiteでは0。skip8は前回からの6件（実ゲームfixture等の環境条件）と、今回独立したlink能力不足の2件。skipを合格件数に含めない。最終CI、独立reviewの最終結果は完了後にこの報告とPR本文へ記録する。CIは今回の最終確認で1回だけ起動し、途中の変更はpushしていない。
+前回の6 errorsは今回のWindows full suiteでは0。skip8はVIC3_DATA未指定の2件、hardlink作成拒否の5ケース、symlink権限不足の1件。うちlink2件は今回の独立化で追加されたmethods。skipを合格件数に含めない。最終CIのrun/head/job結果はPR本文とchecksへ記録し、結果を追記するだけのpushで再CIしない。CIは今回の最終確認で1回だけ起動し、途中の変更はpushしていない。
+
+## 独立review
+
+read-only reviewerが追加範囲 `b4b7365..62544bb` を確認し、Critical / Important / Minorはいずれも0。全followupログ8本、binary2本のSHA-256一致、golden4点のblob不変、拒否後のcaller停止、通常の否定検証がskipされないことを確認した。追加修正passや再reviewは不要だった。
+
+判断対象外は実ゲーム/性能、既存のメモリ変化競合とコード全体の信頼、Windowsで能力不足となった実link結果、レビュー時点で未実施の最終CI/package検証。CI/packageはこの後に完了させてPR本文へ結果を保存する。review中の計画checkbox更新はcode変更ではなく、本作業で別途確認した。
 
 ## 残る境界
 
