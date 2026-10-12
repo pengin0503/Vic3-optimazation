@@ -32,11 +32,11 @@
 
 **Interfaces:** Consumes `ValidateRemoteExportRead(local,remote,bytes_read,d)`。Produces v3診断、probe_available、固定長byte配列、first_mismatch/mismatch_count、E9観測target。
 
-- [ ] Step 1: ログにlocal/remote bytes、不一致位置、E9行先が必要なテストを先に追加。
-- [ ] Step 2: NativeModuleResolutionTestsを実行し、現行ログ不足でFAILを確認。
-- [ ] Step 3: 完全読取時の証拠、reset、符号付きE9境界検査、v3書式を実装。
-- [ ] Step 4: 全16位置、複数差分、部分読取、reuse、未知形式、整数境界を追加しGREEN。
-- [ ] Step 5: 差分検査とcommit。
+- [x] Step 1: ログにlocal/remote bytes、不一致位置、E9行先が必要なテストを先に追加。
+- [x] Step 2: NativeModuleResolutionTestsを実行し、現行ログ不足でFAILを確認。
+- [x] Step 3: 完全読取時の証拠、reset、符号付きE9境界検査、v3書式を実装。
+- [x] Step 4: 全16位置、複数差分、部分読取、reuse、未知形式、整数境界を追加しGREEN。
+- [x] Step 5: 差分検査とcommit。
 
 ### Task 2: Windows adapterとCLI
 
@@ -44,12 +44,12 @@
 
 **Interfaces:** Consumes Task 1 diagnostics。Produces `DiagnoseLoadLibraryForValidatedProcess(HANDLE,DWORD,ModuleResolutionDiagnostics&) -> bool` とexclusive CLI flag。
 
-- [ ] Step 1: CLI flagのparser受理/混在拒否を先に追加し、FAILを確認。
-- [ ] Step 2: exclusive parser、read-only権限/早期分岐、共用resolverを実装してGREEN。
-- [ ] Step 3: handle/PID不一致を先にテストし、現行resolverの不足でFAILを確認。
-- [ ] Step 4: GetProcessId/GetProcessTimes gate、FILETIME記録、追加queryを実装してGREEN。
-- [ ] Step 5: real read-only handleの成功/拒否、対象外CLI、既存synthetic injection/stopを検証。
-- [ ] Step 6: Windows Release buildと全CTest、Python suite、generated include check、diff checkを実行してcommit。
+- [x] Step 1: CLI flagのparser受理/混在拒否を先に追加し、FAILを確認。
+- [x] Step 2: exclusive parser、read-only権限/早期分岐、共用resolverを実装してGREEN。
+- [x] Step 3: handle/PID不一致を先にテストし、現行resolverの不足でFAILを確認。
+- [x] Step 4: GetProcessId/GetProcessTimes gate、FILETIME記録、追加queryを実装してGREEN。
+- [x] Step 5: real read-only handleの成功/拒否、対象外CLI、既存synthetic injection/stopを検証。
+- [x] Step 6: Windows Release buildと全CTest、Python suite、generated include check、diff checkを実行してcommit。
 
 ### Task 3: 日本語報告と最終確認
 
@@ -57,7 +57,7 @@
 
 **Interfaces:** Consumes Task 1/2のログ/CLIと検証結果。Produces 次回read-only実ゲーム手順、未解決事項、PR。
 
-- [ ] Step 1: base/変更内容/RED→GREEN/Windows環境/limitationsを保存。
-- [ ] Step 2: 新binaryのprovenance/hashと診断だけのコマンドを記載。旧artifact hashを新binaryに適用しない。
-- [ ] Step 3: 全branch reviewを依頼し、重大な指摘を修正・検証。
-- [ ] Step 4: 新branchをpush、PRを作成。PRの最終CIを一度確認し、結果を保存する。
+- [x] Step 1: base/変更内容/RED→GREEN/Windows環境/limitationsを保存。
+- [x] Step 2: 新binaryのprovenance/hashと診断だけのコマンドを記載。旧artifact hashを新binaryに適用しない。
+- [x] Step 3: 全branch reviewを依頼し、重大な指摘を修正・検証。
+- [ ] Step 4: 新branchをpush、PRを作成。PRの最終CIを一度確認し、結果を保存する。最終結果のsource of truthはPR本文とchecks（不要な文書pushで再CIしない）。
