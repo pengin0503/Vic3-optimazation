@@ -5,7 +5,7 @@ Date: 2026-10-12 JST
 **最初に行うのはAのみ。12本の本測定やOS traceはまだ不要。** Aが失敗したらログを保存してそこで止め、同じprocessへの再attach・retryはしない。A成功後にB、A/Bの正常接続・停止が確認できてからCへ進む。read-only profilerは軽量化patchではなく、今回CPU使用率や速度が改善することを期待する検証ではない。
 
 
-**2026-10-12実測の重要な追記:** 初回disabled attachは `stage=byte_mismatch` / exit 8で失敗。その後、別のゲームプロセスで `LoadLibraryW → MEM_PRIVATE中継領域 → Steam gameoverlayrenderer64.dll` のジャンプ経路が観測された。Steam Overlayを無効化した対照試験と接続成功は未実施。診断ログ・未解決点・安全な次の検証条件は[実ゲームattach失敗の調査記録](../reports/2026-10-12-game-attach-steam-overlay-byte-mismatch-ja.md)を参照。失敗した同一PIDへ再attachしない。詳細な対照条件と判定は[Issue #17](https://github.com/pengin0503/Vic3-optimazation/issues/17)に記録した。Steam Overlayを個別に無効化した場合の結果は**まだ未実施**であり、code4の解消は確認していない。
+**2026-10-12実測の重要な追記:** 初回disabled attachは `stage=byte_mismatch` / exit 8で失敗。その後、別のゲームプロセスで `LoadLibraryW → MEM_PRIVATE中継領域 → Steam gameoverlayrenderer64.dll` のジャンプ経路が観測された。その後OverlayをOFFと申告した状態でも別のゲームPID16352で`byte_mismatch`/exit8を再現し、さらに別PID9280ではread-onlyで同じSteam DLLへのジャンプ経路が観測された。正常接続は未確認。診断ログ・未解決点・安全な次の検証条件は[実ゲームattach失敗の調査記録](../reports/2026-10-12-game-attach-steam-overlay-byte-mismatch-ja.md)を参照。失敗した同一PIDへ再attachしない。詳細な対照条件と判定は[Issue #17](https://github.com/pengin0503/Vic3-optimazation/issues/17)に記録した。Overlay OFF状態での再現記録をIssueに追記済み。次は安全な接続方式のオフライン設計/検証へ進む。PID9280のLoader接続は未実施であり、code4の解消は未確認。
 
 ## 0. 最新診断binaryを用意（ゲーム起動前）
 
