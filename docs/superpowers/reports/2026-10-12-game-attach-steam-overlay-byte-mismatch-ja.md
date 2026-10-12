@@ -8,7 +8,7 @@ Date: 2026-10-12 JST
 
 - **観測済み:** disabled modeのネイティブProfiler Loaderが `Attach failed (no retry), code 4` / exit 8で失敗。詳細段階は `byte_mismatch`。これは同一APIアドレスのローカル/ゲーム側の先頭16バイト不一致による、DLL注入前のfail-closed拒否である。
 - **観測済み（後続の別プロセス）:** `KERNEL32.DLL!LoadLibraryW` のゲーム側入口は `E9` detourに変更されており、16 KiBの `MEM_PRIVATE` / `PAGE_EXECUTE_READWRITE` 中継領域を経由し、**Steam `gameoverlayrenderer64.dll` の `MEM_IMAGE` 実行領域**に到達する。
-- **強い示唆:** Steamゲーム内オーバーレイのコード経路が、このAPIフックに関係する。**ただし、フックを最初に設置した主体、Steam Overlay無効化時の挙動、全プロセスでの再現性は未確認**。ジャンプ先がSteam DLLであることと「Steamが直接パッチを書いた」との主張を区別する。
+- **強い示唆:** Steamゲーム内オーバーレイのコード経路が、このAPIフックに関係する。**ただし、フックを最初に設置した主体と全プロセスでの再現性は未確認**。2026-10-12の追加試験ではOverlay OFF（ユーザー申告）でも同経路を観測した（第7節）。ジャンプ先がSteam DLLであることと「Steamが直接パッチを書いた」との主張を区別する。
 - **重要な境界:** 実際にLoader接続が失敗したゲームのPIDは `28636`、後続の読み取り専用メモリ検査を行ったゲームのPIDは `3584`。それぞれ別プロセスで、同一個体の連続記録とは扱わない。
 - **未実施:** disabled attach成功、stop/finalize、3 target enabled、TickTask CSVとの同期、observer overhead、OS Running/Ready/Waiting採取、速度改善やネイティブ最適化。
 
@@ -113,7 +113,7 @@ MappedFile : \Device\HarddiskVolume3\Program Files (x86)\Steam\GameOverlayRender
 - ゲーム実測Phase 4 gateをready扱いすること、CPU高速化の主張。
 - 単独のモジュール一覧だけを根拠にSteam/AMDが原因と断定すること。
 
-## 5. 次に実施可能な最小の対照試験（未実施）
+## 5. 最小の対照試験（当初の手順。実施済み条件は第7節を参照）
 
 1. **SteamのVictoria 3個別設定で「ゲーム中にSteamオーバーレイを有効にする」を無効化**し、ゲームを完全終了後、新しいPIDで通常起動する。Windowsセキュリティ機能や検証gateは変更しない。
 2. exact 1.14.5のゲーム実行ファイルと同じLoader/DLLのSHA-256、初期save、PIDとprocess start UTCを保存し、`LoadLibraryW` 入口16バイトの読み取り専用比較を再実行する。Steam overlay DLLのロード有無も記録する。
@@ -133,3 +133,42 @@ MappedFile : \Device\HarddiskVolume3\Program Files (x86)\Steam\GameOverlayRender
 - [Phase 4 runtime gate](2026-10-12-cpu-runtime-evidence-gate-ja.md)
 
 プライバシーとサイズのため、Windowsのユーザープロファイルへの絶対パスや実行ファイル、セーブ、上記生ログ/ZIPはこのGitHub文書へ添付しない。証拠の値・取得範囲・ハッシュのみを記録する。
+
+
+## 7. 追補：Overlay OFFでの実測（2026-10-12 JST）
+
+### 7.1 PID 16352：disabled attachの再試行ではなく、新規プロセスでの再発例
+
+ユーザー環境ではSteam Overlayを**OFFに設定済み**と申告。PID `16352`（開始時刻UTC: `2026-10-12 10:32:42`、ユーザー出力は秒精度）で`--disabled`を1度実行し、`Attach failed (no retry), code 4` / `Attach exit=8` / `stage=byte_mismatch`。診断値は前回と同じ `owner_path=C:\WINDOWS\System32\KERNEL32.DLL`、`export_rva=257584 (0x3EE30)`、`matches=1`、`bytes_read=16`、`remote_state=4096`、`remote_protection=32`、`win32_error=0`、`pe_error=0`。添付された失敗ログの採取先（ローカル）: `C:\Vic3Optimization-current\local-data\game-smoke\disabled-067488f3fc8c4e6eb63bd337d7e7f285`。attach失敗後、ガイドのguardでstop/parseを実施せずに中止した。
+
+同じPIDの**モジュール列挙**では `gameoverlayrenderer64.dll`（`C:\Program Files (x86)\Steam\gameoverlayrenderer64.dll`）と `amdihk64.dll`（AMD）の両方が存在。ただしPID 16352のジャンプバイト自体はここでは採取していない。
+
+### 7.2 PID 9280：Overlay OFFでも同じジャンプ経路が存在
+
+ユーザーはSteam Overlay無効化後にSteam/ゲームを再起動する流れで新しいVictoria 3のPID `9280` を報告。ユーザー設定の申告は**OFF**だが、Steamの実際の内部設定反映状況を独立に検証した記録はない。
+
+JSON一次証拠 `overlay-check-9280.json`（チャット添付）から：
+
+| 項目 | 観測値 |
+| --- | --- |
+| PID / UTC process start | `9280` / `2026-10-12T10:45:30.0398719Z` |
+| `LoadLibraryW` RVA | `0x3EE30` |
+| ローカル先頭16バイト（PowerShell側） | `48-FF-25-C9-C5-04-00-CC-CC-CC-CC-CC-CC-CC-CC-CC` |
+| ゲーム側先頭16バイト | `E9-57-13-FF-FD-04-00-CC-CC-CC-CC-CC-CC-CC-CC-CC` |
+| バイト比較 | `Equal=false` |
+| hop 0 | `0x00007FFB9924EE30`、`KERNEL32.DLL`、`E9-57-13-FF-FD` |
+| hop 1 | `0x00007FFB9724018C`、列挙DLL外、`E9-9F-D5-A4-A8` |
+| hop 2 | `0x00007FFB3FC8D730`、`gameoverlayrenderer64.dll`、`48-89-5C-24-10-57-48-83-EC-50-80-3D-F7-31-0E-00` |
+
+同じPID `9280` でユーザーが列挙したロード済みモジュールは `gameoverlayrenderer64.dll` および `amdihk64.dll` を含む。hop 0の相対変位は `-33615017`、hop 1は `-1465985633`、それぞれhop 1およびhop 2のアドレスに一致する。hop 2で採取された16バイトは当該Steam DLL内でのメモリ読取であり、モジュールのファイルハッシュや書き込み主体の証明ではない。
+
+この検査は **read-onlyのコード読取のみ**。**PID 9280に対してProfiler Loaderのattachを実行した記録はない**。PID 16352のattach失敗と、PID 9280の実測ジャンプ経路を混同しない。
+
+### 7.3 更新した結論・次の安全な開発ゲート
+
+1. Steam Overlay OFFというユーザー指定条件でも、Steam DLLのロードおよび`LoadLibraryW → private trampoline → Steam DLL`の経路が再観測された。**単にOverlay設定をOFFにしただけでは今回のフックは消えない**。ただしSteamが最初にパッチを設置した主体かは未確認。
+2. Loaderは16-byte一致gateでfail-closedし、少なくとも観測したPID 16352では接続未成功。この状態を修正成功やPhase 4完了と扱わない。
+3. 次のオフライン課題は [Issue #17](https://github.com/pengin0503/Vic3-optimazation/issues/17) に沿い、現在の `Injector.cpp`、`ModuleResolutionPolicy.*`、diagnosticsとテストの制約を評価し、**検証を無条件回避せず**Steam等のインラインフック環境で利用可能な安全な接続/診断方式を比較すること。安全性が証明できなければfail-closedを維持し、read-only診断とユーザー向け切り分けを改善する。
+4. Native実装前にはSuperpowersで仕様・回帰テスト・失敗判定を確立する。新しいWindows実機接続成功は別途必要であり、offline合成テスト成功だけで保証しない。
+
+元の証拠はチャット添付`overlay-check-9280.json`および各PowerShell出力。ZIPやログの生バイナリはGitHub文書へ転記しない。
