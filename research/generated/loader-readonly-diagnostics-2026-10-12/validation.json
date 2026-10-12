@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "date_jst": "2026-10-12",
+  "base_main": "321064d479248153585c0e838f8c25836aeae783",
+  "validated_source_commit": "32e5b47276344ade818f7cbf3a9172536267d5bf",
+  "branch": "fix/loader-readonly-byte-mismatch",
+  "platform": "Windows 11 10.0.26200 x64",
+  "compiler": "MSVC 19.51.36260.0",
+  "windows_sdk": "10.0.26100.0",
+  "configuration": "Release",
+  "minhook_commit": "c3fcafdc10146beb5919319d0683e44e3c30d537",
+  "native_baseline": {
+    "total": 10,
+    "passed": 10
+  },
+  "native_final": {
+    "total": 10,
+    "command": "ctest --test-dir build/native -C Release --output-on-failure",
+    "passed": 10
+  },
+  "python_full": {
+    "skipped": 6,
+    "command": "python -m unittest discover -s tests",
+    "tests_run": 255,
+    "errors": 6,
+    "status": "failed_existing_windows_fixture_and_sandbox_errors"
+  },
+  "generated_include_check": "passed",
+  "synthetic_trace_parsers": "passed",
+  "diff_check": "passed",
+  "real_game_attach_verified": false,
+  "phase4_complete": false,
+  "cpu_speedup_verified": false,
+  "byte_comparison_preserved": true,
+  "readonly_cli": "--diagnose-loadlibrary --pid PID",
+  "branch_observation": "E9 rel32 first destination only; never used as execution address",
+  "binaries": {
+    "Vic3OptimizationLoader.exe": {
+      "bytes": 103936,
+      "sha256": "d107043ede4f91c4f45f33c91a3ea93db224cd0b2e72e7e2f9b663059d6d6f85",
+      "provenance": "local build, validated_source_commit; CI artifacts will differ"
+    },
+    "Vic3OptimizationProfiler.dll": {
+      "bytes": 97280,
+      "sha256": "070341de397fc6f433e112030b4b45bbf83e31bad9f01b674dbf0c935edd4e82",
+      "provenance": "local build, validated_source_commit; CI artifacts will differ"
+    }
+  },
+  "evidence_logs": {
+    "task1-green.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "861121b30359c227b327d8948c8c2faf4212ce3d2fd8eb8611a4359c90b90b8b"
+    },
+    "task2-cli-red.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "4ddc5e473cbd844374731b92d40fdc361d65faaa4f692ad708b83e519bf7cc7c"
+    },
+    "python-tests-final.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "01192e1f1ba0e4621a672352cf64c8c851d3cd6e50cbdc746a779c38920bb350"
+    },
+    "task2-identity-green.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "7c26ac45eedd3d89a68bcfa7382ecadb26238a5603bfe0d0ed49ebe2108f486f"
+    },
+    "task1-red.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "d14d9ad86ef4d59b47588c3781a4c66b8f70e311c739d7a1e04e052e297b16bb"
+    },
+    "task2-cli-green.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "11c892ba6ddf365d9f7f344f4403d7c600a6860122508ed0eeaa667fd93416e8"
+    },
+    "task2-identity-red.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "4d4a4b09a680146484f7c3e42835314dca022c9f903c78ecbdf0c52443abcc23"
+    },
+    "final-ctest.log": {
+      "storage": "local work/loader-diagnostics; raw absolute paths not published",
+      "sha256": "cda9cc3c08601eec4c217fcc20af2cb2211c8aca3e0554eece9f5cc5621f9652"
+    }
+  }
+}
