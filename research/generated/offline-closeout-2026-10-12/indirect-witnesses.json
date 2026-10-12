@@ -1,0 +1,2561 @@
+{
+  "confirmed_dependency_edges": [],
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "source_json_sha256": "6dee83e98fbf33fc6b3eabcbb7770fd50af953e3f21fee0cdf666d08069d8fd4",
+  "static_only": true,
+  "warning": "Instruction/owner witnesses only; callee, object type, dependency and runtime cost remain unverified.",
+  "witness_count": 40,
+  "witnesses": [
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 3b d0",
+          "instruction_rva": "0x64b31b",
+          "mnemonic": "cmp",
+          "operand": "rdx, rax"
+        },
+        {
+          "bytes": "74 0c",
+          "instruction_rva": "0x64b31e",
+          "mnemonic": "je",
+          "operand": "0x64b32c"
+        },
+        {
+          "bytes": "49 83 e0 fc",
+          "instruction_rva": "0x64b320",
+          "mnemonic": "and",
+          "operand": "r8, 0xfffffffffffffffc"
+        },
+        {
+          "bytes": "48 8b cf",
+          "instruction_rva": "0x64b324",
+          "mnemonic": "mov",
+          "operand": "rcx, rdi"
+        },
+        {
+          "bytes": "e8 e4 17 c3 03",
+          "instruction_rva": "0x64b327",
+          "mnemonic": "call",
+          "operand": "0x427cb10"
+        },
+        {
+          "bytes": "48 8b 4b 10",
+          "instruction_rva": "0x64b32c",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0x10]"
+        },
+        {
+          "bytes": "48 8b 13",
+          "instruction_rva": "0x64b330",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx]"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x64b333",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x64b336",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x64b2f0",
+      "range_begin_rva": "0x64b2f0",
+      "range_end_rva": "0x64b34f",
+      "range_sha256": "cb5bbbe4db134a3cda6fc7e390825fe23ca40fde114e66acc56aa9bafe9b0919",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "44 3b c0",
+          "instruction_rva": "0x7d66f0",
+          "mnemonic": "cmp",
+          "operand": "r8d, eax"
+        },
+        {
+          "bytes": "48 89 74 24 38",
+          "instruction_rva": "0x7d66f3",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x38], rsi"
+        },
+        {
+          "bytes": "44 0f 4c c0",
+          "instruction_rva": "0x7d66f8",
+          "mnemonic": "cmovl",
+          "operand": "r8d, eax"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x7d66fc",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        },
+        {
+          "bytes": "41 8b d0",
+          "instruction_rva": "0x7d66ff",
+          "mnemonic": "mov",
+          "operand": "edx, r8d"
+        },
+        {
+          "bytes": "41 8b e8",
+          "instruction_rva": "0x7d6702",
+          "mnemonic": "mov",
+          "operand": "ebp, r8d"
+        },
+        {
+          "bytes": "41 b8 04 00 00 00",
+          "instruction_rva": "0x7d6705",
+          "mnemonic": "mov",
+          "operand": "r8d, 4"
+        },
+        {
+          "bytes": "48 c1 e2 02",
+          "instruction_rva": "0x7d670b",
+          "mnemonic": "shl",
+          "operand": "rdx, 2"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 08",
+        "instruction_rva": "0x7d670f",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 8]"
+      },
+      "owner_function_rva": "0x7d66b0",
+      "range_begin_rva": "0x7d66b0",
+      "range_end_rva": "0x7d6794",
+      "range_sha256": "cc76d0b57d8c5b0e0e25c7c4f7b04b5233868a4ba4466296aa26d1b2d0ec26ad",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 8b cb",
+          "instruction_rva": "0x16a3802",
+          "mnemonic": "mov",
+          "operand": "rcx, rbx"
+        },
+        {
+          "bytes": "e8 36 f9 13 ff",
+          "instruction_rva": "0x16a3805",
+          "mnemonic": "call",
+          "operand": "0x7e3140"
+        },
+        {
+          "bytes": "48 81 c3 10 02 00 00",
+          "instruction_rva": "0x16a380a",
+          "mnemonic": "add",
+          "operand": "rbx, 0x210"
+        },
+        {
+          "bytes": "48 3b dd",
+          "instruction_rva": "0x16a3811",
+          "mnemonic": "cmp",
+          "operand": "rbx, rbp"
+        },
+        {
+          "bytes": "75 da",
+          "instruction_rva": "0x16a3814",
+          "mnemonic": "jne",
+          "operand": "0x16a37f0"
+        },
+        {
+          "bytes": "48 8b 4e 10",
+          "instruction_rva": "0x16a3816",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rsi + 0x10]"
+        },
+        {
+          "bytes": "48 8b 16",
+          "instruction_rva": "0x16a381a",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rsi]"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x16a381d",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x16a3820",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x16a37b0",
+      "range_begin_rva": "0x16a37b0",
+      "range_end_rva": "0x16a3843",
+      "range_sha256": "4ceda61b1c6cdfc2f795c2c08c17272e28aede25ec83569f7bacb52622ad9149",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "c5 fa 2c c0",
+          "instruction_rva": "0x3b94ecd",
+          "mnemonic": "vcvttss2si",
+          "operand": "eax, xmm0"
+        },
+        {
+          "bytes": "3b c8",
+          "instruction_rva": "0x3b94ed1",
+          "mnemonic": "cmp",
+          "operand": "ecx, eax"
+        },
+        {
+          "bytes": "41 b8 08 00 00 00",
+          "instruction_rva": "0x3b94ed3",
+          "mnemonic": "mov",
+          "operand": "r8d, 8"
+        },
+        {
+          "bytes": "0f 4c c8",
+          "instruction_rva": "0x3b94ed9",
+          "mnemonic": "cmovl",
+          "operand": "ecx, eax"
+        },
+        {
+          "bytes": "44 8b f9",
+          "instruction_rva": "0x3b94edc",
+          "mnemonic": "mov",
+          "operand": "r15d, ecx"
+        },
+        {
+          "bytes": "48 8b 4f 10",
+          "instruction_rva": "0x3b94edf",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rdi + 0x10]"
+        },
+        {
+          "bytes": "49 69 d7 10 02 00 00",
+          "instruction_rva": "0x3b94ee3",
+          "mnemonic": "imul",
+          "operand": "rdx, r15, 0x210"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3b94eea",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 08",
+        "instruction_rva": "0x3b94eed",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 8]"
+      },
+      "owner_function_rva": "0x3b94e40",
+      "range_begin_rva": "0x3b94e40",
+      "range_end_rva": "0x3b94fb7",
+      "range_sha256": "5838eb89b50aec63061db70356f453183e8836fabc50da326256c8e57e47556f",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 8b d9",
+          "instruction_rva": "0x3c2d6e6",
+          "mnemonic": "mov",
+          "operand": "rbx, rcx"
+        },
+        {
+          "bytes": "48 8b 4f 38",
+          "instruction_rva": "0x3c2d6e9",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rdi + 0x38]"
+        },
+        {
+          "bytes": "33 f6",
+          "instruction_rva": "0x3c2d6ed",
+          "mnemonic": "xor",
+          "operand": "esi, esi"
+        },
+        {
+          "bytes": "48 85 c9",
+          "instruction_rva": "0x3c2d6ef",
+          "mnemonic": "test",
+          "operand": "rcx, rcx"
+        },
+        {
+          "bytes": "74 10",
+          "instruction_rva": "0x3c2d6f2",
+          "mnemonic": "je",
+          "operand": "0x3c2d704"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d6f4",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        },
+        {
+          "bytes": "48 3b cf",
+          "instruction_rva": "0x3c2d6f7",
+          "mnemonic": "cmp",
+          "operand": "rcx, rdi"
+        },
+        {
+          "bytes": "0f 95 c2",
+          "instruction_rva": "0x3c2d6fa",
+          "mnemonic": "setne",
+          "operand": "dl"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 20",
+        "instruction_rva": "0x3c2d6fd",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x20]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "ff 50 20",
+          "instruction_rva": "0x3c2d6fd",
+          "mnemonic": "call",
+          "operand": "qword ptr [rax + 0x20]"
+        },
+        {
+          "bytes": "48 89 77 38",
+          "instruction_rva": "0x3c2d700",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rdi + 0x38], rsi"
+        },
+        {
+          "bytes": "48 8b 93 90 00 00 00",
+          "instruction_rva": "0x3c2d704",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx + 0x90]"
+        },
+        {
+          "bytes": "48 85 d2",
+          "instruction_rva": "0x3c2d70b",
+          "mnemonic": "test",
+          "operand": "rdx, rdx"
+        },
+        {
+          "bytes": "74 20",
+          "instruction_rva": "0x3c2d70e",
+          "mnemonic": "je",
+          "operand": "0x3c2d730"
+        },
+        {
+          "bytes": "48 8b 8b a0 00 00 00",
+          "instruction_rva": "0x3c2d710",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0xa0]"
+        },
+        {
+          "bytes": "89 b3 9c 00 00 00",
+          "instruction_rva": "0x3c2d717",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x9c], esi"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d71d",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x3c2d720",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "89 b3 98 00 00 00",
+          "instruction_rva": "0x3c2d72a",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x98], esi"
+        },
+        {
+          "bytes": "48 39 73 78",
+          "instruction_rva": "0x3c2d730",
+          "mnemonic": "cmp",
+          "operand": "qword ptr [rbx + 0x78], rsi"
+        },
+        {
+          "bytes": "74 24",
+          "instruction_rva": "0x3c2d734",
+          "mnemonic": "je",
+          "operand": "0x3c2d75a"
+        },
+        {
+          "bytes": "48 8d 4b 78",
+          "instruction_rva": "0x3c2d736",
+          "mnemonic": "lea",
+          "operand": "rcx, [rbx + 0x78]"
+        },
+        {
+          "bytes": "e8 61 32 a0 fc",
+          "instruction_rva": "0x3c2d73a",
+          "mnemonic": "call",
+          "operand": "0x6309a0"
+        },
+        {
+          "bytes": "48 8b 8b 88 00 00 00",
+          "instruction_rva": "0x3c2d73f",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0x88]"
+        },
+        {
+          "bytes": "48 8b 53 78",
+          "instruction_rva": "0x3c2d746",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx + 0x78]"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d74a",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x3c2d74d",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "89 b3 80 00 00 00",
+          "instruction_rva": "0x3c2d754",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x80], esi"
+        },
+        {
+          "bytes": "48 39 73 60",
+          "instruction_rva": "0x3c2d75a",
+          "mnemonic": "cmp",
+          "operand": "qword ptr [rbx + 0x60], rsi"
+        },
+        {
+          "bytes": "74 1e",
+          "instruction_rva": "0x3c2d75e",
+          "mnemonic": "je",
+          "operand": "0x3c2d77e"
+        },
+        {
+          "bytes": "48 8d 4b 60",
+          "instruction_rva": "0x3c2d760",
+          "mnemonic": "lea",
+          "operand": "rcx, [rbx + 0x60]"
+        },
+        {
+          "bytes": "e8 37 32 a0 fc",
+          "instruction_rva": "0x3c2d764",
+          "mnemonic": "call",
+          "operand": "0x6309a0"
+        },
+        {
+          "bytes": "48 8b 4b 70",
+          "instruction_rva": "0x3c2d769",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0x70]"
+        },
+        {
+          "bytes": "48 8b 53 60",
+          "instruction_rva": "0x3c2d76d",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx + 0x60]"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d771",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x3c2d774",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "89 73 68",
+          "instruction_rva": "0x3c2d77b",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x68], esi"
+        },
+        {
+          "bytes": "48 39 73 48",
+          "instruction_rva": "0x3c2d77e",
+          "mnemonic": "cmp",
+          "operand": "qword ptr [rbx + 0x48], rsi"
+        },
+        {
+          "bytes": "74 1e",
+          "instruction_rva": "0x3c2d782",
+          "mnemonic": "je",
+          "operand": "0x3c2d7a2"
+        },
+        {
+          "bytes": "48 8d 4b 48",
+          "instruction_rva": "0x3c2d784",
+          "mnemonic": "lea",
+          "operand": "rcx, [rbx + 0x48]"
+        },
+        {
+          "bytes": "e8 13 32 a0 fc",
+          "instruction_rva": "0x3c2d788",
+          "mnemonic": "call",
+          "operand": "0x6309a0"
+        },
+        {
+          "bytes": "48 8b 4b 58",
+          "instruction_rva": "0x3c2d78d",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0x58]"
+        },
+        {
+          "bytes": "48 8b 53 48",
+          "instruction_rva": "0x3c2d791",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx + 0x48]"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d795",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x3c2d798",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 89 73 48",
+          "instruction_rva": "0x3c2d79b",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbx + 0x48], rsi"
+        },
+        {
+          "bytes": "89 73 50",
+          "instruction_rva": "0x3c2d79f",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x50], esi"
+        },
+        {
+          "bytes": "48 8b 53 30",
+          "instruction_rva": "0x3c2d7a2",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx + 0x30]"
+        },
+        {
+          "bytes": "48 85 d2",
+          "instruction_rva": "0x3c2d7a6",
+          "mnemonic": "test",
+          "operand": "rdx, rdx"
+        },
+        {
+          "bytes": "74 14",
+          "instruction_rva": "0x3c2d7a9",
+          "mnemonic": "je",
+          "operand": "0x3c2d7bf"
+        },
+        {
+          "bytes": "48 8b 4b 40",
+          "instruction_rva": "0x3c2d7ab",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0x40]"
+        },
+        {
+          "bytes": "89 73 3c",
+          "instruction_rva": "0x3c2d7af",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x3c], esi"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d7b2",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x3c2d7b5",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 89 73 30",
+          "instruction_rva": "0x3c2d7b8",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbx + 0x30], rsi"
+        },
+        {
+          "bytes": "89 73 38",
+          "instruction_rva": "0x3c2d7bc",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x38], esi"
+        },
+        {
+          "bytes": "48 8b 53 18",
+          "instruction_rva": "0x3c2d7bf",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx + 0x18]"
+        },
+        {
+          "bytes": "48 85 d2",
+          "instruction_rva": "0x3c2d7c3",
+          "mnemonic": "test",
+          "operand": "rdx, rdx"
+        },
+        {
+          "bytes": "74 14",
+          "instruction_rva": "0x3c2d7c6",
+          "mnemonic": "je",
+          "operand": "0x3c2d7dc"
+        },
+        {
+          "bytes": "48 8b 4b 28",
+          "instruction_rva": "0x3c2d7c8",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0x28]"
+        },
+        {
+          "bytes": "89 73 24",
+          "instruction_rva": "0x3c2d7cc",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x24], esi"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d7cf",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x3c2d7d2",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "89 73 20",
+          "instruction_rva": "0x3c2d7d9",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx + 0x20], esi"
+        },
+        {
+          "bytes": "48 39 33",
+          "instruction_rva": "0x3c2d7dc",
+          "mnemonic": "cmp",
+          "operand": "qword ptr [rbx], rsi"
+        },
+        {
+          "bytes": "74 1b",
+          "instruction_rva": "0x3c2d7df",
+          "mnemonic": "je",
+          "operand": "0x3c2d7fc"
+        },
+        {
+          "bytes": "48 8b cb",
+          "instruction_rva": "0x3c2d7e1",
+          "mnemonic": "mov",
+          "operand": "rcx, rbx"
+        },
+        {
+          "bytes": "e8 67 5f a7 fd",
+          "instruction_rva": "0x3c2d7e4",
+          "mnemonic": "call",
+          "operand": "0x16a3750"
+        },
+        {
+          "bytes": "48 8b 4b 10",
+          "instruction_rva": "0x3c2d7e9",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rbx + 0x10]"
+        },
+        {
+          "bytes": "48 8b 13",
+          "instruction_rva": "0x3c2d7ed",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rbx]"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x3c2d7f0",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 50 10",
+        "instruction_rva": "0x3c2d7f3",
+        "mnemonic": "call",
+        "operand": "qword ptr [rax + 0x10]"
+      },
+      "owner_function_rva": "0x3c2d6d0",
+      "range_begin_rva": "0x3c2d6d0",
+      "range_end_rva": "0x3c2d80c",
+      "range_sha256": "f8becf7aa85dfde0e20b9e842a19303760f4c9c48805502feacf8816e395f77d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "40 53",
+          "instruction_rva": "0x423439c",
+          "mnemonic": "push",
+          "operand": "rbx"
+        },
+        {
+          "bytes": "48 83 ec 20",
+          "instruction_rva": "0x423439e",
+          "mnemonic": "sub",
+          "operand": "rsp, 0x20"
+        },
+        {
+          "bytes": "48 8b d9",
+          "instruction_rva": "0x42343a2",
+          "mnemonic": "mov",
+          "operand": "rbx, rcx"
+        },
+        {
+          "bytes": "48 8d 0d 7c 68 79 01",
+          "instruction_rva": "0x42343a5",
+          "mnemonic": "lea",
+          "operand": "rcx, [rip + 0x179687c]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 c6 23 15 00",
+        "instruction_rva": "0x42343ac",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x1523c6]"
+      },
+      "owner_function_rva": "0x423439c",
+      "range_begin_rva": "0x423439c",
+      "range_end_rva": "0x4234405",
+      "range_sha256": "f1802f17034c36ba9dd98b0f1be4b22afdba43eec3f37c3d3a651554eeaa7c47",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "ff c0",
+          "instruction_rva": "0x42343c5",
+          "mnemonic": "inc",
+          "operand": "eax"
+        },
+        {
+          "bytes": "89 05 4b ed fb 00",
+          "instruction_rva": "0x42343c7",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rip + 0xfbed4b], eax"
+        },
+        {
+          "bytes": "89 03",
+          "instruction_rva": "0x42343cd",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx], eax"
+        },
+        {
+          "bytes": "65 48 8b 04 25 58 00 00 00",
+          "instruction_rva": "0x42343cf",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr gs:[0x58]"
+        },
+        {
+          "bytes": "41 b9 40 00 00 00",
+          "instruction_rva": "0x42343d8",
+          "mnemonic": "mov",
+          "operand": "r9d, 0x40"
+        },
+        {
+          "bytes": "4c 8b 04 d0",
+          "instruction_rva": "0x42343de",
+          "mnemonic": "mov",
+          "operand": "r8, qword ptr [rax + rdx*8]"
+        },
+        {
+          "bytes": "8b 05 30 ed fb 00",
+          "instruction_rva": "0x42343e2",
+          "mnemonic": "mov",
+          "operand": "eax, dword ptr [rip + 0xfbed30]"
+        },
+        {
+          "bytes": "43 89 04 01",
+          "instruction_rva": "0x42343e8",
+          "mnemonic": "mov",
+          "operand": "dword ptr [r9 + r8], eax"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 6e 23 15 00",
+        "instruction_rva": "0x42343ec",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x15236e]"
+      },
+      "owner_function_rva": "0x423439c",
+      "range_begin_rva": "0x423439c",
+      "range_end_rva": "0x4234405",
+      "range_sha256": "f1802f17034c36ba9dd98b0f1be4b22afdba43eec3f37c3d3a651554eeaa7c47",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "41 b9 40 00 00 00",
+          "instruction_rva": "0x42343d8",
+          "mnemonic": "mov",
+          "operand": "r9d, 0x40"
+        },
+        {
+          "bytes": "4c 8b 04 d0",
+          "instruction_rva": "0x42343de",
+          "mnemonic": "mov",
+          "operand": "r8, qword ptr [rax + rdx*8]"
+        },
+        {
+          "bytes": "8b 05 30 ed fb 00",
+          "instruction_rva": "0x42343e2",
+          "mnemonic": "mov",
+          "operand": "eax, dword ptr [rip + 0xfbed30]"
+        },
+        {
+          "bytes": "43 89 04 01",
+          "instruction_rva": "0x42343e8",
+          "mnemonic": "mov",
+          "operand": "dword ptr [r9 + r8], eax"
+        },
+        {
+          "bytes": "ff 15 6e 23 15 00",
+          "instruction_rva": "0x42343ec",
+          "mnemonic": "call",
+          "operand": "qword ptr [rip + 0x15236e]"
+        },
+        {
+          "bytes": "48 8d 0d 27 68 79 01",
+          "instruction_rva": "0x42343f2",
+          "mnemonic": "lea",
+          "operand": "rcx, [rip + 0x1796827]"
+        },
+        {
+          "bytes": "48 83 c4 20",
+          "instruction_rva": "0x42343f9",
+          "mnemonic": "add",
+          "operand": "rsp, 0x20"
+        },
+        {
+          "bytes": "5b",
+          "instruction_rva": "0x42343fd",
+          "mnemonic": "pop",
+          "operand": "rbx"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "48 ff 25 03 1e 15 00",
+        "instruction_rva": "0x42343fe",
+        "mnemonic": "jmp",
+        "operand": "qword ptr [rip + 0x151e03]"
+      },
+      "owner_function_rva": "0x423439c",
+      "range_begin_rva": "0x423439c",
+      "range_end_rva": "0x4234405",
+      "range_sha256": "f1802f17034c36ba9dd98b0f1be4b22afdba43eec3f37c3d3a651554eeaa7c47",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "40 53",
+          "instruction_rva": "0x4234408",
+          "mnemonic": "push",
+          "operand": "rbx"
+        },
+        {
+          "bytes": "48 83 ec 20",
+          "instruction_rva": "0x423440a",
+          "mnemonic": "sub",
+          "operand": "rsp, 0x20"
+        },
+        {
+          "bytes": "48 8b d9",
+          "instruction_rva": "0x423440e",
+          "mnemonic": "mov",
+          "operand": "rbx, rcx"
+        },
+        {
+          "bytes": "48 8d 0d 10 68 79 01",
+          "instruction_rva": "0x4234411",
+          "mnemonic": "lea",
+          "operand": "rcx, [rip + 0x1796810]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 5a 23 15 00",
+        "instruction_rva": "0x4234418",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x15235a]"
+      },
+      "owner_function_rva": "0x4234408",
+      "range_begin_rva": "0x4234408",
+      "range_end_rva": "0x4234483",
+      "range_sha256": "c33977b7f80cdb06dce1e1d463a6f5b42a725025bba192cb270c75b85ea7bf0e",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "83 3b 00",
+          "instruction_rva": "0x423441e",
+          "mnemonic": "cmp",
+          "operand": "dword ptr [rbx], 0"
+        },
+        {
+          "bytes": "75 25",
+          "instruction_rva": "0x4234421",
+          "mnemonic": "jne",
+          "operand": "0x4234448"
+        },
+        {
+          "bytes": "c7 03 ff ff ff ff",
+          "instruction_rva": "0x4234423",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rbx], 0xffffffff"
+        },
+        {
+          "bytes": "eb 45",
+          "instruction_rva": "0x4234429",
+          "mnemonic": "jmp",
+          "operand": "0x4234470"
+        },
+        {
+          "bytes": "45 33 c9",
+          "instruction_rva": "0x423442b",
+          "mnemonic": "xor",
+          "operand": "r9d, r9d"
+        },
+        {
+          "bytes": "48 8d 15 f3 67 79 01",
+          "instruction_rva": "0x423442e",
+          "mnemonic": "lea",
+          "operand": "rdx, [rip + 0x17967f3]"
+        },
+        {
+          "bytes": "41 83 c8 ff",
+          "instruction_rva": "0x4234435",
+          "mnemonic": "or",
+          "operand": "r8d, 0xffffffff"
+        },
+        {
+          "bytes": "48 8d 0d e0 67 79 01",
+          "instruction_rva": "0x4234439",
+          "mnemonic": "lea",
+          "operand": "rcx, [rip + 0x17967e0]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 da 1d 15 00",
+        "instruction_rva": "0x4234440",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x151dda]"
+      },
+      "owner_function_rva": "0x4234408",
+      "range_begin_rva": "0x4234408",
+      "range_end_rva": "0x4234483",
+      "range_sha256": "c33977b7f80cdb06dce1e1d463a6f5b42a725025bba192cb270c75b85ea7bf0e",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "8b 0d 34 68 79 01",
+          "instruction_rva": "0x4234456",
+          "mnemonic": "mov",
+          "operand": "ecx, dword ptr [rip + 0x1796834]"
+        },
+        {
+          "bytes": "41 b8 40 00 00 00",
+          "instruction_rva": "0x423445c",
+          "mnemonic": "mov",
+          "operand": "r8d, 0x40"
+        },
+        {
+          "bytes": "48 8b 14 c8",
+          "instruction_rva": "0x4234462",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rax + rcx*8]"
+        },
+        {
+          "bytes": "8b 05 ac ec fb 00",
+          "instruction_rva": "0x4234466",
+          "mnemonic": "mov",
+          "operand": "eax, dword ptr [rip + 0xfbecac]"
+        },
+        {
+          "bytes": "41 89 04 10",
+          "instruction_rva": "0x423446c",
+          "mnemonic": "mov",
+          "operand": "dword ptr [r8 + rdx], eax"
+        },
+        {
+          "bytes": "48 8d 0d b1 67 79 01",
+          "instruction_rva": "0x4234470",
+          "mnemonic": "lea",
+          "operand": "rcx, [rip + 0x17967b1]"
+        },
+        {
+          "bytes": "48 83 c4 20",
+          "instruction_rva": "0x4234477",
+          "mnemonic": "add",
+          "operand": "rsp, 0x20"
+        },
+        {
+          "bytes": "5b",
+          "instruction_rva": "0x423447b",
+          "mnemonic": "pop",
+          "operand": "rbx"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "48 ff 25 dd 22 15 00",
+        "instruction_rva": "0x423447c",
+        "mnemonic": "jmp",
+        "operand": "qword ptr [rip + 0x1522dd]"
+      },
+      "owner_function_rva": "0x4234408",
+      "range_begin_rva": "0x4234408",
+      "range_end_rva": "0x4234483",
+      "range_sha256": "c33977b7f80cdb06dce1e1d463a6f5b42a725025bba192cb270c75b85ea7bf0e",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 89 5c 24 70",
+          "instruction_rva": "0x42344bd",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x70], rbx"
+        },
+        {
+          "bytes": "48 85 c0",
+          "instruction_rva": "0x42344c2",
+          "mnemonic": "test",
+          "operand": "rax, rax"
+        },
+        {
+          "bytes": "74 19",
+          "instruction_rva": "0x42344c5",
+          "mnemonic": "je",
+          "operand": "0x42344e0"
+        },
+        {
+          "bytes": "48 2b fe",
+          "instruction_rva": "0x42344c7",
+          "mnemonic": "sub",
+          "operand": "rdi, rsi"
+        },
+        {
+          "bytes": "48 89 7c 24 60",
+          "instruction_rva": "0x42344ca",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x60], rdi"
+        },
+        {
+          "bytes": "48 8b cf",
+          "instruction_rva": "0x42344cf",
+          "mnemonic": "mov",
+          "operand": "rcx, rdi"
+        },
+        {
+          "bytes": "49 8b c6",
+          "instruction_rva": "0x42344d2",
+          "mnemonic": "mov",
+          "operand": "rax, r14"
+        },
+        {
+          "bytes": "48 8b 15 8c 33 15 00",
+          "instruction_rva": "0x42344d5",
+          "mnemonic": "mov",
+          "operand": "rdx, qword ptr [rip + 0x15338c]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "ff d2",
+        "instruction_rva": "0x42344dc",
+        "mnemonic": "call",
+        "operand": "rdx"
+      },
+      "owner_function_rva": "0x4234484",
+      "range_begin_rva": "0x4234484",
+      "range_end_rva": "0x42344ef",
+      "range_sha256": "766d80831e226e7c452a5855783764278ddf816f4a3da59c23a05f9c7e15f416",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 89 58 d0",
+          "instruction_rva": "0x4234c84",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rax - 0x30], rbx"
+        },
+        {
+          "bytes": "88 58 c8",
+          "instruction_rva": "0x4234c88",
+          "mnemonic": "mov",
+          "operand": "byte ptr [rax - 0x38], bl"
+        },
+        {
+          "bytes": "49 3b df",
+          "instruction_rva": "0x4234c8b",
+          "mnemonic": "cmp",
+          "operand": "rbx, r15"
+        },
+        {
+          "bytes": "74 32",
+          "instruction_rva": "0x4234c8e",
+          "mnemonic": "je",
+          "operand": "0x4234cc2"
+        },
+        {
+          "bytes": "48 8b d6",
+          "instruction_rva": "0x4234c90",
+          "mnemonic": "mov",
+          "operand": "rdx, rsi"
+        },
+        {
+          "bytes": "48 8b cf",
+          "instruction_rva": "0x4234c93",
+          "mnemonic": "mov",
+          "operand": "rcx, rdi"
+        },
+        {
+          "bytes": "48 8b 84 24 80 00 00 00",
+          "instruction_rva": "0x4234c96",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rsp + 0x80]"
+        },
+        {
+          "bytes": "4c 8b 05 c3 2b 15 00",
+          "instruction_rva": "0x4234c9e",
+          "mnemonic": "mov",
+          "operand": "r8, qword ptr [rip + 0x152bc3]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff d0",
+        "instruction_rva": "0x4234ca5",
+        "mnemonic": "call",
+        "operand": "r8"
+      },
+      "owner_function_rva": "0x4234c60",
+      "range_begin_rva": "0x4234c60",
+      "range_end_rva": "0x4234cd3",
+      "range_sha256": "4a046192fe198722eab2ceeea8f8875575d59928a445f68fbc0b9b246a868cdf",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "74 1d",
+          "instruction_rva": "0x4237519",
+          "mnemonic": "je",
+          "operand": "0x4237538"
+        },
+        {
+          "bytes": "f6 02 10",
+          "instruction_rva": "0x423751b",
+          "mnemonic": "test",
+          "operand": "byte ptr [rdx], 0x10"
+        },
+        {
+          "bytes": "74 18",
+          "instruction_rva": "0x423751e",
+          "mnemonic": "je",
+          "operand": "0x4237538"
+        },
+        {
+          "bytes": "48 8b 09",
+          "instruction_rva": "0x4237520",
+          "mnemonic": "mov",
+          "operand": "rcx, qword ptr [rcx]"
+        },
+        {
+          "bytes": "48 83 c1 f8",
+          "instruction_rva": "0x4237523",
+          "mnemonic": "add",
+          "operand": "rcx, -8"
+        },
+        {
+          "bytes": "48 8b 01",
+          "instruction_rva": "0x4237527",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rcx]"
+        },
+        {
+          "bytes": "48 8b 58 30",
+          "instruction_rva": "0x423752a",
+          "mnemonic": "mov",
+          "operand": "rbx, qword ptr [rax + 0x30]"
+        },
+        {
+          "bytes": "48 8b 40 40",
+          "instruction_rva": "0x423752e",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rax + 0x40]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 30 03 15 00",
+        "instruction_rva": "0x4237532",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x150330]"
+      },
+      "owner_function_rva": "0x42374fc",
+      "range_begin_rva": "0x42374fc",
+      "range_end_rva": "0x42375a3",
+      "range_sha256": "affa4e3c74bb06db43c4b88468d4c34ba924a2fa34ce678ff299cbf0b1e57e7c",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 8b 40 40",
+          "instruction_rva": "0x423752e",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rax + 0x40]"
+        },
+        {
+          "bytes": "ff 15 30 03 15 00",
+          "instruction_rva": "0x4237532",
+          "mnemonic": "call",
+          "operand": "qword ptr [rip + 0x150330]"
+        },
+        {
+          "bytes": "33 c0",
+          "instruction_rva": "0x4237538",
+          "mnemonic": "xor",
+          "operand": "eax, eax"
+        },
+        {
+          "bytes": "48 89 44 24 20",
+          "instruction_rva": "0x423753a",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x20], rax"
+        },
+        {
+          "bytes": "48 85 db",
+          "instruction_rva": "0x423753f",
+          "mnemonic": "test",
+          "operand": "rbx, rbx"
+        },
+        {
+          "bytes": "74 22",
+          "instruction_rva": "0x4237542",
+          "mnemonic": "je",
+          "operand": "0x4237566"
+        },
+        {
+          "bytes": "48 8d 54 24 20",
+          "instruction_rva": "0x4237544",
+          "mnemonic": "lea",
+          "operand": "rdx, [rsp + 0x20]"
+        },
+        {
+          "bytes": "48 8b cb",
+          "instruction_rva": "0x4237549",
+          "mnemonic": "mov",
+          "operand": "rcx, rbx"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 66 ec 14 00",
+        "instruction_rva": "0x423754c",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x14ec66]"
+      },
+      "owner_function_rva": "0x42374fc",
+      "range_begin_rva": "0x42374fc",
+      "range_end_rva": "0x42375a3",
+      "range_sha256": "affa4e3c74bb06db43c4b88468d4c34ba924a2fa34ce678ff299cbf0b1e57e7c",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "ba 01 00 00 00",
+          "instruction_rva": "0x4237566",
+          "mnemonic": "mov",
+          "operand": "edx, 1"
+        },
+        {
+          "bytes": "48 89 7c 24 28",
+          "instruction_rva": "0x423756b",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x28], rdi"
+        },
+        {
+          "bytes": "4c 8d 4c 24 28",
+          "instruction_rva": "0x4237570",
+          "mnemonic": "lea",
+          "operand": "r9, [rsp + 0x28]"
+        },
+        {
+          "bytes": "48 89 74 24 30",
+          "instruction_rva": "0x4237575",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x30], rsi"
+        },
+        {
+          "bytes": "b9 63 73 6d e0",
+          "instruction_rva": "0x423757a",
+          "mnemonic": "mov",
+          "operand": "ecx, 0xe06d7363"
+        },
+        {
+          "bytes": "48 89 5c 24 38",
+          "instruction_rva": "0x423757f",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x38], rbx"
+        },
+        {
+          "bytes": "48 89 44 24 40",
+          "instruction_rva": "0x4237584",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x40], rax"
+        },
+        {
+          "bytes": "44 8d 42 03",
+          "instruction_rva": "0x4237589",
+          "mnemonic": "lea",
+          "operand": "r8d, [rdx + 3]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 1d f0 14 00",
+        "instruction_rva": "0x423758d",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x14f01d]"
+      },
+      "owner_function_rva": "0x42374fc",
+      "range_begin_rva": "0x42374fc",
+      "range_end_rva": "0x42375a3",
+      "range_sha256": "affa4e3c74bb06db43c4b88468d4c34ba924a2fa34ce678ff299cbf0b1e57e7c",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 8d 4d 10",
+          "instruction_rva": "0x4244513",
+          "mnemonic": "lea",
+          "operand": "rcx, [rbp + 0x10]"
+        },
+        {
+          "bytes": "41 b8 d0 04 00 00",
+          "instruction_rva": "0x4244517",
+          "mnemonic": "mov",
+          "operand": "r8d, 0x4d0"
+        },
+        {
+          "bytes": "e8 8e 8c 03 00",
+          "instruction_rva": "0x424451d",
+          "mnemonic": "call",
+          "operand": "0x427d1b0"
+        },
+        {
+          "bytes": "48 8d 44 24 70",
+          "instruction_rva": "0x4244522",
+          "mnemonic": "lea",
+          "operand": "rax, [rsp + 0x70]"
+        },
+        {
+          "bytes": "48 89 44 24 48",
+          "instruction_rva": "0x4244527",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x48], rax"
+        },
+        {
+          "bytes": "48 8d 4d 10",
+          "instruction_rva": "0x424452c",
+          "mnemonic": "lea",
+          "operand": "rcx, [rbp + 0x10]"
+        },
+        {
+          "bytes": "48 8d 45 10",
+          "instruction_rva": "0x4244530",
+          "mnemonic": "lea",
+          "operand": "rax, [rbp + 0x10]"
+        },
+        {
+          "bytes": "48 89 44 24 50",
+          "instruction_rva": "0x4244534",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x50], rax"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 69 1f 14 00",
+        "instruction_rva": "0x4244539",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x141f69]"
+      },
+      "owner_function_rva": "0x42444c0",
+      "range_begin_rva": "0x42444c0",
+      "range_end_rva": "0x424461b",
+      "range_sha256": "fb643354b29e95427ddde9d94ece142b55f49cd766c197a00d4ba2108e95a6e8",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 8d 4d 10",
+          "instruction_rva": "0x424452c",
+          "mnemonic": "lea",
+          "operand": "rcx, [rbp + 0x10]"
+        },
+        {
+          "bytes": "48 8d 45 10",
+          "instruction_rva": "0x4244530",
+          "mnemonic": "lea",
+          "operand": "rax, [rbp + 0x10]"
+        },
+        {
+          "bytes": "48 89 44 24 50",
+          "instruction_rva": "0x4244534",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x50], rax"
+        },
+        {
+          "bytes": "ff 15 69 1f 14 00",
+          "instruction_rva": "0x4244539",
+          "mnemonic": "call",
+          "operand": "qword ptr [rip + 0x141f69]"
+        },
+        {
+          "bytes": "4c 8b b5 08 01 00 00",
+          "instruction_rva": "0x424453f",
+          "mnemonic": "mov",
+          "operand": "r14, qword ptr [rbp + 0x108]"
+        },
+        {
+          "bytes": "48 8d 54 24 40",
+          "instruction_rva": "0x4244546",
+          "mnemonic": "lea",
+          "operand": "rdx, [rsp + 0x40]"
+        },
+        {
+          "bytes": "49 8b ce",
+          "instruction_rva": "0x424454b",
+          "mnemonic": "mov",
+          "operand": "rcx, r14"
+        },
+        {
+          "bytes": "45 33 c0",
+          "instruction_rva": "0x424454e",
+          "mnemonic": "xor",
+          "operand": "r8d, r8d"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 79 1d 14 00",
+        "instruction_rva": "0x4244551",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x141d79]"
+      },
+      "owner_function_rva": "0x42444c0",
+      "range_begin_rva": "0x42444c0",
+      "range_end_rva": "0x424461b",
+      "range_sha256": "fb643354b29e95427ddde9d94ece142b55f49cd766c197a00d4ba2108e95a6e8",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "4c 8b c8",
+          "instruction_rva": "0x424456c",
+          "mnemonic": "mov",
+          "operand": "r9, rax"
+        },
+        {
+          "bytes": "48 89 4c 24 30",
+          "instruction_rva": "0x424456f",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x30], rcx"
+        },
+        {
+          "bytes": "4d 8b c6",
+          "instruction_rva": "0x4244574",
+          "mnemonic": "mov",
+          "operand": "r8, r14"
+        },
+        {
+          "bytes": "48 8d 4c 24 60",
+          "instruction_rva": "0x4244577",
+          "mnemonic": "lea",
+          "operand": "rcx, [rsp + 0x60]"
+        },
+        {
+          "bytes": "48 89 4c 24 28",
+          "instruction_rva": "0x424457c",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x28], rcx"
+        },
+        {
+          "bytes": "48 8d 4d 10",
+          "instruction_rva": "0x4244581",
+          "mnemonic": "lea",
+          "operand": "rcx, [rbp + 0x10]"
+        },
+        {
+          "bytes": "48 89 4c 24 20",
+          "instruction_rva": "0x4244585",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rsp + 0x20], rcx"
+        },
+        {
+          "bytes": "33 c9",
+          "instruction_rva": "0x424458a",
+          "mnemonic": "xor",
+          "operand": "ecx, ecx"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 c6 1e 14 00",
+        "instruction_rva": "0x424458c",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x141ec6]"
+      },
+      "owner_function_rva": "0x42444c0",
+      "range_begin_rva": "0x42444c0",
+      "range_end_rva": "0x424461b",
+      "range_sha256": "fb643354b29e95427ddde9d94ece142b55f49cd766c197a00d4ba2108e95a6e8",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 89 85 08 01 00 00",
+          "instruction_rva": "0x4244599",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbp + 0x108], rax"
+        },
+        {
+          "bytes": "48 8d 85 08 05 00 00",
+          "instruction_rva": "0x42445a0",
+          "mnemonic": "lea",
+          "operand": "rax, [rbp + 0x508]"
+        },
+        {
+          "bytes": "48 83 c0 08",
+          "instruction_rva": "0x42445a7",
+          "mnemonic": "add",
+          "operand": "rax, 8"
+        },
+        {
+          "bytes": "89 74 24 70",
+          "instruction_rva": "0x42445ab",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rsp + 0x70], esi"
+        },
+        {
+          "bytes": "48 89 85 a8 00 00 00",
+          "instruction_rva": "0x42445af",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbp + 0xa8], rax"
+        },
+        {
+          "bytes": "48 8b 85 08 05 00 00",
+          "instruction_rva": "0x42445b6",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rbp + 0x508]"
+        },
+        {
+          "bytes": "48 89 45 80",
+          "instruction_rva": "0x42445bd",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbp - 0x80], rax"
+        },
+        {
+          "bytes": "89 7c 24 74",
+          "instruction_rva": "0x42445c1",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rsp + 0x74], edi"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 55 22 14 00",
+        "instruction_rva": "0x42445c5",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x142255]"
+      },
+      "owner_function_rva": "0x42444c0",
+      "range_begin_rva": "0x42444c0",
+      "range_end_rva": "0x424461b",
+      "range_sha256": "fb643354b29e95427ddde9d94ece142b55f49cd766c197a00d4ba2108e95a6e8",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "89 74 24 70",
+          "instruction_rva": "0x42445ab",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rsp + 0x70], esi"
+        },
+        {
+          "bytes": "48 89 85 a8 00 00 00",
+          "instruction_rva": "0x42445af",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbp + 0xa8], rax"
+        },
+        {
+          "bytes": "48 8b 85 08 05 00 00",
+          "instruction_rva": "0x42445b6",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rbp + 0x508]"
+        },
+        {
+          "bytes": "48 89 45 80",
+          "instruction_rva": "0x42445bd",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbp - 0x80], rax"
+        },
+        {
+          "bytes": "89 7c 24 74",
+          "instruction_rva": "0x42445c1",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rsp + 0x74], edi"
+        },
+        {
+          "bytes": "ff 15 55 22 14 00",
+          "instruction_rva": "0x42445c5",
+          "mnemonic": "call",
+          "operand": "qword ptr [rip + 0x142255]"
+        },
+        {
+          "bytes": "33 c9",
+          "instruction_rva": "0x42445cb",
+          "mnemonic": "xor",
+          "operand": "ecx, ecx"
+        },
+        {
+          "bytes": "8b f8",
+          "instruction_rva": "0x42445cd",
+          "mnemonic": "mov",
+          "operand": "edi, eax"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 d3 1c 14 00",
+        "instruction_rva": "0x42445cf",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x141cd3]"
+      },
+      "owner_function_rva": "0x42444c0",
+      "range_begin_rva": "0x42444c0",
+      "range_end_rva": "0x424461b",
+      "range_sha256": "fb643354b29e95427ddde9d94ece142b55f49cd766c197a00d4ba2108e95a6e8",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 8b 85 08 05 00 00",
+          "instruction_rva": "0x42445b6",
+          "mnemonic": "mov",
+          "operand": "rax, qword ptr [rbp + 0x508]"
+        },
+        {
+          "bytes": "48 89 45 80",
+          "instruction_rva": "0x42445bd",
+          "mnemonic": "mov",
+          "operand": "qword ptr [rbp - 0x80], rax"
+        },
+        {
+          "bytes": "89 7c 24 74",
+          "instruction_rva": "0x42445c1",
+          "mnemonic": "mov",
+          "operand": "dword ptr [rsp + 0x74], edi"
+        },
+        {
+          "bytes": "ff 15 55 22 14 00",
+          "instruction_rva": "0x42445c5",
+          "mnemonic": "call",
+          "operand": "qword ptr [rip + 0x142255]"
+        },
+        {
+          "bytes": "33 c9",
+          "instruction_rva": "0x42445cb",
+          "mnemonic": "xor",
+          "operand": "ecx, ecx"
+        },
+        {
+          "bytes": "8b f8",
+          "instruction_rva": "0x42445cd",
+          "mnemonic": "mov",
+          "operand": "edi, eax"
+        },
+        {
+          "bytes": "ff 15 d3 1c 14 00",
+          "instruction_rva": "0x42445cf",
+          "mnemonic": "call",
+          "operand": "qword ptr [rip + 0x141cd3]"
+        },
+        {
+          "bytes": "48 8d 4c 24 48",
+          "instruction_rva": "0x42445d5",
+          "mnemonic": "lea",
+          "operand": "rcx, [rsp + 0x48]"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 f8 1c 14 00",
+        "instruction_rva": "0x42445da",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x141cf8]"
+      },
+      "owner_function_rva": "0x42444c0",
+      "range_begin_rva": "0x42444c0",
+      "range_end_rva": "0x424461b",
+      "range_sha256": "fb643354b29e95427ddde9d94ece142b55f49cd766c197a00d4ba2108e95a6e8",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 83 ec 28",
+          "instruction_rva": "0x42447ac",
+          "mnemonic": "sub",
+          "operand": "rsp, 0x28"
+        },
+        {
+          "bytes": "b9 17 00 00 00",
+          "instruction_rva": "0x42447b0",
+          "mnemonic": "mov",
+          "operand": "ecx, 0x17"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 25 1b 14 00",
+        "instruction_rva": "0x42447b5",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x141b25]"
+      },
+      "owner_function_rva": "0x42447ac",
+      "range_begin_rva": "0x42447ac",
+      "range_end_rva": "0x42447f3",
+      "range_sha256": "3d9cef198a5f302f399677daf69153141e6baf9d4696cab1fb77792f024b814c",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "85 c0",
+          "instruction_rva": "0x42447bb",
+          "mnemonic": "test",
+          "operand": "eax, eax"
+        },
+        {
+          "bytes": "74 07",
+          "instruction_rva": "0x42447bd",
+          "mnemonic": "je",
+          "operand": "0x42447c6"
+        },
+        {
+          "bytes": "b9 05 00 00 00",
+          "instruction_rva": "0x42447bf",
+          "mnemonic": "mov",
+          "operand": "ecx, 5"
+        },
+        {
+          "bytes": "cd 29",
+          "instruction_rva": "0x42447c4",
+          "mnemonic": "int",
+          "operand": "0x29"
+        },
+        {
+          "bytes": "41 b8 01 00 00 00",
+          "instruction_rva": "0x42447c6",
+          "mnemonic": "mov",
+          "operand": "r8d, 1"
+        },
+        {
+          "bytes": "ba 17 04 00 c0",
+          "instruction_rva": "0x42447cc",
+          "mnemonic": "mov",
+          "operand": "edx, 0xc0000417"
+        },
+        {
+          "bytes": "41 8d 48 01",
+          "instruction_rva": "0x42447d1",
+          "mnemonic": "lea",
+          "operand": "ecx, [r8 + 1]"
+        },
+        {
+          "bytes": "e8 e6 fc ff ff",
+          "instruction_rva": "0x42447d5",
+          "mnemonic": "call",
+          "operand": "0x42444c0"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "ff 15 98 1a 14 00",
+        "instruction_rva": "0x42447da",
+        "mnemonic": "call",
+        "operand": "qword ptr [rip + 0x141a98]"
+      },
+      "owner_function_rva": "0x42447ac",
+      "range_begin_rva": "0x42447ac",
+      "range_end_rva": "0x42447f3",
+      "range_sha256": "3d9cef198a5f302f399677daf69153141e6baf9d4696cab1fb77792f024b814c",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "41 b8 01 00 00 00",
+          "instruction_rva": "0x42447c6",
+          "mnemonic": "mov",
+          "operand": "r8d, 1"
+        },
+        {
+          "bytes": "ba 17 04 00 c0",
+          "instruction_rva": "0x42447cc",
+          "mnemonic": "mov",
+          "operand": "edx, 0xc0000417"
+        },
+        {
+          "bytes": "41 8d 48 01",
+          "instruction_rva": "0x42447d1",
+          "mnemonic": "lea",
+          "operand": "ecx, [r8 + 1]"
+        },
+        {
+          "bytes": "e8 e6 fc ff ff",
+          "instruction_rva": "0x42447d5",
+          "mnemonic": "call",
+          "operand": "0x42444c0"
+        },
+        {
+          "bytes": "ff 15 98 1a 14 00",
+          "instruction_rva": "0x42447da",
+          "mnemonic": "call",
+          "operand": "qword ptr [rip + 0x141a98]"
+        },
+        {
+          "bytes": "48 8b c8",
+          "instruction_rva": "0x42447e0",
+          "mnemonic": "mov",
+          "operand": "rcx, rax"
+        },
+        {
+          "bytes": "ba 17 04 00 c0",
+          "instruction_rva": "0x42447e3",
+          "mnemonic": "mov",
+          "operand": "edx, 0xc0000417"
+        },
+        {
+          "bytes": "48 83 c4 28",
+          "instruction_rva": "0x42447e8",
+          "mnemonic": "add",
+          "operand": "rsp, 0x28"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "memory",
+      "instruction": {
+        "bytes": "48 ff 25 8d 1a 14 00",
+        "instruction_rva": "0x42447ec",
+        "mnemonic": "jmp",
+        "operand": "qword ptr [rip + 0x141a8d]"
+      },
+      "owner_function_rva": "0x42447ac",
+      "range_begin_rva": "0x42447ac",
+      "range_end_rva": "0x42447f3",
+      "range_sha256": "3d9cef198a5f302f399677daf69153141e6baf9d4696cab1fb77792f024b814c",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "48 8b c1",
+          "instruction_rva": "0x427cb10",
+          "mnemonic": "mov",
+          "operand": "rax, rcx"
+        },
+        {
+          "bytes": "4c 8d 15 e6 34 d8 fb",
+          "instruction_rva": "0x427cb13",
+          "mnemonic": "lea",
+          "operand": "r10, [rip - 0x427cb1a]"
+        },
+        {
+          "bytes": "49 83 f8 0f",
+          "instruction_rva": "0x427cb1a",
+          "mnemonic": "cmp",
+          "operand": "r8, 0xf"
+        },
+        {
+          "bytes": "0f 87 0c 01 00 00",
+          "instruction_rva": "0x427cb1e",
+          "mnemonic": "ja",
+          "operand": "0x427cc30"
+        },
+        {
+          "bytes": "66 66 66 66 0f 1f 84 00 00 00 00 00",
+          "instruction_rva": "0x427cb24",
+          "mnemonic": "nop",
+          "operand": "word ptr [rax + rax]"
+        },
+        {
+          "bytes": "47 8b 8c 82 30 18 92 04",
+          "instruction_rva": "0x427cb30",
+          "mnemonic": "mov",
+          "operand": "r9d, dword ptr [r10 + r8*4 + 0x4921830]"
+        },
+        {
+          "bytes": "4d 03 ca",
+          "instruction_rva": "0x427cb38",
+          "mnemonic": "add",
+          "operand": "r9, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e1",
+        "instruction_rva": "0x427cb3b",
+        "mnemonic": "jmp",
+        "operand": "r9"
+      },
+      "owner_function_rva": "0x427cb10",
+      "range_begin_rva": "0x427cb10",
+      "range_end_rva": "0x427d17d",
+      "range_sha256": "e3fe2435dcd9fe38705c05ad9f33f538f4ee71d601ae64e6a1ae41a043eaf89d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "49 81 f8 00 01 00 00",
+          "instruction_rva": "0x427cd5b",
+          "mnemonic": "cmp",
+          "operand": "r8, 0x100"
+        },
+        {
+          "bytes": "0f 83 78 ff ff ff",
+          "instruction_rva": "0x427cd62",
+          "mnemonic": "jae",
+          "operand": "0x427cce0"
+        },
+        {
+          "bytes": "4d 8d 48 1f",
+          "instruction_rva": "0x427cd68",
+          "mnemonic": "lea",
+          "operand": "r9, [r8 + 0x1f]"
+        },
+        {
+          "bytes": "49 83 e1 e0",
+          "instruction_rva": "0x427cd6c",
+          "mnemonic": "and",
+          "operand": "r9, 0xffffffffffffffe0"
+        },
+        {
+          "bytes": "4d 8b d9",
+          "instruction_rva": "0x427cd70",
+          "mnemonic": "mov",
+          "operand": "r11, r9"
+        },
+        {
+          "bytes": "49 c1 eb 05",
+          "instruction_rva": "0x427cd73",
+          "mnemonic": "shr",
+          "operand": "r11, 5"
+        },
+        {
+          "bytes": "47 8b 9c 9a 70 18 92 04",
+          "instruction_rva": "0x427cd77",
+          "mnemonic": "mov",
+          "operand": "r11d, dword ptr [r10 + r11*4 + 0x4921870]"
+        },
+        {
+          "bytes": "4d 03 da",
+          "instruction_rva": "0x427cd7f",
+          "mnemonic": "add",
+          "operand": "r11, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e3",
+        "instruction_rva": "0x427cd82",
+        "mnemonic": "jmp",
+        "operand": "r11"
+      },
+      "owner_function_rva": "0x427cb10",
+      "range_begin_rva": "0x427cb10",
+      "range_end_rva": "0x427d17d",
+      "range_sha256": "e3fe2435dcd9fe38705c05ad9f33f538f4ee71d601ae64e6a1ae41a043eaf89d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "49 81 f8 00 01 00 00",
+          "instruction_rva": "0x427ce8b",
+          "mnemonic": "cmp",
+          "operand": "r8, 0x100"
+        },
+        {
+          "bytes": "0f 83 78 ff ff ff",
+          "instruction_rva": "0x427ce92",
+          "mnemonic": "jae",
+          "operand": "0x427ce10"
+        },
+        {
+          "bytes": "4d 8d 48 1f",
+          "instruction_rva": "0x427ce98",
+          "mnemonic": "lea",
+          "operand": "r9, [r8 + 0x1f]"
+        },
+        {
+          "bytes": "49 83 e1 e0",
+          "instruction_rva": "0x427ce9c",
+          "mnemonic": "and",
+          "operand": "r9, 0xffffffffffffffe0"
+        },
+        {
+          "bytes": "4d 8b d9",
+          "instruction_rva": "0x427cea0",
+          "mnemonic": "mov",
+          "operand": "r11, r9"
+        },
+        {
+          "bytes": "49 c1 eb 05",
+          "instruction_rva": "0x427cea3",
+          "mnemonic": "shr",
+          "operand": "r11, 5"
+        },
+        {
+          "bytes": "47 8b 9c 9a 94 18 92 04",
+          "instruction_rva": "0x427cea7",
+          "mnemonic": "mov",
+          "operand": "r11d, dword ptr [r10 + r11*4 + 0x4921894]"
+        },
+        {
+          "bytes": "4d 03 da",
+          "instruction_rva": "0x427ceaf",
+          "mnemonic": "add",
+          "operand": "r11, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e3",
+        "instruction_rva": "0x427ceb2",
+        "mnemonic": "jmp",
+        "operand": "r11"
+      },
+      "owner_function_rva": "0x427cb10",
+      "range_begin_rva": "0x427cb10",
+      "range_end_rva": "0x427d17d",
+      "range_sha256": "e3fe2435dcd9fe38705c05ad9f33f538f4ee71d601ae64e6a1ae41a043eaf89d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "49 81 f8 80 00 00 00",
+          "instruction_rva": "0x427d003",
+          "mnemonic": "cmp",
+          "operand": "r8, 0x80"
+        },
+        {
+          "bytes": "73 94",
+          "instruction_rva": "0x427d00a",
+          "mnemonic": "jae",
+          "operand": "0x427cfa0"
+        },
+        {
+          "bytes": "4d 8d 48 0f",
+          "instruction_rva": "0x427d00c",
+          "mnemonic": "lea",
+          "operand": "r9, [r8 + 0xf]"
+        },
+        {
+          "bytes": "49 83 e1 f0",
+          "instruction_rva": "0x427d010",
+          "mnemonic": "and",
+          "operand": "r9, 0xfffffffffffffff0"
+        },
+        {
+          "bytes": "4d 8b d9",
+          "instruction_rva": "0x427d014",
+          "mnemonic": "mov",
+          "operand": "r11, r9"
+        },
+        {
+          "bytes": "49 c1 eb 04",
+          "instruction_rva": "0x427d017",
+          "mnemonic": "shr",
+          "operand": "r11, 4"
+        },
+        {
+          "bytes": "47 8b 9c 9a b8 18 92 04",
+          "instruction_rva": "0x427d01b",
+          "mnemonic": "mov",
+          "operand": "r11d, dword ptr [r10 + r11*4 + 0x49218b8]"
+        },
+        {
+          "bytes": "4d 03 da",
+          "instruction_rva": "0x427d023",
+          "mnemonic": "add",
+          "operand": "r11, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e3",
+        "instruction_rva": "0x427d026",
+        "mnemonic": "jmp",
+        "operand": "r11"
+      },
+      "owner_function_rva": "0x427cb10",
+      "range_begin_rva": "0x427cb10",
+      "range_end_rva": "0x427d17d",
+      "range_sha256": "e3fe2435dcd9fe38705c05ad9f33f538f4ee71d601ae64e6a1ae41a043eaf89d",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "4c 0f af da",
+          "instruction_rva": "0x427d1ca",
+          "mnemonic": "imul",
+          "operand": "r11, rdx"
+        },
+        {
+          "bytes": "66 49 0f 6e c3",
+          "instruction_rva": "0x427d1ce",
+          "mnemonic": "movq",
+          "operand": "xmm0, r11"
+        },
+        {
+          "bytes": "49 83 f8 0f",
+          "instruction_rva": "0x427d1d3",
+          "mnemonic": "cmp",
+          "operand": "r8, 0xf"
+        },
+        {
+          "bytes": "0f 87 83 00 00 00",
+          "instruction_rva": "0x427d1d7",
+          "mnemonic": "ja",
+          "operand": "0x427d260"
+        },
+        {
+          "bytes": "0f 1f 00",
+          "instruction_rva": "0x427d1dd",
+          "mnemonic": "nop",
+          "operand": "dword ptr [rax]"
+        },
+        {
+          "bytes": "49 03 c8",
+          "instruction_rva": "0x427d1e0",
+          "mnemonic": "add",
+          "operand": "rcx, r8"
+        },
+        {
+          "bytes": "47 8b 8c 82 e0 18 92 04",
+          "instruction_rva": "0x427d1e3",
+          "mnemonic": "mov",
+          "operand": "r9d, dword ptr [r10 + r8*4 + 0x49218e0]"
+        },
+        {
+          "bytes": "4d 03 ca",
+          "instruction_rva": "0x427d1eb",
+          "mnemonic": "add",
+          "operand": "r9, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e1",
+        "instruction_rva": "0x427d1ee",
+        "mnemonic": "jmp",
+        "operand": "r9"
+      },
+      "owner_function_rva": "0x427d1b0",
+      "range_begin_rva": "0x427d1b0",
+      "range_end_rva": "0x427d538",
+      "range_sha256": "3cf9ad537db8f9c416acd488f3b6bc6267091888ce7aab2cbfd86fec6d27cea0",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "49 81 f8 00 01 00 00",
+          "instruction_rva": "0x427d321",
+          "mnemonic": "cmp",
+          "operand": "r8, 0x100"
+        },
+        {
+          "bytes": "73 b6",
+          "instruction_rva": "0x427d328",
+          "mnemonic": "jae",
+          "operand": "0x427d2e0"
+        },
+        {
+          "bytes": "4d 8d 48 1f",
+          "instruction_rva": "0x427d32a",
+          "mnemonic": "lea",
+          "operand": "r9, [r8 + 0x1f]"
+        },
+        {
+          "bytes": "49 83 e1 e0",
+          "instruction_rva": "0x427d32e",
+          "mnemonic": "and",
+          "operand": "r9, 0xffffffffffffffe0"
+        },
+        {
+          "bytes": "4d 8b d9",
+          "instruction_rva": "0x427d332",
+          "mnemonic": "mov",
+          "operand": "r11, r9"
+        },
+        {
+          "bytes": "49 c1 eb 05",
+          "instruction_rva": "0x427d335",
+          "mnemonic": "shr",
+          "operand": "r11, 5"
+        },
+        {
+          "bytes": "47 8b 9c 9a 20 19 92 04",
+          "instruction_rva": "0x427d339",
+          "mnemonic": "mov",
+          "operand": "r11d, dword ptr [r10 + r11*4 + 0x4921920]"
+        },
+        {
+          "bytes": "4d 03 da",
+          "instruction_rva": "0x427d341",
+          "mnemonic": "add",
+          "operand": "r11, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e3",
+        "instruction_rva": "0x427d344",
+        "mnemonic": "jmp",
+        "operand": "r11"
+      },
+      "owner_function_rva": "0x427d1b0",
+      "range_begin_rva": "0x427d1b0",
+      "range_end_rva": "0x427d538",
+      "range_sha256": "3cf9ad537db8f9c416acd488f3b6bc6267091888ce7aab2cbfd86fec6d27cea0",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "49 81 f8 00 01 00 00",
+          "instruction_rva": "0x427d3e1",
+          "mnemonic": "cmp",
+          "operand": "r8, 0x100"
+        },
+        {
+          "bytes": "73 b6",
+          "instruction_rva": "0x427d3e8",
+          "mnemonic": "jae",
+          "operand": "0x427d3a0"
+        },
+        {
+          "bytes": "4d 8d 48 1f",
+          "instruction_rva": "0x427d3ea",
+          "mnemonic": "lea",
+          "operand": "r9, [r8 + 0x1f]"
+        },
+        {
+          "bytes": "49 83 e1 e0",
+          "instruction_rva": "0x427d3ee",
+          "mnemonic": "and",
+          "operand": "r9, 0xffffffffffffffe0"
+        },
+        {
+          "bytes": "4d 8b d9",
+          "instruction_rva": "0x427d3f2",
+          "mnemonic": "mov",
+          "operand": "r11, r9"
+        },
+        {
+          "bytes": "49 c1 eb 05",
+          "instruction_rva": "0x427d3f5",
+          "mnemonic": "shr",
+          "operand": "r11, 5"
+        },
+        {
+          "bytes": "47 8b 9c 9a 44 19 92 04",
+          "instruction_rva": "0x427d3f9",
+          "mnemonic": "mov",
+          "operand": "r11d, dword ptr [r10 + r11*4 + 0x4921944]"
+        },
+        {
+          "bytes": "4d 03 da",
+          "instruction_rva": "0x427d401",
+          "mnemonic": "add",
+          "operand": "r11, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e3",
+        "instruction_rva": "0x427d404",
+        "mnemonic": "jmp",
+        "operand": "r11"
+      },
+      "owner_function_rva": "0x427d1b0",
+      "range_begin_rva": "0x427d1b0",
+      "range_end_rva": "0x427d538",
+      "range_sha256": "3cf9ad537db8f9c416acd488f3b6bc6267091888ce7aab2cbfd86fec6d27cea0",
+      "runtime_verified": false
+    },
+    {
+      "callee_rva": null,
+      "context": [
+        {
+          "bytes": "49 81 f8 80 00 00 00",
+          "instruction_rva": "0x427d4d5",
+          "mnemonic": "cmp",
+          "operand": "r8, 0x80"
+        },
+        {
+          "bytes": "73 c2",
+          "instruction_rva": "0x427d4dc",
+          "mnemonic": "jae",
+          "operand": "0x427d4a0"
+        },
+        {
+          "bytes": "4d 8d 48 0f",
+          "instruction_rva": "0x427d4de",
+          "mnemonic": "lea",
+          "operand": "r9, [r8 + 0xf]"
+        },
+        {
+          "bytes": "49 83 e1 f0",
+          "instruction_rva": "0x427d4e2",
+          "mnemonic": "and",
+          "operand": "r9, 0xfffffffffffffff0"
+        },
+        {
+          "bytes": "4d 8b d9",
+          "instruction_rva": "0x427d4e6",
+          "mnemonic": "mov",
+          "operand": "r11, r9"
+        },
+        {
+          "bytes": "49 c1 eb 04",
+          "instruction_rva": "0x427d4e9",
+          "mnemonic": "shr",
+          "operand": "r11, 4"
+        },
+        {
+          "bytes": "47 8b 9c 9a 68 19 92 04",
+          "instruction_rva": "0x427d4ed",
+          "mnemonic": "mov",
+          "operand": "r11d, dword ptr [r10 + r11*4 + 0x4921968]"
+        },
+        {
+          "bytes": "4d 03 da",
+          "instruction_rva": "0x427d4f5",
+          "mnemonic": "add",
+          "operand": "r11, r10"
+        }
+      ],
+      "dependency_edge_confirmed": false,
+      "indirect_operand_kind": "register",
+      "instruction": {
+        "bytes": "41 ff e3",
+        "instruction_rva": "0x427d4f8",
+        "mnemonic": "jmp",
+        "operand": "r11"
+      },
+      "owner_function_rva": "0x427d1b0",
+      "range_begin_rva": "0x427d1b0",
+      "range_end_rva": "0x427d538",
+      "range_sha256": "3cf9ad537db8f9c416acd488f3b6bc6267091888ce7aab2cbfd86fec6d27cea0",
+      "runtime_verified": false
+    }
+  ]
+}

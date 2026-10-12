@@ -19,3 +19,5 @@ research/generated/os-sampled-capture-2026-10-05/sample-observations.json -text
 research/generated/pc-evidence-2026-10-05/save-validation.json -text
 research/experiments/scheduler_model/example-workload.json -text
 docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md -text
+# Byte-pinned bounded research witnesses and lifecycle model outputs.
+research/generated/offline-closeout-2026-10-12/** -text
