@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date_jst": "2026-10-12",
   "base_main": "321064d479248153585c0e838f8c25836aeae783",
-  "validated_source_commit": "e49167320c3197ad642ae6ebaa7f632e3315e31d",
+  "validated_source_commit": "c4c3cc8d469524be95543f1c2cc2120cb4a89dbc",
   "branch": "fix/loader-readonly-byte-mismatch",
   "platform": "Windows 11 10.0.26200 x64",
   "compiler": "MSVC 19.51.36260.0",
@@ -19,11 +19,12 @@
     "passed": 10
   },
   "python_full": {
-    "skipped": 6,
-    "command": "python -m unittest discover -s tests",
-    "tests_run": 255,
-    "errors": 6,
-    "status": "failed_existing_windows_fixture_and_sandbox_errors"
+    "status": "OK; two absent exact-build fixtures and six link capability skips",
+    "skipped": 8,
+    "errors": 0,
+    "failures": 0,
+    "command": "python -m unittest discover -s tests -v",
+    "tests_run": 257
   },
   "generated_include_check": "passed",
   "synthetic_trace_parsers": "passed",
@@ -37,7 +38,7 @@
   "binaries": {
     "Vic3OptimizationLoader.exe": {
       "bytes": 102912,
-      "sha256": "0621b5594590d08fb06d567ce937486e8ba645c21fa2a3e9c40d49d980a84e2c",
+      "sha256": "c1f932e2296a3b2ef51f34eb2e0e830e86da668ec3f30496309d31ecae74fb2d",
       "provenance": "local build, validated_source_commit; CI artifacts will differ"
     },
     "Vic3OptimizationProfiler.dll": {
@@ -86,7 +87,52 @@
     "review-final-ctest.log": {
       "sha256": "18c7cc21da94b2058fdaf18bad0ddc12373f4794571d65c07fb96846d79c1098",
       "storage": "local work/loader-diagnostics; raw absolute paths not published"
+    },
+    "followup/native-policy-red.log": {
+      "sha256": "e948f5653996caaf3439d6f4a309ec78aa82e71abbc0a87dbf007412c30724f0",
+      "storage": "local work/loader-followup; raw absolute paths not published"
+    },
+    "followup/native-query-red.log": {
+      "sha256": "e418ac97b40e2c375310f407d1220869e21ba7accd9960d2acceb563f1604550",
+      "storage": "local work/loader-followup; raw absolute paths not published"
+    },
+    "followup/native-green-ctest.log": {
+      "sha256": "c4bcf9a1f741acc4f7ef79167eea310919526368ec6d1b9f550aac4d12cef944",
+      "storage": "local work/loader-followup; raw absolute paths not published"
+    },
+    "followup/python-platform-red.log": {
+      "sha256": "253628b63585ab512a5a9eca72f5282d5047a82e145d6100e22292a46dd88769",
+      "storage": "local work/loader-followup; raw absolute paths not published"
+    },
+    "followup/python-platform-green.log": {
+      "sha256": "a46bb0626a74950c84684f832bb80ed14ca7d3b093b1aa8c989acec0e4c9aa68",
+      "storage": "local work/loader-followup; raw absolute paths not published"
+    },
+    "followup/python-full-green.log": {
+      "sha256": "d32fa6c8654628bcfc8d8886b4cb32278524bd0ea72ee014dc7338300b80895f",
+      "storage": "local work/loader-followup; raw absolute paths not published"
+    },
+    "followup/golden-red.log": {
+      "sha256": "1e6e2d3b8c0eb297ade253711c26e71022b454dd5dc82e86ef42f36147f5a81e",
+      "storage": "local work/loader-followup; raw absolute paths not published"
+    },
+    "followup/golden-green.log": {
+      "sha256": "2e79c339ac192d7d710d7e5b8afe77787ee343e6c7f7923c66c9b2db7f973fc7",
+      "storage": "local work/loader-followup; raw absolute paths not published"
     }
   },
-  "github_final_ci": "Final PR checks and Japanese PR body record run URL, head SHA and jobs; no intermediate CI"
+  "github_final_ci": "Final PR checks and Japanese PR body record run URL, head SHA and jobs; no intermediate CI",
+  "previous_local_python": {
+    "skipped": 6,
+    "command": "python -m unittest discover -s tests",
+    "tests_run": 255,
+    "errors": 6,
+    "status": "failed_existing_windows_fixture_and_sandbox_errors"
+  },
+  "followup_scope": "offline only; no game process operations",
+  "followup_skip_summary": {
+    "hardlink_creation_denied": 5,
+    "symlink_privilege_missing": 1,
+    "missing_VIC3_DATA": 2
+  }
 }

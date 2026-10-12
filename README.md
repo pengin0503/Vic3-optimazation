@@ -8,6 +8,8 @@ Victoria 3のシミュレーション性能を、通常のスクリプトやdefi
 
 Issue #17のLoadLibraryW不一致に対し、fail-closedを維持した[読み取り専用診断](docs/superpowers/guides/2026-10-12-loader-readonly-diagnosis-ja.md)を追加しました。[方式比較・実装結果](docs/superpowers/reports/2026-10-12-loader-readonly-byte-mismatch-ja.md)を参照し、次回は注入せず同じPIDの証拠を取得してください。接続成功は未確認です。
 
+保留した診断coverageとWindows Python fixtureの後続作業は[オフラインfollowup](docs/superpowers/reports/2026-10-12-loader-offline-followup-ja.md)に記録しています。
+
 ## 追加測定なしで進めるCPU研究（2026-10-11）
 
 [オフラインCPU研究の仕様](docs/superpowers/specs/2026-10-11-offline-cpu-research-design.md)、[TickTask調査の引き継ぎ](docs/superpowers/reports/2026-10-11-offline-cpu-research-handoff-ja.md)、[証拠ゲートのレビュー](docs/superpowers/reports/2026-10-11-offline-cpu-gate-review-ja.md)に、読み取り専用の研究を記録しています。[未解決の依存関係を分類するツール](tools/triage_ticktask_unresolved.py)と[単独で動作する合成DAGスケジューラー実験](research/experiments/scheduler_model/README.md)は、ゲームを起動せずに実行できます。いずれも研究の補助であり、ネイティブ処理の最適化、ゲームのCPU使用率の変化、ゲームの高速化を実証したものではありません。初期の個別検証ではTickTask分類7件、合成スケジューラー11件のテストが成功しました。その後の検証状況は上記の新しい報告を参照してください。

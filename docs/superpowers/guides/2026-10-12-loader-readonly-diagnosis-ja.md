@@ -2,6 +2,8 @@
 
 Date: 2026-10-12 JST
 
+保留テスト・Windows fixtureの後続検証は[followup報告](../reports/2026-10-12-loader-offline-followup-ja.md)を参照。最新PR headのbuildとvalidation.jsonのprovenanceを使用する。
+
 **この手順は診断だけを行う。DLL注入・stop・enabled計測は実施しない。** 実ゲームの成功確認はまだない。Issue #17の接続拒否は残る。[実装報告](../reports/2026-10-12-loader-readonly-byte-mismatch-ja.md)と[設計比較](../specs/2026-10-12-loader-readonly-byte-mismatch-design.md)も参照。
 
 ## 1. 新Loaderを用意する

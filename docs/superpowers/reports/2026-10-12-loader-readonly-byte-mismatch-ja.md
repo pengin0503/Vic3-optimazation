@@ -2,6 +2,8 @@
 
 Date: 2026-10-12 JST
 
+**後続更新:** この報告は初回実装時の結果。保留した追加coverageとWindows Python fixtureは[オフラインfollowup](2026-10-12-loader-offline-followup-ja.md)で継続している。新しい結果・binary provenanceはfollowupとPR本文を優先する。
+
 ## 結果と範囲
 
 実ゲームへの安全な接続方式を保証する根拠が不足するため、**不一致拒否を維持し、読み取り専用診断を実装した**。16-byte比較の削除、fallback入口への切替、第三者フック解除は行っていない。実ゲーム接続成功、Phase 4完了、CPU高速化は未確認。
