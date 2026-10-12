@@ -5,7 +5,7 @@ Date: 2026-10-12 JST
 **最初に行うのはAのみ。12本の本測定やOS traceはまだ不要。** Aが失敗したらログを保存してそこで止め、同じprocessへの再attach・retryはしない。A成功後にB、A/Bの正常接続・停止が確認できてからCへ進む。read-only profilerは軽量化patchではなく、今回CPU使用率や速度が改善することを期待する検証ではない。
 
 
-**2026-10-12実測の重要な追記:** 初回disabled attachは `stage=byte_mismatch` / exit 8で失敗。その後、別のゲームプロセスで `LoadLibraryW → MEM_PRIVATE中継領域 → Steam gameoverlayrenderer64.dll` のジャンプ経路が観測された。Steam Overlayを無効化した対照試験と接続成功は未実施。診断ログ・未解決点・安全な次の検証条件は[実ゲームattach失敗の調査記録](../reports/2026-10-12-game-attach-steam-overlay-byte-mismatch-ja.md)を参照。失敗した同一PIDへ再attachしない。
+**2026-10-12実測の重要な追記:** 初回disabled attachは `stage=byte_mismatch` / exit 8で失敗。その後、別のゲームプロセスで `LoadLibraryW → MEM_PRIVATE中継領域 → Steam gameoverlayrenderer64.dll` のジャンプ経路が観測された。Steam Overlayを無効化した対照試験と接続成功は未実施。診断ログ・未解決点・安全な次の検証条件は[実ゲームattach失敗の調査記録](../reports/2026-10-12-game-attach-steam-overlay-byte-mismatch-ja.md)を参照。失敗した同一PIDへ再attachしない。詳細な対照条件と判定は[Issue #17](https://github.com/pengin0503/Vic3-optimazation/issues/17)に記録した。Steam Overlayを個別に無効化した場合の結果は**まだ未実施**であり、code4の解消は確認していない。
 
 ## 0. 最新診断binaryを用意（ゲーム起動前）
 
@@ -21,13 +21,13 @@ binaryのbuild commitは `a101c56a7dcb33b9361677e99f146ae10b3ef831`。これよ�
 
 Windows x64、64-bit PowerShell（Windows PowerShell5.1 x64またはPowerShell7）、Visual C++2022 x64 runtimeが必要。loaderが起動しない/依存DLL不足の場合も、その表示を保存し、まだgame attach成功とは扱わない。下のcopy blockは上表artifactの2files専用。自己buildの場合は既存build guideを使い、自分がbuildした実commit/hashに合わせたprovenanceを記録する。
 
-解析用repositoryは `research/offline-cpu-parallelism-20261011` のlatestを使用する。既存cloneに未commit作業がある場合は別cloneでよい。PowerShellでrepository内の変更を確認してから取得する:
+**2026-10-12のPR #16で研究ブランチはmainへ統合済み。** 解析用repositoryは現在の`main`をsource of truthとする。既存cloneに未commit作業がある場合は別cloneでよい。PowerShellでrepository内の変更を確認してから取得する:
 
 ```powershell
 git status --short
-git fetch origin research/offline-cpu-parallelism-20261011
-git switch research/offline-cpu-parallelism-20261011
-git pull --ff-only origin research/offline-cpu-parallelism-20261011
+git fetch origin main
+git switch main
+git pull --ff-only origin main
 ```
 
 未commit作業があるときにreset/forceで消さない。Python3はtrace解析に使うが、AのLoader接続・停止自体はPython不要。
