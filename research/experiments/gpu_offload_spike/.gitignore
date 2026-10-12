@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+gpu-results-local.json
+gpu-results-v2*.json
+gpu-devices.json

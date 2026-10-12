@@ -1,5 +1,7 @@
 # Victoria 3 GPU Offloading — standalone OpenCL benchmark
 
+> **2026-10-08 update:** This describes archived **v1** NumPy comparison. For a more meaningful Numba-optimized CPU baseline and the RX 7800 XT three-session test, see [README-v2.md](README-v2.md). No game-performance gain is established.
+
 **Synthetic experiment. Not Victoria 3 logic. No game, save, loader, injector, native patch or process attach.**
 
 Issue #12: test whether running independent integer kernels on a **real RX 7800 XT** can outperform NumPy on the same Windows workstation **end-to-end**. This continues PR #13's CPU-only theoretical investigation. GPU compute uses OpenCL 1.2 as an equivalent to Vulkan compute; Vulkan SDK not required.
@@ -7,13 +9,11 @@ Issue #12: test whether running independent integer kernels on a **real RX 7800 
 ## Windows 11 / RX 7800 XT
 
 1. Install current AMD Radeon GPU driver with OpenCL support and Python 3.11+ x64.
-2. This is a stacked PR (#14 on #13), so ensure that the local checkout uses this research branch before running it. From an existing clone:
+2. The v1 benchmark was merged to main in PRs #13 and #14. In an existing clone, use the latest main branch:
 
 ```powershell
-git fetch origin research/gpu-offload-opencl-20261008
-git switch research/gpu-offload-opencl-20261008
-# If the local branch does not exist, use instead:
-# git switch -c research/gpu-offload-opencl-20261008 --track origin/research/gpu-offload-opencl-20261008
+git switch main
+git pull --ff-only
 ```
 
 3. In PowerShell from the repository root:
@@ -22,10 +22,10 @@ git switch research/gpu-offload-opencl-20261008
 cd research\experiments\gpu_offload_spike
 py -3 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install numpy pyopencl
+.\.venv\Scripts\python.exe -m pip install numpy numba pyopencl
 .\.venv\Scripts\python.exe -m unittest discover -p 'test_*.py' -v
 .\.venv\Scripts\python.exe gpu_runtime.py --list-devices --output gpu-devices.json
-.\.venv\Scripts\python.exe gpu_runtime.py --sizes 100000 1000000 --repeats 9 --warmups 2 --device-substring 7800 --output gpu-results-local.json
+.\.venv\Scripts\python.exe gpu_runtime.py --sizes 100000 1000000 --repeats 9 --warmups 2 --device-substring gfx1101 --output gpu-results-local.json
 ```
 
 4. Share only `gpu-results-local.json` and `gpu-devices.json` if review is desired. They contain device/OS metadata and hashes/timing of synthetic input, **not game data**.
