@@ -84,14 +84,22 @@ class InventoryTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     gate.audit(bad, self.root)
 
-    def test_rejects_absolute_parent_and_symlink_escape(self):
+    def test_rejects_absolute_and_parent_escape(self):
         doc = index(); artifact(self.root, doc, 'a')
         for path in ('../outside', str(self.root / 'a')):
             bad = copy.deepcopy(doc); bad['artifacts'][0]['path'] = path
             with self.assertRaises(ValueError):
                 gate.audit(bad, self.root)
+
+    def test_rejects_symlink_escape(self):
+        doc = index(); artifact(self.root, doc, 'a')
         with tempfile.TemporaryDirectory() as td:
-            (self.root / 'escape').symlink_to(Path(td), target_is_directory=True)
+            try:
+                (self.root / 'escape').symlink_to(Path(td), target_is_directory=True)
+            except OSError as error:
+                if getattr(error, 'winerror', None) in (5, 1314):
+                    self.skipTest(f'Windows symlink creation unavailable: {error}')
+                raise
             bad = copy.deepcopy(doc); bad['artifacts'][0]['path'] = 'escape/a'
             with self.assertRaises(ValueError):
                 gate.audit(bad, self.root)
@@ -346,8 +354,11 @@ class RuntimeTests(unittest.TestCase):
             original = (self.root/'runs/t12-disabled-r1/ticktask_timings.csv').read_bytes()
             outside.write_bytes(original)
             # The old string join validates this shadow, while quality reads outside.
-            shadow = 'runs/t12-disabled-r1/' + outside.as_posix().lstrip('/')
-            artifact(self.root, self.doc, shadow, original, kind='game', role='ticktask_csv')
+            # A drive colon cannot form this shadow directory on Windows.
+            # The malicious absolute manifest and preservation checks still run.
+            if os.name != 'nt':
+                shadow = 'runs/t12-disabled-r1/' + outside.as_posix().lstrip('/')
+                artifact(self.root, self.doc, shadow, original, kind='game', role='ticktask_csv')
             self.change_manifest(lambda m: m.update(ticktask_csv=outside.as_posix()))
             self.bind_reviews()
             result = self.report()
@@ -365,7 +376,7 @@ class RuntimeTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.doc = runtime_bundle(self.root)
                 # On Linux a colon can name a shadow path; it is a drive on Windows.
-                if '\\' not in name:
+                if os.name != 'nt' and '\\' not in name:
                     raw = (self.root/'runs/t12-disabled-r1/ticktask_timings.csv').read_bytes()
                     artifact(self.root, self.doc, 'runs/t12-disabled-r1/'+name, raw,
                              kind='game', role='ticktask_csv')
@@ -397,7 +408,7 @@ class RuntimeTests(unittest.TestCase):
             (self.root/a['path']).write_bytes(b'frame,task,milliseconds,calls,longest_lock\n')
             a['sha256'] = hashlib.sha256((self.root/a['path']).read_bytes()).hexdigest()
             self.change_manifest(lambda m: m['capture'].update(ticktask_csv_sha256=a['sha256']),
-                                 str(Path(a['path']).parent/'manifest.json'))
+                                 (Path(a['path']).parent/'manifest.json').as_posix())
         self.bind_reviews()
         result = self.assert_blocked('empty_measured_workload')
         self.assertIsNone(result['overhead'])
@@ -437,18 +448,29 @@ class CliTests(unittest.TestCase):
             self.assertEqual(self.call(), 2)
             self.assertEqual(self.output.read_bytes(), b'previous report')
 
-    def test_refuses_index_artifact_and_hardlink_output_alias(self):
+    def test_refuses_index_and_artifact_output_alias(self):
         doc = index(); artifact(self.root, doc, 'source.log')
         self.source.write_text(json.dumps(doc))
         original = self.source.read_bytes()
         for target in (self.source, self.root/'source.log'):
             self.output = target
             self.assertEqual(self.call(), 2)
-        alias = self.root/'alias.json'; os.link(self.source, alias)
+        self.assertEqual(self.source.read_bytes(), original)
+        self.assertEqual((self.root/'source.log').read_bytes(), b'evidence')
+
+    def test_refuses_hardlink_output_alias(self):
+        self.source.write_text(json.dumps(index()))
+        original = self.source.read_bytes()
+        alias = self.root/'alias.json'
+        try:
+            os.link(self.source, alias)
+        except OSError as error:
+            if getattr(error, 'winerror', None) in (5, 1314):
+                self.skipTest(f'Windows hardlink creation unavailable: {error}')
+            raise
         self.output = alias
         self.assertEqual(self.call(), 2)
         self.assertEqual(self.source.read_bytes(), original)
-        self.assertEqual((self.root/'source.log').read_bytes(), b'evidence')
 
     def test_report_never_overwrites_unindexed_files_in_run_directory(self):
         doc = runtime_bundle(self.root)
