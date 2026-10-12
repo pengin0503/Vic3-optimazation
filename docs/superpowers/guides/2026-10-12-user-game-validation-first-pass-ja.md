@@ -4,6 +4,9 @@ Date: 2026-10-12 JST
 
 **最初に行うのはAのみ。12本の本測定やOS traceはまだ不要。** Aが失敗したらログを保存してそこで止め、同じprocessへの再attach・retryはしない。A成功後にB、A/Bの正常接続・停止が確認できてからCへ進む。read-only profilerは軽量化patchではなく、今回CPU使用率や速度が改善することを期待する検証ではない。
 
+
+**2026-10-12実測の重要な追記:** 初回disabled attachは `stage=byte_mismatch` / exit 8で失敗。その後、別のゲームプロセスで `LoadLibraryW → MEM_PRIVATE中継領域 → Steam gameoverlayrenderer64.dll` のジャンプ経路が観測された。Steam Overlayを無効化した対照試験と接続成功は未実施。診断ログ・未解決点・安全な次の検証条件は[実ゲームattach失敗の調査記録](../reports/2026-10-12-game-attach-steam-overlay-byte-mismatch-ja.md)を参照。失敗した同一PIDへ再attachしない。
+
 ## 0. 最新診断binaryを用意（ゲーム起動前）
 
 1. [Windows検証run38148690363のartifact](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363/artifacts/11706440529) `native-profiler-validation` をdownloadする。2026-10-12確認時、expired=false。ZIPを展開し、`Release/` 内の次の2filesを同じ作業folder（例 `C:\Vic3Profiler`）へ置く。ゲームのbinariesへ上書きしない。
