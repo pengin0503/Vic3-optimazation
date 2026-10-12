@@ -24,6 +24,9 @@ inline ArgsResult ParseLoaderArgs(const std::vector<std::wstring>& args) {
         else if(option==L"--pid" || option==L"--dll" || option==L"--output" || option==L"--targets") {
             if(++i==args.size() || args[i].empty())return {};
             const auto& value=args[i];
+            // Never consume a mode/switch as a missing option value: doing so
+            // could silently turn a read-only diagnosis into a normal attach.
+            if(value.starts_with(L"--"))return {};
             if(option==L"--pid") {
                 uint64_t pid=0;
                 for(wchar_t c:value){if(c<L'0' || c>L'9')return {};pid=pid*10+static_cast<uint32_t>(c-L'0');if(pid>std::numeric_limits<uint32_t>::max())return {};}

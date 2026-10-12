@@ -32,10 +32,17 @@ int main(int argc,char** argv) {
     auto args=ParseLoaderArgs({L"--pid",L"123",L"--disabled",L"--targets",L"investment,employment"});CHECK(args && args.value.pid==123 && args.value.disabled && args.value.target_mask==5);
     CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--targets",L"investment,investment"}));CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--targets",L"ai"}));CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--stop",L"--disabled"}));CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--pid",L"124"}));
     CHECK(ParseLoaderArgs({L"--pid",L"123",L"--diagnose-loadlibrary"}));
+    CHECK(ParseLoaderArgs({L"--diagnose-loadlibrary",L"--pid",L"123"}));
     for(const auto& option:{L"--disabled",L"--stop",L"--allow-partial-targets"})
         CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--diagnose-loadlibrary",option}));
     for(const auto& option:{L"--dll",L"--output",L"--targets"})
         CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--diagnose-loadlibrary",option,L"anything"}));
+    // Missing-value options must not swallow a safety mode and turn it into attach.
+    CHECK(!ParseLoaderArgs({L"--output",L"--diagnose-loadlibrary",L"--pid",L"123"}));
+    CHECK(!ParseLoaderArgs({L"--pid",L"123",L"--output",L"--diagnose-loadlibrary"}));
+    for(const auto& value:{L"--diagnose-loadlibrary",L"--stop",L"--disabled",L"--allow-partial-targets",L"--pid",L"--dll",L"--output",L"--targets"})
+        for(const auto& option:{L"--pid",L"--dll",L"--output",L"--targets"})
+            CHECK(!ParseLoaderArgs({L"--pid",L"123",option,value}));
 #ifdef _WIN32
     // Exercise the actual stop subscriber with real named IPC. Producer errors are never success.
     for(auto terminal:{RuntimeStatus::Stopped,RuntimeStatus::StopFailed,RuntimeStatus::TraceFailed,RuntimeStatus::Pending,RuntimeStatus::Ready}) {
