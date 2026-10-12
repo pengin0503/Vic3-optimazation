@@ -22,6 +22,7 @@ Microsoftの[CreateRemoteThread仕様](https://learn.microsoft.com/en-us/windows
 - handleのPIDと明示PIDを一致検証し、GetProcessTimesの開始FILETIMEを記録。API失敗/不一致は新stage `process_identity` / `process_times` で拒否。
 - E9 rel32だけを符号付き/整数境界検査して最初の行先を観測する。VirtualQueryExのstate/protection/type/allocation baseと独立errorを記録。行先は注入候補にせず、元のbyte_mismatchを維持する。
 - `--diagnose-loadlibrary --pid PID`: query/read権限だけで既存名前/x64/exe SHA-256 gateを通過し、診断後終了する。DLL選択、named IPC、remote allocation/write/thread、stopへ進まない。exit0は診断の入口一致だけを意味し、attach結果ではない。他のオプションとの混在は拒否する。
+- 値が欠けたオプションが診断flagを値として飲み込み、通常attachへ進む不正入力も拒否する。`--`で始まるtokenを値に使わない。ファイル名がその形式なら絶対pathまたは `./` を付けたpathで指定する。
 - 実ゲーム手順は[新しい診断ガイド](../guides/2026-10-12-loader-readonly-diagnosis-ja.md)に保存。旧artifact hashを今回のLoaderへ適用しない。
 
 ## ローカル検証
@@ -39,6 +40,17 @@ Microsoftの[CreateRemoteThread仕様](https://learn.microsoft.com/en-us/windows
 | read-only実APIとsynthetic host | query/readのみのhandleで一致診断。別のテスト専用childに合成E9を設置し、read-only診断とinjector双方がbyte_mismatchで拒否、InjectionProbe非実行。最初の行先のMEM_IMAGE属性も取得 |
 | 対象外CLI / stop / 注入 | 対象外hostは診断CLIでもexit4。既存wrong-process、named IPC stop、非フックhostへのsynthetic注入も成功 |
 | generated include / V3PF解析 / diff check | 成功。runtime/hook traceはsynthetic証拠のみ |
+| 全branch review後の修正 | `--output --diagnose-loadlibrary --pid 123` が受理されるREDを確認。switchを値として受け取らない修正後、両順序の診断・全switch/value混在と全Windows CTestが10/10 GREEN |
+
+ローカルbinary hash、source commit、各RED/GREEN logのhashは[validation.json](../../../research/generated/loader-readonly-diagnostics-2026-10-12/validation.json)に保存した。raw logは個人の絶対pathを含むため作業フォルダに保持する。GitHub Actionsは途中で起動せず、PR公開時の最終確認のみ使用する。最終CIのrun URL/head SHA/job結果はPR本文に日本語Markdownとして保存し、追加の文書pushによる不要な再起動を避ける。
+
+## 全branchレビューの判定
+
+Superpowersの独立・読み取り専用レビューでCriticalなし、Important 1件、Minor 1件を検出。Importantは診断flagが値として消費される不正入力で、失敗テストを先に確認して修正した。修正後のWindows全suiteは10/10。レビューが対象としたcommitは `63eaf5c6a151373700620032996e2e9cdc87da34`、指摘修正は `e49167320c3197ad642ae6ebaa7f632e3315e31d`。修正は新しいRED→GREENと全suiteで検証し、同じreviewを再依頼していない。
+
+非blockingのMinorとして、追加branch query失敗時の元stage/error保持、およびhex設定したstreamのdecimal出力/flags復元の明示テストが未追加。実装をレビューした範囲では元拒否の変更を認めなかったが、失敗側の追加coverageは次回課題として残す。
+
+レビューが判断を保留した範囲は、(1)実ゲーム/Steam互換/Phase 4/性能、(2)既存のmodule/byte/query競合と関数全体の信頼、(3)上記Python platform fixtureの修理、(4)pure helperを同じdiagnosticsで拒否後に成功再利用したときの古いstage保持。いずれも今回の成功主張に含めない。特に(4)は既存挙動でproduction wrapperが毎回resetするため今回のCLIには持ち越さない。
 
 Python全suiteは255 testsを実行し、環境補正後も `FAILED (errors=6, skipped=6)`。異なる5 methods（1 methodで2 subtests）に残るエラーは以下。これらのtest/toolはbase mainと同一で、今回変更していない。Windows全suite成功とは扱わず、PR最終CIのUbuntu Python検証も確認する。
 

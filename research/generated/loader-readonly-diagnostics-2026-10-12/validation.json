@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date_jst": "2026-10-12",
   "base_main": "321064d479248153585c0e838f8c25836aeae783",
-  "validated_source_commit": "32e5b47276344ade818f7cbf3a9172536267d5bf",
+  "validated_source_commit": "e49167320c3197ad642ae6ebaa7f632e3315e31d",
   "branch": "fix/loader-readonly-byte-mismatch",
   "platform": "Windows 11 10.0.26200 x64",
   "compiler": "MSVC 19.51.36260.0",
@@ -36,8 +36,8 @@
   "branch_observation": "E9 rel32 first destination only; never used as execution address",
   "binaries": {
     "Vic3OptimizationLoader.exe": {
-      "bytes": 103936,
-      "sha256": "d107043ede4f91c4f45f33c91a3ea93db224cd0b2e72e7e2f9b663059d6d6f85",
+      "bytes": 102912,
+      "sha256": "0621b5594590d08fb06d567ce937486e8ba645c21fa2a3e9c40d49d980a84e2c",
       "provenance": "local build, validated_source_commit; CI artifacts will differ"
     },
     "Vic3OptimizationProfiler.dll": {
@@ -78,6 +78,15 @@
     "final-ctest.log": {
       "storage": "local work/loader-diagnostics; raw absolute paths not published",
       "sha256": "cda9cc3c08601eec4c217fcc20af2cb2211c8aca3e0554eece9f5cc5621f9652"
+    },
+    "review-cli-red.log": {
+      "sha256": "d2711c59b5ae6c4b7b2d2eeb0e0bd9e27d106fcbe8e33a03cd56495bd7f8d135",
+      "storage": "local work/loader-diagnostics; raw absolute paths not published"
+    },
+    "review-final-ctest.log": {
+      "sha256": "18c7cc21da94b2058fdaf18bad0ddc12373f4794571d65c07fb96846d79c1098",
+      "storage": "local work/loader-diagnostics; raw absolute paths not published"
     }
-  }
+  },
+  "github_final_ci": "Final PR checks and Japanese PR body record run URL, head SHA and jobs; no intermediate CI"
 }
