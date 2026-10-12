@@ -5,6 +5,7 @@
 Reproduce from repository root:
 
 ```sh
+mkdir -p local-data
 python tools/witness_ticktask_indirect_sites.py input-data/Vic3_data.zip research/generated/ticktask-dependencies-1.14.5.json > local-data/indirect-witnesses.json
 ```
 

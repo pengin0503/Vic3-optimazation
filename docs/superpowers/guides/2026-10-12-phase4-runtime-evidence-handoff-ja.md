@@ -5,6 +5,8 @@ Date: 2026-10-12 (JST)
 
 これは次回測定の手順であり、今回測定を実行した記録ではない。現在の[監査結果](../../../research/phase4/current-gate-report.json)はblocked。ユーザーへの再承認確認は不要だが、欠落した実測bytesは必要になる。実ゲームattach code 4は未解消・未確認のまま。
 
+まだ実ゲーム接続を確認していない場合は[first-pass手順](2026-10-12-user-game-validation-first-pass-ja.md)のA(disabled attach/stop)を先に行う。このmatrix全体を接続失敗中に取得しない。
+
 ## 1. 保存先と測定matrixを準備
 
 既存[Windows native guide](2026-10-05-native-profiler-runtime-validation-ja.md)のLoader/DLLを使用する。Windows synthetic CTest10/10の結果は[Phase 3記録](../reports/2026-10-11-offline-native-diagnostics-phase3-ja.md)。環境を変えた場合や再現しない不具合に限り対象Windowsで再検証する。今回のPython証拠検査のために同じCIを繰り返す必要はない。

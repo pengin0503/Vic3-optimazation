@@ -25,6 +25,8 @@ Date: 2026-10-12 JST
 
 順序は、(1)最新版diagnostic Loaderで実game接続を確認、(2)12/16 × disabled/enabled ×各3回以上の最低12 measured runsをfresh process・交互順序で採取、(3)同期CSV/native/OSから計算・メモリ・待ち・dispatchを分類、(4)対象を1〜3へ限定、(5)read-only shadow/元結果の同等性検証、(6)別設計の小さなtoggleable patchをA/B検証する。warm-upを本測定に混ぜない。
 
+最初のユーザー作業は[disabled接続のfirst-pass手順](2026-10-12-user-game-validation-first-pass-ja.md)のAだけ。Windows artifactの入手先、2binaryのhash、選択PID・初期identity、attach/stop/trace、送付packetを記載した。A/B成功前に本反復を始めない。
+
 初期hashだけでsave安定性を認定せず、旧12_r2の余分なframeをtrimしてwall timeを補正したことにもしない。実測は[Phase4 handoff](2026-10-12-phase4-runtime-evidence-handoff-ja.md)に従う。
 
 ## Employmentの独立gate
