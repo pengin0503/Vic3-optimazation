@@ -8,8 +8,9 @@ Date: 2026-10-12 JST
 
 - 全体benchmark/static/OS/profiler基盤、Employment Stage A/B0、locator hardeningは実装済み。
 - 別区分のoffline CPU Phase1〜4と限定closeoutは完了。全体Phase4/Task9の実ゲームacceptanceは未達。
-- CPU研究とGPU v2 sourceを `research/offline-cpu-parallelism-20261011` へ統合した。mainへのmerge禁止を維持。GPU PR15はopen。
-- 最終reviewでH2Dの「合計がpositiveでも個別copyはzero」の誤validityを修正し、CPU研究とPR15両方へ反映。最終PR pushの既存2workflowはsuccess。実GPUでの計測原因が解決したという意味ではない。
+- 2026-10-12にCPU研究・GPU v2などをPR #16で`main`へ統合し、README全15件の日本語化も完了。以前の「mainへのmerge禁止」「GPU PR15 open」はこの文書の旧記述であり、現在の状態ではない。
+- 最終reviewでH2Dの「合計がpositiveでも個別copyはzero」の誤validityを修正し、統合した研究成果へ反映。関連した既存CI成功は合成/オフライン検証であり、実GPUでの計測原因が解決したという意味ではない。
+- [2026-10-12 実ゲーム新証拠](../reports/2026-10-12-game-attach-steam-overlay-byte-mismatch-ja.md): disabled attachは`byte_mismatch` / exit8のまま未成功。**別PID**の読取で`LoadLibraryW → MEM_PRIVATE → Steam gameoverlayrenderer64.dll`を確認した。[Issue #17](https://github.com/pengin0503/Vic3-optimazation/issues/17)のSteam Overlay OFF対照試験は未実施。Phase 4 gateはblocked。
 - latest保存済みGPU3-session分析では8-thread Numba CPUが96/96比較でGPUを上回った。新しいresident lifecycleモデルはbytesのみで、GPU高速化を示していない。
 
 ## 本体Phaseと次段階
@@ -23,7 +24,7 @@ Date: 2026-10-12 JST
 | Phase5 / Task10〜11: safe patch | patch0、着手条件未達 | 根本原因・semantic proof・ノイズを超える実時間改善 |
 | Phase6 / Task12: scheduler | syntheticモデルのみ | schedulerが主要因と確認した場合に限る追加設計・決定性検証 |
 
-順序は、(1)最新版diagnostic Loaderで実game接続を確認、(2)12/16 × disabled/enabled ×各3回以上の最低12 measured runsをfresh process・交互順序で採取、(3)同期CSV/native/OSから計算・メモリ・待ち・dispatchを分類、(4)対象を1〜3へ限定、(5)read-only shadow/元結果の同等性検証、(6)別設計の小さなtoggleable patchをA/B検証する。warm-upを本測定に混ぜない。
+順序は、(1)Steam Overlay OFFのfresh-process対照で最新版diagnostic Loaderのdisabled attachを確認し、(2)12/16 × disabled/enabled ×各3回以上の最低12 measured runsをfresh process・交互順序で採取、(3)同期CSV/native/OSから計算・メモリ・待ち・dispatchを分類、(4)対象を1〜3へ限定、(5)read-only shadow/元結果の同等性検証、(6)別設計の小さなtoggleable patchをA/B検証する。warm-upを本測定に混ぜない。
 
 最初のユーザー作業は[disabled接続のfirst-pass手順](2026-10-12-user-game-validation-first-pass-ja.md)のAだけ。Windows artifactの入手先、2binaryのhash、選択PID・初期identity、attach/stop/trace、送付packetを記載した。A/B成功前に本反復を始めない。
 
