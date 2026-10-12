@@ -1,73 +1,73 @@
 # Vic3-optimazation
 
-Current whole-project status: [2026-10-12 roadmap](docs/superpowers/guides/2026-10-12-project-roadmap-ja.md) and [non-game closeout](docs/superpowers/reports/2026-10-12-offline-closeout-ja.md). Offline CPU work, GPU v2 and diagnostic fixes are consolidated on this research branch, not merged into main. Read later reports over historical checkpoints below; game attach/overhead/synchronized runtime acceptance and native speedup remain unverified.
+Victoria 3のシミュレーション性能を、通常のスクリプトやdefineの調整を超えて改善するための研究プロジェクトです。
 
+プロジェクト全体の状況は[2026-10-12のロードマップ](docs/superpowers/guides/2026-10-12-project-roadmap-ja.md)と[非ゲーム作業の完了記録](docs/superpowers/reports/2026-10-12-offline-closeout-ja.md)を参照してください。現在の成果にはオフラインCPU研究、GPU v2、診断修正を含みます。過去の進捗より新しい報告を優先してください。実ゲームへの接続、観測負荷、同期した実行時証拠の受け入れ判定、ネイティブ処理の高速化は引き続き未検証です。
 
-## Measurement-free CPU research (2026-10-11)
+実ゲーム検証は[最初の検証手順](docs/superpowers/guides/2026-10-12-user-game-validation-first-pass-ja.md)から始めてください。
 
-The [offline CPU research spec](docs/superpowers/specs/2026-10-11-offline-cpu-research-design.md), [TickTask triage handoff](docs/superpowers/reports/2026-10-11-offline-cpu-research-handoff-ja.md) and [evidence-gate review](docs/superpowers/reports/2026-10-11-offline-cpu-gate-review-ja.md) document new read-only research on this branch. The [unresolved dependency triage tool](tools/triage_ticktask_unresolved.py) and [standalone synthetic DAG scheduler experiment](research/experiments/scheduler_model/README.md) require no game run. Both are research aids only: no native optimization, game CPU-utilization change or game speedup has been demonstrated. Local isolated tests: 7 TickTask triage and 11 synthetic scheduler tests passed; full-repository and Windows runtime checks remain outstanding.
+## 追加測定なしで進めるCPU研究（2026-10-11）
 
-Private research project for improving Victoria 3 simulation performance beyond ordinary script/define tuning.
+[オフラインCPU研究の仕様](docs/superpowers/specs/2026-10-11-offline-cpu-research-design.md)、[TickTask調査の引き継ぎ](docs/superpowers/reports/2026-10-11-offline-cpu-research-handoff-ja.md)、[証拠ゲートのレビュー](docs/superpowers/reports/2026-10-11-offline-cpu-gate-review-ja.md)に、読み取り専用の研究を記録しています。[未解決の依存関係を分類するツール](tools/triage_ticktask_unresolved.py)と[単独で動作する合成DAGスケジューラー実験](research/experiments/scheduler_model/README.md)は、ゲームを起動せずに実行できます。いずれも研究の補助であり、ネイティブ処理の最適化、ゲームのCPU使用率の変化、ゲームの高速化を実証したものではありません。初期の個別検証ではTickTask分類7件、合成スケジューラー11件のテストが成功しました。その後の検証状況は上記の新しい報告を参照してください。
 
-## Current state
+## 現在の状態
 
-The [measurement-free employment reuse investigation — 2026-10-07](docs/superpowers/reports/2026-10-07-offline-employment-optimization-ja.md) adds a fourth same-item ID-array lookup site, preserves the reset-before-processing order and the fallback initialization path, and explores a validated positive-slot hint in a throwaway synthetic model. Its nine model tests and 25,676 comparisons are research evidence only; no game optimization, native equivalence or speedup has been demonstrated. The [written lookup-reuse/shadow design](docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md) has been approved by the user. The [Stage A implementation plan](docs/superpowers/plans/2026-10-06-offline-lookup-reuse-core.md) has been implemented as the portable offline core in [`src/lookup_reuse/`](src/lookup_reuse/README.md): owned validated synthetic tables, a single positive-slot hint, and a shadow evaluator that always calls the original lookup and returns its result. Its fixed-seed run ([results](research/generated/lookup-reuse-core/results.json), [verification record](research/generated/lookup-reuse-core/verification.md)) found zero membership/slot/shadow mismatches over 2,004 synthetic snapshots and 32,948 queries; these are synthetic lookup counts, not timings, and demonstrate no native equivalence or game speedup. Native shadow remains gated on target, ABI, lifetime and profiler-overhead evidence. No lookup bypass or optimization mode is authorized by that design.
+[追加測定なしでの雇用処理の検索再利用調査（2026-10-07）](docs/superpowers/reports/2026-10-07-offline-employment-optimization-ja.md)では、同一項目のID配列検索箇所を4か所に拡張し、処理前のリセット順序と代替経路の初期化を維持したうえで、検証済みの正のスロット位置を記憶する方式を使い捨ての合成モデルで調べました。モデルの9件のテストと25,676回の比較は研究上の証拠であり、ゲームの最適化、ネイティブ処理との同等性、高速化は実証していません。
 
-The [Stage B preparation and gate review — 2026-10-07](docs/superpowers/reports/2026-10-07-native-shadow-preparation-ja.md) adds an exact-build lookup entry signature, four caller/return-site witnesses, two excluded callers, and reproducible bounded static evidence. That historical review identified the separate native runtime branch; the [branch integration record](docs/superpowers/reports/2026-10-07-branch-integration-ja.md) records its subsequent integration into main. Native shadow remains blocked on live table lifetime, worker scope and real-game runtime validation; the [B0 offline connection-contract design](docs/superpowers/specs/2026-10-07-offline-native-shadow-contract-design.md) has been approved. Its [four-task implementation plan](docs/superpowers/plans/2026-10-07-offline-native-shadow-contract.md) is implemented in [`src/lookup_reuse_contract/`](src/lookup_reuse_contract/README.md) (offline locator, owned fixtures with opaque-result normalization, original-exactly-once shadow, fixed-seed runner and GCC/Clang/MSVC CI); see the [B0 verification record](research/generated/lookup-reuse-contract/verification.md). B0 covers owned fixtures only and does not satisfy the native gate.
+[検索再利用・シャドウ比較の設計](docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md)はユーザー承認済みです。[Stage Aの実装計画](docs/superpowers/plans/2026-10-06-offline-lookup-reuse-core.md)に沿って、移植可能なオフラインコアを[`src/lookup_reuse/`](src/lookup_reuse/README.md)に実装しました。所有・検証済みの合成テーブル、1件の正のスロット位置ヒント、元の検索を必ず呼び、その結果を返すシャドウ評価器を備えます。固定シードの実行（[結果](research/generated/lookup-reuse-core/results.json)、[検証記録](research/generated/lookup-reuse-core/verification.md)）では、2,004個の合成スナップショットと32,948件の検索で、存在判定・スロット・シャドウ比較の不一致は0件でした。これは合成検索の件数であり、処理時間でも、ネイティブ処理との同等性やゲーム高速化の証拠でもありません。ネイティブ側のシャドウ比較には、対象、ABI、寿命、プロファイラーの観測負荷に関する証拠が必要です。この設計は検索の省略や最適化モードを許可していません。
 
-Start here: [latest repeated benchmark analysis — 2026-10-05](docs/superpowers/reports/2026-10-05-repeated-benchmark-analysis-ja.md).
-For the next native optimization investigation, read the [deep native findings and handoff](docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md). It adds six exact-build economics candidates, classified synchronization witnesses, eight primary sources, and reproducible research recipes; none establishes a runtime bottleneck or speedup yet.
-The [first OS capture attempt](research/os-capture-attempt-2026-10-05-ja.md) preserved 37.53 seconds and a matched 368-frame TickTask CSV, but its trace lost 43,082 events. The [second sampled CPU capture and handoff](research/os-sampled-capture-2026-10-05-ja.md) saved with zero lost events and now observes downstream ID/table/page, temporary-memory and employment-preparation candidates in real game samples/stacks. The operator reported 48.46 seconds; its matching TickTask CSV, exact gameplay boundaries and game exit reason remain unconfirmed. These are runtime execution witnesses, not a validated bottleneck or speedup.
-The historical [OS capture preparation and runbook](research/os-capture-preparation-2026-10-05-ja.md) contains 42 downstream native ranges and eight unmeasured templates. A [focused WPR profile](research/vic3-focused-cpu.wprp) separates CPU sampling from scheduling diagnosis. Named sessions require actual Windows administrator elevation; no recording remains active. Raw ETL/system-wide exports stay local, while game-filtered aggregates, bounded witnesses, recipes and hashes are preserved.
-The [offline implementation handoff](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md) remains the entry point for the prepared static/OS/profiler tools.
+[Stage Bの準備とゲートレビュー（2026-10-07）](docs/superpowers/reports/2026-10-07-native-shadow-preparation-ja.md)では、対象ビルドに限定した検索入口のシグネチャ、呼び出し元・戻り先4か所の証拠、対象外の呼び出し元2か所、範囲を限定して再現できる静的証拠を追加しました。当時のレビューに登場する別のネイティブ実行ブランチは、その後mainに統合されています（[ブランチ統合記録](docs/superpowers/reports/2026-10-07-branch-integration-ja.md)）。実テーブルの寿命、ワーカーのスコープ、実ゲームでの動作検証が未解決のため、ネイティブ側のシャドウ比較は引き続き着手条件を満たしていません。
 
-The read-only native profiler DLL and explicit-PID loader are implemented; real-game attach, overhead and stability remain unverified. No native performance patch, scheduler override or simulation-state modification has been implemented. Measurement/static-analysis tooling and the offline profiler reference codec/parser are prepared; the new nine-run batch has low observed timing variation. Mean wall times are 37.043 / 34.517 / 34.777 seconds for 8 / 12 / 16 task threads. Use 12 as the diagnostic baseline and 16 as the comparison; this does not establish an optimum. One 12-thread CSV has three extra trailing frames, so strict equal-boundary repeatability still needs that boundary checked. Synchronized OS-level profiling remains required before selecting a native optimization.
+[B0オフライン接続契約の設計](docs/superpowers/specs/2026-10-07-offline-native-shadow-contract-design.md)は承認済みで、[4タスクの実装計画](docs/superpowers/plans/2026-10-07-offline-native-shadow-contract.md)を[`src/lookup_reuse_contract/`](src/lookup_reuse_contract/README.md)に実装しています。オフラインの位置特定、所有するテスト用データと不透明な結果値の正規化、元の処理を厳密に1回呼ぶシャドウ比較、固定シードの実行ツール、GCC・Clang・MSVCのCIを含みます。[B0の検証記録](research/generated/lookup-reuse-contract/verification.md)を参照してください。B0の検証対象は所有するテスト用データのみであり、ネイティブ処理の着手条件を満たすものではありません。
 
-Earlier checkpoints remain under `docs/superpowers/reports/` for provenance and should not be treated as the current status when they conflict with the latest handoff.
+測定結果の入口は[反復ベンチマーク分析（2026-10-05）](docs/superpowers/reports/2026-10-05-repeated-benchmark-analysis-ja.md)です。次のネイティブ最適化調査には[詳細調査と引き継ぎ](docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md)を参照してください。対象ビルドに限定した経済処理の候補6件、分類済みの同期処理の証拠、一次資料8件、再現手順を追加していますが、実行時のボトルネックや高速化はまだ実証していません。
 
-## Target
+[最初のOS記録の試行](research/os-capture-attempt-2026-10-05-ja.md)では、37.53秒の記録と対応する368フレームのTickTask CSVを保存しましたが、トレースで43,082イベントが欠落しました。[2回目のCPUサンプリング記録と引き継ぎ](research/os-sampled-capture-2026-10-05-ja.md)では欠落イベント0件で保存でき、実ゲームのサンプル・スタックから、下流のID・テーブル・ページ、一時メモリ、雇用準備処理の候補を観測しました。測定者の報告は48.46秒ですが、対応するTickTask CSV、正確なゲーム進行の測定境界、ゲーム終了の理由は未確認です。これらは実行の証拠であり、ボトルネックや高速化の確定ではありません。
+
+過去の[OS記録の準備と手順](research/os-capture-preparation-2026-10-05-ja.md)には、下流のネイティブ範囲42件と未測定のテンプレート8件があります。[専用WPRプロファイル](research/vic3-focused-cpu.wprp)はCPUサンプリングとスケジューリング診断を分離します。名前付きセッションにはWindowsの管理者権限が必要で、現在継続中の記録はありません。生のETLやシステム全体のエクスポートはローカルに留め、ゲームに絞った集計、限定的な証拠、再現手順、ハッシュを保存しています。[オフライン実装の引き継ぎ](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md)は、静的解析・OS解析・プロファイラー関連ツールの入口です。
+
+読み取り専用のネイティブプロファイラーDLLと、PIDを明示するローダーは実装済みです。実ゲームへの接続、観測負荷、安定性は未検証です。ネイティブ性能パッチ、スケジューラーの上書き、シミュレーション状態の変更は実装していません。測定・静的解析ツールとオフラインのプロファイラー参照コーデック・パーサーを用意しています。新しい9回の測定では時間のばらつきが小さく、タスクスレッド数8・12・16の平均経過時間はそれぞれ37.043・34.517・34.777秒でした。診断の基準を12、比較を16としますが、最適値の確定ではありません。12スレッドのCSVの1つには末尾に3フレーム余分に含まれるため、測定境界を厳密に揃えた再現性には追加確認が必要です。ネイティブ最適化を選ぶ前に、同期したOSレベルのプロファイリングが必要です。
+
+過去の記録は`docs/superpowers/reports/`に残しています。新しい引き継ぎと矛盾する場合は、過去の記録を現在の状態として扱わないでください。
+
+## 対象
 
 - Victoria 3 Windows 1.14.5
-- Caligula: `release/1.14.5` / `9f8281a37e85639359b3b0c2c5df0196e975ca4b`
-- Clausewitz: `caligula/release/1.14.x` / `fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef`
-- `victoria3.exe` SHA-256: `9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54`
+- Caligula：`release/1.14.5` / `9f8281a37e85639359b3b0c2c5df0196e975ca4b`
+- Clausewitz：`caligula/release/1.14.x` / `fd5e1dbd038c3c4a3f48a36abf60ebb42dd0ceef`
+- `victoria3.exe`のSHA-256：`9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54`
 
-## Data policy
+## データの保存方針
 
-The private repository intentionally retains `input-data/Vic3_data.zip` through Git LFS because the exact combined input improves offline-analysis efficiency and reproducibility.
+正確な統合入力がオフライン解析の効率と再現性を高めるため、`input-data/Vic3_data.zip`をGit LFSで保持しています。
 
-- LFS SHA-256: `79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34`
-- size: 124,462,636 bytes
+- LFSのSHA-256：`79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34`
+- サイズ：124,462,636バイト
 
-Smaller extracted inputs and preserved PC evidence remain under `input-data/`. The authoritative inventory and storage rules are in [research/input-data-manifest.md](research/input-data-manifest.md). Keep unrelated/low-value large game assets out of the repository and do not redistribute third-party game data without checking the applicable terms.
+小さな抽出済み入力と保存済みのPC測定証拠も`input-data/`にあります。正式な一覧と保存規則は[入力データのマニフェスト](research/input-data-manifest.md)を参照してください。無関係なものや価値の低い大きなゲームアセットは追加せず、第三者のゲームデータを再配布する際は適用される利用条件を確認してください。
 
-## Research rule
+## 研究の原則
 
-Measure first. Do not infer scheduler/lock causes from low aggregate CPU use alone, and do not introduce a native optimization until repeatability, OS-level evidence, exact-build validation, expected benefit, and semantic risk are understood.
+まず測定します。CPU全体の使用率が低いという理由だけで、スケジューラーやロックを原因と推定しません。再現性、OSレベルの証拠、対象ビルドの検証、期待する効果、動作上のリスクを理解するまで、ネイティブ最適化を導入しません。
 
-## Next evidence gate
+## 次に必要な証拠
 
-1. use the [preserved nine runs](benchmarks/measured-2026-10-05-3month-repeats/) and [verified analysis](research/generated/repeats-2026-10-05/repeat-evidence.json); keep historical single observations separate
-2. check the 12_r2 end boundary: common-frame task/call workload matches, but the raw CSV has three extra frames; the integrated workload-fingerprint quality gate detects this raw-run mismatch
-3. synchronize matched 12- and 16-thread runs with WPR/WPA or AMD uProf, using automatic boundary timestamps and alternating execution order
-4. classify CPU work, scheduling and waiting; prioritize HandleAutonomousInvestment, ProcessEconomicMigration and UpdateEmployment for read-only investigation
-5. attribute the [six downstream native candidates](research/generated/deep-native-2026-10-05/economics/findings.json) with caller stacks, allocation and memory-access evidence; distinguish initialization guards and tick-statistics updates from worker/state synchronization
+1. [保存済みの9回の測定](benchmarks/measured-2026-10-05-3month-repeats/)と[検証済みの分析](research/generated/repeats-2026-10-05/repeat-evidence.json)を使い、過去の単発測定とは分けて扱います。
+2. 12_r2の終了境界を確認します。共通フレームのタスク・呼び出し負荷は一致しますが、生のCSVには3フレーム余分にあり、統合済みの負荷フィンガープリント検査がこの不一致を検出します。
+3. 自動の境界タイムスタンプと交互の実行順序を使い、条件を揃えた12・16スレッドの測定をWPR/WPAまたはAMD uProfと同期します。
+4. CPU処理・スケジューリング・待機を分類し、HandleAutonomousInvestment、ProcessEconomicMigration、UpdateEmploymentの読み取り専用調査を優先します。
+5. 呼び出し元スタック、メモリ確保、メモリアクセスの証拠を使って[下流のネイティブ候補6件](research/generated/deep-native-2026-10-05/economics/findings.json)の寄与を調べ、初期化ガードやtick統計の更新をワーカー・状態の同期と区別します。
 
-## Source of truth
+## 正式な参照資料
 
-- [design](docs/superpowers/specs/2026-10-04-native-performance-optimization-design.md)
-- [implementation plan](docs/superpowers/plans/2026-10-04-native-performance-optimization-implementation.md)
-- [latest measurements and development decision](docs/superpowers/reports/2026-10-05-repeated-benchmark-analysis-ja.md)
-- [deep native investigation and development gates](docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md)
-- [latest sampled CPU observations and remaining evidence](research/os-sampled-capture-2026-10-05-ja.md)
-- [offline tooling handoff](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md)
-- [input-data manifest](research/input-data-manifest.md)
+- [設計](docs/superpowers/specs/2026-10-04-native-performance-optimization-design.md)
+- [実装計画](docs/superpowers/plans/2026-10-04-native-performance-optimization-implementation.md)
+- [反復測定と開発判断](docs/superpowers/reports/2026-10-05-repeated-benchmark-analysis-ja.md)
+- [詳細なネイティブ調査と開発条件](docs/superpowers/reports/2026-10-05-deep-native-investigation-ja.md)
+- [CPUサンプリングの観測結果と未取得の証拠](research/os-sampled-capture-2026-10-05-ja.md)
+- [オフラインツールの引き継ぎ](docs/superpowers/reports/2026-10-05-offline-three-plan-handoff-ja.md)
+- [入力データのマニフェスト](research/input-data-manifest.md)
 
-## Read-only native profiler prototype
+## 読み取り専用ネイティブプロファイラーの試作
 
-Windows 1.14.5 の exact build 限定で、3 つの TickTask tail anchors を観測する DLL と
-explicit PID loader を追加しました。実ゲームの overhead・安定性はまだ未検証です。
-ビルド・attach・disabled mode・stop・測定手順は
-[Windows 実ゲーム検証ガイド](docs/superpowers/guides/2026-10-05-native-profiler-runtime-validation-ja.md)、
-実装範囲と検証記録は
-[handoff](docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md) を参照してください。
+Windows 1.14.5の完全に一致するビルドに限定し、3つのTickTask末尾アンカーを観測するDLLと、PIDを明示するローダーを追加しました。実ゲームでの観測負荷・安定性は未検証です。ビルド、接続、無効モード、停止、測定の手順は[Windows実ゲーム検証ガイド](docs/superpowers/guides/2026-10-05-native-profiler-runtime-validation-ja.md)、実装範囲と検証記録は[実装の引き継ぎ](docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md)を参照してください。

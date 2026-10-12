@@ -1,38 +1,41 @@
-# GPU synthetic benchmark v2 — 9700X optimized CPU versus RX 7800 XT GPU
+# GPU合成ベンチマークv2：9700Xの最適化CPU処理とRX 7800 XTの比較
 
-This is a **synthetic offline microbenchmark**, not a Victoria 3 code modification, profiler or in-game speedup measurement. Version 1's reported 3.72–9.46x synthetic gains compared only against NumPy and therefore are **not** appropriate evidence for GPU offloading.
+これは**合成データによるオフラインのマイクロベンチマーク**です。Victoria 3のコード変更、プロファイラー、ゲーム内の高速化測定ではありません。v1で報告した合成実験の3.72～9.46倍という速度比は、NumPyとの比較だけであり、GPUへの処理移行の根拠には適しません。
 
-## Why v2
+## v2の目的
 
-- Independent CPU baselines: NumPy, **Numba JIT fused serial** and **Numba JIT fused parallel** loops, with the same synthetic integer operations as the OpenCL kernel.
-- CPU and GPU each measured in **cold** (CPU pack/copy then process) and **resident** (reused already-prepared input) modes. Resident GPU inputs were preloaded and input upload cost is excluded, though its D2H remains; resident CPU input preparation is likewise excluded.
-- CPU and GPU samples interleaved within each case; alternate backend and mode order. JIT compilation, device allocation and GPU preloading happen before timing.
-- Strict per-iteration GPU/CPU result equality; independently report GPU output SHA-256, reference output SHA-256 and successful GPU validation iteration count. Hash computation happens outside the timed GPU processing interval.
-- OpenCL H2D event time **zero when bytes >0 means invalid profiling**, not free transfer. The JSON retains measured host submit+wait wall timings and `h2d.event_status`; H2D device bandwidth stays `null` until **every** device event is positive.
-- `session_id`, driver and software versions, per-run raw samples, numba thread count and comparison ratios for auditability. Schema v2; v1's entry point and existing result fields remain available.
+- CPUの比較対象をNumPy、**Numba JITで融合した直列ループ**、**Numba JITで融合した並列ループ**に分け、OpenCLカーネルと同じ合成整数演算を行います。
+- CPU・GPUとも、**cold**（CPUでの入力準備・コピー後に処理）と**resident**（準備済み入力の再利用）を測定します。residentのGPU入力は事前転送済みで、入力転送コストを除外しますが、D2H転送は残ります。residentのCPUも入力準備を除外します。
+- 各条件内でCPU・GPUのサンプルを交互に取得し、実行方式とモードの順序を入れ替えます。JITコンパイル、デバイスのメモリ確保、GPUへの事前転送は時間測定の前に行います。
+- 反復ごとにGPU・CPU結果の完全一致を検証します。GPU出力のSHA-256、参照出力のSHA-256、GPU検証に成功した反復数を独立して記録します。ハッシュ計算はGPU処理の計測区間外で行います。
+- コピーが0バイトより大きいのにOpenCLのH2Dイベント時間が0の場合、無料の転送ではなく**無効な計測**です。JSONには実測したホスト側の投入・待機時間と`h2d.event_status`を残し、すべてのデバイスイベントが正になるまでH2Dのデバイス帯域を`null`にします。
+- 監査のため、`session_id`、ドライバー・ソフトウェアのバージョン、各測定の生サンプル、Numbaスレッド数、比較比率を記録します。スキーマはv2です。v1の実行入口と既存の結果フィールドは維持しています。
 
-### Per-copy H2D diagnostic hardening (2026-10-12)
+### H2Dのコピーごとの診断強化（2026-10-12）
 
-Each raw sample now retains `h2d_device_event_durations_ms` and `h2d_copy_bytes`. A positive sum is insufficient: any zero, negative/nonfinite duration, mismatched copy/byte total, or missing per-copy profile keeps bandwidth null. Aggregate-only legacy data cannot certify individual copy validity. `zero_duration_events` counts affected iterations; `zero_duration_copy_events` counts known zero copies (null if profiles are missing). Resident no-transfer events stay not applicable. The shared executor adds these fields without removing v1 fields; it does not fix a driver or establish actual PCIe bandwidth. Existing all-zero hardware findings remain invalid.
+各生サンプルは`h2d_device_event_durations_ms`と`h2d_copy_bytes`を保持します。合計が正というだけでは不十分です。0・負・非有限の時間、コピー数・バイト総量の不一致、コピーごとの計測値の欠如があれば、帯域はnullのままです。合計しかない過去のデータでは、個々のコピーの有効性を確認できません。
 
-**Limitation:** A Numba JIT microbenchmark is a more credible CPU baseline than NumPy, **but is still not the optimized native C++ or real Victoria 3 CPU workload**. Kernel/dataset isolation, scheduling/dependencies, save determinism, critical path, game wall-time and actual PCIe bandwidth remain unmeasured. No assertions about gameplay speed are permitted.
+`zero_duration_events`は影響を受けた反復数、`zero_duration_copy_events`は確認できた0時間のコピー数です。計測値がない場合はnullです。residentで転送がないイベントは対象外です。共通の実行器はv1フィールドを削除せずにこれらを追加しますが、ドライバーの修正や実PCIe帯域の証明ではありません。既存の実機結果の全0時間イベントは、引き続き無効です。
+
+**制約：**Numba JITのマイクロベンチマークはNumPyより適切なCPU比較対象ですが、最適化したネイティブC++や実際のVictoria 3のCPU負荷ではありません。カーネル・データの分離、スケジューリング・依存関係、セーブの決定性、クリティカルパス、ゲームの経過時間、実PCIe帯域は未測定です。ゲーム速度に関する断定はできません。
 
 ## Windows PowerShell / RX 7800 XT
 
-Run this in your existing clone. Until this branch is merged to main, first check it out:
+統合済みの最新mainを既存のコピーで取得し、実行します。
 
 ```powershell
 cd $HOME\Desktop\Vic3-optimazation
-git fetch origin research/gpu-numba-fair-baseline-20261008
-git switch -c research/gpu-numba-fair-baseline-20261008 --track origin/research/gpu-numba-fair-baseline-20261008
+git fetch origin
+git switch main
+git pull --ff-only
 cd research\experiments\gpu_offload_spike
 .\.venv\Scripts\python.exe -m pip install --upgrade numpy numba pyopencl
 .\.venv\Scripts\python.exe -m unittest discover -p "test_*.py" -v
 ```
 
-If the local branch already exists, use `git switch research/gpu-numba-fair-baseline-20261008` instead.
+まだ`.venv`がない場合は、パッケージのインストール前に`py -3 -m venv .venv`で作成してください。
 
-Perform **three independent benchmark process sessions**. The GPU exposes `gfx1101` as its OpenCL device name on the user's machine; this is v2's default (override using `--device-substring` if needed):
+**独立したベンチマークプロセスを3セッション**実行します。ユーザーの環境でのOpenCLデバイス名は`gfx1101`で、v2の既定値です。必要なら`--device-substring`で変更します。
 
 ```powershell
 1..3 | ForEach-Object {
@@ -41,20 +44,21 @@ Perform **three independent benchmark process sessions**. The GPU exposes `gfx11
 }
 ```
 
-Send back `gpu-results-v2-session-1.json`, `gpu-results-v2-session-2.json`, `gpu-results-v2-session-3.json`. No game logs, executable, save or other Victoria 3 data are needed.
+確認するファイルは`gpu-results-v2-session-1.json`、`gpu-results-v2-session-2.json`、`gpu-results-v2-session-3.json`です。ゲームログ、実行ファイル、セーブなどのVictoria 3データは不要です。
 
-## Interpreting output
+## 出力の読み方
 
-Use matching **cold CPU / cold GPU** or **resident CPU / resident GPU** ratios:
+条件が一致するcold CPU・cold GPU、またはresident CPU・resident GPUの比率を使います。
+
 - `modes.cold.ratio_vs_numba_serial_cpu_cold`
 - `modes.cold.ratio_vs_numba_parallel_cpu_cold`
 - `modes.resident.ratio_vs_numba_serial_cpu_resident`
 - `modes.resident.ratio_vs_numba_parallel_cpu_resident`
 
-Ratio = CPU median / GPU median. >1 means GPU faster on that *synthetic* case. `numba_threads: 8` is the requested number of Numba parallel worker threads; it does not change the CPU's physical core count.
+比率 = CPU中央値 / GPU中央値です。1より大きければ、その合成条件ではGPUが速いことを示します。`numba_threads: 8`はNumba並列ワーカーの要求スレッド数であり、CPUの物理コア数を変えません。
 
-`h2d.host_phase_median_ms` measures wall clock across enqueue+wait for the upload region; `h2d.zero_duration_events` records invalid zero GPU events with nonzero copy bytes. On AMD's prior v1 result, **all H2D device event durations were zero**; v2 does not pretend the root cause is fixed. This may arise from profiling event semantics or the driver's host-stage buffering and requires real GPU diagnostic follow-up. This host timing is *not* necessarily pure PCIe transfer time.
+`h2d.host_phase_median_ms`は、転送区間の投入から待機完了までの経過時間です。`h2d.zero_duration_events`は、コピー量が0でないのにGPUイベント時間が0という無効な計測を記録します。AMDの過去のv1結果では、H2Dデバイスイベント時間はすべて0でした。v2は原因が解消したとは扱いません。イベント計測の意味や、ドライバーによるホスト側の一時保持が原因の可能性があり、実GPUでの追加診断が必要です。このホスト時間は、純粋なPCIe転送時間とは限りません。
 
-`gpu_output_sha256` is computed from the GPU-returned array in every iteration (after timing). Its expected value is the row's `reference_output_sha256`. If any GPU output differs in data, dtype or shape, the run fails with exit 2 and `status=error` rather than returning a success result.
+`gpu_output_sha256`は、毎反復でGPUから返された配列から計測後に求めます。期待値は同じ行の`reference_output_sha256`です。データ、型、形状のいずれかが異なれば、成功結果を返さず、終了コード2と`status=error`で失敗します。
 
-The benchmark does not validate or accelerate Victoria 3. The next engineering gate remains independently reconstructing a genuinely GPU-safe, significant native task from the 1.14.5 critical path.
+このベンチマークはVictoria 3を検証・高速化しません。次の開発条件は、1.14.5のクリティカルパスから、GPUで安全に処理できる有意なネイティブタスクを独立して復元することです。

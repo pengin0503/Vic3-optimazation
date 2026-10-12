@@ -1,47 +1,42 @@
-# Native source
+# ネイティブソース
 
-The **Task 9 read-only native instrumentation prototype** for Victoria 3 Windows 1.14.5 is implemented. Real-game attach, overhead and stability validation remain pending; see the operator guide and loader diagnostics below.
+Victoria 3 Windows 1.14.5向けの**Task 9：読み取り専用ネイティブ計測の試作**は実装済みです。実ゲームへの接続、観測負荷、安定性の検証は未完了です。以下の操作ガイドとローダー診断を参照してください。
 
-The evidence gate for starting Task 9 was reached after the repeated benchmark baseline and PR #11 OS sampled/native execution evidence. The approved runtime plan is:
+Task 9の着手条件は、反復ベンチマークの基準測定とPR #11のOSサンプリング・ネイティブ実行の証拠により満たされました。承認済みの実行時計測計画と関連資料は次のとおりです。
 
-- docs/superpowers/plans/2026-10-05-read-only-native-profiler-runtime.md
-- research/native-profiler-runtime-targets-1.14.5.json
-- research/native-profiler-hook-abi-1.14.5.md
-- research/native-profiler-event-format.md
+- [実行時計測の計画](../docs/superpowers/plans/2026-10-05-read-only-native-profiler-runtime.md)
+- [実行時計測の対象](../research/native-profiler-runtime-targets-1.14.5.json)
+- [フックのABI](../research/native-profiler-hook-abi-1.14.5.md)
+- [イベント形式](../research/native-profiler-event-format.md)
 
-The first native components are limited to an exact-build attach loader and observation-only profiler DLL. Unsupported builds must fail closed.
+最初のネイティブ構成要素は、対象ビルドに限定した接続ローダーと観測専用のプロファイラーDLLです。未対応のビルドは、安全側に倒して拒否する必要があります。
 
-## Layout
+## 構成
 
-- `native/CMakeLists.txt` — Windows x64 only (configuration fails with a clear message elsewhere). C++20, shared CRT. MinHook is fetched by CMake `FetchContent` at exact commit `c3fcafdc10146beb5919319d0683e44e3c30d537` and compiled from source; no third-party binary is vendored. License: `third_party/licenses/MinHook.txt`.
-- `native/generated/targets_1_14_5.inc` — generated, never hand-edited. Regenerate with `python tools/render_native_profiler_targets.py`; `--check` fails if the committed include is stale. The single maintained source is `research/native-profiler-runtime-targets-1.14.5.json`; the renderer rejects anything other than the three pinned tail anchors, a slot other than 6, a non-unique declared match count, malformed hex ranges, or an inconsistent signature offset.
+- `native/CMakeLists.txt`：Windows x64専用です。他の環境では明確なメッセージで構成処理を停止します。C++20と共有CRTを使用します。MinHookはCMakeの`FetchContent`でコミット`c3fcafdc10146beb5919319d0683e44e3c30d537`を取得し、ソースからビルドします。第三者のバイナリは同梱しません。ライセンスは`third_party/licenses/MinHook.txt`です。
+- `native/generated/targets_1_14_5.inc`：生成ファイルのため手編集しません。`python tools/render_native_profiler_targets.py`で再生成できます。`--check`はコミット済みファイルが古い場合に失敗します。維持する元データは`research/native-profiler-runtime-targets-1.14.5.json`のみです。生成ツールは、固定した3つの末尾アンカー以外、6以外のスロット、一意でない宣言済み一致件数、不正な16進範囲、矛盾するシグネチャオフセットを拒否します。
 
-Do **not** add game-state-changing optimization patches, scheduler overrides, lock removal, cadence changes, or speculative parallelization here. Task 11/12 remain evidence-gated until Task 9 runtime overhead/correlation and the remaining CPU/wait/critical-path questions are resolved.
+ゲーム状態を変更する最適化パッチ、スケジューラーの上書き、ロックの除去、更新頻度の変更、根拠のない並列化をここに追加してはいけません。Task 11・12には、Task 9の実行時観測負荷・相関と、CPU処理・待機・クリティカルパスに関する残りの証拠が必要です。
 
-## Offline lookup reuse core (`src/lookup_reuse/`)
+## オフライン検索再利用コア（`src/lookup_reuse/`）
 
-[`lookup_reuse/`](lookup_reuse/README.md) is a separate, platform-neutral C++20 static library with tests and an offline runner (Stage A of the [lookup reuse / shadow design](../docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md)). It works only on owned, immutable synthetic tables, always calls the original lookup in shadow mode and has no optimizing mode. It does not build or touch the native loader, DLL, hooks, live memory or the V3PF v1 profiler format, and it is not part of the Task 9 runtime plan. Native shadow (Stage B) remains gated on the evidence conditions in §8 of that design.
+[`lookup_reuse/`](lookup_reuse/README.md)は、独立したプラットフォーム共通のC++20静的ライブラリ、テスト、オフライン実行ツールです。[検索再利用・シャドウ比較の設計](../docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md)のStage Aにあたります。所有する不変の合成テーブルだけを扱い、シャドウモードでも元の検索を必ず呼びます。最適化モードはありません。ネイティブローダー、DLL、フック、実プロセスメモリ、V3PF v1プロファイラー形式をビルド・操作せず、Task 9の実行時計測計画には含まれません。ネイティブ側のシャドウ比較（Stage B）には、設計の第8節に記載した証拠が引き続き必要です。
 
-## Offline native shadow contract (`src/lookup_reuse_contract/`)
+## オフラインのネイティブシャドウ契約（`src/lookup_reuse_contract/`）
 
-[`lookup_reuse_contract/`](lookup_reuse_contract/README.md) is B0 of the [offline native shadow contract design](../docs/superpowers/specs/2026-10-07-offline-native-shadow-contract-design.md): a platform-neutral C++20 library, tests and fixed-seed runner built on Stage A. It covers an offline exact-build locator, owned native-shaped fixtures, opaque-result normalization and a shadow that always calls the original exactly once. It does not read live memory, install hooks, or touch the loader, DLL or V3PF format, and it does not satisfy the Stage B native gate.
+[`lookup_reuse_contract/`](lookup_reuse_contract/README.md)は[オフラインのネイティブシャドウ契約設計](../docs/superpowers/specs/2026-10-07-offline-native-shadow-contract-design.md)のB0です。Stage A上に構築した、プラットフォーム共通のC++20ライブラリ、テスト、固定シードの実行ツールです。対象ビルドに限定したオフラインの位置特定、ネイティブ構造に似せた所有テストデータ、不透明な結果値の正規化、元の処理を厳密に1回呼ぶシャドウ比較を扱います。実プロセスメモリの読み取り、フックの導入、ローダー・DLL・V3PF形式の変更は行わず、Stage Bのネイティブ処理の着手条件を満たすものではありません。
 
-## Read-only native runtime (`src/native/`)
+## 読み取り専用ネイティブ実行部（`src/native/`）
 
-`native/` に exact Victoria 3 1.14.5 用の read-only prototype を実装しています。
-Visual Studio 2022 / x64 / Release で configure・build・CTest を実施してください。
-shared CRT のため Visual C++ 2022 x64 runtime が必要です。
-loader は `--pid` 必須で、未知 build を injection 前に拒否します。
-DLL は independent validation 後のみ 3 つの tail anchors を観測し、`--disabled` では 0 hooks。
-終了は `--stop --pid`。DLL/trampoline はプロセス終了まで保持し、再計測はゲーム再起動から行います。
-[operator guide](../docs/superpowers/guides/2026-10-05-native-profiler-runtime-validation-ja.md)
-と [handoff](../docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md) を参照。
+`native/`に、完全に一致するVictoria 3 1.14.5向けの読み取り専用試作を実装しています。Visual Studio 2022・x64・Releaseで構成、ビルド、CTestを実行してください。共有CRTを使うため、Visual C++ 2022 x64ランタイムが必要です。
 
-Latest loader diagnosis: [module-resolution diagnostics](../docs/superpowers/reports/2026-10-06-loader-module-resolution-diagnostics-ja.md). Synthetic-host success does not establish real-game attach success.
+ローダーは`--pid`を必須とし、未知のビルドをDLL注入前に拒否します。DLLは独立した検証の完了後だけ3つの末尾アンカーを観測し、`--disabled`ではフック数が0になります。終了には`--stop --pid`を使います。DLLとトランポリンはプロセス終了まで保持し、再測定はゲーム再起動から行います。[操作ガイド](../docs/superpowers/guides/2026-10-05-native-profiler-runtime-validation-ja.md)と[実装の引き継ぎ](../docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md)を参照してください。
 
-Phase 3 adds [offline module/export policies and failure regressions](../docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md). Diagnostics v2 rejects incomplete module enumeration and validates the full 16-byte export probe before injection. Windows x64 Release build and all 10 synthetic CTests passed in [run 38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363), including named IPC, injection into the existing host, fail-closed DLL lifecycle and MinHook. Real-game attach code 4 and a fully enabled DLL session's stop/finalize remain unverified. The Windows job is shared by `tests.yml` and `native-validation.yml`; research-branch pushes run it only for native-related paths.
+ローダー診断は[モジュール解決の診断記録](../docs/superpowers/reports/2026-10-06-loader-module-resolution-diagnostics-ja.md)を参照してください。合成テスト用ホストへの接続成功は、実ゲームへの接続成功を証明しません。
 
-Owned PE/module/buffer/hook tests can be run separately on a 64-bit system, without a game, Windows loader/DLL or MinHook:
+Phase 3では[オフラインのモジュール・エクスポート検証規則と失敗時の回帰テスト](../docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md)を追加しました。診断v2は不完全なモジュール列挙を拒否し、DLL注入前にエクスポート先の16バイト全体を検証します。[実行38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363)でWindows x64 Releaseビルドと合成CTest全10件が成功しました。名前付きIPC、既存ホストへのDLL注入、安全側に倒すDLLのライフサイクル、MinHookを含みます。実ゲーム接続時のコード4と、DLLを完全に有効化したセッションの停止・終了処理は未検証です。Windowsジョブは`tests.yml`と`native-validation.yml`で共有し、研究ブランチへのpushではネイティブ関連のパスが変わった場合だけ実行します。
+
+所有するPE・モジュール・バッファ・フックのテストは、ゲーム、Windowsローダー・DLL、MinHookなしで、64ビット環境から個別に実行できます。
 
 ```sh
 cmake -S src/native/tests/offline -B build/native-offline
@@ -49,8 +44,8 @@ cmake --build build/native-offline --config Release
 ctest --test-dir build/native-offline -C Release --output-on-failure
 ```
 
-This entry point does not replace `src/native` Windows x64 CTest or the real-game validation gate.
+この実行方法は、`src/native`のWindows x64 CTestや実ゲームの検証条件を代替しません。
 
-Phase 4 adds a read-only [runtime evidence auditor and handoff](../docs/superpowers/reports/2026-10-12-cpu-runtime-evidence-gate-ja.md). The current 13-artifact inventory verifies provenance but has zero game native captures: runtime acceptance stays blocked and overhead stays null. See [capture instructions](../docs/superpowers/guides/2026-10-12-phase4-runtime-evidence-handoff-ja.md); readiness is a consistency check, not authorization of a performance patch.
+Phase 4では読み取り専用の[実行時証拠の監査ツールと引き継ぎ](../docs/superpowers/reports/2026-10-12-cpu-runtime-evidence-gate-ja.md)を追加しました。現在の13成果物の一覧は出典を検証できますが、ゲームのネイティブ記録は0件です。実行時の受け入れ判定は未達で、観測負荷はnullのままです。[記録手順](../docs/superpowers/guides/2026-10-12-phase4-runtime-evidence-handoff-ja.md)を参照してください。準備完了の判定は整合性の検査であり、性能パッチの許可ではありません。
 
-[Non-game closeout](../docs/superpowers/reports/2026-10-12-offline-closeout-ja.md) preserves structured parser rejection diagnostics, all 40 indirect instruction witnesses and an explicitly unmeasured GPU lifecycle byte model. GPU v2 source and H2D per-copy diagnostic fixes are consolidated on the research branch only. See the [whole-project roadmap](../docs/superpowers/guides/2026-10-12-project-roadmap-ja.md). Main/game/native performance gates remain unchanged.
+[非ゲーム作業の完了記録](../docs/superpowers/reports/2026-10-12-offline-closeout-ja.md)には、パーサーの構造化された拒否診断、間接命令40件すべての証拠、明示的に未測定としたGPUライフサイクルの転送量モデルを保存しています。現在の成果にはGPU v2とH2Dのコピーごとの診断修正も含みます。[全体ロードマップ](../docs/superpowers/guides/2026-10-12-project-roadmap-ja.md)を参照してください。ゲーム・ネイティブ性能の証拠条件は統合後も変わりません。

@@ -1,18 +1,18 @@
-# Resident lifecycle probe — model only
+# 常駐ライフサイクルの調査：モデルのみ
 
-This reuses the existing owned nonnegative int32 `pop_growth` fixture and CPU reference. It does not execute OpenCL, measure GPU time, or implement game formulas. `gpu_executed=false`; time, bandwidth and speedup are null. PR15 and the user's three hardware sessions remain a separate actual GPU experiment.
+既存の、所有する非負int32の`pop_growth`テストデータとCPU参照処理を再利用します。OpenCLの実行、GPU時間の測定、ゲームの数式の実装は行いません。`gpu_executed=false`で、時間、帯域、速度比はnullです。PR #15とユーザーの実機3セッションは、別の実GPU実験です。
 
-The bounded question is whether a **fixed-input recurrence whose consumer needs only the final result** can eliminate modeled per-stage host transfers. The independent Python-integer oracle tests cover 0/1/17 records, all four scenarios, stages1/4/32, exact final hashes, shape/dtype/negative input rejection and input nonmutation.
+調べる範囲は、最終結果だけを必要とする固定入力の反復計算で、モデル上の各段階のホスト転送を減らせるかです。独立したPython整数の参照実装を使うテストでは、0・1・17レコード、4条件すべて、1・4・32段階、最終ハッシュの完全一致、形状・型・負の入力の拒否、入力が変化しないことを確認します。
 
 ```sh
 python resident_lifecycle_probe.py --sizes 0 17 1000000 --stages 1 4 16
 python -m unittest discover -p test_resident_lifecycle_probe.py -v
 ```
 
-The fixed-seed saved matrix has36 cases. For1,000,000 records, uploading all three int32 arrays and downloading each output costs a modeled16/64/256 MB at1/4/16 stages. One-upload/final-only readback costs16 MB. These are decimal byte counts, **not throughput, time savings, or a game speedup**. The per-stage baseline is explicitly one transfer pattern, not a lower bound on all unbatched implementations.
+固定シードの保存済み組み合わせは36件です。1,000,000レコードで、3つのint32配列をすべて転送し、各段階の出力を取得する方式のモデル転送量は、1・4・16段階で16・64・256 MBです。入力の転送を1回、結果の取得を最後だけにすると16 MBです。10進単位のバイト数であり、処理量、時間短縮、ゲーム高速化ではありません。各段階で転送する比較対象は1つの転送方式であり、すべての非一括処理に対する下限ではありません。
 
-`probe(case, stages, host_updates=True)` disallows batching because updated inputs/lifecycle are unknown. `intermediate_outputs=True` disallows the final-only route: a consumer still needs each intermediate output. Fixed inputs can nevertheless stay resident while outputs are observed: modeled12N+4NS bytes, whereN=records,S=stages. The model does not assume every host observation requires reuploading fixed inputs.
+`probe(case, stages, host_updates=True)`は、更新後の入力・ライフサイクルが未知なので一括処理を許可しません。`intermediate_outputs=True`では、利用側が中間出力をすべて必要とするため、最終結果だけを取得する経路を許可しません。ただし、各出力を観測しながら固定入力を常駐させることは可能で、モデル転送量は12N+4NSバイトです。Nはレコード数、Sは段階数です。ホストが結果を観測するたびに固定入力の再転送が必要だとは仮定しません。
 
-The final digest always describes the fixed-input CPU recurrence; it is **not** the output of unspecified host updates. Flags assess route eligibility, not invented update semantics. An empty fixture measures no GPU execution; zero modeled bytes do not imply zero runtime overhead.
+最終ハッシュは常に固定入力のCPU反復計算を表し、未定義のホスト更新後の結果ではありません。フラグは経路の適用条件を判定するもので、更新の意味を新たに作るものではありません。空のテストデータではGPUは実行されず、モデル上の0バイトは実行時負荷が0という意味ではありません。
 
-Actual implementation would need ping-pong device state, correct kernel ordering, bounded integer arithmetic, transfer/event/error validation, fair CPU baselines, input update and output consumer ownership, and real repeated hardware measurements. No such timing is available here. Existing v2 hardware results still favor8-thread Numba CPU in96/96 matched comparisons; do not infer that a resident pipeline overturns that finding.
+実装には、デバイス上の状態を交互に使うバッファ、正しいカーネル順序、範囲を限定した整数演算、転送・イベント・エラー検証、公平なCPU比較対象、入力更新・出力利用側の所有権、実機での反復測定が必要です。ここにはその時間測定はありません。既存のv2実機結果では、条件を揃えた96/96比較で8スレッドのNumba CPUが上回っています。この常駐処理モデルがその結果を覆すとは推定しないでください。

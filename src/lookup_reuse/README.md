@@ -1,64 +1,41 @@
-# Lookup reuse core (Stage A, offline)
+# 検索再利用コア（Stage A、オフライン）
 
-Portable C++20 static library, tests and offline runner for the
-[employment lookup reuse / shadow design](../../docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md),
-implemented from the
-[Stage A plan](../../docs/superpowers/plans/2026-10-06-offline-lookup-reuse-core.md).
+[雇用処理の検索再利用・シャドウ比較設計](../../docs/superpowers/specs/2026-10-07-employment-lookup-reuse-shadow-design.md)のための、移植可能なC++20静的ライブラリ、テスト、オフライン実行ツールです。[Stage Aの計画](../../docs/superpowers/plans/2026-10-06-offline-lookup-reuse-core.md)に沿って実装しています。
 
-**Scope.** Everything here runs on owned, immutable synthetic tables. There is
-no native adapter, DLL, detour, live process memory, game input or lookup
-bypass, and the library does not know Win32, MinHook or the profiler codec.
-The V3PF v1 format, target IDs and goldens are untouched. Passing these tests
-says nothing about native container equivalence, ABI, memory lifetime or game
-speed.
+**対象範囲：**すべて所有する不変の合成テーブルで動作します。ネイティブアダプター、DLL、迂回フック、実プロセスメモリ、ゲーム入力、検索の省略は含みません。ライブラリはWin32、MinHook、プロファイラーのコーデックに依存しません。V3PF v1形式、対象ID、参照データは変更していません。テストの成功は、ネイティブコンテナーとの同等性、ABI、メモリ寿命、ゲーム速度の証拠にはなりません。
 
-## Components
+## 構成要素
 
-| File | Responsibility |
+| ファイル | 役割 |
 |---|---|
-| `include/TableView.h`, `core/TableView.cpp` | `OwnedTableFixture` copies bounded bytes and validates them before issuing a `ValidatedTableView`; FNV-1a `HashKey`; bounded `ReferencePositiveSearch` |
-| `include/PositiveSlotHint.h`, `core/PositiveSlotHint.cpp` | One remembered positive primary slot (identity, mask, full key, index), re-validated on every `Try` |
-| `include/ShadowComparison.h`, `core/ShadowComparison.cpp` | `OfflineShadowEvaluator` / `ObserverScope`: the original lookup runs exactly once, its result and exceptions pass through unchanged; the hint candidate is only compared |
-| `runner/` | Fixed-seed differential runner and standalone JSON (runner-only formatting and I/O) |
-| `tests/` | Release-safe `CHECK` tests, `--list` / `--filter <exact-name>`, `VerifyRunner.py` (JSON/CLI, stdlib only) |
+| `include/TableView.h`、`core/TableView.cpp` | `OwnedTableFixture`が範囲を限定したバイト列をコピー・検証し、`ValidatedTableView`を発行します。FNV-1aの`HashKey`と、範囲を限定した`ReferencePositiveSearch`も含みます。 |
+| `include/PositiveSlotHint.h`、`core/PositiveSlotHint.cpp` | 正のプライマリスロット1件の識別情報、マスク、完全なキー、インデックスを記憶し、`Try`のたびに再検証します。 |
+| `include/ShadowComparison.h`、`core/ShadowComparison.cpp` | `OfflineShadowEvaluator` / `ObserverScope`。元の検索を厳密に1回実行し、結果と例外を変更せず渡します。ヒントによる候補は比較だけに使います。 |
+| `runner/` | 固定シードの差分比較と単独のJSON出力。書式処理と入出力は実行ツール側だけに置きます。 |
+| `tests/` | Releaseでも有効な`CHECK`テスト、`--list` / `--filter <exact-name>`、標準ライブラリだけを使うJSON・CLI検証の`VerifyRunner.py`。 |
 
-### Table contract (layout_version 1)
+### テーブルの契約（layout_version 1）
 
-40-byte little-endian records read field by field: control byte at +4
-(`0` empty, otherwise non-wrapping probe distance from `HashKey(key) & mask`
-plus 1, so at most 255), full uint32 key at +8. `mask` is `2^n - 1`; slots
-`0..mask` are primary, later slots are tail. Validation rejects, in this order:
-unsupported layout, invalid mask, size overflow, truncated span (byte size
-mismatch, fewer slots than primary, or no empty terminator at the end),
-inconsistent control, duplicate full key, and keys the normal probe cannot
-reach (it stops when `control < distance + 1`).
+40バイトのリトルエンディアンレコードをフィールドごとに読みます。制御バイトは+4にあり、`0`なら空です。それ以外は`HashKey(key) & mask`からの、折り返さない探索距離+1を表し、最大255です。完全なuint32キーは+8にあります。`mask`は`2^n - 1`で、スロット`0..mask`がプライマリ、それ以降が末尾領域です。
 
-### Ownership and identity
+検証は次の順に拒否します。未対応レイアウト、不正なマスク、サイズのオーバーフロー、切り詰められた領域（バイトサイズ不一致、プライマリ数より少ないスロット、末尾の空終端の欠如）、制御値の不整合、完全なキーの重複、通常の探索で到達できないキーです。通常の探索は`control < distance + 1`で停止します。
 
-`OwnedTableFixture` and `ValidatedTableView` are neither copyable nor movable;
-the view is borrowed and must not outlive its fixture. `TableIdentity`
-(`map_id`, `storage_id`, `lifetime_epoch`, `layout_version`) is set by the
-fixture owner, who advances the epoch on every mutation, relocation or
-regeneration. The epoch is an offline construct, not an assumed game field.
+### 所有権と識別情報
 
-### Hint and shadow rules
+`OwnedTableFixture`と`ValidatedTableView`はコピー・移動のどちらもできません。ビューは借用であり、元のテストデータより長く生存してはいけません。`TableIdentity`（`map_id`、`storage_id`、`lifetime_epoch`、`layout_version`）はテストデータの所有者が設定し、変更・配置移動・再生成のたびに世代を進めます。世代はオフライン用の仕組みであり、ゲームにそのフィールドがあると仮定したものではありません。
 
-- A hint is used only when identity, mask and full key match and the current
-  primary slot at that index is occupied by the same full key; otherwise the
-  caller runs the normal search (`NeedsOriginal`).
-- Misses, tail slots, out-of-range or empty slots, and results pointing at a
-  different key are never remembered.
-- Modes: `Off` (default) and `Shadow`. There is no optimizing mode.
-- Statuses: `NoCandidate`, `Equal`, `Mismatch`, `Skipped` (`Off`,
-  `MissingView`, `MissingScope`, `Reentrant`, `SessionDisabled`).
-- A mismatch stops candidate work for the rest of that evaluator's session;
-  changing the mode does not re-enable it.
-- A reentrant call bypasses candidate work and invalidates the outer hint; the
-  outer call then completes as `Skipped/Reentrant`.
+### ヒントとシャドウ比較の規則
 
-## Build and test
+- 識別情報、マスク、完全なキーが一致し、指定インデックスの現在のプライマリスロットに同じ完全なキーが存在する場合だけヒントを使います。それ以外は呼び出し側が通常の検索を行います（`NeedsOriginal`）。
+- 未検出、末尾スロット、範囲外・空のスロット、別のキーを指す結果は記憶しません。
+- モードは既定の`Off`と`Shadow`です。最適化モードはありません。
+- 状態は`NoCandidate`、`Equal`、`Mismatch`、`Skipped`です。スキップ理由は`Off`、`MissingView`、`MissingScope`、`Reentrant`、`SessionDisabled`です。
+- 不一致が起きると、その評価器のセッションの残りでは候補処理を停止します。モード変更でも再有効化されません。
+- 再入呼び出しは候補処理を省略し、外側のヒントを無効化します。外側の呼び出しは`Skipped/Reentrant`として完了します。
 
-CMake (3.25+), from the repository root:
+## ビルドとテスト
+
+CMake 3.25以上を使い、リポジトリルートから実行します。
 
 ```bash
 cmake -S src/lookup_reuse -B build/lookup-reuse -DCMAKE_BUILD_TYPE=Release
@@ -66,12 +43,9 @@ cmake --build build/lookup-reuse --config Release
 ctest --test-dir build/lookup-reuse -C Release --output-on-failure
 ```
 
-Add `-DLOOKUP_REUSE_WARNINGS_AS_ERRORS=ON` for `-Werror` / `/WX` (CI uses it).
-With the Visual Studio generator the executables are under
-`build/lookup-reuse/Release/`. If CMake finds no Python 3 interpreter, the
-JSON/CLI tests are registered as explicitly *Skipped*.
+`-DLOOKUP_REUSE_WARNINGS_AS_ERRORS=ON`を加えると、`-Werror` / `/WX`を適用します。CIではこの設定を使います。Visual Studioのジェネレーターでは実行ファイルは`build/lookup-reuse/Release/`にあります。CMakeがPython 3インタープリターを見つけられない場合、JSON・CLIテストは明示的にスキップ（`Skipped`）として登録されます。
 
-Without CMake (GCC):
+CMakeなしでGCCを使う場合：
 
 ```bash
 mkdir -p build/lookup-reuse
@@ -81,40 +55,22 @@ g++ -std=c++20 -O2 -DNDEBUG -Wall -Wextra -Wpedantic -Isrc/lookup_reuse/include 
 python src/lookup_reuse/tests/VerifyRunner.py build/lookup-reuse/lookup_reuse_runner
 ```
 
-MSVC without CMake: `cl /std:c++20 /O2 /DNDEBUG /EHsc /W4 /permissive- /Isrc\lookup_reuse\include ...`
-with the same source lists.
+CMakeなしでMSVCを使う場合は、同じソース一覧で`cl /std:c++20 /O2 /DNDEBUG /EHsc /W4 /permissive- /Isrc\lookup_reuse\include ...`を使います。
 
-## Runner
+## 実行ツール
 
 ```bash
 build/lookup-reuse/lookup_reuse_runner --seed 20261007 --rebuilds 1000 --output research/generated/lookup-reuse-core/results.json
 ```
 
-`--seed` is an unsigned 32-bit decimal and `--rebuilds` a positive decimal;
-signs, hex, overflow, duplicates and unknown options are rejected (exit 2).
-`--output` may be omitted to write to stdout. Exit codes: 0 all comparisons
-agreed, 1 a mismatch was seen (JSON is still written), 3 output I/O failure.
+`--seed`は符号なし32ビットの10進数、`--rebuilds`は正の10進数です。符号付き表記、16進数、オーバーフロー、重複、未知のオプションは拒否します（終了コード2）。`--output`を省略すると標準出力へ書き込みます。終了コードは、0が全比較一致、1が不一致あり（JSONは出力）、3が出力の入出力失敗です。
 
-Each rebuild draws 1–16 unique full uint32 keys (`std::mt19937` raw output with
-explicit modulo; small keys, shared low 24 bits and keys near `UINT32_MAX` are
-mixed in), cycles masks 7/15/31, inserts them with a runner-local Robin-Hood
-insertion, and validates two snapshots: a new storage, then the same storage at
-a new epoch after one backshift deletion. Four seed-independent boundary
-snapshots (tail, backshift before/after, mask 0 with `UINT32_MAX`) run first.
-Expected membership comes from an independent `std::set` and expected slots
-from the runner's own placement map; the validator and the reference search
-are never used to generate expectations. Each query is checked through the
-reference search, the core hint caller (`Try`, reference only on a miss) and
-the shadow evaluator.
+各再構築では、一意の完全なuint32キーを1～16件生成します。`std::mt19937`の生の出力に明示的な剰余演算を適用し、小さなキー、下位24ビットが共通するキー、`UINT32_MAX`付近のキーを混ぜます。マスクを7・15・31で切り替え、実行ツール内のRobin-Hood挿入を使います。新しいストレージと、後方シフト削除を1回行って世代を更新した同じストレージの、2つのスナップショットを検証します。
 
-The committed [results](../../research/generated/lookup-reuse-core/results.json)
-and [verification record](../../research/generated/lookup-reuse-core/verification.md)
-come from this command. `core_hits` counts avoided reference searches in this
-synthetic workload; it is not a timing and not evidence of a game speedup.
+最初に、シードに依存しない4つの境界スナップショットを実行します。末尾領域、後方シフトの前後、`UINT32_MAX`を使うマスク0です。期待する存在判定は独立した`std::set`から、期待スロットは実行ツール自身の配置マップから取得し、検証器や参照検索を期待値の生成に使いません。各検索を参照検索、コアのヒント呼び出し（`Try`、ヒントが使えない場合だけ参照検索）、シャドウ評価器で確認します。
 
-## Stage B is not started
+コミット済みの[結果](../../research/generated/lookup-reuse-core/results.json)と[検証記録](../../research/generated/lookup-reuse-core/verification.md)は、このコマンドから生成しています。`core_hits`は合成負荷で参照検索を省略できた回数であり、時間でもゲーム高速化の証拠でもありません。
 
-Native shadow remains gated on the conditions in §8 of the design: exact-build
-locator, internal ABI, hook entry, caller scope, worker lifetime, table
-invariants, read lifetime, profiler prerequisites (Task 9 loader/DLL), and
-observation cost with coverage. None of them is established by this directory.
+## Stage Bは未着手
+
+ネイティブ側のシャドウ比較には設計の第8節の条件が必要です。対象ビルドの位置特定、内部ABI、フック入口、呼び出し元スコープ、ワーカーの寿命、テーブルの不変条件、読み取り時の寿命、プロファイラーの前提（Task 9のローダー・DLL）、観測範囲と観測コストを含みます。このディレクトリの検証だけでは、これらを証明できません。

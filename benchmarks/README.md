@@ -1,12 +1,12 @@
-# Benchmarks
+# ベンチマーク
 
-This directory stores small benchmark metadata and derived reports.
+小さなベンチマークのメタデータと、そこから作成した報告を保存するディレクトリです。
 
-Raw game binaries, saves, ETL traces, and other large/proprietary captures are not committed here.
+生のゲームバイナリ、セーブ、ETLトレースなど、大きなものや権利上の制約がある記録はここにコミットしません。
 
-## Run layout
+## 測定ごとの構成
 
-Each measured run uses:
+各測定は次の構成を使います。
 
 ```text
 runs/<run-id>/
@@ -14,9 +14,9 @@ runs/<run-id>/
   ticktask_timings.csv
 ```
 
-Create manifests from `manifest.example.json` and follow `research/profiling-plan.md`.
+`manifest.example.json`からマニフェストを作成し、`research/profiling-plan.md`の手順に従ってください。
 
-Analyze all runs with:
+すべての測定を解析するコマンドは次のとおりです。
 
 ```text
 python tools/analyze_benchmarks.py benchmarks/runs \

@@ -1,28 +1,28 @@
-# Phase 4 evidence handoff
+# Phase 4：証拠の引き継ぎ
 
-The offline evidence infrastructure is implemented. **Actual runtime acceptance is blocked.** No game capture was collected by this work.
+オフラインの証拠基盤は実装済みです。実際の実行時検証の受け入れ条件は未達です。この作業ではゲームの記録を取得していません。
 
-- `current-evidence-index.json`: 13 existing source artifacts, byte hashes, static/historical/synthetic classification and three falsifiable hypotheses.
-- `current-gate-report.json`: reproducible audit; provenance valid, zero accepted runtime captures, five missing requirements, overhead null.
-- `run-manifest.template.json`: measured-run extension with unknown values explicitly null; not a captured `manifest.json`.
-- `runtime-evidence-index.template.json`: future bundle index; empty artifacts/reviews do not pass.
+- `current-evidence-index.json`：既存の元資料13件、バイト列のハッシュ、静的・過去の測定・合成の分類、反証可能な仮説3件。
+- `current-gate-report.json`：再現できる監査結果。出典は有効ですが、受け入れ済み実行時記録は0件、未達要件は5件、観測負荷はnullです。
+- `run-manifest.template.json`：測定マニフェストの拡張。未知の値を明示的にnullとし、取得済みの`manifest.json`とは区別します。
+- `runtime-evidence-index.template.json`：将来の証拠一式の一覧。成果物・レビューが空のままでは合格しません。
 
-Reproduce from repository root:
+リポジトリルートから再現します。
 
 ```sh
 python tools/check_cpu_runtime_gate.py research/phase4/current-evidence-index.json --root . --output local-data/phase4-current-report.json
 ```
 
-Exit **1** is expected for the current blocked evidence. Exit 0 means mechanically complete **ready for review**, not accepted game evidence or a performance patch. Exit 2 means invalid schema/I/O; an existing report may remain unchanged, so check the exit code before using output.
+現在の未達状態の証拠では、終了コード1が期待値です。終了コード0は、機械的に必要情報が揃いレビュー可能という意味であり、ゲームの証拠が受け入れられたことや性能パッチの許可を意味しません。終了コード2はスキーマ・入出力の不正です。既存の報告が変更されず残る場合があるため、結果を使う前に終了コードを確認してください。
 
-Index paths use forward slashes relative to `--root`. IDs/paths are unique, bytes must match lowercase SHA-256, and evidence cannot escape that root. Output cannot alias the index/artifacts, including hard links, or be placed inside the source run directory. Reports replace atomically after validation. Artifacts and the index are never written by the audit.
+一覧のパスは`--root`からの相対パスで、区切りはスラッシュです。ID・パスは一意、バイト列は小文字のSHA-256と一致する必要があり、証拠はルートの外を参照できません。出力先はハードリンクも含め一覧・成果物と同じ実体にできず、元の測定ディレクトリ内にも置けません。検証後に報告を原子的に置き換えます。監査は成果物や一覧を書き換えません。
 
-Future bundle artifacts identify `kind=game` only for actual collected game data. This label and the process/clock metadata are operator declarations: a matching metadata hash or a relabeled synthetic file is not proof of game execution. The checker validates consistency and keeps semantic/causal conclusions separate.
+将来の証拠一式では、実際に取得したゲームデータだけに`kind=game`を指定します。この分類とプロセス・時計のメタデータは測定者の申告です。メタデータのハッシュ一致や、合成ファイルの分類を書き換えたことはゲーム実行の証拠になりません。検査器は整合性を検証し、意味・因果に関する結論とは分けます。
 
-Each measured manifest uses the existing benchmark format plus the fields in the run template. Artifact IDs connect manifests to raw CSV, attach/stop/identity logs, V3PF, OS trace, exact boundary evidence and actual profiler binaries. The benchmark checker and native parser are reused. An unexplained parser diagnostic or any loss blocks the conservative automatic route; no diagnostic suppression or threshold bypass is supplied.
+各測定マニフェストは、既存のベンチマーク形式に測定テンプレートのフィールドを加えます。成果物IDで、マニフェストを生CSV、接続・停止・識別ログ、V3PF、OSトレース、正確な境界の証拠、使用したプロファイラーバイナリに結び付けます。ベンチマーク検査器とネイティブパーサーを再利用します。説明できないパーサー診断や欠落が1つでもあれば、保守的な自動判定では受け入れません。診断抑制やしきい値を迂回する機能はありません。
 
-Reviews cover `native_csv_relationship`, `observer_overhead`, `os_running_ready_waiting` and `save_stability`. A record has `artifact_id`, `accepted`, `run_ids`, `notes`, and `evidence_sha256` (all non-review artifact IDs/digests). Reviews bind the exact capture bytes, not only reusable run labels. These are analyst evidence judgments, not requests for additional user approval. Missing data cannot be replaced by approval.
+レビュー項目は`native_csv_relationship`、`observer_overhead`、`os_running_ready_waiting`、`save_stability`です。各記録は`artifact_id`、`accepted`、`run_ids`、`notes`、`evidence_sha256`（レビュー以外のすべての成果物ID・ハッシュ）を持ちます。レビューは再利用できる測定名だけでなく、正確な記録バイト列に結び付きます。これは分析者による証拠の判断であり、追加のユーザー承認を求めるものではありません。不足データを承認で代替することはできません。
 
-Raw ETL/state data and save semantics are not decoded/verified by this checker. Running/Ready/Waiting and clock alignment require source evidence and analysis; initial save equality does not prove long-run state stability. Overhead numbers are descriptive medians/CV from complete, valid matched comparisons, with no invented noise threshold. Performance patch authorization remains false.
+この検査器は、生のETL・状態データやセーブの意味をデコード・検証しません。Running・Ready・Waitingと時計の整合には元の証拠と分析が必要で、開始時のセーブ一致は長時間の状態安定性を証明しません。観測負荷の数値は、完全で有効な対応比較から得た記述的な中央値・変動係数であり、独自のノイズしきい値は設定しません。性能パッチの許可はfalseのままです。
 
-See [capture guide](../../docs/superpowers/guides/2026-10-12-phase4-runtime-evidence-handoff-ja.md), [design](../../docs/superpowers/specs/2026-10-12-cpu-runtime-evidence-gate-design.md) and [execution report](../../docs/superpowers/reports/2026-10-12-cpu-runtime-evidence-gate-ja.md).
+[記録ガイド](../../docs/superpowers/guides/2026-10-12-phase4-runtime-evidence-handoff-ja.md)、[設計](../../docs/superpowers/specs/2026-10-12-cpu-runtime-evidence-gate-design.md)、[実行報告](../../docs/superpowers/reports/2026-10-12-cpu-runtime-evidence-gate-ja.md)を参照してください。

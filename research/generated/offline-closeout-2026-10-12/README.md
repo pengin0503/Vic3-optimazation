@@ -1,16 +1,20 @@
-# Bounded offline closeout witnesses
+# 範囲を限定したオフライン調査の完了証拠
 
-`indirect-witnesses.json` follows exactly the existing 40 unresolved indirect instruction RVAs, using Capstone 5.0.7 and the exact 1.14.5 executable. Both generations were byte-identical; owned decoder tests passed 8/8. Source JSON/executable hashes and per-range byte digests are recorded in the JSON. It contains 27 memory calls, 3 memory jumps, 2 register calls and 8 register jumps. Every callee remains unknown; confirmed dependency edges remain zero.
+`indirect-witnesses.json`は、既存の未解決の間接命令RVA 40件だけを、Capstone 5.0.7と完全に一致する1.14.5実行ファイルで追跡したものです。2回の生成結果はバイト単位で一致し、所有データによるデコーダーテスト8/8件が成功しました。元JSON・実行ファイルのハッシュと、範囲ごとのバイト列のハッシュをJSONに記録しています。
 
-Reproduce from repository root:
+内訳は、メモリ経由の呼び出し27件、メモリ経由のジャンプ3件、レジスター経由の呼び出し2件、レジスター経由のジャンプ8件です。呼び出し先はすべて未知で、確認できた依存関係の辺は0件です。
+
+リポジトリルートから再現します。
 
 ```sh
 mkdir -p local-data
 python tools/witness_ticktask_indirect_sites.py input-data/Vic3_data.zip research/generated/ticktask-dependencies-1.14.5.json > local-data/indirect-witnesses.json
 ```
 
-The tool writes stdout only. Choose a new output file; shell redirection is not input-alias protection. It decodes each file-backed declared range from its beginning, rejects partial ranges and non-boundary/non-indirect sites, and retains at most eight preceding instructions. Source ownership is reused from the existing static evidence, not newly authenticated as a complete source-level function.
+ツールは標準出力にだけ書き込みます。新しい出力先を選んでください。シェルのリダイレクトには、入力と同じファイルへの出力を防ぐ機能はありません。宣言済みの、ファイル内に実体がある各範囲を先頭からデコードし、不完全な範囲、命令境界でない位置、間接命令でない位置を拒否し、直前の命令を最大8件保持します。元の所属情報は既存の静的証拠から再利用しており、ソースコード上の完全な関数として新たに認定したものではありません。
 
-At `0x7d670f`, `RAX <- [RCX]`, `RDX << 2`, `R8D=4`, then `call [RAX+8]` support a buffer/allocator-style indirect interface. At `0x64b336` and `0x3c2d720`, `call [RAX+0x10]` remains consistent with prior container cleanup hypotheses. These are not resolved allocator identities, graph-object dataflow, parent/child edges, actual execution cost or performance improvements. The exact instruction operands are witnesses; interpreting the object/interface requires separate evidence.
+`0x7d670f`では、`RAX <- [RCX]`、`RDX << 2`、`R8D=4`、続いて`call [RAX+8]`という命令が、バッファ・メモリ確保型の間接インターフェースを示唆します。`0x64b336`と`0x3c2d720`の`call [RAX+0x10]`は、従来のコンテナー後処理の仮説と整合します。
 
-The bounded question is complete: all current indirect RVAs have reproducible instruction/context witnesses. Unlimited graph expansion and new native behavior are not part of this result.
+これらは、メモリ確保処理の特定、グラフオブジェクトのデータフロー、親子関係、実際の実行コスト、性能改善を示すものではありません。正確な命令オペランドは証拠ですが、オブジェクト・インターフェースの解釈には別の証拠が必要です。
+
+限定した調査は完了しており、現在のすべての間接命令RVAについて命令と周辺の証拠を再現できます。無制限のグラフ拡張や新しいネイティブ動作は、この成果に含みません。
