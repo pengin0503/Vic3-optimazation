@@ -73,6 +73,45 @@ int main() {
     remote[15]=std::byte{1};d.win32_error=87;
     CHECK(!ValidateRemoteExportRead(local,remote,16,d));
     CHECK(d.stage==ModuleResolutionStage::ByteMismatch && d.win32_error==0);
+    std::wostringstream mismatch_log;WriteModuleResolutionDiagnostics(mismatch_log,d);
+    CHECK(mismatch_log.str().find(L"local_bytes=cc000000000000000000000000000000")!=std::wstring::npos);
+    CHECK(mismatch_log.str().find(L"remote_bytes=cc000000000000000000000000000001")!=std::wstring::npos);
+    CHECK(mismatch_log.str().find(L"first_mismatch=15 mismatch_count=1")!=std::wstring::npos);
+    const auto rendered=[](const ModuleResolutionDiagnostics& value) {
+        std::wostringstream out;WriteModuleResolutionDiagnostics(out,value);return out.str();
+    };
+    for(size_t index=0;index<16;++index) {
+        remote=local;remote[index]^=std::byte{1};d={};
+        CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+        CHECK(rendered(d).find(L"first_mismatch="+std::to_wstring(index)+L" mismatch_count=1")!=std::wstring::npos);
+    }
+    remote[0]^=std::byte{1}; // differences at 0 and 15
+    CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"first_mismatch=0 mismatch_count=2")!=std::wstring::npos);
+    CHECK(!ValidateRemoteExportRead(local,remote,15,d));
+    CHECK(rendered(d).find(L"probe_available=0")!=std::wstring::npos);
+    CHECK(rendered(d).find(L"local_bytes=")==std::wstring::npos);
+    CHECK(rendered(d).find(L"remote_bytes=")==std::wstring::npos);
+    remote=local;CHECK(ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"first_mismatch=16 mismatch_count=0")!=std::wstring::npos);
+    // Issue #17 hop 0. Decode only; do not call or trust this address.
+    remote={};remote[0]=std::byte{0xe9};
+    remote[1]=std::byte{0x57};remote[2]=std::byte{0x13};remote[3]=std::byte{0xff};remote[4]=std::byte{0xfd};
+    d={};d.remote_address=0x7ffb9924ee30;
+    CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=rel32_jump")!=std::wstring::npos);
+    CHECK(rendered(d).find(L"branch_target="+std::to_wstring(uint64_t{0x7ffb9724018c}))!=std::wstring::npos);
+    remote[1]=std::byte{7};remote[2]=remote[3]=remote[4]=std::byte{0};
+    d={};d.remote_address=100;CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"branch_target=112")!=std::wstring::npos);
+    d.remote_address=max-4;CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=rel32_overflow")!=std::wstring::npos);
+    remote[1]=remote[2]=remote[3]=std::byte{0};remote[4]=std::byte{0x80}; // INT32_MIN
+    d.remote_address=100;CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=rel32_overflow")!=std::wstring::npos);
+    remote[0]=std::byte{0xff};CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=unknown")!=std::wstring::npos);
+    CHECK(rendered(d).find(L"branch_target=0")!=std::wstring::npos);
     d.stage=ModuleResolutionStage::ModuleNext;d.win32_error=299;
     std::wostringstream log;WriteModuleResolutionDiagnostics(log,d);
     CHECK(log.str().find(L"stage=module_next")!=std::wstring::npos);

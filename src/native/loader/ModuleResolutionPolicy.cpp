@@ -28,7 +28,30 @@ bool CompleteModuleEnumeration(bool reached_end,uint32_t enumeration_error,Modul
 }
 bool ValidateRemoteExportRead(std::span<const std::byte,kExportProbeSize> local,std::span<const std::byte,kExportProbeSize> remote,size_t bytes_read,ModuleResolutionDiagnostics& d) noexcept {
     d.bytes_read=bytes_read;
+    d.probe_available=false;d.local_bytes={};d.remote_bytes={};
+    d.first_mismatch=kExportProbeSize;d.mismatch_count=0;
+    d.remote_entry=RemoteEntryObservation::Unknown;d.branch_target=0;
+    d.branch_query_available=false;d.branch_query_error=0;d.branch_state=0;
+    d.branch_protection=0;d.branch_type=0;d.branch_allocation_base=0;
     if(bytes_read!=kExportProbeSize)return Reject(d,ModuleResolutionStage::RemoteRead);
+    d.probe_available=true;
+    for(size_t i=0;i<kExportProbeSize;++i) {
+        d.local_bytes[i]=local[i];d.remote_bytes[i]=remote[i];
+        if(local[i]!=remote[i]) {if(!d.mismatch_count)d.first_mismatch=i;++d.mismatch_count;}
+    }
+    // Observation only. No jump target ever becomes an injection address.
+    if(remote[0]==std::byte{0xe9}) {
+        int32_t displacement{};std::memcpy(&displacement,remote.data()+1,sizeof(displacement));
+        uintptr_t next{},target{};
+        bool valid=CheckedAddress(static_cast<uintptr_t>(d.remote_address),5,next);
+        if(valid && displacement>=0)valid=CheckedAddress(next,static_cast<size_t>(displacement),target);
+        else if(valid) {
+            const auto distance=static_cast<uintptr_t>(-static_cast<int64_t>(displacement));
+            valid=distance<=next;if(valid)target=next-distance;
+        }
+        d.remote_entry=valid?RemoteEntryObservation::Rel32Jump:RemoteEntryObservation::Rel32Overflow;
+        if(valid)d.branch_target=target;
+    }
     if(std::memcmp(local.data(),remote.data(),kExportProbeSize)!=0)return Reject(d,ModuleResolutionStage::ByteMismatch);
     return true;
 }

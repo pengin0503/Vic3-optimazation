@@ -3,7 +3,6 @@
 #include "../common/PeImage.h"
 #include <span>
 namespace vic3 {
-inline constexpr size_t kExportProbeSize=16;
 // Pure checks over a validated mapped image and values collected by the
 // Windows adapter. No process access, retry, allocation or address fallback.
 bool ValidateLocalExport(const PeImage& image,uintptr_t owner_base,uintptr_t export_address,ModuleResolutionDiagnostics& d) noexcept;
