@@ -66,6 +66,8 @@ InjectionError ValidateVictoriaProcess(HANDLE process,const std::filesystem::pat
 // Same resolver as injection, but only queries/reads the selected process.
 // Production CLI passes the exact Victoria gate first; tests use their own host.
 bool DiagnoseLoadLibraryForValidatedProcess(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& diagnostics);
+// Best-effort query after a complete E9 mismatch, preserving the primary result.
+void ObserveRemoteBranchRegion(HANDLE process,ModuleResolutionDiagnostics& diagnostics);
 // Private native primitive. The production CLI always passes the exact Victoria gate first.
 InjectionError InjectLibraryForValidatedProcess(HANDLE process,DWORD pid,const std::filesystem::path& dll,ModuleResolutionDiagnostics* diagnostics=nullptr);
 #endif

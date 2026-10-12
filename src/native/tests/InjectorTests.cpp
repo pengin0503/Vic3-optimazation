@@ -122,6 +122,25 @@ int main(int argc,char** argv) {
     CHECK(detour_detail.remote_entry==RemoteEntryObservation::Rel32Jump && detour_detail.branch_target==detour_detail.remote_address+5);
     CHECK(detour_detail.branch_query_available && detour_detail.branch_query_error==0);
     CHECK(detour_detail.branch_state==MEM_COMMIT && detour_detail.branch_type==MEM_IMAGE);
+    const auto observed_local=detour_detail.local_bytes,observed_remote=detour_detail.remote_bytes;
+    ObserveRemoteBranchRegion(nullptr,detour_detail);
+    CHECK(!detour_detail.branch_query_available && detour_detail.branch_query_error==ERROR_INVALID_HANDLE);
+    CHECK(detour_detail.branch_state==0 && detour_detail.branch_protection==0 && detour_detail.branch_type==0 && detour_detail.branch_allocation_base==0);
+    CHECK(detour_detail.stage==ModuleResolutionStage::ByteMismatch && detour_detail.win32_error==0);
+    CHECK(detour_detail.local_bytes==observed_local && detour_detail.remote_bytes==observed_remote);
+    ObserveRemoteBranchRegion(detour_read.get(),detour_detail);
+    CHECK(detour_detail.branch_query_available && detour_detail.branch_query_error==0);
+    CHECK(detour_detail.stage==ModuleResolutionStage::ByteMismatch && detour_detail.win32_error==0);
+    for(int skipped=0;skipped<3;++skipped) {
+        auto ignored=detour_detail;
+        if(skipped==0)ignored.stage=ModuleResolutionStage::RemoteRead;
+        if(skipped==1)ignored.remote_entry=RemoteEntryObservation::Unknown;
+        if(skipped==2)ignored.probe_available=false;
+        ignored.win32_error=299;const auto primary=ignored.stage;
+        ObserveRemoteBranchRegion(nullptr,ignored);
+        CHECK(!ignored.branch_query_available && ignored.branch_query_error==0);
+        CHECK(ignored.stage==primary && ignored.win32_error==299);
+    }
     CHECK(InjectLibraryForValidatedProcess(detour_host.get(),detour_pid,std::filesystem::absolute(argv[2]),&detour_detail)==InjectionError::ModuleResolution);
     CHECK(detour_detail.stage==ModuleResolutionStage::ByteMismatch);
     CHECK(WaitForSingleObject(detour_probe.get(),0)==WAIT_TIMEOUT);

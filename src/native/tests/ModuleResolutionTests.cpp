@@ -16,6 +16,9 @@ int main() {
     d.win32_error=87;
     CHECK(!ValidateLocalExport(image.value,base,base-1,d));
     CHECK(d.stage==ModuleResolutionStage::LocalAddress && d.win32_error==0);
+    d.win32_error=87;
+    CHECK(ValidateLocalExport(image.value,base,base+0x1010,d));
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
     CHECK(!ValidateLocalExport(image.value,base,base+0x1ff1,d));
     CHECK(d.stage==ModuleResolutionStage::LocalText);
     CHECK(!ValidateLocalExport(image.value,base,base+bytes.size(),d));
@@ -38,6 +41,9 @@ int main() {
     d.win32_error=87;
     CHECK(!ValidateRemoteModuleAddress(0x4000,0x1010,0x100000,0x5000,d));
     CHECK(d.stage==ModuleResolutionStage::ModuleSize && d.win32_error==0);
+    d.win32_error=87;
+    CHECK(ValidateRemoteModuleAddress(0x4000,0x1010,0x100000,0x4000,d)==0x101010);
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
     CHECK(!ValidateRemoteModuleAddress(0x4000,0x1010,0,0x4000,d));
     CHECK(d.stage==ModuleResolutionStage::RemoteAddress);
     CHECK(ValidateRemoteModuleAddress(0x4000,0x3ff0,0x100000,0x4000,d)==0x103ff0);
@@ -63,6 +69,8 @@ int main() {
     d={};d.matches=1;
     CHECK(!CompleteModuleEnumeration(false,0,d));
     CHECK(d.stage==ModuleResolutionStage::ModuleNext && d.win32_error==0);
+    d.win32_error=87;CHECK(CompleteModuleEnumeration(true,0,d));
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
 
     std::array<std::byte,16> local{},remote{};local[0]=remote[0]=std::byte{0xcc};
     d={};CHECK(ValidateRemoteExportRead(local,remote,16,d));
@@ -93,6 +101,7 @@ int main() {
     CHECK(rendered(d).find(L"local_bytes=")==std::wstring::npos);
     CHECK(rendered(d).find(L"remote_bytes=")==std::wstring::npos);
     remote=local;CHECK(ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
     CHECK(rendered(d).find(L"first_mismatch=16 mismatch_count=0")!=std::wstring::npos);
     // Issue #17 hop 0. Decode only; do not call or trust this address.
     remote={};remote[0]=std::byte{0xe9};
@@ -117,5 +126,11 @@ int main() {
     CHECK(log.str().find(L"stage=module_next")!=std::wstring::npos);
     CHECK(log.str().find(L"win32_error=299")!=std::wstring::npos);
     CHECK(log.str().find(L"remote_address=")!=std::wstring::npos);
+    std::wostringstream formatted;formatted<<std::hex<<std::showbase;
+    const auto flags=formatted.flags();WriteModuleResolutionDiagnostics(formatted,d);
+    CHECK(formatted.flags()==flags);
+    CHECK(formatted.str().find(L"win32_error=299")!=std::wstring::npos);
+    CHECK(formatted.str().find(L"remote_address=100")!=std::wstring::npos);
+    formatted<<299;CHECK(formatted.str().ends_with(L"0x12b"));
     std::cout << "Owned PE, export bounds, enumeration and byte rejection passed\n";
 }

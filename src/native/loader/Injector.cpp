@@ -27,6 +27,16 @@ InjectionError ValidateVictoriaProcess(HANDLE process,const std::filesystem::pat
     USHORT machine{},native{};if(!IsWow64Process2(process,&machine,&native) || machine!=IMAGE_FILE_MACHINE_UNKNOWN || native!=IMAGE_FILE_MACHINE_AMD64)return InjectionError::UnsupportedProcess;
     return IsSupportedBuild(Sha256File(path))?InjectionError::None:InjectionError::UnsupportedBuild;
 }
+void ObserveRemoteBranchRegion(HANDLE process,ModuleResolutionDiagnostics& d) {
+    d.branch_query_available=false;d.branch_query_error=0;d.branch_state=0;
+    d.branch_protection=0;d.branch_type=0;d.branch_allocation_base=0;
+    if(d.stage!=ModuleResolutionStage::ByteMismatch || !d.probe_available || d.remote_entry!=RemoteEntryObservation::Rel32Jump)return;
+    MEMORY_BASIC_INFORMATION target{};
+    if(VirtualQueryEx(process,reinterpret_cast<void*>(static_cast<uintptr_t>(d.branch_target)),&target,sizeof(target))) {
+        d.branch_query_available=true;d.branch_state=target.State;d.branch_protection=target.Protect;
+        d.branch_type=target.Type;d.branch_allocation_base=reinterpret_cast<uintptr_t>(target.AllocationBase);
+    } else d.branch_query_error=GetLastError();
+}
 static uintptr_t RemoteLoadLibrary(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& d) {
     const auto reject=[&](ModuleResolutionStage stage,DWORD error=0)->uintptr_t {d.stage=stage;d.win32_error=error;return 0;};
     d.requested_pid=pid;d.handle_pid=GetProcessId(process);
@@ -69,13 +79,7 @@ static uintptr_t RemoteLoadLibrary(HANDLE process,DWORD pid,ModuleResolutionDiag
     const auto local=std::span<const std::byte,kExportProbeSize>(reinterpret_cast<const std::byte*>(function),kExportProbeSize);
     if(!ValidateRemoteExportRead(local,bytes,read,d)) {
         // Additional observation cannot change the rejection or nominate another entry.
-        if(d.stage==ModuleResolutionStage::ByteMismatch && d.remote_entry==RemoteEntryObservation::Rel32Jump) {
-            MEMORY_BASIC_INFORMATION target{};
-            if(VirtualQueryEx(process,reinterpret_cast<void*>(static_cast<uintptr_t>(d.branch_target)),&target,sizeof(target))) {
-                d.branch_query_available=true;d.branch_state=target.State;d.branch_protection=target.Protect;
-                d.branch_type=target.Type;d.branch_allocation_base=reinterpret_cast<uintptr_t>(target.AllocationBase);
-            } else d.branch_query_error=GetLastError();
-        }
+        ObserveRemoteBranchRegion(process,d);
         return 0;
     }
     return remote;
