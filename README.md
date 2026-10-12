@@ -1,5 +1,7 @@
 # Vic3-optimazation
 
+Current whole-project status: [2026-10-12 roadmap](docs/superpowers/guides/2026-10-12-project-roadmap-ja.md) and [non-game closeout](docs/superpowers/reports/2026-10-12-offline-closeout-ja.md). Offline CPU work, GPU v2 and diagnostic fixes are consolidated on this research branch, not merged into main. Read later reports over historical checkpoints below; game attach/overhead/synchronized runtime acceptance and native speedup remain unverified.
+
 
 ## Measurement-free CPU research (2026-10-11)
 
