@@ -77,16 +77,21 @@ module情報の取得が失敗した場合は、そのerrorも保存する。Pro
 **attach exit0かつ `Profiler ready; enabled mask=0; ...` の場合だけ**、次のstop blockを実行する。Aではゲーム時間を進める必要はない。
 
 ```powershell
+if ($AttachExit -ne 0) { throw 'attach未成功。このprocessへstop/再attachせず、失敗ログを保存する' }
 & $Loader --stop --pid $gamePid 2>&1 | Out-File (Join-Path $Run 'stop.log') -Encoding utf8 -Width 4096
 $StopExit = $LASTEXITCODE
 $StopExit | Out-File (Join-Path $Run 'stop-exit.txt') -Encoding utf8
 Get-Content (Join-Path $Run 'stop.log')
 if ($StopExit -ne 0) { throw 'stop失敗。ログとtraceを保持し、このprocessへ再attachしない' }
-python (Join-Path $Repo 'tools\parse_native_profiler_trace.py') $Trace --output (Join-Path $Run 'parsed.json') --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
+$TracePython = (Get-Command python -CommandType Application -ErrorAction Stop).Source
+& $TracePython (Join-Path $Repo 'tools\parse_native_profiler_trace.py') $Trace --output (Join-Path $Run 'parsed.json') --expected-executable-sha256 9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54
 $ParseExit = $LASTEXITCODE
 $ParseExit | Out-File (Join-Path $Run 'parse-exit.txt') -Encoding utf8
 if (Test-Path -LiteralPath $Trace) { Get-FileHash -LiteralPath $Trace -Algorithm SHA256 | Format-List | Out-File (Join-Path $Run 'trace-hash.log') -Encoding utf8 }
+if (-not (Test-Path -LiteralPath (Join-Path $Run 'parsed.json'))) { throw 'parser出力なし。parse成功とせずtrace/logを保存する' }
 ```
+
+Pythonが使えない場合はstopまでのlogsとraw traceを送ればよい。parser未実行をexit0と記録せず、こちらで解析する。
 
 期待するstop表示は `Profiler stopped and capture finalized. DLL remains loaded and inert.`。parser exit0だけでは合格ではない。parsed.jsonのheader_valid/segment_complete、metadata.disabled=true、enabled_target_mask=0、diagnostics、Counter1/3/4を確認する。署名失敗counter等が非zeroなら実測gateはblocked。AでFunctionBegin/Endは不要で、hookイベントがあれば異常。
 
