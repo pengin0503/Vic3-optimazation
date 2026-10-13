@@ -26,4 +26,10 @@ Windows adapterは所有するchild/selfのfixtureだけで、入口一致/変�
 
 ## 未解決
 
+### 最終確認での追加修正
+
+PR最初の最終CIでは既存native10件とUbuntu Pythonが成功した一方、新しいworkflowテストだけがWindows hostのGet-FileHash解決失敗で停止した。リポジトリのSHA256計算を標準.NETのSHA256へ統一し、Utility依存は使用中のPSHOMEに属するmanifestを指定する。Windows PowerShell5.1とPowerShell7でworkflowを再検証し、特定のshell関数の解決に依存しないようにした。初回CIログは保全し、手動rerunは行わない。
+
+GitHubの自動レビュー指摘をコードと照合し、不完全診断のexit8をwrapperから返す修正、PID/FILETIMEのCreateNewによる原子的attempt予約、明示PIDでpause申告を得ていない場合のnull記録を追加した。workflowは22 casesへ拡張。診断/接続primitiveの変更は追加していない。
+
 第三者detourがある実ゲームへの安全な接続方式は未確立。今回の修正は診断の契約・再現性・手順分散を解決し、接続拒否原因の追加観測を可能にする。byte_mismatchそのものを消したりIssue #17の接続問題を解消したりしたとは扱わず、Issue #17はopenのままにする。実ゲーム接続・Phase4・CPU高速化は未確認。

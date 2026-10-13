@@ -1,5 +1,5 @@
 $ErrorActionPreference='Stop'
-Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Utility\Microsoft.PowerShell.Utility.psd1') -ErrorAction Stop
 Import-Module (Join-Path $PSScriptRoot '..\Vic3Diagnostics.psm1') -Force
 function Assert-True($Value,$Name) { if(-not $Value){throw "Failed: $Name"} }
 function Assert-Rejects([scriptblock]$Action,$Name) {
@@ -31,8 +31,14 @@ Assert-NewVic3DiagnosticInstance -Contexts $past -GamePid 14956 -StartFileTime '
 $scratch=Join-Path ([IO.Path]::GetTempPath()) ('vic3-workflow-test-'+[Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $scratch | Out-Null
 try {
+    # Reservation is atomic even when two callers pass the earlier history check.
+    $reservation=New-Vic3DiagnosticAttempt -RunsRoot $scratch -GamePid 24516 -StartFileTime '134363317251906048'
+    Assert-True (Test-Path -LiteralPath $reservation) 'first reservation created'
+    Assert-Rejects { New-Vic3DiagnosticAttempt -RunsRoot $scratch -GamePid 24516 -StartFileTime '134363317251906048' } 'concurrent or repeated reservation denied'
+    New-Vic3DiagnosticAttempt -RunsRoot $scratch -GamePid 24516 -StartFileTime '134363317251906049' | Out-Null
     $loader=Join-Path $scratch 'loader.bin';[IO.File]::WriteAllBytes($loader,[byte[]]@(1,2,3))
-    $hash=(Get-FileHash -LiteralPath $loader -Algorithm SHA256).Hash.ToLowerInvariant()
+    Assert-True ((Get-Vic3DiagnosticHash -Path $loader) -eq '039058c6f2c0cb492c533b0a4d14ef77cc0f78abccced5287d84a1a2011cfb81') 'SHA256 independent of ambient Get-FileHash availability'
+    $hash=Get-Vic3DiagnosticHash -Path $loader
     $provenance=[pscustomobject]@{schema_version=1;source_commit=('a'*40);source_tree=('b'*40);loader_sha256=$hash;ctest_exit=0;ctest_tests=10}
     Assert-Vic3DiagnosticProvenance -Document $provenance -SourceCommit ('a'*40) -SourceTree ('b'*40) -Loader $loader
     Assert-Rejects { Assert-Vic3DiagnosticProvenance -Document $provenance -SourceCommit ('c'*40) -SourceTree ('b'*40) -Loader $loader } 'old source cannot use new binary'
@@ -45,4 +51,31 @@ try {
     if([IO.Path]::GetDirectoryName($resolved) -ne [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\')) { throw 'Unexpected test scratch path' }
     Remove-Item -LiteralPath $resolved -Recurse -Force
 }
-Write-Host 'Diagnostic workflow: 14 cases passed; no game process accessed.'
+# Execute the actual wrapper's terminal statements in a child host, without a game.
+$tokens=$null;$errors=$null
+$entry=[System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PSScriptRoot '..\Invoke-Vic3Diagnostics.ps1'),[ref]$tokens,[ref]$errors)
+$ready=$entry.EndBlock.Statements | Where-Object { $_ -is [System.Management.Automation.Language.IfStatementAst] -and $_.Clauses[0].Item1.Extent.Text -eq '$GamePid -eq 0' } | Select-Object -First 1
+$context=$entry.Find({param($n) $n -is [System.Management.Automation.Language.HashtableAst] -and $n.Extent.Text -like '*game_paused_reported*'},$true)
+$pauseField=$context.KeyValuePairs | Where-Object { $_.Item1.SafeGetValue() -eq 'game_paused_reported' } | Select-Object -First 1
+foreach($candidate in @(24516,0)) {
+    $report=& {
+        param($gameInput,$readyText,$pauseText)
+        $GamePid=$gameInput;$GamePausedReported=$null
+        function Read-Host { '24516' }
+        function Get-Process { param($Name) @() }
+        . ([ScriptBlock]::Create($readyText))
+        [pscustomobject]@{pause=(. ([ScriptBlock]::Create($pauseText)))}
+    } $candidate $ready.Extent.Text $pauseField.Item2.Extent.Text
+    if($candidate -eq 0){Assert-True ($report.pause -eq $true) 'interactive acknowledgement recorded'}
+    else {Assert-True ($null -eq $report.pause) 'explicit PID does not invent pause acknowledgement'}
+}
+$save=$entry.EndBlock.Statements | Where-Object { $_.Extent.Text -like '*Out-File*result.json*' } | Select-Object -Last 1
+$terminal=($entry.EndBlock.Statements | Where-Object { $_.Extent.StartOffset -gt $save.Extent.EndOffset } | ForEach-Object { $_.Extent.Text }) -join "`n"
+$childHost=(Get-Process -Id $PID).Path
+foreach($expected in @(0,8)) {
+    $setup='$Result=[pscustomobject]@{connection_status="blocked";diagnosis_status="'+$(if($expected -eq 0){'complete'}else{'incomplete'})+'"};$DiagnoseExit='+$expected+';'
+    $encoded=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($setup+$terminal))
+    & $childHost -NoProfile -NonInteractive -OutputFormat Text -EncodedCommand $encoded | Out-Null
+    Assert-True ($LASTEXITCODE -eq $expected) 'wrapper preserves diagnostic exit code'
+}
+Write-Host 'Diagnostic workflow: 22 cases passed; no game process accessed.'

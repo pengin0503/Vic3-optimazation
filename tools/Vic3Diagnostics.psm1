@@ -1,5 +1,13 @@
 Set-StrictMode -Version Latest
-Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Utility\Microsoft.PowerShell.Utility.psd1') -ErrorAction Stop
+
+function Get-Vic3DiagnosticHash {
+    param([string]$Path)
+    $stream=[IO.File]::OpenRead($Path)
+    $algorithm=[Security.Cryptography.SHA256]::Create()
+    try { ([BitConverter]::ToString($algorithm.ComputeHash($stream))).Replace('-','').ToLowerInvariant() }
+    finally { $algorithm.Dispose();$stream.Dispose() }
+}
 
 function Assert-Vic3DiagnosticProvenance {
     param($Document,[string]$SourceCommit,[string]$SourceTree,[string]$Loader)
@@ -8,7 +16,7 @@ function Assert-Vic3DiagnosticProvenance {
         throw 'Build provenance does not match this source or a successful nonempty CTest run.'
     }
     if(-not (Test-Path -LiteralPath $Loader -PathType Leaf) -or
-       (Get-FileHash -LiteralPath $Loader -Algorithm SHA256).Hash.ToLowerInvariant() -ne $Document.loader_sha256) {
+       (Get-Vic3DiagnosticHash -Path $Loader) -ne $Document.loader_sha256) {
         throw 'Loader is missing or its hash differs from the verified build.'
     }
 }
@@ -20,6 +28,21 @@ function Assert-NewVic3DiagnosticInstance {
             throw 'This process instance already has a diagnostic attempt. Keep its evidence and use a new game process.'
         }
     }
+}
+
+function New-Vic3DiagnosticAttempt {
+    param([string]$RunsRoot,[uint32]$GamePid,[string]$StartFileTime)
+    if(-not $GamePid -or $StartFileTime -notmatch '^\d+$') { throw 'Invalid process instance key.' }
+    $directory=Join-Path $RunsRoot '.attempts'
+    New-Item -ItemType Directory -Path $directory -Force | Out-Null
+    $marker=Join-Path $directory ($GamePid.ToString()+'-'+$StartFileTime+'.json')
+    # CreateNew is an atomic reservation, including across independent hosts.
+    $stream=[IO.File]::Open($marker,[IO.FileMode]::CreateNew,[IO.FileAccess]::Write,[IO.FileShare]::None)
+    try {
+        $record=[ordered]@{pid=$GamePid;process_start_filetime=$StartFileTime;reserved_utc=[DateTime]::UtcNow.ToString('o')} | ConvertTo-Json
+        $bytes=[Text.Encoding]::UTF8.GetBytes($record);$stream.Write($bytes,0,$bytes.Length)
+    } finally { $stream.Dispose() }
+    $marker
 }
 
 function ConvertFrom-Vic3DiagnosticLog {
@@ -62,4 +85,4 @@ function Invoke-Vic3DiagnosticCommand {
     } finally { $ErrorActionPreference=$saved }
     if($result -ne 0) { throw "Command failed (exit=$result). Read $Log" }
 }
-Export-ModuleMember -Function Assert-Vic3DiagnosticProvenance,Assert-NewVic3DiagnosticInstance,ConvertFrom-Vic3DiagnosticLog,Invoke-Vic3DiagnosticCommand
+Export-ModuleMember -Function Get-Vic3DiagnosticHash,Assert-Vic3DiagnosticProvenance,Assert-NewVic3DiagnosticInstance,New-Vic3DiagnosticAttempt,ConvertFrom-Vic3DiagnosticLog,Invoke-Vic3DiagnosticCommand

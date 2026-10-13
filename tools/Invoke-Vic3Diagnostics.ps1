@@ -2,7 +2,7 @@
 param([uint32]$GamePid=0,[switch]$PrepareOnly)
 
 $ErrorActionPreference='Stop'
-Import-Module Microsoft.PowerShell.Utility -ErrorAction Stop
+Import-Module (Join-Path $PSHOME 'Modules\Microsoft.PowerShell.Utility\Microsoft.PowerShell.Utility.psd1') -ErrorAction Stop
 if(-not [Environment]::Is64BitProcess) { throw 'Use 64-bit PowerShell.' }
 Import-Module (Join-Path $PSScriptRoot 'Vic3Diagnostics.psm1') -Force
 $Repo=Split-Path -Parent $PSScriptRoot
@@ -30,7 +30,7 @@ if(-not (Test-Path -LiteralPath $Manifest -PathType Leaf)) {
     if($LASTEXITCODE -ne 0 -or $BuildCommit -ne $SourceCommit) { throw 'Source HEAD changed during build; provenance was not written.' }
     $BuildStatus=@(& git -C $Repo status --short --untracked-files=all)
     if($LASTEXITCODE -ne 0 -or $BuildStatus.Count -ne 0) { throw 'Source changed during build; provenance was not written.' }
-    $Provenance=[ordered]@{schema_version=1;source_commit=$SourceCommit;source_tree=$SourceTree;loader_sha256=(Get-FileHash -LiteralPath $Loader -Algorithm SHA256).Hash.ToLowerInvariant();ctest_exit=0;ctest_tests=[int]$Count.Groups[1].Value;verified_utc=[DateTime]::UtcNow.ToString('o')}
+    $Provenance=[ordered]@{schema_version=1;source_commit=$SourceCommit;source_tree=$SourceTree;loader_sha256=(Get-Vic3DiagnosticHash -Path $Loader);ctest_exit=0;ctest_tests=[int]$Count.Groups[1].Value;verified_utc=[DateTime]::UtcNow.ToString('o')}
     $Provenance | ConvertTo-Json | Out-File -LiteralPath $Manifest -Encoding utf8 -NoClobber
 }
 $Provenance=Get-Content -LiteralPath $Manifest -Raw | ConvertFrom-Json
@@ -39,9 +39,11 @@ if($PrepareOnly) {
     [pscustomobject]@{source_commit=$SourceCommit;loader=$Loader;loader_sha256=$Provenance.loader_sha256;ctest_tests=$Provenance.ctest_tests;game_accessed=$false}
     return
 }
+$GamePausedReported=$null
 if($GamePid -eq 0) {
     Write-Host 'Use a newly started Victoria 3 process. Load the save and pause it; an already running fresh process is accepted.'
     Read-Host 'Press Enter when ready' | Out-Null
+    $GamePausedReported=$true
     Get-Process -Name victoria3 | Select-Object Id,StartTime,Path | Format-List
     $GamePid=[uint32](Read-Host 'New victoria3.exe PID')
 }
@@ -49,7 +51,7 @@ if($GamePid -eq 0) { throw 'A nonzero PID is required.' }
 $Game=Get-Process -Id $GamePid
 if($Game.ProcessName -ne 'victoria3' -or [IO.Path]::GetFileName($Game.Path) -ine 'victoria3.exe') { throw 'Wrong process.' }
 $GamePath=$Game.Path;$StartUtc=$Game.StartTime.ToUniversalTime();$StartFileTime=$StartUtc.ToFileTimeUtc().ToString([Globalization.CultureInfo]::InvariantCulture)
-$ExeHash=(Get-FileHash -LiteralPath $GamePath -Algorithm SHA256).Hash.ToLowerInvariant()
+$ExeHash=Get-Vic3DiagnosticHash -Path $GamePath
 if($ExeHash -ne $ExpectedExeHash) { throw 'Unsupported executable hash; no diagnosis performed.' }
 $Runs=Join-Path $Repo 'local-data\diagnostics'
 $Contexts=@()
@@ -64,9 +66,10 @@ if($LASTEXITCODE -ne 0 -or $CurrentCommit -ne $SourceCommit) { throw 'Source HEA
 $CurrentStatus=@(& git -C $Repo status --short --untracked-files=all)
 if($LASTEXITCODE -ne 0 -or $CurrentStatus.Count -ne 0) { throw 'Source checkout changed while preparing the diagnosis.' }
 Assert-Vic3DiagnosticProvenance -Document $Provenance -SourceCommit $SourceCommit -SourceTree $SourceTree -Loader $Loader
+$Reservation=New-Vic3DiagnosticAttempt -RunsRoot $Runs -GamePid $GamePid -StartFileTime $StartFileTime
 $Run=Join-Path $Runs ([Guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $Run | Out-Null
-[ordered]@{pid=$GamePid;process_start_utc=$StartUtc.ToString('o');process_start_filetime=$StartFileTime;exe_sha256=$ExeHash;source_commit=$SourceCommit;source_tree=$SourceTree;loader_sha256=$Provenance.loader_sha256;mode='diagnose-loadlibrary';attach_attempted=$false;game_paused_reported=$true} | ConvertTo-Json | Out-File -LiteralPath (Join-Path $Run 'context.json') -Encoding utf8 -NoClobber
+[ordered]@{pid=$GamePid;process_start_utc=$StartUtc.ToString('o');process_start_filetime=$StartFileTime;exe_sha256=$ExeHash;source_commit=$SourceCommit;source_tree=$SourceTree;loader_sha256=$Provenance.loader_sha256;mode='diagnose-loadlibrary';attach_attempted=$false;game_paused_reported=$GamePausedReported;attempt_reservation=$Reservation} | ConvertTo-Json | Out-File -LiteralPath (Join-Path $Run 'context.json') -Encoding utf8 -NoClobber
 Write-Host "Evidence: $Run"
 $SavedPreference=$ErrorActionPreference
 try {
@@ -79,5 +82,7 @@ $Log=Get-Content -LiteralPath (Join-Path $Run 'diagnose.log') -Raw
 Write-Host $Log
 $Result=ConvertFrom-Vic3DiagnosticLog -Text $Log -ExitCode $DiagnoseExit -GamePid $GamePid -StartFileTime $StartFileTime
 $Result | ConvertTo-Json | Out-File -LiteralPath (Join-Path $Run 'result.json') -Encoding utf8 -NoClobber
-if($Result.connection_status -eq 'blocked') { Write-Host 'Diagnosis collected; connection remains blocked. End here; no attach or retry.' }
+if($Result.diagnosis_status -eq 'incomplete') { Write-Host 'Diagnosis incomplete; connection remains blocked. End here; no retry.' }
+elseif($Result.connection_status -eq 'blocked') { Write-Host 'Diagnosis collected; connection remains blocked. End here; no attach or retry.' }
 else { Write-Host 'Entry probe matched. This is not an attach result. End here.' }
+if($DiagnoseExit -ne 0) { exit $DiagnoseExit }

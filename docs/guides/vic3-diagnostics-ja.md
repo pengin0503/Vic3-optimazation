@@ -20,6 +20,8 @@ mainを使用する診断用cloneを一度用意してください。未コミ�
 
 対象はcatalogとnative gateが定義するVictoria 3 1.14.5のexact exe hashです。exe名、hash、開始時刻、source、Loaderを照合し、`--diagnose-loadlibrary --pid PID` を1回だけ実行します。Profiler DLLをゲームへ注入せず、attach、stop、enabled計測は実施しません。
 
+PID/FILETIMEの組をファイルのCreateNewで原子的に予約し、同時に2つのPowerShellを起動しても片方だけが診断へ進みます。予約後の起動失敗でも予約を保全し、削除して再実行せず新しいgame instanceを使用します。PID直接指定時は一時停止の申告を得ていないため、contextのgame_paused_reportedはnull（不明）です。通常の対話入口では準備確認に対する申告を記録し、ゲームのpause状態を自動検証したとは扱いません。
+
 ゲームを準備せずbuildと検証だけを済ませる場合も、同じ入口を使用します。
 
 ```powershell
