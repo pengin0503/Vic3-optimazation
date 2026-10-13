@@ -16,6 +16,9 @@ int main() {
     d.win32_error=87;
     CHECK(!ValidateLocalExport(image.value,base,base-1,d));
     CHECK(d.stage==ModuleResolutionStage::LocalAddress && d.win32_error==0);
+    d.win32_error=87;
+    CHECK(ValidateLocalExport(image.value,base,base+0x1010,d));
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
     CHECK(!ValidateLocalExport(image.value,base,base+0x1ff1,d));
     CHECK(d.stage==ModuleResolutionStage::LocalText);
     CHECK(!ValidateLocalExport(image.value,base,base+bytes.size(),d));
@@ -38,6 +41,9 @@ int main() {
     d.win32_error=87;
     CHECK(!ValidateRemoteModuleAddress(0x4000,0x1010,0x100000,0x5000,d));
     CHECK(d.stage==ModuleResolutionStage::ModuleSize && d.win32_error==0);
+    d.win32_error=87;
+    CHECK(ValidateRemoteModuleAddress(0x4000,0x1010,0x100000,0x4000,d)==0x101010);
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
     CHECK(!ValidateRemoteModuleAddress(0x4000,0x1010,0,0x4000,d));
     CHECK(d.stage==ModuleResolutionStage::RemoteAddress);
     CHECK(ValidateRemoteModuleAddress(0x4000,0x3ff0,0x100000,0x4000,d)==0x103ff0);
@@ -63,6 +69,8 @@ int main() {
     d={};d.matches=1;
     CHECK(!CompleteModuleEnumeration(false,0,d));
     CHECK(d.stage==ModuleResolutionStage::ModuleNext && d.win32_error==0);
+    d.win32_error=87;CHECK(CompleteModuleEnumeration(true,0,d));
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
 
     std::array<std::byte,16> local{},remote{};local[0]=remote[0]=std::byte{0xcc};
     d={};CHECK(ValidateRemoteExportRead(local,remote,16,d));
@@ -73,10 +81,56 @@ int main() {
     remote[15]=std::byte{1};d.win32_error=87;
     CHECK(!ValidateRemoteExportRead(local,remote,16,d));
     CHECK(d.stage==ModuleResolutionStage::ByteMismatch && d.win32_error==0);
+    std::wostringstream mismatch_log;WriteModuleResolutionDiagnostics(mismatch_log,d);
+    CHECK(mismatch_log.str().find(L"local_bytes=cc000000000000000000000000000000")!=std::wstring::npos);
+    CHECK(mismatch_log.str().find(L"remote_bytes=cc000000000000000000000000000001")!=std::wstring::npos);
+    CHECK(mismatch_log.str().find(L"first_mismatch=15 mismatch_count=1")!=std::wstring::npos);
+    const auto rendered=[](const ModuleResolutionDiagnostics& value) {
+        std::wostringstream out;WriteModuleResolutionDiagnostics(out,value);return out.str();
+    };
+    for(size_t index=0;index<16;++index) {
+        remote=local;remote[index]^=std::byte{1};d={};
+        CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+        CHECK(rendered(d).find(L"first_mismatch="+std::to_wstring(index)+L" mismatch_count=1")!=std::wstring::npos);
+    }
+    remote[0]^=std::byte{1}; // differences at 0 and 15
+    CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"first_mismatch=0 mismatch_count=2")!=std::wstring::npos);
+    CHECK(!ValidateRemoteExportRead(local,remote,15,d));
+    CHECK(rendered(d).find(L"probe_available=0")!=std::wstring::npos);
+    CHECK(rendered(d).find(L"local_bytes=")==std::wstring::npos);
+    CHECK(rendered(d).find(L"remote_bytes=")==std::wstring::npos);
+    remote=local;CHECK(ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(d.stage==ModuleResolutionStage::None && d.win32_error==0);
+    CHECK(rendered(d).find(L"first_mismatch=16 mismatch_count=0")!=std::wstring::npos);
+    // Issue #17 hop 0. Decode only; do not call or trust this address.
+    remote={};remote[0]=std::byte{0xe9};
+    remote[1]=std::byte{0x57};remote[2]=std::byte{0x13};remote[3]=std::byte{0xff};remote[4]=std::byte{0xfd};
+    d={};d.remote_address=0x7ffb9924ee30;
+    CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=rel32_jump")!=std::wstring::npos);
+    CHECK(rendered(d).find(L"branch_target="+std::to_wstring(uint64_t{0x7ffb9724018c}))!=std::wstring::npos);
+    remote[1]=std::byte{7};remote[2]=remote[3]=remote[4]=std::byte{0};
+    d={};d.remote_address=100;CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"branch_target=112")!=std::wstring::npos);
+    d.remote_address=max-4;CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=rel32_overflow")!=std::wstring::npos);
+    remote[1]=remote[2]=remote[3]=std::byte{0};remote[4]=std::byte{0x80}; // INT32_MIN
+    d.remote_address=100;CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=rel32_overflow")!=std::wstring::npos);
+    remote[0]=std::byte{0xff};CHECK(!ValidateRemoteExportRead(local,remote,16,d));
+    CHECK(rendered(d).find(L"remote_entry=unknown")!=std::wstring::npos);
+    CHECK(rendered(d).find(L"branch_target=0")!=std::wstring::npos);
     d.stage=ModuleResolutionStage::ModuleNext;d.win32_error=299;
     std::wostringstream log;WriteModuleResolutionDiagnostics(log,d);
     CHECK(log.str().find(L"stage=module_next")!=std::wstring::npos);
     CHECK(log.str().find(L"win32_error=299")!=std::wstring::npos);
     CHECK(log.str().find(L"remote_address=")!=std::wstring::npos);
+    std::wostringstream formatted;formatted<<std::hex<<std::showbase;
+    const auto flags=formatted.flags();WriteModuleResolutionDiagnostics(formatted,d);
+    CHECK(formatted.flags()==flags);
+    CHECK(formatted.str().find(L"win32_error=299")!=std::wstring::npos);
+    CHECK(formatted.str().find(L"remote_address=100")!=std::wstring::npos);
+    formatted<<299;CHECK(formatted.str().ends_with(L"0x12b"));
     std::cout << "Owned PE, export bounds, enumeration and byte rejection passed\n";
 }

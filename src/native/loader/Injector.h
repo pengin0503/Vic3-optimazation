@@ -11,18 +11,22 @@
 #include <windows.h>
 #endif
 namespace vic3 {
-struct LoaderArgs {uint32_t pid{},target_mask{7};bool stop{},disabled{},partial{};std::filesystem::path dll,output;};
+struct LoaderArgs {uint32_t pid{},target_mask{7};bool stop{},disabled{},partial{},diagnose{};std::filesystem::path dll,output;};
 struct ArgsResult {LoaderArgs value;bool valid{};explicit operator bool()const noexcept{return valid;}};
 inline ArgsResult ParseLoaderArgs(const std::vector<std::wstring>& args) {
     LoaderArgs result;std::set<std::wstring> seen;
     for(size_t i=0;i<args.size();++i) {
         const auto& option=args[i];if(!seen.insert(option).second)return {};
         if(option==L"--stop")result.stop=true;
+        else if(option==L"--diagnose-loadlibrary")result.diagnose=true;
         else if(option==L"--disabled")result.disabled=true;
         else if(option==L"--allow-partial-targets")result.partial=true;
         else if(option==L"--pid" || option==L"--dll" || option==L"--output" || option==L"--targets") {
             if(++i==args.size() || args[i].empty())return {};
             const auto& value=args[i];
+            // Never consume a mode/switch as a missing option value: doing so
+            // could silently turn a read-only diagnosis into a normal attach.
+            if(value.starts_with(L"--"))return {};
             if(option==L"--pid") {
                 uint64_t pid=0;
                 for(wchar_t c:value){if(c<L'0' || c>L'9')return {};pid=pid*10+static_cast<uint32_t>(c-L'0');if(pid>std::numeric_limits<uint32_t>::max())return {};}
@@ -43,17 +47,27 @@ inline ArgsResult ParseLoaderArgs(const std::vector<std::wstring>& args) {
             }
         } else return {};
     }
-    if(!result.pid || (result.stop && seen.size()!=2))return {};
+    if(!result.pid || (result.stop && seen.size()!=2) || (result.diagnose && seen.size()!=2))return {};
     return {result,true};
 }
 inline int StopResult(RuntimeStatus status) noexcept {return status==RuntimeStatus::Stopped?0:1;}
 #ifdef _WIN32
 RuntimeStatus StopProfilerSession(DWORD pid,DWORD timeout_ms=35000);
+inline DWORD LoaderProcessRights(const LoaderArgs& args) noexcept {
+    if(args.stop)return PROCESS_QUERY_LIMITED_INFORMATION;
+    if(args.diagnose)return PROCESS_QUERY_INFORMATION|PROCESS_VM_READ;
+    return PROCESS_QUERY_INFORMATION|PROCESS_CREATE_THREAD|PROCESS_VM_OPERATION|PROCESS_VM_WRITE|PROCESS_VM_READ;
+}
 #endif
 enum class InjectionError {None,InvalidPath,UnsupportedProcess,UnsupportedBuild,ModuleResolution,RemoteAllocation,RemoteWrite,RemoteThread,Timeout,LoadFailed};
 #ifdef _WIN32
 std::filesystem::path ProcessImagePath(HANDLE process);
 InjectionError ValidateVictoriaProcess(HANDLE process,const std::filesystem::path& path);
+// Same resolver as injection, but only queries/reads the selected process.
+// Production CLI passes the exact Victoria gate first; tests use their own host.
+bool DiagnoseLoadLibraryForValidatedProcess(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& diagnostics);
+// Best-effort query after a complete E9 mismatch, preserving the primary result.
+void ObserveRemoteBranchRegion(HANDLE process,ModuleResolutionDiagnostics& diagnostics);
 // Private native primitive. The production CLI always passes the exact Victoria gate first.
 InjectionError InjectLibraryForValidatedProcess(HANDLE process,DWORD pid,const std::filesystem::path& dll,ModuleResolutionDiagnostics* diagnostics=nullptr);
 #endif

@@ -2,6 +2,8 @@
 
 Date: 2026-10-12 JST
 
+**新しい診断手順:** Issue #17の未解決byte_mismatchには、[注入しないLoadLibraryW診断](2026-10-12-loader-readonly-diagnosis-ja.md)を先に使う。旧artifactは新flagに非対応。新しいLoaderのbuild/provenanceを用意し、診断結果を確認してからAへ進むか判断する。診断exit0をattach成功として扱わない。
+
 **最初に行うのはAのみ。12本の本測定やOS traceはまだ不要。** Aが失敗したらログを保存してそこで止め、同じprocessへの再attach・retryはしない。A成功後にB、A/Bの正常接続・停止が確認できてからCへ進む。read-only profilerは軽量化patchではなく、今回CPU使用率や速度が改善することを期待する検証ではない。
 
 
