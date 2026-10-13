@@ -2,6 +2,8 @@
 
 Victoria 3のシミュレーション性能を、通常のスクリプトやdefineの調整を超えて改善するための研究プロジェクトです。
 
+**現在の次の作業（2026-10-13）：[DLLを使わない外部CPU実測](docs/guides/vic3-external-cpu-measurement-ja.md)。** 既存WPR/WPAとTickTask CSVを主経路にし、12スレッドの通常実行3回・CPUサンプリング3回を用意しました。まずB1/S1で収集成立を確認します。[改善候補と採否](docs/superpowers/reports/2026-10-13-external-cpu-candidate-ja.md)、[未測定packetとオフライン検証](research/external-cpu/README.md)を参照してください。Issue #17とnative profiler Phase4は独立して未解決のままですが、この外部調査の開始条件ではありません。性能パッチは0件で、実測後の選定・設計・実装が残ります。
+
 プロジェクト全体の状況は[2026-10-12のロードマップ](docs/superpowers/guides/2026-10-12-project-roadmap-ja.md)と[非ゲーム作業の完了記録](docs/superpowers/reports/2026-10-12-offline-closeout-ja.md)を参照してください。現在の成果にはオフラインCPU研究、GPU v2、診断修正を含みます。過去の進捗より新しい報告を優先してください。実ゲームへの接続、観測負荷、同期した実行時証拠の受け入れ判定、ネイティブ処理の高速化は引き続き未検証です。
 
 実ゲームの診断は[固定された現在の手順](docs/guides/vic3-diagnostics-ja.md)と `tools/Invoke-Vic3Diagnostics.ps1` を使用してください。診断完了と接続可否を別々に記録し、既定動作は読み取り専用です。[変更理由と未解決事項](docs/superpowers/reports/2026-10-13-unified-readonly-diagnostics-ja.md)を参照してください。
@@ -55,6 +57,8 @@ Issue #17のLoadLibraryW不一致では接続拒否を維持します。完全�
 まず測定します。CPU全体の使用率が低いという理由だけで、スケジューラーやロックを原因と推定しません。再現性、OSレベルの証拠、対象ビルドの検証、期待する効果、動作上のリスクを理解するまで、ネイティブ最適化を導入しません。
 
 ## 次に必要な証拠
+
+現在は[外部CPU実測ガイド](docs/guides/vic3-external-cpu-measurement-ja.md)の12thread B/Sセットを優先します。以下の12/16やnative profilerの比較は旧経路・追加調査の参照であり、初回実測の必須セットではありません。native runtime acceptanceの条件を外部計測の開始条件と混同しないでください。
 
 1. [保存済みの9回の測定](benchmarks/measured-2026-10-05-3month-repeats/)と[検証済みの分析](research/generated/repeats-2026-10-05/repeat-evidence.json)を使い、過去の単発測定とは分けて扱います。
 2. 12_r2の終了境界を確認します。共通フレームのタスク・呼び出し負荷は一致しますが、生のCSVには3フレーム余分にあり、統合済みの負荷フィンガープリント検査がこの不一致を検出します。
