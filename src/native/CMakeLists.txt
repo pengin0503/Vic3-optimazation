@@ -125,3 +125,9 @@ target_link_libraries(NativeInjectorTests PRIVATE vic3_injector)
 vic3_set_warnings(NativeInjectorTests)
 add_test(NAME NativeInjectorTests COMMAND NativeInjectorTests $<TARGET_FILE:InjectorHost> $<TARGET_FILE:InjectionProbe> $<TARGET_FILE:Vic3OptimizationLoader>)
 set_tests_properties(NativeRuntimeTests NativeInjectorTests PROPERTIES TIMEOUT 90)
+
+# The stable PowerShell workflow is part of the same local/final CI gate.
+find_program(VIC3_POWERSHELL NAMES powershell REQUIRED)
+add_test(NAME NativeDiagnosticWorkflowTests COMMAND ${VIC3_POWERSHELL}
+  -NoProfile -NonInteractive -ExecutionPolicy Bypass -File
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../tools/tests/Vic3Diagnostics.Tests.ps1)

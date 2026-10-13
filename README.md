@@ -4,9 +4,9 @@ Victoria 3のシミュレーション性能を、通常のスクリプトやdefi
 
 プロジェクト全体の状況は[2026-10-12のロードマップ](docs/superpowers/guides/2026-10-12-project-roadmap-ja.md)と[非ゲーム作業の完了記録](docs/superpowers/reports/2026-10-12-offline-closeout-ja.md)を参照してください。現在の成果にはオフラインCPU研究、GPU v2、診断修正を含みます。過去の進捗より新しい報告を優先してください。実ゲームへの接続、観測負荷、同期した実行時証拠の受け入れ判定、ネイティブ処理の高速化は引き続き未検証です。
 
-実ゲーム検証は[最初の検証手順](docs/superpowers/guides/2026-10-12-user-game-validation-first-pass-ja.md)から始めてください。
+実ゲームの診断は[固定された現在の手順](docs/guides/vic3-diagnostics-ja.md)と `tools/Invoke-Vic3Diagnostics.ps1` を使用してください。診断完了と接続可否を別々に記録し、既定動作は読み取り専用です。[変更理由と未解決事項](docs/superpowers/reports/2026-10-13-unified-readonly-diagnostics-ja.md)を参照してください。
 
-Issue #17のLoadLibraryW不一致に対し、fail-closedを維持した[読み取り専用診断](docs/superpowers/guides/2026-10-12-loader-readonly-diagnosis-ja.md)を追加しました。[方式比較・実装結果](docs/superpowers/reports/2026-10-12-loader-readonly-byte-mismatch-ja.md)を参照し、次回は注入せず同じPIDの証拠を取得してください。接続成功は未確認です。
+Issue #17のLoadLibraryW不一致では接続拒否を維持します。完全な不一致診断は `diagnosis_status=complete / connection_status=blocked` として記録します。接続成功は未確認です。旧日付付き手順は当時の記録として保持します。
 
 保留した診断coverageとWindows Python fixtureの後続作業は[オフラインfollowup](docs/superpowers/reports/2026-10-12-loader-offline-followup-ja.md)に記録しています。
 

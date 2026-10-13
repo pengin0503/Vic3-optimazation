@@ -84,8 +84,64 @@ static uintptr_t RemoteLoadLibrary(HANDLE process,DWORD pid,ModuleResolutionDiag
     }
     return remote;
 }
-bool DiagnoseLoadLibraryForValidatedProcess(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& diagnostics) {
-    diagnostics={};return RemoteLoadLibrary(process,pid,diagnostics)!=0;
+void ObserveRemoteJumpChain(HANDLE process,ModuleResolutionDiagnostics& d) {
+    d.chain={};d.chain_count=0;d.chain_stop=L"not_requested";d.chain_module_error=0;
+    if(d.stage!=ModuleResolutionStage::ByteMismatch || !d.probe_available || d.remote_entry!=RemoteEntryObservation::Rel32Jump)return;
+    FILETIME created{},exited{},kernel{},user{};
+    if(GetProcessId(process)!=d.requested_pid || !GetProcessTimes(process,&created,&exited,&kernel,&user) ||
+       ((static_cast<uint64_t>(created.dwHighDateTime)<<32)|created.dwLowDateTime)!=d.process_start_filetime) {
+        d.chain_stop=L"identity_changed";return;
+    }
+    std::vector<MODULEENTRY32W> modules;
+    WinHandle snapshot(CreateToolhelp32Snapshot(TH32CS_SNAPMODULE,d.requested_pid));
+    if(snapshot) {
+        MODULEENTRY32W entry{};entry.dwSize=sizeof(entry);
+        if(Module32FirstW(snapshot.get(),&entry)) {
+            do {modules.push_back(entry);}while(Module32NextW(snapshot.get(),&entry));
+            const DWORD error=GetLastError();if(error!=ERROR_NO_MORE_FILES){modules.clear();d.chain_module_error=error;}
+        }else d.chain_module_error=GetLastError();
+    }else d.chain_module_error=GetLastError();
+    uintptr_t address=static_cast<uintptr_t>(d.branch_target);
+    d.chain_stop=L"hop_limit";
+    for(size_t i=0;i<d.chain.size();++i) {
+        if(address==d.remote_address){d.chain_stop=L"cycle";return;}
+        for(size_t previous=0;previous<i;++previous)if(d.chain[previous].address==address){d.chain_stop=L"cycle";return;}
+        auto& hop=d.chain[i];hop.address=address;d.chain_count=i+1;
+        MEMORY_BASIC_INFORMATION region{};
+        if(!VirtualQueryEx(process,reinterpret_cast<void*>(address),&region,sizeof(region))) {
+            hop.query_error=GetLastError();d.chain_stop=L"query_failed";return;
+        }
+        hop.state=region.State;hop.protection=region.Protect;hop.type=region.Type;
+        hop.allocation_base=reinterpret_cast<uintptr_t>(region.AllocationBase);
+        const uintptr_t region_base=reinterpret_cast<uintptr_t>(region.BaseAddress);
+        if(region.State!=MEM_COMMIT || (region.Protect&(PAGE_GUARD|PAGE_NOACCESS)) || address<region_base ||
+           address-region_base>region.RegionSize || kExportProbeSize>region.RegionSize-(address-region_base)) {
+            d.chain_stop=L"region_unreadable";return;
+        }
+        size_t matches=0;
+        for(const auto& module:modules) {
+            const auto module_base=reinterpret_cast<uintptr_t>(module.modBaseAddr);
+            if(address>=module_base && address-module_base<module.modBaseSize) {
+                ++matches;hop.module_base=module_base;hop.module_path=module.szExePath;
+            }
+        }
+        if(matches!=1){hop.module_base=0;hop.module_path.clear();}
+        SIZE_T read{};std::array<std::byte,kExportProbeSize> bytes{};
+        if(!ReadProcessMemory(process,reinterpret_cast<void*>(address),bytes.data(),bytes.size(),&read)) {
+            hop.read_error=GetLastError();d.chain_stop=L"read_failed";return;
+        }
+        if(read!=bytes.size()){d.chain_stop=L"partial_read";return;}
+        hop.probe_available=true;hop.bytes=bytes;
+        const auto jump=DecodeRelativeJump(address,bytes);hop.next_address=jump.target;
+        if(jump.kind==RemoteEntryObservation::Unknown){d.chain_stop=L"unknown_instruction";return;}
+        if(jump.kind==RemoteEntryObservation::Rel32Overflow){d.chain_stop=L"address_overflow";return;}
+        address=jump.target;
+    }
+}
+LoadLibraryDiagnosis DiagnoseLoadLibraryForValidatedProcess(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& diagnostics) {
+    diagnostics={};(void)RemoteLoadLibrary(process,pid,diagnostics);
+    ObserveRemoteJumpChain(process,diagnostics);
+    return ClassifyLoadLibraryDiagnosis(diagnostics);
 }
 InjectionError InjectLibraryForValidatedProcess(HANDLE process,DWORD pid,const std::filesystem::path& dll,ModuleResolutionDiagnostics* diagnostics) {
     ModuleResolutionDiagnostics local_diagnostics;

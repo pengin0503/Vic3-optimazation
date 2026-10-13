@@ -132,5 +132,38 @@ int main() {
     CHECK(formatted.str().find(L"win32_error=299")!=std::wstring::npos);
     CHECK(formatted.str().find(L"remote_address=100")!=std::wstring::npos);
     formatted<<299;CHECK(formatted.str().ends_with(L"0x12b"));
+    // Diagnostic completion is independent of the injection policy.
+    ModuleResolutionDiagnostics complete;
+    complete.requested_pid=42;complete.handle_pid=42;complete.process_start_filetime=123;
+    complete.matches=1;complete.bytes_read=16;complete.probe_available=true;
+    auto diagnosis=ClassifyLoadLibraryDiagnosis(complete);
+    CHECK(diagnosis.complete && diagnosis.entry_matches && DiagnosisExitCode(diagnosis)==0);
+    complete.stage=ModuleResolutionStage::ByteMismatch;complete.mismatch_count=5;
+    diagnosis=ClassifyLoadLibraryDiagnosis(complete);
+    CHECK(diagnosis.complete && !diagnosis.entry_matches && DiagnosisExitCode(diagnosis)==0);
+    // Failed or inconsistent observations must never become complete diagnoses.
+    for(const auto stage:{ModuleResolutionStage::RemoteRead,ModuleResolutionStage::RemoteQuery,ModuleResolutionStage::ProcessIdentity}) {
+        auto failed=complete;failed.stage=stage;
+        CHECK(!ClassifyLoadLibraryDiagnosis(failed).complete);
+    }
+    for(int broken=0;broken<6;++broken) {
+        auto failed=complete;
+        if(broken==0)failed.probe_available=false;
+        if(broken==1)failed.bytes_read=15;
+        if(broken==2)failed.handle_pid=43;
+        if(broken==3)failed.process_start_filetime=0;
+        if(broken==4)failed.win32_error=299;
+        if(broken==5)failed.matches=2;
+        CHECK(!ClassifyLoadLibraryDiagnosis(failed).complete);
+        CHECK(DiagnosisExitCode(ClassifyLoadLibraryDiagnosis(failed))==8);
+    }
+    std::wostringstream result_log;WriteLoadLibraryDiagnosisResult(result_log,diagnosis);
+    CHECK(result_log.str().find(L"diagnosis_status=complete entry_status=modified connection_status=blocked")!=std::wstring::npos);
+    std::array<std::byte,16> jump{};jump[0]=std::byte{0xe9};jump[1]=std::byte{11};
+    CHECK(DecodeRelativeJump(100,jump).target==116);
+    jump[1]=std::byte{0xfb};jump[2]=jump[3]=jump[4]=std::byte{0xff};
+    CHECK(DecodeRelativeJump(100,jump).target==100);
+    CHECK(DecodeRelativeJump(max-4,jump).kind==RemoteEntryObservation::Rel32Overflow);
+    jump[0]=std::byte{0x90};CHECK(DecodeRelativeJump(100,jump).kind==RemoteEntryObservation::Unknown);
     std::cout << "Owned PE, export bounds, enumeration and byte rejection passed\n";
 }

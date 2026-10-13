@@ -20,10 +20,11 @@ int wmain(int argc,wchar_t** argv) {
         if(gate!=InjectionError::None){std::wcerr<<L"Unsupported process/build; no remote write or injection. Gate code: "<<static_cast<int>(gate)<<L"\n";return 4;}
         if(args.diagnose) {
             ModuleResolutionDiagnostics resolution;
-            const bool matched=DiagnoseLoadLibraryForValidatedProcess(process.get(),args.pid,resolution);
+            const auto diagnosis=DiagnoseLoadLibraryForValidatedProcess(process.get(),args.pid,resolution);
             WriteModuleResolutionDiagnostics(std::wcout,resolution);
-            std::wcout<<L"Read-only diagnosis only; no DLL injected. Export probe "<<(matched?L"matched":L"rejected")<<L"; not an attach result.\n";
-            return matched?0:8;
+            WriteLoadLibraryDiagnosisResult(std::wcout,diagnosis);
+            std::wcout<<L"Read-only diagnosis only; no DLL injected; not an attach result.\n";
+            return DiagnosisExitCode(diagnosis);
         }
         if(args.stop) {
             const auto terminal=StopProfilerSession(args.pid);

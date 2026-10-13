@@ -32,7 +32,7 @@ Task 9の着手条件は、反復ベンチマークの基準測定とPR #11のOS
 
 ローダーは`--pid`を必須とし、未知のビルドをDLL注入前に拒否します。DLLは独立した検証の完了後だけ3つの末尾アンカーを観測し、`--disabled`ではフック数が0になります。終了には`--stop --pid`を使います。DLLとトランポリンはプロセス終了まで保持し、再測定はゲーム再起動から行います。[操作ガイド](../docs/superpowers/guides/2026-10-05-native-profiler-runtime-validation-ja.md)と[実装の引き継ぎ](../docs/superpowers/reports/2026-10-05-native-profiler-runtime-implementation-handoff-ja.md)を参照してください。
 
-ローダー診断は[モジュール解決の診断記録](../docs/superpowers/reports/2026-10-06-loader-module-resolution-diagnostics-ja.md)を参照してください。合成テスト用ホストへの接続成功は、実ゲームへの接続成功を証明しません。
+現在の診断は[固定された手順](../docs/guides/vic3-diagnostics-ja.md)を使用してください。過去のローダー診断は履歴として保持しています。合成テスト用ホストへの接続成功は、実ゲームへの接続成功を証明しません。
 
 Phase 3では[オフラインのモジュール・エクスポート検証規則と失敗時の回帰テスト](../docs/superpowers/reports/2026-10-11-offline-native-diagnostics-phase3-ja.md)を追加しました。診断v2は不完全なモジュール列挙を拒否し、DLL注入前にエクスポート先の16バイト全体を検証します。[実行38148690363](https://github.com/pengin0503/Vic3-optimazation/actions/runs/38148690363)でWindows x64 Releaseビルドと合成CTest全10件が成功しました。名前付きIPC、既存ホストへのDLL注入、安全側に倒すDLLのライフサイクル、MinHookを含みます。実ゲーム接続時のコード4と、DLLを完全に有効化したセッションの停止・終了処理は未検証です。Windowsジョブは`tests.yml`と`native-validation.yml`で共有し、研究ブランチへのpushではネイティブ関連のパスが変わった場合だけ実行します。
 

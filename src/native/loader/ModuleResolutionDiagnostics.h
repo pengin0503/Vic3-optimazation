@@ -8,6 +8,14 @@
 namespace vic3 {
 inline constexpr size_t kExportProbeSize=16;
 enum class RemoteEntryObservation {Unknown,Rel32Jump,Rel32Overflow};
+inline constexpr size_t kMaxObservedJumps=4;
+struct JumpObservation {
+    uint64_t address{},allocation_base{},module_base{},next_address{};
+    uint32_t state{},protection{},type{},query_error{},read_error{};
+    bool probe_available{};
+    std::array<std::byte,kExportProbeSize> bytes{};
+    std::wstring module_path;
+};
 enum class ModuleResolutionStage {
     None,ExportLookup,OwnerLookup,LocalPe,LocalAddress,LocalText,LocalPath,
     Snapshot,ModuleFirst,ModuleMatch,ModuleSize,RemoteAddress,RemoteQuery,
@@ -31,7 +39,19 @@ struct ModuleResolutionDiagnostics {
     uint64_t branch_allocation_base{};
     uint32_t requested_pid{},handle_pid{};
     uint64_t process_start_filetime{};
+    std::array<JumpObservation,kMaxObservedJumps> chain{};
+    size_t chain_count{};
+    std::wstring chain_stop{L"not_requested"};
+    uint32_t chain_module_error{};
 };
+// Completion describes collected evidence, never permission to inject.
+struct LoadLibraryDiagnosis {bool complete{},entry_matches{};};
+inline int DiagnosisExitCode(const LoadLibraryDiagnosis& result) noexcept {return result.complete?0:8;}
+inline void WriteLoadLibraryDiagnosisResult(std::wostream& out,const LoadLibraryDiagnosis& result) {
+    out<<L"diagnosis_status="<<(result.complete?L"complete":L"incomplete")
+       <<L" entry_status="<<(!result.complete?L"unknown":result.entry_matches?L"matched":L"modified")
+       <<L" connection_status="<<(result.complete && result.entry_matches?L"entry_probe_passed":L"blocked")<<L'\n';
+}
 inline const wchar_t* ModuleResolutionStageName(ModuleResolutionStage stage) noexcept {
     switch(stage) {
     case ModuleResolutionStage::None:return L"none";
@@ -83,6 +103,18 @@ inline void WriteModuleResolutionDiagnostics(std::wostream& out,const ModuleReso
        <<L" branch_query_error="<<d.branch_query_error<<L" branch_state="<<d.branch_state
        <<L" branch_protection="<<d.branch_protection<<L" branch_type="<<d.branch_type
        <<L" branch_allocation_base="<<d.branch_allocation_base<<L'\n';
+    out<<L"chain_count="<<d.chain_count<<L" chain_stop="<<d.chain_stop<<L" chain_module_error="<<d.chain_module_error<<L'\n';
+    for(size_t i=0;i<d.chain_count && i<d.chain.size();++i) {
+        const auto& hop=d.chain[i];
+        out<<L"hop="<<i<<L" address="<<hop.address<<L" state="<<hop.state<<L" protection="<<hop.protection
+           <<L" type="<<hop.type<<L" allocation_base="<<hop.allocation_base<<L" query_error="<<hop.query_error
+           <<L" read_error="<<hop.read_error<<L" probe_available="<<(hop.probe_available?1:0)
+           <<L" next_address="<<hop.next_address<<L" module_base="<<hop.module_base<<L" module_path="<<hop.module_path<<L'\n';
+        if(hop.probe_available) {
+            constexpr wchar_t hex[]=L"0123456789abcdef";out<<L"hop_bytes=";
+            for(auto b:hop.bytes){const auto v=std::to_integer<unsigned>(b);out<<hex[v>>4]<<hex[v&15];}out<<L'\n';
+        }
+    }
     out.flags(flags);
 }
 }

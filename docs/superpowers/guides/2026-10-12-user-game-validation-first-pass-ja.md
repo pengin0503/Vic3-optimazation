@@ -1,5 +1,7 @@
 # ユーザー側の実ゲーム検証 — 最初はdisabled接続だけ
 
+> この日付付き資料は過去の接続手順です。現在の入口は[固定された読み取り専用診断](../../guides/vic3-diagnostics-ja.md)です。接続拒否が続く場合に、この資料のattach/stop/enabledへ自動で進まないでください。
+
 Date: 2026-10-12 JST
 
 **新しい診断手順:** Issue #17の未解決byte_mismatchには、[注入しないLoadLibraryW診断](2026-10-12-loader-readonly-diagnosis-ja.md)を先に使う。旧artifactは新flagに非対応。新しいLoaderのbuild/provenanceを用意し、診断結果を確認してからAへ進むか判断する。診断exit0をattach成功として扱わない。

@@ -79,13 +79,14 @@ int main(int argc,char** argv) {
     WinHandle host_ready(CreateEventW(nullptr,TRUE,FALSE,(L"Local\\Vic3NativeInjectorHostReady-"+std::to_wstring(pid)).c_str()));CHECK(host_ready);CHECK(WaitForSingleObject(host_ready.get(),10000)==WAIT_OBJECT_0);
     WinHandle probe(CreateEventW(nullptr,TRUE,FALSE,(L"Local\\Vic3NativeInjectionProbe-"+std::to_wstring(pid)).c_str()));CHECK(probe);
     ModuleResolutionDiagnostics identity_detail;
-    CHECK(!DiagnoseLoadLibraryForValidatedProcess(host.get(),GetCurrentProcessId(),identity_detail));
+    CHECK(!DiagnoseLoadLibraryForValidatedProcess(host.get(),GetCurrentProcessId(),identity_detail).complete);
     CHECK(identity_detail.stage==ModuleResolutionStage::ProcessIdentity && identity_detail.win32_error==0);
     CHECK(identity_detail.requested_pid==GetCurrentProcessId() && identity_detail.handle_pid==pid);
     auto diagnosis_args=ParseLoaderArgs({L"--pid",std::to_wstring(pid),L"--diagnose-loadlibrary"});CHECK(diagnosis_args);
     CHECK(LoaderProcessRights(diagnosis_args.value)==(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ));
     WinHandle read_only(OpenProcess(LoaderProcessRights(diagnosis_args.value),FALSE,pid));CHECK(read_only);
-    CHECK(DiagnoseLoadLibraryForValidatedProcess(read_only.get(),pid,identity_detail));
+    const auto matched_diagnosis=DiagnoseLoadLibraryForValidatedProcess(read_only.get(),pid,identity_detail);
+    CHECK(matched_diagnosis.complete && matched_diagnosis.entry_matches);
     CHECK(identity_detail.probe_available && identity_detail.requested_pid==pid && identity_detail.handle_pid==pid);
     CHECK(identity_detail.process_start_filetime!=0);
     FILETIME created{},exited{},kernel{},user{};CHECK(GetProcessTimes(host.get(),&created,&exited,&kernel,&user));
@@ -116,7 +117,11 @@ int main(int argc,char** argv) {
     WinHandle detour_probe(CreateEventW(nullptr,TRUE,FALSE,(L"Local\\Vic3NativeInjectionProbe-"+std::to_wstring(detour_pid)).c_str()));CHECK(detour_probe);
     WinHandle detour_read(OpenProcess(PROCESS_QUERY_INFORMATION|PROCESS_VM_READ,FALSE,detour_pid));CHECK(detour_read);
     ModuleResolutionDiagnostics detour_detail;
-    CHECK(!DiagnoseLoadLibraryForValidatedProcess(detour_read.get(),detour_pid,detour_detail));
+    const auto modified_diagnosis=DiagnoseLoadLibraryForValidatedProcess(detour_read.get(),detour_pid,detour_detail);
+    CHECK(modified_diagnosis.complete && !modified_diagnosis.entry_matches);
+    CHECK(DiagnosisExitCode(modified_diagnosis)==0);
+    CHECK(detour_detail.chain_count==1 && detour_detail.chain[0].probe_available);
+    CHECK(!detour_detail.chain[0].module_path.empty());
     CHECK(detour_detail.stage==ModuleResolutionStage::ByteMismatch && detour_detail.win32_error==0);
     CHECK(detour_detail.probe_available && detour_detail.remote_bytes[0]==std::byte{0xe9});
     CHECK(detour_detail.remote_entry==RemoteEntryObservation::Rel32Jump && detour_detail.branch_target==detour_detail.remote_address+5);
@@ -152,6 +157,34 @@ int main(int argc,char** argv) {
     CHECK(WaitForSingleObject(detour_probe.get(),0)==WAIT_TIMEOUT);
     WinHandle detour_stop(OpenEventW(EVENT_MODIFY_STATE,FALSE,(L"Local\\Vic3NativeInjectorHostStop-"+std::to_wstring(detour_pid)).c_str()));CHECK(detour_stop);
     CHECK(SetEvent(detour_stop.get()));CHECK(WaitForSingleObject(detour_host.get(),10000)==WAIT_OBJECT_0);
+    // Read-only observation of a test-owned private E9 chain, never executed.
+    auto* fixture=static_cast<unsigned char*>(VirtualAlloc(nullptr,4096,MEM_COMMIT|MEM_RESERVE,PAGE_READWRITE));CHECK(fixture);
+    struct FixtureMemory {void* memory;~FixtureMemory(){VirtualFree(memory,0,MEM_RELEASE);}} fixture_memory{fixture};
+    for(size_t i=0;i<4096;++i)fixture[i]=0x90;
+    for(size_t offset:{size_t{0},size_t{16}}){fixture[offset]=0xe9;const int32_t displacement=11;std::memcpy(fixture+offset+1,&displacement,4);}
+    ModuleResolutionDiagnostics chain;
+    chain.stage=ModuleResolutionStage::ByteMismatch;chain.probe_available=true;chain.remote_entry=RemoteEntryObservation::Rel32Jump;
+    chain.requested_pid=chain.handle_pid=GetCurrentProcessId();
+    CHECK(GetProcessTimes(GetCurrentProcess(),&created,&exited,&kernel,&user));
+    chain.process_start_filetime=(static_cast<uint64_t>(created.dwHighDateTime)<<32)|created.dwLowDateTime;
+    chain.remote_address=reinterpret_cast<uintptr_t>(fixture)-64;chain.branch_target=reinterpret_cast<uintptr_t>(fixture);
+    ObserveRemoteJumpChain(GetCurrentProcess(),chain);
+    CHECK(chain.chain_count==3 && chain.chain_stop==L"unknown_instruction");
+    CHECK(chain.chain[0].type==MEM_PRIVATE && chain.chain[0].module_path.empty());
+    CHECK(chain.chain[2].probe_available && chain.chain[2].bytes[0]==std::byte{0x90});
+    CHECK(chain.stage==ModuleResolutionStage::ByteMismatch && chain.win32_error==0);
+    // Cycles, hop budget, unreadable pages and stale results are bounded.
+    const int32_t cycle=-5;std::memcpy(fixture+1,&cycle,4);
+    ObserveRemoteJumpChain(GetCurrentProcess(),chain);CHECK(chain.chain_count==1 && chain.chain_stop==L"cycle");
+    for(size_t offset:{size_t{0},size_t{16},size_t{32},size_t{48}}){fixture[offset]=0xe9;const int32_t forward=11;std::memcpy(fixture+offset+1,&forward,4);}
+    ObserveRemoteJumpChain(GetCurrentProcess(),chain);CHECK(chain.chain_count==4 && chain.chain_stop==L"hop_limit");
+    DWORD fixture_protection{};CHECK(VirtualProtect(fixture,4096,PAGE_NOACCESS,&fixture_protection));
+    ObserveRemoteJumpChain(GetCurrentProcess(),chain);
+    CHECK(chain.chain_count==1 && !chain.chain[0].probe_available && chain.chain_stop==L"region_unreadable");
+    CHECK(VirtualProtect(fixture,4096,fixture_protection,&fixture_protection));
+    ObserveRemoteJumpChain(nullptr,chain);CHECK(chain.chain_count==0 && chain.chain_stop==L"identity_changed");
+    chain.stage=ModuleResolutionStage::None;ObserveRemoteJumpChain(GetCurrentProcess(),chain);
+    CHECK(chain.chain_count==0 && chain.chain_stop==L"not_requested");
 #endif
     std::cout << "Explicit PID/options and wrong-process gate passed\n";
 }
