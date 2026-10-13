@@ -72,10 +72,39 @@ foreach($candidate in @(24516,0)) {
 $save=$entry.EndBlock.Statements | Where-Object { $_.Extent.Text -like '*Out-File*result.json*' } | Select-Object -Last 1
 $terminal=($entry.EndBlock.Statements | Where-Object { $_.Extent.StartOffset -gt $save.Extent.EndOffset } | ForEach-Object { $_.Extent.Text }) -join "`n"
 $childHost=(Get-Process -Id $PID).Path
+function Invoke-TestChild([string]$Code) {
+    $start=New-Object Diagnostics.ProcessStartInfo
+    $start.FileName=$childHost
+    $start.Arguments='-NoProfile -NonInteractive -EncodedCommand '+[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($Code))
+    $start.UseShellExecute=$false;$start.CreateNoWindow=$true;$start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
+    $process=New-Object Diagnostics.Process;$process.StartInfo=$start
+    try {
+        $process.Start() | Out-Null
+        $stdout=$process.StandardOutput.ReadToEndAsync();$stderr=$process.StandardError.ReadToEndAsync()
+        if(-not $process.WaitForExit(30000)){$process.Kill();throw 'Test child timeout'}
+        $stdout.Result | Out-Null;$stderr.Result | Out-Null
+        $process.ExitCode
+    } finally {$process.Dispose()}
+}
 foreach($expected in @(0,8)) {
     $setup='$Result=[pscustomobject]@{connection_status="blocked";diagnosis_status="'+$(if($expected -eq 0){'complete'}else{'incomplete'})+'"};$DiagnoseExit='+$expected+';'
-    $encoded=[Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($setup+$terminal))
-    & $childHost -NoProfile -NonInteractive -OutputFormat Text -EncodedCommand $encoded | Out-Null
-    Assert-True ($LASTEXITCODE -eq $expected) 'wrapper preserves diagnostic exit code'
+    $exitCode=Invoke-TestChild ($setup+$terminal)
+    Assert-True ($exitCode -eq $expected) 'wrapper preserves diagnostic exit code'
 }
-Write-Host 'Diagnostic workflow: 22 cases passed; no game process accessed.'
+$rawTail=($entry.EndBlock.Statements | Where-Object { $_.Extent.StartOffset -gt ($entry.EndBlock.Statements | Where-Object {$_.Extent.Text -eq 'Write-Host $Log'}).Extent.EndOffset } | ForEach-Object { $_.Extent.Text }) -join "`n"
+New-Item -ItemType Directory -Path $scratch | Out-Null
+try {
+    foreach($expected in @(2,3,4)) {
+        $run=Join-Path $scratch ('precondition-'+$expected);New-Item -ItemType Directory -Path $run | Out-Null
+        $setup='$ErrorActionPreference="Stop";Import-Module '''+(Join-Path $PSScriptRoot '..\Vic3Diagnostics.psm1')+''' -Force;$Run='''+$run+''';$Log="";$GamePid=24516;$StartFileTime="134363317251906048";$DiagnoseExit='+$expected+';'
+        $exitCode=Invoke-TestChild ($setup+$rawTail)
+        Assert-True ($exitCode -eq $expected) 'wrapper preserves loader precondition exit'
+        $saved=Get-Content -LiteralPath (Join-Path $run 'result.json') -Raw | ConvertFrom-Json
+        Assert-True ($saved.diagnosis_status -eq 'not_collected' -and $saved.exit_code -eq $expected) 'precondition result preserved'
+    }
+} finally {
+    $resolved=(Resolve-Path -LiteralPath $scratch).Path
+    if([IO.Path]::GetDirectoryName($resolved) -ne [IO.Path]::GetFullPath([IO.Path]::GetTempPath()).TrimEnd('\')) { throw 'Unexpected test scratch path' }
+    Remove-Item -LiteralPath $resolved -Recurse -Force
+}
+Write-Host 'Diagnostic workflow: 28 cases passed; no game process accessed.'

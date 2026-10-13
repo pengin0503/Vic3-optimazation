@@ -178,6 +178,8 @@ int main(int argc,char** argv) {
     ObserveRemoteJumpChain(GetCurrentProcess(),chain);CHECK(chain.chain_count==1 && chain.chain_stop==L"cycle");
     for(size_t offset:{size_t{0},size_t{16},size_t{32},size_t{48}}){fixture[offset]=0xe9;const int32_t forward=11;std::memcpy(fixture+offset+1,&forward,4);}
     ObserveRemoteJumpChain(GetCurrentProcess(),chain);CHECK(chain.chain_count==4 && chain.chain_stop==L"hop_limit");
+    const int32_t final_cycle=-53;std::memcpy(fixture+49,&final_cycle,4);
+    ObserveRemoteJumpChain(GetCurrentProcess(),chain);CHECK(chain.chain_count==4 && chain.chain_stop==L"cycle");
     DWORD fixture_protection{};CHECK(VirtualProtect(fixture,4096,PAGE_NOACCESS,&fixture_protection));
     ObserveRemoteJumpChain(GetCurrentProcess(),chain);
     CHECK(chain.chain_count==1 && !chain.chain[0].probe_available && chain.chain_stop==L"region_unreadable");

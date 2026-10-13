@@ -135,6 +135,8 @@ void ObserveRemoteJumpChain(HANDLE process,ModuleResolutionDiagnostics& d) {
         const auto jump=DecodeRelativeJump(address,bytes);hop.next_address=jump.target;
         if(jump.kind==RemoteEntryObservation::Unknown){d.chain_stop=L"unknown_instruction";return;}
         if(jump.kind==RemoteEntryObservation::Rel32Overflow){d.chain_stop=L"address_overflow";return;}
+        if(jump.target==d.remote_address){d.chain_stop=L"cycle";return;}
+        for(size_t observed=0;observed<=i;++observed)if(d.chain[observed].address==jump.target){d.chain_stop=L"cycle";return;}
         address=jump.target;
     }
 }

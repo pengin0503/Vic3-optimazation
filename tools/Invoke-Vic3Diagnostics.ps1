@@ -80,6 +80,11 @@ try {
 $DiagnoseExit | Out-File -LiteralPath (Join-Path $Run 'diagnose-exit.txt') -Encoding utf8 -NoClobber
 $Log=Get-Content -LiteralPath (Join-Path $Run 'diagnose.log') -Raw
 Write-Host $Log
+if($DiagnoseExit -notin @(0,8)) {
+    [ordered]@{diagnosis_status='not_collected';entry_status='unknown';connection_status='blocked';stage='loader_precondition';exit_code=$DiagnoseExit;attach_attempted=$false} | ConvertTo-Json | Out-File -LiteralPath (Join-Path $Run 'result.json') -Encoding utf8 -NoClobber
+    Write-Host "Loader stopped before a structured diagnosis (exit=$DiagnoseExit). Evidence retained; no retry."
+    exit $DiagnoseExit
+}
 $Result=ConvertFrom-Vic3DiagnosticLog -Text $Log -ExitCode $DiagnoseExit -GamePid $GamePid -StartFileTime $StartFileTime
 $Result | ConvertTo-Json | Out-File -LiteralPath (Join-Path $Run 'result.json') -Encoding utf8 -NoClobber
 if($Result.diagnosis_status -eq 'incomplete') { Write-Host 'Diagnosis incomplete; connection remains blocked. End here; no retry.' }
