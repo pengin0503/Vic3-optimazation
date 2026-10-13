@@ -1,0 +1,23 @@
+{
+  "archive_sha256": "79f4f6d2c54528be378ffb09aa2d62d02c1f01279b967dd3189178146d5e8c34",
+  "bad_csv_hash_and_workload_rejected": true,
+  "employment_direct_edges_verified": 7,
+  "employment_range_hashes_verified": 13,
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "existing_catalog_targets_verified": 42,
+  "format_version": 1,
+  "game_executed": false,
+  "kind": "offline exact-byte and synthetic workflow verification only",
+  "measured_overhead": null,
+  "measured_speedup": null,
+  "packet_bytes_preserved": true,
+  "performance_patch_count": 0,
+  "repository_base": "e738fa52c25760d57479d7ff7304f4209882d387",
+  "supplemental_lookup_targets_verified": 2,
+  "synthetic_analysis_variants": 2,
+  "synthetic_boundary_samples_matched": 88,
+  "synthetic_finalized_runs": 6,
+  "synthetic_wrong_module_rows_rejected": 2,
+  "unmeasured_templates_verified": 6,
+  "windows_wpr_executed": false
+}

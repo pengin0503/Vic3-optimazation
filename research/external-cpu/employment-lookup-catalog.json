@@ -1,0 +1,48 @@
+{
+  "executable_sha256": "9b6f133a5dc235de9135d7b57e86ceda8282d1ba6c0e185f3ee19c22f8917f54",
+  "format_version": 1,
+  "module": "victoria3.exe",
+  "range_conflicts": [],
+  "targets": [
+    {
+      "confidence": "candidate",
+      "kind": "bounded_lookup_excerpt",
+      "name": "employment_fallback_group_0xf468d0",
+      "ranges": [
+        {
+          "begin_rva": "0xf468d0",
+          "end_rva": "0xf469aa"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/employment-reuse-2026-10-07/evidence.json",
+        "artifact_sha256": "cbfc50fb52cbf0363d23b5ed6ecf0253719322232e502933fecdfeeeffbc90ca",
+        "range_sha256": "54bde9d62b7d4ec9e064d1a733904136b8f1d63a493de9c8a0ac7bf965aace9f",
+        "scope": "bounded excerpt only; neither complete source function nor runtime caller identity",
+        "section": "fallback_group"
+      },
+      "target_id": 1
+    },
+    {
+      "confidence": "candidate",
+      "kind": "bounded_lookup_excerpt",
+      "name": "employment_lookup_excerpt_0xf3e040",
+      "ranges": [
+        {
+          "begin_rva": "0xf3e040",
+          "end_rva": "0xf3e0fd"
+        }
+      ],
+      "source_evidence": {
+        "artifact": "research/generated/employment-reuse-2026-10-07/evidence.json",
+        "artifact_sha256": "cbfc50fb52cbf0363d23b5ed6ecf0253719322232e502933fecdfeeeffbc90ca",
+        "range_sha256": "ed016a30cfa6f312cf61a2982587951e0e0227b2bf69b49c05c1c16ae0f5c1ad",
+        "scope": "bounded excerpt only; neither complete source function nor runtime caller identity",
+        "section": "lookup_excerpt"
+      },
+      "target_id": 2
+    }
+  ],
+  "unresolved": [],
+  "warning": "Static instruction/reference evidence only; no runtime reachability, dependency semantics, critical path, lock causality or performance benefit is proven."
+}

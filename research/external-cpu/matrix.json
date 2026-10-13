@@ -1,0 +1,59 @@
+{
+  "format_version": 1,
+  "purpose": "external CPU diagnosis and observer-overhead comparison; no patch speedup",
+  "status": "prepared_unmeasured",
+  "task_thread_count": 12,
+  "measured_repeats_per_variant": 3,
+  "run_count": 6,
+  "warmup": "perform both modes before measured sequence; reload same save before each run; do not finalize warm-ups into this batch",
+  "runs": [
+    {
+      "run_id": "ext-baseline-t12-r01",
+      "task_thread_count": 12,
+      "repeat": 1,
+      "warmup": false,
+      "directory": "baseline/ext-baseline-t12-r01",
+      "capture_mode": "baseline"
+    },
+    {
+      "run_id": "ext-sampled-t12-r01",
+      "task_thread_count": 12,
+      "repeat": 1,
+      "warmup": false,
+      "directory": "sampled/ext-sampled-t12-r01",
+      "capture_mode": "sampled"
+    },
+    {
+      "run_id": "ext-sampled-t12-r02",
+      "task_thread_count": 12,
+      "repeat": 2,
+      "warmup": false,
+      "directory": "sampled/ext-sampled-t12-r02",
+      "capture_mode": "sampled"
+    },
+    {
+      "run_id": "ext-baseline-t12-r02",
+      "task_thread_count": 12,
+      "repeat": 2,
+      "warmup": false,
+      "directory": "baseline/ext-baseline-t12-r02",
+      "capture_mode": "baseline"
+    },
+    {
+      "run_id": "ext-baseline-t12-r03",
+      "task_thread_count": 12,
+      "repeat": 3,
+      "warmup": false,
+      "directory": "baseline/ext-baseline-t12-r03",
+      "capture_mode": "baseline"
+    },
+    {
+      "run_id": "ext-sampled-t12-r03",
+      "task_thread_count": 12,
+      "repeat": 3,
+      "warmup": false,
+      "directory": "sampled/ext-sampled-t12-r03",
+      "capture_mode": "sampled"
+    }
+  ]
+}

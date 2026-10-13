@@ -3,6 +3,10 @@
 Date: 2026-10-04
 Target: Victoria 3 Windows 1.14.5
 
+## 2026-10-13 route amendment
+
+The user authorized completing the proposed external-measurement route until real measurement is the next prerequisite. [External CPU route design](2026-10-13-external-cpu-route-design.md) is the current investigation path: existing built-in TickTask CSV plus WPR/WPA, without requiring successful custom DLL attachment. Layer C / native Phase4 remains an independent, incomplete workstream. Its loader safety checks and runtime acceptance are unchanged. Evidence-backed candidate selection may proceed from external observations; native ABI, lifetimes, semantic equivalence, safe patch application and wall-clock A/B validation remain required for any eventual patch. This amendment does not authorize lookup bypass, scheduling changes or forced attachment.
+
 ## Problem
 
 Victoria 3 can become simulation-bound while total CPU utilization remains low. The goal is not to maximize aggregate CPU utilization; it is to reduce simulation wall-clock time while preserving deterministic, stable game behavior.

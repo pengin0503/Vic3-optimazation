@@ -1,6 +1,8 @@
-# Vic3-optimazation全体ロードマップ — closeout更新
+# Vic3-optimazation全体ロードマップ — 外部計測経路更新
 
 Date: 2026-10-12 JST
+
+更新: 2026-10-13 JST。**現在の主経路は[DLLを使わない外部CPU実測](../../guides/vic3-external-cpu-measurement-ja.md)**。12thread、通常B3回・Sampled S3回を準備し、まずB1/S1で収集成立を確認する。[候補の採否](../reports/2026-10-13-external-cpu-candidate-ja.md)に沿って雇用lookup、民間投資、移民を観測する。Loaderの修復、native profiler Phase4、GPU追加研究は今回の実測の前提から外す。外部計測で足りない問いだけを後続観測へ回す。性能patchは0件のまま。
 
 目標はsimulationの意味・決定性・save安定性を保って同じ期間の実時間を短縮すること。CPU使用率自体は成功条件ではない。現時点の選定/実装性能patchは0件。
 
@@ -24,11 +26,11 @@ Date: 2026-10-12 JST
 | Phase5 / Task10〜11: safe patch | patch0、着手条件未達 | 根本原因・semantic proof・ノイズを超える実時間改善 |
 | Phase6 / Task12: scheduler | syntheticモデルのみ | schedulerが主要因と確認した場合に限る追加設計・決定性検証 |
 
-順序は、(1)Overlay OFFでも残るdetourに対して安全性を維持したLoaderのオフライン設計・検証を進め、新バイナリで実ゲームのdisabled attachを再評価し、(2)12/16 × disabled/enabled ×各3回以上の最低12 measured runsをfresh process・交互順序で採取、(3)同期CSV/native/OSから計算・メモリ・待ち・dispatchを分類、(4)対象を1〜3へ限定、(5)read-only shadow/元結果の同等性検証、(6)別設計の小さなtoggleable patchをA/B検証する。warm-upを本測定に混ぜない。
+現在の順序は、(1)12threadのB1/S1を実測して収集成立を確認、(2)残り4回でcollector負荷と候補の再現性を確認、(3)同run CSV/OS/caller stackから改善対象を選ぶ、(4)不足する内部ABI・寿命・待ち等の問いを限定して調べる、(5)同等性と安全な適用方法を示す個別patch設計・実装、(6)実時間A/Bと長時間save/reloadを検証する。外部調査の開始にnative profilerの成功は要求しない。warm-upを本測定に混ぜない。
 
-最初のユーザー作業は[disabled接続のfirst-pass手順](2026-10-12-user-game-validation-first-pass-ja.md)のAだけ。Windows artifactの入手先、2binaryのhash、選択PID・初期identity、attach/stop/trace、送付packetを記載した。A/B成功前に本反復を始めない。
+最初のユーザー作業は[外部CPU実測ガイド](../../guides/vic3-external-cpu-measurement-ja.md)のB1/S1。旧[disabled接続first-pass](2026-10-12-user-game-validation-first-pass-ja.md)はnative profiler専用の独立経路として保持する。そこにある接続成功前の本反復禁止はnative profilerの比較へ適用し、外部WPR調査を止める条件にはしない。
 
-初期hashだけでsave安定性を認定せず、旧12_r2の余分なframeをtrimしてwall timeを補正したことにもしない。実測は[Phase4 handoff](2026-10-12-phase4-runtime-evidence-handoff-ja.md)に従う。
+初期hashだけでsave安定性を認定せず、旧12_r2の余分なframeをtrimしてwall timeを補正したことにもしない。現在の外部実測は[外部CPU実測ガイド](../../guides/vic3-external-cpu-measurement-ja.md)に従う。[Phase4 handoff](2026-10-12-phase4-runtime-evidence-handoff-ja.md)はnative profiler専用の比較・acceptanceに適用する。
 
 ## Employmentの独立gate
 
