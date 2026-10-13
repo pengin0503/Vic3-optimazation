@@ -1,6 +1,26 @@
 #include "ModuleResolutionPolicy.h"
 #include <cstring>
 namespace vic3 {
+RelativeJump DecodeRelativeJump(uintptr_t address,std::span<const std::byte,kExportProbeSize> bytes) noexcept {
+    if(bytes[0]!=std::byte{0xe9})return {};
+    int32_t displacement{};std::memcpy(&displacement,bytes.data()+1,sizeof(displacement));
+    uintptr_t next{},target{};bool valid=CheckedAddress(address,5,next);
+    if(valid && displacement>=0)valid=CheckedAddress(next,static_cast<size_t>(displacement),target);
+    else if(valid) {
+        const auto distance=static_cast<uintptr_t>(-static_cast<int64_t>(displacement));
+        valid=distance<=next;if(valid)target=next-distance;
+    }
+    return {valid?RemoteEntryObservation::Rel32Jump:RemoteEntryObservation::Rel32Overflow,valid?target:0};
+}
+LoadLibraryDiagnosis ClassifyLoadLibraryDiagnosis(const ModuleResolutionDiagnostics& d) noexcept {
+    const bool identity=d.requested_pid && d.requested_pid==d.handle_pid && d.process_start_filetime;
+    const bool evidence=identity && d.matches==1 && d.probe_available && d.bytes_read==kExportProbeSize &&
+        d.win32_error==0 && d.pe_error==ValidationError::None;
+    if(!evidence)return {};
+    if(d.stage==ModuleResolutionStage::None && d.mismatch_count==0)return {true,true};
+    if(d.stage==ModuleResolutionStage::ByteMismatch && d.mismatch_count>0)return {true,false};
+    return {};
+}
 static bool Reject(ModuleResolutionDiagnostics& d,ModuleResolutionStage stage,uint32_t error=0) noexcept {
     d.stage=stage;d.win32_error=error;return false;
 }
@@ -43,18 +63,8 @@ bool ValidateRemoteExportRead(std::span<const std::byte,kExportProbeSize> local,
         if(local[i]!=remote[i]) {if(!d.mismatch_count)d.first_mismatch=i;++d.mismatch_count;}
     }
     // Observation only. No jump target ever becomes an injection address.
-    if(remote[0]==std::byte{0xe9}) {
-        int32_t displacement{};std::memcpy(&displacement,remote.data()+1,sizeof(displacement));
-        uintptr_t next{},target{};
-        bool valid=CheckedAddress(static_cast<uintptr_t>(d.remote_address),5,next);
-        if(valid && displacement>=0)valid=CheckedAddress(next,static_cast<size_t>(displacement),target);
-        else if(valid) {
-            const auto distance=static_cast<uintptr_t>(-static_cast<int64_t>(displacement));
-            valid=distance<=next;if(valid)target=next-distance;
-        }
-        d.remote_entry=valid?RemoteEntryObservation::Rel32Jump:RemoteEntryObservation::Rel32Overflow;
-        if(valid)d.branch_target=target;
-    }
+    const auto jump=DecodeRelativeJump(static_cast<uintptr_t>(d.remote_address),remote);
+    d.remote_entry=jump.kind;d.branch_target=jump.target;
     if(std::memcmp(local.data(),remote.data(),kExportProbeSize)!=0)return Reject(d,ModuleResolutionStage::ByteMismatch);
     return Accept(d);
 }

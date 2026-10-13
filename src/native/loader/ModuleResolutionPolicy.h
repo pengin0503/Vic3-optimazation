@@ -3,6 +3,9 @@
 #include "../common/PeImage.h"
 #include <span>
 namespace vic3 {
+struct RelativeJump {RemoteEntryObservation kind{RemoteEntryObservation::Unknown};uintptr_t target{};};
+RelativeJump DecodeRelativeJump(uintptr_t address,std::span<const std::byte,kExportProbeSize> bytes) noexcept;
+LoadLibraryDiagnosis ClassifyLoadLibraryDiagnosis(const ModuleResolutionDiagnostics& d) noexcept;
 // Pure checks over a validated mapped image and values collected by the
 // Windows adapter. No process access, retry, allocation or address fallback.
 // Each call reports its own latest result: success clears stage/win32_error.

@@ -1,5 +1,7 @@
 # ツール
 
+現在のVictoria 3診断は `Invoke-Vic3Diagnostics.ps1` を固定入口として使用します。[手順・結果判定](../docs/guides/vic3-diagnostics-ja.md)を参照してください。sourceと検証済みLoaderを照合し、既定では読み取り専用診断だけを実行します。
+
 ### `map_native_callers.py`
 
 `requirements-callgraph.txt`にある任意依存のCapstoneが必要です。指定した実行ファイルRVA 1～32件へのE8 rel32呼び出しを検索し、アンワインド範囲の境界から始めたデコードで一致を検証します。デコード不能・処理上限到達の候補は未解決のまま保持し、他の命令の内部にあるオペコードのバイト一致を拒否します。間接呼び出し元と末尾ジャンプは対象外です。

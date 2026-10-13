@@ -65,7 +65,9 @@ std::filesystem::path ProcessImagePath(HANDLE process);
 InjectionError ValidateVictoriaProcess(HANDLE process,const std::filesystem::path& path);
 // Same resolver as injection, but only queries/reads the selected process.
 // Production CLI passes the exact Victoria gate first; tests use their own host.
-bool DiagnoseLoadLibraryForValidatedProcess(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& diagnostics);
+LoadLibraryDiagnosis DiagnoseLoadLibraryForValidatedProcess(HANDLE process,DWORD pid,ModuleResolutionDiagnostics& diagnostics);
+// Bounded read-only E9 observation; no observed address is used for injection.
+void ObserveRemoteJumpChain(HANDLE process,ModuleResolutionDiagnostics& diagnostics);
 // Best-effort query after a complete E9 mismatch, preserving the primary result.
 void ObserveRemoteBranchRegion(HANDLE process,ModuleResolutionDiagnostics& diagnostics);
 // Private native primitive. The production CLI always passes the exact Victoria gate first.

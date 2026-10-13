@@ -1,5 +1,7 @@
 # 次回の実ゲーム検証：注入せずLoadLibraryWを診断する
 
+> 現在の操作は[固定された診断手順](../../guides/vic3-diagnostics-ja.md)と `tools/Invoke-Vic3Diagnostics.ps1` を使用する。以下は旧版の履歴であり、旧branch・hash・exit8仕様を現在の手順として実行しない。
+
 Date: 2026-10-12 JST
 
 保留テスト・Windows fixtureの後続検証は[followup報告](../reports/2026-10-12-loader-offline-followup-ja.md)を参照。最新PR headのbuildとvalidation.jsonのprovenanceを使用する。
